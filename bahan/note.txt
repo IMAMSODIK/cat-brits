@@ -1,0 +1,35 @@
+tipe soal
+	listening
+		- Multiple choice with one answer
+		- Multiple choice with more than one answer
+		- Matching (listening/example)
+		- Labelling a map (listening/labeling_map)
+		- completion (missing word)
+		- flowchart
+
+	reading
+		- Multiple choice with one answer
+		- Multiple choice with more than one answer
+		- True/False/Not Given or Yes/No/Not Given
+		- Matching Heading
+		- Matching Sentence Ending (sama seperti matching heading, tapi choices ada di satu section dengan soal)
+		- Matching Features (reading/matching_features)
+		- completion (missing word)
+		- Flow-chart Completion (missing word tapi dengan flowchart)
+		- Summary Completion (sama seperti missing word tapi selecting words from the text section)
+
+	writing
+		- ada word count pada section text area
+		- kesimpulan dari data (writing/contoh1)
+		- pendapat
+
+
+
+
+- konfirmasi data diri
+- pada saat listening dimulai, ada halaman test sound (listening/test_sound)
+- setelah itu ada halaman instruction (listening/instruction)
+- begitu mulai, 5 detik kemudian sound langsung play
+- ada tiga part soal
+- setelah selesai, ada pesan selesai (listening/selesai)
+- kembali ke halaman dashboard
