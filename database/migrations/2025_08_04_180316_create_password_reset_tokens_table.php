@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::table('password_reset_tokens')->truncate();
+        Schema::dropIfExists('password_reset_tokens');
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token');
