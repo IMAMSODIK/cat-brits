@@ -1,0 +1,63 @@
+semua
+-----
+Login & Registrasi (Siswa & Admin)
+Lupa Password (Reset via email/token)
+Manajemen akun pengguna
+Profile
+
+Siswa
+-----
+Hasil Ujian
+
+Guru
+----
+Jumlah peserta
+Histori
+
+Admin
+-----
+
+
+
+
+Tambah/Edit/Hapus Soal
+📂 Soal berdasarkan:
+        Listening
+        Reading
+        Grammar
+        Vocabulary
+        Speaking (optional, jika terintegrasi audio recording)
+
+✅ Dukungan:
+        Pilihan Ganda
+        Isian Singkat
+        Benar/Salah
+        Upload Audio untuk Listening Section
+
+🧠 Randomisasi soal
+⏳ Timer otomatis
+🚫 Anti-cheat dasar (1 tab aktif, tidak bisa back)
+📶 Auto-simpan jawaban tiap soal
+📊 Progress bar
+
+📈 Laporan Nilai Otomatis
+🧾 Rekap Jawaban
+🧮 Bobot nilai per jenis soal
+🖨️ Cetak Sertifikat / Hasil Ujian PDF
+
+🏷️ Kategori & Level (Beginner, Intermediate, Advanced)
+🗃️ Import/Export soal (Excel/CSV)
+📅 Penjadwalan ujian per kelas
+👥 Manajemen kelas & peserta
+⏰ Batas waktu pengerjaan per sesi
+
+📧 Email pengingat ujian
+📲 Push Notif (opsional, jika berbentuk mobile app)
+
+🔒 Hak akses multi-level (Admin, Guru, Superadmin)
+🧾 Log aktivitas user
+
+🧪 Tryout atau Latihan Mandiri
+🗣️ Rekaman jawaban Speaking (untuk evaluasi manual)
+🌐 Multi-bahasa antarmuka
+📊 Statistik soal: tingkat kesulitan & akurasi
