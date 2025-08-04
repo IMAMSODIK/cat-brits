@@ -84,7 +84,7 @@
                 e.preventDefault();
                 $('#reset-error').addClass('d-none');
 
-                let button = $(this);
+                let button = $('#reset-submit');
 
                 button.prop('disabled', true);
                 $('body').css('cursor', 'wait');
