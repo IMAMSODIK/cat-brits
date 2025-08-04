@@ -332,8 +332,7 @@
                                 response.errors
                             );
                         } else {
-                            showRegisterError(
-                                response.message || 'An error occurred. Please try again.'
+                            showRegisterError('An error occurred. Please try again.'
                             );
                         }
                     }
