@@ -93,8 +93,8 @@
                 const confirm = $('#confirm-password').val();
 
                 if (password !== confirm) {
-                    button.prop('disabled', true);
-                    $('body').css('cursor', 'wait');
+                    button.prop('disabled', false);
+                    $('body').css('cursor', 'default');
                     $('#reset-error').removeClass('d-none').find('#reset-error-message').text(
                         "Passwords do not match.");
                     return;
