@@ -24,7 +24,9 @@
             
             @include('layouts.sidebar')
 
-            @yield('content')
+            <div class="page-body">
+                @yield('content')
+            </div>
 
             @include('layouts.footer')
         </div>

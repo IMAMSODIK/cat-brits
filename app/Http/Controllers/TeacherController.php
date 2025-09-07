@@ -20,7 +20,7 @@ class TeacherController extends Controller
 
             return view('teacher.index', $data);
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data guru.');
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
         }
     }
 

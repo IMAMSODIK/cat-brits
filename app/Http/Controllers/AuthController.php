@@ -21,7 +21,7 @@ class AuthController extends Controller
     public function loginCheck(Request $r)
     {
         $validator = Validator::make($r->all(), [
-            'email' => 'required|string',
+            'email' => 'required|string|email',
             'password' => 'required|min:5'
         ]);
 
@@ -33,7 +33,19 @@ class AuthController extends Controller
             ], 422);
         }
 
-        if (Auth::attempt(['email' => $r['email'], 'password' => $r['password']])) {
+        $user = User::where('email', $r->email)
+            ->where('status', 1) 
+            ->first();
+
+        if (!$user) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'User tidak ditemukan atau tidak aktif'
+            ], 401);
+        }
+
+        if (password_verify($r->password, $user->password)) {
+            Auth::login($user);
             $r->session()->regenerate();
 
             return response()->json([

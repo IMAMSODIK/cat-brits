@@ -61,3 +61,69 @@ Tambah/Edit/Hapus Soal
 🗣️ Rekaman jawaban Speaking (untuk evaluasi manual)
 🌐 Multi-bahasa antarmuka
 📊 Statistik soal: tingkat kesulitan & akurasi
+
+
+
+
+
+dashboard
+sidebar
+Admin
+change password
+
+daftar student
+verifikasi student
+student score
+        - Reading
+        - Writing
+        - Listening
+        - Speaking
+teacher management
+
+
+teacher
+-------
+schedule video session
+start session
+daftar penilaian
+        - Reading
+        - Writing
+        - Listening
+        - Speaking
+
+
+student
+-------
+ielts menu
+
+
+
+pengumuman administrasi dan wawancara
+dashbaord peserta keterantgan beasiswa belum terganti
+admin belum bisa login
+backup daftar alumni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+admin
+dashboard
+teachers
+student

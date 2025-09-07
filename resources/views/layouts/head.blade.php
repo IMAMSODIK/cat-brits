@@ -27,7 +27,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/animate.css') }}">
 <!-- Range slider css-->
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/rangeslider/rSlider.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/animate.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/prism.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/fullcalender.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/datatables.css') }}">

@@ -35554,7 +35554,7 @@ html {
   margin: 30px 0;
 }
 .user-profile .hovercard .cardheader {
-  background: url(../images/other-images/bg-profile.png);
+  background: url(../../../own_assets/images/banner.jpg);
   background-size: cover;
   background-position: 10%;
   height: 470px;

@@ -1,83 +1,77 @@
 @extends('layouts.template')
 
+@section('own_style')
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/select2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/owlcarousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/range-slider.css') }}">
+@endsection
+
 @section('content')
-    <div class="page-body">
-        <div class="container-fluid">
-            <div class="page-title">
-                <div class="row">
-                    <div class="col-6">
-                        <h4>Teachers</h4>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end">
-                        <button class="btn btn-success" id="tambah-data">Add Teacher</button>
-                    </div>
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Teachers</h4>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <button class="btn btn-success" id="tambah-data">Add Teacher</button>
                 </div>
             </div>
         </div>
-        <!-- Container-fluid starts-->
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Zero Configuration  Starts-->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
+    </div>
+
+    <div class="container-fluid product-wrapper sidebaron">
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @else
+            <div class="product-grid">
+                <div class="feature-products">
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="form-group m-0">
+                                    <input class="form-control" type="search" placeholder="Search.." data-original-title=""
+                                        title=""><i class="fa fa-search"></i>
                                 </div>
-                            @else
-                                <div class="table-responsive custom-scrollbar">
-                                    <table class="display" id="data-table">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10%; " class="text-center">No. </th>
-                                                <th style="">Teacher</th>
-                                                <th style="">Email</th>
-                                                <th style="">Token</th>
-                                                <th style="width: 10%; " class="text-center">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php $index = 1; @endphp
-                                            @foreach ($data as $d)
-                                                <tr>
-                                                    <td style="" class="text-center">{{ $index++ }}</td>
-                                                    <td class="py-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="me-3">
-                                                                <img src="{{ $d->foto ? asset('storage/profile') . '/' . $d->foto : asset('own_assets/images/avatar.png') }}"
-                                                                    alt="User Photo" class="rounded"
-                                                                    style="width: 60px; height: 60px; object-fit: cover;">
-                                                            </div>
-                                                            <div class="d-flex flex-column">
-                                                                <strong>{{ $d->name }}</strong>
-                                                                <small class="text-muted">{{ '@' . $d->username }}</small>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td style="">{{ $d->email }}</td>
-                                                    <td style="">{{ $d->token }}</td>
-                                                    <td class="text-center">
-                                                        <ul class="action d-flex justify-content-center">
-                                                            <li class="edit" data-id="{{ $d->id }}"> <a
-                                                                    href="#"><i class="icon-pencil-alt"
-                                                                        style="font-size: 25px"></i></a></li>
-                                                            <li class="delete" data-id="{{ $d->id }}"><a
-                                                                    href="#"><i class="icon-trash"
-                                                                        style="font-size: 25px"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            @endif
+                            </form>
                         </div>
                     </div>
                 </div>
+                <div class="product-wrapper-grid" style="opacity: 1;">
+                    <div class="row">
+                        @foreach ($data as $d)
+                            <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer" data-id="{{$d->id}}">
+                                <div class="card">
+                                    <div class="product-box">
+                                        <div class="product-img">
+                                            @if ($d->foto)
+                                                <img class="img-fluid" src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
+                                            @else
+                                                <img class="img-fluid" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                            @endif
+                                            @if ($d->status == 1)
+                                                <div class="ribbon ribbon-success">Active</div>
+                                            @else
+                                                <div class="ribbon ribbon-danger">Nonactive</div>
+                                            @endif
+                                        </div>
+                                        <div class="product-details">
+                                            <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                            <a href="product-page.html">
+                                                <h5>{{ $d->name }}</h5>
+                                            </a>
+                                            <p>{{ $d->email }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 
     <div class="modal fade bd-example-modal-lg" id="tambah-data-modal" tabindex="-1" role="dialog"
@@ -96,9 +90,11 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">Upload Teacher Photo</label>
-                                            <input type="file" class="form-control input-air-primary" id="foto" accept="image/*">
+                                            <input type="file" class="form-control input-air-primary" id="foto"
+                                                accept="image/*">
                                             <div class="mt-3">
-                                                <img id="preview-foto" src="#" alt="Photo Preview" class="img-thumbnail d-none" style="max-width: 150px;">
+                                                <img id="preview-foto" src="#" alt="Photo Preview"
+                                                    class="img-thumbnail d-none" style="max-width: 150px;">
                                             </div>
                                         </div>
                                     </div>
@@ -133,10 +129,12 @@
                                 </div>
                                 <div class="row mb-3 align-items-center">
                                     <div class="col-8">
-                                        <input type="text" class="form-control input-air-primary" id="token" placeholder="Teacher's Token">
+                                        <input type="text" class="form-control input-air-primary" id="token"
+                                            placeholder="Teacher's Token">
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-success w-100" id="generate-token">Generate Token</button>
+                                        <button class="btn btn-success w-100" id="generate-token">Generate
+                                            Token</button>
                                     </div>
                                 </div>
 
@@ -246,8 +244,17 @@
 
 @section('own_script')
     <script src="{{ asset('own_assets/scripts/teacher.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/range-slider/rangeslider-script.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/touchspin/vendors.min.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/touchspin/touchspin.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/touchspin/input-groups.min.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/owlcarousel/owl.carousel.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/select2/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/select2/select2-custom.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/js/product-tab.js') }}"></script>
     <script>
-        document.getElementById('foto').addEventListener('change', function (event) {
+        document.getElementById('foto').addEventListener('change', function(event) {
             const [file] = event.target.files;
             if (file) {
                 const preview = document.getElementById('preview-foto');
