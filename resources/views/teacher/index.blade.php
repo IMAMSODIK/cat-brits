@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="product-wrapper-grid" style="opacity: 1;">
-                    <div class="row">
+                    <div class="row data-ctr">
                         @foreach ($data as $d)
                             <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer" data-id="{{$d->id}}">
                                 <div class="card">
@@ -59,9 +59,7 @@
                                         </div>
                                         <div class="product-details">
                                             <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
-                                            <a href="product-page.html">
-                                                <h5>{{ $d->name }}</h5>
-                                            </a>
+                                            <h5>{{ $d->name }}</h5>
                                             <p>{{ $d->email }}</p>
                                         </div>
                                     </div>
@@ -109,35 +107,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Enter Teacher Email</label>
                                             <input type="text" class="form-control input-air-primary" id="email"
                                                 placeholder="Enter Teacher Name">
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="username">Enter Teacher Username</label>
-                                            <input type="text" class="form-control input-air-primary" id="username"
-                                                placeholder="Enter Teacher Username">
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="mb-2">
-                                    <label class="form-label" for="token">Generate Teacher's Token</label>
-                                </div>
-                                <div class="row mb-3 align-items-center">
-                                    <div class="col-8">
-                                        <input type="text" class="form-control input-air-primary" id="token"
-                                            placeholder="Teacher's Token">
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-success w-100" id="generate-token">Generate
-                                            Token</button>
-                                    </div>
-                                </div>
-
                             </div>
                             <div class="card-footer text-end">
                                 <input class="btn btn-light" type="button" id="cancel-add" value="Cancel">
@@ -166,27 +143,41 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_judul">Nama</label>
-                                            <input type="text" class="form-control input-air-primary" id="edit_judul"
-                                                placeholder="Nama">
+                                            <label class="form-label" for="edit_foto">Upload Teacher Photo</label>
+                                            <input type="file" class="form-control input-air-primary" id="edit_foto"
+                                                accept="image/*">
+                                            <div class="mt-3">
+                                                <img id="preview-edit_foto" src="#" alt="Photo Preview"
+                                                    class="img-thumbnail d-none" style="max-width: 150px;">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_deskripsi">Deskripsi</label>
-                                            <div class="toolbar-box form-control input-air-primary">
-                                                <div id="toolbar-desc"><span class="ql-formats"></span></div>
-                                                <div class="quill-paragraph" id="edit_deskripsi"></div>
-                                            </div>
+                                            <label class="form-label" for="edit_nama">Enter Teacher Name</label>
+                                            <input type="text" class="form-control input-air-primary" id="edit_nama"
+                                                placeholder="Enter Teacher Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="edit_email">Enter Teacher Email</label>
+                                            <input type="text" class="form-control input-air-primary" id="edit_email"
+                                                placeholder="Enter Teacher Name">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer text-end">
+                            <div class="card-footer text-end" style="width: 100%">
                                 <input class="btn btn-light" type="button" id="cancel-edit" value="Cancel">
-                                <button class="btn btn-primary me-3" type="button" id="update">Update</button>
+                                <button class="btn btn-primary" type="button" id="update">Update</button>
+                                <button class="btn btn-warning" type="button" id="reset">Reset Pasword</button>
+                                <button class="btn btn-danger" type="button" id="delete">Deactivate</button>
+                                <button class="btn btn-info" type="button" id="activate">Activate</button>
                             </div>
                         </form>
                     </div>

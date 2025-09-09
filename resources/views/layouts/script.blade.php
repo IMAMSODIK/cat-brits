@@ -80,6 +80,7 @@
 
         return 'Rp. ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
+
 </script>
 <script src="{{ asset('dashboard_assets/assets/js/editors/quill.js') }}"></script>
 

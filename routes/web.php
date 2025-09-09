@@ -35,6 +35,11 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/teacher', [TeacherController::class, 'index']);
     Route::post('/teacher/store', [TeacherController::class, 'store']);
+    Route::get('/teacher/detail', [TeacherController::class, 'detail']);
+    Route::post('/teacher/update', [TeacherController::class, 'update']);
+    Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
+    Route::post('/teacher/delete', [TeacherController::class, 'delete']);
+    Route::post('/teacher/activate', [TeacherController::class, 'activate']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
 });
