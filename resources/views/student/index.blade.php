@@ -11,11 +11,11 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-4">
-                    <h4>Teachers</h4>
+                    <h4>Students</h4>
                 </div>
                 <div class="col-8 d-flex justify-content-end">
                     <button class="btn btn-primary" id="tambah-data" style="margin-right: 5px">
-                        <i class="fa fa-plus-circle me-2"></i> Add Teacher
+                        <i class="fa fa-plus-circle me-2"></i> Add Student
                     </button>
 
                     <button class="btn btn-primary" id="filter">
@@ -73,7 +73,7 @@
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
                         @foreach ($data as $d)
-                            <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer"
+                            <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer"
                                 data-id="{{ $d->id }}" data-status="{{ $d->status }}">
                                 <div class="card">
                                     <div class="product-box">
@@ -92,7 +92,7 @@
                                             @endif
                                         </div>
                                         <div class="product-details">
-                                            <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                            <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
                                             <h5>{{ $d->name }}</h5>
                                             <p>{{ $d->email }}</p>
                                         </div>
@@ -118,7 +118,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myExtraLargeModal">Add Teacher</h4>
+                    <h4 class="modal-title" id="myExtraLargeModal">Add Student</h4>
                     <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body dark-modal">
@@ -128,7 +128,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="foto">Upload Teacher Photo</label>
+                                            <label class="form-label" for="foto">Upload Student Photo</label>
                                             <input type="file" class="form-control input-air-primary" id="foto"
                                                 accept="image/*">
                                             <div class="mt-3">
@@ -141,18 +141,18 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="nama">Enter Teacher Name</label>
+                                            <label class="form-label" for="nama">Enter Student Name</label>
                                             <input type="text" class="form-control input-air-primary" id="nama"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="email">Enter Teacher Email</label>
+                                            <label class="form-label" for="email">Enter Student Email</label>
                                             <input type="text" class="form-control input-air-primary" id="email"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_foto">Upload Teacher Photo</label>
+                                            <label class="form-label" for="edit_foto">Upload Student Photo</label>
                                             <input type="file" class="form-control input-air-primary" id="edit_foto"
                                                 accept="image/*">
                                             <div class="mt-3">
@@ -197,18 +197,18 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_nama">Enter Teacher Name</label>
+                                            <label class="form-label" for="edit_nama">Enter Student Name</label>
                                             <input type="text" class="form-control input-air-primary" id="edit_nama"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_email">Enter Teacher Email</label>
+                                            <label class="form-label" for="edit_email">Enter Student Email</label>
                                             <input type="text" class="form-control input-air-primary" id="edit_email"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
@@ -275,7 +275,7 @@
 @endsection
 
 @section('own_script')
-    <script src="{{ asset('own_assets/scripts/teacher.js') }}"></script>
+    <script src="{{ asset('own_assets/scripts/student.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/range-slider/rangeslider-script.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/touchspin/vendors.min.js') }}"></script>

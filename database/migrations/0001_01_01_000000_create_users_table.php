@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->string('token')->nullable();
             $table->boolean('status')->default(1);
+            $table->boolean('verification_status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

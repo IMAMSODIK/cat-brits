@@ -47,10 +47,21 @@ class DatabaseSeeder extends Seeder
             'token' => Str::random(5)
         ]);
 
+        for($i = 1; $i <= 60; $i++){
+            User::create([
+                'name' => 'Dustin Poirer ' . $i,
+                'password' => bcrypt('12345'),
+                'role' => 'teacher',
+                'email' => 'dustin@gmail.com' . $i,
+                'token' => Str::random(5)
+            ]);
+        }
+
         User::create([
             'name' => 'Michael Johnson',
             'password' => bcrypt('12345'),
             'role' => 'student',
+            'verification_status' => 1,
             'email' => 'mikael@gmail.com',
         ]);
 
@@ -58,6 +69,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Fermin Lopez',
             'password' => bcrypt('12345'),
             'role' => 'student',
+            'verification_status' => 1,
             'email' => 'fermin@gmail.com',
         ]);
 
@@ -65,6 +77,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Lamine Yamala',
             'password' => bcrypt('12345'),
             'role' => 'student',
+            'verification_status' => 1,
             'email' => 'lamine@gmail.com',
         ]);
     }

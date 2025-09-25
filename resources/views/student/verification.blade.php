@@ -11,18 +11,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-4">
-                    <h4>Teachers</h4>
+                    <h4>Students Verification</h4>
                 </div>
-                <div class="col-8 d-flex justify-content-end">
-                    <button class="btn btn-primary" id="tambah-data" style="margin-right: 5px">
-                        <i class="fa fa-plus-circle me-2"></i> Add Teacher
-                    </button>
-
+                {{-- <div class="col-8 d-flex justify-content-end">
                     <button class="btn btn-primary" id="filter">
                         <i class="fa fa-filter me-2"></i> Filter
                     </button>
 
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -33,7 +29,7 @@
                 {{ session('error') }}
             </div>
         @else
-            <div class="card d-none" id="filter-section">
+            {{-- <div class="card d-none" id="filter-section">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
@@ -55,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="product-grid">
                 <div class="feature-products">
@@ -73,7 +69,7 @@
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
                         @foreach ($data as $d)
-                            <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer"
+                            <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer"
                                 data-id="{{ $d->id }}" data-status="{{ $d->status }}">
                                 <div class="card">
                                     <div class="product-box">
@@ -85,14 +81,14 @@
                                                 <img class="img-fluid" src="{{ asset('own_assets/images/avatar.png') }}"
                                                     alt="Profile Picture">
                                             @endif
-                                            @if ($d->status == 1)
+                                            {{-- @if ($d->status == 1)
                                                 <div class="ribbon ribbon-success">Active</div>
                                             @else
                                                 <div class="ribbon ribbon-danger">Nonactive</div>
-                                            @endif
+                                            @endif --}}
                                         </div>
                                         <div class="product-details">
-                                            <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                            <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
                                             <h5>{{ $d->name }}</h5>
                                             <p>{{ $d->email }}</p>
                                         </div>
@@ -113,12 +109,12 @@
         @endif
     </div>
 
-    <div class="modal fade bd-example-modal-lg" id="tambah-data-modal" tabindex="-1" role="dialog"
+    {{-- <div class="modal fade bd-example-modal-lg" id="tambah-data-modal" tabindex="-1" role="dialog"
         aria-labelledby="myExtraLargeModal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myExtraLargeModal">Add Teacher</h4>
+                    <h4 class="modal-title" id="myExtraLargeModal">Add Student</h4>
                     <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body dark-modal">
@@ -128,7 +124,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="foto">Upload Teacher Photo</label>
+                                            <label class="form-label" for="foto">Upload Student Photo</label>
                                             <input type="file" class="form-control input-air-primary" id="foto"
                                                 accept="image/*">
                                             <div class="mt-3">
@@ -141,18 +137,18 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="nama">Enter Teacher Name</label>
+                                            <label class="form-label" for="nama">Enter Student Name</label>
                                             <input type="text" class="form-control input-air-primary" id="nama"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="email">Enter Teacher Email</label>
+                                            <label class="form-label" for="email">Enter Student Email</label>
                                             <input type="text" class="form-control input-air-primary" id="email"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Enter Student Name">
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +162,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="modal fade bd-example-modal-lg" id="edit-data-modal" tabindex="-1" role="dialog"
         aria-labelledby="myExtraLargeModal" aria-hidden="true">
@@ -184,9 +180,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_foto">Upload Teacher Photo</label>
-                                            <input type="file" class="form-control input-air-primary" id="edit_foto"
-                                                accept="image/*">
+                                            <label class="form-label" for="edit_foto">Upload Student Photo</label>
                                             <div class="mt-3">
                                                 <img id="preview-edit_foto" src="#" alt="Photo Preview"
                                                     class="img-thumbnail d-none" style="max-width: 150px;">
@@ -197,27 +191,25 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_nama">Enter Teacher Name</label>
+                                            <label class="form-label" for="edit_nama">Student Name</label>
                                             <input type="text" class="form-control input-air-primary" id="edit_nama"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Student Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label class="form-label" for="edit_email">Enter Teacher Email</label>
+                                            <label class="form-label" for="edit_email">Student Email</label>
                                             <input type="text" class="form-control input-air-primary" id="edit_email"
-                                                placeholder="Enter Teacher Name">
+                                                placeholder="Student Name">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer text-end" style="width: 100%">
                                 <input class="btn btn-light" type="button" id="cancel-edit" value="Cancel">
-                                <button class="btn btn-primary" type="button" id="update">Update</button>
-                                <button class="btn btn-warning" type="button" id="reset">Reset Pasword</button>
-                                <button class="btn btn-danger" type="button" id="delete">Deactivate</button>
+                                <button class="btn btn-danger" type="button" id="delete">Delete</button>
                                 <button class="btn btn-info" type="button" id="activate">Activate</button>
                             </div>
                         </form>
@@ -275,7 +267,7 @@
 @endsection
 
 @section('own_script')
-    <script src="{{ asset('own_assets/scripts/teacher.js') }}"></script>
+    <script src="{{ asset('own_assets/scripts/student_verification.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/range-slider/rangeslider-script.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/touchspin/vendors.min.js') }}"></script>

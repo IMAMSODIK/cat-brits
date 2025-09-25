@@ -45,4 +45,15 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+    body, p, h1, h2, h3, h4, h5, h6, a, button, input, textarea, span, div {
+        font-family: "Quicksand", sans-serif;
+    }
+</style>
+
+
 @yield('own_style')

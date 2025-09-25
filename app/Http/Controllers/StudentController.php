@@ -8,21 +8,22 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class TeacherController extends Controller
+class StudentController extends Controller
 {
     public function index()
     {
         try {
             $data = [
-                'pageTitle' => "Teachers",
-                'data'      => User::where('role', 'teacher')
-                    ->orderBy('status', 'desc')
-                    ->orderBy('id', 'desc')
-                    ->take(20)
-                    ->get()
+                'pageTitle' => "Students",
+                'data' => User::where('role', 'student')
+                            ->where('verification_status', 1)
+                            ->orderBy('status', 'desc')
+                            ->orderBy('id', 'desc')
+                            ->take(20)
+                            ->get()
             ];
 
-            return view('teacher.index', $data);
+            return view('student.index', $data);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
         }
@@ -56,12 +57,12 @@ class TeacherController extends Controller
                 'email'    => $request->email,
                 'password' => bcrypt($request->email),
                 'foto'  => $path,
-                'role'     => 'teacher'
+                'role'     => 'student'
             ]);
 
             return response()->json([
                 'status'  => true,
-                'message' => 'Teacher information saved successfully.',
+                'message' => 'Student information saved successfully.',
                 'data'    => User::where('id', $data->id)->select('id', 'name', 'email', 'status', 'foto')->first()
             ], 200);
         } catch (\Exception $e) {
@@ -143,13 +144,13 @@ class TeacherController extends Controller
 
             return response()->json([
                 'status'  => true,
-                'message' => 'Teacher information updated successfully.',
+                'message' => 'Student information updated successfully.',
                 'data'    => $user
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status'  => false,
-                'message' => 'Failed to update teacher information.',
+                'message' => 'Failed to update student information.',
                 'errors'  => ['exception' => [$e->getMessage()]]
             ], 500);
         }
@@ -183,7 +184,7 @@ class TeacherController extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'status'  => false,
-                'message' => 'Failed to update teacher information.',
+                'message' => 'Failed to update student information.',
                 'errors'  => ['exception' => [$e->getMessage()]]
             ], 500);
         }
@@ -211,13 +212,13 @@ class TeacherController extends Controller
 
             return response()->json([
                 'status'  => true,
-                'message' => 'The teacher has been deactivated.',
+                'message' => 'The student has been deactivated.',
                 'data'    => $user
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status'  => false,
-                'message' => 'Failed to update teacher information.',
+                'message' => 'Failed to update student information.',
                 'errors'  => ['exception' => [$e->getMessage()]]
             ], 500);
         }
@@ -244,13 +245,13 @@ class TeacherController extends Controller
 
             return response()->json([
                 'status'  => true,
-                'message' => 'The teacher has been Activated.',
+                'message' => 'The student has been Activated.',
                 'data'    => $user
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status'  => false,
-                'message' => 'Failed to update teacher information.',
+                'message' => 'Failed to update student information.',
                 'errors'  => ['exception' => [$e->getMessage()]]
             ], 500);
         }
@@ -260,7 +261,8 @@ class TeacherController extends Controller
     {
         $keyword = $request->get('q');
 
-        $users = User::where('role', 'teacher')
+        $users = User::where('role', 'student')
+            ->where('verification_status', 1)
             ->where(function ($query) use ($keyword) {
                 $query->where('name', 'like', "%{$keyword}%")
                     ->orWhere('email', 'like', "%{$keyword}%");
@@ -270,7 +272,7 @@ class TeacherController extends Controller
         if ($users->isEmpty()) {
             return response()->json([
                 'status' => false,
-                'message' => 'No teacher found.'
+                'message' => 'No student found.'
             ], 200);
         }
 
@@ -285,7 +287,8 @@ class TeacherController extends Controller
         $offset = (int) $request->get('offset', 0);
         $limit  = 10;
 
-        $users = User::where('role', 'teacher')
+        $users = User::where('role', 'student')
+            ->where('verification_status', 1)
             ->orderBy('id', 'desc')
             ->skip($offset)
             ->take($limit)

@@ -3,7 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\IeltsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentVerificationController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +43,28 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
     Route::post('/teacher/delete', [TeacherController::class, 'delete']);
     Route::post('/teacher/activate', [TeacherController::class, 'activate']);
+    Route::get('/teacher/search', [TeacherController::class, 'search']);
+    Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
+
+    Route::get('/students', [StudentController::class, 'index']);
+    Route::post('/students/store', [StudentController::class, 'store']);
+    Route::get('/students/detail', [StudentController::class, 'detail']);
+    Route::post('/students/update', [StudentController::class, 'update']);
+    Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);
+    Route::post('/students/delete', [StudentController::class, 'delete']);
+    Route::post('/students/activate', [StudentController::class, 'activate']);
+    Route::get('/students/search', [StudentController::class, 'search']);
+    Route::get('/students/load-more', [StudentController::class, 'loadMore']);
+
+    Route::get('/students-verification', [StudentVerificationController::class, 'index']);
+    Route::get('/students-verification/detail', [StudentVerificationController::class, 'detail']);
+    Route::post('/students-verification/delete', [StudentVerificationController::class, 'delete']);
+    Route::post('/students-verification/activate', [StudentVerificationController::class, 'activate']);
+    Route::get('/students-verification/search', [StudentVerificationController::class, 'search']);
+    Route::get('/students-verification/load-more', [StudentVerificationController::class, 'loadMore']);
+
+    Route::get('/ielts', [IeltsController::class, 'index']);
+    Route::get('/ielts/categories', [IeltsController::class, 'categories']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
 });

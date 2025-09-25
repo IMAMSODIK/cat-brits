@@ -42,7 +42,7 @@ $(document).on("click", ".detail-user", function () {
     modal = "edit-data-modal";
 
     $.ajax({
-        url: "/teacher/detail",
+        url: "/students/detail",
         method: "GET",
         data: {
             'id': id,
@@ -169,7 +169,7 @@ $("#store").on("click", function () {
     formData.append("email", $("#email").val());
 
     $.ajax({
-        url: "/teacher/store",
+        url: "/students/store",
         method: "POST",
         processData: false,
         contentType: false,
@@ -198,7 +198,7 @@ $("#store").on("click", function () {
                                     <div class="ribbon ribbon-${(response.data.status) ? 'success' : 'danger'}">${(response.data.status) ? 'Active' : 'Nonactive'}</div>
                                 </div>
                                 <div class="product-details">
-                                    <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                    <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
                                     <h5>${response.data.name}</h5>
                                     <p>${response.data.email}</p>
                                 </div>
@@ -266,7 +266,7 @@ $("#update").on("click", function () {
     formData.append("email", $("#edit_email").val());
 
     $.ajax({
-        url: "/teacher/update",
+        url: "/students/update",
         method: "POST",
         processData: false,
         contentType: false,
@@ -346,7 +346,7 @@ $("#reset").on("click", function () {
     formData.append("id", $("#id").val());
 
     $.ajax({
-        url: "/teacher/reset-password",
+        url: "/students/reset-password",
         method: "POST",
         processData: false,
         contentType: false,
@@ -412,7 +412,7 @@ $("#delete").on("click", function () {
     formData.append("id", $("#id").val());
 
     $.ajax({
-        url: "/teacher/delete",
+        url: "/students/delete",
         method: "POST",
         processData: false,
         contentType: false,
@@ -490,7 +490,7 @@ $("#activate").on("click", function () {
     formData.append("id", $("#id").val());
 
     $.ajax({
-        url: "/teacher/activate",
+        url: "/students/activate",
         method: "POST",
         processData: false,
         contentType: false,
@@ -561,7 +561,7 @@ $("#search").on('input', function () {
     let text = $(this).val();
 
     $.ajax({
-        url: "/teacher/search",
+        url: "/students/search",
         method: "GET",
         data: { q: text },
         success: function (response) {
@@ -583,7 +583,7 @@ $("#search").on('input', function () {
                                         ${statusRibbon}
                                     </div>
                                     <div class="product-details">
-                                        <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                        <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
                                         <h5>${user.name}</h5>
                                         <p>${user.email}</p>
                                     </div>
@@ -632,7 +632,7 @@ $("#load-more").on("click", function() {
     button.prop("disabled", true).text("Loading...");
 
     $.ajax({
-        url: "/teacher/load-more",
+        url: "/students/load-more",
         method: "GET",
         data: { offset: offset },
         success: function(response) {
@@ -656,7 +656,7 @@ $("#load-more").on("click", function() {
                                         ${statusRibbon}
                                     </div>
                                     <div class="product-details">
-                                        <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
+                                        <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
                                         <h5>${user.name}</h5>
                                         <p>${user.email}</p>
                                     </div>
