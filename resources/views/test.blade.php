@@ -601,6 +601,61 @@
             color: #1d4ed8;
         }
 
+        .q-dropdown {
+            width: 220px;
+            /* Lebar dropdown */
+            padding: 6px 10px;
+            /* Ruang dalam dropdown */
+            border: 1px solid #ccc;
+            /* Border abu-abu */
+            border-radius: 6px;
+            /* Sudut membulat */
+            background-color: #fff;
+            /* Warna background */
+            font-size: 14px;
+            /* Ukuran font */
+            color: #333;
+            /* Warna teks */
+            appearance: none;
+            /* Hilangkan style default browser */
+            -webkit-appearance: none;
+            /* Safari / Chrome */
+            -moz-appearance: none;
+            /* Firefox */
+            cursor: pointer;
+            /* Tanda pointer saat hover */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        /* Hover & fokus */
+        .q-dropdown:hover {
+            border-color: #888;
+        }
+
+        .q-dropdown:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+            outline: none;
+        }
+
+        /* Tambahan: arrow custom (opsional) */
+        .q-dropdown-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .q-dropdown-wrapper::after {
+            content: "▾";
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #555;
+            font-size: 12px;
+        }
+
+
         /* Responsif: tumpuk vertikal di layar kecil */
         @media (max-width: 767px) {
             .reading-grid {
@@ -941,8 +996,10 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
-                data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
+                data-id="tfng2">True/False/Not Given 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
                 data-id="ynng">Yes/No/Not Given</button>
             <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
@@ -963,7 +1020,7 @@
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">Reading Passage</h3>
+                            <h3 class="passage-title">Stepwells</h3>
                             <div class="passage-body">
                                 <p>A millennium ago, stepwells were fundamental to life in the driest parts of India.
                                     Although many have been neglected, recent restoration has returned them to their
@@ -994,7 +1051,8 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body">
                                 <fieldset class="q-item">
-                                    <p class="lead">Do the following statements agree with the information given in the
+                                    <p class="lead">Do the following statements agree with the information given in
+                                        the
                                         Reading Passage?
                                     </p>
                                     <p>In boxes on your answer sheet, write</p>
@@ -1128,33 +1186,612 @@
                                 </fieldset>
                             </form>
                         </aside>
-
-                        <div class="highlight-toolbar" id="highlightToolbar">
-                            <div class="color-option yellow" data-color="yellow"></div>
-                            <div class="color-option green" data-color="green"></div>
-                            <div class="color-option blue" data-color="blue"></div>
-                            <div class="color-option pink" data-color="pink"></div>
-                            <div class="color-option orange" data-color="orange"></div>
-                            <button id="highlightNote" title="Add Note">📝</button>
-                            <button id="removeHighlight" title="Remove Highlight">✕</button>
-                        </div>
-
-                        <!-- Note Popup -->
-                        <div class="note-popup" id="notePopup">
-                            <textarea id="noteText" placeholder="Tulis catatan..."></textarea>
-                            <div>
-                                <button id="saveNote" class="save">Simpan</button>
-                                <button id="cancelNote" class="cancel">Batal</button>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                <div class="x-panel-inner">Konten: True/False/Not Given 2</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3 class="passage-title">A</h3>
+                                <p>It is difficult to conceive of vigorous economic growth without an efficient
+                                    transport system. Although modern information technologies can reduce the demand for
+                                    physical transport by facilitating teleworking and teleservices, the requirement for
+                                    transport continues to increase. There are two key factors behind this trend. For
+                                    passenger transport, the determining factor is the spectacular growth in car use.
+                                    The number of cars on European Union (EU) roads saw an increase of three million
+                                    cars each year from 1990 to 2010, and in the next decade the EU will see a further
+                                    substantial increase in its fleet.</p>
+                                <h3 class="passage-title">B</h3>
+                                <p>As far as goods transport is concerned, growth is due to a large extent to changes in
+                                    the European economy and its system of production. In the last 20 years, as internal
+                                    frontiers have been abolished, the EU has moved from a ‘stock’ economy to a ‘flow’
+                                    economy. This phenomenon has been emphasised by the relocation of some industries,
+                                    particularly those which are labour intensive, to reduce production costs, even
+                                    though the production site is hundreds or even thousands of kilometres away from the
+                                    final assembly plant or away from users.</p>
+                                <h3 class="passage-title">C</h3>
+                                <p>The strong economic growth expected in countries which are candidates for entry to
+                                    the EU will also increase transport flows, in particular road haulage traffic. In
+                                    1998, some of these countries already exported more than twice their 1990 volumes
+                                    and imported more than five times their 1990 volumes. And although many candidate
+                                    countries inherited a transport system which encourages rail, the distribution
+                                    between modes has tipped sharply in favour of road transport since the 1990s.
+                                    Between 1990 and 1998, road haulage increased by 19.4%, while during the same period
+                                    rail haulage decreased by 43.5%, although – and this could benefit the enlarged EU –
+                                    it is still on average at a much higher level than in existing member states.</p>
+                                <h3 class="passage-title">D</h3>
+                                <p>However, a new imperative-sustainable development – offers an opportunity for
+                                    adapting the EU’s common transport policy. This objective, agreed by the Gothenburg
+                                    European Council, has to be achieved by integrating environmental considerations
+                                    into Community policies, and shifting the balance between modes of transport lies at
+                                    the heart of its strategy. The ambitious objective can only be fully achieved by
+                                    2020, but proposed measures are nonetheless a first essential step towards a
+                                    sustainable transport system which will ideally be in place in 30 years’ time, that
+                                    is by 2040.</p>
+                                <h3 class="passage-title">E</h3>
+                                <p>In 1998, energy consumption in the transport sector was to blame for 28% of emissions
+                                    of CO2, the leading greenhouse gas. According to the latest estimates, if nothing is
+                                    done to reverse the traffic growth trend, CO2 emissions from transport can be
+                                    expected to increase by around 50% to 1,113 billion tonnes by 2020, compared with
+                                    the 739 billion tonnes recorded in 1990. Once again, road transport is the main
+                                    culprit since it alone accounts for 84% of the CO2 emissions attributable to
+                                    transport. Using alternative fuels and improving energy efficiency is thus both an
+                                    ecological necessity and a technological challenge.</p>
                             </div>
-                        </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body">
+                                <fieldset class="q-item">
+                                    <p class="lead">Do the following statements agree with the information given in
+                                        the
+                                        Reading Passage?
+                                    </p>
+                                    <p>In boxes on your answer sheet, write</p>
+                                    <ul class="legend">
+                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
+                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
+                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        The need for transport is growing, despite technological developments.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">2</span>
+                                        To reduce production costs, some industries have been moved closer to their
+                                        relevant consumers.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text">
+                                        <span class="q-number">3</span>
+                                        Cars are prohibitively expensive in some EU candidate countries.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text">
+                                        <span class="q-number">4</span>
+                                        The Gothenburg European Council was set up 30 years ago.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        By the end of this decade, CO2 emissions from transport are predicted to reach
+                                        739 billion tonnes.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </aside>
                     </div>
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Konten: Yes/No/Not Given</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3 class="passage-title">The psychology of innovation</h3>
+                                <p><i>Why are so few companies truly innovative?</i></p>
+                                <p>Innovation is key to business survival, and companies put substantial resources into
+                                    inspiring employees to develop new ideas. There are, nevertheless, people working in
+                                    luxurious, state-of-the-art centres designed to stimulate innovation who find that
+                                    their environment doesn’t make them feel at all creative. And there are those who
+                                    don’t have a budget, or much space, but who innovate successfully.</p>
+                                <p>For Robert B. Cialdini, Professor of Psychology at Arizona State University, one
+                                    reason that companies don’t succeed as often as they should is that innovation
+                                    starts with recruitment. Research shows that the fit between an employee’s values
+                                    and a company’s values makes a difference to what contribution they make and
+                                    whether, two years after they join, they’re still at the company. Studies at Harvard
+                                    Business School show that, although some individuals may be more creative than
+                                    others, almost every individual can be creative in the right circumstances.</p>
+                                <p>One of the most famous photographs in the story of rock’n’roll emphasises Ciaidini’s
+                                    views. The 1956 picture of singers Elvis Presley, Carl Perkins, Johnny Cash and
+                                    Jerry Lee Lewis jamming at a piano in Sun Studios in Memphis tells a hidden story.
+                                    Sun’s ‘million-dollar quartet’ could have been a quintet. Missing from the picture
+                                    is Roy Orbison’ a greater natural singer than Lewis, Perkins or Cash. Sam Phillips,
+                                    who owned Sun, wanted to revolutionise popular music with songs that fused black and
+                                    white music, and country and blues. Presley, Cash, Perkins and Lewis instinctively
+                                    understood Phillips’s ambition and believed in it. Orbison wasn’t inspired by the
+                                    goal, and only ever achieved one hit with the Sun label.</p>
+                                <p>The value fit matters, says Cialdini, because innovation is, in part, a process of
+                                    change, and under that pressure we, as a species, behave differently, ‘When things
+                                    change, we are hard-wired to play it safe.’ Managers should therefore adopt an
+                                    approach that appears counterintuitive -they should explain what stands to be lost
+                                    if the company fails to seize a particular opportunity. Studies show that we
+                                    invariably take more gambles when threatened with a loss than when offered a reward.
+                                </p>
+                                <p>Managing innovation is a delicate art. It’s easy for a company to be pulled in
+                                    conflicting directions as the marketing, product development, and finance
+                                    departments each get different feedback from different sets of people. And without a
+                                    system which ensures collaborative exchanges within the company, it’s also easy for
+                                    small ‘pockets of innovation’ to disappear. Innovation is a contact sport. You can’t
+                                    brief people just by saying, ‘We’re going in this direction and I’m going to take
+                                    you with me.’</p>
+                                <p>Cialdini believes that this ‘follow-the-leader syndrome, is dangerous, not least
+                                    because it encourages bosses to go it alone. ‘It’s been scientifically proven that
+                                    three people will be better than one at solving problems, even if that one person is
+                                    the smartest person in the field.’ To prove his point, Cialdini cites an interview
+                                    with molecular biologist James Watson. Watson, together with Francis Crick,
+                                    discovered the structure of DNA, the genetic information carrier of all living
+                                    organisms. ‘When asked how they had cracked the code ahead of an array of highly
+                                    accomplished rival investigators, he said something that stunned me. He said he and
+                                    Crick had succeeded because they were aware that they weren’t the most intelligent
+                                    of the scientists pursuing the answer. The smartest scientist was called Rosalind
+                                    Franklin who, Watson said, “was so intelligent she rarely sought advice”.’</p>
+                                <p>Teamwork taps into one of the basic drivers of human behaviour. ‘The principle of
+                                    social proof is so pervasive that we don’t even recognise it,’ says Cialdini. ‘If
+                                    your project is being resisted, for example, by a group of veteran employees, ask
+                                    another old-timer to speak up for it.’ Cialdini is not alone in advocating this
+                                    strategy. Research shows that peer power, used horizontally not vertically, is much
+                                    more powerful than any boss’s speech.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body">
+                                <fieldset class="q-item">
+                                    <p class="lead">Do the following statements agree with the information given in
+                                        the
+                                        Reading Passage?
+                                    </p>
+                                    <p>In boxes on your answer sheet, write</p>
+                                    <ul class="legend">
+                                        <li><strong>YES</strong> if the statement agrees with the information</li>
+                                        <li><strong>NO</strong> if the statement contradicts the information</li>
+                                        <li><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks
+                                            about this.</li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        The physical surroundings in which a person works play a key role in determining
+                                        their creativity.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q1" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">2</span>
+                                        Most people have the potential to be creative.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q2" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text">
+                                        <span class="q-number">3</span>
+                                        Teams work best when their members are of equally matched intelligence.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q3" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text">
+                                        <span class="q-number">4</span>
+                                        It is easier for smaller companies to be innovative.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q4" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        A manager’s approval of an idea is more persuasive than that of a colleague.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="q5" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
                 <div class="x-panel-inner">Konten: Matching Sentence ending</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>For Robert B. Cialdini, Professor of Psychology at Arizona State University, one
+                                    reason that companies don’t succeed as often as they should is that innovation
+                                    starts with recruitment. Research shows that the fit between an employee’s values
+                                    and a company’s values makes a difference to what contribution they make and
+                                    whether, two years after they join, they’re still at the company. Studies at Harvard
+                                    Business School show that, although some individuals may be more creative than
+                                    others, almost every individual can be creative in the right circumstances.</p>
+                                <p>One of the most famous photographs in the story of rock’n’roll emphasises Ciaidini’s
+                                    views. The 1956 picture of singers Elvis Presley, Carl Perkins, Johnny Cash and
+                                    Jerry Lee Lewis jamming at a piano in Sun Studios in Memphis tells a hidden story.
+                                    Sun’s ‘million-dollar quartet’ could have been a quintet. Missing from the picture
+                                    is Roy Orbison’ a greater natural singer than Lewis, Perkins or Cash. Sam Phillips,
+                                    who owned Sun, wanted to revolutionise popular music with songs that fused black and
+                                    white music, and country and blues. Presley, Cash, Perkins and Lewis instinctively
+                                    understood Phillips’s ambition and believed in it. Orbison wasn’t inspired by the
+                                    goal, and only ever achieved one hit with the Sun label.</p>
+                                <p>The value fit matters, says Cialdini, because innovation is, in part, a process of
+                                    change, and under that pressure we, as a species, behave differently, ‘When things
+                                    change, we are hard-wired to play it safe.’ Managers should therefore adopt an
+                                    approach that appears counterintuitive -they should explain what stands to be lost
+                                    if the company fails to seize a particular opportunity. Studies show that we
+                                    invariably take more gambles when threatened with a loss than when offered a reward.
+                                </p>
+                                <p>Managing innovation is a delicate art. It’s easy for a company to be pulled in
+                                    conflicting directions as the marketing, product development, and finance
+                                    departments each get different feedback from different sets of people. And without a
+                                    system which ensures collaborative exchanges within the company, it’s also easy for
+                                    small ‘pockets of innovation’ to disappear. Innovation is a contact sport. You can’t
+                                    brief people just by saying, ‘We’re going in this direction and I’m going to take
+                                    you with me.’</p>
+                                <p>Cialdini believes that this ‘follow-the-leader syndrome, is dangerous, not least
+                                    because it encourages bosses to go it alone. ‘It’s been scientifically proven that
+                                    three people will be better than one at solving problems, even if that one person is
+                                    the smartest person in the field.’ To prove his point, Cialdini cites an interview
+                                    with molecular biologist James Watson. Watson, together with Francis Crick,
+                                    discovered the structure of DNA, the genetic information carrier of all living
+                                    organisms. ‘When asked how they had cracked the code ahead of an array of highly
+                                    accomplished rival investigators, he said something that stunned me. He said he and
+                                    Crick had succeeded because they were aware that they weren’t the most intelligent
+                                    of the scientists pursuing the answer. The smartest scientist was called Rosalind
+                                    Franklin who, Watson said, “was so intelligent she rarely sought advice”.’</p>
+                                <p>Teamwork taps into one of the basic drivers of human behaviour. ‘The principle of
+                                    social proof is so pervasive that we don’t even recognise it,’ says Cialdini. ‘If
+                                    your project is being resisted, for example, by a group of veteran employees, ask
+                                    another old-timer to speak up for it.’ Cialdini is not alone in advocating this
+                                    strategy. Research shows that peer power, used horizontally not vertically, is much
+                                    more powerful than any boss’s speech.</p>
+                                <p>Writing, visualising and prototyping can stimulate the flow of new ideas. Cialdini
+                                    cites scores of research papers and historical events that prove that even something
+                                    as simple as writing deepens every individual’s engagement in the project. It is, he
+                                    says, the reason why all those competitions on breakfast cereal packets encouraged
+                                    us to write in saying, in no more than 10 words: ‘I like Kellogg’s Com Flakes
+                                    because… .’ The very act of writing makes us more likely to believe it.</p>
+                                <p>Authority doesn’t have to inhibit innovation but it often does. The wrong kind of
+                                    leadership will lead to what Cialdini calls ‘captainitis, the regrettable tendency
+                                    of team members to opt out of team responsibilities that are properly theirs’. He
+                                    calls it captainitis because, he says, ‘crew members of multipilot aircraft exhibit
+                                    a sometimes deadly passivity when the flight captain makes a clearly wrong-headed
+                                    decision’. This behaviour is not, he says, unique to air travel, but can happen in
+                                    any workplace where the leader is overbearing.</p>
+                                <p>At the other end of the scale is the 1980s Memphis design collective, a group of
+                                    young designers for whom ‘the only rule was that there were no rules’. This
+                                    environment encouraged a free interchange of ideas, which led to more creativity
+                                    with form, function, colour and materials that revolutionised attitudes to furniture
+                                    design.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body">
+                                <fieldset class="q-item">
+                                    <p class="lead">Complete each sentence with the correct ending, A-G, below.
+                                    </p>
+                                    <p>Write the correct letter, <b>A-G</b>, in boxes on your answer sheet</p>
+                                    <ul class="legend">
+                                        <li><strong>A</strong> take chances.</li>
+                                        <li><strong>B</strong> share their ideas.</li>
+                                        <li><strong>C</strong> become competitive.</li>
+                                        <li><strong>D</strong> get promotion.</li>
+                                        <li><strong>E</strong> avoid risk.</li>
+                                        <li><strong>F</strong> ignore their duties.</li>
+                                        <li><strong>G</strong> remain in their jobs.</li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            The physical surroundings in which a person works play a key role in
+                                            determining their creativity.
+                                            <span class="q-question">
+                                                <select name="q1" class="q-dropdown">
+                                                    <option value="">-- Pilih jawaban --</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            At times of change, people tend to
+                                            <span class="q-question">
+                                                <select name="q1" class="q-dropdown">
+                                                    <option value="">-- Pilih jawaban --</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            If people are aware of what they might lose, they will often
+                                            <span class="q-question">
+                                                <select name="q1" class="q-dropdown">
+                                                    <option value="">-- Pilih jawaban --</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            People working under a dominant boss are liable to
+                                            <span class="q-question">
+                                                <select name="q1" class="q-dropdown">
+                                                    <option value="">-- Pilih jawaban --</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            Employees working in organisations with few rules are more likely to
+                                            <span class="q-question">
+                                                <select name="q1" class="q-dropdown">
+                                                    <option value="">-- Pilih jawaban --</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
             </div>
             <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
                 <div class="x-panel-inner">Konten: One Choice</div>
@@ -1175,8 +1812,8 @@
     <div class="floating-questions collapsed" id="floatingQuestions">
         <!-- Tombol Icon -->
         <button class="fq-fab" id="fqToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
@@ -1187,8 +1824,26 @@
         </div>
     </div>
 
+    <div class="highlight-toolbar" id="highlightToolbar">
+        <div class="color-option yellow" data-color="yellow"></div>
+        <div class="color-option green" data-color="green"></div>
+        <div class="color-option blue" data-color="blue"></div>
+        <div class="color-option pink" data-color="pink"></div>
+        <div class="color-option orange" data-color="orange"></div>
+        <button id="highlightNote" title="Add Note">📝</button>
+        <button id="removeHighlight" title="Remove Highlight">✕</button>
+    </div>
+
+    <div class="note-popup" id="notePopup">
+        <textarea id="noteText" placeholder="Tulis catatan..."></textarea>
+        <div>
+            <button id="saveNote" class="save">Simpan</button>
+            <button id="cancelNote" class="cancel">Batal</button>
+        </div>
+    </div>
+
     <script>
-        (function () {
+        (function() {
             let remaining = 0;
             let t = null;
             const el = document.getElementById('timeText');
@@ -1232,15 +1887,19 @@
             }
 
             // Public API (opsional)
-            window.CATHeader = { startCountdown };
+            window.CATHeader = {
+                startCountdown
+            };
 
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function () {
+            document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
-                alert('Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan');
+                alert(
+                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                );
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function () {
+            document.getElementById('doneBtn').addEventListener('click', function() {
                 const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
                 if (confirmFinish) {
                     // TODO: trigger submit/finish callback
@@ -1255,7 +1914,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1277,7 +1936,11 @@
                     btn.setAttribute('aria-selected', active ? 'true' : 'false');
                     btn.tabIndex = active ? 0 : -1;
                     if (active) {
-                        btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        btn.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
                     }
                 });
                 panels.forEach(p => {
@@ -1301,7 +1964,11 @@
             });
 
             /* Drag/Swipe pada .x-tabs */
-            let down = false, moved = false, startX = 0, startLeft = 0, pid = null;
+            let down = false,
+                moved = false,
+                startX = 0,
+                startLeft = 0,
+                pid = null;
             xTabs.addEventListener('pointerdown', (e) => {
                 // Hanya izinkan drag jika bukan klik pada tab
                 if (e.target.closest('.x-tab')) {
@@ -1321,11 +1988,12 @@
                 if (Math.abs(dx) > 3) moved = true;
                 xTabs.scrollLeft = startLeft - dx;
             });
+
             function endDrag(e) {
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -1339,10 +2007,15 @@
             /* Wheel vertikal -> horizontal (trackpad/mouse) */
             xTabs.addEventListener('wheel', (e) => {
                 if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && xTabs.scrollWidth > xTabs.clientWidth) {
-                    xTabs.scrollBy({ left: e.deltaY, behavior: 'auto' });
+                    xTabs.scrollBy({
+                        left: e.deltaY,
+                        behavior: 'auto'
+                    });
                     e.preventDefault();
                 }
-            }, { passive: false });
+            }, {
+                passive: false
+            });
 
             /* Keyboard navigation */
             tabs.forEach(btn => {
@@ -1350,7 +2023,8 @@
                     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
                     e.preventDefault();
                     const idx = tabs.indexOf(btn);
-                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 +
+                        tabs.length) % tabs.length;
                     tabs[nextIdx].focus();
                     tabs[nextIdx].click();
                 });
@@ -1366,93 +2040,98 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        /* Interaksi: klik kartu opsi memilih radio; simpan jawaban; fokus aksesibel */
-        document.addEventListener('DOMContentLoaded', function () {
-            const section = document.querySelector('.reading-section');
-            if (!section) return;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Semua panel
+            const panels = document.querySelectorAll('.x-panel');
 
-            // Toggle selected style saat memilih opsi
-            section.addEventListener('click', function (e) {
-                const opt = e.target.closest('.q-option');
-                if (!opt) return;
-                const fieldset = opt.closest('.q-item');
-                const name = fieldset.querySelector('input[type="radio"]')?.name;
-                if (!name) return;
+            panels.forEach(panel => {
+                const section = panel.querySelector('.reading-section');
+                if (!section) return;
 
-                // Set radio
-                const input = opt.querySelector('input[type="radio"]');
-                if (input) input.checked = true;
+                // --- Pilihan soal (radio) ---
+                section.addEventListener('click', function(e) {
+                    const opt = e.target.closest('.q-option');
+                    if (!opt) return;
+                    const fieldset = opt.closest('.q-item');
+                    const input = opt.querySelector('input[type="radio"]');
+                    if (!fieldset || !input) return;
 
-                // Bersihkan state lalu tandai selected
-                fieldset.querySelectorAll('.q-option').forEach(el => el.classList.remove('is-selected'));
-                opt.classList.add('is-selected');
-            });
+                    // Set radio checked
+                    input.checked = true;
 
-            // Saat navigasi keyboard pada radio, sinkronkan highlight
-            section.addEventListener('change', function (e) {
-                const radio = e.target;
-                if (!(radio instanceof HTMLInputElement)) return;
-                if (radio.type !== 'radio') return;
-                const fieldset = radio.closest('.q-item');
-                if (!fieldset) return;
-                fieldset.querySelectorAll('.q-option').forEach(el => {
-                    const r = el.querySelector('input[type="radio"]');
-                    el.classList.toggle('is-selected', r && r.checked);
+                    // Hapus highlight semua sibling
+                    fieldset.querySelectorAll('.q-option').forEach(el => el.classList.remove(
+                        'is-selected'));
+                    opt.classList.add('is-selected');
                 });
-            });
 
-            // Optional: ambil jawaban cepat
-            window.getAnswers = function () {
+                section.addEventListener('change', function(e) {
+                    const radio = e.target;
+                    if (!(radio instanceof HTMLInputElement)) return;
+                    if (radio.type !== 'radio') return;
+                    const fieldset = radio.closest('.q-item');
+                    if (!fieldset) return;
+                    fieldset.querySelectorAll('.q-option').forEach(el => {
+                        const r = el.querySelector('input[type="radio"]');
+                        el.classList.toggle('is-selected', r && r.checked);
+                    });
+                });
+
+                // --- Resize handle ---
+                const grid = section.querySelector('.resizable-grid');
+                const handle = section.querySelector('.resize-handle');
+                if (!grid || !handle) return;
+
+                let isDragging = false;
+
+                handle.addEventListener('mousedown', e => {
+                    e.preventDefault();
+                    isDragging = true;
+                    document.body.style.cursor = 'col-resize';
+                });
+
+                window.addEventListener('mousemove', e => {
+                    if (!isDragging) return;
+                    const gridRect = grid.getBoundingClientRect();
+                    const totalWidth = gridRect.width;
+                    const offsetX = e.clientX - gridRect.left;
+
+                    const leftWidth = Math.max(250, offsetX);
+                    const rightWidth = Math.max(250, totalWidth - leftWidth - handle.offsetWidth);
+
+                    grid.style.gridTemplateColumns =
+                        `${leftWidth}px ${handle.offsetWidth}px ${rightWidth}px`;
+                });
+
+                window.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+
+            }); // end forEach panel
+
+            // Optional: function global ambil jawaban panel tertentu
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
+                const section = panelEl.querySelector('.reading-section');
+                if (!section) return out;
+
                 section.querySelectorAll('.q-item').forEach(fs => {
                     const name = fs.querySelector('input[type="radio"]')?.name;
                     const checked = fs.querySelector('input[type="radio"]:checked');
                     if (name) out[name] = checked ? checked.value : null;
                 });
+
                 return out;
             };
         });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const grid = document.querySelector(".resizable-grid");
-            const handle = document.querySelector(".resize-handle");
-
-            let isDragging = false;
-
-            handle.addEventListener("mousedown", (e) => {
-                e.preventDefault();
-                isDragging = true;
-                document.body.style.cursor = "col-resize";
-            });
-
-            window.addEventListener("mousemove", (e) => {
-                if (!isDragging) return;
-
-                const gridRect = grid.getBoundingClientRect();
-                const totalWidth = gridRect.width;
-                const offsetX = e.clientX - gridRect.left;
-
-                // hitung proporsi untuk kiri & kanan
-                const leftWidth = Math.max(250, offsetX);
-                const rightWidth = Math.max(250, totalWidth - leftWidth - handle.offsetWidth);
-
-                grid.style.gridTemplateColumns = `${leftWidth}px 6px ${rightWidth}px`;
-            });
-
-            window.addEventListener("mouseup", () => {
-                if (isDragging) {
-                    isDragging = false;
-                    document.body.style.cursor = "default";
-                }
-            });
-        });
-
     </script>
 
     <!-- script bagian highlight + note -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const passageBody = document.querySelector('.passage-body');
             const toolbar = document.getElementById('highlightToolbar');
             const notePopup = document.getElementById('notePopup');
             const noteText = document.getElementById('noteText');
@@ -1460,20 +2139,7 @@
             let currentSelection = null;
             let selectedColor = 'yellow';
             let currentHighlight = null;
-
-            // === Show toolbar langsung setelah blok teks ===
-            passageBody.addEventListener('mouseup', () => {
-                const selection = window.getSelection();
-                if (selection && !selection.isCollapsed) {
-                    currentSelection = selection.getRangeAt(0);
-                    const rect = currentSelection.getBoundingClientRect();
-                    toolbar.style.display = 'flex';
-                    toolbar.style.left = rect.left + window.scrollX + 'px';
-                    toolbar.style.top = rect.top + window.scrollY - 40 + 'px';
-                } else {
-                    toolbar.style.display = 'none';
-                }
-            });
+            let activePassage = null;
 
             // === Pilih warna highlight ===
             document.querySelectorAll('.color-option').forEach(option => {
@@ -1483,26 +2149,7 @@
                 });
             });
 
-            // === Fungsi highlight ===
-            function applyHighlight(color, withNote = false) {
-                if (!currentSelection) return;
-                const span = document.createElement('span');
-                span.className = `highlight highlight-${color}`;
-                span.textContent = currentSelection.toString();
-                currentSelection.deleteContents();
-                currentSelection.insertNode(span);
-
-                if (withNote) {
-                    currentHighlight = span;
-                    showNotePopup(span);
-                }
-
-                toolbar.style.display = 'none';
-                window.getSelection().removeAllRanges();
-                currentSelection = null;
-            }
-
-            // === Tambahkan catatan ===
+            // === Toolbar tombol catatan ===
             document.getElementById('highlightNote').addEventListener('click', () => {
                 if (currentSelection) {
                     applyHighlight(selectedColor, true);
@@ -1517,27 +2164,13 @@
                         const textNode = document.createTextNode(node.textContent);
                         node.replaceWith(textNode);
                     }
-                    toolbar.style.display = 'none';
+                    hideToolbar();
                     window.getSelection().removeAllRanges();
                     currentSelection = null;
                 }
             });
 
-            // === Popup Note ===
-            function showNotePopup(highlightEl, existing = '') {
-                noteText.value = existing;
-                const rect = highlightEl.getBoundingClientRect();
-                notePopup.style.display = 'block';
-                notePopup.style.left = rect.left + window.scrollX + 'px';
-                notePopup.style.top = rect.bottom + window.scrollY + 5 + 'px';
-            }
-
-            function hideNotePopup() {
-                notePopup.style.display = 'none';
-                currentHighlight = null;
-            }
-
-            // Save note
+            // === Save & Cancel Note ===
             document.getElementById('saveNote').addEventListener('click', () => {
                 if (currentHighlight) {
                     const note = noteText.value.trim();
@@ -1559,33 +2192,91 @@
 
             document.getElementById('cancelNote').addEventListener('click', hideNotePopup);
 
-            // === Klik highlight → buka note kalau ada ===
-            passageBody.addEventListener('click', (e) => {
-                if (e.target.classList.contains('highlight')) {
-                    if (e.target.dataset.note) {
+            // === Init highlight di semua panel ===
+            document.querySelectorAll('.x-panel').forEach(panel => {
+                const passageBody = panel.querySelector('.passage-body');
+
+                passageBody.addEventListener('mouseup', (e) => {
+                    const selection = window.getSelection();
+                    if (selection && !selection.isCollapsed) {
+                        currentSelection = selection.getRangeAt(0);
+                        activePassage = passageBody;
+                        const rect = currentSelection.getBoundingClientRect();
+                        showToolbar(rect);
+                    } else {
+                        hideToolbar();
+                    }
+                });
+
+                // Klik highlight untuk buka note
+                passageBody.addEventListener('click', e => {
+                    if (e.target.classList.contains('highlight') && e.target.dataset.note) {
                         currentHighlight = e.target;
                         showNotePopup(e.target, e.target.dataset.note);
                     }
-                }
+                });
             });
 
-            // === Klik luar → tutup semua ===
-            document.addEventListener('click', (e) => {
+            // === Klik luar → tutup toolbar & note popup ===
+            document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    !e.target.classList.contains('highlight') &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.passage-body')) &&
                     !window.getSelection().toString()) {
-                    toolbar.style.display = 'none';
+                    hideToolbar();
                     hideNotePopup();
                 }
             });
+
+            // === Fungsi helper ===
+            function applyHighlight(color, withNote = false) {
+                if (!currentSelection) return;
+
+                const span = document.createElement('span');
+                span.className = `highlight highlight-${color}`;
+                span.textContent = currentSelection.toString();
+                currentSelection.deleteContents();
+                currentSelection.insertNode(span);
+
+                if (withNote) {
+                    currentHighlight = span;
+                    showNotePopup(span);
+                }
+
+                hideToolbar();
+                window.getSelection().removeAllRanges();
+                currentSelection = null;
+            }
+
+            function showToolbar(rect) {
+                toolbar.style.display = 'flex';
+                toolbar.style.left = rect.left + window.scrollX + 'px';
+                toolbar.style.top = rect.top + window.scrollY - 40 + 'px';
+            }
+
+            function hideToolbar() {
+                toolbar.style.display = 'none';
+                currentSelection = null;
+            }
+
+            function showNotePopup(highlightEl, existing = '') {
+                noteText.value = existing;
+                const rect = highlightEl.getBoundingClientRect();
+                notePopup.style.display = 'block';
+                notePopup.style.left = rect.left + window.scrollX + 'px';
+                notePopup.style.top = rect.bottom + window.scrollY + 5 + 'px';
+            }
+
+            function hideNotePopup() {
+                notePopup.style.display = 'none';
+                currentHighlight = null;
+            }
         });
     </script>
 
-
+    <!-- script bagian floating question list -->
     <script>
-        /* Floating Question List - otomatis update status */
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -1603,7 +2294,7 @@
                 floatingQ.classList.toggle('collapsed', isCollapsed);
             });
 
-            // Generate question numbers berdasarkan part aktif
+            // Generate question numbers
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -1616,7 +2307,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll to question saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -1626,29 +2316,30 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
 
                 const question = panel.querySelector(`[data-q="${qNum}"]`);
                 if (question) {
-                    question.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    question.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
                     question.focus();
                 }
             }
 
-            // Update status soal (terjawab/belum)
+            // Update status soal (radio & dropdown)
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
 
-                // Reset semua status
                 fqList.querySelectorAll('.fq-item').forEach(item => {
                     item.classList.remove('answered', 'current');
                 });
 
-                // Cek setiap soal
                 for (let i = 1; i <= questionCount; i++) {
                     const item = fqList.querySelector(`[data-q="${i}"][data-part="${partId}"]`);
                     if (!item) continue;
@@ -1656,23 +2347,42 @@
                     const question = panel.querySelector(`[data-q="${i}"]`);
                     if (!question) continue;
 
-                    // Cek apakah sudah dijawab
-                    const answered = question.querySelector('input[type="radio"]:checked');
-                    if (answered) {
-                        item.classList.add('answered');
-                    }
+                    let answered = false;
+
+                    // radio
+                    const radioChecked = question.querySelector('input[type="radio"]:checked');
+                    if (radioChecked) answered = true;
+
+                    // dropdown
+                    const dropdown = question.querySelector('select.q-dropdown');
+                    if (dropdown && dropdown.value !== '') answered = true;
+
+                    if (answered) item.classList.add('answered');
                 }
             }
 
-            // Deteksi perubahan part aktif
+            // Deteksi jawaban berubah
+            function watchAnswerChanges() {
+                document.addEventListener('change', (e) => {
+                    const question = e.target.closest('[data-q]');
+                    if (question) updateQuestionStatus(currentPart);
+                });
+
+                document.addEventListener('click', (e) => {
+                    const option = e.target.closest('.q-option');
+                    if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
+                });
+            }
+
+            // Deteksi perubahan part
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-active') {
+                        if (mutation.type === 'attributes' && mutation.attributeName ===
+                            'data-active') {
                             const newPart = mutation.target.dataset.active;
                             if (newPart && newPart !== currentPart) {
                                 currentPart = newPart;
-                                // Update question list untuk part baru
                                 updateQuestionListForPart(newPart);
                             }
                         }
@@ -1680,68 +2390,40 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) {
-                    observer.observe(tabsContainer, { attributes: true, attributeFilter: ['data-active'] });
-                }
+                if (tabsContainer) observer.observe(tabsContainer, {
+                    attributes: true,
+                    attributeFilter: ['data-active']
+                });
             }
 
-            // Update question list berdasarkan part
+            // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                // Jumlah soal per part (sesuaikan dengan kebutuhan)
                 const questionCounts = {
                     'tfng': 5,
-                    'ynng': 4,
-                    'mse': 6,
+                    'tfng2': 5,
+                    'ynng': 5,
+                    'mse': 5,
                     'one': 8,
                     'mh': 7,
                     'tc': 5,
                     'sa': 3
                 };
-
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
-            }
-
-            // Deteksi perubahan jawaban di semua part
-            function watchAnswerChanges() {
-                document.addEventListener('change', (e) => {
-                    if (e.target.type === 'radio') {
-                        const question = e.target.closest('[data-q]');
-                        if (question) {
-                            updateQuestionStatus(currentPart);
-                        }
-                    }
-                });
-
-                // Juga deteksi klik pada option cards
-                document.addEventListener('click', (e) => {
-                    const option = e.target.closest('.q-option');
-                    if (option) {
-                        setTimeout(() => updateQuestionStatus(currentPart), 50);
-                    }
-                });
             }
 
             // Init
             updateQuestionListForPart('tfng');
             watchPartChanges();
             watchAnswerChanges();
-
-            // Update status setiap 2 detik (backup)
             setInterval(() => updateQuestionStatus(currentPart), 2000);
+
+            // Toggle expand
+            fqToggle.addEventListener('click', () => floatingQ.classList.toggle('expanded'));
         });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const floatingQ = document.getElementById('floatingQuestions');
-            const toggleBtn = document.getElementById('fqToggle');
-
-            toggleBtn.addEventListener('click', () => {
-                floatingQ.classList.toggle('expanded');
-            });
-        });
-
     </script>
+
 
 
 </body>
