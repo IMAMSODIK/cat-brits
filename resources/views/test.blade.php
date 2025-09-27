@@ -529,6 +529,16 @@
             margin-bottom: 30px;
         }
 
+        td .q-item {
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            outline: none !important;
+            background: none !important;
+        }
+
         .q-text {
             /* font-weight: 00; */
             color: #0f172a;
@@ -551,7 +561,6 @@
         /* Opsi */
         .q-options {
             display: grid;
-            /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
             gap: 8px;
         }
 
@@ -688,9 +697,9 @@
             gap: 10px;
             /* jarak antara kotak nomor dan input */
         }
-
+                    
         #panel-tc .q-number-box {
-            display: flex;
+            display: inline-flex;
             /* fleksibel untuk centering */
             justify-content: center;
             /* horizontal center */
@@ -699,10 +708,9 @@
             width: 28px;
             height: 28px;
             font-weight: bold;
-            background-color: #f0f0f0;
             border: 2px solid #333;
             border-radius: 4px;
-            box-sizing: border-box;
+            margin-left: 5px;
         }
 
         #panel-tc .q-text {
@@ -712,6 +720,14 @@
             border-radius: 4px;
             font-size: 14px;
             box-sizing: border-box;
+        }
+        #panel-tc input{
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 5px;
+            width:120px;
         }
     </style>
 
@@ -2404,176 +2420,82 @@
                                     <p><i>Write your answers in boxes on your answer sheet.</i></p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        Describe a situation where you demonstrated creativity.
-                                    </legend>
-                                    <div class="q-options" style="display: flex; align-items: center; gap: 10px;">
-                                        <span class="q-number-box" style="font-weight: bold; margin-top: -9px">1</span>
-                                        <input type="text" name="q1" class="q-text"
-                                            placeholder="Type your answer here"
-                                            style="flex: 1; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px;">
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">2</span>
-                                        Describe a situation where you demonstrated creativity.
-                                    </legend>
-                                    <div class="q-options" style="display: flex; align-items: center; gap: 10px;">
-                                        <span style="font-weight: bold;">Answer:</span>
-                                        <input type="text" name="q1" class="q-text"
-                                            placeholder="Type your answer here"
-                                            style="flex: 1; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px;">
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">3</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>C</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">4</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>D</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">5</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>E</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">6</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>G</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="7">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">7</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>H</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="8">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">8</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>I</b>
-                                            <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                    <option value="x">x</option>
-                                                    <option value="xi">xi</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
+                                <table border="1" cellpadding="8" cellspacing="0"
+                                    style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                    <tr>
+                                        <th>Stepwells</th>
+                                        <th>Date</th>
+                                        <th>Features</th>
+                                        <th>Other Notes</th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Rani Ki Vav</b></td>
+                                        <td>Late 11th century</td>
+                                        <td>As many as 500 sculptures decorate the monument</td>
+                                        <td>
+                                            <div class="q-item" data-q="1">
+                                                Restored in the 1990s Excellent condition, despite the
+                                                <span class="q-number-box">1</span>
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                 of 2001.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Surya Kund</b></td>
+                                        <td>1026</td>
+                                        <td>
+                                            <div class="q-item" data-q="2">
+                                                Steps on the
+                                                <span class="q-number-box">2</span>
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                produce a geometric pattern Carved shrines.
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="q-item" data-q="3">
+                                                Looks more like a
+                                                <span class="q-number-box">3</span>
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                than a well.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Raniji Ki Baori</b></td>
+                                        <td>1699</td>
+                                        <td>Intricately carved monument</td>
+                                        <td>One of 21 baoris in the area commissioned by Queen Nathavatji</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Chand Baori</b></td>
+                                        <td>850 AD</td>
+                                        <td>Steps take you down 11 storeys to the bottom</td>
+                                        <td>
+                                            <div class="q-item" data-q="4">
+                                                Old, deep and very dramatic Has
+                                                <span class="q-number-box">4</span>
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                 which provide a view to the steps.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Neemrana Ki Baori</b></td>
+                                        <td>1700</td>
+                                        <td>
+                                            <div class="q-item" data-q="5">
+                                                Has two
+                                                <span class="q-number-box">5</span>
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                levels.
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Used by public today
+                                        </td>
+                                    </tr>
+                                </table>
                             </form>
                         </aside>
                     </div>
