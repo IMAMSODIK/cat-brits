@@ -693,18 +693,13 @@
         #panel-tc .q-options {
             display: flex;
             align-items: center;
-            /* vertical center */
             gap: 10px;
-            /* jarak antara kotak nomor dan input */
         }
                     
         #panel-tc .q-number-box {
             display: inline-flex;
-            /* fleksibel untuk centering */
             justify-content: center;
-            /* horizontal center */
             align-items: center;
-            /* vertical center */
             width: 28px;
             height: 28px;
             font-weight: bold;
@@ -722,6 +717,15 @@
             box-sizing: border-box;
         }
         #panel-tc input{
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 5px;
+            width:120px;
+        }
+
+        #panel-sa input{
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -2503,6 +2507,72 @@
             </div>
             <div id="panel-sa" class="x-panel" role="tabpanel" aria-labelledby="tab-sa" hidden>
                 <div class="x-panel-inner">Konten: Short Answer</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>Some wells are vast, open craters with hundreds of steps paving each sloping side, often in tiers. Others are more elaborate, with long stepped passages leading to the water via several storeys. Built from stone and supported by pillars, they also included pavilions that sheltered visitors from the relentless heat. But perhaps the most impressive features are the intricate decorative sculptures that embellish many stepwells, showing activities from fighting and dancing to everyday acts such as women combing their hair and churning butter.</p>
+                                <p>Down the centuries, thousands of wells were constructed throughout northwestern India, but the majority have now fallen into disuse; many are derelict and dry, as groundwater has been diverted for industrial use and the wells no longer reach the water table. Their condition hasn’t been helped by recent dry spells: southern Rajasthan suffered an eight-year drought between 1996 and 2004.</p>
+                                <p>However, some important sites in Gujarat have recently undergone major restoration, and the state government announced in June last year that it plans to restore the stepwells throughout the state.</p>
+                                <p>In Patan, the state’s ancient capital, the stepwell of Rani Ki Vav (Queen’s Stepwell) is perhaps the finest current example. It was built by Queen Udayamati during the late 11th century, but became silted up following a flood during the 13th century. But the Archaeological Survey of India began restoring it in the 1960s, and today it’s in pristine condition. At 65 metres long, 20 metres wide and 27 metres deep, Rani Ki Vav features 500 distinct sculptures carved into niches throughout the monument, depicting gods such as Vishnu and Parvati in various incarnations. Incredibly, in January 2001, this ancient structure survived a devastating earthquake that measured 7.6 on the Richter scale.</p>
+                                <p>Another example is the Surya Kund in Modhera, northern Gujarat, next to the Sun Temple, built by King Bhima I in 1026 to honour the sun god Surya. It actually resembles a tank (kund means reservoir or pond) rather than a well, but displays the hallmarks of stepwell architecture, including four sides of steps that descend to the bottom in a stunning geometrical formation. The terraces house 108 small, intricately carved shrines between the sets of steps.</p>
+                                <p>Rajasthan also has a wealth of wells. The ancient city of Bundi, 200 kilometres south of Jaipur, is renowned for its architecture, including its stepwells. One of the larger examples is Raniji Ki Baori, which was built by the queen of the region, Nathavatji, in 1699. At 46 metres deep, 20 metres wide and 40 metres long, the intricately carved monument is one of 21 baoris commissioned in the Bundi area by Nathavatji.</p>
+                                <p>In the old ruined town of Abhaneri, about 95 kilometres east of Jaipur, is Chand Baori, one of India’s oldest and deepest wells; aesthetically, it’s perhaps one of the most dramatic. Built in around 850 AD next to the temple of Harshat Mata, the baori comprises hundreds of zigzagging steps that run along three of its sides, steeply descending 11 storeys, resulting in a striking geometric pattern when seen from afar. On the fourth side, verandas which are supported by ornate pillars overlook the steps.</p>
+                                <p>Still in public use is Neemrana Ki Baori, located just off the Jaipur–Dehli highway. Constructed in around 1700, it’s nine storeys deep, with the last two being underwater. At ground level, there are 86 colonnaded openings from where the visitor descends 170 steps to the deepest water source.</p>
+                                <p>Today, following years of neglect, many of these monuments to medieval engineering have been saved by the Archaeological Survey of India, which has recognised the importance of preserving them as part of the country’s rich history. Tourists flock to wells in far-flung corners of northwestern India to gaze in wonder at these architectural marvels from 1,000 years ago, which serve as a reminder of both the ingenuity and artistry of ancient civilisations and of the value of water to human existence.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body">
+                                <fieldset class="q-item">
+                                    <p class="lead">Answer the questions below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            Which part of some stepwells provided shade for people?
+                                            <span class="q-question">
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            What type of serious climatic event, which took place in southern Rajasthan, is mentioned in the article?
+                                            <span class="q-question">
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            Who are frequent visitors to stepwells nowadays?
+                                            <span class="q-question">
+                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
