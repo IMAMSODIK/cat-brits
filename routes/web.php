@@ -65,6 +65,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/ielts', [IeltsController::class, 'index']);
     Route::get('/ielts/categories', [IeltsController::class, 'categories']);
+    Route::get('/ielts/category', [IeltsController::class, 'category']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
