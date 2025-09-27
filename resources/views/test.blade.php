@@ -602,7 +602,7 @@
         }
 
         .q-dropdown {
-            width: 220px;
+            width: 50px;
             /* Lebar dropdown */
             padding: 6px 10px;
             /* Ruang dalam dropdown */
