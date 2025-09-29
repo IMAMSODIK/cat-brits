@@ -43,18 +43,15 @@ class IeltsController extends Controller
         }
     }
 
-    public function category(Request $r)
+    public function practice(Request $r)
     {
         try {
-            $data = [
-                'pageTitle' => "IELTS Categories",
-            ];
-
+            $data = [];
             if ($r->has('set-id')) {
                 switch ($r->input('set-id')) {
                     case 'XJ3XOcvqPbgdZwyl':
                         $data['set_id'] = 'XJ3XOcvqPbgdZwyl';
-                        $data['title'] = 'Cambridge IELTS 10 Academic Reading Test 1';
+                        $data['pageTitle'] = 'Cambridge IELTS 10 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                 }
