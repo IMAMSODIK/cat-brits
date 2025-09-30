@@ -1003,7 +1003,7 @@
     </style>
 
     {{-- style unutk audio player --}}
-    {{-- style unutk audio player --}} <style>
+    <style>
         .audio-player {
             display: grid;
             grid-template-columns: auto 1fr auto auto;
@@ -1138,6 +1138,74 @@
 
             .ap-vol {
                 grid-area: vol;
+            }
+        }
+    </style>
+
+    {{-- style untuk tombol volume --}}
+    <style>
+        .ap-volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ap-vol-buttons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 4px 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .ap-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .ap-btn:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .ap-btn:active {
+            transform: scale(0.95);
+        }
+
+        .ap-volume {
+            width: 100px;
+            accent-color: #2563eb;
+            /* warna biru slider */
+            cursor: pointer;
+        }
+
+        /* Responsif mobile */
+        @media (max-width: 520px) {
+            .ap-volume {
+                width: 70px;
+            }
+
+            .ap-vol-buttons {
+                gap: 4px;
+                padding: 2px 6px;
+            }
+
+            .ap-btn {
+                min-width: 28px;
+                height: 28px;
+                font-size: 14px;
             }
         }
     </style>
