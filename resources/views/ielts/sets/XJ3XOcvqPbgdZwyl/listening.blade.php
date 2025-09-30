@@ -1395,14 +1395,14 @@
                             <p><i>Personal Assessment</i></p>
                             <ul>
                                 <li>
-                                    <div class="q-item" data-q="1">
+                                    <div class="q-list" data-q="1">
                                         New members should describe any
                                         <span class="q-number-box">1</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="2">
+                                    <div class="q-list" data-q="2">
                                         The
                                         <span class="q-number-box">2</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1410,7 +1410,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="3">
+                                    <div class="q-list" data-q="3">
                                         You will be given a six-week
                                         <span class="q-number-box">3</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1421,7 +1421,7 @@
                             <p><i>Types of membership</i></p>
                             <ul>
                                 <li>
-                                    <div class="q-item" data-q="4">
+                                    <div class="q-list" data-q="4">
                                         There is a compulsory £90
                                         <span class="q-number-box">4</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1429,7 +1429,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="5">
+                                    <div class="q-list" data-q="5">
                                         Gold members are given
                                         <span class="q-number-box">5</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1437,7 +1437,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="6">
+                                    <div class="q-list" data-q="6">
                                         Premier members are given priority during
                                         <span class="q-number-box">6</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1445,7 +1445,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="7">
+                                    <div class="q-list" data-q="7">
                                         Premier members can bring some
                                         <span class="q-number-box">7</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
@@ -1453,7 +1453,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-item" data-q="8">
+                                    <div class="q-list" data-q="8">
                                         Members should always take their
                                         <span class="q-number-box">8</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
