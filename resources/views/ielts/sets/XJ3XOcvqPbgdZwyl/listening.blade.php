@@ -690,13 +690,15 @@
             }
         }
 
-        #panel-tfng .q-options {
+        #panel-tfng .q-options,
+        #panel-tfng2 .q-options {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        #panel-tfng .q-number-box {
+        #panel-tfng .q-number-box,
+        #panel-tfng2 .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -708,7 +710,8 @@
             margin-left: 5px;
         }
 
-        #panel-tfng .q-text {
+        #panel-tfng .q-text,
+        #panel-tfng2 .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -717,7 +720,8 @@
             box-sizing: border-box;
         }
 
-        /* #panel-tfng input {
+        /* #panel-tfng input,
+        #panel-tfng2 input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -1249,7 +1253,7 @@
                             <table cellpadding="8" cellspacing="0"
                                 style="border-collapse: collapse; margin-bottom: 20px;">
                                 <tr>
-                                    <th colspan="2">Stepwells</th>
+                                    <th colspan="2">SELF-DRIVE TOURS IN THE USA</th>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><i>Example</i></td>
@@ -1306,7 +1310,8 @@
                                                 <div class="q-item" data-q="4">
                                                     Yosemite Park: customer wants to stay in a lodge, not a
                                                     <span class="q-number-box">4</span>
-                                                    <input type="text" name="q1" class="q-text" placeholder="">
+                                                    <input type="text" name="q1" class="q-text"
+                                                        placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1320,7 +1325,8 @@
                                                 <div class="q-item" data-q="5">
                                                     Customer wants to see the
                                                     <span class="q-number-box">5</span>
-                                                    <input type="text" name="q1" class="q-text" placeholder="">
+                                                    <input type="text" name="q1" class="q-text"
+                                                        placeholder="">
                                                     on the way to Cambria
                                                 </div>
                                             </li>
@@ -1330,7 +1336,8 @@
                                                 <div class="q-item" data-q="6">
                                                     At San Diego, wants to spend time on the
                                                     <span class="q-number-box">6</span>
-                                                    <input type="text" name="q1" class="q-text" placeholder="">
+                                                    <input type="text" name="q1" class="q-text"
+                                                        placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1343,198 +1350,119 @@
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">Konten: Note Completion 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <h3 class="passage-title">A</h3>
-                                <p>It is difficult to conceive of vigorous economic growth without an efficient
-                                    transport system. Although modern information technologies can reduce the demand for
-                                    physical transport by facilitating teleworking and teleservices, the requirement for
-                                    transport continues to increase. There are two key factors behind this trend. For
-                                    passenger transport, the determining factor is the spectacular growth in car use.
-                                    The number of cars on European Union (EU) roads saw an increase of three million
-                                    cars each year from 1990 to 2010, and in the next decade the EU will see a further
-                                    substantial increase in its fleet.</p>
-                                <h3 class="passage-title">B</h3>
-                                <p>As far as goods transport is concerned, growth is due to a large extent to changes in
-                                    the European economy and its system of production. In the last 20 years, as internal
-                                    frontiers have been abolished, the EU has moved from a ‘stock’ economy to a ‘flow’
-                                    economy. This phenomenon has been emphasised by the relocation of some industries,
-                                    particularly those which are labour intensive, to reduce production costs, even
-                                    though the production site is hundreds or even thousands of kilometres away from the
-                                    final assembly plant or away from users.</p>
-                                <h3 class="passage-title">C</h3>
-                                <p>The strong economic growth expected in countries which are candidates for entry to
-                                    the EU will also increase transport flows, in particular road haulage traffic. In
-                                    1998, some of these countries already exported more than twice their 1990 volumes
-                                    and imported more than five times their 1990 volumes. And although many candidate
-                                    countries inherited a transport system which encourages rail, the distribution
-                                    between modes has tipped sharply in favour of road transport since the 1990s.
-                                    Between 1990 and 1998, road haulage increased by 19.4%, while during the same period
-                                    rail haulage decreased by 43.5%, although – and this could benefit the enlarged EU –
-                                    it is still on average at a much higher level than in existing member states.</p>
-                                <h3 class="passage-title">D</h3>
-                                <p>However, a new imperative-sustainable development – offers an opportunity for
-                                    adapting the EU’s common transport policy. This objective, agreed by the Gothenburg
-                                    European Council, has to be achieved by integrating environmental considerations
-                                    into Community policies, and shifting the balance between modes of transport lies at
-                                    the heart of its strategy. The ambitious objective can only be fully achieved by
-                                    2020, but proposed measures are nonetheless a first essential step towards a
-                                    sustainable transport system which will ideally be in place in 30 years’ time, that
-                                    is by 2040.</p>
-                                <h3 class="passage-title">E</h3>
-                                <p>In 1998, energy consumption in the transport sector was to blame for 28% of emissions
-                                    of CO2, the leading greenhouse gas. According to the latest estimates, if nothing is
-                                    done to reverse the traffic growth trend, CO2 emissions from transport can be
-                                    expected to increase by around 50% to 1,113 billion tonnes by 2020, compared with
-                                    the 739 billion tonnes recorded in 1990. Once again, road transport is the main
-                                    culprit since it alone accounts for 84% of the CO2 emissions attributable to
-                                    transport. Using alternative fuels and improving energy efficiency is thus both an
-                                    ecological necessity and a technological challenge.</p>
+                <div class="qa">
+                    <form class="qa-body">
+                        <fieldset class="q-item">
+                            <p class="lead">Listen and answer questions 1-8</p>
+                            <div class="audio-player" role="group" aria-label="Audio controls">
+                                <audio preload="metadata">
+                                    <source
+                                        src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3') }}"
+                                        type="audio/mpeg" />
+                                </audio>
+
+                                <button class="ap-btn ap-play" type="button" aria-label="Play audio">
+                                    <span class="ap-icon ap-icon-play">►</span>
+                                    <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
+                                </button>
+
+                                <div class="ap-track">
+                                    <div class="ap-progress"></div>
+                                    <input class="ap-seek" type="range" min="0" max="100"
+                                        value="0" step="0.1" aria-label="Seek audio" />
+                                </div>
+
+                                <div class="ap-time">
+                                    <span class="ap-current">0:00</span>
+                                    <span class="ap-sep">/</span>
+                                    <span class="ap-duration">0:00</span>
+                                </div>
+
+                                <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
+                                    <span class="ap-icon">🔊</span>
+                                </button>
                             </div>
-                        </article>
+                        </fieldset>
 
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+                        <fieldset class="q-item">
+                            <p>Questions 1-8</p>
+                            <p>Complete the notes below.</p>
+                            <p>Write <b>NO MORE THEN TWO WORDS</b> for each answer.</p>
+                        </fieldset>
 
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
-                                <fieldset class="q-item">
-                                    <p class="lead">Do the following statements agree with the information given in
-                                        the
-                                        Reading Passage?
-                                    </p>
-                                    <p>In boxes on your answer sheet, write</p>
-                                    <ul class="legend">
-                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-                                    </ul>
-                                </fieldset>
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        The need for transport is growing, despite technological developments.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
+                        <fieldset class="q-item">
+                            <p><b>Joining the leisure club</b></p>
+                            <p><i>Personal Assessment</i></p>
+                            <ul>
+                                <li>
+                                    <div class="q-item" data-q="1">
+                                        New members should describe any
+                                        <span class="q-number-box">1</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">2</span>
-                                        To reduce production costs, some industries have been moved closer to their
-                                        relevant consumers.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="2">
+                                        The
+                                        <span class="q-number-box">2</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        will be explained to you before you use the equipment.
                                     </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text">
-                                        <span class="q-number">3</span>
-                                        Cars are prohibitively expensive in some EU candidate countries.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="3">
+                                        You will be given a six-week
+                                        <span class="q-number-box">3</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
-                                </fieldset>
+                                </li>
+                            </ul>
 
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text">
-                                        <span class="q-number">4</span>
-                                        The Gothenburg European Council was set up 30 years ago.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
+                            <p><i>Types of membership</i></p>
+                            <ul>
+                                <li>
+                                    <div class="q-item" data-q="4">
+                                        There is a compulsory £90
+                                        <span class="q-number-box">4</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        fee for members.
                                     </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        By the end of this decade, CO2 emissions from transport are predicted to reach
-                                        739 billion tonnes.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="5">
+                                        Gold members are given
+                                        <span class="q-number-box">5</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        to all the LP clubs.
                                     </div>
-                                </fieldset>
-                            </form>
-                        </aside>
-                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="6">
+                                        Premier members are given priority during
+                                        <span class="q-number-box">6</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        hours.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="7">
+                                        Premier members can bring some
+                                        <span class="q-number-box">7</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        every month.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-item" data-q="8">
+                                        Members should always take their
+                                        <span class="q-number-box">8</span>
+                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        with them.
+                                    </div>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
@@ -2696,8 +2624,7 @@
                                             What type of serious climatic event, which took place in southern Rajasthan,
                                             is mentioned in the article?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text"
-                                                    placeholder="">
+                                                <input type="text" name="q1" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -2709,8 +2636,7 @@
                                         <span style="flex: 1;">
                                             Who are frequent visitors to stepwells nowadays?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text"
-                                                    placeholder="">
+                                                <input type="text" name="q1" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -3424,7 +3350,7 @@
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
                     'tfng': 6,
-                    'tfng2': 5,
+                    'tfng2': 8,
                     'ynng': 5,
                     'mse': 5,
                     'one': 4,
