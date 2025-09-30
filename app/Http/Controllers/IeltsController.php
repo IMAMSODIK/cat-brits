@@ -55,7 +55,7 @@ class IeltsController extends Controller
                     $data['set'] = $set;
                     $data['section'] = $r->input('section');
 
-                    $blade = 'ielts.sets.' . $r->input('set-id') . '.' . $r->input('section');
+                    $blade = 'ielts.sets.' . $r->input('set-id') . '.practice.' . $r->input('section');
                     return view($blade, $data);
                 } else {
                     return redirect()->back()->with('error', 'Question set not found.');
@@ -79,7 +79,7 @@ class IeltsController extends Controller
                     $data['set'] = $set;
                     $data['section'] = $r->input('section');
 
-                    $blade = 'ielts.sets.' . $r->input('set-id') . '.mock';
+                    $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
                     return view($blade, $data);
                 } else {
                     return redirect()->back()->with('error', 'Question set not found.');
