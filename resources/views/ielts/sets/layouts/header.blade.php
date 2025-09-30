@@ -2,24 +2,12 @@
     <div class="header-row" aria-label="Header CAT Bahasa Inggris">
         <div class="brand">
             <div class="logo" aria-hidden="true">LOGO</div>
-            <div class="title-wrap">
-                <div class="app-title">CAT Bahasa Inggris</div>
-                <div class="app-subtitle">Latihan soal adaptif</div>
-            </div>
         </div>
 
         <div class="actions">
             <button id="infoBtn" class="btn btn-ghost icon-btn" aria-label="Informasi">
                 <i class="fa-solid fa-circle-info"></i>
             </button>
-
-            @if ($section == 'listening')
-                <div class="ap-vol-buttons">
-                    <button class="ap-btn ap-vol-down" type="button" aria-label="Volume down">-</button>
-                    <input class="ap-volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume control"/>
-                    <button class="ap-btn ap-vol-up" type="button" aria-label="Volume up">+</button>
-                </div>    
-            @endif
 
             <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
                 <i class="fa-regular fa-clock"></i>

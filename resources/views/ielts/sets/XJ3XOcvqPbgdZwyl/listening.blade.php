@@ -2294,49 +2294,6 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
-
-    <script>
-        const volToggle = player.querySelector('.ap-vol-toggle');
-        const volDown = player.querySelector('.ap-vol-down');
-        const volUp = player.querySelector('.ap-vol-up');
-        const volSlider = player.querySelector('.ap-volume');
-
-        // Set awal
-        audio.volume = volSlider.value;
-
-        // Toggle mute
-        volToggle.addEventListener('click', () => {
-            audio.muted = !audio.muted;
-            volToggle.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
-            if (audio.muted) volSlider.value = 0;
-            else volSlider.value = audio.volume;
-        });
-
-        // Slider volume
-        volSlider.addEventListener('input', () => {
-            audio.volume = parseFloat(volSlider.value);
-            audio.muted = audio.volume === 0;
-            volToggle.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
-        });
-
-        // Tombol -
-        volDown.addEventListener('click', () => {
-            let v = Math.max(0, audio.volume - 0.1);
-            audio.volume = v;
-            volSlider.value = v;
-            audio.muted = v === 0;
-            volToggle.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
-        });
-
-        // Tombol +
-        volUp.addEventListener('click', () => {
-            let v = Math.min(1, audio.volume + 0.1);
-            audio.volume = v;
-            volSlider.value = v;
-            audio.muted = v === 0;
-            volToggle.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
-        });
-    </script>
 </body>
 
 </html>
