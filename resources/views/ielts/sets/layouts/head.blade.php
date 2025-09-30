@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>{{$set->name}} | {{ucfirst($section)}}</title>
+    <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
@@ -692,7 +692,7 @@
             align-items: center;
             gap: 10px;
         }
-                    
+
         #panel-tc .q-number-box {
             display: inline-flex;
             justify-content: center;
@@ -713,22 +713,23 @@
             font-size: 14px;
             box-sizing: border-box;
         }
-        #panel-tc input{
+
+        #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
-            width:120px;
+            width: 120px;
         }
 
-        #panel-sa input{
+        #panel-sa input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
-            width:120px;
+            width: 120px;
         }
     </style>
 
@@ -997,6 +998,146 @@
                 width: 44px;
                 height: 44px;
                 font-size: 14px;
+            }
+        }
+    </style>
+
+    {{-- style unutk audio player --}}
+    {{-- style unutk audio player --}} <style>
+        .audio-player {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .ap-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e5e7eb;
+            background: #f8fafc;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background .12s ease, border-color .12s ease, transform .06s ease;
+        }
+
+        .ap-btn:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .ap-btn:active {
+            transform: translateY(1px);
+        }
+
+        .ap-play {
+            width: 44px;
+            height: 44px;
+            font-weight: 800;
+        }
+
+        .ap-icon {
+            line-height: 1;
+        }
+
+        .ap-track {
+            position: relative;
+            height: 19px;
+            background: #f1f5f9;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .ap-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            border-right: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .ap-seek {
+            -webkit-appearance: none;
+            appearance: none;
+            position: relative;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            outline: none;
+        }
+
+        .ap-seek::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+            margin-top: -4px;
+        }
+
+        .ap-seek::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+        }
+
+        .ap-time {
+            font-variant-numeric: tabular-nums;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 6px 8px;
+        }
+
+        .ap-time .ap-sep {
+            opacity: .7;
+            margin: 0 4px;
+        }
+
+        /* Mobile */
+        @media (max-width: 520px) {
+            .audio-player {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas: "play track time" "vol track time";
+                gap: 8px;
+            }
+
+            .ap-play {
+                grid-area: play;
+            }
+
+            .ap-track {
+                grid-area: track;
+            }
+
+            .ap-time {
+                grid-area: time;
+            }
+
+            .ap-vol {
+                grid-area: vol;
             }
         }
     </style>
