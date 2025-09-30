@@ -23,6 +23,7 @@
                 {{ session('error') }}
             </div>
         @else
+            <h5>Practice</h5>
             <div class="product-grid">
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
@@ -82,6 +83,66 @@
                 </div>
 
 
+            </div>
+            <hr>
+            <h5>Mock Test</h5>
+            <div class="product-grid">
+                <div class="product-wrapper-grid" style="opacity: 1;">
+                    <div class="row data-ctr">
+                        <div class="col-6 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=reading'">
+                            <div class="card boost-up-card overflow-hidden">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
+                                    </div>
+                                    <div class="img-boostup"><img class="img-boostup-img-1"
+                                            src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
+                                            class="img-boostup-img-2" src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup2.png')}}"
+                                            alt="boostup"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=listening'">
+                            <div class="card boost-up-card overflow-hidden">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
+                                    </div>
+                                    <div class="img-boostup"><img class="img-boostup-img-1"
+                                            src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
+                                            class="img-boostup-img-2" src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup2.png')}}"
+                                            alt="boostup"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=speaking'">
+                            <div class="card boost-up-card overflow-hidden">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
+                                    </div>
+                                    <div class="img-boostup"><img class="img-boostup-img-1"
+                                            src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
+                                            class="img-boostup-img-2" src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup2.png')}}"
+                                            alt="boostup"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=writing'">
+                            <div class="card boost-up-card overflow-hidden">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
+                                    </div>
+                                    <div class="img-boostup"><img class="img-boostup-img-1"
+                                            src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
+                                            class="img-boostup-img-2" src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup2.png')}}"
+                                            alt="boostup"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         @endif
     </div>

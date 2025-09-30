@@ -1,1056 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Header CAT Bahasa Inggris</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #0f172a;
-            --muted: #64748b;
-            --primary: #2563eb;
-            --danger: #ef4444;
-            --ring: rgba(37, 99, 235, 0.35);
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-        }
-
-        .app-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--bg);
-            box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
-        }
-
-        .header-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            min-width: 0;
-        }
-
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            background: #eef2ff;
-            color: #4f46e5;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            user-select: none;
-        }
-
-        .title-wrap {
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-        }
-
-        .app-title {
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 1.2;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .app-subtitle {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.2;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex: 0 0 auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            border: 1px solid #e5e7eb;
-            background: #fff;
-            color: var(--text);
-            border-radius: 10px;
-            padding: 8px 12px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            touch-action: manipulation;
-        }
-
-        .btn:active {
-            transform: translateY(1px) scale(0.99);
-        }
-
-        .btn:focus-visible {
-            outline: 2px solid var(--ring);
-            outline-offset: 2px;
-        }
-
-        .btn-ghost {
-            border-color: #e5e7eb;
-            background: #fff;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: #fff;
-        }
-
-        .btn-danger {
-            background: var(--danger);
-            border-color: var(--danger);
-            color: #fff;
-        }
-
-        .icon-btn {
-            width: 40px;
-            height: 40px;
-            padding: 0;
-            border-radius: 10px;
-        }
-
-        .timer {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-variant-numeric: tabular-nums;
-            font-feature-settings: "tnum" 1, "ss01" 1;
-            padding: 8px 12px;
-            border-radius: 10px;
-            background: #f8fafc;
-            color: var(--text);
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            min-width: 84px;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .timer.danger {
-            background: #fef2f2;
-            color: #b91c1c;
-            border-color: #fecaca;
-        }
-
-        .timer .fa-clock {
-            color: var(--primary);
-        }
-
-        .timer.danger .fa-clock {
-            color: #ef4444;
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 420px) {
-            .app-title {
-                font-size: 13px;
-            }
-
-            .app-subtitle {
-                display: none;
-            }
-
-            .btn span.label {
-                display: none;
-            }
-
-            .btn {
-                padding: 8px 10px;
-            }
-
-            .timer {
-                min-width: 76px;
-                padding: 8px 10px;
-            }
-        }
-
-        .resizable-grid {
-            display: grid;
-            grid-template-columns: minmax(250px, 1fr) 6px minmax(250px, 1fr);
-            /* kiri - handle - kanan */
-            gap: 0;
-            align-items: stretch;
-            height: 100%;
-            /* opsional, biar penuh */
-        }
-
-        .resize-handle {
-            background: #e5e7eb;
-            cursor: col-resize;
-            width: 6px;
-            transition: background 0.2s;
-        }
-
-        .resize-handle:hover {
-            background: #cbd5e1;
-        }
-    </style>
-
-    <!-- style informasi ujian (di bawah header) -->
-    <style>
-        .session-info {
-            background: #f8fafc;
-            border-top: 1px solid #111113;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 10px 12px;
-        }
-
-        .session-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 8px 12px;
-        }
-
-        .kv.right {
-            text-align: right;
-        }
-
-        .kv {
-            min-width: 0;
-        }
-
-        .k {
-            font-size: 11px;
-            color: #64748b;
-            line-height: 1.1;
-            margin-bottom: 2px;
-        }
-
-        .v {
-            font-size: 13px;
-            font-weight: 600;
-            color: #0f172a;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        @media (max-width: 420px) {
-            .session-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
-    <!-- style bagian part soal -->
-    <style>
-        .parts-section {
-            padding: 10px 12px 0 12px !important;
-            box-sizing: border-box;
-        }
-
-        /* Opsional: pastikan konten panel tidak menempel ke tepi */
-        .parts-section .x-panels {
-            margin-top: 10px;
-            margin-right: 0;
-            /* biarkan ikut padding parent */
-        }
-
-        /* Scroll container = x-tabs */
-        .x-tabs {
-            display: inline-flex;
-            /* baris horizontal */
-            flex-wrap: nowrap;
-            /* jangan pindah baris */
-            gap: 8px;
-            width: 100%;
-            padding: 8px 12px;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-
-            overflow-x: auto;
-            /* inti scroll horizontal */
-            overflow-y: hidden;
-            white-space: nowrap;
-            /* cegah wrap */
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x proximity;
-            -ms-overflow-style: none;
-            scrollbar-width: thin;
-
-            position: relative;
-            /* untuk edge hint */
-        }
-
-        .x-tabs::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .x-tabs::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 999px;
-        }
-
-        .x-tabs::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        /* Tab pill */
-        .x-tab {
-            flex: 0 0 auto;
-            /* tiap tab lebar kontennya, tidak menyusut */
-            scroll-snap-align: start;
-            border: 1px solid #e5e7eb;
-            background: #f8fafc;
-            color: #0f172a;
-            border-radius: 999px;
-            padding: 10px 14px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: .2px;
-            cursor: pointer;
-            transition: background .15s ease, color .15s ease, border-color .15s ease, transform .06s ease;
-            user-select: none;
-        }
-
-        .x-tab:hover {
-            border-color: #cbd5e1;
-            background: #f1f5f9;
-        }
-
-        .x-tab:active {
-            transform: translateY(1px);
-        }
-
-        .x-tab.is-active {
-            color: #0b5dd7;
-            background: #e8f0ff;
-            border-color: #c7ddff;
-        }
-
-        /* Edge shadow hint (kiri/kanan) langsung di x-tabs */
-        .x-tabs::before,
-        .x-tabs::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 20px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity .15s ease;
-        }
-
-        .x-tabs::before {
-            left: 0;
-            background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-        }
-
-        .x-tabs::after {
-            right: 0;
-            background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-        }
-
-        .x-tabs.has-left::before {
-            opacity: 1;
-        }
-
-        .x-tabs.has-right::after {
-            opacity: 1;
-        }
-
-        /* Panels */
-        .x-panels {
-            margin-top: 10px;
-        }
-
-        .x-panel {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-        }
-
-        .x-panel[hidden] {
-            display: none;
-        }
-
-        .x-panel.is-open {
-            display: block;
-        }
-
-        .x-panel-inner {
-            padding: 12px;
-            font-size: 14px;
-            color: #0f172a;
-        }
-
-        /* Mobile tuning */
-        @media (max-width: 768px) {
-            .x-tab {
-                padding: 10px 12px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .x-tab {
-                padding: 10px 10px;
-                font-size: 13px;
-            }
-        }
-    </style>
-
-    <!-- style bagian reading + questions -->
-    <style>
-        /* Layout container dengan jarak kiri-kanan seimbang */
-        .reading-section {
-            padding: 10px 12px 12px 12px;
-            box-sizing: border-box;
-        }
-
-        /* Grid dua kolom (kiri naratif, kanan soal) */
-        .reading-grid {
-            display: grid;
-            /* grid-template-columns: 1.1fr 1fr; */
-            gap: 12px;
-            align-items: stretch;
-        }
-
-        /* Panel kiri: naratif */
-        .passage {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-            display: flex;
-            flex-direction: column;
-            min-height: 420px;
-            max-height: min(72vh, 820px);
-        }
-
-        .passage-title {
-            margin: 12px 12px 0 12px;
-            font-size: 15px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .passage-body {
-            padding: 10px 12px 12px 12px;
-            overflow: auto;
-            /* scrollable */
-            line-height: 1.6;
-            color: #0f172a;
-        }
-
-        /* Panel kanan: instruksi + soal */
-        .qa {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-            display: flex;
-            flex-direction: column;
-            min-height: 420px;
-            max-height: min(72vh, 820px);
-            overflow: hidden;
-            /* biar sticky bekerja di dalam */
-        }
-
-        /* Instruksi sticky di atas */
-        .qa-instructions {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 12px;
-        }
-
-        .qa-instructions .lead {
-            font-weight: 700;
-            margin: 0 0 6px 0;
-        }
-
-        .qa-instructions .legend {
-            margin: 6px 0 0 18px;
-            padding: 0;
-        }
-
-        .qa-instructions .legend li {
-            margin: 2px 0;
-        }
-
-        /* Isi soal scrollable */
-        .qa-body {
-            padding: 10px 12px 12px 12px;
-            overflow: auto;
-            /* scrollable */
-        }
-
-        /* Soal */
-        .q-item {
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 30px;
-        }
-
-        td .q-item {
-            border: none !important;
-            border-radius: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            box-shadow: none !important;
-            outline: none !important;
-            background: none !important;
-        }
-
-        .q-text {
-            /* font-weight: 00; */
-            color: #0f172a;
-            margin: 0 0 8px 0;
-        }
-
-        .q-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 22px;
-            height: 22px;
-            border-radius: 999px;
-            background: #eff6ff;
-            color: #1d4ed8;
-            font-size: 12px;
-            margin-right: 8px;
-        }
-
-        /* Opsi */
-        .q-options {
-            display: grid;
-            gap: 8px;
-        }
-
-        .q-option {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 10px 12px;
-            cursor: pointer;
-            user-select: none;
-            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
-        }
-
-        .q-option:hover {
-            border-color: #cbd5e1;
-            background: #f8fafc;
-        }
-
-        .q-option input {
-            display: none;
-        }
-
-        .q-option .opt-code {
-            font-weight: 800;
-            color: #334155;
-        }
-
-        .q-option .opt-label {
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        /* State terpilih */
-        .q-option.is-selected {
-            border-color: #2563eb;
-            background: #eef2ff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
-        }
-
-        .q-option.is-selected .opt-code {
-            color: #1d4ed8;
-        }
-
-        .q-option.is-selected .opt-label {
-            color: #1d4ed8;
-        }
-
-        .q-dropdown {
-            width: 50px;
-            /* Lebar dropdown */
-            padding: 6px 10px;
-            /* Ruang dalam dropdown */
-            border: 1px solid #ccc;
-            /* Border abu-abu */
-            border-radius: 6px;
-            /* Sudut membulat */
-            background-color: #fff;
-            /* Warna background */
-            font-size: 14px;
-            /* Ukuran font */
-            color: #333;
-            /* Warna teks */
-            appearance: none;
-            /* Hilangkan style default browser */
-            -webkit-appearance: none;
-            /* Safari / Chrome */
-            -moz-appearance: none;
-            /* Firefox */
-            cursor: pointer;
-            /* Tanda pointer saat hover */
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        /* Hover & fokus */
-        .q-dropdown:hover {
-            border-color: #888;
-        }
-
-        .q-dropdown:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
-            outline: none;
-        }
-
-        /* Tambahan: arrow custom (opsional) */
-        .q-dropdown-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .q-dropdown-wrapper::after {
-            content: "▾";
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #555;
-            font-size: 12px;
-        }
-
-
-        /* Responsif: tumpuk vertikal di layar kecil */
-        @media (max-width: 767px) {
-            .reading-grid {
-                grid-template-columns: 1fr;
-                /* tumpuk atas-bawah */
-                grid-template-rows: auto auto;
-                /* reading di atas, soal di bawah */
-            }
-        }
-
-        @media (max-width: 900px) {
-            .reading-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .passage,
-            .qa {
-                max-height: none;
-            }
-
-            .q-options {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        #panel-tc .q-options {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-                    
-        #panel-tc .q-number-box {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 28px;
-            height: 28px;
-            font-weight: bold;
-            border: 2px solid #333;
-            border-radius: 4px;
-            margin-left: 5px;
-        }
-
-        #panel-tc .q-text {
-            flex: 1;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-        #panel-tc input{
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-left: 5px;
-            width:120px;
-        }
-
-        #panel-sa input{
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-left: 5px;
-            width:120px;
-        }
-    </style>
-
-    <style>
-        /* Highlight Styles */
-        .highlight {
-            padding: 2px 0;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .highlight:hover {
-            filter: brightness(90%);
-        }
-
-        .highlight-yellow {
-            background-color: rgba(255, 255, 0, 0.3);
-        }
-
-        .highlight-green {
-            background-color: rgba(0, 255, 0, 0.3);
-        }
-
-        .highlight-blue {
-            background-color: rgba(0, 0, 255, 0.3);
-        }
-
-        .highlight-pink {
-            background-color: rgba(255, 0, 255, 0.3);
-        }
-
-        .highlight-orange {
-            background-color: rgba(255, 165, 0, 0.3);
-        }
-
-        /* Toolbar */
-        .highlight-toolbar {
-            position: absolute;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            padding: 6px 10px;
-            z-index: 1000;
-            display: none;
-            flex-direction: row;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .color-option {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: transform 0.2s;
-        }
-
-        .color-option:hover {
-            transform: scale(1.1);
-        }
-
-        .color-option.selected {
-            border-color: #333;
-        }
-
-        .color-option.yellow {
-            background-color: rgba(255, 255, 0, 0.7);
-        }
-
-        .color-option.green {
-            background-color: rgba(0, 255, 0, 0.7);
-        }
-
-        .color-option.blue {
-            background-color: rgba(0, 0, 255, 0.7);
-        }
-
-        .color-option.pink {
-            background-color: rgba(255, 0, 255, 0.7);
-        }
-
-        .color-option.orange {
-            background-color: rgba(255, 165, 0, 0.7);
-        }
-
-        .highlight-toolbar button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 4px;
-            border-radius: 4px;
-        }
-
-        .highlight-toolbar button:hover {
-            background: #f0f0f0;
-        }
-
-        /* Note Popup */
-        .note-popup {
-            position: absolute;
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 8px 12px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            max-width: 250px;
-            font-size: 14px;
-            z-index: 2000;
-            display: none;
-        }
-
-
-        .note-popup textarea {
-            width: 100%;
-            height: 80px;
-            padding: 6px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            resize: vertical;
-        }
-
-        .note-popup button {
-            padding: 6px 12px;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .note-popup button.save {
-            background: #3498db;
-            color: #fff;
-        }
-
-        .note-popup button.cancel {
-            background: #95a5a6;
-            color: #fff;
-        }
-
-        .note-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #e74c3c;
-            border-radius: 50%;
-            margin-left: 4px;
-        }
-    </style>
-
-    <!-- style untuk floating informasi nomor soal -->
-    <style>
-        .floating-questions {
-            position: fixed;
-            bottom: 16px;
-            right: 16px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        /* Floating Action Button (FAB) */
-        .fq-fab {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: none;
-            background: #2563eb;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .fq-fab:hover {
-            background: #1d4ed8;
-            transform: scale(1.05);
-        }
-
-        /* Panel soal */
-        .fq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 10px;
-        }
-
-        .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
-        }
-
-        .fq-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-            gap: 6px;
-        }
-
-        .fq-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #f8fafc;
-            color: #0f172a;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .fq-item:hover {
-            background: #f1f5f9;
-        }
-
-        /* Status */
-        .fq-item.answered {
-            background: #dcfce7;
-            border-color: #16a34a;
-            color: #15803d;
-        }
-
-        .fq-item.current {
-            background: #dbeafe;
-            border-color: #2563eb;
-            color: #1d4ed8;
-        }
-
-        /* Mobile full width panel */
-        @media (max-width: 768px) {
-            .floating-questions {
-                bottom: 12px;
-                right: 12px;
-                left: auto;
-                width: auto;
-                max-width: 100%;
-            }
-
-            .floating-questions.expanded {
-                width: calc(100% - 24px);
-                right: 12px;
-                left: 12px;
-                border-radius: 16px;
-            }
-
-            .fq-list {
-                grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-            }
-
-            .fq-item {
-                width: 44px;
-                height: 44px;
-                font-size: 14px;
-            }
-        }
-    </style>
-</head>
+@include('ielts.sets.layouts.head')
 
 <body>
-    <header class="app-header" role="banner">
-        <div class="header-row" aria-label="Header CAT Bahasa Inggris">
-            <div class="brand">
-                <div class="logo" aria-hidden="true">LOGO</div>
-                <div class="title-wrap">
-                    <div class="app-title">CAT Bahasa Inggris</div>
-                    <div class="app-subtitle">Latihan soal adaptif</div>
-                </div>
-            </div>
-
-            <div class="actions">
-                <button id="infoBtn" class="btn btn-ghost icon-btn" aria-label="Informasi">
-                    <i class="fa-solid fa-circle-info"></i>
-                </button>
-
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
-                    <i class="fa-regular fa-clock"></i>
-                    <span id="timeText">00:00</span>
-                </div>
-
-                <button id="doneBtn" class="btn btn-danger">
-                    <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <section class="session-info" aria-label="Keterangan Sesi">
-        <div class="session-grid">
-            <div class="kv">
-                <div class="k">Nama Sesi</div>
-                <div class="v" id="siName">Placement Test - Bahasa Inggris</div>
-            </div>
-            <div class="kv right">
-                <div class="k">Peserta</div>
-                <div class="v" id="siUser">Ahmad Fauzi</div>
-            </div>
-        </div>
-    </section>
+    @include('ielts.sets.layouts.header')
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">True/False/Not Given</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
                 data-id="tfng2">True/False/Not Given 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
@@ -2441,7 +1400,7 @@
                                                 Restored in the 1990s Excellent condition, despite the
                                                 <span class="q-number-box">1</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
-                                                 of 2001.
+                                                of 2001.
                                             </div>
                                         </td>
                                     </tr>
@@ -2480,7 +1439,7 @@
                                                 Old, deep and very dramatic Has
                                                 <span class="q-number-box">4</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
-                                                 which provide a view to the steps.
+                                                which provide a view to the steps.
                                             </div>
                                         </td>
                                     </tr>
@@ -2511,15 +1470,60 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Some wells are vast, open craters with hundreds of steps paving each sloping side, often in tiers. Others are more elaborate, with long stepped passages leading to the water via several storeys. Built from stone and supported by pillars, they also included pavilions that sheltered visitors from the relentless heat. But perhaps the most impressive features are the intricate decorative sculptures that embellish many stepwells, showing activities from fighting and dancing to everyday acts such as women combing their hair and churning butter.</p>
-                                <p>Down the centuries, thousands of wells were constructed throughout northwestern India, but the majority have now fallen into disuse; many are derelict and dry, as groundwater has been diverted for industrial use and the wells no longer reach the water table. Their condition hasn’t been helped by recent dry spells: southern Rajasthan suffered an eight-year drought between 1996 and 2004.</p>
-                                <p>However, some important sites in Gujarat have recently undergone major restoration, and the state government announced in June last year that it plans to restore the stepwells throughout the state.</p>
-                                <p>In Patan, the state’s ancient capital, the stepwell of Rani Ki Vav (Queen’s Stepwell) is perhaps the finest current example. It was built by Queen Udayamati during the late 11th century, but became silted up following a flood during the 13th century. But the Archaeological Survey of India began restoring it in the 1960s, and today it’s in pristine condition. At 65 metres long, 20 metres wide and 27 metres deep, Rani Ki Vav features 500 distinct sculptures carved into niches throughout the monument, depicting gods such as Vishnu and Parvati in various incarnations. Incredibly, in January 2001, this ancient structure survived a devastating earthquake that measured 7.6 on the Richter scale.</p>
-                                <p>Another example is the Surya Kund in Modhera, northern Gujarat, next to the Sun Temple, built by King Bhima I in 1026 to honour the sun god Surya. It actually resembles a tank (kund means reservoir or pond) rather than a well, but displays the hallmarks of stepwell architecture, including four sides of steps that descend to the bottom in a stunning geometrical formation. The terraces house 108 small, intricately carved shrines between the sets of steps.</p>
-                                <p>Rajasthan also has a wealth of wells. The ancient city of Bundi, 200 kilometres south of Jaipur, is renowned for its architecture, including its stepwells. One of the larger examples is Raniji Ki Baori, which was built by the queen of the region, Nathavatji, in 1699. At 46 metres deep, 20 metres wide and 40 metres long, the intricately carved monument is one of 21 baoris commissioned in the Bundi area by Nathavatji.</p>
-                                <p>In the old ruined town of Abhaneri, about 95 kilometres east of Jaipur, is Chand Baori, one of India’s oldest and deepest wells; aesthetically, it’s perhaps one of the most dramatic. Built in around 850 AD next to the temple of Harshat Mata, the baori comprises hundreds of zigzagging steps that run along three of its sides, steeply descending 11 storeys, resulting in a striking geometric pattern when seen from afar. On the fourth side, verandas which are supported by ornate pillars overlook the steps.</p>
-                                <p>Still in public use is Neemrana Ki Baori, located just off the Jaipur–Dehli highway. Constructed in around 1700, it’s nine storeys deep, with the last two being underwater. At ground level, there are 86 colonnaded openings from where the visitor descends 170 steps to the deepest water source.</p>
-                                <p>Today, following years of neglect, many of these monuments to medieval engineering have been saved by the Archaeological Survey of India, which has recognised the importance of preserving them as part of the country’s rich history. Tourists flock to wells in far-flung corners of northwestern India to gaze in wonder at these architectural marvels from 1,000 years ago, which serve as a reminder of both the ingenuity and artistry of ancient civilisations and of the value of water to human existence.</p>
+                                <p>Some wells are vast, open craters with hundreds of steps paving each sloping side,
+                                    often in tiers. Others are more elaborate, with long stepped passages leading to the
+                                    water via several storeys. Built from stone and supported by pillars, they also
+                                    included pavilions that sheltered visitors from the relentless heat. But perhaps the
+                                    most impressive features are the intricate decorative sculptures that embellish many
+                                    stepwells, showing activities from fighting and dancing to everyday acts such as
+                                    women combing their hair and churning butter.</p>
+                                <p>Down the centuries, thousands of wells were constructed throughout northwestern
+                                    India, but the majority have now fallen into disuse; many are derelict and dry, as
+                                    groundwater has been diverted for industrial use and the wells no longer reach the
+                                    water table. Their condition hasn’t been helped by recent dry spells: southern
+                                    Rajasthan suffered an eight-year drought between 1996 and 2004.</p>
+                                <p>However, some important sites in Gujarat have recently undergone major restoration,
+                                    and the state government announced in June last year that it plans to restore the
+                                    stepwells throughout the state.</p>
+                                <p>In Patan, the state’s ancient capital, the stepwell of Rani Ki Vav (Queen’s Stepwell)
+                                    is perhaps the finest current example. It was built by Queen Udayamati during the
+                                    late 11th century, but became silted up following a flood during the 13th century.
+                                    But the Archaeological Survey of India began restoring it in the 1960s, and today
+                                    it’s in pristine condition. At 65 metres long, 20 metres wide and 27 metres deep,
+                                    Rani Ki Vav features 500 distinct sculptures carved into niches throughout the
+                                    monument, depicting gods such as Vishnu and Parvati in various incarnations.
+                                    Incredibly, in January 2001, this ancient structure survived a devastating
+                                    earthquake that measured 7.6 on the Richter scale.</p>
+                                <p>Another example is the Surya Kund in Modhera, northern Gujarat, next to the Sun
+                                    Temple, built by King Bhima I in 1026 to honour the sun god Surya. It actually
+                                    resembles a tank (kund means reservoir or pond) rather than a well, but displays the
+                                    hallmarks of stepwell architecture, including four sides of steps that descend to
+                                    the bottom in a stunning geometrical formation. The terraces house 108 small,
+                                    intricately carved shrines between the sets of steps.</p>
+                                <p>Rajasthan also has a wealth of wells. The ancient city of Bundi, 200 kilometres south
+                                    of Jaipur, is renowned for its architecture, including its stepwells. One of the
+                                    larger examples is Raniji Ki Baori, which was built by the queen of the region,
+                                    Nathavatji, in 1699. At 46 metres deep, 20 metres wide and 40 metres long, the
+                                    intricately carved monument is one of 21 baoris commissioned in the Bundi area by
+                                    Nathavatji.</p>
+                                <p>In the old ruined town of Abhaneri, about 95 kilometres east of Jaipur, is Chand
+                                    Baori, one of India’s oldest and deepest wells; aesthetically, it’s perhaps one of
+                                    the most dramatic. Built in around 850 AD next to the temple of Harshat Mata, the
+                                    baori comprises hundreds of zigzagging steps that run along three of its sides,
+                                    steeply descending 11 storeys, resulting in a striking geometric pattern when seen
+                                    from afar. On the fourth side, verandas which are supported by ornate pillars
+                                    overlook the steps.</p>
+                                <p>Still in public use is Neemrana Ki Baori, located just off the Jaipur–Dehli highway.
+                                    Constructed in around 1700, it’s nine storeys deep, with the last two being
+                                    underwater. At ground level, there are 86 colonnaded openings from where the visitor
+                                    descends 170 steps to the deepest water source.</p>
+                                <p>Today, following years of neglect, many of these monuments to medieval engineering
+                                    have been saved by the Archaeological Survey of India, which has recognised the
+                                    importance of preserving them as part of the country’s rich history. Tourists flock
+                                    to wells in far-flung corners of northwestern India to gaze in wonder at these
+                                    architectural marvels from 1,000 years ago, which serve as a reminder of both the
+                                    ingenuity and artistry of ancient civilisations and of the value of water to human
+                                    existence.</p>
                             </div>
                         </article>
 
@@ -2539,7 +1543,8 @@
                                         <span style="flex: 1;">
                                             Which part of some stepwells provided shade for people?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="q1" class="q-text"
+                                                    placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -2549,9 +1554,11 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">2</span>
                                         <span style="flex: 1;">
-                                            What type of serious climatic event, which took place in southern Rajasthan, is mentioned in the article?
+                                            What type of serious climatic event, which took place in southern Rajasthan,
+                                            is mentioned in the article?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="q1" class="q-text"
+                                                    placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -2563,7 +1570,8 @@
                                         <span style="flex: 1;">
                                             Who are frequent visitors to stepwells nowadays?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="q1" class="q-text"
+                                                    placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -3200,8 +2208,6 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
-
-
 
 
 </body>

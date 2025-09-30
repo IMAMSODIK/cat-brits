@@ -80,5 +80,9 @@ class DatabaseSeeder extends Seeder
             'verification_status' => 1,
             'email' => 'lamine@gmail.com',
         ]);
+
+        $this->call([
+            SetSoalSeeder::class,
+        ]);
     }
 }
