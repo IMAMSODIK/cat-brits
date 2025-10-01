@@ -433,211 +433,63 @@
         }
     </style>
 
-    <!-- style untuk floating informasi nomor soal -->
     <style>
-        .floating-questions {
-            position: fixed;
-            bottom: 16px;
-            right: 16px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-            overflow: hidden;
-            transition: all 0.3s ease;
+        /* Panel Styling */
+        .x-panel {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
-        /* Floating Action Button (FAB) */
-        .fq-fab {
-            width: 52px;
-            height: 52px;
+        /* Progress Dots */
+        .progress-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            border: none;
-            background: #2563eb;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, background 0.2s ease;
+            background: #ccc;
+            transition: background 0.3s;
         }
 
-        .fq-fab:hover {
-            background: #1d4ed8;
-            transform: scale(1.05);
+        .dot.active {
+            background: #007bff;
+            /* biru utk soal aktif */
         }
 
-        /* Panel soal */
-        .fq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 10px;
-        }
-
-        .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
-        }
-
-        .fq-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-            gap: 6px;
-        }
-
-        .fq-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #f8fafc;
-            color: #0f172a;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .fq-item:hover {
-            background: #f1f5f9;
-        }
-
-        /* Status */
-        .fq-item.answered {
-            background: #dcfce7;
-            border-color: #16a34a;
-            color: #15803d;
-        }
-
-        .fq-item.current {
-            background: #dbeafe;
-            border-color: #2563eb;
-            color: #1d4ed8;
-        }
-
-        /* Mobile full width panel */
-        @media (max-width: 768px) {
-            .floating-questions {
-                bottom: 12px;
-                right: 12px;
-                left: auto;
-                width: auto;
-                max-width: 100%;
-            }
-
-            .floating-questions.expanded {
-                width: calc(100% - 24px);
-                right: 12px;
-                left: 12px;
-                border-radius: 16px;
-            }
-
-            .fq-list {
-                grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-            }
-
-            .fq-item {
-                width: 44px;
-                height: 44px;
-                font-size: 14px;
-            }
-        }
-    </style>
-
-    <style>
-        /* Container soal */
-        /* Progress wrapper */
-        .sq-progress {
-            margin-bottom: 14px;
-        }
-
-        .sq-progress-text {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #444;
-            display: block;
-            margin-bottom: 6px;
-            text-align: center;
-        }
-
-        .sq-progress-bar {
-            background: #e5e7eb;
-            /* gray-200 */
-            border-radius: 10px;
-            height: 8px;
-            overflow: hidden;
-        }
-
-        .sq-progress-fill {
-            background: #4f46e5;
-            /* indigo */
-            height: 100%;
-            width: 0;
-            border-radius: 10px;
-            transition: width 0.4s ease;
+        .dot.completed {
+            background: #28a745;
+            /* hijau kalau sudah record/upload */
         }
 
 
-        .speaking-question {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            padding: 20px;
-            margin-bottom: 20px;
-            animation: fadeIn 0.4s ease;
-        }
-
-        /* Animasi masuk */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Navigasi */
+        /* Navigation */
         .sq-navigation {
             display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-buttons {
+            display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.5rem;
         }
 
-        .sq-navigation .sq-text {
+        .sq-navigation button {
             flex: 1;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* Tombol umum */
-        .sq-navigation button,
-        .sq-actions button,
-        .sq-submit button,
-        .sq-upload-label {
-            background: #4f46e5;
-            /* Indigo */
-            color: white;
-            padding: 10px 16px;
-            border-radius: 10px;
+            padding: 0.8rem 1rem;
             border: none;
-            font-size: 0.95rem;
+            border-radius: 8px;
+            background: #007bff;
+            color: white;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s;
         }
@@ -647,33 +499,45 @@
             cursor: not-allowed;
         }
 
-        .sq-navigation button:hover:not(:disabled),
-        .sq-actions button:hover,
-        .sq-submit button:hover,
-        .sq-upload-label:hover {
-            background: #4338ca;
-            /* darker indigo */
+        .sq-navigation button:hover:not(:disabled) {
+            background: #0056b3;
         }
 
-        /* Actions (record & upload) */
+        .sq-text {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Actions */
         .sq-actions {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin: 18px 0;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
-        .sq-divider {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Upload button */
-        .sq-upload-label {
-            display: inline-block;
+        .sq-record {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sq-record:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        }
+
+        .sq-record.recorded {
+            background: #28a745;
         }
 
         /* Submit */
@@ -682,31 +546,59 @@
         }
 
         .sq-submit-btn {
-            background: #10b981;
-            /* green */
-            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: #28a745;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        /* Responsiveness */
+        .sq-submit-btn:hover {
+            background: #218838;
+        }
+
+        /* Responsive */
         @media (max-width: 600px) {
-            .sq-navigation {
-                flex-direction: column;
-                gap: 12px;
+            .sq-navigation .nav-buttons {
+                flex-direction: row;
             }
 
-            .sq-navigation .sq-text {
-                order: -1;
+            .sq-text {
+                font-size: 1rem;
             }
 
             .sq-actions {
                 flex-direction: column;
             }
 
-            .sq-actions button,
-            .sq-upload-label {
+            .sq-record {
                 width: 100%;
-                text-align: center;
             }
+        }
+
+        .sq-upload-label {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sq-upload-label:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+
+        .sq-upload-label.uploaded {
+            background: #28a745;
         }
     </style>
 </head>
@@ -764,69 +656,101 @@
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
-                    <!-- Question 1 -->
+
+                    <div class="progress-dots" id="progressDots"></div>
+
                     <div class="speaking-question" data-q="1">
-                        <!-- Progress -->
-                        <div class="sq-progress">
-                            <span class="sq-progress-text">Question 1 of 2</span>
-                            <div class="sq-progress-bar">
-                                <div class="sq-progress-fill" style="width: 50%;"></div>
-                            </div>
-                        </div>
-
                         <div class="sq-navigation">
-                            <button class="sq-prev" disabled>⏮ Previous</button>
-                            <div class="sq-text">Question 1: Describe your hometown.</div>
-                            <button class="sq-next">Next ⏭</button>
+                            <div class="nav-buttons">
+                                <button class="sq-prev" disabled>Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">Question 1: <br>How do you usually spend your weekends? [Why?]</div>
                         </div>
 
                         <div class="sq-actions">
-                            <button class="sq-record" style="background-color: #009A66">🎙️ Start Recording</button>
-                            <span class="sq-divider">or</span>
+                            <button class="sq-record">🎙️ Start Recording</button>
                             <label class="sq-upload-label">
-                                📂 Upload Recording
+                                ⬆️ Upload Audio
                                 <input type="file" accept="audio/*" class="sq-upload" hidden />
                             </label>
                         </div>
 
                         <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit Answer</button>
+                            <button class="sq-submit-btn">Submit</button>
                         </div>
                     </div>
 
-                    <!-- Question 2 -->
                     <div class="speaking-question" data-q="2" hidden>
-                        <!-- Progress -->
-                        <div class="sq-progress">
-                            <span class="sq-progress-text">Question 2 of 2</span>
-                            <div class="sq-progress-bar">
-                                <div class="sq-progress-fill" style="width: 100%;"></div>
-                            </div>
-                        </div>
-
                         <div class="sq-navigation">
-                            <button class="sq-prev">⏮ Previous</button>
-                            <div class="sq-text">Question 2: What is your favorite book and why?</div>
-                            <button class="sq-next" disabled>Next ⏭</button>
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">Question 2: <br>Which is your favorite part of the weekend? [Why?]</div>
                         </div>
 
                         <div class="sq-actions">
-                            <button class="sq-record" style="background-color: #009A66">🎙️ Start Recording</button>
-                            <span class="sq-divider">or</span>
+                            <button class="sq-record">🎙️ Start Recording</button>
                             <label class="sq-upload-label">
-                                📂 Upload Recording
+                                ⬆️ Upload Audio
                                 <input type="file" accept="audio/*" class="sq-upload" hidden />
                             </label>
                         </div>
 
                         <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit Answer</button>
+                            <button class="sq-submit-btn">Submit</button>
                         </div>
                     </div>
+
+                    <div class="speaking-question" data-q="3" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">Question 3: <br>Do you think your weekends are long enough? [Why/Why
+                                note?]</div>
+                        </div>
+
+                        <div class="sq-actions">
+                            <button class="sq-record">🎙️ Start Recording</button>
+                            <label class="sq-upload-label">
+                                ⬆️ Upload Audio
+                                <input type="file" accept="audio/*" class="sq-upload" hidden />
+                            </label>
+                        </div>
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="4" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next" disabled>Next</button>
+                            </div>
+                            <div class="sq-text">Question 4: <br>How important do you think it is to have free time at the
+                                weekends? [Why?]</div>
+                        </div>
+
+                        <div class="sq-actions">
+                            <button class="sq-record">🎙️ Start Recording</button>
+                            <label class="sq-upload-label">
+                                ⬆️ Upload Audio
+                                <input type="file" accept="audio/*" class="sq-upload" hidden />
+                            </label>
+                        </div>
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-
 
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">Content: Part 2</div>
@@ -836,22 +760,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Floating Question List -->
-    <div class="floating-questions collapsed" id="floatingQuestions">
-        <!-- Tombol Icon -->
-        <button class="fq-fab" id="fqToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-
-        <!-- Panel Soal -->
-        <div class="fq-body" id="fqBody">
-            <div class="fq-list" id="fqList"></div>
-        </div>
-    </div>
 
     <script>
         (function() {
@@ -1049,224 +957,83 @@
         });
     </script>
 
-    <!-- script bagian floating question list -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingQ = document.getElementById('floatingQuestions');
-            const fqBody = document.getElementById('fqBody');
-            const fqList = document.getElementById('fqList');
-            const fqToggle = document.getElementById('fqToggle');
-
-            if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
-
-            let isCollapsed = false;
-            let currentPart = 'tfng';
-            let questionCount = 0;
-
-            // Toggle collapse
-            fqToggle.addEventListener('click', () => {
-                isCollapsed = !isCollapsed;
-                floatingQ.classList.toggle('collapsed', isCollapsed);
-                floatingQ.classList.toggle('expanded', !isCollapsed);
-            });
-
-            // Generate question numbers
-            function generateQuestionList(partId, count) {
-                fqList.innerHTML = '';
-                questionCount = count;
-
-                for (let i = 1; i <= count; i++) {
-                    const item = document.createElement('a');
-                    item.href = '#';
-                    item.className = 'fq-item';
-                    item.textContent = i;
-                    item.dataset.q = i;
-                    item.dataset.part = partId;
-
-                    // Scroll ke soal saat diklik
-                    item.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        scrollToQuestion(i, partId);
-                    });
-
-                    fqList.appendChild(item);
-                }
-            }
-
-            // Scroll ke soal tertentu
-            function scrollToQuestion(qNum, partId) {
-                const panel = document.getElementById(`panel-${partId}`);
-                if (!panel) return;
-
-                const question = panel.querySelector(`[data-q="${qNum}"]`);
-                if (question) {
-                    question.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                    question.focus();
-                }
-            }
-
-            // Update status soal (radio, dropdown, text)
-            function updateQuestionStatus(partId) {
-                const panel = document.getElementById(`panel-${partId}`);
-                if (!panel) return;
-
-                fqList.querySelectorAll('.fq-item').forEach(item => {
-                    item.classList.remove('answered', 'current');
-                });
-
-                for (let i = 1; i <= questionCount; i++) {
-                    const item = fqList.querySelector(`[data-q="${i}"][data-part="${partId}"]`);
-                    if (!item) continue;
-
-                    const question = panel.querySelector(`[data-q="${i}"]`);
-                    if (!question) continue;
-
-                    let answered = false;
-
-                    // Radio
-                    const radioChecked = question.querySelector('input[type="radio"]:checked');
-                    if (radioChecked) answered = true;
-
-                    // Dropdown
-                    const dropdown = question.querySelector('select.q-dropdown');
-                    if (dropdown && dropdown.value !== '') answered = true;
-
-                    // Text input
-                    const textInput = question.querySelector('input[type="text"], textarea');
-                    if (textInput && textInput.value.trim() !== '') answered = true;
-
-                    // Audio upload (speaking)
-                    const audioUpload = question.querySelector('input[type="file"].sq-upload');
-                    if (audioUpload && audioUpload.files.length > 0) answered = true;
-
-                    // Recording simulation (pakai data attribute)
-                    const recording = question.querySelector('.sq-record[data-recorded="true"]');
-                    if (recording) answered = true;
-
-                    if (answered) item.classList.add('answered');
-                }
-            }
-
-
-            // Deteksi jawaban berubah
-            function watchAnswerChanges() {
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
-                });
-
-                document.addEventListener('change', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
-                });
-
-                document.addEventListener('click', (e) => {
-                    const option = e.target.closest('.q-option');
-                    if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
-                });
-            }
-
-            // Deteksi perubahan part
-            function watchPartChanges() {
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName ===
-                            'data-active') {
-                            const newPart = mutation.target.dataset.active;
-                            if (newPart && newPart !== currentPart) {
-                                currentPart = newPart;
-                                updateQuestionListForPart(newPart);
-                            }
-                        }
-                    });
-                });
-
-                const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
-            }
-
-            // Update question list untuk part aktif
-            function updateQuestionListForPart(partId) {
-                const questionCounts = {
-                    'tfng': 4,
-                    'tfng2': 4,
-                    'ynng': 4,
-                };
-                const count = questionCounts[partId] || 5;
-                generateQuestionList(partId, count);
-                updateQuestionStatus(partId);
-            }
-
-            // Init
-            updateQuestionListForPart('tfng');
-            watchPartChanges();
-            watchAnswerChanges();
-            setInterval(() => updateQuestionStatus(currentPart), 2000);
-        });
-    </script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const questions = document.querySelectorAll('.speaking-question');
-            const total = questions.length;
+            const totalQuestions = questions.length;
+            const progressDots = document.getElementById('progressDots');
 
+            // Generate dots
+            for (let i = 0; i < totalQuestions; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                progressDots.appendChild(dot);
+            }
+
+            function updateProgress(currentIdx) {
+                const dots = progressDots.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.remove('active');
+                    if (idx === currentIdx) dot.classList.add('active');
+                    // jangan auto completed, hanya update active
+                });
+            }
+
+            function markCompleted(idx) {
+                const dots = progressDots.querySelectorAll('.dot');
+                if (dots[idx]) {
+                    dots[idx].classList.add('completed');
+                }
+            }
+
+            // Navigation
             questions.forEach((q, idx) => {
                 const prevBtn = q.querySelector('.sq-prev');
                 const nextBtn = q.querySelector('.sq-next');
-                const progressText = q.querySelector('.sq-progress-text');
-                const progressFill = q.querySelector('.sq-progress-fill');
 
-                // Update progress text & bar
-                if (progressText) {
-                    progressText.textContent = `Question ${idx + 1} of ${total}`;
-                }
-                if (progressFill) {
-                    progressFill.style.width = `${((idx + 1) / total) * 100}%`;
-                }
-
-                // Navigasi tombol
                 if (prevBtn) {
-                    prevBtn.disabled = idx === 0;
                     prevBtn.addEventListener('click', () => {
                         q.hidden = true;
                         questions[idx - 1].hidden = false;
+                        updateProgress(idx - 1);
                     });
                 }
-
                 if (nextBtn) {
-                    nextBtn.disabled = idx === total - 1;
                     nextBtn.addEventListener('click', () => {
                         q.hidden = true;
                         questions[idx + 1].hidden = false;
+                        updateProgress(idx + 1);
                     });
                 }
             });
 
-            // Rekaman simulasi
-            document.querySelectorAll('.sq-record').forEach(btn => {
+            // Record button simulation
+            document.querySelectorAll('.sq-record').forEach((btn, idx) => {
                 btn.addEventListener('click', () => {
                     btn.textContent = "✅ Recorded";
-                    btn.dataset.recorded = "true";
+                    btn.classList.add("recorded");
+                    markCompleted(idx); // dot jadi hijau
                 });
             });
 
             // Upload audio
-            document.querySelectorAll('.sq-upload').forEach(input => {
+            document.querySelectorAll('.sq-upload').forEach((input, idx) => {
                 input.addEventListener('change', () => {
                     if (input.files.length > 0) {
-                        const label = input.closest('.sq-upload-label');
-                        if (label) label.textContent = "✅ Uploaded";
+                        const label = input.closest('.sq-actions').querySelector(
+                        '.sq-upload-label');
+                        if (label) {
+                            label.textContent = "✅ Audio Uploaded";
+                            label.classList.add("uploaded");
+                        }
+                        markCompleted(idx); // dot jadi hijau
                     }
                 });
             });
         });
     </script>
+
 
 
 </body>
