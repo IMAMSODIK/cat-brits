@@ -133,4 +133,51 @@ student
 
 
 
-sidebar ielts -> daftar set soal -> reading -> Cambridge IELTS 10 Academic Reading Test 1 -> parts soal (True/false/not given) -> soal
+idebar ielts -> daftar set soal -> reading -> Cambridge IELTS 10 Academic Reading Test 1 -> parts soal (True/false/not given) -> soal
+
+
+
+
+penerimaan barang
+        -> jika status bayar yang dipilih transfer, maka dianggap lunas
+           jadi di penerimaan
+                - harga awal dibuat readonly
+                - field harga terbayar di hide
+                - status bayar readonly
+                - upload bukti transfer tidak ada
+
+panel tab dibawah hilang jika scroll 
+laporan pakai data perhari (sama dengan penerimaan dan pengiriman barang)
+
+
+
+
+laporan untuk supir dan bahan ceklis karani
+
+1. barang dijemput supir
+2. karani klik laporan daftar barang berdasarkan:
+        - data hari ini
+        - tujuan pengiriman barang
+3. lalu ada tombol pilihan cetak/kirim (kirim ke whatsapp supir)
+        jadi nanti itu jadi surat jalan untuk supir, gak perlu kertas lagi
+
+4. di loket tujuan barang, karani klik daftar barang yang dikirim hari ini dan sudah ada fitur ceklis barang diterima
+
+kolom pada table
+No, nama penerima, status antar/jemput, tujuan barang, jenis kiriman, ongkos kirim, status bayar
+
+dibawah table ada total semua ongkir
+total belum bayar
+total transfer
+
+di laporan
+card merupakan data daftar barang yang akan dikirim hari ini
+
+misa loket: medan
+barang yang kemungkinan dikirim dari medan akan dikirim ke sibolga, pandan, sorkam
+
+- pada saat karani medan klik laporan daftar barang hari ini, maka akan muncul daftar barang yang dikirim hari ini
+- pada saat karani klik menu export laporan, maka akan muncul popup barang dengan tujuan kota mana saja yang akan dipilih
+        jika pilih : pandan, sorkam, sibolga (maka bg color akan berbeda warna, sortby nama kota)
+
+buat tanda barang yang belum diekspor ke supir

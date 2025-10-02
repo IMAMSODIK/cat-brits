@@ -506,7 +506,6 @@
         .sq-text {
             text-align: center;
             font-size: 1.1rem;
-            font-weight: 600;
         }
 
         /* Actions */
@@ -600,6 +599,13 @@
         .sq-upload-label.uploaded {
             background: #28a745;
         }
+
+        .q-item {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 0 0 0 10px;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 
@@ -657,6 +663,10 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
 
+                    <fieldset class="q-item">
+                        <p><b>Questions 1-4</b></p>
+                    </fieldset>
+
                     <div class="progress-dots" id="progressDots"></div>
 
                     <div class="speaking-question" data-q="1">
@@ -665,7 +675,7 @@
                                 <button class="sq-prev" disabled>Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text">Question 1: <br>How do you usually spend your weekends? [Why?]</div>
+                            <div class="sq-text"><b>Question 1:</b> <br>How do you usually spend your weekends? [Why?]</div>
                         </div>
 
                         <div class="sq-actions">
@@ -687,7 +697,8 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text">Question 2: <br>Which is your favorite part of the weekend? [Why?]</div>
+                            <div class="sq-text"><b>Question 2:</b> <br>Which is your favorite part of the weekend? [Why?]
+                            </div>
                         </div>
 
                         <div class="sq-actions">
@@ -709,7 +720,7 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text">Question 3: <br>Do you think your weekends are long enough? [Why/Why
+                            <div class="sq-text"><b>Question 3:</b> <br>Do you think your weekends are long enough? [Why/Why
                                 note?]</div>
                         </div>
 
@@ -732,7 +743,8 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next" disabled>Next</button>
                             </div>
-                            <div class="sq-text">Question 4: <br>How important do you think it is to have free time at the
+                            <div class="sq-text"><b>Question 4:</b> <br>How important do you think it is to have free time at
+                                the
                                 weekends? [Why?]</div>
                         </div>
 
@@ -754,6 +766,35 @@
 
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">Content: Part 2</div>
+
+                <fieldset class="q-item">
+                    <p><b>Questions 1-1</b></p>
+                </fieldset>
+
+                <div class="speaking-question" data-q="1">
+                    <div class="sq-navigation">
+                        <div class="sq-text"><b>Question 1:</b> <br>
+                            Describe someone you know who does something well. <br>
+                            You should say: <br>
+                            who this person is <br>
+                            how you know this person <br>
+                            what they do well <br>
+                            and explain why you think this person is so good at doing this.
+                        </div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Part 3</div>
@@ -1022,7 +1063,7 @@
                 input.addEventListener('change', () => {
                     if (input.files.length > 0) {
                         const label = input.closest('.sq-actions').querySelector(
-                        '.sq-upload-label');
+                            '.sq-upload-label');
                         if (label) {
                             label.textContent = "✅ Audio Uploaded";
                             label.classList.add("uploaded");
