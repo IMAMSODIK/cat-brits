@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -734,6 +735,20 @@
             margin-left: 5px;
             width: 120px;
         }
+
+        .q-option.correct {
+            background-color: #c8f7c5;
+            /* hijau muda */
+            border: 2px solid #27ae60;
+            border-radius: 6px;
+        }
+
+        .q-option.wrong {
+            background-color: #f9c0c0;
+            /* merah muda */
+            border: 2px solid #e74c3c;
+            border-radius: 6px;
+        }
     </style>
 
     <style>
@@ -1144,6 +1159,579 @@
             }
         }
     </style>
+
+    {{-- style modal --}}
+    <style>
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .custom-modal-content {
+            background: #fff;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transform: scale(0.9) translateY(50px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .custom-modal.show .custom-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Modal Header */
+        .modal-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Close Button */
+        .custom-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: bold;
+        }
+
+        .custom-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Score Display */
+        .score-display {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+        }
+
+        .score-text {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .score-label {
+            font-size: 16px;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .score-percentage {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2ecc71;
+        }
+
+        /* Results Table */
+        .results-table-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .results-table thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .results-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .results-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        .results-table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .results-table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .results-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.correct {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            border: 1px solid #28a745;
+        }
+
+        .status-badge.wrong {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            color: #721c24;
+            border: 1px solid #dc3545;
+        }
+
+        .status-icon {
+            font-size: 14px;
+        }
+
+        /* Answer Display */
+        .answer-display {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .answer-correct {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #28a745;
+        }
+
+        .answer-wrong {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #dc3545;
+        }
+
+        .answer-correct-option {
+            background: #cce5ff;
+            color: #004085;
+            border: 1px solid #007bff;
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            padding: 25px 30px;
+            background: #f8fafc;
+            border-radius: 0 0 20px 20px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .close-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .close-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .close-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .custom-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .modal-header {
+                padding: 20px 25px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .score-display {
+                padding: 20px;
+            }
+
+            .score-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .score-text {
+                font-size: 28px;
+            }
+
+            .results-table {
+                font-size: 13px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 12px 10px;
+            }
+
+            .modal-footer {
+                padding: 20px 25px;
+            }
+
+            .close-btn {
+                width: 100%;
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+
+            .custom-close {
+                top: 15px;
+                right: 20px;
+                width: 35px;
+                height: 35px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .results-table {
+                font-size: 12px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 10px 8px;
+            }
+
+            .status-badge {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .answer-display {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
+
+        /* Animation for table rows */
+        .results-table tbody tr {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInRow 0.4s ease forwards;
+        }
+
+        .results-table tbody tr:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .results-table tbody tr:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .results-table tbody tr:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .results-table tbody tr:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .results-table tbody tr:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideInRow {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Enhanced Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .results-table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .results-table {
+                min-width: 500px;
+                /* Ensure table doesn't get too cramped */
+                font-size: 13px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 12px 8px;
+                white-space: nowrap;
+            }
+
+            .results-table th:first-child,
+            .results-table td:first-child {
+                min-width: 40px;
+                text-align: center;
+            }
+
+            .results-table th:nth-child(2),
+            .results-table td:nth-child(2) {
+                min-width: 120px;
+            }
+
+            .results-table th:nth-child(3),
+            .results-table td:nth-child(3) {
+                min-width: 120px;
+            }
+
+            .results-table th:nth-child(4),
+            .results-table td:nth-child(4) {
+                min-width: 80px;
+                text-align: center;
+            }
+
+            .status-badge {
+                padding: 6px 10px;
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            .answer-display {
+                padding: 4px 8px;
+                font-size: 11px;
+                white-space: nowrap;
+                display: inline-block;
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .results-table {
+                font-size: 12px;
+                min-width: 450px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 10px 6px;
+            }
+
+            .results-table th:first-child,
+            .results-table td:first-child {
+                min-width: 35px;
+            }
+
+            .results-table th:nth-child(2),
+            .results-table td:nth-child(2),
+            .results-table th:nth-child(3),
+            .results-table td:nth-child(3) {
+                min-width: 100px;
+            }
+
+            .status-badge {
+                padding: 4px 8px;
+                font-size: 10px;
+            }
+
+            .status-icon {
+                font-size: 12px;
+            }
+
+            .answer-display {
+                padding: 3px 6px;
+                font-size: 10px;
+                max-width: 80px;
+            }
+
+            /* Alternative mobile layout - stacked cards */
+            .mobile-card-view {
+                display: none;
+            }
+
+            @media (max-width: 360px) {
+                .results-table-container {
+                    display: none;
+                }
+
+                .mobile-card-view {
+                    display: block;
+                }
+
+                .mobile-card {
+                    background: white;
+                    border-radius: 10px;
+                    padding: 15px;
+                    margin-bottom: 10px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    border-left: 4px solid #667eea;
+                }
+
+                .mobile-card-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding-bottom: 8px;
+                    border-bottom: 1px solid #e2e8f0;
+                }
+
+                .mobile-card-number {
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: #667eea;
+                }
+
+                .mobile-card-status {
+                    font-size: 12px;
+                }
+
+                .mobile-card-content {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 10px;
+                    font-size: 12px;
+                }
+
+                .mobile-card-item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
+                .mobile-card-label {
+                    font-weight: 600;
+                    color: #4a5568;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    </style>
 </head>
 
 
@@ -1241,7 +1829,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
+                            <form class="qa-body" id="form-tfng">
                                 <fieldset class="q-item">
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
@@ -1261,17 +1849,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1286,17 +1874,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1311,17 +1899,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1335,17 +1923,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1360,22 +1948,29 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="submit-tfng">
+                                        Submit
+                                    </button>
+                                </div>
+
                             </form>
                         </aside>
                     </div>
@@ -2804,6 +3399,44 @@
         </div>
     </div>
 
+    <!-- Modal Custom -->
+    <div id="resultModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="modal-body">
+                <!-- Score Display -->
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="score-text" id="scoreDisplay">0/0</div>
+                    </div>
+                    <div class="score-percentage" id="scorePercentage">0%</div>
+                </div>
+
+                <!-- Results Table -->
+                <div class="results-table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Jawaban Anda</th>
+                                <th>Jawaban Benar</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                        </tbody>
+
+                        <div class="mobile-card-view" id="mobileCardView"></div>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="close-btn">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         (function() {
             let remaining = 0;
@@ -3393,6 +4026,142 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script>
+// Modal show/hide functions
+function showModal() {
+    $("#resultModal").addClass("show").fadeIn(300);
+    $("body").css("overflow", "hidden");
+}
+
+function hideModal() {
+    $("#resultModal").removeClass("show").fadeOut(300);
+    $("body").css("overflow", "auto");
+}
+
+// Close modal events
+$(document).on("click", ".custom-close, .close-btn", function() {
+    hideModal();
+});
+
+// Close modal when clicking outside
+$(document).on("click", function(e) {
+    if (e.target.id === "resultModal") {
+        hideModal();
+    }
+});
+
+// ESC key to close modal
+$(document).on("keydown", function(e) {
+    if (e.key === "Escape") {
+        hideModal();
+    }
+});
+
+// Submit function
+$("#submit-tfng").on("click", function(e) {
+    e.preventDefault();
+
+    let formData = new FormData($("#form-tfng")[0]);
+    formData.append("tipe", "tfng");
+    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+    formData.append("set_id", "XJ3XOcvqPbgdZwyl");
+
+    $.ajax({
+        url: "/ielts/practice/check",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            if (response.status === "ok") {
+                $(".q-option").removeClass("correct wrong");
+
+                let correctCount = 0;
+                let total = Object.keys(response.results).length;
+                let tableRows = "";
+
+                $.each(response.results, function(qid, data) {
+                    let selected = $(`input[name="${qid}"]:checked`).parent();
+                    let isCorrect = data.status === "correct";
+
+                    // Get user's selected answer
+                    let userAnswer = '';
+                    let selectedInput = $(`input[name="${qid}"]:checked`);
+                    if (selectedInput.length > 0) {
+                        userAnswer = selectedInput.val();
+                    }
+
+                    // Ensure we have valid values
+                    let correctAnswer = data.correct || 'NOT GIVEN';
+                    let displayUserAnswer = userAnswer || 'Not answered';
+
+                    if (isCorrect) {
+                        selected.addClass("correct");
+                        correctCount++;
+                    } else {
+                        selected.addClass("wrong");
+                        $(`input[name="${qid}"][value="${data.correct}"]`).parent()
+                            .addClass("correct");
+                    }
+
+                    // Extract question number from qid (assuming format like "q1", "question_1", etc.)
+                    let questionNumber = qid.replace(/[^0-9]/g, '') || qid;
+
+                    tableRows += `
+                        <tr>
+                            <td><strong>${questionNumber}</strong></td>
+                            <td>
+                                <span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">
+                                    ${displayUserAnswer}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="answer-display answer-correct-option">
+                                    ${correctAnswer}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                // Update score display
+                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                // Update score circle color based on percentage
+                let percentage = (correctCount / total) * 100;
+                let scoreCircle = $(".score-circle");
+                if (percentage >= 80) {
+                    scoreCircle.css("background", "linear-gradient(135deg, #2ecc71, #27ae60)");
+                } else if (percentage >= 60) {
+                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                } else {
+                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                }
+
+                // Populate table
+                $("#resultsTableBody").html(tableRows);
+
+                // Show modal
+                showModal();
+            }
+        },
+        error: function(xhr) {
+            alert("Terjadi kesalahan: " + xhr.status);
+            console.log(xhr.responseText);
+        }
+    });
+});
+</script>
 
 
 </body>

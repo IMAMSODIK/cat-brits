@@ -19,7 +19,7 @@ class IeltsController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred while loading data.');
         }
-    }   
+    }
 
     public function categories(Request $r)
     {
@@ -60,13 +60,55 @@ class IeltsController extends Controller
                 } else {
                     return redirect()->back()->with('error', 'Question set not found.');
                 }
-            }else {
+            } else {
                 return redirect()->back()->with('error', 'Incomplete request.');
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred while loading data.');
         }
     }
+
+    public function check(Request $r)
+{
+    try {
+        $tfng = [
+            "FALSE", "TRUE", "NOT GIVEN", "NOT GIVEN", "TRUE",
+            "TRUE", "FALSE", "NOT GIVEN", "NOT GIVEN", "FALSE"
+        ];
+
+        $results = [];
+        $setId = $r->input('set_id', 'XJ3XOcvqPbgdZwyl');
+
+        for ($i = 1; $i <= count($tfng); $i++) {
+            $qid = $setId . '-' . $i;
+            $userAnswer = strtoupper(trim($r->input($qid, ''))); 
+            $correctAnswer = strtoupper(trim($tfng[$i - 1]));
+
+            if ($userAnswer === $correctAnswer) {
+                $results[$qid] = [
+                    'status' => 'correct',
+                    'user'   => $userAnswer,
+                ];
+            } else {
+                $results[$qid] = [
+                    'status'  => 'wrong',
+                    'user'    => $userAnswer,
+                    'correct' => $correctAnswer,
+                ];
+            }
+        }
+
+        return response()->json([
+            'status' => 'ok',
+            'results' => $results
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+}
 
     public function mockTest(Request $r)
     {
@@ -84,7 +126,7 @@ class IeltsController extends Controller
                 } else {
                     return redirect()->back()->with('error', 'Question set not found.');
                 }
-            }else {
+            } else {
                 return redirect()->back()->with('error', 'Incomplete request.');
             }
         } catch (\Exception $e) {

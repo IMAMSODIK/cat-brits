@@ -83,6 +83,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             SetSoalSeeder::class,
+            SoalSeeder::class,
         ]);
     }
 }
