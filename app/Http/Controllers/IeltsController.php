@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\SetSoal;
+use App\Models\Soal;
 use Illuminate\Http\Request;
 
 class IeltsController extends Controller
@@ -68,47 +69,56 @@ class IeltsController extends Controller
         }
     }
 
+
     public function check(Request $r)
-{
-    try {
-        $tfng = [
-            "FALSE", "TRUE", "NOT GIVEN", "NOT GIVEN", "TRUE",
-            "TRUE", "FALSE", "NOT GIVEN", "NOT GIVEN", "FALSE"
-        ];
+    {
+        try {
+            $setId = $r->input('set_id');
 
-        $results = [];
-        $setId = $r->input('set_id', 'XJ3XOcvqPbgdZwyl');
+            $payloadKeys = collect($r->all())
+                ->keys()
+                ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+                ->values();
+            $soalIds = $payloadKeys->toArray();
 
-        for ($i = 1; $i <= count($tfng); $i++) {
-            $qid = $setId . '-' . $i;
-            $userAnswer = strtoupper(trim($r->input($qid, ''))); 
-            $correctAnswer = strtoupper(trim($tfng[$i - 1]));
+            $soals = Soal::where('set_id', $setId)
+                        ->where('tipe_soal', $r->tipe)
+                        ->whereIn('id_soal', $soalIds)
+                        ->get();
 
-            if ($userAnswer === $correctAnswer) {
-                $results[$qid] = [
-                    'status' => 'correct',
-                    'user'   => $userAnswer,
-                ];
-            } else {
-                $results[$qid] = [
-                    'status'  => 'wrong',
-                    'user'    => $userAnswer,
-                    'correct' => $correctAnswer,
-                ];
+            $results = [];
+
+            foreach ($soalIds as $qid) {
+                $userAnswer = strtoupper(trim($r->input($qid, '')));
+                $correctAnswer = strtoupper(trim(optional($soals->firstWhere('id_soal', $qid))->jawaban_benar));
+
+                if ($userAnswer === $correctAnswer) {
+                    $results[$qid] = [
+                        'status' => 'correct',
+                        'user'   => $userAnswer,
+                    ];
+                } else {
+                    $results[$qid] = [
+                        'status'  => 'wrong',
+                        'user'    => $userAnswer ?: null,
+                        'correct' => $correctAnswer,
+                    ];
+                }
             }
-        }
 
-        return response()->json([
-            'status' => 'ok',
-            'results' => $results
-        ]);
-    } catch (\Exception $e) {
-        return response()->json([
-            'status' => 'error',
-            'message' => $e->getMessage()
-        ], 500);
+            return response()->json([
+                'status'  => 'ok',
+                'results' => $results
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
-}
+
+
 
     public function mockTest(Request $r)
     {

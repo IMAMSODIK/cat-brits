@@ -436,7 +436,6 @@
 
     <!-- style bagian reading + questions -->
     <style>
-        /* Layout container dengan jarak kiri-kanan seimbang */
         .reading-section {
             padding: 10px 12px 12px 12px;
             box-sizing: border-box;
@@ -1162,574 +1161,322 @@
 
     {{-- style modal --}}
     <style>
+        /* Modal Styles */
         .custom-modal {
-            display: none;
+            display: none !important; /* Pastikan modal tersembunyi secara default */
             position: fixed;
-            z-index: 9999;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            padding: 15px;
+            box-sizing: border-box;
+            opacity: 0; /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease; /* Smooth transition */
         }
 
+        /* State ketika modal ditampilkan */
         .custom-modal.show {
-            display: flex;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
             opacity: 1;
         }
 
         .custom-modal-content {
             background: #fff;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 800px;
+            padding: 0;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
             max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-            position: relative;
-            transform: scale(0.9) translateY(50px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
+            transition: transform 0.3s ease;
         }
 
+        /* Animasi ketika modal muncul */
         .custom-modal.show .custom-modal-content {
             transform: scale(1) translateY(0);
         }
 
-        /* Modal Header */
-        .modal-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        /* ... CSS lainnya tetap sama ... */
+        .custom-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            padding: 25px 30px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .score-summary-header {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .score-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .score-circle span {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .score-circle small {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 2px;
         }
 
         .modal-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            margin-left: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
-        .modal-subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        /* Close Button */
-        .custom-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
+        .modal-close {
+            background: none;
+            border: none;
             font-size: 28px;
             cursor: pointer;
+            color: white;
             width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            color: white;
-            font-weight: bold;
+            transition: background-color 0.2s;
+            margin-left: 15px;
         }
 
-        .custom-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
+        .modal-close:hover {
+            background-color: rgba(255,255,255,0.2);
         }
 
-        /* Modal Body */
-        .modal-body {
-            padding: 30px;
+        .custom-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
         }
 
-        /* Score Display */
-        .score-display {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            border-radius: 15px;
-            border: 2px solid #e2e8f0;
+        .score-summary {
+            display: none;
         }
 
-        .score-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .score-circle::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-            border-radius: 50%;
-        }
-
-        .score-text {
-            color: white;
-            font-size: 32px;
-            font-weight: 700;
-            z-index: 1;
-        }
-
-        .score-label {
-            font-size: 16px;
-            color: #4a5568;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .score-percentage {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2ecc71;
-        }
-
-        /* Results Table */
-        .results-table-container {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .results-table {
+        .result-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .results-table thead {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .results-table th {
-            padding: 18px 15px;
-            text-align: left;
+        .result-table th {
+            background-color: #f1f8ff;
+            padding: 14px 12px;
+            text-align: center;
             font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #2c3e50;
+            border-bottom: 2px solid #e1e8ed;
         }
 
-        .results-table td {
-            padding: 15px;
-            border-bottom: 1px solid #f1f5f9;
-            vertical-align: middle;
+        .result-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e1e8ed;
+            transition: background-color 0.2s;
         }
 
-        .results-table tbody tr {
-            transition: background-color 0.2s ease;
+        .result-table tr:hover td {
+            background-color: #f9f9f9;
         }
 
-        .results-table tbody tr:hover {
-            background-color: #f8fafc;
+        .answer-correct { 
+            color: #27ae60; 
+            font-weight: bold; 
+        }
+        
+        .answer-wrong { 
+            color: #e74c3c; 
+            font-weight: bold; 
         }
 
-        .results-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Status Badges */
         .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .status-badge.correct {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            color: #155724;
-            border: 1px solid #28a745;
+            background-color: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
         }
 
         .status-badge.wrong {
-            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-            color: #721c24;
-            border: 1px solid #dc3545;
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
         }
 
         .status-icon {
-            font-size: 14px;
+            margin-right: 5px;
         }
 
-        /* Answer Display */
-        .answer-display {
-            font-family: 'Courier New', monospace;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 8px;
-            display: inline-block;
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            border-top: 1px solid #e1e8ed;
+            gap: 10px;
         }
 
-        .answer-correct {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #28a745;
-        }
-
-        .answer-wrong {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #dc3545;
-        }
-
-        .answer-correct-option {
-            background: #cce5ff;
-            color: #004085;
-            border: 1px solid #007bff;
-        }
-
-        /* Modal Footer */
-        .modal-footer {
-            padding: 25px 30px;
-            background: #f8fafc;
-            border-radius: 0 0 20px 20px;
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .close-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 16px;
+        .modal-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s;
+            border: none;
         }
 
-        .close-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
         }
 
-        .close-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+        .btn-primary:hover {
+            background-color: #2980b9;
         }
 
-        .close-btn:hover::before {
-            left: 100%;
+        .btn-secondary {
+            background-color: #ecf0f1;
+            color: #2c3e50;
         }
 
-        /* Mobile Responsive */
+        .btn-secondary:hover {
+            background-color: #dde4e6;
+        }
+
+        /* Responsive Styles */
         @media (max-width: 768px) {
+            .custom-modal {
+                padding: 10px;
+            }
+            
             .custom-modal-content {
-                width: 95%;
                 max-height: 95vh;
             }
-
-            .modal-header {
-                padding: 20px 25px;
+            
+            .custom-modal-header {
+                padding: 15px 20px;
             }
-
-            .modal-title {
-                font-size: 20px;
-            }
-
-            .modal-body {
-                padding: 20px;
-            }
-
-            .score-display {
-                padding: 20px;
-            }
-
+            
             .score-circle {
-                width: 100px;
-                height: 100px;
+                width: 60px;
+                height: 60px;
             }
-
-            .score-text {
-                font-size: 28px;
+            
+            .score-circle span {
+                font-size: 1rem;
             }
-
-            .results-table {
-                font-size: 13px;
+            
+            .score-circle small {
+                font-size: 0.7rem;
             }
-
-            .results-table th,
-            .results-table td {
-                padding: 12px 10px;
+            
+            .modal-title {
+                font-size: 1.2rem;
+                margin-left: 10px;
             }
-
-            .modal-footer {
-                padding: 20px 25px;
-            }
-
-            .close-btn {
-                width: 100%;
-                padding: 14px 30px;
-                font-size: 15px;
-            }
-
-            .custom-close {
-                top: 15px;
-                right: 20px;
+            
+            .modal-close {
                 width: 35px;
                 height: 35px;
                 font-size: 24px;
             }
-        }
-
-        @media (max-width: 480px) {
-            .results-table {
-                font-size: 12px;
+            
+            .custom-modal-body {
+                padding: 15px;
             }
-
-            .results-table th,
-            .results-table td {
+            
+            .result-table {
+                font-size: 0.9rem;
+            }
+            
+            .result-table th, .result-table td {
                 padding: 10px 8px;
             }
-
-            .status-badge {
-                padding: 6px 12px;
-                font-size: 11px;
+            
+            .modal-actions {
+                flex-direction: column;
             }
-
-            .answer-display {
-                padding: 4px 8px;
-                font-size: 11px;
-            }
-        }
-
-        /* Animation for table rows */
-        .results-table tbody tr {
-            opacity: 0;
-            transform: translateX(-20px);
-            animation: slideInRow 0.4s ease forwards;
-        }
-
-        .results-table tbody tr:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .results-table tbody tr:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .results-table tbody tr:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .results-table tbody tr:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .results-table tbody tr:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        @keyframes slideInRow {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Enhanced Mobile Responsive Styles */
-        @media (max-width: 768px) {
-            .results-table-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .results-table {
-                min-width: 500px;
-                /* Ensure table doesn't get too cramped */
-                font-size: 13px;
-            }
-
-            .results-table th,
-            .results-table td {
-                padding: 12px 8px;
-                white-space: nowrap;
-            }
-
-            .results-table th:first-child,
-            .results-table td:first-child {
-                min-width: 40px;
-                text-align: center;
-            }
-
-            .results-table th:nth-child(2),
-            .results-table td:nth-child(2) {
-                min-width: 120px;
-            }
-
-            .results-table th:nth-child(3),
-            .results-table td:nth-child(3) {
-                min-width: 120px;
-            }
-
-            .results-table th:nth-child(4),
-            .results-table td:nth-child(4) {
-                min-width: 80px;
-                text-align: center;
-            }
-
-            .status-badge {
-                padding: 6px 10px;
-                font-size: 11px;
-                white-space: nowrap;
-            }
-
-            .answer-display {
-                padding: 4px 8px;
-                font-size: 11px;
-                white-space: nowrap;
-                display: inline-block;
-                max-width: 100px;
-                overflow: hidden;
-                text-overflow: ellipsis;
+            
+            .modal-btn {
+                width: 100%;
             }
         }
 
         @media (max-width: 480px) {
-            .results-table {
-                font-size: 12px;
-                min-width: 450px;
+            .custom-modal {
+                padding: 5px;
             }
-
-            .results-table th,
-            .results-table td {
-                padding: 10px 6px;
+            
+            .result-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
             }
-
-            .results-table th:first-child,
-            .results-table td:first-child {
-                min-width: 35px;
+            
+            .score-circle {
+                width: 50px;
+                height: 50px;
             }
-
-            .results-table th:nth-child(2),
-            .results-table td:nth-child(2),
-            .results-table th:nth-child(3),
-            .results-table td:nth-child(3) {
-                min-width: 100px;
+            
+            .score-circle span {
+                font-size: 0.9rem;
             }
-
+            
+            .score-circle small {
+                font-size: 0.6rem;
+            }
+            
             .status-badge {
+                font-size: 0.8rem;
                 padding: 4px 8px;
-                font-size: 10px;
             }
+        }
+    </style>
 
-            .status-icon {
-                font-size: 12px;
-            }
-
-            .answer-display {
-                padding: 3px 6px;
-                font-size: 10px;
-                max-width: 80px;
-            }
-
-            /* Alternative mobile layout - stacked cards */
-            .mobile-card-view {
-                display: none;
-            }
-
-            @media (max-width: 360px) {
-                .results-table-container {
-                    display: none;
-                }
-
-                .mobile-card-view {
-                    display: block;
-                }
-
-                .mobile-card {
-                    background: white;
-                    border-radius: 10px;
-                    padding: 15px;
-                    margin-bottom: 10px;
-                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                    border-left: 4px solid #667eea;
-                }
-
-                .mobile-card-header {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 10px;
-                    padding-bottom: 8px;
-                    border-bottom: 1px solid #e2e8f0;
-                }
-
-                .mobile-card-number {
-                    font-weight: 700;
-                    font-size: 16px;
-                    color: #667eea;
-                }
-
-                .mobile-card-status {
-                    font-size: 12px;
-                }
-
-                .mobile-card-content {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 10px;
-                    font-size: 12px;
-                }
-
-                .mobile-card-item {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-
-                .mobile-card-label {
-                    font-weight: 600;
-                    color: #4a5568;
-                    font-size: 10px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                }
-            }
+    {{-- other --}}
+    <style>
+        .unanswered-highlight {
+            border: 2px solid red;
+            background: #ffe6e6;
         }
     </style>
 </head>
@@ -1774,7 +1521,7 @@
     </section>
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal">
+    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
             <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
                 aria-selected="true" data-id="tfng">True/False/Not Given</button>
@@ -1969,6 +1716,7 @@
                                     <button type="button" class="btn btn-primary" id="submit-tfng">
                                         Submit
                                     </button>
+                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
 
                             </form>
@@ -3399,43 +3147,44 @@
         </div>
     </div>
 
-    <!-- Modal Custom -->
+    <!-- Modal Wrapper -->
     <div id="resultModal" class="custom-modal">
         <div class="custom-modal-content">
-            <div class="modal-body">
-                <!-- Score Display -->
-                <div class="score-display">
-                    <div class="score-circle">
-                        <div class="score-text" id="scoreDisplay">0/0</div>
+            <div class="custom-modal-header">
+                <div class="score-summary-header">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreDisplay">0/0</span>
+                        <small id="scorePercentage">0%</small>
                     </div>
-                    <div class="score-percentage" id="scorePercentage">0%</div>
+                    <div class="modal-title">Your Results</div>
                 </div>
-
-                <!-- Results Table -->
-                <div class="results-table-container">
-                    <table class="results-table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Jawaban Anda</th>
-                                <th>Jawaban Benar</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="resultsTableBody">
-                        </tbody>
-
-                        <div class="mobile-card-view" id="mobileCardView"></div>
-                    </table>
-                </div>
+                <button class="modal-close" onclick="closeModal()">×</button>
             </div>
 
-            <div class="modal-footer">
-                <button class="close-btn">Tutup</button>
+            <div class="custom-modal-body">
+                <!-- Results Table -->
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="modal-actions">
+                <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
+                <button class="modal-btn btn-primary" onclick="retryQuiz()">Try Again</button>
             </div>
         </div>
     </div>
-
 
     <script>
         (function() {
@@ -3883,7 +3632,6 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
-            // Toggle collapse
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
@@ -4030,138 +3778,167 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
     <script>
-// Modal show/hide functions
-function showModal() {
-    $("#resultModal").addClass("show").fadeIn(300);
-    $("body").css("overflow", "hidden");
-}
-
-function hideModal() {
-    $("#resultModal").removeClass("show").fadeOut(300);
-    $("body").css("overflow", "auto");
-}
-
-// Close modal events
-$(document).on("click", ".custom-close, .close-btn", function() {
-    hideModal();
-});
-
-// Close modal when clicking outside
-$(document).on("click", function(e) {
-    if (e.target.id === "resultModal") {
-        hideModal();
-    }
-});
-
-// ESC key to close modal
-$(document).on("keydown", function(e) {
-    if (e.key === "Escape") {
-        hideModal();
-    }
-});
-
-// Submit function
-$("#submit-tfng").on("click", function(e) {
-    e.preventDefault();
-
-    let formData = new FormData($("#form-tfng")[0]);
-    formData.append("tipe", "tfng");
-    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-    formData.append("set_id", "XJ3XOcvqPbgdZwyl");
-
-    $.ajax({
-        url: "/ielts/practice/check",
-        type: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            if (response.status === "ok") {
-                $(".q-option").removeClass("correct wrong");
-
-                let correctCount = 0;
-                let total = Object.keys(response.results).length;
-                let tableRows = "";
-
-                $.each(response.results, function(qid, data) {
-                    let selected = $(`input[name="${qid}"]:checked`).parent();
-                    let isCorrect = data.status === "correct";
-
-                    // Get user's selected answer
-                    let userAnswer = '';
-                    let selectedInput = $(`input[name="${qid}"]:checked`);
-                    if (selectedInput.length > 0) {
-                        userAnswer = selectedInput.val();
-                    }
-
-                    // Ensure we have valid values
-                    let correctAnswer = data.correct || 'NOT GIVEN';
-                    let displayUserAnswer = userAnswer || 'Not answered';
-
-                    if (isCorrect) {
-                        selected.addClass("correct");
-                        correctCount++;
-                    } else {
-                        selected.addClass("wrong");
-                        $(`input[name="${qid}"][value="${data.correct}"]`).parent()
-                            .addClass("correct");
-                    }
-
-                    // Extract question number from qid (assuming format like "q1", "question_1", etc.)
-                    let questionNumber = qid.replace(/[^0-9]/g, '') || qid;
-
-                    tableRows += `
-                        <tr>
-                            <td><strong>${questionNumber}</strong></td>
-                            <td>
-                                <span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">
-                                    ${displayUserAnswer}
-                                </span>
-                            </td>
-                            <td>
-                                <span class="answer-display answer-correct-option">
-                                    ${correctAnswer}
-                                </span>
-                            </td>
-                            <td>
-                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                </span>
-                            </td>
-                        </tr>
-                    `;
-                });
-
-                // Update score display
-                $("#scoreDisplay").text(`${correctCount}/${total}`);
-                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
-
-                // Update score circle color based on percentage
-                let percentage = (correctCount / total) * 100;
-                let scoreCircle = $(".score-circle");
-                if (percentage >= 80) {
-                    scoreCircle.css("background", "linear-gradient(135deg, #2ecc71, #27ae60)");
-                } else if (percentage >= 60) {
-                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                } else {
-                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                }
-
-                // Populate table
-                $("#resultsTableBody").html(tableRows);
-
-                // Show modal
-                showModal();
-            }
-        },
-        error: function(xhr) {
-            alert("Terjadi kesalahan: " + xhr.status);
-            console.log(xhr.responseText);
+        // Pastikan modal tersembunyi saat halaman dimuat
+        $("#resultModal").removeClass("show").hide();
+        
+        // Modal functions
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
         }
-    });
-});
-</script>
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+            
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            closeModal();
+
+            $("#form-tfng input[type=radio]").prop("checked", false);
+            $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            $("#resultsTableBody").empty();
+            $("#scoreDisplay").text("0/0");
+            $("#scorePercentage").text("0%");
+
+            setTimeout(function () {
+                $('html, body').scrollTop($("#form-tfng").offset().top);
+            }, 350);
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        $("#submit-tfng").on("click", function(e) {
+            e.preventDefault();
+
+            let allAnswered = true;
+
+            $("#form-tfng fieldset[data-q]").each(function () {
+                const qid = $(this).data("q");
+                const name = `XJ3XOcvqPbgdZwyl-${qid}`;
+                if (!$(`input[name="${name}"]:checked`).length) {
+                    allAnswered = false;
+                    $(this).addClass("unanswered-highlight");
+                } else {
+                    $(this).removeClass("unanswered-highlight");
+                }
+            });
+
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
+                return;
+            }
+
+            let formData = new FormData($("#form-tfng")[0]);
+            formData.append("tipe", "tfng");
+            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+            formData.append("set_id", "XJ3XOcvqPbgdZwyl");
+
+            $.ajax({
+                url: "/ielts/practice/check",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status === "ok") {
+                        $(".q-option").removeClass("correct wrong");
+
+                        let correctCount = 0;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = "";
+                        let questionNumber = 1;
+
+                        $.each(response.results, function(qid, data) {
+                            let selected = $(`input[name="${qid}"]:checked`).parent();
+                            let isCorrect = data.status === "correct";
+
+                            let userAnswer = '';
+                            let selectedInput = $(`input[name="${qid}"]:checked`);
+                            if (selectedInput.length > 0) {
+                                userAnswer = selectedInput.val();
+                            }
+
+                            let correctAnswer = data.correct ? data.correct : (data.status === "correct" ? userAnswer : "NOT GIVEN");
+                            let displayUserAnswer = userAnswer || 'Not answered';
+
+                            if (isCorrect) {
+                                selected.addClass("correct");
+                                correctCount++;
+                            } else {
+                                selected.addClass("wrong");
+                                $(`input[name="${qid}"][value="${data.correct}"]`).parent().addClass("correct");
+                            }
+
+                            tableRows += `
+                                <tr>
+                                    <td><strong>${questionNumber++}</strong></td>
+                                    <td>
+                                        <span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">
+                                            ${displayUserAnswer}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="answer-display answer-correct-option">
+                                            ${correctAnswer}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                            <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                            ${isCorrect ? 'Correct' : 'Wrong'}
+                                        </span>
+                                    </td>
+                                </tr>
+                            `;
+                        });
+
+                        // Update score display
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                        // Update score circle color
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $("#scoreCircle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    }
+                },
+                error: function(xhr) {
+                    alert("Terjadi kesalahan: " + xhr.status);
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    </script>
 
 
 </body>
