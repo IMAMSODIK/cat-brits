@@ -82,26 +82,36 @@ class IeltsController extends Controller
             $soalIds = $payloadKeys->toArray();
 
             $soals = Soal::where('set_id', $setId)
-                        ->where('tipe_soal', $r->tipe)
-                        ->whereIn('id_soal', $soalIds)
-                        ->get();
+                ->where('tipe_soal', $r->tipe)
+                ->whereIn('id_soal', $soalIds)
+                ->get();
 
             $results = [];
 
             foreach ($soalIds as $qid) {
-                $userAnswer = strtoupper(trim($r->input($qid, '')));
-                $correctAnswer = strtoupper(trim(optional($soals->firstWhere('id_soal', $qid))->jawaban_benar));
+                $rawUser = $r->input($qid, '');
 
-                if ($userAnswer === $correctAnswer) {
+                // Trim ujung dan uppercase saja
+                $userNorm = mb_strtoupper(trim($rawUser));
+
+                $soal = $soals->firstWhere('id_soal', $qid);
+                $correctRaw = (string) optional($soal)->jawaban_benar;
+                $correctNorm = mb_strtoupper(trim($correctRaw));
+
+                // ✅ Cek persis sama (strict)
+                $matched = ($userNorm === $correctNorm);
+
+                if ($matched) {
                     $results[$qid] = [
                         'status' => 'correct',
-                        'user'   => $userAnswer,
+                        'user'   => $rawUser,
+                        'correct' => $correctRaw
                     ];
                 } else {
                     $results[$qid] = [
                         'status'  => 'wrong',
-                        'user'    => $userAnswer ?: null,
-                        'correct' => $correctAnswer,
+                        'user'    => $rawUser !== '' ? $rawUser : null,
+                        'correct' => $correctRaw !== '' ? $correctRaw : null,
                     ];
                 }
             }
@@ -117,8 +127,6 @@ class IeltsController extends Controller
             ], 500);
         }
     }
-
-
 
     public function mockTest(Request $r)
     {

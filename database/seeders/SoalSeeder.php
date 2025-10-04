@@ -20,7 +20,7 @@ class SoalSeeder extends Seeder
         ];
         $sa = ["pavilions", "drought", "tourists"];
         $tc = ["Earthquake", "Four sides, 4 sides", "Tank", "verandas, verandahs", "underwater"];
-        $mh = ["iii", "xi", "i", "v", "x", "ii", "iv"];
+        $mh = ["viii", "iii", "xi", "i", "v", "x", "ii", "iv"];
         $oc = ["c", "a", "d", "b"];
         $mse = ["g", "e", "a", "f", "b"];
         $ynng = ["no", "yes", "not given", "not given", "no"];

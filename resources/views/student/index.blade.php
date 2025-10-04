@@ -214,11 +214,13 @@
                                 </div>
                             </div>
                             <div class="card-footer text-end" style="width: 100%">
-                                <input class="btn btn-light" type="button" id="cancel-edit" value="Cancel">
-                                <button class="btn btn-primary" type="button" id="update">Update</button>
-                                <button class="btn btn-warning" type="button" id="reset">Reset Pasword</button>
-                                <button class="btn btn-danger" type="button" id="delete">Deactivate</button>
-                                <button class="btn btn-info" type="button" id="activate">Activate</button>
+                                <div class="d-flex flex-wrap gap-2 justify-content-end">
+                                    <input class="btn btn-light flex-fill flex-md-grow-0" type="button" id="cancel-edit" value="Cancel">
+                                    <button class="btn btn-primary flex-fill flex-md-grow-0" type="button" id="update">Update</button>
+                                    <button class="btn btn-warning flex-fill flex-md-grow-0" type="button" id="reset">Reset Pasword</button>
+                                    <button class="btn btn-danger flex-fill flex-md-grow-0" type="button" id="delete">Deactivate</button>
+                                    <button class="btn btn-info flex-fill flex-md-grow-0" type="button" id="activate">Activate</button>
+                                </div>
                             </div>
                         </form>
                     </div>

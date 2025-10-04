@@ -1494,14 +1494,14 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeText">00:00</span>
                 </div>
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                    <span class="label">Close</span>
                 </button>
             </div>
         </div>
@@ -1543,7 +1543,7 @@
 
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Konten: True/False/Not Given</div>
+                <div class="x-panel-inner">Content: True/False/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -1725,7 +1725,7 @@
                 </div>
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Konten: True/False/Not Given 2</div>
+                <div class="x-panel-inner">Content: True/False/Not Given 2</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -1928,7 +1928,7 @@
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Konten: Yes/No/Not Given</div>
+                <div class="x-panel-inner">Content: Yes/No/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -2140,7 +2140,7 @@
                 </div>
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-                <div class="x-panel-inner">Konten: Matching Sentence Ending</div>
+                <div class="x-panel-inner">Content: Matching Sentence Ending</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -2350,7 +2350,7 @@
                 </div>
             </div>
             <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
-                <div class="x-panel-inner">Konten: One Choice</div>
+                <div class="x-panel-inner">Content: One Choice</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -2427,7 +2427,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
+                            <form class="qa-body" id="form-one">
                                 <fieldset class="q-item">
                                     <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
                                         <b>D</b>.
@@ -2441,22 +2441,22 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">recognising talent.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">working as a team.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">having a shared objective.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">being an effective leader.</span>
                                         </label>
@@ -2471,24 +2471,24 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">were conscious of their own limitations.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">brought complementary skills to their
                                                 partnership.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">were determined to outperform their brighter
                                                 rivals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">encouraged each other to realise their joint
                                                 ambition.</span>
@@ -2504,22 +2504,22 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">inspire creative thinking.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">generate concise writing.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">promote loyalty to a group.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">strengthen commitment to an idea.</span>
                                         </label>
@@ -2533,36 +2533,43 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">be aware of their company’s goals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">feel that their contributions are valued.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">have respect for their co-workers‟
                                                 achievements.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">understand why certain management decisions are
                                                 made.</span>
                                         </label>
                                     </div>
                                 </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="submit-oc">
+                                        Submit
+                                    </button>
+                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                                </div>
                             </form>
                         </aside>
                     </div>
                 </div>
             </div>
             <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
-                <div class="x-panel-inner">Konten: Matching Headings</div>
+                <div class="x-panel-inner">Content: Matching Headings</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -2654,7 +2661,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
+                            <form class="qa-body" id="form-mh">
                                 <fieldset class="q-item">
                                     <p class="lead">The Reading Passage has nine paragraphs, <b>A-I</b>.</p>
                                     <p>Choose the correct heading for paragraphs <b>A-E</b> and <b>G-I</b> from the list
@@ -2685,7 +2692,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>A</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2709,7 +2716,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>B</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2733,7 +2740,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>C</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2757,7 +2764,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>D</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2781,7 +2788,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>E</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2805,7 +2812,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>G</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-6" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2829,7 +2836,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>H</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-7" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2853,7 +2860,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>I</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-8" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2871,13 +2878,20 @@
                                     </legend>
                                 </fieldset>
 
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="submit-mh">
+                                        Submit
+                                    </button>
+                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                                </div>
+
                             </form>
                         </aside>
                     </div>
                 </div>
             </div>
             <div id="panel-tc" class="x-panel" role="tabpanel" aria-labelledby="tab-tc" hidden>
-                <div class="x-panel-inner">Konten: Table Completion</div>
+                <div class="x-panel-inner">Content: Table Completion</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -2920,7 +2934,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
+                            <form class="qa-body" id="form-tc">
                                 <fieldset class="q-item">
                                     <p class="lead">Complete the table below</p>
                                     <p>Choose <b>ONE WORD AND/OR A NUMBER</b> from the passage for each answer.</p>
@@ -2943,7 +2957,7 @@
                                             <div class="q-item" data-q="1">
                                                 Restored in the 1990s Excellent condition, despite the
                                                 <span class="q-number-box">1</span>
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text"
                                                     placeholder="">
                                                 of 2001.
                                             </div>
@@ -2956,7 +2970,7 @@
                                             <div class="q-item" data-q="2">
                                                 Steps on the
                                                 <span class="q-number-box">2</span>
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text"
                                                     placeholder="">
                                                 produce a geometric pattern Carved shrines.
                                             </div>
@@ -2965,7 +2979,7 @@
                                             <div class="q-item" data-q="3">
                                                 Looks more like a
                                                 <span class="q-number-box">3</span>
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text"
                                                     placeholder="">
                                                 than a well.
                                             </div>
@@ -2985,7 +2999,7 @@
                                             <div class="q-item" data-q="4">
                                                 Old, deep and very dramatic Has
                                                 <span class="q-number-box">4</span>
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-4" class="q-text"
                                                     placeholder="">
                                                 which provide a view to the steps.
                                             </div>
@@ -2998,7 +3012,7 @@
                                             <div class="q-item" data-q="5">
                                                 Has two
                                                 <span class="q-number-box">5</span>
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-5" class="q-text"
                                                     placeholder="">
                                                 levels.
                                             </div>
@@ -3008,13 +3022,20 @@
                                         </td>
                                     </tr>
                                 </table>
+
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="submit-tc">
+                                        Submit
+                                    </button>
+                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                                </div>
                             </form>
                         </aside>
                     </div>
                 </div>
             </div>
             <div id="panel-sa" class="x-panel" role="tabpanel" aria-labelledby="tab-sa" hidden>
-                <div class="x-panel-inner">Konten: Short Answer</div>
+                <div class="x-panel-inner">Content: Short Answer</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -3079,7 +3100,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
+                            <form class="qa-body" id="form-sa">
                                 <fieldset class="q-item">
                                     <p class="lead">Answer the questions below.</p>
                                     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
@@ -3092,7 +3113,7 @@
                                         <span style="flex: 1;">
                                             Which part of some stepwells provided shade for people?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -3106,7 +3127,7 @@
                                             What type of serious climatic event, which took place in southern Rajasthan,
                                             is mentioned in the article?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -3119,12 +3140,19 @@
                                         <span style="flex: 1;">
                                             Who are frequent visitors to stepwells nowadays?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text"
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="submit-sa">
+                                        Submit
+                                    </button>
+                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                                </div>
 
                             </form>
                         </aside>
@@ -3275,6 +3303,10 @@
             // Mulai countdown (contoh: 15 menit)
             startCountdown(15 * 60);
         })();
+
+        document.getElementById("doneBtn").addEventListener("click", function() {
+            window.history.back();
+        });
     </script>
 
     <!-- script bagian part soal -->
@@ -3849,151 +3881,133 @@
             }
         });
 
-function submitHelper(form, setId, tipe) {
-    let allAnswered = true;
+        function submitHelper(form, setId, tipe) {
+            let allAnswered = true;
 
-    // ✅ CEK SEMUA FIELDSET SUDAH DIJAWAB
-    $(`#${form} fieldset[data-q]`).each(function () {
-        let isAnswered = false;
-        const inputs = $(this).find("input, select, textarea");
+            // ✅ CEK SEMUA FIELDSET SUDAH DIJAWAB
+            $(`#${form} fieldset[data-q]`).each(function () {
+                let isAnswered = false;
+                const inputs = $(this).find("input, select, textarea");
 
-        inputs.each(function () {
-            if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
-                isAnswered = true;
-            } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
-                isAnswered = true;
-            } else if ($(this).is("select") && $(this).val() !== "") {
-                isAnswered = true;
-            }
-        });
+                inputs.each(function () {
+                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
+                        isAnswered = true;
+                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
+                        isAnswered = true;
+                    } else if ($(this).is("select") && $(this).val() !== "") {
+                        isAnswered = true;
+                    }
+                });
 
-        if (!isAnswered) {
-            allAnswered = false;
-            $(this).addClass("unanswered-highlight");
-        } else {
-            $(this).removeClass("unanswered-highlight");
-        }
-    });
-
-    if (!allAnswered) {
-        alert("Please answer all questions before submitting!");
-        return;
-    }
-
-    // ✅ KIRIM FORM DATA
-    let formData = new FormData($(`#${form}`)[0]);
-    formData.append("tipe", tipe);
-    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-    formData.append("set_id", setId);
-
-    $.ajax({
-        url: "/ielts/practice/check",
-        type: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            if (response.status === "ok") {
-                $(".q-option").removeClass("correct wrong");
-                $(".text-answer, .select-answer").removeClass("correct wrong");
-
-                let correctCount = 0;
-                let total = Object.keys(response.results).length;
-                let tableRows = "";
-                let questionNumber = 1;
-
-                $.each(response.results, function(qid, data) {
-    let isCorrect = data.status === "correct";
-
-    // ✅ 1. Ambil USER ANSWER (tanpa peduli tipenya)
-    
-    // let inputElement = $(`[name="${qid}"], input[name="${qid}[]"]`);
-
-    // if (inputElement.is("input[type=radio], input[type=checkbox]")) {
-    //     userAnswer = $(`input[name="${qid}"]:checked`).val() || '';
-    // } 
-    // else if (inputElement.is("select")) {
-    //     userAnswer = inputElement.find("option:selected").text() || '';
-    // } 
-    // else if (inputElement.is("input[type=text], textarea")) {
-    //     userAnswer = inputElement.val() || '';
-    // }
-
-    // if (!userAnswer) userAnswer = "Not answered";
-
-    // ✅ 2. Ambil CORRECT ANSWER dengan fallback
-    let correctAnswer = data.correct || '';
-    let userAnswer = data.user || '';
-    if (!correctAnswer && isCorrect) {
-        correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
-    }
-    if (!correctAnswer) {
-        correctAnswer = "NOT GIVEN";
-    }
-
-    // ✅ 3. Highlight input aslinya
-    let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-    questionElement.find("input, select, textarea").each(function () {
-        if ($(this).is("input[type=radio], input[type=checkbox]")) {
-            if ($(this).is(":checked")) {
-                if (isCorrect) {
-                    $(this).parent().addClass("correct");
+                if (!isAnswered) {
+                    allAnswered = false;
+                    $(this).addClass("unanswered-highlight");
                 } else {
-                    $(this).parent().addClass("wrong");
-                    $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                    $(this).removeClass("unanswered-highlight");
                 }
+            });
+
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
+                return;
             }
-        } else {
-            if (isCorrect) {
-                $(this).addClass("correct");
-            } else {
-                $(this).addClass("wrong");
-            }
-        }
-    });
 
-    // ✅ 4. Bangun tabel baris
-    tableRows += `
-        <tr>
-            <td><strong>${questionNumber++}</strong></td>
-            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-            <td>
-                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                    ${isCorrect ? 'Correct' : 'Wrong'}
-                </span>
-            </td>
-        </tr>
-    `;
-});
+            // ✅ KIRIM FORM DATA
+            let formData = new FormData($(`#${form}`)[0]);
+            formData.append("tipe", tipe);
+            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+            formData.append("set_id", setId);
+
+            $.ajax({
+                url: "/ielts/practice/check",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status === "ok") {
+                        $(".q-option").removeClass("correct wrong");
+                        $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        let correctCount = 0;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = "";
+                        let questionNumber = 1;
+
+                        $.each(response.results, function(qid, data) {
+                        let isCorrect = data.status === "correct";
+
+                        // ✅ 2. Ambil CORRECT ANSWER dengan fallback
+                        let correctAnswer = data.correct || '';
+                        let userAnswer = data.user || '';
+                        if (!correctAnswer && isCorrect) {
+                            correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                        }
+                        if (!correctAnswer) {
+                            correctAnswer = "NOT GIVEN";
+                        }
+
+                        // ✅ 3. Highlight input aslinya
+                        let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                        questionElement.find("input, select, textarea").each(function () {
+                            if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                if ($(this).is(":checked")) {
+                                    if (isCorrect) {
+                                        $(this).parent().addClass("correct");
+                                    } else {
+                                        $(this).parent().addClass("wrong");
+                                        $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                    }
+                                }
+                            } else {
+                                if (isCorrect) {
+                                    $(this).addClass("correct");
+                                } else {
+                                    $(this).addClass("wrong");
+                                }
+                            }
+                        });
+
+                        // ✅ 4. Bangun tabel baris
+                        tableRows += `
+                            <tr>
+                                <td><strong>${questionNumber++}</strong></td>
+                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                <td>
+                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                        ${isCorrect ? 'Correct' : 'Wrong'}
+                                    </span>
+                                </td>
+                            </tr>
+                        `;
+                    });
 
 
-                $("#scoreDisplay").text(`${correctCount}/${total}`);
-                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
 
-                let percentage = (correctCount / total) * 100;
-                let scoreCircle = $(".score-circle");
-                if (percentage >= 80) {
-                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                } else if (percentage >= 60) {
-                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                } else {
-                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    }
+                },
+                error: function(xhr) {
+                    alert("Terjadi kesalahan: " + xhr.status);
+                    console.log(xhr.responseText);
                 }
-
-                $("#resultsTableBody").html(tableRows);
-                showModal(`Score: ${correctCount} / ${total}`);
-            }
-        },
-        error: function(xhr) {
-            alert("Terjadi kesalahan: " + xhr.status);
-            console.log(xhr.responseText);
+            });
         }
-    });
-}
-
-
 
         $("#submit-tfng").on("click", function(e) {
             e.preventDefault();
@@ -4013,6 +4027,26 @@ function submitHelper(form, setId, tipe) {
         $("#submit-mse").on("click", function(e) {
             e.preventDefault();
             submitHelper("form-mse", "XJ3XOcvqPbgdZwyl", "mse");
+        });
+
+        $("#submit-oc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-one", "XJ3XOcvqPbgdZwyl", "oc");
+        });
+
+        $("#submit-mh").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-mh", "XJ3XOcvqPbgdZwyl", "mh");
+        });
+
+        $("#submit-tc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc");
+        });
+
+        $("#submit-sa").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-sa", "XJ3XOcvqPbgdZwyl", "sa");
         });
     </script>
 
