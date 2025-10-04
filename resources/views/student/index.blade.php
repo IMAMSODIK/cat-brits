@@ -214,7 +214,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-end" style="width: 100%">
-                                <div class="d-flex flex-wrap gap-2 justify-content-end">
+                                <div class="d-flex flex-wrap gap-1 justify-content-end">
                                     <input class="btn btn-light flex-fill flex-md-grow-0" type="button" id="cancel-edit" value="Cancel">
                                     <button class="btn btn-primary flex-fill flex-md-grow-0" type="button" id="update">Update</button>
                                     <button class="btn btn-warning flex-fill flex-md-grow-0" type="button" id="reset">Reset Pasword</button>
