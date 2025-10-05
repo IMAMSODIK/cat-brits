@@ -95,3 +95,37 @@ daftar penilaian
 student
 -------
 ielts menu
+
+
+simpan riwayat practice
+        - buat table test_history
+                -> id
+                -> user_id (test taker)
+                -> user_id (teacher corector) nullable
+                -> Kategori
+                -> tipe
+                -> set_id
+                -> score
+
+        - test_detail_history
+                -> id
+                -> test_history_id
+                -> soal_id
+                -> jawaban
+                -> status
+
+
+buat menu test hostori di sidebar (ilts, toefl, sat, ge)
+        - klik salah satu menu
+        - tampilkan semua data (dengan filter)
+tambahkan tombol hostori test di menu student
+buatkan halaman baru untuk detail table history user
+
+penilaian Speaking
+penilaian Writing
+selesaikan semua penilaian practice dan mock test
+
+test Speaking (video call)
+
+perbaiki semua error
+

@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\SetSoal;
 use App\Models\Soal;
+use App\Models\TestDetailHistory;
+use App\Models\TestHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IeltsController extends Controller
 {
@@ -69,58 +72,78 @@ class IeltsController extends Controller
         }
     }
 
-
     public function check(Request $r)
     {
+        DB::beginTransaction();
         try {
             $setId = $r->input('set_id');
+            $tipe = $r->input('tipe');
+            $kategori = $r->input('kategori');
 
             $payloadKeys = collect($r->all())
                 ->keys()
                 ->filter(fn($k) => str_starts_with($k, $setId . '-'))
                 ->values();
+
             $soalIds = $payloadKeys->toArray();
 
             $soals = Soal::where('set_id', $setId)
-                ->where('tipe_soal', $r->tipe)
+                ->where('tipe_soal', $tipe)
                 ->whereIn('id_soal', $soalIds)
                 ->get();
 
             $results = [];
+            $score = 0; // Hitung nilai benar
 
             foreach ($soalIds as $qid) {
                 $rawUser = $r->input($qid, '');
-
-                // Trim ujung dan uppercase saja
                 $userNorm = mb_strtoupper(trim($rawUser));
 
                 $soal = $soals->firstWhere('id_soal', $qid);
                 $correctRaw = (string) optional($soal)->jawaban_benar;
                 $correctNorm = mb_strtoupper(trim($correctRaw));
 
-                // ✅ Cek persis sama (strict)
                 $matched = ($userNorm === $correctNorm);
+                if ($matched) $score++;
 
-                if ($matched) {
-                    $results[$qid] = [
-                        'status' => 'correct',
-                        'user'   => $rawUser,
-                        'correct' => $correctRaw
-                    ];
-                } else {
-                    $results[$qid] = [
-                        'status'  => 'wrong',
-                        'user'    => $rawUser !== '' ? $rawUser : null,
-                        'correct' => $correctRaw !== '' ? $correctRaw : null,
-                    ];
-                }
+                $results[$qid] = [
+                    'status'  => $matched ? 'correct' : 'wrong',
+                    'user'    => $rawUser ?: null,
+                    'correct' => $correctRaw ?: null,
+                ];
             }
+
+            // ✅ Simpan ke test_histories
+            $history = TestHistory::create([
+                'student_id'   => auth()->id(),
+                'teacher_id'   => null,
+                'kategori'     => $kategori,
+                'tipe'         => $tipe,
+                'set_soal'  => $setId,
+                'score'        => $score,
+            ]);
+
+            // ✅ Simpan ke test_detail_histories
+            foreach ($results as $qid => $res) {
+                TestDetailHistory::create([
+                    'test_history_id' => $history->id,
+                    'soal_id'         => $qid,
+                    'jawaban_user'    => $res['user'] ?? '',
+                    'jawaban_benar'   => $res['correct'] ?? '',
+                    'status'          => $res['status'] === 'correct',
+                ]);
+            }
+
+            DB::commit();
 
             return response()->json([
                 'status'  => 'ok',
-                'results' => $results
+                'score'   => $score,
+                'results' => $results,
+                'history_id' => $history->id // Bisa dipakai untuk redirect ke halaman hasil
             ]);
         } catch (\Exception $e) {
+            DB::rollBack();
             return response()->json([
                 'status' => 'error',
                 'message' => $e->getMessage()

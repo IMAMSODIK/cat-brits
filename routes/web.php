@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentVerificationController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TestHistoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -70,6 +71,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/ielts/practice/check', [IeltsController::class, 'check']);
 
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
+
+    Route::get('/history', [TestHistoryController::class, 'index']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
 });
