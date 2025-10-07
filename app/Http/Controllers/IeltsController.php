@@ -81,60 +81,124 @@ class IeltsController extends Controller
             $tipe = $r->input('tipe');
             $kategori = $r->input('kategori');
 
-            $payloadKeys = collect($r->all())
-                ->keys()
-                ->filter(fn($k) => str_starts_with($k, $setId . '-'))
-                ->values();
-
-            $soalIds = $payloadKeys->toArray();
-
-            $soals = Soal::where('set_id', $setId)
-                ->where('kategori', $kategori)
-                ->where('tipe_soal', $tipe)
-                ->whereIn('id_soal', $soalIds)
-                ->get();
-
             $results = [];
             $score = 0;
 
-            foreach ($soalIds as $qid) {
-                $rawUser = $r->input($qid, '');
-                $userNorm = mb_strtoupper(trim($rawUser));
+            if ($tipe == "two_choices") {
+                $payloadKeys = collect($r->all())
+                    ->keys()
+                    ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+                    ->values();
 
-                $soal = $soals->firstWhere('id_soal', $qid);
-                $correctRaw = (string) optional($soal)->jawaban_benar;
-                $correctNorm = mb_strtoupper(trim($correctRaw));
+                $soalIds = $payloadKeys->toArray();
+                foreach($soalIds as $soalId){
+                    $soals = Soal::where('set_id', $setId)
+                        ->where('kategori', $kategori)
+                        ->where('tipe_soal', $tipe)
+                        ->whereIn('id_soal', $soalIds)
+                        ->get();
 
-                $matched = ($userNorm === $correctNorm);
-                if ($matched) $score++;
+                    $userAnswer = $r->input($soalId);
+                    $jawabanBenar = $soals->pluck('jawaban_benar')->toArray();
 
-                $results[$qid] = [
-                    'status'  => $matched ? 'correct' : 'wrong',
-                    'user'    => $rawUser ?: null,
-                    'correct' => $correctRaw ?: null,
-                ];
-            }
+                    $index = 1;
+                    $score = 0;
+                    foreach($userAnswer as $ua){
+                        if(in_array(strtolower($ua), array_map('strtolower', $jawabanBenar))){
+                            $results[$soalId . '-' . $index++] = [
+                                'status'  => 'correct',
+                                'user'    => $ua,
+                                'correct' => implode(', ', $jawabanBenar),
+                            ];
+                            $score++;
+                        }else{
+                            $results[$soalId . '-' . $index++] = [
+                                'status'  => 'wrong',
+                                'user'    => $ua ?: null,
+                                'correct' => implode(', ', $jawabanBenar),
+                            ];
+                        }
+                    }
 
-            $setSoal = SetSoal::where('kode', $setId)->first();
-            $history = TestHistory::create([
-                'student_id'   => Auth::id(),
-                'teacher_id'   => null,
-                'tipe_test'    => 'practice',
-                'kategori'     => $kategori,
-                'tipe'         => $tipe,
-                'set_soal_id'  => $setSoal->id,
-                'score'        => $score,
-            ]);
+                    $setSoal = SetSoal::where('kode', $setId)->first();
 
-            // ✅ Simpan ke test_detail_histories
-            foreach ($results as $qid => $res) {
-                TestDetailHistory::create([
-                    'test_history_id' => $history->id,
-                    'soal_id'         => $qid,
-                    'jawaban_user'    => $res['user'] ?? '',
-                    'jawaban_benar'   => $res['correct'] ?? '',
-                    'status'          => $res['status'] === 'correct',
+                    $history = TestHistory::create([
+                        'student_id'   => Auth::id(),
+                        'teacher_id'   => null,
+                        'tipe_test'    => 'practice',
+                        'kategori'     => $kategori,
+                        'tipe'         => $tipe,
+                        'set_soal_id'  => $setSoal->id,
+                        'score'        => $score,
+                    ]);
+
+                    foreach ($results as $qid => $res) {
+                        TestDetailHistory::create([
+                            'test_history_id' => $history->id,
+                            'soal_id'         => preg_replace('/-\d+$/', '', $qid),
+                            'jawaban_user'    => $res['user'] ?? '',
+                            'jawaban_benar'   => $res['correct'] ?? '',
+                            'status'          => $res['status'] === 'correct',
+                        ]);
+                    }
+                }
+                
+            } else {
+                $payloadKeys = collect($r->all())
+                    ->keys()
+                    ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+                    ->values();
+
+                $soalIds = $payloadKeys->toArray();
+
+                $soals = Soal::where('set_id', $setId)
+                    ->where('kategori', $kategori)
+                    ->where('tipe_soal', $tipe)
+                    ->whereIn('id_soal', $soalIds)
+                    ->get();
+
+                $results = [];
+                $score = 0;
+
+                foreach ($soalIds as $qid) {
+                    $rawUser = $r->input($qid, '');
+                    $userNorm = mb_strtoupper(trim($rawUser));
+
+                    $soal = $soals->firstWhere('id_soal', $qid);
+                    $correctRaw = (string) optional($soal)->jawaban_benar;
+                    $correctNorm = mb_strtoupper(trim($correctRaw));
+
+                    $matched = ($userNorm === $correctNorm);
+                    if ($matched) $score++;
+
+                    $results[$qid] = [
+                        'status'  => $matched ? 'correct' : 'wrong',
+                        'user'    => $rawUser ?: null,
+                        'correct' => $correctRaw ?: null,
+                    ];
+                }
+
+                $setSoal = SetSoal::where('kode', $setId)->first();
+                $history = TestHistory::create([
+                    'student_id'   => Auth::id(),
+                    'teacher_id'   => null,
+                    'tipe_test'    => 'practice',
+                    'kategori'     => $kategori,
+                    'tipe'         => $tipe,
+                    'set_soal_id'  => $setSoal->id,
+                    'score'        => $score,
                 ]);
+
+                // ✅ Simpan ke test_detail_histories
+                foreach ($results as $qid => $res) {
+                    TestDetailHistory::create([
+                        'test_history_id' => $history->id,
+                        'soal_id'         => $qid,
+                        'jawaban_user'    => $res['user'] ?? '',
+                        'jawaban_benar'   => $res['correct'] ?? '',
+                        'status'          => $res['status'] === 'correct',
+                    ]);
+                }
             }
 
             DB::commit();

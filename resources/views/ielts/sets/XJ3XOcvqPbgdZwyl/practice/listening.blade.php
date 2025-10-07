@@ -1481,6 +1481,7 @@
             border: 2px solid red;
             background: #ffe6e6;
         }
+
     </style>
 </head>
 
@@ -1543,7 +1544,7 @@
 
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Konten: Note Completion</div>
+                <div class="x-panel-inner">Content: Note Completion</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="qa">
                         <form class="qa-body" id="form-nc">
@@ -1689,7 +1690,7 @@
                 </div>
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Konten: Note Completion 2</div>
+                <div class="x-panel-inner">Content: Note Completion 2</div>
                 <div class="qa">
                     <form class="qa-body" id="form-nc2">
                         <fieldset class="q-item">
@@ -1813,7 +1814,7 @@
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Konten: Note Completion 3</div>
+                <div class="x-panel-inner">Content: Note Completion 3</div>
                 <div class="qa">
                     <form class="qa-body" id="form-nc3">
                         <fieldset class="q-item">
@@ -1905,7 +1906,7 @@
                 </div>
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-                <div class="x-panel-inner">Konten: Note Completion 4</div>
+                <div class="x-panel-inner">Content: Note Completion 4</div>
                 <div class="qa">
                     <form class="qa-body" id="form-nc4">
                         <fieldset class="q-item">
@@ -2054,7 +2055,7 @@
                 </div>
             </div>
             <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
-                <div class="x-panel-inner">Konten: One Choice</div>
+                <div class="x-panel-inner">Content: One Choice</div>
                 <div class="reading-section">
                     <div class="qa" aria-label="Questions">
                         <form class="qa-body" id="form-oc">
@@ -2230,10 +2231,10 @@
                 </div>
             </div>
             <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
-                <div class="x-panel-inner">Konten: Two Choices</div>
+                <div class="x-panel-inner">Content: Two Choices</div>
                 <div class="reading-section">
                     <div class="qa" aria-label="Questions">
-                        <form class="qa-body">
+                        <form class="qa-body" id="form-two_choices">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-2</p>
                                 <div class="audio-player" role="group" aria-label="Audio controls">
@@ -2271,46 +2272,53 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1">
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
                                     <span class="q-number">2</span>
                                     Which TWO facilities at the leisure club have recently been improved?
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="q1" value="A" />
+                                        <input type="checkbox" name="XJ3XOcvqPbgdZwyl-1[]" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">the gym</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q1" value="B" />
+                                        <input type="checkbox" name="XJ3XOcvqPbgdZwyl-1[]" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">the tracks</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q1" value="C" />
+                                        <input type="checkbox" name="XJ3XOcvqPbgdZwyl-1[]" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">the indoor pool</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q1" value="D" />
+                                        <input type="checkbox" name="XJ3XOcvqPbgdZwyl-1[]" value="D" />
                                         <span class="opt-code">D</span>
                                         <span class="opt-label">the outdoor pool</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q1" value="E" />
+                                        <input type="checkbox" name="XJ3XOcvqPbgdZwyl-1[]" value="E" />
                                         <span class="opt-code">E</span>
                                         <span class="opt-label">the sports training for children</span>
                                     </label>
                                 </div>
                             </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-two_choices">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div id="panel-tc" class="x-panel" role="tabpanel" aria-labelledby="tab-tc" hidden>
-                <div class="x-panel-inner">Konten: Table Completion</div>
+                <div class="x-panel-inner">Content: Table Completion</div>
                 <div class="qa">
                     <form class="qa-body" id="form-tc">
                         <fieldset class="q-item">
@@ -3040,14 +3048,14 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
-            // Toggle collapse
+            // 🧩 Toggle collapse floating panel
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // Generate question numbers
+            // 🧩 Generate list nomor soal
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -3060,7 +3068,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -3070,22 +3077,19 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // 🧭 Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
 
                 const question = panel.querySelector(`[data-q="${qNum}"]`);
                 if (question) {
-                    question.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    question.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     question.focus();
                 }
             }
 
-            // Update status soal (radio, dropdown, text)
+            // ✅ Update status soal
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -3107,6 +3111,10 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
+                    // Checkbox
+                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkboxChecked.length > 0) answered = true;
+
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -3115,18 +3123,65 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    if (answered) item.classList.add('answered');
+                    // Soal multi-nomor (contoh: data-q-multi="1,2")
+                    const multi = question.dataset.qMulti;
+                    if (multi) {
+                        const numbers = multi.split(',').map(n => n.trim());
+                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                        numbers.forEach(num => {
+                            const multiItem = fqList.querySelector(`[data-q="${num}"][data-part="${partId}"]`);
+                            if (!multiItem) return;
+
+                            if (checkedCount > 0) multiItem.classList.add('answered');
+                            else multiItem.classList.remove('answered');
+                        });
+                    } else {
+                        if (answered) item.classList.add('answered');
+                        else item.classList.remove('answered');
+                    }
                 }
             }
 
-            // Deteksi jawaban berubah
+            // 🧠 Perubahan jawaban
             function watchAnswerChanges() {
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
+                document.addEventListener('change', (e) => {
+                    const input = e.target;
+                    const question = input.closest('[data-q]');
+                    const group = input.closest('.q-options');
+                    const label = input.closest('.q-option');
+
+                    if (!question) return;
+
+                    // 🔹 Batasi jumlah checkbox
+                    if (input.type === 'checkbox') {
+                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
+                        if (maxAllowed > 0) {
+                            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+                            if (checkedBoxes.length > maxAllowed) {
+                                input.checked = false;
+                                alert(`You can only select ${maxAllowed} answers for this question.`);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 🔹 Update warna label pilihan
+                    if (group && label) {
+                        if (input.type === 'checkbox') {
+                            if (input.checked) label.classList.add('is-selected');
+                            else label.classList.remove('is-selected');
+                        } else {
+                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove('is-selected'));
+                            if (input.checked) label.classList.add('is-selected');
+                        }
+                    }
+
+                    // 🔄 Update status di floating panel
+                    updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('change', (e) => {
+                document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
                 });
@@ -3137,12 +3192,11 @@
                 });
             }
 
-            // Deteksi perubahan part
+            // 🔁 Ganti part soal
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName ===
-                            'data-active') {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-active') {
                             const newPart = mutation.target.dataset.active;
                             if (newPart && newPart !== currentPart) {
                                 currentPart = newPart;
@@ -3153,13 +3207,11 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
+                if (tabsContainer)
+                    observer.observe(tabsContainer, { attributes: true, attributeFilter: ['data-active'] });
             }
 
-            // Update question list untuk part aktif
+            // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
                     'tfng': 6,
@@ -3175,7 +3227,7 @@
                 updateQuestionStatus(partId);
             }
 
-            // Init
+            // 🚀 Init
             updateQuestionListForPart('tfng');
             watchPartChanges();
             watchAnswerChanges();
@@ -3209,7 +3261,9 @@
         function retryQuiz() {
             closeModal();
 
-            $("#form-tfng input[type=radio]").prop("checked", false);
+            $("input[type=radio]").prop("checked", false);
+            $('input[type="checkbox"]').prop('checked', false);
+            $('input[type="text"]').val('');
             $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
             $("#resultsTableBody").empty();
             $("#scoreDisplay").text("0/0");
@@ -3394,6 +3448,11 @@
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
             submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc");
+        });
+
+        $("#submit-two_choices").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices");
         });
     </script>
 </body>
