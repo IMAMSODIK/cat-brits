@@ -28,4 +28,13 @@ class TestHistory extends Model
         return $this->hasMany(TestDetailHistory::class);
     }
 
+    public function detailHistories()
+    {
+        return $this->hasMany(TestDetailHistory::class, 'test_history_id');
+    }
+
+    public function setSoal()
+    {
+        return $this->belongsTo(SetSoal::class, 'set_soal_id');
+    }
 }

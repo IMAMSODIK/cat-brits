@@ -8,6 +8,7 @@ use App\Models\Soal;
 use App\Models\TestDetailHistory;
 use App\Models\TestHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class IeltsController extends Controller
@@ -113,13 +114,14 @@ class IeltsController extends Controller
                 ];
             }
 
-            // ✅ Simpan ke test_histories
+            $setSoal = SetSoal::where('kode', $setId)->first();
             $history = TestHistory::create([
-                'student_id'   => auth()->id(),
+                'student_id'   => Auth::id(),
                 'teacher_id'   => null,
+                'tipe_test'    => 'practice',
                 'kategori'     => $kategori,
                 'tipe'         => $tipe,
-                'set_soal'  => $setId,
+                'set_soal_id'  => $setSoal->id,
                 'score'        => $score,
             ]);
 

@@ -3918,6 +3918,7 @@
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
             formData.append("set_id", setId);
             formData.append("kategori", 'reading');
+            formData.append("tipe_test", 'practice');
 
             $.ajax({
                 url: "/ielts/practice/check",

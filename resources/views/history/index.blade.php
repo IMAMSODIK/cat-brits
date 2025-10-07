@@ -4,6 +4,39 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/select2.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/owlcarousel.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/range-slider.css') }}">
+
+    <style>
+        .user-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 0;
+        }
+
+        .user-photo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e0e0e0;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .user-email {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -64,17 +97,84 @@
                                     <table class="display" id="basic-1">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Student</th>
-                                                <th>Category</th>
-                                                <th>Type</th>
-                                                <th>Set Information</th>
-                                                <th>Score</th>
-                                                <th>Time</th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">Student</th>
+                                                <th class="text-center">Category</th>
+                                                <th class="text-center">Type</th>
+                                                <th class="text-center">Set Information</th>
+                                                <th class="text-center">Score</th>
+                                                <th class="text-center">Time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                            @php
+                                                $index = 1;
+                                            @endphp
+                                            @foreach ($histories as $h)
+                                                <tr>
+                                                    <td>{{ $index++ }}</td>
+                                                    <td>
+                                                        <div class="user-cell">
+                                                            <img src="{{($h->student->foto) ? asset('storage/foto_profile') . '/' . $h->student->foto : asset('own_assets/images/avatar.png')}}" alt="Foto User"
+                                                                class="user-photo">
+                                                            <div class="user-info">
+                                                                <div class="user-name">{{$h->student->name}}</div>
+                                                                <div class="user-email">{{$h->student->email}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        @if ($h->kategori == 'reading')
+                                                            <span class="badge text-bg-primary">{{ucfirst($h->kategori)}}</span>
+                                                        @elseif ($h->kategori == 'writing')
+                                                            <span class="badge text-bg-info">{{ucfirst($h->kategori)}}</span>
+                                                        @elseif ($h->kategori == 'listening')
+                                                            <span class="badge text-bg-success">{{ucfirst($h->kategori)}}</span>
+                                                        @elseif ($h->kategori == 'speaking')
+                                                            <span class="badge text-bg-warning">{{ucfirst($h->kategori)}}</span>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @switch($h->tipe)
+                                                            @case('tfng')
+                                                                <span class="badge rounded-pill badge-primary">True / False / Not Given</span>
+                                                                @break
+                                                            @case('ynng')
+                                                                <span class="badge rounded-pill badge-success">Yes / No / Not Given</span>
+                                                                @break
+                                                            @case('mse')
+                                                                <span class="badge rounded-pill badge-info">Matching Sentence Ending</span>
+                                                                @break
+                                                            @case('oc')
+                                                                <span class="badge rounded-pill badge-secondary">One Choice</span>
+                                                                @break
+                                                            @case('mh')
+                                                                <span class="badge rounded-pill badge-warning">Matching Headings</span>
+                                                                @break
+                                                            @case('tc')
+                                                                <span class="badge rounded-pill badge-danger">Table Completion</span>
+                                                                @break
+                                                            @case('sa')
+                                                                <span class="badge rounded-pill badge-dark">Short Answer</span>
+                                                                @break
+                                                            @default
+                                                                <span class="badge rounded-pill badge-dark">Unknown</span>
+                                                        @endswitch
+                                                    </td>
+                                                    <td>
+                                                        @if($h->setSoal)
+                                                            <strong>{{ $h->setSoal->name }}</strong><br>
+                                                        @else
+                                                            <em class="text-muted">Set not found</em>
+                                                        @endif
+                                                    </td>
+                                                    <td>{{$h->score}}/{{ $h->detailHistories->count() }}</td>
+                                                    <td class="text-center">
+                                                        {{ $h->created_at->format('d F Y') }} <br>
+                                                        {{ $h->created_at->format('H:i') }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->uuid('student_id');
             $table->uuid('teacher_id')->nullable();
+            $table->enum('tipe_test', ['mock', 'practice']);
             $table->string('kategori');
             $table->string('tipe');
-            $table->string('set_soal');
+            $table->unsignedBigInteger('set_soal_id');
             $table->integer('score')->default(0);
             $table->timestamps();
         });
