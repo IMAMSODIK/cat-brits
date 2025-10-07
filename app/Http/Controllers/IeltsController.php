@@ -89,12 +89,13 @@ class IeltsController extends Controller
             $soalIds = $payloadKeys->toArray();
 
             $soals = Soal::where('set_id', $setId)
+                ->where('kategori', $kategori)
                 ->where('tipe_soal', $tipe)
                 ->whereIn('id_soal', $soalIds)
                 ->get();
 
             $results = [];
-            $score = 0; // Hitung nilai benar
+            $score = 0;
 
             foreach ($soalIds as $qid) {
                 $rawUser = $r->input($qid, '');

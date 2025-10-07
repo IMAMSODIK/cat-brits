@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('set_id');
             $table->string('id_soal');
-            $table->enum('tipe_soal', ['tfng', 'sa', 'tc', 'mh', 'oc', 'mse', 'ynng']);
+            $table->string('tipe_soal');
+            $table->enum('kategori', ['reading', 'listening', 'writing', 'speaking']);
             $table->string('jawaban_benar');
             $table->timestamps();
         });

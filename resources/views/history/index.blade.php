@@ -140,25 +140,37 @@
                                                                 <span class="badge rounded-pill badge-primary">True / False / Not Given</span>
                                                                 @break
                                                             @case('ynng')
-                                                                <span class="badge rounded-pill badge-success">Yes / No / Not Given</span>
+                                                                <span class="badge rounded-pill badge-primary">Yes / No / Not Given</span>
                                                                 @break
                                                             @case('mse')
-                                                                <span class="badge rounded-pill badge-info">Matching Sentence Ending</span>
+                                                                <span class="badge rounded-pill badge-primary">Matching Sentence Ending</span>
                                                                 @break
                                                             @case('oc')
-                                                                <span class="badge rounded-pill badge-secondary">One Choice</span>
+                                                                <span class="badge rounded-pill badge-primary">One Choice</span>
                                                                 @break
                                                             @case('mh')
-                                                                <span class="badge rounded-pill badge-warning">Matching Headings</span>
+                                                                <span class="badge rounded-pill badge-primary">Matching Headings</span>
                                                                 @break
                                                             @case('tc')
-                                                                <span class="badge rounded-pill badge-danger">Table Completion</span>
+                                                                <span class="badge rounded-pill badge-primary">Table Completion</span>
                                                                 @break
                                                             @case('sa')
-                                                                <span class="badge rounded-pill badge-dark">Short Answer</span>
+                                                                <span class="badge rounded-pill badge-primary">Short Answer</span>
+                                                                @break
+                                                            @case('nc')
+                                                                <span class="badge rounded-pill badge-primary">Note Completion</span>
+                                                                @break
+                                                            @case('tc')
+                                                                <span class="badge rounded-pill badge-primary">Table Completion</span>
+                                                                @break
+                                                            @case('two_choices')
+                                                                <span class="badge rounded-pill badge-primary">Two Choices</span>
+                                                                @break
+                                                            @case('one_choices')
+                                                                <span class="badge rounded-pill badge-primary">one Choices</span>
                                                                 @break
                                                             @default
-                                                                <span class="badge rounded-pill badge-dark">Unknown</span>
+                                                                <span class="badge rounded-pill badge-primary">Unknown</span>
                                                         @endswitch
                                                     </td>
                                                     <td>

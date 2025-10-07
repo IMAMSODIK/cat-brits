@@ -146,6 +146,13 @@
 
             </ul>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+
+            <li class="sidebar-list">
+                <a class="sidebar-link sidebar-title link-nav" href="/speaking-schedule">
+                    <i class="fa fa-pencil-alt text-white"></i>
+                    <span>Speaking Schedule</span>
+                </a>
+            </li>
         </div>
     </nav>
 </div>
