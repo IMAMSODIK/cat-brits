@@ -34,7 +34,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: var(--bg);
+            background: #4274ba;
             box-shadow: var(--shadow);
             padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
         }
@@ -60,7 +60,6 @@
             width: 36px;
             height: 36px;
             border-radius: 8px;
-            background: #eef2ff;
             color: #4f46e5;
             font-weight: 700;
             letter-spacing: 0.5px;
@@ -1489,7 +1488,11 @@
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
-                <div class="logo" aria-hidden="true">LOGO</div>
+                <div class="logo" aria-hidden="true">
+                    <div class="logo" aria-hidden="true">
+                        <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    </div>
+                </div>
             </div>
 
             <div class="actions">

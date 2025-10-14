@@ -9,10 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data = [
-            'pageTitle' => 'Dashboard',
-        ];
-        
-        return view('dashboard.index', $data);
+        $pageTitle = 'Dashboard';
+
+        return view('dashboard.index', compact(
+            'pageTitle'
+        ));
     }
 }

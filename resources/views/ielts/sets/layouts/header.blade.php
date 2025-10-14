@@ -1,7 +1,10 @@
 <header class="app-header" role="banner">
     <div class="header-row" aria-label="Header CAT Bahasa Inggris">
         <div class="brand">
-            <div class="logo" aria-hidden="true">LOGO</div>
+            <div class="logo" aria-hidden="true">
+                <img class="img-fluid" style="width: 85px; margin-top: -20px"
+                src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+            </div>
         </div>
 
         <div class="actions">
