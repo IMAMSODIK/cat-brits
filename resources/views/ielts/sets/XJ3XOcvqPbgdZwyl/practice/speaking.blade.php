@@ -667,7 +667,7 @@
                         <p><b>Questions 1-4</b></p>
                     </fieldset>
 
-                    <div class="progress-dots" id="progressDots"></div>
+                    <div class="progress-dots"></div>
 
                     <div class="speaking-question" data-q="1">
                         <div class="sq-navigation">
@@ -675,7 +675,8 @@
                                 <button class="sq-prev" disabled>Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 1:</b> <br>How do you usually spend your weekends? [Why?]</div>
+                            <div class="sq-text"><b>Question 1:</b> <br>How do you usually spend your weekends? [Why?]
+                            </div>
                         </div>
 
                         <div class="sq-actions">
@@ -697,7 +698,8 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 2:</b> <br>Which is your favorite part of the weekend? [Why?]
+                            <div class="sq-text"><b>Question 2:</b> <br>Which is your favorite part of the weekend?
+                                [Why?]
                             </div>
                         </div>
 
@@ -720,7 +722,8 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 3:</b> <br>Do you think your weekends are long enough? [Why/Why
+                            <div class="sq-text"><b>Question 3:</b> <br>Do you think your weekends are long enough?
+                                [Why/Why
                                 note?]</div>
                         </div>
 
@@ -743,7 +746,8 @@
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next" disabled>Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 4:</b> <br>How important do you think it is to have free time at
+                            <div class="sq-text"><b>Question 4:</b> <br>How important do you think it is to have free
+                                time at
                                 the
                                 weekends? [Why?]</div>
                         </div>
@@ -771,6 +775,8 @@
                     <p><b>Questions 1-1</b></p>
                 </fieldset>
 
+                <div class="progress-dots" style="display: none"></div>
+
                 <div class="speaking-question" data-q="1">
                     <div class="sq-navigation">
                         <div class="sq-text"><b>Question 1:</b> <br>
@@ -796,8 +802,150 @@
                     </div>
                 </div>
             </div>
+
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Part 3</div>
+
+                <fieldset class="q-item">
+                    <p><b>Questions 1-6</b></p>
+                </fieldset>
+
+                <div class="progress-dots"></div>
+
+                <div class="speaking-question" data-q="1">
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev" disabled>Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 1:</b> <br>What skills and abilities do people most want to have today? Why
+                        </div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="2" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 2:</b> <br>Which skills should children learn at school? Are there any skills which they should learn at home? What are they?
+                            [Why?]
+                        </div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 3:</b> <br>Which skills do you think will be important in the future? Why?</div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="4" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Which kinds of jobs have the highest salaries in your country? Why is this?</div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="5" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Are there any other jobs that you think should have high salaries? Why do you think that?</div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="6" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next" disabled>Next</button>
+                        </div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Some people say it would be better for society if everyone got the same salary. What do you think about that? Why?</div>
+                    </div>
+
+                    <div class="sq-actions">
+                        <button class="sq-record">🎙️ Start Recording</button>
+                        <label class="sq-upload-label">
+                            ⬆️ Upload Audio
+                            <input type="file" accept="audio/*" class="sq-upload" hidden />
+                        </label>
+                    </div>
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1000,81 +1148,92 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const questions = document.querySelectorAll('.speaking-question');
-            const totalQuestions = questions.length;
-            const progressDots = document.getElementById('progressDots');
 
-            // Generate dots
-            for (let i = 0; i < totalQuestions; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (i === 0) dot.classList.add('active');
-                progressDots.appendChild(dot);
-            }
+            function initSpeakingPanel(panelId) {
+                const panel = document.querySelector(panelId);
+                if (!panel) return;
 
-            function updateProgress(currentIdx) {
-                const dots = progressDots.querySelectorAll('.dot');
-                dots.forEach((dot, idx) => {
-                    dot.classList.remove('active');
-                    if (idx === currentIdx) dot.classList.add('active');
-                    // jangan auto completed, hanya update active
-                });
-            }
+                const questions = panel.querySelectorAll('.speaking-question');
+                const totalQuestions = questions.length;
+                console.log(totalQuestions);
+                const progressDots = panel.querySelector('.progress-dots');
 
-            function markCompleted(idx) {
-                const dots = progressDots.querySelectorAll('.dot');
-                if (dots[idx]) {
-                    dots[idx].classList.add('completed');
+                // Clear dots sebelum generate ulang
+                progressDots.innerHTML = "";
+
+                // Generate dots sesuai jumlah soal di panel ini
+                for (let i = 0; i < totalQuestions; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    progressDots.appendChild(dot);
                 }
-            }
 
-            // Navigation
-            questions.forEach((q, idx) => {
-                const prevBtn = q.querySelector('.sq-prev');
-                const nextBtn = q.querySelector('.sq-next');
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        q.hidden = true;
-                        questions[idx - 1].hidden = false;
-                        updateProgress(idx - 1);
+                function updateProgress(currentIdx) {
+                    const dots = progressDots.querySelectorAll('.dot');
+                    dots.forEach((dot, idx) => {
+                        dot.classList.remove('active');
+                        if (idx === currentIdx) dot.classList.add('active');
                     });
                 }
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        q.hidden = true;
-                        questions[idx + 1].hidden = false;
-                        updateProgress(idx + 1);
-                    });
+
+                function markCompleted(idx) {
+                    const dots = progressDots.querySelectorAll('.dot');
+                    if (dots[idx]) dots[idx].classList.add('completed');
                 }
-            });
 
-            // Record button simulation
-            document.querySelectorAll('.sq-record').forEach((btn, idx) => {
-                btn.addEventListener('click', () => {
-                    btn.textContent = "✅ Recorded";
-                    btn.classList.add("recorded");
-                    markCompleted(idx); // dot jadi hijau
-                });
-            });
+                // Navigation (previous/next)
+                questions.forEach((q, idx) => {
+                    const prevBtn = q.querySelector('.sq-prev');
+                    const nextBtn = q.querySelector('.sq-next');
 
-            // Upload audio
-            document.querySelectorAll('.sq-upload').forEach((input, idx) => {
-                input.addEventListener('change', () => {
-                    if (input.files.length > 0) {
-                        const label = input.closest('.sq-actions').querySelector(
-                            '.sq-upload-label');
-                        if (label) {
-                            label.textContent = "✅ Audio Uploaded";
-                            label.classList.add("uploaded");
-                        }
-                        markCompleted(idx); // dot jadi hijau
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            q.hidden = true;
+                            questions[idx - 1].hidden = false;
+                            updateProgress(idx - 1);
+                        });
+                    }
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            q.hidden = true;
+                            questions[idx + 1].hidden = false;
+                            updateProgress(idx + 1);
+                        });
                     }
                 });
-            });
+
+                // Record button simulation
+                panel.querySelectorAll('.sq-record').forEach((btn, idx) => {
+                    btn.addEventListener('click', () => {
+                        btn.textContent = "✅ Recorded";
+                        btn.classList.add("recorded");
+                        markCompleted(idx);
+                    });
+                });
+
+                // Upload audio
+                panel.querySelectorAll('.sq-upload').forEach((input, idx) => {
+                    input.addEventListener('change', () => {
+                        if (input.files.length > 0) {
+                            const label = input.closest('.sq-actions').querySelector(
+                                '.sq-upload-label');
+                            if (label) {
+                                label.textContent = "✅ Audio Uploaded";
+                                label.classList.add("uploaded");
+                            }
+                            markCompleted(idx);
+                        }
+                    });
+                });
+            }
+
+            // ✅ Inisialisasi untuk masing-masing panel
+            initSpeakingPanel('#panel-tfng');
+            initSpeakingPanel('#panel-tfng2');
+            initSpeakingPanel('#panel-ynng');
         });
     </script>
-
 
 
 </body>

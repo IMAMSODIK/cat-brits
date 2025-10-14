@@ -14,13 +14,23 @@ class SetSoalSeeder extends Seeder
     public function run(): void
     {
         SetSoal::create([
-            'name' => 'Cambridge IELTS 10 Academic Test 1',
+            'name' => 'Cambridge 10 Test 1',
             'kode' => 'XJ3XOcvqPbgdZwyl',
         ]);
 
         SetSoal::create([
-            'name' => 'Cambridge IELTS 10 Academic Test 2',
+            'name' => 'Cambridge 10 Test 2',
             'kode' => 'QmN0FYAE2DCXRPdC',
+        ]);
+
+        SetSoal::create([
+            'name' => 'Cambridge 10 Test 3',
+            'kode' => 's4gzzYRpwLnhLRFf',
+        ]);
+
+        SetSoal::create([
+            'name' => 'Cambridge 10 Test 4',
+            'kode' => '11qYaGWPJUTxUVdq',
         ]);
     }
 }

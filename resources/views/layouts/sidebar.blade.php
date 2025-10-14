@@ -35,6 +35,7 @@
                         <h6 class="lan-1">General</h6>
                     </div>
                 </li>
+
                 <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
                         href="#">
                         <svg class="stroke-icon">
@@ -55,26 +56,30 @@
                     </div>
                 </li>
 
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="/teacher">
-                        <i class="fa fa-users text-white"></i>
-                        <span>Teachers</span>
-                    </a>
-                </li>
+                @if (user()->auth()->role == 'admin')
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title link-nav" href="/teacher">
+                            <i class="fa fa-users text-white"></i>
+                            <span>Teachers</span>
+                        </a>
+                    </li>                    
+                @endif
 
-                <li class="sidebar-list" style="cursor: pointer">
-                    <a class="sidebar-link sidebar-title">
-                        <i class="fa fa-user-graduate text-white"></i>
-                        <span class="">Students</span>
-                        <div class="according-menu"><i class="fa fa-angle-right"></i></div>
-                    </a>
-                    <ul class="sidebar-submenu" style="display: none;">
-                        <li><a href="/students"><i class="fa fa-list me-2"></i> All Students</a></li>
-                        <li><a href="/students-verification"><i class="fa fa-check-circle me-2"></i> Verification</a>
-                        </li>
-                    </ul>
-                </li>
+                @if (in_array(user()->auth()->role, ['admin', 'teacher']))
+                    <li class="sidebar-list" style="cursor: pointer">
+                        <a class="sidebar-link sidebar-title">
+                            <i class="fa fa-user-graduate text-white"></i>
+                            <span class="">Students</span>
+                            <div class="according-menu"><i class="fa fa-angle-right"></i></div>
+                        </a>
+                        <ul class="sidebar-submenu" style="display: none;">
+                            <li><a href="/students"><i class="fa fa-list me-2"></i> All Students</a></li>
+                            <li><a href="/students-verification"><i class="fa fa-check-circle me-2"></i> Verification</a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
 
                 <li class="sidebar-main-title">
                     <div>
@@ -110,49 +115,44 @@
                     </a>
                 </li>
 
-                <li class="sidebar-main-title">
-                    <div>
-                        <h6 class="">Exam Hisotry</h6>
-                    </div>
-                </li>
+                @if (in_array(user()->auth()->role, ['admin', 'teacher']))
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6 class="">Exam Hisotry</h6>
+                        </div>
+                    </li>
 
-                <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="/history?category=ielts">
-                        <i class="fa fa-language text-white"></i>
-                        <span>IELTS</span>
-                    </a>
-                </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/history?category=ielts">
+                            <i class="fa fa-language text-white"></i>
+                            <span>IELTS</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="/history?category=toefl">
-                        <i class="fa fa-graduation-cap text-white"></i>
-                        <span>TOEFL</span>
-                    </a>
-                </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/history?category=toefl">
+                            <i class="fa fa-graduation-cap text-white"></i>
+                            <span>TOEFL</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="/history?category=general-english">
-                        <i class="fa fa-book text-white"></i>
-                        <span>GE</span>
-                    </a>
-                </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/history?category=general-english">
+                            <i class="fa fa-book text-white"></i>
+                            <span>GE</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="/history?category=sat">
-                        <i class="fa fa-pencil-alt text-white"></i>
-                        <span>SAT</span>
-                    </a>
-                </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/history?category=sat">
+                            <i class="fa fa-pencil-alt text-white"></i>
+                            <span>SAT</span>
+                        </a>
+                    </li>
+                @endif
 
             </ul>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-
-            <li class="sidebar-list">
-                <a class="sidebar-link sidebar-title link-nav" href="/speaking-schedule">
-                    <i class="fa fa-pencil-alt text-white"></i>
-                    <span>Speaking Schedule</span>
-                </a>
-            </li>
         </div>
     </nav>
 </div>

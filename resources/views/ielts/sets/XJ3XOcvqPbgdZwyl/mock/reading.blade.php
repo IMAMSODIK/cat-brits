@@ -891,7 +891,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            right: 16px;
+            left: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -980,7 +980,7 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                right: 12px;
+                left: 12px;
                 left: auto;
                 width: auto;
                 max-width: 100%;
@@ -988,7 +988,7 @@
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                right: 12px;
+                left: 12px;
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1144,6 +1144,32 @@
             }
         }
     </style>
+
+    <style>
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #fccb2a;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            background-color: #fff309;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -1297,31 +1323,31 @@
                                     </ul>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1">
+                                <fieldset class="q-item" data-q="1" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
                                         Examples of ancient stepwells can be found all over the world.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="2" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
                                         Stepwells had a range of functions, in addition to those related to water
@@ -1329,24 +1355,24 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3">
+                                <fieldset class="q-item" data-q="3" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
                                         The few existing stepwells in Delhi are more attractive than those found
@@ -1354,48 +1380,48 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4">
+                                <fieldset class="q-item" data-q="4" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
                                         It took workers many years to build the stone steps characteristic of stepwells.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5">
+                                <fieldset class="q-item" data-q="5" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">5</span>
                                         The number of steps above the water level in a stepwell altered during the
@@ -1403,17 +1429,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1427,38 +1453,38 @@
                                     <p><i>Write your answers in boxes on your answer sheet.</i></p>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="6">
+                                <fieldset class="q-item questions-item" data-q="6" data-type="sa">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">6</span>
                                         <span style="flex: 1;">
                                             Which part of some stepwells provided shade for people?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="7">
+                                <fieldset class="q-item questions-item" data-q="7" data-type="sa">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">7</span>
                                         <span style="flex: 1;">
                                             What type of serious climatic event, which took place in southern Rajasthan,
                                             is mentioned in the article?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="8">
+                                <fieldset class="q-item questions-item" data-q="8" data-type="sa">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">8</span>
                                         <span style="flex: 1;">
                                             Who are frequent visitors to stepwells nowadays?
                                             <span class="q-question">
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </legend>
@@ -1484,10 +1510,10 @@
                                         <td>Late 11th century</td>
                                         <td>As many as 500 sculptures decorate the monument</td>
                                         <td>
-                                            <div class="q-item" data-q="9">
+                                            <div class="q-item" data-q="9"> data-type="tc"
                                                 Restored in the 1990s Excellent condition, despite the
                                                 <span class="q-number-box">9</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                                 of 2001.
                                             </div>
                                         </td>
@@ -1496,18 +1522,18 @@
                                         <td><b>Surya Kund</b></td>
                                         <td>1026</td>
                                         <td>
-                                            <div class="q-item" data-q="10">
+                                            <div class="q-item" data-q="10" data-type="tc">
                                                 Steps on the
                                                 <span class="q-number-box">10</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                                 produce a geometric pattern Carved shrines.
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="q-item" data-q="11">
+                                            <div class="q-item" data-q="11" data-type="tc">
                                                 Looks more like a
                                                 <span class="q-number-box">11</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
                                                 than a well.
                                             </div>
                                         </td>
@@ -1523,10 +1549,10 @@
                                         <td>850 AD</td>
                                         <td>Steps take you down 11 storeys to the bottom</td>
                                         <td>
-                                            <div class="q-item" data-q="12">
+                                            <div class="q-item" data-q="12" data-type="tc">
                                                 Old, deep and very dramatic Has
                                                 <span class="q-number-box">12</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
                                                 which provide a view to the steps.
                                             </div>
                                         </td>
@@ -1535,10 +1561,10 @@
                                         <td><b>Neemrana Ki Baori</b></td>
                                         <td>1700</td>
                                         <td>
-                                            <div class="q-item" data-q="13">
+                                            <div class="q-item" data-q="13" data-type="tc">
                                                 Has two
                                                 <span class="q-number-box">13</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-5" class="q-text" placeholder="">
                                                 levels.
                                             </div>
                                         </td>
@@ -1671,13 +1697,13 @@
                                     </ul>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1">
+                                <fieldset class="q-item" data-q="1" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">1</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>A</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1695,13 +1721,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="2" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">2</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>B</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1719,13 +1745,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3">
+                                <fieldset class="q-item" data-q="3" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">3</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>C</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1743,13 +1769,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4">
+                                <fieldset class="q-item" data-q="4" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">4</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>D</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1767,13 +1793,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5">
+                                <fieldset class="q-item" data-q="5" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">5</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>E</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1791,13 +1817,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="6">
+                                <fieldset class="q-item" data-q="6" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">6</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>G</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-6" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1815,13 +1841,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="7">
+                                <fieldset class="q-item" data-q="7" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">7</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>H</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-7" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1839,13 +1865,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="8">
+                                <fieldset class="q-item" data-q="8" data-type="mh">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">8</span>
                                         <span style="flex: 1;">
                                             Paragraph <b>I</b>
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-8" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -1876,31 +1902,31 @@
                                         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="9">
+                                <fieldset class="q-item" data-q="9" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">9</span>
                                         The need for transport is growing, despite technological developments.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="10">
+                                <fieldset class="q-item" data-q="10" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">10</span>
                                         To reduce production costs, some industries have been moved closer to their
@@ -1908,72 +1934,72 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="11">
+                                <fieldset class="q-item" data-q="11" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">11</span>
                                         Cars are prohibitively expensive in some EU candidate countries.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="12">
+                                <fieldset class="q-item" data-q="12" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">12</span>
                                         The Gothenburg European Council was set up 30 years ago.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="13">
+                                <fieldset class="q-item" data-q="13" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">13</span>
                                         By the end of this decade, CO2 emissions from transport are predicted to reach
@@ -1981,17 +2007,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2102,36 +2128,36 @@
                                     </p>
                                     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="1">
+                                <fieldset class="q-item" data-q="1" data-type="one">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
                                         The example of the ‘million-dollar quartet’ underlines the writer’s point about
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">recognising talent.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">working as a team.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">having a shared objective.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">being an effective leader.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="2" data-type="one">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
                                         James Watson suggests that he and Francis Crick won the race to discover the DNA
@@ -2139,24 +2165,24 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">were conscious of their own limitations.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">brought complementary skills to their
                                                 partnership.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">were determined to outperform their brighter
                                                 rivals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">encouraged each other to realise their joint
                                                 ambition.</span>
@@ -2164,7 +2190,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3">
+                                <fieldset class="q-item" data-q="3" data-type="one">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
                                         The writer mentions competitions on breakfast cereal packets as an example of
@@ -2172,52 +2198,52 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">inspire creative thinking.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">generate concise writing.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">promote loyalty to a group.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">strengthen commitment to an idea.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4">
+                                <fieldset class="q-item" data-q="4" data-type="one">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
                                         In the last paragraph, the writer suggests that it is important for employees to
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">be aware of their company’s goals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">feel that their contributions are valued.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">have respect for their co-workers‟
                                                 achievements.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="D" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">understand why certain management decisions are
                                                 made.</span>
@@ -2241,14 +2267,14 @@
                                     </ul>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5">
+                                <fieldset class="q-item" data-q="5" data-type="mse">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">5</span>
                                         <span style="flex: 1;">
                                             The physical surroundings in which a person works play a key role in
                                             determining their creativity.
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2263,13 +2289,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="6">
+                                <fieldset class="q-item" data-q="6" data-type="mse">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">6</span>
                                         <span style="flex: 1;">
                                             At times of change, people tend to
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2284,13 +2310,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="7">
+                                <fieldset class="q-item" data-q="7" data-type="mse">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">7</span>
                                         <span style="flex: 1;">
                                             If people are aware of what they might lose, they will often
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2305,13 +2331,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="8">
+                                <fieldset class="q-item" data-q="8" data-type="mse">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">8</span>
                                         <span style="flex: 1;">
                                             People working under a dominant boss are liable to
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2326,13 +2352,13 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="9">
+                                <fieldset class="q-item" data-q="9" data-type="mse">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">9</span>
                                         <span style="flex: 1;">
                                             Employees working in organisations with few rules are more likely to
                                             <span class="q-question">
-                                                <select name="q1" class="q-dropdown">
+                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2361,7 +2387,7 @@
                                             about this.</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="10">
+                                <fieldset class="q-item" data-q="10" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">10</span>
                                         The physical surroundings in which a person works play a key role in determining
@@ -2369,113 +2395,113 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="11">
+                                <fieldset class="q-item" data-q="11" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">11</span>
                                         Most people have the potential to be creative.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="12">
+                                <fieldset class="q-item" data-q="12" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">12</span>
                                         Teams work best when their members are of equally matched intelligence.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="13">
+                                <fieldset class="q-item" data-q="13" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">13</span>
                                         It is easier for smaller companies to be innovative.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="14">
+                                <fieldset class="q-item" data-q="14" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">14</span>
                                         A manager’s approval of an idea is more persuasive than that of a colleague.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
+                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2504,6 +2530,10 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
+
+    <button class="floating-btn">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
+    </button>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -3107,6 +3137,66 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+$(document).ready(function () {
+    $('.floating-btn').on('click', function () {
+
+        let results = [];
+
+        $('.q-item').each(function () {
+            const type = $(this).data('type'); 
+            const qnum = $(this).data('q'); // opsional kalau mau ditambahkan
+
+            let name = null;
+            let answer = null;
+
+            switch (type) {
+                case 'tfng':
+                case 'one':
+                case 'ynng':
+                    const checked = $(this).find('input[type="radio"]:checked');
+                    if (checked.length > 0) {
+                        name = checked.attr('name');
+                        answer = checked.val();
+                    }
+                    break;
+
+                case 'sa':
+                case 'tc':
+                    const input = $(this).find('input[type="text"]');
+                    if (input.length > 0) {
+                        name = input.attr('name');
+                        answer = input.val();
+                    }
+                    break;
+
+                case 'mh':
+                case 'mse':
+                    const select = $(this).find('select');
+                    if (select.length > 0) {
+                        name = select.attr('name');
+                        answer = select.val();
+                    }
+                    break;
+            }
+
+            results.push({
+                type: type,
+                name: name,
+                answer: answer || null,
+                question: qnum || null // bisa dihapus kalau tidak perlu
+            });
+        });
+
+        console.log(results);
+        alert("Cek console untuk hasilnya!");
+
+    });
+});
+</script>
+
 
 
 </body>

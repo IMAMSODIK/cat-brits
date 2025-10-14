@@ -36,6 +36,30 @@
             font-size: 0.9em;
             color: #666;
         }
+
+        #filter-section fieldset {
+            border: 1px solid #dee2e6 !important;
+            background-color: #fafafa;
+            transition: background 0.3s ease;
+        }
+
+        #filter-section fieldset:hover {
+            background-color: #f5f9ff;
+        }
+
+        #filter-section legend {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #filter-section .form-check-label {
+            font-weight: 500;
+        }
+
+        #filter-section select,
+        #filter-section input[type="date"] {
+            border-radius: 8px;
+        }
     </style>
 @endsection
 
@@ -61,134 +85,151 @@
                 {{ session('error') }}
             </div>
         @else
-            <div class="card d-none" id="filter-section">
+            <div class="card shadow-sm d-none" id="filter-section">
+                <div class="card-header bg-light border-bottom">
+                    <h5 class="mb-0 text-primary fw-bold">
+                        <i class="fa fa-filter me-2"></i> Filter Options
+                    </h5>
+                </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
+                    <form id="filterForm">
+                        <!-- CATEGORY FILTER -->
+                        <fieldset class="border rounded p-3 mb-4">
+                            <legend class="w-auto px-3 text-primary fw-semibold">
+                                <i class="fa fa-list me-1"></i> Category
+                            </legend>
+                            <div class="row g-2">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="category[]" value="listening"
+                                            id="catListening">
+                                        <label class="form-check-label" for="catListening">Listening</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="category[]" value="speaking"
+                                            id="catSpeaking">
+                                        <label class="form-check-label" for="catSpeaking">Speaking</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="category[]" value="reading"
+                                            id="catReading">
+                                        <label class="form-check-label" for="catReading">Reading</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="category[]" value="writing"
+                                            id="catWriting">
+                                        <label class="form-check-label" for="catWriting">Writing</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- TYPE FILTER -->
+                        <fieldset class="border rounded p-3 mb-4">
+                            <legend class="w-auto px-3 text-primary fw-semibold">
+                                <i class="fa fa-sliders me-1"></i> Type
+                            </legend>
+                            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-2">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="type[]" value="two_choices"
+                                            id="typeTwoChoices">
+                                        <label class="form-check-label" for="typeTwoChoices">Two Choices</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="type[]" value="oc"
+                                            id="typeOC">
+                                        <label class="form-check-label" for="typeOC">One Choice (OC)</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="type[]" value="nc"
+                                            id="typeNC">
+                                        <label class="form-check-label" for="typeNC">No Choice (NC)</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="type[]" value="essay"
+                                            id="typeEssay">
+                                        <label class="form-check-label" for="typeEssay">Essay</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="type[]" value="matching"
+                                            id="typeMatching">
+                                        <label class="form-check-label" for="typeMatching">Matching</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- SETS FILTER -->
+                        <fieldset class="border rounded p-3 mb-4">
+                            <legend class="w-auto px-3 text-primary fw-semibold">
+                                <i class="fa fa-layer-group me-1"></i> Sets
+                            </legend>
                             <div class="form-group">
-                                <label>Status</label>
-                                <select class="form-control" id="filter-status">
-                                    <option value="">-- All --</option>
-                                    <option value="1">Active</option>
-                                    <option value="0">Nonactive</option>
+                                <select name="set" id="setSelect" class="form-select">
+                                    <option value="">-- Select Set --</option>
+                                    <option value="set1">Set 1</option>
+                                    <option value="set2">Set 2</option>
+                                    <option value="set3">Set 3</option>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-12 d-flex justify-content-end">
+                        </fieldset>
+
+                        <!-- DATE RANGE FILTER -->
+                        <fieldset class="border rounded p-3 mb-4">
+                            <legend class="w-auto px-3 text-primary fw-semibold">
+                                <i class="fa fa-calendar me-1"></i> Date Range
+                            </legend>
+                            <div class="row g-2 align-items-end">
+                                <div class="col-md-6">
+                                    <label for="dateStart" class="form-label fw-semibold">From</label>
+                                    <input type="date" id="dateStart" name="date_start" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dateEnd" class="form-label fw-semibold">To</label>
+                                    <input type="date" id="dateEnd" name="date_end" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- ACTION BUTTONS -->
+                        <div class="d-flex flex-wrap justify-content-end gap-2 mt-3">
+                            <button type="reset" class="btn btn-outline-secondary" id="reset-filter">
+                                <i class="fa fa-undo me-2"></i> Reset
+                            </button>
                             <button type="button" class="btn btn-primary" id="apply-filter">
                                 <i class="fa fa-check me-2"></i> Apply Filter
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
+
 
             <div class="product-grid">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            {{-- <div class="card-header pb-0 card-no-border">
-                                <h4>Zero Configuration</h4>
-                            </div> --}}
                             <div class="card-body">
-                                <div class="table-responsive custom-scrollbar">
-                                    <table class="display" id="basic-1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">Student</th>
-                                                <th class="text-center">Category</th>
-                                                <th class="text-center">Type</th>
-                                                <th class="text-center">Set Information</th>
-                                                <th class="text-center">Score</th>
-                                                <th class="text-center">Time</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                                $index = 1;
-                                            @endphp
-                                            @foreach ($histories as $h)
-                                                <tr>
-                                                    <td>{{ $index++ }}</td>
-                                                    <td>
-                                                        <div class="user-cell">
-                                                            <img src="{{($h->student->foto) ? asset('storage/foto_profile') . '/' . $h->student->foto : asset('own_assets/images/avatar.png')}}" alt="Foto User"
-                                                                class="user-photo">
-                                                            <div class="user-info">
-                                                                <div class="user-name">{{$h->student->name}}</div>
-                                                                <div class="user-email">{{$h->student->email}}</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        @if ($h->kategori == 'reading')
-                                                            <span class="badge text-bg-primary">{{ucfirst($h->kategori)}}</span>
-                                                        @elseif ($h->kategori == 'writing')
-                                                            <span class="badge text-bg-info">{{ucfirst($h->kategori)}}</span>
-                                                        @elseif ($h->kategori == 'listening')
-                                                            <span class="badge text-bg-success">{{ucfirst($h->kategori)}}</span>
-                                                        @elseif ($h->kategori == 'speaking')
-                                                            <span class="badge text-bg-warning">{{ucfirst($h->kategori)}}</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @switch($h->tipe)
-                                                            @case('tfng')
-                                                                <span class="badge rounded-pill badge-primary">True / False / Not Given</span>
-                                                                @break
-                                                            @case('ynng')
-                                                                <span class="badge rounded-pill badge-primary">Yes / No / Not Given</span>
-                                                                @break
-                                                            @case('mse')
-                                                                <span class="badge rounded-pill badge-primary">Matching Sentence Ending</span>
-                                                                @break
-                                                            @case('oc')
-                                                                <span class="badge rounded-pill badge-primary">One Choice</span>
-                                                                @break
-                                                            @case('mh')
-                                                                <span class="badge rounded-pill badge-primary">Matching Headings</span>
-                                                                @break
-                                                            @case('tc')
-                                                                <span class="badge rounded-pill badge-primary">Table Completion</span>
-                                                                @break
-                                                            @case('sa')
-                                                                <span class="badge rounded-pill badge-primary">Short Answer</span>
-                                                                @break
-                                                            @case('nc')
-                                                                <span class="badge rounded-pill badge-primary">Note Completion</span>
-                                                                @break
-                                                            @case('tc')
-                                                                <span class="badge rounded-pill badge-primary">Table Completion</span>
-                                                                @break
-                                                            @case('two_choices')
-                                                                <span class="badge rounded-pill badge-primary">Two Choices</span>
-                                                                @break
-                                                            @case('one_choices')
-                                                                <span class="badge rounded-pill badge-primary">one Choices</span>
-                                                                @break
-                                                            @default
-                                                                <span class="badge rounded-pill badge-primary">Unknown</span>
-                                                        @endswitch
-                                                    </td>
-                                                    <td>
-                                                        @if($h->setSoal)
-                                                            <strong>{{ $h->setSoal->name }}</strong><br>
-                                                        @else
-                                                            <em class="text-muted">Set not found</em>
-                                                        @endif
-                                                    </td>
-                                                    <td>{{$h->score}}/{{ $h->detailHistories->count() }}</td>
-                                                    <td class="text-center">
-                                                        {{ $h->created_at->format('d F Y') }} <br>
-                                                        {{ $h->created_at->format('H:i') }}
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                <div class="row g-3" id="historyContainer"></div>
+                                <div class="text-center mt-4">
+                                    <button id="loadMoreBtn" class="btn btn-outline-primary">
+                                        <i class="fa fa-chevron-down me-1"></i> Load More
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -357,6 +398,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('own_script')
