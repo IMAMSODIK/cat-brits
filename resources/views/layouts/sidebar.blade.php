@@ -56,7 +56,7 @@
                     </div>
                 </li>
 
-                @if (user()->auth()->role == 'admin')
+                @if (auth()->user()->role == 'admin')
                     <li class="sidebar-list">
                         <i class="fa fa-thumb-tack"></i>
                         <a class="sidebar-link sidebar-title link-nav" href="/teacher">
@@ -115,7 +115,7 @@
                     </a>
                 </li>
 
-                @if (in_array(user()->auth()->role, ['admin', 'teacher']))
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
                     <li class="sidebar-main-title">
                         <div>
                             <h6 class="">Exam Hisotry</h6>
