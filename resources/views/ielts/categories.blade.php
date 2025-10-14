@@ -31,7 +31,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -44,7 +44,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -57,7 +57,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -70,7 +70,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -93,7 +93,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -106,7 +106,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -119,7 +119,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
@@ -132,7 +132,7 @@
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
-                                        <h6 class="text-white f-30 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
+                                        <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
                                     </div>
                                     <div class="img-boostup"><img class="img-boostup-img-1"
                                             src="{{asset('dashboard_assets/assets/images/dashboard-3/boostup1.png')}}" alt="boostup"><img
