@@ -66,7 +66,7 @@
                     </li>                    
                 @endif
 
-                @if (in_array(user()->auth()->role, ['admin', 'teacher']))
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
                     <li class="sidebar-list" style="cursor: pointer">
                         <a class="sidebar-link sidebar-title">
                             <i class="fa fa-user-graduate text-white"></i>
