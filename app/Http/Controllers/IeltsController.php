@@ -18,6 +18,7 @@ class IeltsController extends Controller
         try {
             $data = [
                 'pageTitle' => "IELTS",
+                'sets' => SetSoal::all(),
             ];
 
             return view('ielts.index', $data);

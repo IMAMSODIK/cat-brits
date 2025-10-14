@@ -38,25 +38,17 @@
                 </div>
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
-                        <div class="col-12 col-md-6" style="margin-top: -10px; cursor: pointer;" onclick="location.href='/ielts/categories?set-id=XJ3XOcvqPbgdZwyl'">
-                            <div class="card p-2 d-flex flex-row align-items-center">
-                                <div class="flex-grow-1">
-                                    <p class="mb-0" style="font-size: 16px; font-weight: 500;">
-                                        Cambridge IELTS 10 Academic Reading Test 1
-                                    </p>
+                        @foreach ($sets as $set)
+                            <div class="col-12 col-md-6" style="margin-top: -10px; cursor: pointer;" onclick="location.href='/ielts/categories?set-id={{$set->kode}}'">
+                                <div class="card p-2 d-flex flex-row align-items-center">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0" style="font-size: 16px; font-weight: 500;">
+                                            {{$set->name}}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-12 col-md-6" style="margin-top: -10px; cursor: pointer;" onclick="location.href='/ielts/categories?set-id=A2r6U8yjVikzu7AB'">
-                            <div class="card p-2 d-flex flex-row align-items-center">
-                                <div class="flex-grow-1">
-                                    <p class="mb-0" style="font-size: 16px; font-weight: 500;">
-                                        Cambridge IELTS 10 Academic Reading Test 2
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
