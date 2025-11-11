@@ -92,7 +92,7 @@ class IeltsController extends Controller
                     ->values();
 
                 $soalIds = $payloadKeys->toArray();
-                foreach($soalIds as $soalId){
+                foreach ($soalIds as $soalId) {
                     $soals = Soal::where('set_id', $setId)
                         ->where('kategori', $kategori)
                         ->where('tipe_soal', $tipe)
@@ -104,15 +104,15 @@ class IeltsController extends Controller
 
                     $index = 1;
                     $score = 0;
-                    foreach($userAnswer as $ua){
-                        if(in_array(strtolower($ua), array_map('strtolower', $jawabanBenar))){
+                    foreach ($userAnswer as $ua) {
+                        if (in_array(strtolower($ua), array_map('strtolower', $jawabanBenar))) {
                             $results[$soalId . '-' . $index++] = [
                                 'status'  => 'correct',
                                 'user'    => $ua,
                                 'correct' => implode(', ', $jawabanBenar),
                             ];
                             $score++;
-                        }else{
+                        } else {
                             $results[$soalId . '-' . $index++] = [
                                 'status'  => 'wrong',
                                 'user'    => $ua ?: null,
@@ -143,7 +143,6 @@ class IeltsController extends Controller
                         ]);
                     }
                 }
-                
             } else {
                 $payloadKeys = collect($r->all())
                     ->keys()
@@ -218,6 +217,110 @@ class IeltsController extends Controller
             ], 500);
         }
     }
+
+    public function mockTestCheck(Request $r)
+    {
+        DB::beginTransaction();
+        try {
+            $setId = $r->input('set_id');
+            $kategori = $r->input('kategori');
+            $answers = $r->input('answers', []);
+
+            if (empty($answers)) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Tidak ada jawaban dikirim.'
+                ], 400);
+            }
+
+            $results = [];
+            $score = 0;
+
+            // Buat identifier unik
+            foreach ($answers as $ans) {
+                $qid = $ans['question'] ?? null;
+                $type = $ans['type'] ?? null;
+                $name = $ans['name'] ?? null;
+                $userAns = trim($ans['answer'] ?? '');
+
+                if (!$type) continue;
+
+                // Gunakan name jika ada, fallback ke type-question
+                $uniqueKey ="{$type}-{$name}";
+
+                // Ambil soal berdasarkan kombinasi tipe + nomor
+                $soal = Soal::where('set_id', $setId)
+                    ->where('kategori', $kategori)
+                    ->where('tipe_soal', $type)
+                    ->where('id_soal', $name)
+                    ->first();
+
+                if (!$soal) {
+                    $results[$uniqueKey] = [
+                        'status' => 'not_found',
+                        'user' => $userAns ?: null,
+                        'correct' => null,
+                    ];
+                    continue;
+                }
+
+                $correctRaw = (string) $soal->jawaban_benar;
+                $correctNorm = mb_strtoupper(trim($correctRaw));
+                $userNorm = mb_strtoupper($userAns);
+
+                $matched = ($userNorm === $correctNorm);
+                if ($matched) $score++;
+
+                $results[$uniqueKey] = [
+                    'status'  => $matched ? 'correct' : 'wrong',
+                    'user'    => $userAns ?: null,
+                    'correct' => $correctRaw ?: null,
+                    'question' => $qid,
+                    'type' => $type,
+                ];
+            }
+
+            // Simpan hasil ke database
+            $setSoal = SetSoal::where('kode', $setId)->first();
+
+            $history = TestHistory::create([
+                'student_id'   => Auth::id(),
+                'teacher_id'   => null,
+                'tipe_test'    => 'practice',
+                'kategori'     => $kategori,
+                'tipe'         => 'mixed',
+                'set_soal_id'  => $setSoal?->id,
+                'score'        => $score,
+            ]);
+
+            foreach ($results as $key => $res) {
+                TestDetailHistory::create([
+                    'test_history_id' => $history->id,
+                    'soal_id'         => $res['question'],
+                    'jawaban_user'    => $res['user'] ?? '',
+                    'jawaban_benar'   => $res['correct'] ?? '',
+                    'status'          => $res['status'] === 'correct',
+                ]);
+            }
+
+            DB::commit();
+
+            return response()->json([
+                'status'  => 'ok',
+                'score'   => $score,
+                'results' => $results,
+                'history_id' => $history->id,
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
 
     public function mockTest(Request $r)
     {

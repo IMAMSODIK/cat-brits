@@ -701,7 +701,8 @@
         #panel-tfng .q-number-box,
         #panel-tfng2 .q-number-box,
         #panel-mse .q-number-box,
-        #panel-tc .q-number-box {
+        #panel-tc .q-number-box,
+        #panel-sa .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -1216,10 +1217,10 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">Content: Part 1</div>
                 <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="qa">
+                    <div class="qa highlighted-content">
                         <form class="qa-body">
                             <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-10 the Reading Passage?</p>
+                                <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
                                 <div class="audio-player" role="group" aria-label="Audio controls">
                                     <audio preload="metadata">
                                         <source
@@ -1423,10 +1424,10 @@
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">Content: Part 2</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body">
                         <fieldset class="q-item">
-                            <p class="lead">Listen and answer questions 1-10</p>
+                            <p class="lead">Listen and answer questions 11-20</p>
                             <div class="audio-player" role="group" aria-label="Audio controls">
                                 <audio preload="metadata">
                                     <source
@@ -1464,8 +1465,8 @@
 
                         <fieldset class="q-item" data-q="1">
                             <legend class="q-text">
-                                <span class="q-number">1</span>
-                                <span class="q-number">2</span>
+                                <span class="q-number">11</span>
+                                <span class="q-number">12</span>
                                 Which TWO facilities at the leisure club have recently been improved?
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 1 options">
@@ -1510,14 +1511,14 @@
                                 <li>
                                     <div class="q-list" data-q="3">
                                         New members should describe any
-                                        <span class="q-number-box">3</span>
+                                        <span class="q-number-box">13</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="4">
                                         The
-                                        <span class="q-number-box">4</span>
+                                        <span class="q-number-box">14</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         will be explained to you before you use the equipment.
                                     </div>
@@ -1525,7 +1526,7 @@
                                 <li>
                                     <div class="q-list" data-q="5">
                                         You will be given a six-week
-                                        <span class="q-number-box">5</span>
+                                        <span class="q-number-box">15</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
@@ -1536,7 +1537,7 @@
                                 <li>
                                     <div class="q-list" data-q="6">
                                         There is a compulsory £90
-                                        <span class="q-number-box">6</span>
+                                        <span class="q-number-box">16</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         fee for members.
                                     </div>
@@ -1544,7 +1545,7 @@
                                 <li>
                                     <div class="q-list" data-q="7">
                                         Gold members are given
-                                        <span class="q-number-box">7</span>
+                                        <span class="q-number-box">17</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         to all the LP clubs.
                                     </div>
@@ -1552,7 +1553,7 @@
                                 <li>
                                     <div class="q-list" data-q="8">
                                         Premier members are given priority during
-                                        <span class="q-number-box">8</span>
+                                        <span class="q-number-box">18</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         hours.
                                     </div>
@@ -1560,7 +1561,7 @@
                                 <li>
                                     <div class="q-list" data-q="9">
                                         Premier members can bring some
-                                        <span class="q-number-box">9</span>
+                                        <span class="q-number-box">19</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         every month.
                                     </div>
@@ -1568,7 +1569,7 @@
                                 <li>
                                     <div class="q-list" data-q="10">
                                         Members should always take their
-                                        <span class="q-number-box">10</span>
+                                        <span class="q-number-box">20</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         with them.
                                     </div>
@@ -1581,10 +1582,10 @@
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Part 3</div>
                     <div class="reading-section">
-                        <div class="qa">
+                        <div class="qa highlighted-content">
                             <form class="qa-body">
                                 <fieldset class="q-item">
-                                    <p class="lead">Listen and answer questions 1-10</p>
+                                    <p class="lead">Listen and answer questions 21-30</p>
                                     <div class="audio-player" role="group" aria-label="Audio controls">
                                         <audio preload="metadata">
                                             <source
@@ -1616,7 +1617,7 @@
                                 </fieldset>
 
                                 <fieldset class="q-item">
-                                    <p>Questions 1-5</p>
+                                    <p>Questions 21-25</p>
                                     <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
                                 </fieldset>
 
@@ -1626,7 +1627,7 @@
 
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
-                                        <span class="q-number">1</span>
+                                        <span class="q-number">21</span>
                                         Students entering the design competition have to
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
@@ -1650,7 +1651,7 @@
 
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
-                                        <span class="q-number">2</span>
+                                        <span class="q-number">22</span>
                                         John chose a dishwasher because he wanted to make dishwashers
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
@@ -1674,7 +1675,7 @@
 
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
-                                        <span class="q-number">3</span>
+                                        <span class="q-number">23</span>
                                         The stone in John’s ‘Rockpool’ design is used
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
@@ -1698,7 +1699,7 @@
 
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
-                                        <span class="q-number">4</span>
+                                        <span class="q-number">24</span>
                                         In the holding chamber, the carbon dioxide
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
@@ -1722,7 +1723,7 @@
 
                                 <fieldset class="q-item" data-q="5">
                                     <legend class="q-text">
-                                        <span class="q-number">5</span>
+                                        <span class="q-number">25</span>
                                         At the end of the cleaning process, the carbon dioxide
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
@@ -1745,24 +1746,24 @@
                                 </fieldset>
 
                                 <fieldset class="q-item">
-                                    <p><b>Questions 6-10</b></p>
+                                    <p><b>Questions 26-30</b></p>
                                     <p>Complete the notes below.</p>
                                     <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item">
+                                <fieldset class="q-item" id="panel-sa">
                                     <ul>
                                         <li>
                                             <div class="q-list" data-q="6">
                                                 John needs help preparing for his
-                                                <span class="q-number-box">6</span>
+                                                <span class="q-number-box">26</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="q-list" data-q="7">
                                                 The professor advises John to make a
-                                                <span class="q-number-box">7</span>
+                                                <span class="q-number-box">27</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
                                                 of his design.
                                             </div>
@@ -1770,21 +1771,21 @@
                                         <li>
                                             <div class="q-list" data-q="8">
                                                 John’s main problem is getting good quality
-                                                <span class="q-number-box">8</span>
+                                                <span class="q-number-box">28</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="q-list" data-q="9">
                                                 The professor suggests John apply for a
-                                                <span class="q-number-box">9</span>
+                                                <span class="q-number-box">29</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="q-list" data-q="10">
                                                 The professor will check the
-                                                <span class="q-number-box">10</span>
+                                                <span class="q-number-box">30</span>
                                                 <input type="text" name="q1" class="q-text" placeholder="">
                                                 information in John’s written report.
                                             </div>
@@ -1798,10 +1799,10 @@
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
                 <div class="x-panel-inner">Content: Part 4</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body">
                         <fieldset class="q-item">
-                            <p class="lead">Listen and answer questions 1-10</p>
+                            <p class="lead">Listen and answer questions 31-40</p>
                             <div class="audio-player" role="group" aria-label="Audio controls">
                                 <audio preload="metadata">
                                     <source
@@ -1833,7 +1834,7 @@
                         </fieldset>
 
                         <fieldset class="q-item">
-                            <p>Questions 1-10</p>
+                            <p>Questions 31-40</p>
                             <p>Complete the notes below.</p>
                             <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
                         </fieldset>
@@ -1846,21 +1847,21 @@
                                 <li>
                                     <div class="q-list" data-q="1">
                                         Its colour comes from an uncommon
-                                        <span class="q-number-box">1</span>
+                                        <span class="q-number-box">31</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="2">
                                         Local people believe that it has unusual
-                                        <span class="q-number-box">2</span>
+                                        <span class="q-number-box">32</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="3">
                                         They protect the bear from
-                                        <span class="q-number-box">3</span>
+                                        <span class="q-number-box">33</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
@@ -1872,7 +1873,7 @@
                                 <li>
                                     <div class="q-list" data-q="4">
                                         Tree roots stop
-                                        <span class="q-number-box">4</span>
+                                        <span class="q-number-box">34</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         along salmon streams.
                                     </div>
@@ -1881,7 +1882,7 @@
                                 <li>
                                     <div class="q-list" data-q="5">
                                         It is currently found on a small number of
-                                        <span class="q-number-box">5</span>
+                                        <span class="q-number-box">35</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
@@ -1892,7 +1893,7 @@
                                 <li>
                                     <div class="q-list" data-q="6">
                                         Habitat is being lost due to deforestation and construction of
-                                        <span class="q-number-box">6</span>
+                                        <span class="q-number-box">36</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         by logging companies.
                                     </div>
@@ -1900,7 +1901,7 @@
                                 <li>
                                     <div class="q-list" data-q="7">
                                         Unrestricted
-                                        <span class="q-number-box">7</span>
+                                        <span class="q-number-box">37</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         is affecting the salmon supply.
                                     </div>
@@ -1908,7 +1909,7 @@
                                 <li>
                                     <div class="q-list" data-q="8">
                                         The bears’ existence is also threatened by their low rate of
-                                        <span class="q-number-box">8</span>
+                                        <span class="q-number-box">38</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                     </div>
                                 </li>
@@ -1920,7 +1921,7 @@
                                 <li>
                                     <div class="q-list" data-q="9">
                                         Logging companies must improve their
-                                        <span class="q-number-box">9</span>
+                                        <span class="q-number-box">39</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         by logging companies.
                                     </div>
@@ -1928,7 +1929,7 @@
                                 <li>
                                     <div class="q-list" data-q="10">
                                         Maintenance and
-                                        <span class="q-number-box">10</span>
+                                        <span class="q-number-box">40</span>
                                         <input type="text" name="q1" class="q-text" placeholder="">
                                         of the spirit bears’ territory is needed.
                                     </div>
@@ -2423,35 +2424,35 @@
             document.getElementById('cancelNote').addEventListener('click', hideNotePopup);
 
             // === Init highlight di semua panel ===
-            // document.querySelectorAll('.x-panel').forEach(panel => {
-            //     const passageBody = panel.querySelector('.passage-body');
+            document.querySelectorAll('.x-panel').forEach(panel => {
+                const passageBody = panel.querySelector('.highlighted-content');
 
-            //     passageBody.addEventListener('mouseup', (e) => {
-            //         const selection = window.getSelection();
-            //         if (selection && !selection.isCollapsed) {
-            //             currentSelection = selection.getRangeAt(0);
-            //             activePassage = passageBody;
-            //             const rect = currentSelection.getBoundingClientRect();
-            //             showToolbar(rect);
-            //         } else {
-            //             hideToolbar();
-            //         }
-            //     });
+                passageBody.addEventListener('mouseup', (e) => {
+                    const selection = window.getSelection();
+                    if (selection && !selection.isCollapsed) {
+                        currentSelection = selection.getRangeAt(0);
+                        activePassage = passageBody;
+                        const rect = currentSelection.getBoundingClientRect();
+                        showToolbar(rect);
+                    } else {
+                        hideToolbar();
+                    }
+                });
 
-            //     // Klik highlight untuk buka note
-            //     passageBody.addEventListener('click', e => {
-            //         if (e.target.classList.contains('highlight') && e.target.dataset.note) {
-            //             currentHighlight = e.target;
-            //             showNotePopup(e.target, e.target.dataset.note);
-            //         }
-            //     });
-            // });
+                // Klik highlight untuk buka note
+                passageBody.addEventListener('click', e => {
+                    if (e.target.classList.contains('highlight') && e.target.dataset.note) {
+                        currentHighlight = e.target;
+                        showNotePopup(e.target, e.target.dataset.note);
+                    }
+                });
+            });
 
             // === Klik luar → tutup toolbar & note popup ===
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.passage-body')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();

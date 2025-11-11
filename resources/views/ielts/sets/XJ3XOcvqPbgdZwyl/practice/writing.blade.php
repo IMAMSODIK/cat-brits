@@ -1373,270 +1373,119 @@
 
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
-        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Part 1</button>
-            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
-                data-id="tfng2">Part 2</button>
-        </div>
+  <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
+    <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+      aria-selected="true" data-id="tfng">Task 1</button>
+    <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2"
+      aria-selected="false" data-id="tfng2">Task 2</button>
+  </div>
 
-        <div class="x-panels">
-            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Content: Part 1</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>The first chart below shows how energy is used in an average Australian household.
-                                    The second chart shows the greenhouse gas emissions which result from this energy
-                                    use.</p>
-                                <p>Summarise the information by selecting and reporting the main features, and make
-                                    comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
-                                    alt="" width="100%">
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="" aria-label="Questions">
-                            <form class="">
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">Part 1 Answer</span>
-                                    </legend>
-                                    <div class="form-container">
-                                        <div class="form-body">
-                                            <form id="responseForm">
-                                                <div class="form-group">
-                                                    <textarea name="response" id="response" class="form-textarea"
-                                                        placeholder="Enter your Part 1 Answer" required></textarea>
-                                                    <div class="char-counter">
-                                                        <span class="char-info">
-                                                            <span class="char-count" id="charCount">0</span> Characters
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-actions">
-                                                    <button type="button" class="btn btn-secondary" id="clearBtn">
-                                                        Clear
-                                                    </button>
-                                                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                                                        Submit
-                                                    </button>
-                                                </div>
-
-                                                <div class="success-message" id="successMessage" style="display: none">
-                                                    ✅ Your response has been submitted successfully!
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
+  <div class="x-panels">
+    <!-- ✅ TASK 1 -->
+    <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
+      <div class="x-panel-inner">
+        Content: <strong>Task 1</strong> <br><br>
+        You should spend about 20 minutes on this task. Write at least 150 words.
+      </div>
+      <div class="reading-section" aria-label="Reading and Questions">
+        <div class="reading-grid resizable-grid">
+          <article class="passage" aria-label="Reading Passage" tabindex="0">
+            <div class="passage-body">
+              <p>The first chart below shows how energy is used in an average Australian household. 
+                The second chart shows the greenhouse gas emissions which result from this energy use.</p>
+              <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+              <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}" alt="" width="100%">
             </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Konten: True/False/Not Given 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <h3 class="passage-title">A</h3>
-                                <p>It is difficult to conceive of vigorous economic growth without an efficient
-                                    transport system. Although modern information technologies can reduce the demand for
-                                    physical transport by facilitating teleworking and teleservices, the requirement for
-                                    transport continues to increase. There are two key factors behind this trend. For
-                                    passenger transport, the determining factor is the spectacular growth in car use.
-                                    The number of cars on European Union (EU) roads saw an increase of three million
-                                    cars each year from 1990 to 2010, and in the next decade the EU will see a further
-                                    substantial increase in its fleet.</p>
-                                <h3 class="passage-title">B</h3>
-                                <p>As far as goods transport is concerned, growth is due to a large extent to changes in
-                                    the European economy and its system of production. In the last 20 years, as internal
-                                    frontiers have been abolished, the EU has moved from a ‘stock’ economy to a ‘flow’
-                                    economy. This phenomenon has been emphasised by the relocation of some industries,
-                                    particularly those which are labour intensive, to reduce production costs, even
-                                    though the production site is hundreds or even thousands of kilometres away from the
-                                    final assembly plant or away from users.</p>
-                                <h3 class="passage-title">C</h3>
-                                <p>The strong economic growth expected in countries which are candidates for entry to
-                                    the EU will also increase transport flows, in particular road haulage traffic. In
-                                    1998, some of these countries already exported more than twice their 1990 volumes
-                                    and imported more than five times their 1990 volumes. And although many candidate
-                                    countries inherited a transport system which encourages rail, the distribution
-                                    between modes has tipped sharply in favour of road transport since the 1990s.
-                                    Between 1990 and 1998, road haulage increased by 19.4%, while during the same period
-                                    rail haulage decreased by 43.5%, although – and this could benefit the enlarged EU –
-                                    it is still on average at a much higher level than in existing member states.</p>
-                                <h3 class="passage-title">D</h3>
-                                <p>However, a new imperative-sustainable development – offers an opportunity for
-                                    adapting the EU’s common transport policy. This objective, agreed by the Gothenburg
-                                    European Council, has to be achieved by integrating environmental considerations
-                                    into Community policies, and shifting the balance between modes of transport lies at
-                                    the heart of its strategy. The ambitious objective can only be fully achieved by
-                                    2020, but proposed measures are nonetheless a first essential step towards a
-                                    sustainable transport system which will ideally be in place in 30 years’ time, that
-                                    is by 2040.</p>
-                                <h3 class="passage-title">E</h3>
-                                <p>In 1998, energy consumption in the transport sector was to blame for 28% of emissions
-                                    of CO2, the leading greenhouse gas. According to the latest estimates, if nothing is
-                                    done to reverse the traffic growth trend, CO2 emissions from transport can be
-                                    expected to increase by around 50% to 1,113 billion tonnes by 2020, compared with
-                                    the 739 billion tonnes recorded in 1990. Once again, road transport is the main
-                                    culprit since it alone accounts for 84% of the CO2 emissions attributable to
-                                    transport. Using alternative fuels and improving energy efficiency is thus both an
-                                    ecological necessity and a technological challenge.</p>
-                            </div>
-                        </article>
+          </article>
 
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+          <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body">
-                                <fieldset class="q-item">
-                                    <p class="lead">Do the following statements agree with the information given in
-                                        the
-                                        Reading Passage?
-                                    </p>
-                                    <p>In boxes on your answer sheet, write</p>
-                                    <ul class="legend">
-                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-                                    </ul>
-                                </fieldset>
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        The need for transport is growing, despite technological developments.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">2</span>
-                                        To reduce production costs, some industries have been moved closer to their
-                                        relevant consumers.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text">
-                                        <span class="q-number">3</span>
-                                        Cars are prohibitively expensive in some EU candidate countries.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text">
-                                        <span class="q-number">4</span>
-                                        The Gothenburg European Council was set up 30 years ago.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        By the end of this decade, CO2 emissions from transport are predicted to reach
-                                        739 billion tonnes.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </aside>
+          <aside aria-label="Questions">
+            <form class="response-form" data-task="task1">
+              <fieldset class="q-item" data-q="1">
+                <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
+                <div class="form-container">
+                  <div class="form-body">
+                    <div class="form-group">
+                      <textarea class="form-textarea js-response"
+                        placeholder="Enter your Task 1 Answer"
+                        required
+                        spellcheck="false"></textarea>
+                      <div class="char-counter">
+                        <span class="char-info"><span class="char-count">0</span> Words</span>
+                      </div>
                     </div>
+
+                    <div class="form-actions">
+                      <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                      <button type="submit" class="btn btn-primary js-submit">Submit</button>
+                    </div>
+
+                    <div class="success-message js-success" style="display:none;">
+                      ✅ Your response has been submitted successfully!
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </fieldset>
+            </form>
+          </aside>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <!-- ✅ TASK 2 -->
+    <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+      <div class="x-panel-inner">
+        Content: <strong>Task 2</strong> <br><br>
+        You should spend about 40 minutes on this task. Write at least 250 words.
+      </div>
+      <div class="reading-section" aria-label="Reading and Questions">
+        <div class="reading-grid resizable-grid">
+          <article class="passage" aria-label="Reading Passage" tabindex="0">
+            <div class="passage-body">
+              <p>It is important for children to learn the difference between right and wrong at an early age. 
+                Punishment is necessary to help them learn this distinction.</p>
+              <p>To what extent do you agree or disagree with this opinion?</p>
+              <p>What sort of punishment should parents and teachers be allowed to use to teach good behaviour to children?</p>
+            </div>
+          </article>
+
+          <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+          <aside aria-label="Questions">
+            <form class="response-form" data-task="task2">
+              <fieldset class="q-item" data-q="1">
+                <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
+                <div class="form-container">
+                  <div class="form-body">
+                    <div class="form-group">
+                      <textarea class="form-textarea js-response"
+                        placeholder="Enter your Task 2 Answer"
+                        required
+                        spellcheck="false"></textarea>
+                      <div class="char-counter">
+                        <span class="char-info"><span class="char-count">0</span> Words</span>
+                      </div>
+                    </div>
+
+                    <div class="form-actions">
+                      <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                      <button type="submit" class="btn btn-primary js-submit">Submit</button>
+                    </div>
+
+                    <div class="success-message js-success" style="display:none;">
+                      ✅ Your response has been submitted successfully!
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -2089,104 +1938,105 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const textarea = document.getElementById('response');
-            const charCount = document.getElementById('charCount');
-            const charRemaining = document.getElementById('charRemaining');
-            const submitBtn = document.getElementById('submitBtn');
-            const clearBtn = document.getElementById('clearBtn');
-            const form = document.getElementById('responseForm');
-            const successMessage = document.getElementById('successMessage');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.response-form').forEach(form => {
+    const textarea = form.querySelector('.js-response');
+    const charCount = form.querySelector('.char-count');
+    const submitBtn = form.querySelector('.js-submit');
+    const clearBtn = form.querySelector('.js-clear');
+    const successMessage = form.querySelector('.js-success');
+    const taskType = form.dataset.task;
 
-            // Character counting
-            function updateCharCount() {
-                const currentLength = textarea.value.length;
-                const maxLength = parseInt(textarea.getAttribute('maxlength'));
-                const remaining = maxLength - currentLength;
+    // 🔹 Update word count
+    function updateCharCount() {
+      const text = textarea.value.trim();
+      const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      charCount.textContent = words;
+      submitBtn.disabled = words === 0;
+    }
 
-                charCount.textContent = currentLength;
-                charRemaining.textContent = `${remaining} remaining`;
+    // 🔹 Auto resize textarea
+    function autoResize() {
+      textarea.style.height = 'auto';
+      textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
+    }
 
-                // Change color when approaching limit
-                if (remaining <= 50) {
-                    charRemaining.classList.add('char-limit');
-                } else {
-                    charRemaining.classList.remove('char-limit');
-                }
+    // 🔹 Clear button
+    clearBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear all text?')) {
+        textarea.value = '';
+        updateCharCount();
+        autoResize();
+        textarea.focus();
+      }
+    });
 
-                // Enable/disable submit button
-                submitBtn.disabled = currentLength === 0;
-            }
+    // 🔹 Submit AJAX
+    form.addEventListener('submit', e => {
+      e.preventDefault();
 
-            // Event listeners
-            textarea.addEventListener('input', updateCharCount);
-            textarea.addEventListener('paste', function() {
-                setTimeout(updateCharCount, 0);
-            });
+      const text = textarea.value.trim();
+      if (!text) {
+        alert('Please enter your response before submitting.');
+        textarea.focus();
+        return;
+      }
 
-            // Clear button functionality
-            clearBtn.addEventListener('click', function() {
-                if (confirm('Are you sure you want to clear all text?')) {
-                    textarea.value = '';
-                    textarea.focus();
-                    updateCharCount();
-                }
-            });
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
 
-            // Form submission
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                if (textarea.value.trim() === '') {
-                    alert('Please enter a message before submitting.');
-                    textarea.focus();
-                    return;
-                }
+      fetch('/writing/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({
+          task: taskType,
+          response: text
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        submitBtn.textContent = 'Submit';
+        submitBtn.disabled = false;
 
-                // Show loading state
-                submitBtn.classList.add('btn-loading');
-                submitBtn.textContent = 'Submitting...';
-                submitBtn.disabled = true;
+        if (data.status === 'ok') {
+          successMessage.style.display = 'block';
+          setTimeout(() => successMessage.style.display = 'none', 3000);
+          textarea.value = '';
+          updateCharCount();
+          autoResize();
+        } else {
+          alert('Error: ' + (data.message || 'Something went wrong.'));
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        submitBtn.textContent = 'Submit';
+        submitBtn.disabled = false;
+        alert('Request failed.');
+      });
+    });
 
-                // Simulate API call
-                setTimeout(() => {
-                    // Reset button
-                    submitBtn.classList.remove('btn-loading');
-                    submitBtn.textContent = 'Submit';
-                    
-                    // Show success message
-                    successMessage.classList.add('show');
-                    
-                    // Clear form after success
-                    setTimeout(() => {
-                        textarea.value = '';
-                        updateCharCount();
-                        successMessage.classList.remove('show');
-                    }, 3000);
-                }, 2000);
-            });
+    // 🔹 Input event
+    textarea.addEventListener('input', () => {
+      updateCharCount();
+      autoResize();
+    });
 
-            // Initialize
-            updateCharCount();
+    // 🔹 Scroll center in mobile
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      textarea.addEventListener('focus', () => {
+        setTimeout(() => textarea.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
+      });
+    }
 
-            // Auto-resize textarea
-            function autoResize() {
-                textarea.style.height = 'auto';
-                textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
-            }
-
-            textarea.addEventListener('input', autoResize);
-            
-            // Handle mobile keyboard
-            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                textarea.addEventListener('focus', function() {
-                    setTimeout(() => {
-                        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 300);
-                });
-            }
-        });
-    </script>
+    updateCharCount();
+    autoResize();
+  });
+});
+</script>
 </body>
 
 </html>

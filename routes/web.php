@@ -72,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/ielts/practice/check', [IeltsController::class, 'check']);
 
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
+    Route::post('/ielts/mock-test/check', [IeltsController::class, 'mockTestCheck']);
 
     Route::get('/history', [TestHistoryController::class, 'index']);
     Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);

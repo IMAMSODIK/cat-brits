@@ -684,10 +684,6 @@
 
                         <div class="sq-actions">
                             <button class="sq-record">🎙️ Start Recording</button>
-                            <label class="sq-upload-label">
-                                ⬆️ Upload Audio
-                                <input type="file" accept="audio/*" class="sq-upload" hidden />
-                            </label>
                         </div>
 
                         <div class="sq-submit">
@@ -708,10 +704,6 @@
 
                         <div class="sq-actions">
                             <button class="sq-record">🎙️ Start Recording</button>
-                            <label class="sq-upload-label">
-                                ⬆️ Upload Audio
-                                <input type="file" accept="audio/*" class="sq-upload" hidden />
-                            </label>
                         </div>
 
                         <div class="sq-submit">
@@ -732,10 +724,6 @@
 
                         <div class="sq-actions">
                             <button class="sq-record">🎙️ Start Recording</button>
-                            <label class="sq-upload-label">
-                                ⬆️ Upload Audio
-                                <input type="file" accept="audio/*" class="sq-upload" hidden />
-                            </label>
                         </div>
 
                         <div class="sq-submit">
@@ -757,10 +745,6 @@
 
                         <div class="sq-actions">
                             <button class="sq-record">🎙️ Start Recording</button>
-                            <label class="sq-upload-label">
-                                ⬆️ Upload Audio
-                                <input type="file" accept="audio/*" class="sq-upload" hidden />
-                            </label>
                         </div>
 
                         <div class="sq-submit">
@@ -794,10 +778,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -827,10 +807,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -851,10 +827,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -873,10 +845,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -895,10 +863,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -917,10 +881,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">
@@ -939,10 +899,6 @@
 
                     <div class="sq-actions">
                         <button class="sq-record">🎙️ Start Recording</button>
-                        <label class="sq-upload-label">
-                            ⬆️ Upload Audio
-                            <input type="file" accept="audio/*" class="sq-upload" hidden />
-                        </label>
                     </div>
 
                     <div class="sq-submit">

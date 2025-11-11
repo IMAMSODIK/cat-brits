@@ -1548,7 +1548,7 @@
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">Content: Note Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
+                <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="qa">
                         <form class="qa-body" id="form-nc">
                             <fieldset class="q-item">
@@ -1694,7 +1694,7 @@
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">Content: Note Completion 2</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body" id="form-nc2">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-8</p>
@@ -1818,7 +1818,7 @@
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Note Completion 3</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body" id="form-nc3">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-5</p>
@@ -1910,7 +1910,7 @@
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
                 <div class="x-panel-inner">Content: Note Completion 4</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body" id="form-nc4">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-10</p>
@@ -2060,7 +2060,7 @@
             <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
                 <div class="x-panel-inner">Content: One Choice</div>
                 <div class="reading-section">
-                    <div class="qa" aria-label="Questions">
+                    <div class="qa highlighted-content" aria-label="Questions">
                         <form class="qa-body" id="form-oc">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-5</p>
@@ -2236,7 +2236,7 @@
             <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
                 <div class="x-panel-inner">Content: Two Choices</div>
                 <div class="reading-section">
-                    <div class="qa" aria-label="Questions">
+                    <div class="qa highlighted-content" aria-label="Questions">
                         <form class="qa-body" id="form-two_choices">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-2</p>
@@ -2322,7 +2322,7 @@
             </div>
             <div id="panel-tc" class="x-panel" role="tabpanel" aria-labelledby="tab-tc" hidden>
                 <div class="x-panel-inner">Content: Table Completion</div>
-                <div class="qa">
+                <div class="qa highlighted-content">
                     <form class="qa-body" id="form-tc">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-4</p>
@@ -2956,35 +2956,35 @@
             document.getElementById('cancelNote').addEventListener('click', hideNotePopup);
 
             // === Init highlight di semua panel ===
-            // document.querySelectorAll('.x-panel').forEach(panel => {
-            //     const passageBody = panel.querySelector('.passage-body');
+            document.querySelectorAll('.x-panel').forEach(panel => {
+                const passageBody = panel.querySelector('.highlighted-content');
 
-            //     passageBody.addEventListener('mouseup', (e) => {
-            //         const selection = window.getSelection();
-            //         if (selection && !selection.isCollapsed) {
-            //             currentSelection = selection.getRangeAt(0);
-            //             activePassage = passageBody;
-            //             const rect = currentSelection.getBoundingClientRect();
-            //             showToolbar(rect);
-            //         } else {
-            //             hideToolbar();
-            //         }
-            //     });
+                passageBody.addEventListener('mouseup', (e) => {
+                    const selection = window.getSelection();
+                    if (selection && !selection.isCollapsed) {
+                        currentSelection = selection.getRangeAt(0);
+                        activePassage = passageBody;
+                        const rect = currentSelection.getBoundingClientRect();
+                        showToolbar(rect);
+                    } else {
+                        hideToolbar();
+                    }
+                });
 
-            //     // Klik highlight untuk buka note
-            //     passageBody.addEventListener('click', e => {
-            //         if (e.target.classList.contains('highlight') && e.target.dataset.note) {
-            //             currentHighlight = e.target;
-            //             showNotePopup(e.target, e.target.dataset.note);
-            //         }
-            //     });
-            // });
+                // Klik highlight untuk buka note
+                passageBody.addEventListener('click', e => {
+                    if (e.target.classList.contains('highlight') && e.target.dataset.note) {
+                        currentHighlight = e.target;
+                        showNotePopup(e.target, e.target.dataset.note);
+                    }
+                });
+            });
 
             // === Klik luar → tutup toolbar & note popup ===
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.passage-body')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
