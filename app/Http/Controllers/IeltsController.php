@@ -249,6 +249,9 @@ class IeltsController extends Controller
                 $uniqueKey ="{$type}-{$name}";
 
                 // Ambil soal berdasarkan kombinasi tipe + nomor
+                $name = explode("-", $name);
+                $name = $name[1] . '-' . $name[2];
+                
                 $soal = Soal::where('set_id', $setId)
                     ->where('kategori', $kategori)
                     ->where('tipe_soal', $type)
@@ -256,6 +259,7 @@ class IeltsController extends Controller
                     ->first();
 
                 if (!$soal) {
+                    dd($type, $name, $setId, $kategori);
                     $results[$uniqueKey] = [
                         'status' => 'not_found',
                         'user' => $userAns ?: null,
@@ -286,7 +290,7 @@ class IeltsController extends Controller
             $history = TestHistory::create([
                 'student_id'   => Auth::id(),
                 'teacher_id'   => null,
-                'tipe_test'    => 'practice',
+                'tipe_test'    => 'mock',
                 'kategori'     => $kategori,
                 'tipe'         => 'mixed',
                 'set_soal_id'  => $setSoal?->id,
@@ -320,7 +324,6 @@ class IeltsController extends Controller
             ], 500);
         }
     }
-
 
     public function mockTest(Request $r)
     {

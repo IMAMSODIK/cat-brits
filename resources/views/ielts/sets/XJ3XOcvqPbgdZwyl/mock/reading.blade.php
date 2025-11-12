@@ -1512,10 +1512,11 @@
                     <span id="timeText">00:00</span>
                 </div>
 
-                <button id="doneBtn" class="btn btn-danger">
-                    <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span class="label">Try Again</span>
                 </button>
+
             </div>
         </div>
     </header>
@@ -1654,17 +1655,17 @@
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                             <label class="q-option">
-                                                <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="TRUE" />
+                                                <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-1" value="TRUE" />
                                                 <span class="opt-code">A</span>
                                                 <span class="opt-label">TRUE</span>
                                             </label>
                                             <label class="q-option">
-                                                <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="FALSE" />
+                                                <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-1" value="FALSE" />
                                                 <span class="opt-code">B</span>
                                                 <span class="opt-label">FALSE</span>
                                             </label>
                                             <label class="q-option">
-                                                <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="NOT GIVEN" />
+                                                <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-1" value="NOT GIVEN" />
                                                 <span class="opt-code">C</span>
                                                 <span class="opt-label">NOT GIVEN</span>
                                             </label>
@@ -1679,17 +1680,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-2" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-2" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1704,17 +1705,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-3" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-3" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1728,17 +1729,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-4" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-4" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1753,17 +1754,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-5" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-5" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1784,7 +1785,7 @@
                                             <span style="flex: 1;">
                                                 Which part of some stepwells provided shade for people?
                                                 <span class="q-question">
-                                                    <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                                    <input type="text" name="sa-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                                 </span>
                                             </span>
                                         </legend>
@@ -1797,7 +1798,7 @@
                                                 What type of serious climatic event, which took place in southern Rajasthan,
                                                 is mentioned in the article?
                                                 <span class="q-question">
-                                                    <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                                    <input type="text" name="sa-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                                 </span>
                                             </span>
                                         </legend>
@@ -1809,7 +1810,7 @@
                                             <span style="flex: 1;">
                                                 Who are frequent visitors to stepwells nowadays?
                                                 <span class="q-question">
-                                                    <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
+                                                    <input type="text" name="sa-XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
                                                 </span>
                                             </span>
                                         </legend>
@@ -1839,7 +1840,7 @@
                                             <div class="q-item" data-q="9" data-type="tc">
                                                 Restored in the 1990s Excellent condition, despite the
                                                 <span class="q-number-box">9</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                                <input type="text" name="tc-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                                 of 2001.
                                             </div>
                                         </td>
@@ -1851,7 +1852,7 @@
                                             <div class="q-item" data-q="10" data-type="tc">
                                                 Steps on the
                                                 <span class="q-number-box">10</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                                <input type="text" name="tc-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                                 produce a geometric pattern Carved shrines.
                                             </div>
                                         </td>
@@ -1859,7 +1860,7 @@
                                             <div class="q-item" data-q="11" data-type="tc">
                                                 Looks more like a
                                                 <span class="q-number-box">11</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
+                                                <input type="text" name="tc-XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
                                                 than a well.
                                             </div>
                                         </td>
@@ -1878,7 +1879,7 @@
                                             <div class="q-item" data-q="12" data-type="tc">
                                                 Old, deep and very dramatic Has
                                                 <span class="q-number-box">12</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
+                                                <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
                                                 which provide a view to the steps.
                                             </div>
                                         </td>
@@ -1890,7 +1891,7 @@
                                             <div class="q-item" data-q="13" data-type="tc">
                                                 Has two
                                                 <span class="q-number-box">13</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-5" class="q-text" placeholder="">
+                                                <input type="text" name="tc-XJ3XOcvqPbgdZwyl-5" class="q-text" placeholder="">
                                                 levels.
                                             </div>
                                         </td>
@@ -2029,7 +2030,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>A</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2053,7 +2054,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>B</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2077,7 +2078,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>C</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2101,7 +2102,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>D</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2125,7 +2126,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>E</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2149,7 +2150,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>G</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-6" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-6" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2173,7 +2174,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>H</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-7" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-7" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2197,7 +2198,7 @@
                                         <span style="flex: 1;">
                                             Paragraph <b>I</b>
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-8" class="q-dropdown">
+                                                <select name="mh-XJ3XOcvqPbgdZwyl-8" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="i">i</option>
                                                     <option value="ii">ii</option>
@@ -2235,17 +2236,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-6" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-6" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-6" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-6" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-6" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-6" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2260,17 +2261,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-7" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-7" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-7" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-7" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-7" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-7" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2284,17 +2285,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-8" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-8" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-8" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-8" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-8" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-8" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2308,17 +2309,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-9" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-9" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-9" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-9" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-9" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-9" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2333,17 +2334,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-10" value="TRUE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-10" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-10" value="FALSE" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-10" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-10" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-XJ3XOcvqPbgdZwyl-10" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2461,22 +2462,22 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">recognising talent.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">working as a team.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">having a shared objective.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="D" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">being an effective leader.</span>
                                         </label>
@@ -2491,24 +2492,24 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">were conscious of their own limitations.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">brought complementary skills to their
                                                 partnership.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">were determined to outperform their brighter
                                                 rivals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="D" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">encouraged each other to realise their joint
                                                 ambition.</span>
@@ -2524,22 +2525,22 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">inspire creative thinking.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">generate concise writing.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">promote loyalty to a group.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="D" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">strengthen commitment to an idea.</span>
                                         </label>
@@ -2553,23 +2554,23 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">be aware of their company’s goals.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">feel that their contributions are valued.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">have respect for their co-workers‟
                                                 achievements.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="D" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">understand why certain management decisions are
                                                 made.</span>
@@ -2600,7 +2601,7 @@
                                             The physical surroundings in which a person works play a key role in
                                             determining their creativity.
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
+                                                <select name="mse-XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2621,7 +2622,7 @@
                                         <span style="flex: 1;">
                                             At times of change, people tend to
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
+                                                <select name="mse-XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2642,7 +2643,7 @@
                                         <span style="flex: 1;">
                                             If people are aware of what they might lose, they will often
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
+                                                <select name="mse-XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2663,7 +2664,7 @@
                                         <span style="flex: 1;">
                                             People working under a dominant boss are liable to
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
+                                                <select name="mse-XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2684,7 +2685,7 @@
                                         <span style="flex: 1;">
                                             Employees working in organisations with few rules are more likely to
                                             <span class="q-question">
-                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
+                                                <select name="mse-XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -2721,17 +2722,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="YES" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-1" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="NO" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-1" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-1" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2745,17 +2746,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="YES" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-2" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="NO" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-2" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-2" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2769,17 +2770,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="YES" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-3" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="NO" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-3" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-3" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2793,17 +2794,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="YES" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-4" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="NO" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-4" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-4" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2817,17 +2818,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="YES" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-5" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="NO" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-5" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="XJ3XOcvqPbgdZwyl-5" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-XJ3XOcvqPbgdZwyl-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2857,7 +2858,7 @@
         </div>
     </div>
 
-    <button class="floating-btn">
+    <button class="floating-btn" id="doneBtn">
         <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
     </button>
 
@@ -2917,6 +2918,190 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+            
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            closeModal();
+
+            // $("#form-tfng input[type=radio]").prop("checked", false);
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // $("#scorePercentage").text("0%");
+
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($("#form-tfng").offset().top);
+            // }, 350);
+
+            location.reload()
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        $(document).ready(function () {
+            $("#resultModal").removeClass("show").hide();
+                $('.floating-btn').on('click', function () {
+
+                    let results = [];
+
+                    $('.q-item').each(function () {
+                        const type = $(this).data('type'); 
+                        const qnum = $(this).data('q');
+
+                        if (typeof type === 'undefined') return;
+
+                        let name = null;
+                        let answer = null;
+
+                        switch (type) {
+                            case 'tfng':
+                            case 'oc':
+                            case 'ynng':
+                                const checked = $(this).find('input[type="radio"]:checked');
+                                if (checked.length > 0) {
+                                    name = checked.attr('name');
+                                    answer = checked.val();
+                                } else {
+                                    // fallback jika belum dipilih
+                                    const anyRadio = $(this).find('input[type="radio"]').first();
+                                    if (anyRadio.length > 0) {
+                                        name = anyRadio.attr('name');
+                                    }
+                                }
+                                break;
+
+                            case 'sa':
+                            case 'tc':
+                                const input = $(this).find('input[type="text"]');
+                                if (input.length > 0) {
+                                    name = input.attr('name');
+                                    answer = input.val();
+                                }
+                                break;
+
+                            case 'mh':
+                            case 'mse':
+                                const select = $(this).find('select');
+                                if (select.length > 0) {
+                                    name = select.attr('name');
+                                    answer = select.val();
+                                }
+                                break;
+                        }
+
+                        results.push({
+                            type: type,
+                            name: name,
+                            answer: answer || null,
+                            question: qnum || null
+                        });
+                    });
+
+                    $.ajax({
+                        url: '/ielts/mock-test/check',
+                        type: 'POST',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            set_id: 'XJ3XOcvqPbgdZwyl',
+                            kategori: 'reading',
+                            answers: results,
+                            tipe_test: 'practice'
+                        },
+                        success: function (response) {
+                            console.log(response);
+
+                            if (response.status === 'ok') {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+                                let questionNumber = 1;
+
+                                $.each(response.results, function (key, data) {
+                                    let isCorrect = data.status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    let correctAnswer = data.correct || '';
+                                    let userAnswer = data.user || '';
+                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${questionNumber++}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+                                });
+
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan: ' + xhr.status);
+                        }
+                    });
+                });
+            });
+    </script>
+
     <script>
 
         (function() {
@@ -2940,7 +3125,134 @@
                     document.getElementById('doneBtn').disabled = true;
                     document.getElementById('doneBtn').style.opacity = 0.7;
                     document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+
+                    $("#retake").css("display", "");
+                    
+                    let results = [];
+
+                    $('.q-item').each(function () {
+                        const type = $(this).data('type'); 
+                        const qnum = $(this).data('q');
+
+                        if (typeof type === 'undefined') return;
+
+                        let name = null;
+                        let answer = null;
+
+                        switch (type) {
+                            case 'tfng':
+                            case 'oc':
+                            case 'ynng':
+                                const checked = $(this).find('input[type="radio"]:checked');
+                                if (checked.length > 0) {
+                                    name = checked.attr('name');
+                                    answer = checked.val();
+                                } else {
+                                    // fallback jika belum dipilih
+                                    const anyRadio = $(this).find('input[type="radio"]').first();
+                                    if (anyRadio.length > 0) {
+                                        name = anyRadio.attr('name');
+                                    }
+                                }
+                                break;
+
+                            case 'sa':
+                            case 'tc':
+                                const input = $(this).find('input[type="text"]');
+                                if (input.length > 0) {
+                                    name = input.attr('name');
+                                    answer = input.val();
+                                }
+                                break;
+
+                            case 'mh':
+                            case 'mse':
+                                const select = $(this).find('select');
+                                if (select.length > 0) {
+                                    name = select.attr('name');
+                                    answer = select.val();
+                                }
+                                break;
+                        }
+
+                        results.push({
+                            type: type,
+                            name: name,
+                            answer: answer || null,
+                            question: qnum || null
+                        });
+                    });
+
+                    $.ajax({
+                        url: '/ielts/mock-test/check',
+                        type: 'POST',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            set_id: 'XJ3XOcvqPbgdZwyl',
+                            kategori: 'reading',
+                            answers: results,
+                            tipe_test: 'practice'
+                        },
+                        success: function (response) {
+                            console.log(response);
+
+                            if (response.status === 'ok') {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+                                let questionNumber = 1;
+
+                                $.each(response.results, function (key, data) {
+                                    let isCorrect = data.status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    let correctAnswer = data.correct || '';
+                                    let userAnswer = data.user || '';
+                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${questionNumber++}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+                                });
+
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan: ' + xhr.status);
+                        }
+                    });
                     return;
                 }
                 remaining -= 1;
@@ -3502,193 +3814,6 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script>
-
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
-        }
-
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-            
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            closeModal();
-
-            $("#form-tfng input[type=radio]").prop("checked", false);
-            $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            $("#resultsTableBody").empty();
-            $("#scoreDisplay").text("0/0");
-            $("#scorePercentage").text("0%");
-
-            setTimeout(function () {
-                $('html, body').scrollTop($("#form-tfng").offset().top);
-            }, 350);
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        $(document).ready(function () {
-            $("#resultModal").removeClass("show").hide();
-            $('.floating-btn').on('click', function () {
-
-                let results = [];
-
-                $('.q-item').each(function () {
-                    const type = $(this).data('type'); 
-                    const qnum = $(this).data('q');
-
-                    if (typeof type === 'undefined') return;
-
-                    let name = null;
-                    let answer = null;
-
-                    switch (type) {
-                        case 'tfng':
-                        case 'oc':
-                        case 'ynng':
-                            const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
-                                name = checked.attr('name');
-                                answer = checked.val();
-                            } else {
-                                // fallback jika belum dipilih
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) {
-                                    name = anyRadio.attr('name');
-                                }
-                            }
-                            break;
-
-                        case 'sa':
-                        case 'tc':
-                            const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
-                                name = input.attr('name');
-                                answer = input.val();
-                            }
-                            break;
-
-                        case 'mh':
-                        case 'mse':
-                            const select = $(this).find('select');
-                            if (select.length > 0) {
-                                name = select.attr('name');
-                                answer = select.val();
-                            }
-                            break;
-                    }
-
-                    results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
-                    });
-                });
-
-
-                console.log(results)
-
-                $.ajax({
-                    url: '/ielts/mock-test/check',
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
-                        kategori: 'reading',
-                        answers: results,
-                        tipe_test: 'practice'
-                    },
-                    success: function (response) {
-                        console.log(response);
-
-                        if (response.status === 'ok') {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-                            let questionNumber = 1;
-
-                            $.each(response.results, function (key, data) {
-                                let isCorrect = data.status === 'correct';
-                                if (isCorrect) correctCount++;
-
-                                let correctAnswer = data.correct || '';
-                                let userAnswer = data.user || '';
-                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
-
-                                tableRows += `
-                                    <tr>
-                                        <td><strong>${questionNumber++}</strong></td>
-                                        <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                        <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                        <td>
-                                            <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                ${isCorrect ? 'Correct' : 'Wrong'}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                `;
-                            });
-
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
-
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
-
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
-                        } else {
-                            alert('Terjadi kesalahan: ' + response.message);
-                        }
-                    },
-                    error: function (xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan: ' + xhr.status);
-                    }
-                });
-            });
-        });
-    </script>
-
-
 
 </body>
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\StudentVerificationController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TestHistoryController;
 use App\Http\Controllers\VideoCallController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -49,7 +50,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
 
     Route::get('/students', [StudentController::class, 'index']);
-    Route::post('/students/store', [StudentController::class, 'store']);
+    Route::post('/students/s
+    tore', [StudentController::class, 'store']);
     Route::get('/students/detail', [StudentController::class, 'detail']);
     Route::post('/students/update', [StudentController::class, 'update']);
     Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);
@@ -71,6 +73,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ielts/practice', [IeltsController::class, 'practice']);
     Route::post('/ielts/practice/check', [IeltsController::class, 'check']);
 
+    Route::get('/ielts/mock-test/instructuion', function(Request $r){
+        return view('ielts.instruction', [
+            'redirect' => '/ielts/mock-test?set-id=' . $r->query('set-id') . '&section=' . $r->query('section') 
+        ]);
+    });
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
     Route::post('/ielts/mock-test/check', [IeltsController::class, 'mockTestCheck']);
 

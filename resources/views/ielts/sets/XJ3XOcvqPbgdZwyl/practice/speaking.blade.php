@@ -625,10 +625,10 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                {{-- <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeText">00:00</span>
-                </div>
+                </div> --}}
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
@@ -911,52 +911,52 @@
 
     <script>
         (function() {
-            let remaining = 0;
-            let t = null;
-            const el = document.getElementById('timeText');
-            const wrap = document.getElementById('timer');
+            // let remaining = 0;
+            // let t = null;
+            // const el = document.getElementById('timeText');
+            // const wrap = document.getElementById('timer');
 
-            function format(mmss) {
-                const m = Math.floor(mmss / 60);
-                const s = mmss % 60;
-                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-            }
+            // function format(mmss) {
+            //     const m = Math.floor(mmss / 60);
+            //     const s = mmss % 60;
+            //     return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            // }
 
-            function tick() {
-                if (remaining <= 0) {
-                    clearInterval(t);
-                    t = null;
-                    el.textContent = '00:00';
-                    wrap.classList.add('danger');
-                    document.getElementById('doneBtn').disabled = true;
-                    document.getElementById('doneBtn').style.opacity = 0.7;
-                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
-                    return;
-                }
-                remaining -= 1;
-                el.textContent = format(remaining);
-                // Kedipkan danger saat < 60 detik
-                if (remaining <= 60) {
-                    wrap.classList.add('danger');
-                }
-            }
+            // function tick() {
+            //     if (remaining <= 0) {
+            //         clearInterval(t);
+            //         t = null;
+            //         el.textContent = '00:00';
+            //         wrap.classList.add('danger');
+            //         document.getElementById('doneBtn').disabled = true;
+            //         document.getElementById('doneBtn').style.opacity = 0.7;
+            //         document.getElementById('doneBtn').style.cursor = 'not-allowed';
+            //         // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+            //         return;
+            //     }
+            //     remaining -= 1;
+            //     el.textContent = format(remaining);
+            //     // Kedipkan danger saat < 60 detik
+            //     if (remaining <= 60) {
+            //         wrap.classList.add('danger');
+            //     }
+            // }
 
-            function startCountdown(seconds) {
-                if (t) clearInterval(t);
-                remaining = Math.max(0, Math.floor(seconds));
-                el.textContent = format(remaining);
-                wrap.classList.toggle('danger', remaining <= 60);
-                document.getElementById('doneBtn').disabled = false;
-                document.getElementById('doneBtn').style.opacity = 1;
-                document.getElementById('doneBtn').style.cursor = 'pointer';
-                t = setInterval(tick, 1000);
-            }
+            // function startCountdown(seconds) {
+            //     if (t) clearInterval(t);
+            //     remaining = Math.max(0, Math.floor(seconds));
+            //     el.textContent = format(remaining);
+            //     wrap.classList.toggle('danger', remaining <= 60);
+            //     document.getElementById('doneBtn').disabled = false;
+            //     document.getElementById('doneBtn').style.opacity = 1;
+            //     document.getElementById('doneBtn').style.cursor = 'pointer';
+            //     t = setInterval(tick, 1000);
+            // }
 
-            // Public API (opsional)
-            window.CATHeader = {
-                startCountdown
-            };
+            // // Public API (opsional)
+            // window.CATHeader = {
+            //     startCountdown
+            // };
 
             // Events
             document.getElementById('infoBtn').addEventListener('click', function() {
@@ -975,7 +975,7 @@
             });
 
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
+            // startCountdown(15 * 60);
         })();
     </script>
 

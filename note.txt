@@ -134,20 +134,14 @@ perbaiki semua error
 
 
 urutan tab ikutin dari card di ielts (done)
+tombol lompat video sesuai soal (dipotong)
 mock test audio langsung play dan sekali aja
 
-practice tidak pakai wakti
-mock test pakai waktu
-
-setelah selesaiu mock test, tamabahkan popup hasil
-
+note : 
 speaking dan writing sistem koreksinya oleh satu tutor dan begitu seleai tutor lain tdak bisa koreksi lagi
-
 speaking setelah video call, video otomatis tersimpan
 usahakan sharescreen
-
-layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa saja yuang sudah dia kerjakan
-note : kalo bisa di speaking ada video auto play lalu auto record
+kalo bisa di speaking ada video auto play lalu auto record
 
 
 gampang
@@ -157,6 +151,9 @@ count caracter di ganti jadi count word (done)
 Part diganti jadi task di writing (done)
 ganti thumbnail di card kategori (reading, listening, speaking, writing)
 qustion bisa di higligth (listening dan reading) (done)
-nomor soal di bagian mock test per part harus lanjut terus (listening dan reading)
-tombol lompat video sesuai soal (dipotong)
-mock test wajib pakai instruksi sebelum melakukan test
+nomor soal di bagian mock test per part harus lanjut terus (listening dan reading) (done)
+mock test wajib pakai instruksi sebelum melakukan test (done)
+practice tidak pakai wakti (done)
+mock test pakai waktu  (done)
+setelah selesaiu mock test, tamabahkan popup hasil (done)
+layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa saja yuang sudah dia kerjakan

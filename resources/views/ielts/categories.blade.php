@@ -89,7 +89,7 @@
             <div class="product-grid">
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
-                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=reading'">
+                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test/instructuion?set-id={{ $set_id }}&section=reading'">
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=listening'">
+                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test/instructuion?set-id={{ $set_id }}&section=listening'">
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=speaking'">
+                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test/instructuion?set-id={{ $set_id }}&section=speaking'">
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test?set-id={{ $set_id }}&section=writing'">
+                        <div class="col-12 col-md-3" style="cursor: pointer;" onclick="location.href='/ielts/mock-test/instructuion?set-id={{ $set_id }}&section=writing'">
                             <div class="card boost-up-card overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">

@@ -7,6 +7,7 @@
     <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
     <style>
@@ -1156,6 +1157,353 @@
             }
         }
     </style>
+
+    <style>
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #fccb2a;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            background-color: #fff309;
+            transform: scale(1.1);
+        }
+    </style>
+
+    {{-- style modal --}}
+    <style>
+        /* Modal Styles */
+        .custom-modal {
+            display: none !important; /* Pastikan modal tersembunyi secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            padding: 15px;
+            box-sizing: border-box;
+            opacity: 0; /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease; /* Smooth transition */
+        }
+
+        /* State ketika modal ditampilkan */
+        .custom-modal.show {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .custom-modal-content {
+            background: #fff;
+            padding: 0;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
+            transition: transform 0.3s ease;
+        }
+
+        /* Animasi ketika modal muncul */
+        .custom-modal.show .custom-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* ... CSS lainnya tetap sama ... */
+        .custom-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .score-summary-header {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .score-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .score-circle span {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .score-circle small {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .modal-title {
+            margin-left: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+            margin-left: 15px;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .custom-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .score-summary {
+            display: none;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .result-table th {
+            background-color: #f1f8ff;
+            padding: 14px 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .result-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e1e8ed;
+            transition: background-color 0.2s;
+        }
+
+        .result-table tr:hover td {
+            background-color: #f9f9f9;
+        }
+
+        .answer-correct { 
+            color: #27ae60; 
+            font-weight: bold; 
+        }
+        
+        .answer-wrong { 
+            color: #e74c3c; 
+            font-weight: bold; 
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        .status-badge.wrong {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+        }
+
+        .status-icon {
+            margin-right: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            border-top: 1px solid #e1e8ed;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #dde4e6;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .custom-modal {
+                padding: 10px;
+            }
+            
+            .custom-modal-content {
+                max-height: 95vh;
+            }
+            
+            .custom-modal-header {
+                padding: 15px 20px;
+            }
+            
+            .score-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .score-circle span {
+                font-size: 1rem;
+            }
+            
+            .score-circle small {
+                font-size: 0.7rem;
+            }
+            
+            .modal-title {
+                font-size: 1.2rem;
+                margin-left: 10px;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                font-size: 24px;
+            }
+            
+            .custom-modal-body {
+                padding: 15px;
+            }
+            
+            .result-table {
+                font-size: 0.9rem;
+            }
+            
+            .result-table th, .result-table td {
+                padding: 10px 8px;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .custom-modal {
+                padding: 5px;
+            }
+            
+            .result-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .score-circle {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .score-circle span {
+                font-size: 0.9rem;
+            }
+            
+            .score-circle small {
+                font-size: 0.6rem;
+            }
+            
+            .status-badge {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+
+    {{-- other --}}
+    <style>
+        .unanswered-highlight {
+            border: 2px solid red;
+            background: #ffe6e6;
+        }
+    </style>
 </head>
 
 <body>
@@ -1179,9 +1527,9 @@
                     <span id="timeText">00:00</span>
                 </div>
 
-                <button id="doneBtn" class="btn btn-danger">
-                    <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span class="label">Try Again</span>
                 </button>
             </div>
         </div>
@@ -1271,10 +1619,10 @@
                                 <tr>
                                     <td><b>Address:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="1">
+                                        <div class="q-item" data-q="1" data-type="nc">
                                             24
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="q1" class="q-text" placeholder="">
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                             road
                                         </div>
                                     </td>
@@ -1290,9 +1638,9 @@
                                 <tr>
                                     <td><b>Heard about company from:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="2">
+                                        <div class="q-item" data-q="2" data-type="nc">
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="q1" class="q-text" placeholder="">
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                 </tr>
@@ -1304,19 +1652,19 @@
                                         <p>Trip One:</p>
                                         <ul>
                                             <li>
-                                                <div class="q-item" data-q="3">
+                                                <div class="q-item" data-q="3" data-type="nc">
                                                     Los Angeles: customer wants to visit some
                                                     <span class="q-number-box">3</span>
-                                                    <input type="text" name="q1" class="q-text"
+                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-3" class="q-text"
                                                         placeholder="">
                                                     parks with her children
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="q-item" data-q="4">
+                                                <div class="q-item" data-q="4" data-type="nc">
                                                     Yosemite Park: customer wants to stay in a lodge, not a
                                                     <span class="q-number-box">4</span>
-                                                    <input type="text" name="q1" class="q-text"
+                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-4" class="q-text"
                                                         placeholder="">
                                                 </div>
                                             </li>
@@ -1328,10 +1676,10 @@
                                         <p>Trip Two:</p>
                                         <ul>
                                             <li>
-                                                <div class="q-item" data-q="5">
+                                                <div class="q-item" data-q="5" data-type="nc">
                                                     Customer wants to see the
                                                     <span class="q-number-box">5</span>
-                                                    <input type="text" name="q1" class="q-text"
+                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-5" class="q-text"
                                                         placeholder="">
                                                     on the way to Cambria
                                                 </div>
@@ -1339,10 +1687,10 @@
                                             <li>At Santa Monica: not interested in shopping</li>
                                             <li>
                                                 Yosemite Park: customer wants to stay in a lodge, not a
-                                                <div class="q-item" data-q="6">
+                                                <div class="q-item" data-q="6" data-type="nc">
                                                     At San Diego, wants to spend time on the
                                                     <span class="q-number-box">6</span>
-                                                    <input type="text" name="q1" class="q-text"
+                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-6" class="q-text"
                                                         placeholder="">
                                                 </div>
                                             </li>
@@ -1370,9 +1718,9 @@
                                     <th><b>Trip One</b></th>
                                     <td>12 days</td>
                                     <td>
-                                        <div class="q-item" data-q="7">
+                                        <div class="q-item" data-q="7" data-type="tc">
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="q1" class="q-text" placeholder="">
+                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
                                             km
                                         </div>
                                     </td>
@@ -1382,10 +1730,10 @@
                                             <li>accommodation</li>
                                             <li>car</li>
                                             <li>
-                                                <div class="q-item" data-q="8">
+                                                <div class="q-item" data-q="8" data-type="tc">
                                                     one
                                                     <span class="q-number-box">8</span>
-                                                    <input type="text" name="q1" class="q-text" placeholder="">
+                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1398,10 +1746,10 @@
                                         980 km
                                     </td>
                                     <td>
-                                        <div class="q-item" data-q="9">
+                                        <div class="q-item" data-q="9" data-type="tc">
                                             £
                                             <span class="q-number-box">9</span>
-                                            <input type="text" name="q1" class="q-text" placeholder="">
+                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                     <td>
@@ -1409,9 +1757,9 @@
                                             <li>accommodation</li>
                                             <li>car</li>
                                             <li>
-                                                <div class="q-item" data-q="10">
+                                                <div class="q-item" data-q="10" data-type="tc">
                                                     <span class="q-number-box">10</span>
-                                                    <input type="text" name="q1" class="q-text" placeholder="">
+                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1509,25 +1857,25 @@
                             <p><i>Personal Assessment</i></p>
                             <ul>
                                 <li>
-                                    <div class="q-list" data-q="3">
+                                    <div class="q-list" data-q="3" data-type="nc">
                                         New members should describe any
                                         <span class="q-number-box">13</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="4">
+                                    <div class="q-list" data-q="4" data-type="nc">
                                         The
                                         <span class="q-number-box">14</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text" placeholder="">
                                         will be explained to you before you use the equipment.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="5">
+                                    <div class="q-list" data-q="5" data-type="nc">
                                         You will be given a six-week
                                         <span class="q-number-box">15</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text" placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1535,42 +1883,42 @@
                             <p><i>Types of membership</i></p>
                             <ul>
                                 <li>
-                                    <div class="q-list" data-q="6">
+                                    <div class="q-list" data-q="6" data-type="nc">
                                         There is a compulsory £90
                                         <span class="q-number-box">16</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text" placeholder="">
                                         fee for members.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="7">
+                                    <div class="q-list" data-q="7" data-type="nc">
                                         Gold members are given
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text" placeholder="">
                                         to all the LP clubs.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="8">
+                                    <div class="q-list" data-q="8" data-type="nc">
                                         Premier members are given priority during
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text" placeholder="">
                                         hours.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="9">
+                                    <div class="q-list" data-q="9" data-type="nc">
                                         Premier members can bring some
                                         <span class="q-number-box">19</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text" placeholder="">
                                         every month.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="10">
+                                    <div class="q-list" data-q="10" data-type="nc">
                                         Members should always take their
                                         <span class="q-number-box">20</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text" placeholder="">
                                         with them.
                                     </div>
                                 </li>
@@ -1625,120 +1973,120 @@
                                     <h3><b>Global Design Competition</b></h3>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1">
+                                <fieldset class="q-item" data-q="1" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">21</span>
                                         Students entering the design competition have to
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">produce an energy-efficient design.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">adapt an existing energy-saving appliance.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q1" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">develop a new use for current technology.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="2" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">22</span>
                                         John chose a dishwasher because he wanted to make dishwashers
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">more appealing.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">more common.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q2" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">more economical.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3">
+                                <fieldset class="q-item" data-q="3" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">23</span>
                                         The stone in John’s ‘Rockpool’ design is used
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">for decoration.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">to switch it on.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q3" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">to stop water escaping.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4">
+                                <fieldset class="q-item" data-q="4" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">24</span>
                                         In the holding chamber, the carbon dioxide
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">changes back to a gas.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">dries the dishes.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q4" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">is allowed to cool.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5">
+                                <fieldset class="q-item" data-q="5" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">25</span>
                                         At the end of the cleaning process, the carbon dioxide
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="A" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">is released into the air.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="B" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">is disposed of with the waste.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="q5" value="C" />
+                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">is collected ready to be re-used.</span>
                                         </label>
@@ -1754,39 +2102,39 @@
                                 <fieldset class="q-item" id="panel-sa">
                                     <ul>
                                         <li>
-                                            <div class="q-list" data-q="6">
+                                            <div class="q-list" data-q="6" data-type="nc">
                                                 John needs help preparing for his
                                                 <span class="q-number-box">26</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-15" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="q-list" data-q="7">
+                                            <div class="q-list" data-q="7" data-type="nc">
                                                 The professor advises John to make a
                                                 <span class="q-number-box">27</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-16" class="q-text" placeholder="">
                                                 of his design.
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="q-list" data-q="8">
+                                            <div class="q-list" data-q="8" data-type="nc">
                                                 John’s main problem is getting good quality
                                                 <span class="q-number-box">28</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-17" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="q-list" data-q="9">
+                                            <div class="q-list" data-q="9" data-type="nc">
                                                 The professor suggests John apply for a
                                                 <span class="q-number-box">29</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-18" class="q-text" placeholder="">
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="q-list" data-q="10">
+                                            <div class="q-list" data-q="10" data-type="nc">
                                                 The professor will check the
                                                 <span class="q-number-box">30</span>
-                                                <input type="text" name="q1" class="q-text" placeholder="">
+                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-19" class="q-text" placeholder="">
                                                 information in John’s written report.
                                             </div>
                                         </li>
@@ -1845,24 +2193,24 @@
                             <ul>
                                 <li>It is a white bear belonging to the black bear family.</li>
                                 <li>
-                                    <div class="q-list" data-q="1">
+                                    <div class="q-list" data-q="1" data-type="nc">
                                         Its colour comes from an uncommon
                                         <span class="q-number-box">31</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="2">
+                                    <div class="q-list" data-q="2" data-type="nc">
                                         Local people believe that it has unusual
                                         <span class="q-number-box">32</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="3">
+                                    <div class="q-list" data-q="3" data-type="nc">
                                         They protect the bear from
                                         <span class="q-number-box">33</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text" placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1871,19 +2219,19 @@
                             <ul>
                                 <li>The bear’s relationship with the forest is complex.</li>
                                 <li>
-                                    <div class="q-list" data-q="4">
+                                    <div class="q-list" data-q="4" data-type="nc">
                                         Tree roots stop
                                         <span class="q-number-box">34</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text" placeholder="">
                                         along salmon streams.
                                     </div>
                                 </li>
                                 <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
                                 <li>
-                                    <div class="q-list" data-q="5">
+                                    <div class="q-list" data-q="5" data-type="nc">
                                         It is currently found on a small number of
                                         <span class="q-number-box">35</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text" placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1891,26 +2239,26 @@
                             <p><b>Threats</b></p>
                             <ul>
                                 <li>
-                                    <div class="q-list" data-q="6">
+                                    <div class="q-list" data-q="6" data-type="nc">
                                         Habitat is being lost due to deforestation and construction of
                                         <span class="q-number-box">36</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text" placeholder="">
                                         by logging companies.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="7">
+                                    <div class="q-list" data-q="7" data-type="nc">
                                         Unrestricted
                                         <span class="q-number-box">37</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text" placeholder="">
                                         is affecting the salmon supply.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="8">
+                                    <div class="q-list" data-q="8" data-type="nc">
                                         The bears’ existence is also threatened by their low rate of
                                         <span class="q-number-box">38</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text" placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1919,18 +2267,18 @@
                             <ul>
                                 <li>Interested parties are working together.</li>
                                 <li>
-                                    <div class="q-list" data-q="9">
+                                    <div class="q-list" data-q="9" data-type="nc">
                                         Logging companies must improve their
                                         <span class="q-number-box">39</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text" placeholder="">
                                         by logging companies.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="q-list" data-q="10">
+                                    <div class="q-list" data-q="10" data-type="nc">
                                         Maintenance and
                                         <span class="q-number-box">40</span>
-                                        <input type="text" name="q1" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text" placeholder="">
                                         of the spirit bears’ territory is needed.
                                     </div>
                                 </li>
@@ -1958,6 +2306,10 @@
         </div>
     </div>
 
+    <button class="floating-btn" id="doneBtn">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
+    </button>
+
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
         <div class="color-option green" data-color="green"></div>
@@ -1975,6 +2327,229 @@
             <button id="cancelNote" class="cancel">Batal</button>
         </div>
     </div>
+
+    <div id="resultModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <div class="score-summary-header">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreDisplay">0/0</span>
+                        <small id="scorePercentage">0%</small>
+                    </div>
+                    <div class="modal-title">Your Results</div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="custom-modal-body">
+                <!-- Results Table -->
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="modal-actions">
+                <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
+                <button class="modal-btn btn-primary" onclick="retryQuiz()">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+            
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            closeModal();
+
+            // $("#form-tfng input[type=radio]").prop("checked", false);
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // $("#scorePercentage").text("0%");
+
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($("#form-tfng").offset().top);
+            // }, 350);
+
+            location.reload()
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        $(document).ready(function () {
+            $("#resultModal").removeClass("show").hide();
+            $('.floating-btn').on('click', function () {
+
+                let results = [];
+
+                $('.q-item, .q-list').each(function () {
+                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
+                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+
+                    const type = $(this).data('type'); 
+                    const qnum = $(this).data('q');
+
+                    if (typeof type === 'undefined') return;
+
+                    let name = null;
+                    let answer = null;
+
+                    switch (type) {
+                        case 'tfng':
+                        case 'oc':
+                        case 'ynng':
+                            const checked = $(this).find('input[type="radio"]:checked');
+                            if (checked.length > 0) {
+                                name = checked.attr('name');
+                                answer = checked.val();
+                            } else {
+                                const anyRadio = $(this).find('input[type="radio"]').first();
+                                if (anyRadio.length > 0) name = anyRadio.attr('name');
+                            }
+                            break;
+
+                        case 'sa':
+                        case 'tc':
+                        case 'nc':
+                            const input = $(this).find('input[type="text"]');
+                            if (input.length > 0) {
+                                name = input.attr('name');
+                                answer = input.val();
+                            }
+                            break;
+
+                        case 'mh':
+                        case 'mse':
+                            const select = $(this).find('select');
+                            if (select.length > 0) {
+                                name = select.attr('name');
+                                answer = select.val();
+                            }
+                            break;
+                    }
+
+                    results.push({
+                        type: type,
+                        name: name,
+                        answer: answer || null,
+                        question: qnum || null
+                    });
+                });
+
+                $.ajax({
+                    url: '/ielts/mock-test/check',
+                    type: 'POST',
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        kategori: 'listening',
+                        answers: results,
+                        tipe_test: 'mock'
+                    },
+                    success: function (response) {
+                        console.log(response);
+
+                        if (response.status === 'ok') {
+                            let correctCount = 0;
+                            let total = Object.keys(response.results).length;
+                            let tableRows = '';
+                            let questionNumber = 1;
+
+                            $.each(response.results, function (key, data) {
+                                let isCorrect = data.status === 'correct';
+                                if (isCorrect) correctCount++;
+
+                                let correctAnswer = data.correct || '';
+                                let userAnswer = data.user || '';
+                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                tableRows += `
+                                    <tr>
+                                        <td><strong>${questionNumber++}</strong></td>
+                                        <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                        <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                        <td>
+                                            <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                ${isCorrect ? 'Correct' : 'Wrong'}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                `;
+                            });
+
+                            // Update skor di UI
+                            $("#scoreDisplay").text(`${correctCount}/${total}`);
+                            $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                            let percentage = (correctCount / total) * 100;
+                            let scoreCircle = $(".score-circle");
+                            if (percentage >= 80) {
+                                scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                            } else if (percentage >= 60) {
+                                scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                            } else {
+                                scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                            }
+
+                            $("#resultsTableBody").html(tableRows);
+
+                            // tampilkan modal hasil
+                            showModal(`Score: ${correctCount} / ${total}`);
+                        } else {
+                            alert('Terjadi kesalahan: ' + response.message);
+                        }
+                    },
+                    error: function (xhr) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan: ' + xhr.status);
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- script bagian audio player -->
     <script>
@@ -2095,7 +2670,136 @@
                     document.getElementById('doneBtn').disabled = true;
                     document.getElementById('doneBtn').style.opacity = 0.7;
                     document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+
+                    $("#retake").css("display", "");
+
+                    let results = [];
+
+                    $('.q-item, .q-list').each(function () {
+                        // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
+                        if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+
+                        const type = $(this).data('type'); 
+                        const qnum = $(this).data('q');
+
+                        if (typeof type === 'undefined') return;
+
+                        let name = null;
+                        let answer = null;
+
+                        switch (type) {
+                            case 'tfng':
+                            case 'oc':
+                            case 'ynng':
+                                const checked = $(this).find('input[type="radio"]:checked');
+                                if (checked.length > 0) {
+                                    name = checked.attr('name');
+                                    answer = checked.val();
+                                } else {
+                                    const anyRadio = $(this).find('input[type="radio"]').first();
+                                    if (anyRadio.length > 0) name = anyRadio.attr('name');
+                                }
+                                break;
+
+                            case 'sa':
+                            case 'tc':
+                            case 'nc':
+                                const input = $(this).find('input[type="text"]');
+                                if (input.length > 0) {
+                                    name = input.attr('name');
+                                    answer = input.val();
+                                }
+                                break;
+
+                            case 'mh':
+                            case 'mse':
+                                const select = $(this).find('select');
+                                if (select.length > 0) {
+                                    name = select.attr('name');
+                                    answer = select.val();
+                                }
+                                break;
+                        }
+
+                        results.push({
+                            type: type,
+                            name: name,
+                            answer: answer || null,
+                            question: qnum || null
+                        });
+                    });
+
+                    $.ajax({
+                        url: '/ielts/mock-test/check',
+                        type: 'POST',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            set_id: 'XJ3XOcvqPbgdZwyl',
+                            kategori: 'listening',
+                            answers: results,
+                            tipe_test: 'mock'
+                        },
+                        success: function (response) {
+                            console.log(response);
+
+                            if (response.status === 'ok') {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+                                let questionNumber = 1;
+
+                                $.each(response.results, function (key, data) {
+                                    let isCorrect = data.status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    let correctAnswer = data.correct || '';
+                                    let userAnswer = data.user || '';
+                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${questionNumber++}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+                                });
+
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan: ' + xhr.status);
+                        }
+                    });
+
                     return;
                 }
                 remaining -= 1;

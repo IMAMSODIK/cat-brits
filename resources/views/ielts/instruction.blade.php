@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Preparation Notice</title>
+    <style>
+        :root {
+            --primary: #4274BA;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--white);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .notice-card {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px var(--shadow);
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--white);
+            padding: 10px;
+            object-fit: contain;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        ul {
+            text-align: left;
+            margin: 10px 0 20px 0;
+            padding-left: 25px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--white);
+            position: absolute;
+            left: -15px;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .countdown {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--white);
+            width: 0%;
+            transition: width 1s linear;
+        }
+
+        .skip-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skip-btn:hover {
+            background: #e9eefc;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .notice-card {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p,
+            ul li {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notice-card">
+        <img src="{{ asset('own_assets/logo/logo.png') }}" alt="Course Logo" class="logo" />
+        <h1>Exam Preparation Notice</h1>
+        <p>
+            Please read the following instructions carefully before your exam begins:
+        </p>
+
+        <ul>
+            <li>Ensure your internet connection is stable throughout the test.</li>
+            <li>Choose a quiet environment and avoid distractions during the exam.</li>
+            <li>Do not refresh or close the browser once the test starts.</li>
+            <li>Each question must be answered within the given time limit.</li>
+            <li>Make sure your webcam and microphone work properly if required.</li>
+        </ul>
+
+        <div class="countdown">
+            The exam will start automatically in <span id="countdown">15</span> seconds...
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <a href="{{$redirect}}" class="skip-btn" id="skipBtn">Skip</a>
+    </div>
+
+    <script>
+        let timeLeft = 15;
+        const countdownEl = document.getElementById("countdown");
+        const progressEl = document.getElementById("progress");
+
+        const totalTime = timeLeft;
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownEl.textContent = timeLeft;
+            progressEl.style.width = ((totalTime - timeLeft) / totalTime) * 100 + "%";
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                progressEl.style.width = "100%";
+                window.location.href = @json($redirect);
+
+            }
+        }, 1000);
+
+        // Tombol skip
+        document.getElementById("skipBtn").addEventListener("click", () => {
+            clearInterval(timer);
+        });
+    </script>
+</body>
+
+</html>
