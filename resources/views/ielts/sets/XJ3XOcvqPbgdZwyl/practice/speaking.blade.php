@@ -29,6 +29,18 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         }
 
+        button {
+            align-items: center;     /* sejajarkan ikon dan teks di tengah vertikal */
+            justify-content: center; /* pusatkan isi tombol */
+            gap: 8px;                /* jarak antara ikon dan teks */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
         .app-header {
             position: sticky;
             top: 0;
@@ -435,7 +447,7 @@
     <style>
         /* Panel Styling */
         .x-panel {
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 1rem;
         }
@@ -540,7 +552,7 @@
 
         /* Submit */
         .sq-submit {
-            text-align: center;
+            text-align: center !important;
         }
 
         .sq-submit-btn {
@@ -604,6 +616,191 @@
             border-radius: 10px;
             padding: 0 0 0 10px;
             margin-bottom: 30px;
+        }
+    </style>
+
+    <style>
+        .video-container {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .video-player,
+        .recorder-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .video-wrapper,
+        .recorder-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .video-placeholder,
+        .recorder-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+        }
+
+        .video-placeholder i,
+        .recorder-placeholder i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #4274BA;
+        }
+
+        .video-controls,
+        .recorder-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        .video-controls button,
+        .recorder-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4274BA;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-controls button:hover,
+        .recorder-controls button:hover {
+            background: #2c5282;
+            transform: translateY(-2px);
+        }
+
+        .recorder-controls .record-btn {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .recorder-controls .record-btn:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        }
+
+        .recorder-controls .stop-btn {
+            background: #dc3545;
+        }
+
+        .recorder-controls .stop-btn:hover {
+            background: #c82333;
+        }
+
+        .recording-indicator {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            color: #dc3545;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .recording-indicator.active {
+            display: flex;
+        }
+
+        .recording-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #dc3545;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .timer {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+            }
+
+            .video-player,
+            .recorder-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-controls button,
+            .recorder-controls button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .sq-submit-btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .recorded-video {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px dashed #4274BA;
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        .recorded-video h4 {
+            color: #4274BA;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .recorded-video video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -678,12 +875,52 @@
                                 <button class="sq-prev" disabled>Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 1:</b> <br>How do you usually spend your weekends? [Why?]
-                            </div>
-                        </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Example Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video id="myVideo">
+                                                    <source src="{{asset('own_assets/videos/XJ3XOcvqPbgdZwyl-1.mp4')}}" type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i> Pause</button>
+                                        </div>
+                                    </div>
 
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
+                                    <div class="recorder-container">
+                                        <h3>Your Recording</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video id="preview" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i> Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer">00:00</div>
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video id="recordedVideo" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="sq-submit">
@@ -975,7 +1212,7 @@
             });
 
             // Mulai countdown (contoh: 15 menit)
-            // startCountdown(15 * 60);
+            startCountdown(15 * 60);
         })();
     </script>
 
@@ -1194,7 +1431,104 @@
         });
     </script>
 
+    <script>
+        const video = document.getElementById('myVideo');
+        const playBtn = document.querySelector('.play-btn');
+        const pauseBtn = document.querySelector('.pause-btn');
 
+        playBtn.addEventListener('click', function () {
+            video.play();
+            playBtn.disabled = true;
+            pauseBtn.disabled = false;
+        });
+
+        pauseBtn.addEventListener('click', function () {
+            video.pause();
+            playBtn.disabled = false;
+            pauseBtn.disabled = true;
+        });
+
+        // Jika video selesai otomatis reset tombol
+        video.addEventListener('ended', function () {
+            playBtn.disabled = false;
+            pauseBtn.disabled = true;
+        });
+
+        const recordBtn = document.querySelector('.record-btn');
+        const stopBtn = document.querySelector('.stop-btn');
+        const indicator = document.querySelector('.recording-indicator');
+        const timerDisplay = document.querySelector('.timer');
+        const preview = document.getElementById('preview');
+        const recordedVideo = document.getElementById('recordedVideo');
+        const recordedContainer = document.querySelector('.recorded-video');
+
+        let mediaRecorder;
+        let recordedChunks = [];
+        let timerInterval;
+        let seconds = 0;
+        let currentStream = null;
+
+        async function initCamera() {
+            try {
+                currentStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                preview.srcObject = currentStream;
+                return currentStream;
+            } catch (err) {
+                alert('Camera or microphone access denied.');
+                console.error(err);
+            }
+        }
+
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                preview.srcObject = null;
+            }
+        }
+
+        recordBtn.addEventListener('click', async () => {
+            const stream = await initCamera();
+            recordedChunks = [];
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.ondataavailable = event => {
+                if (event.data.size > 0) recordedChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                const url = URL.createObjectURL(blob);
+                recordedVideo.src = url;
+                recordedContainer.style.display = 'block';
+                stopCamera(); // 🔥 Kamera langsung dimatikan di sini juga
+            };
+
+            mediaRecorder.start();
+            recordBtn.disabled = true;
+            stopBtn.disabled = false;
+            indicator.classList.add('active');
+
+            // Timer start
+            seconds = 0;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const min = Math.floor(seconds / 60);
+                const sec = seconds % 60;
+                timerDisplay.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+            }, 1000);
+        });
+
+        stopBtn.addEventListener('click', () => {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+            }
+
+            recordBtn.disabled = false;
+            stopBtn.disabled = true;
+            indicator.classList.remove('active');
+            clearInterval(timerInterval);
+        });
+    </script>
 </body>
 
 </html>
