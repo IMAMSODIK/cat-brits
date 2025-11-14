@@ -878,7 +878,7 @@
                             <div class="sq-text">
                                 <div class="video-container">
                                     <div class="video-player">
-                                        <h3>Example Video</h3>
+                                        <h3>Instruction Video</h3>
                                         <div class="video-wrapper">
                                             <div class="video-placeholder">
                                                 <video id="myVideo">
@@ -894,7 +894,7 @@
                                     </div>
 
                                     <div class="recorder-container">
-                                        <h3>Your Recording</h3>
+                                        <h3>Answer Recorder</h3>
                                         <div class="recorder-wrapper">
                                             <div class="recorder-placeholder">
                                                 <video id="preview" autoplay muted playsinline></video>
