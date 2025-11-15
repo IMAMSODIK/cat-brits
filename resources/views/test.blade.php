@@ -2,108 +2,146 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Play Audio from Specific Time</title>
+<title>Audio Player Simple</title>
+
 <style>
-  body {
-    font-family: system-ui, sans-serif;
-    padding: 20px;
-    text-align: center;
-  }
-  button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  button:hover {
-    background: #0056b3;
-  }
-  input {
-    width: 60px;
-    padding: 5px;
-    text-align: center;
-  }
+    .audio-player {
+        width: 360px;
+        padding: 20px;
+        background: #f7f7f7;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        font-family: Arial, sans-serif;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px 16px;
+        background: #222;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #444;
+    }
+
+    #seekBar {
+        width: 100%;
+    }
+
+    #timeText {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: bold;
+    }
 </style>
+
 </head>
 <body>
 
-<h2>Play Audio from Specific Time</h2>
+<div class="audio-player">
 
-<label>Start at (seconds): </label>
-<input type="number" id="startTime" value="60" min="0">
-<button id="playBtn">Play Audio</button>
-<button id="stopBtn" disabled>Stop</button>
+    <audio id="mainAudio" preload="auto"></audio>
 
-<p id="status"></p>
+    <div class="row">
+        <button id="playFromHere">Play From Here</button>
+        <button id="togglePlay">Play</button>
+    </div>
+
+    <input type="range" id="seekBar" min="0" max="100" value="0">
+
+    <div id="timeText">0:00 / 0:00</div>
+
+</div>
 
 <script>
-const audioSrc = "{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3') }}";
+const audio = document.getElementById("mainAudio");
+const seekBar = document.getElementById("seekBar");
+const timeText = document.getElementById("timeText");
+const togglePlay = document.getElementById("togglePlay");
+const playFromHere = document.getElementById("playFromHere");
 
-let audioCtx;
-let sourceNode;
-let audioBuffer;
+let isSeeking = false;
 
-// Fetch dan decode file audio sekali saja saat halaman dimuat
-async function loadAudio() {
-  document.getElementById("status").textContent = "Loading audio...";
-  const response = await fetch(audioSrc);
-  const arrayBuffer = await response.arrayBuffer();
-  
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-  document.getElementById("status").textContent = "Audio loaded (" + audioBuffer.duration.toFixed(1) + "s)";
-}
+// ======================================
+// GANTI AUDIO DI SINI
+// ======================================
+audio.src = "https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3";
 
-async function playFromTime(startSeconds) {
-  if (!audioBuffer) {
-    await loadAudio();
-  }
 
-  // Pastikan waktu mulai tidak lebih dari durasi
-  const startTime = Math.min(startSeconds, audioBuffer.duration - 0.1);
+// ======================================
+// PLAY FROM SEEK POSITION
+// ======================================
+playFromHere.addEventListener("click", () => {
+    if (!audio.duration) return;
 
-  // Buat source baru setiap kali play (wajib di Web Audio API)
-  sourceNode = audioCtx.createBufferSource();
-  sourceNode.buffer = audioBuffer;
-  sourceNode.connect(audioCtx.destination);
+    audio.pause();
 
-  sourceNode.start(0, startTime);
-  document.getElementById("status").textContent = `Playing from ${startTime.toFixed(1)}s`;
-  
-  document.getElementById("playBtn").disabled = true;
-  document.getElementById("stopBtn").disabled = false;
+    // Hitung posisi berdasarkan persentase seekbar
+    audio.currentTime = (seekBar.value / 100) * audio.duration;
 
-  sourceNode.onended = () => {
-    document.getElementById("status").textContent = "Playback ended.";
-    document.getElementById("playBtn").disabled = false;
-    document.getElementById("stopBtn").disabled = true;
-  };
-}
-
-function stopAudio() {
-  if (sourceNode) {
-    sourceNode.stop();
-    sourceNode.disconnect();
-    document.getElementById("status").textContent = "Stopped.";
-    document.getElementById("playBtn").disabled = false;
-    document.getElementById("stopBtn").disabled = true;
-  }
-}
-
-document.getElementById("playBtn").addEventListener("click", async () => {
-  const inputValue = parseFloat(document.getElementById("startTime").value);
-  if (isNaN(inputValue) || inputValue < 0) {
-    alert("Masukkan detik yang valid!");
-    return;
-  }
-  await playFromTime(inputValue);
+    audio.play();
+    togglePlay.textContent = "Pause";
 });
 
-document.getElementById("stopBtn").addEventListener("click", stopAudio);
+// ======================================
+// SEEK BAR SYSTEM (super stabil)
+// ======================================
+seekBar.addEventListener("input", () => {
+    if (!audio.duration) return;
+    isSeeking = true;
+    audio.currentTime = (seekBar.value / 100) * audio.duration;
+});
+
+seekBar.addEventListener("change", () => {
+    isSeeking = false;
+});
+
+// Update UI setiap 200ms
+setInterval(() => {
+    if (!audio.duration) return;
+
+    if (!isSeeking) {
+        seekBar.value = (audio.currentTime / audio.duration) * 100;
+    }
+
+    timeText.textContent =
+        formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+}, 200);
+
+// ======================================
+// TOGGLE PLAY / PAUSE
+// ======================================
+togglePlay.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        togglePlay.textContent = "Pause";
+    } else {
+        audio.pause();
+        togglePlay.textContent = "Play";
+    }
+});
+
+// ======================================
+// Format time helper
+// ======================================
+function formatTime(sec) {
+    if (!sec) return "0:00";
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+}
 </script>
 
 </body>

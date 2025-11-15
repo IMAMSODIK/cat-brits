@@ -157,3 +157,12 @@ practice tidak pakai wakti (done)
 mock test pakai waktu  (done)
 setelah selesaiu mock test, tamabahkan popup hasil (done)
 layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa saja yuang sudah dia kerjakan
+
+
+
+
+
+
+tekan tombol start from here => jalan dari menit yang ditentukan
+kalai tekan tombol play, start from here pause
+kalau tekan tab, start from here dan play di pause
