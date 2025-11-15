@@ -1602,7 +1602,7 @@
                                     </audio>
 
                                     <div class="controls-container">
-                                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                         <div class="seek-container">
                                             <input type="range" min="0" max="100" value="0" class="seekBar">
                                             <div class="timeText"><span class="current">0:00</span>
