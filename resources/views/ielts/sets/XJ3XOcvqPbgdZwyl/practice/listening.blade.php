@@ -1556,8 +1556,8 @@
                                     </audio> --}}
 
                                     <audio id="mainAudio" preload="metadata">
-    <source src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}" type="audio/mpeg">
-</audio>
+                                        <source src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}" type="audio/mpeg">
+                                    </audio>
 
                                     <button class="ap-btn ap-play" type="button" aria-label="Play audio">
                                         <span class="ap-icon ap-icon-play">►</span>
@@ -3411,82 +3411,88 @@
     </script>
 
     <script>
-const audio = document.getElementById("mainAudio");
+        const audio = document.getElementById("mainAudio");
+        const seekBar = document.getElementById("seekBar");
+        const currentTimeEl = document.getElementById("currentTime");
+        const durationEl = document.getElementById("duration");
+        const togglePlay = document.getElementById("togglePlay");
+        const playIcon = togglePlay.querySelector("i");
 
-// UI
-const btnPlay = document.querySelector(".ap-play");
-const iconPlay = document.querySelector(".ap-icon-play");
-const iconPause = document.querySelector(".ap-icon-pause");
-const seekBar = document.querySelector(".ap-seek");
-const currentTimeEl = document.querySelector(".ap-current");
-const durationEl = document.querySelector(".ap-duration");
+        // ===============================
+        // GANTI AUDIO DI SINI
+        // ===============================
+        audio.src = "https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3";
 
-// ------------------------------
-// LOAD DURATION
-// ------------------------------
-audio.addEventListener("loadedmetadata", () => {
-    seekBar.max = audio.duration;
-    durationEl.textContent = formatTime(audio.duration);
-});
+        let isSeeking = false;
 
-// ------------------------------
-// PLAY / PAUSE BUTTON
-// ------------------------------
-btnPlay.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play();
-        iconPlay.style.display = "none";
-        iconPause.style.display = "inline";
-    } else {
-        audio.pause();
-        iconPlay.style.display = "inline";
-        iconPause.style.display = "none";
-    }
-});
+        // ======================================
+        // START BUTTONS → play dari posisi tertentu
+        // ======================================
+        document.querySelectorAll(".start-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const offset = parseFloat(btn.dataset.start);
 
-// ------------------------------
-// UPDATE PROGRESS
-// ------------------------------
-audio.addEventListener("timeupdate", () => {
-    seekBar.value = audio.currentTime;
-    currentTimeEl.textContent = formatTime(audio.currentTime);
-});
+                audio.currentTime = offset;
+                audio.play();
 
-// ------------------------------
-// SEEK BAR / DRAG
-// ------------------------------
-seekBar.addEventListener("input", () => {
-    audio.currentTime = seekBar.value;
-});
+                playIcon.className = "fas fa-pause";
+            });
+        });
 
-// ------------------------------
-// START FROM HERE BUTTON
-// ------------------------------
-document.querySelectorAll(".play-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const start = parseFloat(btn.dataset.start);
-        const file = btn.dataset.audio;
+        // ======================================
+        // SEEK BAR SYSTEM (stabil)
+        // ======================================
+        seekBar.addEventListener("input", () => {
+            if (!audio.duration) return;
+            isSeeking = true;
+            audio.currentTime = (seekBar.value / 100) * audio.duration;
+        });
 
-        // GANTI SOURCE AUDIO SESUAI DATA
-        audio.src = audioSources[file];
-        audio.load();
+        seekBar.addEventListener("change", () => {
+            isSeeking = false;
+        });
 
+        // Auto-update UI
+        setInterval(() => {
+            if (!audio.duration) return;
+
+            if (!isSeeking) {
+                seekBar.value = (audio.currentTime / audio.duration) * 100;
+            }
+
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+            durationEl.textContent = formatTime(audio.duration);
+        }, 200);
+
+        // ======================================
+        // Toggle Play
+        // ======================================
+        togglePlay.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                playIcon.className = "fas fa-pause";
+            } else {
+                audio.pause();
+                playIcon.className = "fas fa-play";
+            }
+        });
+
+        // ======================================
+        // Format time function
+        // ======================================
+        function formatTime(sec) {
+            if (!sec || isNaN(sec)) return "0:00";
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60).toString().padStart(2, "0");
+            return `${m}:${s}`;
+        }
+
+        // Update time display when audio metadata is loaded
         audio.addEventListener("loadedmetadata", () => {
-            audio.currentTime = start;
-            audio.play();
-            iconPlay.style.display = "none";
-            iconPause.style.display = "inline";
-        }, { once: true });
-    });
-});
+            durationEl.textContent = formatTime(audio.duration);
+        });
+    </script>
 
-// ------------------------------
-function formatTime(sec) {
-    const m = Math.floor(sec / 60);
-    const s = Math.floor(sec % 60);
-    return m + ":" + (s < 10 ? "0" + s : s);
-}
-</script>
 </body>
 
 </html>
