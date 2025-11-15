@@ -1,373 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Audio Player – Multi Audio</title>
+<meta charset="UTF-8">
+<title>Auto Audio Tabs</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    .x-tabs {
+        display: flex;
+        gap: 10px;
+    }
+    .x-tab {
+        padding: 8px 16px;
+        background: #eee;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .x-tab.is-active {
+        background: #4e94ff;
+        color: white;
+    }
+    .x-panel {
+        display: none;
+        margin-top: 20px;
+    }
+    .x-panel.active {
+        display: block;
+    }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-            padding: 40px;
-            background: #eef2f7;
-            font-family: 'Segoe UI', sans-serif;
-        }
+    /* audio player */
+    .audio-player {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f3f3f3;
+        border-radius: 10px;
+    }
+    .timeline {
+        width: 100%;
+    }
 
-        .audio-player {
-            width: 100%;
-            max-width: 520px;
-            padding: 25px;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: 0.2s;
-        }
+    /* modal */
+    #confirmModal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        display: none;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+    }
+    #confirmModal .box {
+        background: white;
+        padding: 20px;
+        width: 320px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    #confirmModal button {
+        margin-top: 15px;
+        padding: 8px 16px;
+    }
+</style>
 
-        .audio-player:hover {
-            transform: translateY(-3px);
-        }
-
-        .player-header {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .player-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .player-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .controls-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        /* ===== PLAY BUTTON ===== */
-        .play-btn {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            color: white;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-        }
-
-        .seek-container {
-            flex: 1;
-        }
-
-        .seekBar,
-        #seekBar,
-        .seekBar {
-            width: 100%;
-            height: 7px;
-            appearance: none;
-            background: #e0e0e0;
-            border-radius: 10px;
-            outline: none;
-            overflow: hidden;
-        }
-
-        .seekBar::-webkit-slider-thumb {
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2575fc;
-            box-shadow: -400px 0 0 390px #2575fc;
-        }
-
-        .timeText {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            font-size: 0.9rem;
-            color: #444;
-        }
-
-        .start-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .start-btn {
-            padding: 9px 15px;
-            font-size: 0.9rem;
-            background: rgba(37, 117, 252, 0.08);
-            border: 1px solid rgba(37, 117, 252, 0.25);
-            color: #2575fc;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.15s;
-            white-space: nowrap;
-        }
-
-        .start-btn:hover {
-            background: rgba(37, 117, 252, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .audio-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 18px;
-            padding: 12px;
-            background: #f4f7ff;
-            border-radius: 10px;
-        }
-
-        .audio-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        .audio-name {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .audio-source {
-            font-size: 0.8rem;
-            color: #555;
-        }
-
-        /* =========================== */
-        /*        RESPONSIVE CSS       */
-        /* =========================== */
-
-        /* Mobile (max 480px) */
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                gap: 25px;
-            }
-
-            .audio-player {
-                padding: 20px;
-                border-radius: 16px;
-            }
-
-            .player-title {
-                font-size: 1.15rem;
-            }
-
-            .play-btn {
-                width: 44px;
-                height: 44px;
-                font-size: 0.85rem;
-            }
-
-            .start-btn {
-                flex: 1;
-                text-align: center;
-            }
-
-            .timeText {
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Tablet (480px – 768px) */
-        @media (max-width: 768px) {
-            .audio-player {
-                max-width: 100%;
-            }
-
-            .play-btn {
-                width: 46px;
-                height: 46px;
-            }
-
-            .start-btn {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Desktop Wide */
-        @media (min-width: 1200px) {
-            .audio-player {
-                max-width: 600px;
-            }
-        }
-    </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-    <!-- ========================= -->
-    <!--   AUDIO PLAYER 1          -->
-    <!-- ========================= -->
-    <div class="audio-player" data-player>
-        <div class="player-header">
-            <div class="player-title">IELTS Listening Test 1</div>
-            <div class="player-subtitle">Cambridge IELTS 10</div>
-        </div>
-
-        <audio preload="auto"
-            src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3">
-        </audio>
-
-        <div class="controls-container">
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <div class="seek-container">
-                <input type="range" min="0" max="100" value="0" class="seekBar">
-                <div class="timeText"><span class="current">0:00</span>
-                    <span class="duration">0:00</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="start-buttons">
-            <button class="start-btn" data-start="58">Start from 0:58</button>
-            <button class="start-btn" data-start="120">Start from 2:00</button>
-        </div>
+<!-- MODAL CONFIRMATION -->
+<div id="confirmModal">
+    <div class="box">
+        <h3>Audio Notice</h3>
+        <p>The audio in this section can only be played once.<br>Are you sure you want to continue?</p>
+        <button id="confirmYes">Yes, continue</button>
     </div>
+</div>
 
 
-    <!-- ========================= -->
-    <!--   AUDIO PLAYER 2 (contoh) -->
-    <!-- ========================= -->
-    <div class="audio-player" data-player>
-        <div class="player-header">
-            <div class="player-title">IELTS Listening Test 2</div>
-            <div class="player-subtitle">Cambridge IELTS 11</div>
-        </div>
+<!-- TABS -->
+<div class="x-tabs" role="tablist" data-active="tfng">
+    <button class="x-tab is-active" data-id="tfng">Part 1</button>
+    <button class="x-tab" data-id="tfng2">Part 2</button>
+    <button class="x-tab" data-id="ynng">Part 3</button>
+    <button class="x-tab" data-id="mse">Part 4</button>
+</div>
 
-        <audio preload="auto" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
-        </audio>
 
-        <div class="controls-container">
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <div class="seek-container">
-                <input type="range" min="0" max="100" value="0" class="seekBar">
-                <div class="timeText"><span class="current">0:00</span>
-                    <span class="duration">0:00</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="start-buttons">
-            <button class="start-btn" data-start="30">Start from 0:30</button>
-        </div>
+<!-- PANELS -->
+<div id="panel-tfng" class="x-panel active" data-player>
+    <div class="audio-player">
+        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3"></audio>
+        <input type="range" class="timeline" value="0" disabled>
+        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
     </div>
+</div>
+
+<div id="panel-tfng2" class="x-panel" data-player>
+    <div class="audio-player">
+        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3"></audio>
+        <input type="range" class="timeline" value="0" disabled>
+        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+    </div>
+</div>
+
+<div id="panel-ynng" class="x-panel" data-player>
+    <div class="audio-player">
+        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3"></audio>
+        <input type="range" class="timeline" value="0" disabled>
+        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+    </div>
+</div>
+
+<div id="panel-mse" class="x-panel" data-player>
+    <div class="audio-player">
+        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
+        <input type="range" class="timeline" value="0" disabled>
+        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+    </div>
+</div>
 
 
-    <script>
-        let currentPlaying = null;
+<script>
+/* ====== Audio tab controller (fixed stop-on-switch) ====== */
 
-        document.querySelectorAll("[data-player]").forEach(player => {
+let currentAudio = null;
+let currentTimerId = null;
 
-            const audio = player.querySelector("audio");
-            const btnPlay = player.querySelector(".play-btn");
-            const icon = btnPlay.querySelector("i");
-            const seekBar = player.querySelector(".seekBar");
-            const curT = player.querySelector(".current");
-            const durT = player.querySelector(".duration");
+// format mm:ss
+function formatTime(sec){
+    sec = isNaN(sec) ? 0 : Math.floor(sec);
+    const m = Math.floor(sec/60);
+    const s = sec % 60;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
 
-            let isSeeking = false;
+// reset UI for a panel's audio (progress+time)
+function resetPanelUI(panel) {
+    const prog = panel.querySelector(".timeline");
+    const cur = panel.querySelector(".current");
+    const dur = panel.querySelector(".duration");
+    if (prog) prog.value = 0;
+    if (cur) cur.textContent = "0:00";
+    if (dur) {
+        // leave duration as-is (if already loaded) or show 0:00
+        if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
+            dur.textContent = "0:00";
+        }
+    }
+    // if you used a visual progress element instead of range, reset its width:
+    const visualProg = panel.querySelector(".seekbar-progress");
+    if (visualProg) visualProg.style.width = "0%";
+}
 
-            // =============== STOP AUDIO LAIN ===============
-            function stopOtherPlayers() {
-                if (currentPlaying && currentPlaying !== audio) {
-                    currentPlaying.pause();
-                    const otherBtn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
-                    otherBtn.className = "fas fa-play";
-                }
-                currentPlaying = audio;
+// stop & reset current audio (completely)
+function stopCurrentAudio() {
+    if (!currentAudio) return;
+
+    // pause & reset time
+    try {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    } catch (e) { /* ignore */ }
+
+    // clear interval timer if any
+    if (currentTimerId) {
+        clearInterval(currentTimerId);
+        currentTimerId = null;
+    }
+
+    // reset UI for the panel that had currentAudio
+    const panel = currentAudio.closest(".x-panel");
+    if (panel) resetPanelUI(panel);
+
+    // unset currentAudio reference
+    currentAudio = null;
+}
+
+// start timer to update UI every 1 second
+function startPanelTimer(audio, panel) {
+    // clear existing
+    if (currentTimerId) {
+        clearInterval(currentTimerId);
+        currentTimerId = null;
+    }
+
+    const prog = panel.querySelector(".timeline");
+    const cur = panel.querySelector(".current");
+    const dur = panel.querySelector(".duration");
+    const visualProg = panel.querySelector(".seekbar-progress");
+
+    currentTimerId = setInterval(() => {
+        if (!audio.duration || isNaN(audio.duration)) return;
+        const pct = (audio.currentTime / audio.duration) * 100;
+        if (prog) prog.value = pct;
+        if (visualProg) visualProg.style.width = pct + "%";
+        if (cur) cur.textContent = formatTime(audio.currentTime);
+        if (dur) dur.textContent = formatTime(audio.duration);
+    }, 1000);
+}
+
+// play audio for a panel (only if not already played)
+function playPanelAudio(panel) {
+    const audio = panel.querySelector("audio");
+    if (!audio) return;
+
+    // already played once? skip
+    if (audio.dataset.played === "yes") {
+        return;
+    }
+
+    // if another audio is playing -> stop it first
+    if (currentAudio && currentAudio !== audio) {
+        stopCurrentAudio();
+    }
+
+    // mark as current
+    currentAudio = audio;
+
+    // prepare UI duration if metadata already available
+    const durEl = panel.querySelector(".duration");
+    if (audio.duration && !isNaN(audio.duration) && durEl) {
+        durEl.textContent = formatTime(audio.duration);
+    }
+
+    // mute trick for autoplay compatibility
+    audio.muted = true;
+
+    // play
+    audio.play().then(() => {
+        // mark one-time-play
+        audio.dataset.played = "yes";
+
+        // unmute shortly after play to avoid autoplay block in some browsers
+        setTimeout(() => { try { audio.muted = false; } catch(e){} }, 150);
+
+        // update status UI by starting timer per-second
+        startPanelTimer(audio, panel);
+
+        // make sure ended handler resets UI/timer
+        audio.onended = () => {
+            // clear timer
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
             }
+            // finalize progress UI
+            const visualProg = panel.querySelector(".seekbar-progress");
+            if (visualProg) visualProg.style.width = "100%";
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            if (cur) cur.textContent = formatTime(audio.duration || 0);
+            if (dur) dur.textContent = formatTime(audio.duration || 0);
 
-            // =============== PLAY / PAUSE ===============
-            btnPlay.addEventListener("click", () => {
-                stopOtherPlayers();
+            // mark played and unset currentAudio
+            audio.dataset.played = "yes";
+            currentAudio = null;
+        };
 
-                if (audio.paused) {
-                    audio.play();
-                    icon.className = "fas fa-pause";
-                } else {
-                    audio.pause();
-                    icon.className = "fas fa-play";
-                }
-            });
+    }).catch(err => {
+        // autoplay blocked — you may need user confirmation (modal)
+        console.warn("Autoplay blocked:", err);
+        // cleanup currentAudio reference if failed
+        currentAudio = null;
+    });
 
-            // =============== START FROM X ===============
-            player.querySelectorAll(".start-btn").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    const offset = parseFloat(btn.dataset.start);
+    // prevent seeking by user (just in case)
+    audio.addEventListener("seeking", function() {
+        this.currentTime = this._lastTime || 0;
+    });
+    audio.addEventListener("timeupdate", function() {
+        this._lastTime = this.currentTime;
+    });
+}
 
-                    stopOtherPlayers();
-                    audio.currentTime = offset;
-                    audio.play();
-                    icon.className = "fas fa-pause";
-                });
-            });
+/* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
+document.querySelectorAll(".x-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+        // activate tab classes
+        document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
+        tab.classList.add("is-active");
 
-            // =============== SEEK BAR ===============
-            seekBar.addEventListener("input", () => {
-                isSeeking = true;
-                audio.currentTime = (seekBar.value / 100) * audio.duration;
-            });
+        // show corresponding panel
+        const id = tab.dataset.id;
+        const panelId = `panel-${id}`;
+        document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
+        const targetPanel = document.getElementById(panelId);
+        if (!targetPanel) return;
+        targetPanel.classList.add("active", "is-open");
 
-            seekBar.addEventListener("change", () => isSeeking = false);
+        // STOP any currently playing audio when switching to a different panel
+        // (this ensures audio always stops)
+        if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
+            stopCurrentAudio();
+        }
 
-            setInterval(() => {
-                if (!audio.duration) return;
+        // play audio on the newly opened panel (if it has one and not played yet)
+        const audio = targetPanel.querySelector("audio");
+        if (audio && audio.dataset.played !== "yes") {
+            playPanelAudio(targetPanel);
+        }
+    });
+});
 
-                if (!isSeeking) {
-                    seekBar.value = (audio.currentTime / audio.duration) * 100;
-                }
+/* ========== Initial modal confirm & autoplay first panel ========== */
+const modal = document.getElementById("confirmModal");
+const confirmBtn = document.getElementById("confirmYes");
 
-                curT.textContent = format(audio.currentTime);
-                durT.textContent = format(audio.duration);
+if (modal && confirmBtn) {
+    // show modal on load
+    window.addEventListener("load", () => {
+        modal.style.display = "flex";
+    });
+    confirmBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        // play currently active panel
+        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+        if (firstPanel) playPanelAudio(firstPanel);
+    });
+} else {
+    // if no modal, autoplay first panel immediately (with mute trick)
+    window.addEventListener("load", () => {
+        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+        if (firstPanel) playPanelAudio(firstPanel);
+    });
+}
+</script>
 
-            }, 200);
-
-            audio.addEventListener("loadedmetadata", () => {
-                durT.textContent = format(audio.duration);
-            });
-
-            function format(t) {
-                if (!t) return "0:00";
-                const m = Math.floor(t / 60);
-                const s = Math.floor(t % 60).toString().padStart(2, "0");
-                return `${m}:${s}`;
-            }
-        });
-    </script>
 
 </body>
-
 </html>
