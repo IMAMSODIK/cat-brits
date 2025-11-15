@@ -1549,10 +1549,14 @@
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-6 the Reading Passage?</p>
                                 <div class="audio-player" role="group" aria-label="Audio controls">
-                                    <audio preload="metadata">
+                                    {{-- <audio preload="metadata">
                                         <source
                                             src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}"
                                             type="audio/mpeg" />
+                                    </audio> --}}
+
+                                    <audio id="mainAudio" preload="metadata">
+                                        <source src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}" type="audio/mpeg">
                                     </audio>
 
                                     <button class="ap-btn ap-play" type="button" aria-label="Play audio">
@@ -1579,6 +1583,7 @@
                             </fieldset>
 
                             <fieldset class="q-item">
+                                <button class="play-btn" type="button" data-audio="audio1" data-start="58">Start From Here</button>
                                 <p>Questions 1-6</p>
                                 <p><i>Write <b>ONE WORD</b> for each answer.</i></p>
                             </fieldset>
@@ -1699,6 +1704,8 @@
                                         src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}"
                                         type="audio/mpeg" />
                                 </audio>
+
+                                <button class="play-btn" type="button" data-audio="audio2" data-start="30">Play 00:30</button>
 
                                 <button class="ap-btn ap-play" type="button" aria-label="Play audio">
                                     <span class="ap-icon ap-icon-play">►</span>
@@ -3402,6 +3409,8 @@
             submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices");
         });
     </script>
+
+
 </body>
 
 </html>

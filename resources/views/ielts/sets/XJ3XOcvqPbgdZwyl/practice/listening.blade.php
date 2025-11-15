@@ -1023,140 +1023,188 @@
 
     {{-- style unutk audio player --}}
     <style>
-        .audio-player {
-            display: grid;
-            grid-template-columns: auto 1fr auto auto;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-            padding: 10px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        .audio-player:hover {
+            transform: translateY(-3px);
         }
 
-        .ap-btn {
-            display: inline-flex;
+        .player-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .player-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .player-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .controls-container {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #e5e7eb;
-            background: #f8fafc;
-            border-radius: 12px;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== PLAY BUTTON ===== */
+        .play-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
             cursor: pointer;
-            font-size: 16px;
-            transition: background .12s ease, border-color .12s ease, transform .06s ease;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
         }
 
-        .ap-btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
+        .seek-container {
+            flex: 1;
         }
 
-        .ap-btn:active {
-            transform: translateY(1px);
-        }
-
-        .ap-play {
-            width: 44px;
-            height: 44px;
-            font-weight: 800;
-        }
-
-        .ap-icon {
-            line-height: 1;
-        }
-
-        .ap-track {
-            position: relative;
-            height: 19px;
-            background: #f1f5f9;
-            border: 1px solid #e5e7eb;
-            border-radius: 999px;
+        .seekBar,
+        #seekBar,
+        .seekBar {
+            width: 100%;
+            height: 7px;
+            appearance: none;
+            background: #e0e0e0;
+            border-radius: 10px;
+            outline: none;
             overflow: hidden;
         }
 
-        .ap-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            background: linear-gradient(90deg, #60a5fa, #2563eb);
-            border-right: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .ap-seek {
-            -webkit-appearance: none;
-            appearance: none;
-            position: relative;
-            width: 100%;
-            height: 8px;
-            background: transparent;
-            outline: none;
-        }
-
-        .ap-seek::-webkit-slider-thumb {
-            -webkit-appearance: none;
+        .seekBar::-webkit-slider-thumb {
             appearance: none;
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
-            margin-top: -4px;
+            background: #2575fc;
+            box-shadow: -400px 0 0 390px #2575fc;
         }
 
-        .ap-seek::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+        .timeText {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #444;
         }
 
-        .ap-time {
-            font-variant-numeric: tabular-nums;
-            font-size: 12px;
-            font-weight: 700;
-            color: #0f172a;
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
+        .start-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .start-btn {
+            padding: 9px 15px;
+            font-size: 0.9rem;
+            background: rgba(37, 117, 252, 0.08);
+            border: 1px solid rgba(37, 117, 252, 0.25);
+            color: #2575fc;
             border-radius: 8px;
-            padding: 6px 8px;
+            cursor: pointer;
+            transition: 0.15s;
+            white-space: nowrap;
         }
 
-        .ap-time .ap-sep {
-            opacity: .7;
-            margin: 0 4px;
+        .start-btn:hover {
+            background: rgba(37, 117, 252, 0.15);
+            transform: translateY(-2px);
         }
 
-        /* Mobile */
-        @media (max-width: 520px) {
+        .audio-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            padding: 12px;
+            background: #f4f7ff;
+            border-radius: 10px;
+        }
+
+        .audio-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .audio-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .audio-source {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* =========================== */
+        /*        RESPONSIVE CSS       */
+        /* =========================== */
+
+        /* Mobile (max 480px) */
+        @media (max-width: 480px) {
+
             .audio-player {
-                grid-template-columns: auto 1fr auto;
-                grid-template-areas: "play track time" "vol track time";
-                gap: 8px;
+                padding: 20px;
+                border-radius: 16px;
             }
 
-            .ap-play {
-                grid-area: play;
+            .player-title {
+                font-size: 1.15rem;
             }
 
-            .ap-track {
-                grid-area: track;
+            .play-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.85rem;
             }
 
-            .ap-time {
-                grid-area: time;
+            .start-btn {
+                flex: 1;
+                text-align: center;
             }
 
-            .ap-vol {
-                grid-area: vol;
+            .timeText {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tablet (480px – 768px) */
+        @media (max-width: 768px) {
+            .audio-player {
+                max-width: 100%;
+            }
+
+            .play-btn {
+                width: 46px;
+                height: 46px;
+            }
+
+            .start-btn {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Desktop Wide */
+        @media (min-width: 1200px) {
+            .audio-player {
+                max-width: 100%;
             }
         }
     </style>
@@ -1548,42 +1596,28 @@
                         <form class="qa-body" id="form-nc">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-6 the Reading Passage?</p>
-                                <div class="audio-player" role="group" aria-label="Audio controls">
-                                    {{-- <audio preload="metadata">
-                                        <source
-                                            src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}"
-                                            type="audio/mpeg" />
-                                    </audio> --}}
-
-                                    <audio id="mainAudio" preload="metadata">
-                                        <source src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}" type="audio/mpeg">
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3">
                                     </audio>
 
-                                    <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                        <span class="ap-icon ap-icon-play">►</span>
-                                        <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                    </button>
-
-                                    <div class="ap-track">
-                                        <div class="ap-progress"></div>
-                                        <input class="ap-seek" type="range" min="0" max="100"
-                                            value="0" step="0.1" aria-label="Seek audio" />
+                                    <div class="controls-container">
+                                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="ap-time">
-                                        <span class="ap-current">0:00</span>
-                                        <span class="ap-sep">/</span>
-                                        <span class="ap-duration">0:00</span>
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="58" type="button">Start from here</button>
                                     </div>
-
-                                    <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                        <span class="ap-icon">🔊</span>
-                                    </button>
                                 </div>
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <button class="play-btn" type="button" data-audio="audio1" data-start="58">Start From Here</button>
                                 <p>Questions 1-6</p>
                                 <p><i>Write <b>ONE WORD</b> for each answer.</i></p>
                             </fieldset>
@@ -1704,8 +1738,6 @@
                                         src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}"
                                         type="audio/mpeg" />
                                 </audio>
-
-                                <button class="play-btn" type="button" data-audio="audio2" data-start="30">Play 00:30</button>
 
                                 <button class="ap-btn ap-play" type="button" aria-label="Play audio">
                                     <span class="ap-icon ap-icon-play">►</span>
@@ -3411,88 +3443,86 @@
     </script>
 
     <script>
-        const audio = document.getElementById("mainAudio");
-        const seekBar = document.getElementById("seekBar");
-        const currentTimeEl = document.getElementById("currentTime");
-        const durationEl = document.getElementById("duration");
-        const togglePlay = document.getElementById("togglePlay");
-        const playIcon = togglePlay.querySelector("i");
+        let currentPlaying = null;
 
-        // ===============================
-        // GANTI AUDIO DI SINI
-        // ===============================
-        audio.src = "https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3";
+        document.querySelectorAll("[data-player]").forEach(player => {
 
-        let isSeeking = false;
+            const audio = player.querySelector("audio");
+            const btnPlay = player.querySelector(".play-btn");
+            const icon = btnPlay.querySelector("i");
+            const seekBar = player.querySelector(".seekBar");
+            const curT = player.querySelector(".current");
+            const durT = player.querySelector(".duration");
 
-        // ======================================
-        // START BUTTONS → play dari posisi tertentu
-        // ======================================
-        document.querySelectorAll(".start-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const offset = parseFloat(btn.dataset.start);
+            let isSeeking = false;
 
-                audio.currentTime = offset;
-                audio.play();
+            // =============== STOP AUDIO LAIN ===============
+            function stopOtherPlayers() {
+                if (currentPlaying && currentPlaying !== audio) {
+                    currentPlaying.pause();
+                    const otherBtn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                    otherBtn.className = "fas fa-play";
+                }
+                currentPlaying = audio;
+            }
 
-                playIcon.className = "fas fa-pause";
+            // =============== PLAY / PAUSE ===============
+            btnPlay.addEventListener("click", () => {
+                stopOtherPlayers();
+
+                if (audio.paused) {
+                    audio.play();
+                    icon.className = "fas fa-pause";
+                } else {
+                    audio.pause();
+                    icon.className = "fas fa-play";
+                }
             });
-        });
 
-        // ======================================
-        // SEEK BAR SYSTEM (stabil)
-        // ======================================
-        seekBar.addEventListener("input", () => {
-            if (!audio.duration) return;
-            isSeeking = true;
-            audio.currentTime = (seekBar.value / 100) * audio.duration;
-        });
+            // =============== START FROM X ===============
+            player.querySelectorAll(".start-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const offset = parseFloat(btn.dataset.start);
 
-        seekBar.addEventListener("change", () => {
-            isSeeking = false;
-        });
+                    stopOtherPlayers();
+                    audio.currentTime = offset;
+                    audio.play();
+                    icon.className = "fas fa-pause";
+                });
+            });
 
-        // Auto-update UI
-        setInterval(() => {
-            if (!audio.duration) return;
+            // =============== SEEK BAR ===============
+            seekBar.addEventListener("input", () => {
+                isSeeking = true;
+                audio.currentTime = (seekBar.value / 100) * audio.duration;
+            });
 
-            if (!isSeeking) {
-                seekBar.value = (audio.currentTime / audio.duration) * 100;
+            seekBar.addEventListener("change", () => isSeeking = false);
+
+            setInterval(() => {
+                if (!audio.duration) return;
+
+                if (!isSeeking) {
+                    seekBar.value = (audio.currentTime / audio.duration) * 100;
+                }
+
+                curT.textContent = format(audio.currentTime);
+                durT.textContent = format(audio.duration);
+
+            }, 200);
+
+            audio.addEventListener("loadedmetadata", () => {
+                durT.textContent = format(audio.duration);
+            });
+
+            function format(t) {
+                if (!t) return "0:00";
+                const m = Math.floor(t / 60);
+                const s = Math.floor(t % 60).toString().padStart(2, "0");
+                return `${m}:${s}`;
             }
-
-            currentTimeEl.textContent = formatTime(audio.currentTime);
-            durationEl.textContent = formatTime(audio.duration);
-        }, 200);
-
-        // ======================================
-        // Toggle Play
-        // ======================================
-        togglePlay.addEventListener("click", () => {
-            if (audio.paused) {
-                audio.play();
-                playIcon.className = "fas fa-pause";
-            } else {
-                audio.pause();
-                playIcon.className = "fas fa-play";
-            }
-        });
-
-        // ======================================
-        // Format time function
-        // ======================================
-        function formatTime(sec) {
-            if (!sec || isNaN(sec)) return "0:00";
-            const m = Math.floor(sec / 60);
-            const s = Math.floor(sec % 60).toString().padStart(2, "0");
-            return `${m}:${s}`;
-        }
-
-        // Update time display when audio metadata is loaded
-        audio.addEventListener("loadedmetadata", () => {
-            durationEl.textContent = formatTime(audio.duration);
         });
     </script>
-
 </body>
 
 </html>

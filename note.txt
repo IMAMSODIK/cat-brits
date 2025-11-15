@@ -134,7 +134,7 @@ perbaiki semua error
 
 
 urutan tab ikutin dari card di ielts (done)
-tombol lompat video sesuai soal (dipotong)
+tombol lompat video sesuai soal (dipotong) (tinggal implementasi)
 mock test audio langsung play dan sekali aja
 
 note : 
