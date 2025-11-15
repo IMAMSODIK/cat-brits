@@ -1732,33 +1732,25 @@
                     <form class="qa-body" id="form-tc">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-4</p>
-                            <div class="audio-player" role="group" aria-label="Audio controls">
-                                <audio preload="metadata">
-                                    <source
-                                        src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3') }}"
-                                        type="audio/mpeg" />
+
+                            <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                <audio preload="auto"
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3">
                                 </audio>
 
-                                <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                    <span class="ap-icon ap-icon-play">►</span>
-                                    <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                </button>
-
-                                <div class="ap-track">
-                                    <div class="ap-progress"></div>
-                                    <input class="ap-seek" type="range" min="0" max="100"
-                                        value="0" step="0.1" aria-label="Seek audio" />
+                                <div class="controls-container">
+                                    <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                    <div class="seek-container">
+                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <div class="timeText"><span class="current">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="ap-time">
-                                    <span class="ap-current">0:00</span>
-                                    <span class="ap-sep">/</span>
-                                    <span class="ap-duration">0:00</span>
+                                <div class="start-buttons">
+                                    <button class="start-btn" data-start="290" type="button">Start from here</button>
                                 </div>
-
-                                <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                    <span class="ap-icon">🔊</span>
-                                </button>
                             </div>
                         </fieldset>
 
@@ -1846,33 +1838,24 @@
                         <form class="qa-body" id="form-two_choices">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-2</p>
-                                <div class="audio-player" role="group" aria-label="Audio controls">
-                                    <audio preload="metadata">
-                                        <source
-                                            src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3') }}"
-                                            type="audio/mpeg" />
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3">
                                     </audio>
 
-                                    <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                        <span class="ap-icon ap-icon-play">►</span>
-                                        <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                    </button>
-
-                                    <div class="ap-track">
-                                        <div class="ap-progress"></div>
-                                        <input class="ap-seek" type="range" min="0" max="100"
-                                            value="0" step="0.1" aria-label="Seek audio" />
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="ap-time">
-                                        <span class="ap-current">0:00</span>
-                                        <span class="ap-sep">/</span>
-                                        <span class="ap-duration">0:00</span>
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="30" type="button">Start from here</button>
                                     </div>
-
-                                    <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                        <span class="ap-icon">🔊</span>
-                                    </button>
                                 </div>
                             </fieldset>
 
@@ -1932,33 +1915,24 @@
                     <form class="qa-body" id="form-nc2">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-8</p>
-                            <div class="audio-player" role="group" aria-label="Audio controls">
-                                <audio preload="metadata">
-                                    <source
-                                        src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3') }}"
-                                        type="audio/mpeg" />
+                            <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                <audio preload="auto"
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3">
                                 </audio>
 
-                                <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                    <span class="ap-icon ap-icon-play">►</span>
-                                    <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                </button>
-
-                                <div class="ap-track">
-                                    <div class="ap-progress"></div>
-                                    <input class="ap-seek" type="range" min="0" max="100"
-                                        value="0" step="0.1" aria-label="Seek audio" />
+                                <div class="controls-container">
+                                    <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                    <div class="seek-container">
+                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <div class="timeText"><span class="current">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="ap-time">
-                                    <span class="ap-current">0:00</span>
-                                    <span class="ap-sep">/</span>
-                                    <span class="ap-duration">0:00</span>
+                                <div class="start-buttons">
+                                    <button class="start-btn" data-start="182" type="button">Start from here</button>
                                 </div>
-
-                                <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                    <span class="ap-icon">🔊</span>
-                                </button>
                             </div>
                         </fieldset>
 
@@ -2057,33 +2031,24 @@
                         <form class="qa-body" id="form-oc">
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-5</p>
-                                <div class="audio-player" role="group" aria-label="Audio controls">
-                                    <audio preload="metadata">
-                                        <source
-                                            src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3') }}"
-                                            type="audio/mpeg" />
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3">
                                     </audio>
 
-                                    <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                        <span class="ap-icon ap-icon-play">►</span>
-                                        <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                    </button>
-
-                                    <div class="ap-track">
-                                        <div class="ap-progress"></div>
-                                        <input class="ap-seek" type="range" min="0" max="100"
-                                            value="0" step="0.1" aria-label="Seek audio" />
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="ap-time">
-                                        <span class="ap-current">0:00</span>
-                                        <span class="ap-sep">/</span>
-                                        <span class="ap-duration">0:00</span>
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="54" type="button">Start from here</button>
                                     </div>
-
-                                    <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                        <span class="ap-icon">🔊</span>
-                                    </button>
                                 </div>
                             </fieldset>
 
@@ -2232,35 +2197,26 @@
                     <form class="qa-body" id="form-nc3">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-5</p>
-                            <div class="audio-player" role="group" aria-label="Audio controls">
-                                <audio preload="metadata">
-                                    <source
-                                        src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3') }}"
-                                        type="audio/mpeg" />
+                            <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                <audio preload="auto"
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3">
                                 </audio>
 
-                                <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                    <span class="ap-icon ap-icon-play">►</span>
-                                    <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                </button>
-
-                                <div class="ap-track">
-                                    <div class="ap-progress"></div>
-                                    <input class="ap-seek" type="range" min="0" max="100"
-                                        value="0" step="0.1" aria-label="Seek audio" />
+                                <div class="controls-container">
+                                    <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                    <div class="seek-container">
+                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <div class="timeText"><span class="current">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="ap-time">
-                                    <span class="ap-current">0:00</span>
-                                    <span class="ap-sep">/</span>
-                                    <span class="ap-duration">0:00</span>
+                                <div class="start-buttons">
+                                    <button class="start-btn" data-start="270" type="button">Start from here</button>
                                 </div>
-
-                                <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                    <span class="ap-icon">🔊</span>
-                                </button>
                             </div>
-                        </fieldset>
+                    </fieldset>
 
                         <fieldset class="q-item">
                             <p>Complete the notes below.</p>
@@ -2324,33 +2280,24 @@
                     <form class="qa-body" id="form-nc4">
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 1-10</p>
-                            <div class="audio-player" role="group" aria-label="Audio controls">
-                                <audio preload="metadata">
-                                    <source
-                                        src="{{ asset('own_assets/audio/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3') }}"
-                                        type="audio/mpeg" />
+                            <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                <audio preload="auto"
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3">
                                 </audio>
 
-                                <button class="ap-btn ap-play" type="button" aria-label="Play audio">
-                                    <span class="ap-icon ap-icon-play">►</span>
-                                    <span class="ap-icon ap-icon-pause" style="display:none;">❚❚</span>
-                                </button>
-
-                                <div class="ap-track">
-                                    <div class="ap-progress"></div>
-                                    <input class="ap-seek" type="range" min="0" max="100"
-                                        value="0" step="0.1" aria-label="Seek audio" />
+                                <div class="controls-container">
+                                    <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                    <div class="seek-container">
+                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <div class="timeText"><span class="current">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="ap-time">
-                                    <span class="ap-current">0:00</span>
-                                    <span class="ap-sep">/</span>
-                                    <span class="ap-duration">0:00</span>
+                                <div class="start-buttons">
+                                    <button class="start-btn" data-start="90" type="button">Start from here</button>
                                 </div>
-
-                                <button class="ap-btn ap-vol" type="button" aria-label="Mute/unmute">
-                                    <span class="ap-icon">🔊</span>
-                                </button>
                             </div>
                         </fieldset>
 
@@ -3522,6 +3469,17 @@
                 return `${m}:${s}`;
             }
         });
+
+        $(".x-tab").on("click", function() {
+            if (currentPlaying) {
+                currentPlaying.pause();
+
+                // Kembalikan icon play pada player tersebut
+                const btn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                btn.className = "fas fa-play";
+            }
+        });
+
     </script>
 </body>
 
