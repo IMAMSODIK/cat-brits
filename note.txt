@@ -135,7 +135,7 @@ perbaiki semua error
 
 urutan tab ikutin dari card di ielts (done)
 tombol lompat video sesuai soal (dipotong) (tinggal implementasi) (done)
-mock test audio langsung play dan sekali aja
+mock test audio langsung play dan sekali aja (done)
 
 note : 
 speaking dan writing sistem koreksinya oleh satu tutor dan begitu seleai tutor lain tdak bisa koreksi lagi

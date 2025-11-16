@@ -2273,7 +2273,7 @@ audio {
 <div id="confirmModal">
     <div class="box">
         <h3>Audio Notice</h3>
-        <p>The audio in this section can only be played once.<br>Are you sure you want to continue?</p>
+        <p>The audio in this section can only be played once for each part.</p>
         <button id="confirmYes">Yes, continue</button>
     </div>
 </div>
