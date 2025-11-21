@@ -50,8 +50,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
 
     Route::get('/students', [StudentController::class, 'index']);
-    Route::post('/students/s
-    tore', [StudentController::class, 'store']);
+    Route::post('/students/store', [StudentController::class, 'store']);
     Route::get('/students/detail', [StudentController::class, 'detail']);
     Route::post('/students/update', [StudentController::class, 'update']);
     Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);

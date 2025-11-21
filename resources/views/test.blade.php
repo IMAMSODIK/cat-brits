@@ -1,328 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Auto Audio Tabs</title>
+<!-- Updated version without IDs, using classes and data attributes for reusability -->
+<div class="speaking-question" data-q="1">
+    <div class="sq-navigation">
+        <div class="nav-buttons">
+            <button class="sq-prev" disabled>Previous</button>
+            <button class="sq-next">Next</button>
+        </div>
+        <div class="sq-text">
+            <div class="video-container">
+                <div class="video-player">
+                    <h3>Instruction Video</h3>
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <video class="video-element" data-role="instruction-video">
+                                <source src="{{ asset('own_assets/videos/XJ3XOcvqPbgdZwyl-1.mp4') }}" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                        <button class="pause-btn" disabled><i class="fas fa-pause"></i> Pause</button>
+                    </div>
+                </div>
 
-<style>
-    .x-tabs {
-        display: flex;
-        gap: 10px;
-    }
-    .x-tab {
-        padding: 8px 16px;
-        background: #eee;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-    .x-tab.is-active {
-        background: #4e94ff;
-        color: white;
-    }
-    .x-panel {
-        display: none;
-        margin-top: 20px;
-    }
-    .x-panel.active {
-        display: block;
-    }
+                <div class="recorder-container">
+                    <h3>Answer Recorder</h3>
+                    <div class="recorder-wrapper">
+                        <div class="recorder-placeholder">
+                            <video class="preview-video" autoplay muted playsinline></video>
+                            <div class="recorder-placeholder">
+                                <i class="fas fa-video"></i>
+                                <p>Camera Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recorder-controls">
+                        <button class="record-btn"><i class="fas fa-video"></i> Start Recording</button>
+                        <button class="stop-btn" disabled><i class="fas fa-stop"></i> Stop</button>
+                    </div>
+                    <div class="recording-indicator">
+                        <div class="recording-dot"></div>
+                        <span>Recording in progress...</span>
+                    </div>
+                    <div class="timer" data-timer>00:00</div>
 
-    /* audio player */
-    .audio-player {
-        margin-top: 20px;
-        padding: 15px;
-        background: #f3f3f3;
-        border-radius: 10px;
-    }
-    .timeline {
-        width: 100%;
-    }
+                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                        <h4>Recorded Video:</h4>
+                        <video class="recorded-video-element" controls></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    /* modal */
-    #confirmModal {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        display: none;
-        background: rgba(0,0,0,0.6);
-        justify-content: center;
-        align-items: center;
-    }
-    #confirmModal .box {
-        background: white;
-        padding: 20px;
-        width: 320px;
-        border-radius: 10px;
-        text-align: center;
-    }
-    #confirmModal button {
-        margin-top: 15px;
-        padding: 8px 16px;
-    }
-</style>
-
-</head>
-<body>
-
-<!-- MODAL CONFIRMATION -->
-<div id="confirmModal">
-    <div class="box">
-        <h3>Audio Notice</h3>
-        <p>The audio in this section can only be played once.<br>Are you sure you want to continue?</p>
-        <button id="confirmYes">Yes, continue</button>
+    <div class="sq-submit">
+        <button class="sq-submit-btn">Submit</button>
     </div>
 </div>
-
-
-<!-- TABS -->
-<div class="x-tabs" role="tablist" data-active="tfng">
-    <button class="x-tab is-active" data-id="tfng">Part 1</button>
-    <button class="x-tab" data-id="tfng2">Part 2</button>
-    <button class="x-tab" data-id="ynng">Part 3</button>
-    <button class="x-tab" data-id="mse">Part 4</button>
-</div>
-
-
-<!-- PANELS -->
-<div id="panel-tfng" class="x-panel active" data-player>
-    <div class="audio-player">
-        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3"></audio>
-        <input type="range" class="timeline" value="0" disabled>
-        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-    </div>
-</div>
-
-<div id="panel-tfng2" class="x-panel" data-player>
-    <div class="audio-player">
-        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3"></audio>
-        <input type="range" class="timeline" value="0" disabled>
-        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-    </div>
-</div>
-
-<div id="panel-ynng" class="x-panel" data-player>
-    <div class="audio-player">
-        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3"></audio>
-        <input type="range" class="timeline" value="0" disabled>
-        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-    </div>
-</div>
-
-<div id="panel-mse" class="x-panel" data-player>
-    <div class="audio-player">
-        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
-        <input type="range" class="timeline" value="0" disabled>
-        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-    </div>
-</div>
-
 
 <script>
-/* ====== Audio tab controller (fixed stop-on-switch) ====== */
+    // Updated script to support multiple .speaking-question instances
 
-let currentAudio = null;
-let currentTimerId = null;
+    document.querySelectorAll('.speaking-question').forEach((container) => {
+        // Video controls
+        const video = container.querySelector('video[data-role="instruction-video"]') || container
+            .querySelector('#myVideo');
+        const playBtn = container.querySelector('.play-btn');
+        const pauseBtn = container.querySelector('.pause-btn');
 
-// format mm:ss
-function formatTime(sec){
-    sec = isNaN(sec) ? 0 : Math.floor(sec);
-    const m = Math.floor(sec/60);
-    const s = sec % 60;
-    return `${m}:${s < 10 ? '0' : ''}${s}`;
-}
+        if (video && playBtn && pauseBtn) {
+            playBtn.addEventListener('click', () => {
+                video.play();
+                playBtn.disabled = true;
+                pauseBtn.disabled = false;
+            });
 
-// reset UI for a panel's audio (progress+time)
-function resetPanelUI(panel) {
-    const prog = panel.querySelector(".timeline");
-    const cur = panel.querySelector(".current");
-    const dur = panel.querySelector(".duration");
-    if (prog) prog.value = 0;
-    if (cur) cur.textContent = "0:00";
-    if (dur) {
-        // leave duration as-is (if already loaded) or show 0:00
-        if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
-            dur.textContent = "0:00";
+            pauseBtn.addEventListener('click', () => {
+                video.pause();
+                playBtn.disabled = false;
+                pauseBtn.disabled = true;
+            });
+
+            video.addEventListener('ended', () => {
+                playBtn.disabled = false;
+                pauseBtn.disabled = true;
+            });
         }
-    }
-    // if you used a visual progress element instead of range, reset its width:
-    const visualProg = panel.querySelector(".seekbar-progress");
-    if (visualProg) visualProg.style.width = "0%";
-}
 
-// stop & reset current audio (completely)
-function stopCurrentAudio() {
-    if (!currentAudio) return;
+        // Recorder
+        const recordBtn = container.querySelector('.record-btn');
+        const stopBtn = container.querySelector('.stop-btn');
+        const indicator = container.querySelector('.recording-indicator');
+        const timerDisplay = container.querySelector('.timer');
+        const preview = container.querySelector('.preview-video') || container.querySelector('#preview');
+        const recordedVideo = container.querySelector('.recorded-video-element') || container.querySelector(
+            '#recordedVideo');
+        const recordedContainer = container.querySelector('.recorded-video');
 
-    // pause & reset time
-    try {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    } catch (e) { /* ignore */ }
+        let mediaRecorder;
+        let recordedChunks = [];
+        let timerInterval;
+        let seconds = 0;
+        let currentStream = null;
 
-    // clear interval timer if any
-    if (currentTimerId) {
-        clearInterval(currentTimerId);
-        currentTimerId = null;
-    }
-
-    // reset UI for the panel that had currentAudio
-    const panel = currentAudio.closest(".x-panel");
-    if (panel) resetPanelUI(panel);
-
-    // unset currentAudio reference
-    currentAudio = null;
-}
-
-// start timer to update UI every 1 second
-function startPanelTimer(audio, panel) {
-    // clear existing
-    if (currentTimerId) {
-        clearInterval(currentTimerId);
-        currentTimerId = null;
-    }
-
-    const prog = panel.querySelector(".timeline");
-    const cur = panel.querySelector(".current");
-    const dur = panel.querySelector(".duration");
-    const visualProg = panel.querySelector(".seekbar-progress");
-
-    currentTimerId = setInterval(() => {
-        if (!audio.duration || isNaN(audio.duration)) return;
-        const pct = (audio.currentTime / audio.duration) * 100;
-        if (prog) prog.value = pct;
-        if (visualProg) visualProg.style.width = pct + "%";
-        if (cur) cur.textContent = formatTime(audio.currentTime);
-        if (dur) dur.textContent = formatTime(audio.duration);
-    }, 1000);
-}
-
-// play audio for a panel (only if not already played)
-function playPanelAudio(panel) {
-    const audio = panel.querySelector("audio");
-    if (!audio) return;
-
-    // already played once? skip
-    if (audio.dataset.played === "yes") {
-        return;
-    }
-
-    // if another audio is playing -> stop it first
-    if (currentAudio && currentAudio !== audio) {
-        stopCurrentAudio();
-    }
-
-    // mark as current
-    currentAudio = audio;
-
-    // prepare UI duration if metadata already available
-    const durEl = panel.querySelector(".duration");
-    if (audio.duration && !isNaN(audio.duration) && durEl) {
-        durEl.textContent = formatTime(audio.duration);
-    }
-
-    // mute trick for autoplay compatibility
-    audio.muted = true;
-
-    // play
-    audio.play().then(() => {
-        // mark one-time-play
-        audio.dataset.played = "yes";
-
-        // unmute shortly after play to avoid autoplay block in some browsers
-        setTimeout(() => { try { audio.muted = false; } catch(e){} }, 150);
-
-        // update status UI by starting timer per-second
-        startPanelTimer(audio, panel);
-
-        // make sure ended handler resets UI/timer
-        audio.onended = () => {
-            // clear timer
-            if (currentTimerId) {
-                clearInterval(currentTimerId);
-                currentTimerId = null;
+        async function initCamera() {
+            try {
+                currentStream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: true
+                });
+                preview.srcObject = currentStream;
+                return currentStream;
+            } catch (err) {
+                alert('Camera or microphone access denied.');
+                console.error(err);
             }
-            // finalize progress UI
-            const visualProg = panel.querySelector(".seekbar-progress");
-            if (visualProg) visualProg.style.width = "100%";
-            const cur = panel.querySelector(".current");
-            const dur = panel.querySelector(".duration");
-            if (cur) cur.textContent = formatTime(audio.duration || 0);
-            if (dur) dur.textContent = formatTime(audio.duration || 0);
-
-            // mark played and unset currentAudio
-            audio.dataset.played = "yes";
-            currentAudio = null;
-        };
-
-    }).catch(err => {
-        // autoplay blocked — you may need user confirmation (modal)
-        console.warn("Autoplay blocked:", err);
-        // cleanup currentAudio reference if failed
-        currentAudio = null;
-    });
-
-    // prevent seeking by user (just in case)
-    audio.addEventListener("seeking", function() {
-        this.currentTime = this._lastTime || 0;
-    });
-    audio.addEventListener("timeupdate", function() {
-        this._lastTime = this.currentTime;
-    });
-}
-
-/* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
-document.querySelectorAll(".x-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-        // activate tab classes
-        document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
-        tab.classList.add("is-active");
-
-        // show corresponding panel
-        const id = tab.dataset.id;
-        const panelId = `panel-${id}`;
-        document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
-        const targetPanel = document.getElementById(panelId);
-        if (!targetPanel) return;
-        targetPanel.classList.add("active", "is-open");
-
-        // STOP any currently playing audio when switching to a different panel
-        // (this ensures audio always stops)
-        if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
-            stopCurrentAudio();
         }
 
-        // play audio on the newly opened panel (if it has one and not played yet)
-        const audio = targetPanel.querySelector("audio");
-        if (audio && audio.dataset.played !== "yes") {
-            playPanelAudio(targetPanel);
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                preview.srcObject = null;
+            }
+        }
+
+        if (recordBtn && stopBtn) {
+            recordBtn.addEventListener('click', async () => {
+                const stream = await initCamera();
+                recordedChunks = [];
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = event => {
+                    if (event.data.size > 0) recordedChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, {
+                        type: 'video/webm'
+                    });
+                    const url = URL.createObjectURL(blob);
+                    recordedVideo.src = url;
+                    if (recordedContainer) recordedContainer.style.display = 'block';
+                    stopCamera();
+                };
+
+                mediaRecorder.start();
+                recordBtn.disabled = true;
+                stopBtn.disabled = false;
+                if (indicator) indicator.classList.add('active');
+
+                seconds = 0;
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    const min = Math.floor(seconds / 60);
+                    const sec = seconds % 60;
+                    timerDisplay.textContent =
+                        `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                }, 1000);
+            });
+
+            stopBtn.addEventListener('click', () => {
+                if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                    mediaRecorder.stop();
+                }
+
+                recordBtn.disabled = false;
+                stopBtn.disabled = true;
+                if (indicator) indicator.classList.remove('active');
+                clearInterval(timerInterval);
+            });
         }
     });
-});
 
-/* ========== Initial modal confirm & autoplay first panel ========== */
-const modal = document.getElementById("confirmModal");
-const confirmBtn = document.getElementById("confirmYes");
+    (function() {
+        const MAX_RECORD_SECONDS = 10;
 
-if (modal && confirmBtn) {
-    // show modal on load
-    window.addEventListener("load", () => {
-        modal.style.display = "flex";
-    });
-    confirmBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-        // play currently active panel
-        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-        if (firstPanel) playPanelAudio(firstPanel);
-    });
-} else {
-    // if no modal, autoplay first panel immediately (with mute trick)
-    window.addEventListener("load", () => {
-        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-        if (firstPanel) playPanelAudio(firstPanel);
-    });
-}
+        document.querySelectorAll('.speaking-question').forEach(container => {
+
+            // === Inject Progress Bar & Warning Area ===
+            if (!container.querySelector('.record-progress')) {
+                const bar = document.createElement('div');
+                bar.className = 'record-progress';
+                bar.style.cssText =
+                    'width:0%;height:6px;background:#4caf50;margin-top:8px;transition:width 0.3s ease;';
+                container.querySelector('.recorder-container').prepend(bar);
+            }
+
+            if (!container.querySelector('.record-warning')) {
+                const warn = document.createElement('div');
+                warn.className = 'record-warning';
+                warn.style.cssText = 'margin-top:6px;font-weight:bold;color:#333;display:none;';
+                warn.innerText = '';
+                container.querySelector('.recorder-container').append(warn);
+            }
+
+            const progressBar = container.querySelector('.record-progress');
+            const warningLabel = container.querySelector('.record-warning');
+
+
+            // === Beep Sounds ===
+            const beep1 = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
+            const beep2 = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
+            const beep3 = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
+
+
+            // === Original Script Elements ===
+
+            const instructionVideo = container.querySelector('.video-player video');
+            const playBtn = container.querySelector('.play-btn');
+            const pauseBtn = container.querySelector('.pause-btn');
+
+            const recordBtn = container.querySelector('.record-btn');
+            const stopBtn = container.querySelector('.stop-btn');
+            const indicator = container.querySelector('.recording-indicator');
+            const timerDisplay = container.querySelector('.timer');
+            const preview = container.querySelector('.preview-video');
+            const recordedVideo = container.querySelector('.recorded-video-element');
+            const recordedContainer = container.querySelector('.recorded-video');
+
+            let mediaRecorder = null;
+            let currentStream = null;
+            let timerInterval = null;
+            let seconds = 0;
+            let isRecording = false;
+            let recordedChunks = [];
+
+
+
+            // === Timer Helpers ===
+
+            function resetTimerDisplay() {
+                seconds = 0;
+                timerDisplay.textContent = '00:00';
+                progressBar.style.width = '0%';
+                warningLabel.style.display = 'none';
+            }
+
+            function startTimer() {
+                resetTimerDisplay();
+
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    const min = Math.floor(seconds / 60).toString().padStart(2, '0');
+                    const sec = (seconds % 60).toString().padStart(2, '0');
+                    timerDisplay.textContent = `${min}:${sec}`;
+
+                    // Progress bar update
+                    const pct = Math.min((seconds / MAX_RECORD_SECONDS) * 100, 100);
+                    progressBar.style.width = pct + '%';
+
+                    // Last 10 seconds countdown
+                    if (MAX_RECORD_SECONDS - seconds <= 10 && MAX_RECORD_SECONDS - seconds > 0) {
+                        warningLabel.style.display = 'block';
+                        warningLabel.style.color = 'red';
+                        warningLabel.innerText =
+                            `Recording stops in ${MAX_RECORD_SECONDS - seconds} seconds...`;
+                    }
+
+                    // Beep last 3 seconds
+                    if (MAX_RECORD_SECONDS - seconds === 3) beep1.play();
+                    if (MAX_RECORD_SECONDS - seconds === 2) beep2.play();
+                    if (MAX_RECORD_SECONDS - seconds === 1) beep3.play();
+
+                    // Auto-stop
+                    if (seconds >= MAX_RECORD_SECONDS) {
+                        stopRecordingFlow();
+                    }
+                }, 1000);
+            }
+
+            function stopTimer() {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+
+
+            // === Camera ===
+
+            async function initCamera() {
+                currentStream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: true
+                });
+                preview.srcObject = currentStream;
+                return currentStream;
+            }
+
+            function stopCamera() {
+                if (currentStream) {
+                    currentStream.getTracks().forEach(t => t.stop());
+                    currentStream = null;
+                }
+                preview.srcObject = null;
+            }
+
+
+            // === Recording Flow ===
+
+            async function startRecordingFlow() {
+                if (isRecording) return;
+
+                const stream = await initCamera();
+                recordedChunks = [];
+
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = e => {
+                    if (e.data.size > 0) recordedChunks.push(e.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, {
+                        type: 'video/webm'
+                    });
+                    const url = URL.createObjectURL(blob);
+                    recordedVideo.src = url;
+                    recordedContainer.style.display = 'block';
+                    stopCamera();
+                };
+
+                mediaRecorder.start();
+                isRecording = true;
+
+                // UI updates
+                recordBtn.disabled = true;
+                stopBtn.disabled = false;
+                indicator.classList.add('active');
+
+                startTimer();
+            }
+
+
+            function stopRecordingFlow() {
+                if (!isRecording) return;
+
+                if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                    mediaRecorder.stop();
+                }
+
+                isRecording = false;
+                recordBtn.disabled = false;
+                stopBtn.disabled = true;
+                indicator.classList.remove('active');
+
+                stopTimer();
+            }
+
+
+            // === Event Bind ===
+
+            recordBtn.addEventListener('click', startRecordingFlow);
+            stopBtn.addEventListener('click', stopRecordingFlow);
+
+        });
+    })();
 </script>
-
-
-</body>
-</html>

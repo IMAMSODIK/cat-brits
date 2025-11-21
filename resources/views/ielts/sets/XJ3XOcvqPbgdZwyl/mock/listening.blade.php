@@ -36,7 +36,7 @@
             z-index: 50;
             background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -904,7 +904,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            right: 16px;
+            left: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -993,15 +993,15 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                right: 12px;
-                left: auto;
+                left: 12px;
+                /* left: auto; */
                 width: auto;
                 max-width: 100%;
             }
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                right: 12px;
+                /* right: 12px; */
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1023,113 +1023,113 @@
         /* ===============================
    AUDIO PLAYER CONTAINER
    =============================== */
-.audio-player {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+        .audio-player {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
 
-    padding: 18px 20px;
-    border-radius: 18px;
-    margin: 20px 0;
+            padding: 18px 20px;
+            border-radius: 18px;
+            margin: 20px 0;
 
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
 
-/* ===============================
+        /* ===============================
    PLAY BUTTON (Tapi disembunyikan)
    =============================== */
-.ap-btn.ap-play {
-    display: none !important;
-}
+        .ap-btn.ap-play {
+            display: none !important;
+        }
 
-/* ===============================
+        /* ===============================
    VOLUME BUTTON (Minimalis)
    =============================== */
-.ap-btn.ap-vol {
-    border: none;
-    background: rgba(255,255,255,0.25);
-    padding: 6px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s ease;
-}
+        .ap-btn.ap-vol {
+            border: none;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s ease;
+        }
 
-.ap-btn.ap-vol:hover {
-    background: rgba(255,255,255,0.4);
-}
+        .ap-btn.ap-vol:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
 
-/* ===============================
+        /* ===============================
    TRACK WRAPPER
    =============================== */
-.ap-track {
-    width: 100%;
-    height: 10px;
-    background: rgba(255,255,255,0.25);
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-}
+        .ap-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Progress bar */
-.ap-progress {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border-radius: inherit;
-    transition: width 0.2s linear;
-}
+        /* Progress bar */
+        .ap-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: inherit;
+            transition: width 0.2s linear;
+        }
 
-/* ===============================
+        /* ===============================
    SEEK (DISABLED)
    =============================== */
-.ap-seek {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: not-allowed !important;
-    pointer-events: none !important;
-}
+        .ap-seek {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: not-allowed !important;
+            pointer-events: none !important;
+        }
 
-/* ===============================
+        /* ===============================
    TIME DISPLAY
    =============================== */
-.ap-time {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 4px;
+        .ap-time {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
 
-    font-size: 14px;
-    color: #fff;
-    font-weight: 500;
-}
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
+        }
 
-/* ===============================
+        /* ===============================
    REMOVE DEFAULT AUDIO ELEMENT
    =============================== */
-audio {
-    display: none !important;
-}
+        audio {
+            display: none !important;
+        }
 
-/* ===============================
+        /* ===============================
    RESPONSIVE
    =============================== */
-@media (max-width: 600px) {
-    .audio-player {
-        padding: 15px;
-        border-radius: 15px;
-    }
-    .ap-time {
-        font-size: 13px;
-    }
-}
+        @media (max-width: 600px) {
+            .audio-player {
+                padding: 15px;
+                border-radius: 15px;
+            }
 
+            .ap-time {
+                font-size: 13px;
+            }
+        }
     </style>
 
     <style>
@@ -1162,18 +1162,21 @@ audio {
     <style>
         /* Modal Styles */
         .custom-modal {
-            display: none !important; /* Pastikan modal tersembunyi secara default */
+            display: none !important;
+            /* Pastikan modal tersembunyi secara default */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             padding: 15px;
             box-sizing: border-box;
-            opacity: 0; /* Tambahkan opacity untuk transisi */
-            transition: opacity 0.3s ease; /* Smooth transition */
+            opacity: 0;
+            /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease;
+            /* Smooth transition */
         }
 
         /* State ketika modal ditampilkan */
@@ -1190,13 +1193,14 @@ audio {
             width: 100%;
             max-width: 700px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             max-height: 90vh;
             display: flex;
             flex-direction: column;
             margin: auto;
-            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
+            transform: scale(0.9) translateY(-20px);
+            /* State awal untuk animasi */
             transition: transform 0.3s ease;
         }
 
@@ -1213,7 +1217,7 @@ audio {
             padding: 20px 25px;
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .score-summary-header {
@@ -1232,8 +1236,8 @@ audio {
             justify-content: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            background: rgba(255,255,255,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
 
@@ -1271,7 +1275,7 @@ audio {
         }
 
         .modal-close:hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .custom-modal-body {
@@ -1288,7 +1292,7 @@ audio {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -1313,14 +1317,14 @@ audio {
             background-color: #f9f9f9;
         }
 
-        .answer-correct { 
-            color: #27ae60; 
-            font-weight: bold; 
+        .answer-correct {
+            color: #27ae60;
+            font-weight: bold;
         }
-        
-        .answer-wrong { 
-            color: #e74c3c; 
-            font-weight: bold; 
+
+        .answer-wrong {
+            color: #e74c3c;
+            font-weight: bold;
         }
 
         .status-badge {
@@ -1386,55 +1390,56 @@ audio {
             .custom-modal {
                 padding: 10px;
             }
-            
+
             .custom-modal-content {
                 max-height: 95vh;
             }
-            
+
             .custom-modal-header {
                 padding: 15px 20px;
             }
-            
+
             .score-circle {
                 width: 60px;
                 height: 60px;
             }
-            
+
             .score-circle span {
                 font-size: 1rem;
             }
-            
+
             .score-circle small {
                 font-size: 0.7rem;
             }
-            
+
             .modal-title {
                 font-size: 1.2rem;
                 margin-left: 10px;
             }
-            
+
             .modal-close {
                 width: 35px;
                 height: 35px;
                 font-size: 24px;
             }
-            
+
             .custom-modal-body {
                 padding: 15px;
             }
-            
+
             .result-table {
                 font-size: 0.9rem;
             }
-            
-            .result-table th, .result-table td {
+
+            .result-table th,
+            .result-table td {
                 padding: 10px 8px;
             }
-            
+
             .modal-actions {
                 flex-direction: column;
             }
-            
+
             .modal-btn {
                 width: 100%;
             }
@@ -1444,26 +1449,26 @@ audio {
             .custom-modal {
                 padding: 5px;
             }
-            
+
             .result-table {
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
             }
-            
+
             .score-circle {
                 width: 50px;
                 height: 50px;
             }
-            
+
             .score-circle span {
                 font-size: 0.9rem;
             }
-            
+
             .score-circle small {
                 font-size: 0.6rem;
             }
-            
+
             .status-badge {
                 font-size: 0.8rem;
                 padding: 4px 8px;
@@ -1480,13 +1485,16 @@ audio {
 
         #confirmModal {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: none;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
         }
+
         #confirmModal .box {
             background: white;
             padding: 20px;
@@ -1494,6 +1502,7 @@ audio {
             border-radius: 10px;
             text-align: center;
         }
+
         #confirmModal button {
             margin-top: 15px;
             padding: 8px 16px;
@@ -1507,7 +1516,8 @@ audio {
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1565,7 +1575,8 @@ audio {
                             <fieldset class="q-item">
                                 <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
                                 <div class="audio-player">
-                                    <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3"></audio>
+                                    <audio
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
@@ -1594,7 +1605,8 @@ audio {
                                         <div class="q-item" data-q="1" data-type="nc">
                                             24
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-1" class="q-text"
+                                                placeholder="">
                                             road
                                         </div>
                                     </td>
@@ -1612,7 +1624,8 @@ audio {
                                     <td>
                                         <div class="q-item" data-q="2" data-type="nc">
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-2" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </td>
                                 </tr>
@@ -1692,7 +1705,8 @@ audio {
                                     <td>
                                         <div class="q-item" data-q="7" data-type="tc">
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-1" class="q-text"
+                                                placeholder="">
                                             km
                                         </div>
                                     </td>
@@ -1705,7 +1719,8 @@ audio {
                                                 <div class="q-item" data-q="8" data-type="tc">
                                                     one
                                                     <span class="q-number-box">8</span>
-                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-2" class="q-text"
+                                                        placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1721,7 +1736,8 @@ audio {
                                         <div class="q-item" data-q="9" data-type="tc">
                                             £
                                             <span class="q-number-box">9</span>
-                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
+                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-3" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </td>
                                     <td>
@@ -1731,7 +1747,8 @@ audio {
                                             <li>
                                                 <div class="q-item" data-q="10" data-type="tc">
                                                     <span class="q-number-box">10</span>
-                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
+                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text"
+                                                        placeholder="">
                                                 </div>
                                             </li>
                                         </ul>
@@ -1749,14 +1766,15 @@ audio {
                         <fieldset class="q-item">
                             <p class="lead">Listen and answer questions 11-20</p>
                             <div class="audio-player">
-                                <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3"></audio>
+                                <audio
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3"></audio>
                                 <input type="range" class="timeline" value="0" disabled>
                                 <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                             </div>
                         </fieldset>
 
                         <fieldset class="q-item">
-                            <p><b>Questions 1-2</b></p>
+                            <p><b>Questions 11-12</b></p>
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
@@ -1796,7 +1814,7 @@ audio {
                         </fieldset>
 
                         <fieldset class="q-item">
-                            <p><b>Questions 1-8</b></p>
+                            <p><b>Questions 13-20</b></p>
                             <p>Complete the notes below.</p>
                             <p>Write <b>NO MORE THEN TWO WORDS</b> for each answer.</p>
                         </fieldset>
@@ -1809,14 +1827,16 @@ audio {
                                     <div class="q-list" data-q="3" data-type="nc">
                                         New members should describe any
                                         <span class="q-number-box">13</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="4" data-type="nc">
                                         The
                                         <span class="q-number-box">14</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text"
+                                            placeholder="">
                                         will be explained to you before you use the equipment.
                                     </div>
                                 </li>
@@ -1824,7 +1844,8 @@ audio {
                                     <div class="q-list" data-q="5" data-type="nc">
                                         You will be given a six-week
                                         <span class="q-number-box">15</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1835,7 +1856,8 @@ audio {
                                     <div class="q-list" data-q="6" data-type="nc">
                                         There is a compulsory £90
                                         <span class="q-number-box">16</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text"
+                                            placeholder="">
                                         fee for members.
                                     </div>
                                 </li>
@@ -1843,7 +1865,8 @@ audio {
                                     <div class="q-list" data-q="7" data-type="nc">
                                         Gold members are given
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text"
+                                            placeholder="">
                                         to all the LP clubs.
                                     </div>
                                 </li>
@@ -1851,7 +1874,8 @@ audio {
                                     <div class="q-list" data-q="8" data-type="nc">
                                         Premier members are given priority during
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text"
+                                            placeholder="">
                                         hours.
                                     </div>
                                 </li>
@@ -1859,7 +1883,8 @@ audio {
                                     <div class="q-list" data-q="9" data-type="nc">
                                         Premier members can bring some
                                         <span class="q-number-box">19</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text"
+                                            placeholder="">
                                         every month.
                                     </div>
                                 </li>
@@ -1867,7 +1892,8 @@ audio {
                                     <div class="q-list" data-q="10" data-type="nc">
                                         Members should always take their
                                         <span class="q-number-box">20</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text" placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text"
+                                            placeholder="">
                                         with them.
                                     </div>
                                 </li>
@@ -1878,318 +1904,335 @@ audio {
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Part 3</div>
-                    <div class="reading-section">
-                        <div class="qa highlighted-content">
-                            <form class="qa-body">
-                                <fieldset class="q-item">
-                                    <p class="lead">Listen and answer questions 21-30</p>
-                                    <div class="audio-player">
-                                        <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3"></audio>
-                                        <input type="range" class="timeline" value="0" disabled>
-                                        <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                                    </div>
-                                </fieldset>
+                <div class="reading-section">
+                    <div class="qa highlighted-content">
+                        <form class="qa-body">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 21-30</p>
+                                <div class="audio-player">
+                                    <audio
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3"></audio>
+                                    <input type="range" class="timeline" value="0" disabled>
+                                    <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item">
-                                    <p>Questions 21-25</p>
-                                    <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
-                                </fieldset>
+                            <fieldset class="q-item">
+                                <p>Questions 21-25</p>
+                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+                            </fieldset>
 
-                                <fieldset class="q-item">
-                                    <h3><b>Global Design Competition</b></h3>
-                                </fieldset>
+                            <fieldset class="q-item">
+                                <h3><b>Global Design Competition</b></h3>
+                            </fieldset>
 
-                                <fieldset class="q-item" data-q="1" data-type="oc">
-                                    <legend class="q-text">
-                                        <span class="q-number">21</span>
-                                        Students entering the design competition have to
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">produce an energy-efficient design.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">adapt an existing energy-saving appliance.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">develop a new use for current technology.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
+                            <fieldset class="q-item" data-q="1" data-type="oc">
+                                <legend class="q-text">
+                                    <span class="q-number">21</span>
+                                    Students entering the design competition have to
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">produce an energy-efficient design.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">adapt an existing energy-saving appliance.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">develop a new use for current technology.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="oc">
-                                    <legend class="q-text">
-                                        <span class="q-number">22</span>
-                                        John chose a dishwasher because he wanted to make dishwashers
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">more appealing.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">more common.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">more economical.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
+                            <fieldset class="q-item" data-q="2" data-type="oc">
+                                <legend class="q-text">
+                                    <span class="q-number">22</span>
+                                    John chose a dishwasher because he wanted to make dishwashers
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">more appealing.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">more common.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">more economical.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="oc">
-                                    <legend class="q-text">
-                                        <span class="q-number">23</span>
-                                        The stone in John’s ‘Rockpool’ design is used
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">for decoration.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">to switch it on.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">to stop water escaping.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
+                            <fieldset class="q-item" data-q="3" data-type="oc">
+                                <legend class="q-text">
+                                    <span class="q-number">23</span>
+                                    The stone in John’s ‘Rockpool’ design is used
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">for decoration.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">to switch it on.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">to stop water escaping.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="oc">
-                                    <legend class="q-text">
-                                        <span class="q-number">24</span>
-                                        In the holding chamber, the carbon dioxide
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">changes back to a gas.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">dries the dishes.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">is allowed to cool.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
+                            <fieldset class="q-item" data-q="4" data-type="oc">
+                                <legend class="q-text">
+                                    <span class="q-number">24</span>
+                                    In the holding chamber, the carbon dioxide
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">changes back to a gas.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">dries the dishes.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">is allowed to cool.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item" data-q="5" data-type="oc">
-                                    <legend class="q-text">
-                                        <span class="q-number">25</span>
-                                        At the end of the cleaning process, the carbon dioxide
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">is released into the air.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">is disposed of with the waste.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">is collected ready to be re-used.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
+                            <fieldset class="q-item" data-q="5" data-type="oc">
+                                <legend class="q-text">
+                                    <span class="q-number">25</span>
+                                    At the end of the cleaning process, the carbon dioxide
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">is released into the air.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">is disposed of with the waste.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">is collected ready to be re-used.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="q-item">
-                                    <p><b>Questions 26-30</b></p>
-                                    <p>Complete the notes below.</p>
-                                    <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                                </fieldset>
+                            <fieldset class="q-item">
+                                <p><b>Questions 26-30</b></p>
+                                <p>Complete the notes below.</p>
+                                <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                            </fieldset>
 
-                                <fieldset class="q-item" id="panel-sa">
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="6" data-type="nc">
-                                                John needs help preparing for his
-                                                <span class="q-number-box">26</span>
-                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-15" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="7" data-type="nc">
-                                                The professor advises John to make a
-                                                <span class="q-number-box">27</span>
-                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-16" class="q-text" placeholder="">
-                                                of his design.
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="8" data-type="nc">
-                                                John’s main problem is getting good quality
-                                                <span class="q-number-box">28</span>
-                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-17" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="9" data-type="nc">
-                                                The professor suggests John apply for a
-                                                <span class="q-number-box">29</span>
-                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-18" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="10" data-type="nc">
-                                                The professor will check the
-                                                <span class="q-number-box">30</span>
-                                                <input type="text" name="nc-XJ3XOcvqPbgdZwyl-19" class="q-text" placeholder="">
-                                                information in John’s written report.
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </fieldset>
-                            </form>
-                        </div>
+                            <fieldset class="q-item" id="panel-sa">
+                                <ul>
+                                    <li>
+                                        <div class="q-list" data-q="6" data-type="nc">
+                                            John needs help preparing for his
+                                            <span class="q-number-box">26</span>
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-15" class="q-text"
+                                                placeholder="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="7" data-type="nc">
+                                            The professor advises John to make a
+                                            <span class="q-number-box">27</span>
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-16" class="q-text"
+                                                placeholder="">
+                                            of his design.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="8" data-type="nc">
+                                            John’s main problem is getting good quality
+                                            <span class="q-number-box">28</span>
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-17" class="q-text"
+                                                placeholder="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="9" data-type="nc">
+                                            The professor suggests John apply for a
+                                            <span class="q-number-box">29</span>
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-18" class="q-text"
+                                                placeholder="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="10" data-type="nc">
+                                            The professor will check the
+                                            <span class="q-number-box">30</span>
+                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-19" class="q-text"
+                                                placeholder="">
+                                            information in John’s written report.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-                <div class="x-panel-inner">Content: Part 4</div>
-                <div class="qa highlighted-content">
-                    <form class="qa-body">
-                        <fieldset class="q-item">
-                            <p class="lead">Listen and answer questions 31-40</p>
-                            <div class="audio-player">
-                                <audio src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
-                                <input type="range" class="timeline" value="0" disabled>
-                                <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                            </div>
-                        </fieldset>
+        </div>
+        <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
+            <div class="x-panel-inner">Content: Part 4</div>
+            <div class="qa highlighted-content">
+                <form class="qa-body">
+                    <fieldset class="q-item">
+                        <p class="lead">Listen and answer questions 31-40</p>
+                        <div class="audio-player">
+                            <audio
+                                src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
+                            <input type="range" class="timeline" value="0" disabled>
+                            <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+                        </div>
+                    </fieldset>
 
-                        <fieldset class="q-item">
-                            <p>Questions 31-40</p>
-                            <p>Complete the notes below.</p>
-                            <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                        </fieldset>
+                    <fieldset class="q-item">
+                        <p>Questions 31-40</p>
+                        <p>Complete the notes below.</p>
+                        <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                    </fieldset>
 
-                        <fieldset class="q-item">
-                            <h3><b>THE SPIRIT BEAR</b></h3>
-                            <p><b>General facts</b></p>
-                            <ul>
-                                <li>It is a white bear belonging to the black bear family.</li>
-                                <li>
-                                    <div class="q-list" data-q="1" data-type="nc">
-                                        Its colour comes from an uncommon
-                                        <span class="q-number-box">31</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text" placeholder="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="2" data-type="nc">
-                                        Local people believe that it has unusual
-                                        <span class="q-number-box">32</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text" placeholder="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="3" data-type="nc">
-                                        They protect the bear from
-                                        <span class="q-number-box">33</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text" placeholder="">
-                                    </div>
-                                </li>
-                            </ul>
+                    <fieldset class="q-item">
+                        <h3><b>THE SPIRIT BEAR</b></h3>
+                        <p><b>General facts</b></p>
+                        <ul>
+                            <li>It is a white bear belonging to the black bear family.</li>
+                            <li>
+                                <div class="q-list" data-q="1" data-type="nc">
+                                    Its colour comes from an uncommon
+                                    <span class="q-number-box">31</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
+                                        placeholder="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="q-list" data-q="2" data-type="nc">
+                                    Local people believe that it has unusual
+                                    <span class="q-number-box">32</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
+                                        placeholder="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="q-list" data-q="3" data-type="nc">
+                                    They protect the bear from
+                                    <span class="q-number-box">33</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
+                                        placeholder="">
+                                </div>
+                            </li>
+                        </ul>
 
-                            <p><b>Habitat</b></p>
-                            <ul>
-                                <li>The bear’s relationship with the forest is complex.</li>
-                                <li>
-                                    <div class="q-list" data-q="4" data-type="nc">
-                                        Tree roots stop
-                                        <span class="q-number-box">34</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text" placeholder="">
-                                        along salmon streams.
-                                    </div>
-                                </li>
-                                <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
-                                <li>
-                                    <div class="q-list" data-q="5" data-type="nc">
-                                        It is currently found on a small number of
-                                        <span class="q-number-box">35</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text" placeholder="">
-                                    </div>
-                                </li>
-                            </ul>
+                        <p><b>Habitat</b></p>
+                        <ul>
+                            <li>The bear’s relationship with the forest is complex.</li>
+                            <li>
+                                <div class="q-list" data-q="4" data-type="nc">
+                                    Tree roots stop
+                                    <span class="q-number-box">34</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
+                                        placeholder="">
+                                    along salmon streams.
+                                </div>
+                            </li>
+                            <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
+                            <li>
+                                <div class="q-list" data-q="5" data-type="nc">
+                                    It is currently found on a small number of
+                                    <span class="q-number-box">35</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
+                                        placeholder="">
+                                </div>
+                            </li>
+                        </ul>
 
-                            <p><b>Threats</b></p>
-                            <ul>
-                                <li>
-                                    <div class="q-list" data-q="6" data-type="nc">
-                                        Habitat is being lost due to deforestation and construction of
-                                        <span class="q-number-box">36</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text" placeholder="">
-                                        by logging companies.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="7" data-type="nc">
-                                        Unrestricted
-                                        <span class="q-number-box">37</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text" placeholder="">
-                                        is affecting the salmon supply.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="8" data-type="nc">
-                                        The bears’ existence is also threatened by their low rate of
-                                        <span class="q-number-box">38</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text" placeholder="">
-                                    </div>
-                                </li>
-                            </ul>
+                        <p><b>Threats</b></p>
+                        <ul>
+                            <li>
+                                <div class="q-list" data-q="6" data-type="nc">
+                                    Habitat is being lost due to deforestation and construction of
+                                    <span class="q-number-box">36</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
+                                        placeholder="">
+                                    by logging companies.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="q-list" data-q="7" data-type="nc">
+                                    Unrestricted
+                                    <span class="q-number-box">37</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
+                                        placeholder="">
+                                    is affecting the salmon supply.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="q-list" data-q="8" data-type="nc">
+                                    The bears’ existence is also threatened by their low rate of
+                                    <span class="q-number-box">38</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
+                                        placeholder="">
+                                </div>
+                            </li>
+                        </ul>
 
-                            <p><b>Going forward</b></p>
-                            <ul>
-                                <li>Interested parties are working together.</li>
-                                <li>
-                                    <div class="q-list" data-q="9" data-type="nc">
-                                        Logging companies must improve their
-                                        <span class="q-number-box">39</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text" placeholder="">
-                                        by logging companies.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="10" data-type="nc">
-                                        Maintenance and
-                                        <span class="q-number-box">40</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text" placeholder="">
-                                        of the spirit bears’ territory is needed.
-                                    </div>
-                                </li>
-                            </ul>
-                        </fieldset>
-                    </form>
-                </div>
+                        <p><b>Going forward</b></p>
+                        <ul>
+                            <li>Interested parties are working together.</li>
+                            <li>
+                                <div class="q-list" data-q="9" data-type="nc">
+                                    Logging companies must improve their
+                                    <span class="q-number-box">39</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
+                                        placeholder="">
+                                    by logging companies.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="q-list" data-q="10" data-type="nc">
+                                    Maintenance and
+                                    <span class="q-number-box">40</span>
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
+                                        placeholder="">
+                                    of the spirit bears’ territory is needed.
+                                </div>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
             </div>
+        </div>
         </div>
     </section>
 
@@ -2237,7 +2280,7 @@ audio {
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        <small id="scorePercentage">0%</small>
+                        <small id="scorePercentage">0</small>
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -2260,7 +2303,7 @@ audio {
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- Action Buttons -->
             <div class="modal-actions">
                 <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
@@ -2270,17 +2313,46 @@ audio {
     </div>
 
     <!-- MODAL CONFIRMATION -->
-<div id="confirmModal">
-    <div class="box">
-        <h3>Audio Notice</h3>
-        <p>The audio in this section can only be played once for each part.</p>
-        <button id="confirmYes">Yes, continue</button>
+    <div id="confirmModal">
+        <div class="box">
+            <h3>Audio Notice</h3>
+            <p>The audio in this section can only be played once for each part.</p>
+            <button id="confirmYes">Yes, continue</button>
+        </div>
     </div>
-</div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
     <script>
+        let scoreMap = [
+            { score: 9.0, min: 39, max: 40 },
+            { score: 8.5, min: 37, max: 38 },
+            { score: 8.0, min: 35, max: 36 },
+            { score: 7.5, min: 32, max: 34 },
+            { score: 7.0, min: 30, max: 31 },
+            { score: 6.5, min: 26, max: 29 },
+            { score: 6.0, min: 23, max: 25 },
+            { score: 5.5, min: 18, max: 22 },
+            { score: 5.0, min: 16, max: 17 },
+            { score: 4.5, min: 13, max: 15 },
+            { score: 4.0, min: 11, max: 12 },
+            { score: 3.5, min: 8,  max: 10 },
+            { score: 3.0, min: 6,  max: 7 },
+            { score: 2.5, min: 4,  max: 5 },
+        ];
 
+        function convertScore(correctCount) {
+            for (let row of scoreMap) {
+                if (correctCount >= row.min && correctCount <= row.max) {
+                    return row.score;
+                }
+            }
+            return 0; // jika kurang dari 4 benar
+        }
+    </script>
+
+    <script>
         function showModal(title = "Hasil Jawaban Anda") {
             $("#modalScoreTitle").text(title);
             $("#resultModal").addClass("show");
@@ -2290,7 +2362,7 @@ audio {
         function closeModal() {
             $("#resultModal").removeClass("show");
             $("body").css("overflow", "auto");
-            
+
             // Pastikan modal benar-benar tersembunyi setelah animasi
             setTimeout(function() {
                 $("#resultModal").hide();
@@ -2329,137 +2401,8 @@ audio {
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#resultModal").removeClass("show").hide();
-            $('.floating-btn').on('click', function () {
-
-                let results = [];
-
-                $('.q-item, .q-list').each(function () {
-                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
-
-                    const type = $(this).data('type'); 
-                    const qnum = $(this).data('q');
-
-                    if (typeof type === 'undefined') return;
-
-                    let name = null;
-                    let answer = null;
-
-                    switch (type) {
-                        case 'tfng':
-                        case 'oc':
-                        case 'ynng':
-                            const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
-                                name = checked.attr('name');
-                                answer = checked.val();
-                            } else {
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) name = anyRadio.attr('name');
-                            }
-                            break;
-
-                        case 'sa':
-                        case 'tc':
-                        case 'nc':
-                            const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
-                                name = input.attr('name');
-                                answer = input.val();
-                            }
-                            break;
-
-                        case 'mh':
-                        case 'mse':
-                            const select = $(this).find('select');
-                            if (select.length > 0) {
-                                name = select.attr('name');
-                                answer = select.val();
-                            }
-                            break;
-                    }
-
-                    results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
-                    });
-                });
-
-                $.ajax({
-                    url: '/ielts/mock-test/check',
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
-                        kategori: 'listening',
-                        answers: results,
-                        tipe_test: 'mock'
-                    },
-                    success: function (response) {
-                        console.log(response);
-
-                        if (response.status === 'ok') {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-                            let questionNumber = 1;
-
-                            $.each(response.results, function (key, data) {
-                                let isCorrect = data.status === 'correct';
-                                if (isCorrect) correctCount++;
-
-                                let correctAnswer = data.correct || '';
-                                let userAnswer = data.user || '';
-                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
-
-                                tableRows += `
-                                    <tr>
-                                        <td><strong>${questionNumber++}</strong></td>
-                                        <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                        <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                        <td>
-                                            <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                ${isCorrect ? 'Correct' : 'Wrong'}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                `;
-                            });
-
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
-
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
-
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
-                        } else {
-                            alert('Terjadi kesalahan: ' + response.message);
-                        }
-                    },
-                    error: function (xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan: ' + xhr.status);
-                    }
-                });
-            });
         });
     </script>
 
@@ -2587,11 +2530,11 @@ audio {
 
                     let results = [];
 
-                    $('.q-item, .q-list').each(function () {
+                    $('.q-item, .q-list').each(function() {
                         // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
                         if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
 
-                        const type = $(this).data('type'); 
+                        const type = $(this).data('type');
                         const qnum = $(this).data('q');
 
                         if (typeof type === 'undefined') return;
@@ -2651,7 +2594,7 @@ audio {
                             answers: results,
                             tipe_test: 'mock'
                         },
-                        success: function (response) {
+                        success: function(response) {
                             console.log(response);
 
                             if (response.status === 'ok') {
@@ -2660,7 +2603,7 @@ audio {
                                 let tableRows = '';
                                 let questionNumber = 1;
 
-                                $.each(response.results, function (key, data) {
+                                $.each(response.results, function(key, data) {
                                     let isCorrect = data.status === 'correct';
                                     if (isCorrect) correctCount++;
 
@@ -2686,16 +2629,19 @@ audio {
 
                                 // Update skor di UI
                                 $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
                                 let percentage = (correctCount / total) * 100;
                                 let scoreCircle = $(".score-circle");
                                 if (percentage >= 80) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
                                 } else if (percentage >= 60) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #f39c12, #e67e22)");
                                 } else {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
                                 }
 
                                 $("#resultsTableBody").html(tableRows);
@@ -2706,7 +2652,7 @@ audio {
                                 alert('Terjadi kesalahan: ' + response.message);
                             }
                         },
-                        error: function (xhr) {
+                        error: function(xhr) {
                             console.error(xhr.responseText);
                             alert('Terjadi kesalahan: ' + xhr.status);
                         }
@@ -2742,20 +2688,12 @@ audio {
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
                 );
-            });
 
-            document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
-                if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
-                }
             });
-
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
+            startCountdown(13 * 60);
         })();
     </script>
 
@@ -3068,7 +3006,8 @@ audio {
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest(
+                    '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -3276,210 +3215,352 @@ audio {
     </script>
 
     <script>
-/* ====== Audio tab controller (fixed stop-on-switch) ====== */
+        /* ====== Audio tab controller (fixed stop-on-switch) ====== */
 
-let currentAudio = null;
-let currentTimerId = null;
+        let currentAudio = null;
+        let currentTimerId = null;
 
-// format mm:ss
-function formatTime(sec){
-    sec = isNaN(sec) ? 0 : Math.floor(sec);
-    const m = Math.floor(sec/60);
-    const s = sec % 60;
-    return `${m}:${s < 10 ? '0' : ''}${s}`;
-}
-
-// reset UI for a panel's audio (progress+time)
-function resetPanelUI(panel) {
-    const prog = panel.querySelector(".timeline");
-    const cur = panel.querySelector(".current");
-    const dur = panel.querySelector(".duration");
-    if (prog) prog.value = 0;
-    if (cur) cur.textContent = "0:00";
-    if (dur) {
-        // leave duration as-is (if already loaded) or show 0:00
-        if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
-            dur.textContent = "0:00";
+        // format mm:ss
+        function formatTime(sec) {
+            sec = isNaN(sec) ? 0 : Math.floor(sec);
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
         }
-    }
-    // if you used a visual progress element instead of range, reset its width:
-    const visualProg = panel.querySelector(".seekbar-progress");
-    if (visualProg) visualProg.style.width = "0%";
-}
 
-// stop & reset current audio (completely)
-function stopCurrentAudio() {
-    if (!currentAudio) return;
+        // reset UI for a panel's audio (progress+time)
+        function resetPanelUI(panel) {
+            const prog = panel.querySelector(".timeline");
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            if (prog) prog.value = 0;
+            if (cur) cur.textContent = "0:00";
+            if (dur) {
+                // leave duration as-is (if already loaded) or show 0:00
+                if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
+                    dur.textContent = "0:00";
+                }
+            }
+            // if you used a visual progress element instead of range, reset its width:
+            const visualProg = panel.querySelector(".seekbar-progress");
+            if (visualProg) visualProg.style.width = "0%";
+        }
 
-    // pause & reset time
-    try {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    } catch (e) { /* ignore */ }
+        // stop & reset current audio (completely)
+        function stopCurrentAudio() {
+            if (!currentAudio) return;
 
-    // clear interval timer if any
-    if (currentTimerId) {
-        clearInterval(currentTimerId);
-        currentTimerId = null;
-    }
+            // pause & reset time
+            try {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            } catch (e) {
+                /* ignore */ }
 
-    // reset UI for the panel that had currentAudio
-    const panel = currentAudio.closest(".x-panel");
-    if (panel) resetPanelUI(panel);
-
-    // unset currentAudio reference
-    currentAudio = null;
-}
-
-// start timer to update UI every 1 second
-function startPanelTimer(audio, panel) {
-    // clear existing
-    if (currentTimerId) {
-        clearInterval(currentTimerId);
-        currentTimerId = null;
-    }
-
-    const prog = panel.querySelector(".timeline");
-    const cur = panel.querySelector(".current");
-    const dur = panel.querySelector(".duration");
-    const visualProg = panel.querySelector(".seekbar-progress");
-
-    currentTimerId = setInterval(() => {
-        if (!audio.duration || isNaN(audio.duration)) return;
-        const pct = (audio.currentTime / audio.duration) * 100;
-        if (prog) prog.value = pct;
-        if (visualProg) visualProg.style.width = pct + "%";
-        if (cur) cur.textContent = formatTime(audio.currentTime);
-        if (dur) dur.textContent = formatTime(audio.duration);
-    }, 1000);
-}
-
-// play audio for a panel (only if not already played)
-function playPanelAudio(panel) {
-    const audio = panel.querySelector("audio");
-    if (!audio) return;
-
-    // already played once? skip
-    if (audio.dataset.played === "yes") {
-        return;
-    }
-
-    // if another audio is playing -> stop it first
-    if (currentAudio && currentAudio !== audio) {
-        stopCurrentAudio();
-    }
-
-    // mark as current
-    currentAudio = audio;
-
-    // prepare UI duration if metadata already available
-    const durEl = panel.querySelector(".duration");
-    if (audio.duration && !isNaN(audio.duration) && durEl) {
-        durEl.textContent = formatTime(audio.duration);
-    }
-
-    // mute trick for autoplay compatibility
-    audio.muted = true;
-
-    // play
-    audio.play().then(() => {
-        // mark one-time-play
-        audio.dataset.played = "yes";
-
-        // unmute shortly after play to avoid autoplay block in some browsers
-        setTimeout(() => { try { audio.muted = false; } catch(e){} }, 150);
-
-        // update status UI by starting timer per-second
-        startPanelTimer(audio, panel);
-
-        // make sure ended handler resets UI/timer
-        audio.onended = () => {
-            // clear timer
+            // clear interval timer if any
             if (currentTimerId) {
                 clearInterval(currentTimerId);
                 currentTimerId = null;
             }
-            // finalize progress UI
-            const visualProg = panel.querySelector(".seekbar-progress");
-            if (visualProg) visualProg.style.width = "100%";
+
+            // reset UI for the panel that had currentAudio
+            const panel = currentAudio.closest(".x-panel");
+            if (panel) resetPanelUI(panel);
+
+            // unset currentAudio reference
+            currentAudio = null;
+        }
+
+        // start timer to update UI every 1 second
+        function startPanelTimer(audio, panel) {
+            // clear existing
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
+            }
+
+            const prog = panel.querySelector(".timeline");
             const cur = panel.querySelector(".current");
             const dur = panel.querySelector(".duration");
-            if (cur) cur.textContent = formatTime(audio.duration || 0);
-            if (dur) dur.textContent = formatTime(audio.duration || 0);
+            const visualProg = panel.querySelector(".seekbar-progress");
 
-            // mark played and unset currentAudio
-            audio.dataset.played = "yes";
-            currentAudio = null;
-        };
-
-    }).catch(err => {
-        // autoplay blocked — you may need user confirmation (modal)
-        console.warn("Autoplay blocked:", err);
-        // cleanup currentAudio reference if failed
-        currentAudio = null;
-    });
-
-    // prevent seeking by user (just in case)
-    audio.addEventListener("seeking", function() {
-        this.currentTime = this._lastTime || 0;
-    });
-    audio.addEventListener("timeupdate", function() {
-        this._lastTime = this.currentTime;
-    });
-}
-
-/* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
-document.querySelectorAll(".x-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-        // activate tab classes
-        document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
-        tab.classList.add("is-active");
-
-        // show corresponding panel
-        const id = tab.dataset.id;
-        const panelId = `panel-${id}`;
-        document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
-        const targetPanel = document.getElementById(panelId);
-        if (!targetPanel) return;
-        targetPanel.classList.add("active", "is-open");
-
-        // STOP any currently playing audio when switching to a different panel
-        // (this ensures audio always stops)
-        if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
-            stopCurrentAudio();
+            currentTimerId = setInterval(() => {
+                if (!audio.duration || isNaN(audio.duration)) return;
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (prog) prog.value = pct;
+                if (visualProg) visualProg.style.width = pct + "%";
+                if (cur) cur.textContent = formatTime(audio.currentTime);
+                if (dur) dur.textContent = formatTime(audio.duration);
+            }, 1000);
         }
 
-        // play audio on the newly opened panel (if it has one and not played yet)
-        const audio = targetPanel.querySelector("audio");
-        if (audio && audio.dataset.played !== "yes") {
-            playPanelAudio(targetPanel);
+        // play audio for a panel (only if not already played)
+        function playPanelAudio(panel) {
+            const audio = panel.querySelector("audio");
+            if (!audio) return;
+
+            // already played once? skip
+            if (audio.dataset.played === "yes") {
+                return;
+            }
+
+            // if another audio is playing -> stop it first
+            if (currentAudio && currentAudio !== audio) {
+                stopCurrentAudio();
+            }
+
+            // mark as current
+            currentAudio = audio;
+
+            // prepare UI duration if metadata already available
+            const durEl = panel.querySelector(".duration");
+            if (audio.duration && !isNaN(audio.duration) && durEl) {
+                durEl.textContent = formatTime(audio.duration);
+            }
+
+            // mute trick for autoplay compatibility
+            audio.muted = true;
+
+            // play
+            audio.play().then(() => {
+                // mark one-time-play
+                audio.dataset.played = "yes";
+
+                // unmute shortly after play to avoid autoplay block in some browsers
+                setTimeout(() => {
+                    try {
+                        audio.muted = false;
+                    } catch (e) {}
+                }, 150);
+
+                // update status UI by starting timer per-second
+                startPanelTimer(audio, panel);
+
+                // make sure ended handler resets UI/timer
+                audio.onended = () => {
+                    // clear timer
+                    if (currentTimerId) {
+                        clearInterval(currentTimerId);
+                        currentTimerId = null;
+                    }
+                    // finalize progress UI
+                    const visualProg = panel.querySelector(".seekbar-progress");
+                    if (visualProg) visualProg.style.width = "100%";
+                    const cur = panel.querySelector(".current");
+                    const dur = panel.querySelector(".duration");
+                    if (cur) cur.textContent = formatTime(audio.duration || 0);
+                    if (dur) dur.textContent = formatTime(audio.duration || 0);
+
+                    // mark played and unset currentAudio
+                    audio.dataset.played = "yes";
+                    currentAudio = null;
+                };
+
+            }).catch(err => {
+                // autoplay blocked — you may need user confirmation (modal)
+                console.warn("Autoplay blocked:", err);
+                // cleanup currentAudio reference if failed
+                currentAudio = null;
+            });
+
+            // prevent seeking by user (just in case)
+            audio.addEventListener("seeking", function() {
+                this.currentTime = this._lastTime || 0;
+            });
+            audio.addEventListener("timeupdate", function() {
+                this._lastTime = this.currentTime;
+            });
         }
-    });
-});
 
-/* ========== Initial modal confirm & autoplay first panel ========== */
-const modal = document.getElementById("confirmModal");
-const confirmBtn = document.getElementById("confirmYes");
+        /* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
+        document.querySelectorAll(".x-tab").forEach(tab => {
+            tab.addEventListener("click", () => {
+                // activate tab classes
+                document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
+                tab.classList.add("is-active");
 
-if (modal && confirmBtn) {
-    // show modal on load
-    window.addEventListener("load", () => {
-        modal.style.display = "flex";
-    });
-    confirmBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-        // play currently active panel
-        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-        if (firstPanel) playPanelAudio(firstPanel);
-    });
-} else {
-    // if no modal, autoplay first panel immediately (with mute trick)
-    window.addEventListener("load", () => {
-        const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-        if (firstPanel) playPanelAudio(firstPanel);
-    });
-}
-</script>
+                // show corresponding panel
+                const id = tab.dataset.id;
+                const panelId = `panel-${id}`;
+                document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
+                const targetPanel = document.getElementById(panelId);
+                if (!targetPanel) return;
+                targetPanel.classList.add("active", "is-open");
+
+                // STOP any currently playing audio when switching to a different panel
+                // (this ensures audio always stops)
+                if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
+                    stopCurrentAudio();
+                }
+
+                // play audio on the newly opened panel (if it has one and not played yet)
+                const audio = targetPanel.querySelector("audio");
+                if (audio && audio.dataset.played !== "yes") {
+                    playPanelAudio(targetPanel);
+                }
+            });
+        });
+
+        /* ========== Initial modal confirm & autoplay first panel ========== */
+        const modal = document.getElementById("confirmModal");
+        const confirmBtn = document.getElementById("confirmYes");
+
+        if (modal && confirmBtn) {
+            // show modal on load
+            window.addEventListener("load", () => {
+                modal.style.display = "flex";
+            });
+            confirmBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+                // play currently active panel
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        } else {
+            // if no modal, autoplay first panel immediately (with mute trick)
+            window.addEventListener("load", () => {
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        }
+    </script>
+
+    <script>
+        document.getElementById('doneBtn').addEventListener('click', function() {
+            const confirmFinish = confirm('Do you want to end the test now?');
+            if (confirmFinish) {
+                let results = [];
+                stopCurrentAudio();
+                $('.q-item, .q-list').each(function() {
+                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
+                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+
+                    const type = $(this).data('type');
+                    const qnum = $(this).data('q');
+
+                    if (typeof type === 'undefined') return;
+
+                    let name = null;
+                    let answer = null;
+
+                    switch (type) {
+                        case 'tfng':
+                        case 'oc':
+                        case 'ynng':
+                            const checked = $(this).find('input[type="radio"]:checked');
+                            if (checked.length > 0) {
+                                name = checked.attr('name');
+                                answer = checked.val();
+                            } else {
+                                const anyRadio = $(this).find('input[type="radio"]').first();
+                                if (anyRadio.length > 0) name = anyRadio.attr('name');
+                            }
+                            break;
+
+                        case 'sa':
+                        case 'tc':
+                        case 'nc':
+                            const input = $(this).find('input[type="text"]');
+                            if (input.length > 0) {
+                                name = input.attr('name');
+                                answer = input.val();
+                            }
+                            break;
+
+                        case 'mh':
+                        case 'mse':
+                            const select = $(this).find('select');
+                            if (select.length > 0) {
+                                name = select.attr('name');
+                                answer = select.val();
+                            }
+                            break;
+                    }
+
+                    results.push({
+                        type: type,
+                        name: name,
+                        answer: answer || null,
+                        question: qnum || null
+                    });
+                });
+
+                $.ajax({
+                    url: '/ielts/mock-test/check',
+                    type: 'POST',
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        kategori: 'listening',
+                        answers: results,
+                        tipe_test: 'mock'
+                    },
+                    success: function(response) {
+                        console.log(response);
+
+                        if (response.status === 'ok') {
+                            let correctCount = 0;
+                            let total = Object.keys(response.results).length;
+                            let tableRows = '';
+                            let questionNumber = 1;
+
+                            $.each(response.results, function(key, data) {
+                                let isCorrect = data.status === 'correct';
+                                if (isCorrect) correctCount++;
+
+                                let correctAnswer = data.correct || '';
+                                let userAnswer = data.user || '';
+                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                tableRows += `
+                                        <tr>
+                                            <td><strong>${questionNumber++}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+                            });
+
+                            // Update skor di UI
+                            $("#scoreDisplay").text(`${correctCount}/${total}`);
+                            $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                            let percentage = (correctCount / total) * 100;
+                            let scoreCircle = $(".score-circle");
+                            if (percentage >= 80) {
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
+                            } else if (percentage >= 60) {
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #f39c12, #e67e22)");
+                            } else {
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
+                            }
+
+                            $("#resultsTableBody").html(tableRows);
+
+                            // tampilkan modal hasil
+                            showModal(`Score: ${correctCount} / ${total}`);
+                        } else {
+                            alert('Terjadi kesalahan: ' + response.message);
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan: ' + xhr.status);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

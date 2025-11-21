@@ -36,7 +36,7 @@
             z-index: 50;
             background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -1538,7 +1538,7 @@
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1550,7 +1550,7 @@
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                    <span class="label">Close</span>
                 </button>
             </div>
         </div>
@@ -2216,7 +2216,7 @@
                                     <button class="start-btn" data-start="270" type="button">Start from here</button>
                                 </div>
                             </div>
-                    </fieldset>
+                        </fieldset>
 
                         <fieldset class="q-item">
                             <p>Complete the notes below.</p>
@@ -2458,7 +2458,7 @@
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        <small id="scorePercentage">0%</small>
+                        {{-- <small id="scorePercentage">0</small> --}}
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -2492,6 +2492,35 @@
 
     <!-- script bagian audio player -->
     <script>
+        let scoreMap = [
+            {min: 39, max: 40, score: 9.0},
+            {min: 37, max: 38, score: 8.5},
+            {min: 35, max: 36, score: 8.0},
+            {min: 33, max: 34, score: 7.5},
+            {min: 30, max: 32, score: 7.0},
+            {min: 27, max: 29, score: 6.5},
+            {min: 23, max: 26, score: 6.0},
+            {min: 19, max: 22, score: 5.5},
+            {min: 15, max: 18, score: 5.0},
+            {min: 13, max: 14, score: 4.5},
+            {min: 10, max: 12, score: 4.0},
+            {min: 8,  max: 9,  score: 3.5},
+            {min: 6,  max: 7,  score: 3.0},
+            {min: 4,  max: 5,  score: 2.5}
+        ];
+
+        function convertScore(correctCount) {
+            for (let row of scoreMap) {
+                if (correctCount >= row.min && correctCount <= row.max) {
+                    return row.score;
+                }
+            }
+            return 0; // jika kurang dari 4 benar
+        }
+    </script>
+
+
+    {{-- <script>
         (function setupAudioPlayers() {
             const players = document.querySelectorAll('.audio-player');
 
@@ -2584,7 +2613,7 @@
                 });
             });
         })();
-    </script>
+    </script> --}}
 
     <script>
         (function() {
@@ -2592,15 +2621,14 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit test'
                 );
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
+                const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
+                    window.history.back();
                 }
             });
         })();
@@ -3193,19 +3221,20 @@
         }
 
         function retryQuiz() {
-            closeModal();
+            // closeModal();
 
-            $("input[type=radio]").prop("checked", false);
-            $('input[type="checkbox"]').prop('checked', false);
-            $('input[type="text"]').val('');
-            $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            $("#resultsTableBody").empty();
-            $("#scoreDisplay").text("0/0");
-            $("#scorePercentage").text("0%");
+            // $("input[type=radio]").prop("checked", false);
+            // $('input[type="checkbox"]').prop('checked', false);
+            // $('input[type="text"]').val('');
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // // $("#scorePercentage").text("0");
 
-            setTimeout(function () {
-                $('html, body').scrollTop($("#form-tfng").offset().top);
-            }, 350);
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($(".qa-body").offset().top);
+            // }, 350);
+            location.reload();
         }
 
         $(document).on("click", ".modal-close, .btn-secondary", function() {
@@ -3227,7 +3256,7 @@
         function submitHelper(form, setId, tipe) {
             let allAnswered = true;
 
-            $(`#${form} fieldset[data-q]`).each(function () {
+            $(`#${form}`).each(function () {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
@@ -3273,7 +3302,7 @@
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
 
-                        let correctCount = 0;
+                        let correctCount = response.score;
                         let total = Object.keys(response.results).length;
                         let tableRows = "";
                         let questionNumber = 1;
@@ -3330,7 +3359,7 @@
 
 
                         $("#scoreDisplay").text(`${correctCount}/${total}`);
-                        $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
                         let percentage = (correctCount / total) * 100;
                         let scoreCircle = $(".score-circle");

@@ -136,15 +136,6 @@ perbaiki semua error
 urutan tab ikutin dari card di ielts (done)
 tombol lompat video sesuai soal (dipotong) (tinggal implementasi) (done)
 mock test audio langsung play dan sekali aja (done)
-
-note : 
-speaking dan writing sistem koreksinya oleh satu tutor dan begitu seleai tutor lain tdak bisa koreksi lagi
-speaking setelah video call, video otomatis tersimpan
-usahakan sharescreen
-kalo bisa di speaking ada video auto play lalu auto record
-
-
-gampang
 untuk speaking upload audio di hapus (done)
 auto correct dihilangkan (done)
 count caracter di ganti jadi count word (done)
@@ -156,7 +147,15 @@ mock test wajib pakai instruksi sebelum melakukan test (done)
 practice tidak pakai wakti (done)
 mock test pakai waktu  (done)
 setelah selesaiu mock test, tamabahkan popup hasil (done)
+
+note : 
+speaking dan writing sistem koreksinya oleh satu tutor dan begitu seleai tutor lain tdak bisa koreksi lagi
+speaking setelah video call, video otomatis tersimpan
+usahakan sharescreen
+kalo bisa di speaking ada video auto play lalu auto record
 layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa saja yuang sudah dia kerjakan
+
+gampang
 
 
 
@@ -166,3 +165,55 @@ layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa 
 tekan tombol start from here => jalan dari menit yang ditentukan
 kalai tekan tombol play, start from here pause
 kalau tekan tab, start from here dan play di pause
+
+
+
+
+
+
+Description: [P:]USB Mass Storage Device(ChipsBnk Flash Disk)
+Device Type:        Mass Storage Device
+
+Protocal Version: USB 2.00
+Current Speed: High Speed
+Max Current: 100mA
+
+USB Device ID: VID = 1E3D PID = 198A
+
+Device Revision: 0100
+
+Manufacturer: ChipsBnk
+Product Model: Flash Disk
+Product Revision: 5.00
+
+Controller Vendor: ChipsBank
+Controller Part-Number: CBM2199E - [2021-05-12]
+
+Tools on web:       http://dl.mydigit.net/special/up/chipsbank.html
+
+
+
+
+Timer di all sections (yang mock tests) cuma 13 menit, jadi pas masih kerjakan soal2 nya tiba2 lsg closed dan keluar hasil.. (done)
+untuk pop-up text nya, tlg di ganti ke English saja: Do you want to end the test now? (done)
+Penomoran di Mock Test IELTS Reading Cambridge 10 Test 1 ada yang belum sesuai.. (done)
+Di mock Test IELTS Listening Cambridge 10 Test 1, tombol nya tertumpuk.. (done)
+Untuk di Writing Section (mock test), tombol submit nya dihilangkan saja, karena di pojok kanan juga sudah ada.. (done)
+ini kemarin request dari sir Dave, untuk logo nya apakah possible di gedein lagi? (done)
+
+Untuk result nya, bagaian percentage nya diganti dengan band score saja (dari nilai 0.0 - 9.0).. (done)
+
+untuk pengecekan jawaban, beberapa jawaban yang benar, disalahkan oleh system nya..
+jadi untuk kunci jawaban yang ada pilihan nya seperti ini, kalau students menjawab:
+- verandas = benar
+- verandahs = benar (done)
+
+Di Mock Test IELTS Cambridge Listening 10 Test 1, nomor 11 dan 12 tidak bisa di klik..
+
+
+
+
+
+
+
+

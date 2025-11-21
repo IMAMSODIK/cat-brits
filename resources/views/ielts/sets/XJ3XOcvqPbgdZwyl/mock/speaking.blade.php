@@ -35,7 +35,7 @@
             z-index: 50;
             background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -452,7 +452,7 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                 </div>
             </div>
 
@@ -461,15 +461,15 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                {{-- <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeText">00:00</span>
-                </div>
+                </div> --}}
 
-                <button id="doneBtn" class="btn btn-danger">
+                {{-- <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
-                </button>
+                    <span class="label">Finish</span>
+                </button> --}}
             </div>
         </div>
     </header>
@@ -580,7 +580,7 @@
         </div>
     </section>
 
-    <script>
+    {{-- <script>
         (function() {
             let remaining = 0;
             let t = null;
@@ -648,7 +648,7 @@
             // Mulai countdown (contoh: 15 menit)
             startCountdown(15 * 60);
         })();
-    </script>
+    </script> --}}
 
     <!-- script bagian part soal -->
     <script>

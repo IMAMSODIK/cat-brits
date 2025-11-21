@@ -35,7 +35,7 @@
             z-index: 50;
             background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -1335,7 +1335,7 @@
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1347,7 +1347,7 @@
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                    <span class="label">Close</span>
                 </button>
             </div>
         </div>
@@ -1506,15 +1506,14 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
                 );
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
+                const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
+                    window.history.back();
                 }
             });
         })();

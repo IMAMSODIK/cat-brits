@@ -36,7 +36,7 @@
             z-index: 50;
             background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -1498,7 +1498,7 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                 </div>
             </div>
 
@@ -2886,7 +2886,7 @@
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        <small id="scorePercentage">0%</small>
+                        <small id="scorePercentage">0</small>
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -2919,6 +2919,35 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        let scoreMap = [
+            {min: 39, max: 40, score: 9.0},
+            {min: 37, max: 38, score: 8.5},
+            {min: 35, max: 36, score: 8.0},
+            {min: 33, max: 34, score: 7.5},
+            {min: 30, max: 32, score: 7.0},
+            {min: 27, max: 29, score: 6.5},
+            {min: 23, max: 26, score: 6.0},
+            {min: 19, max: 22, score: 5.5},
+            {min: 15, max: 18, score: 5.0},
+            {min: 13, max: 14, score: 4.5},
+            {min: 10, max: 12, score: 4.0},
+            {min: 8,  max: 9,  score: 3.5},
+            {min: 6,  max: 7,  score: 3.0},
+            {min: 4,  max: 5,  score: 2.5}
+        ];
+
+        function convertScore(correctCount) {
+            for (let row of scoreMap) {
+                if (correctCount >= row.min && correctCount <= row.max) {
+                    return row.score;
+                }
+            }
+            return 0; // jika kurang dari 4 benar
+        }
+    </script>
+
     <script>
 
         function showModal(title = "Hasil Jawaban Anda") {
@@ -2971,135 +3000,7 @@
 
         $(document).ready(function () {
             $("#resultModal").removeClass("show").hide();
-                $('.floating-btn').on('click', function () {
-
-                    let results = [];
-
-                    $('.q-item').each(function () {
-                        const type = $(this).data('type'); 
-                        const qnum = $(this).data('q');
-
-                        if (typeof type === 'undefined') return;
-
-                        let name = null;
-                        let answer = null;
-
-                        switch (type) {
-                            case 'tfng':
-                            case 'oc':
-                            case 'ynng':
-                                const checked = $(this).find('input[type="radio"]:checked');
-                                if (checked.length > 0) {
-                                    name = checked.attr('name');
-                                    answer = checked.val();
-                                } else {
-                                    // fallback jika belum dipilih
-                                    const anyRadio = $(this).find('input[type="radio"]').first();
-                                    if (anyRadio.length > 0) {
-                                        name = anyRadio.attr('name');
-                                    }
-                                }
-                                break;
-
-                            case 'sa':
-                            case 'tc':
-                                const input = $(this).find('input[type="text"]');
-                                if (input.length > 0) {
-                                    name = input.attr('name');
-                                    answer = input.val();
-                                }
-                                break;
-
-                            case 'mh':
-                            case 'mse':
-                                const select = $(this).find('select');
-                                if (select.length > 0) {
-                                    name = select.attr('name');
-                                    answer = select.val();
-                                }
-                                break;
-                        }
-
-                        results.push({
-                            type: type,
-                            name: name,
-                            answer: answer || null,
-                            question: qnum || null
-                        });
-                    });
-
-                    $.ajax({
-                        url: '/ielts/mock-test/check',
-                        type: 'POST',
-                        data: {
-                            _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'XJ3XOcvqPbgdZwyl',
-                            kategori: 'reading',
-                            answers: results,
-                            tipe_test: 'practice'
-                        },
-                        success: function (response) {
-                            console.log(response);
-
-                            if (response.status === 'ok') {
-                                let correctCount = 0;
-                                let total = Object.keys(response.results).length;
-                                let tableRows = '';
-                                let questionNumber = 1;
-
-                                $.each(response.results, function (key, data) {
-                                    let isCorrect = data.status === 'correct';
-                                    if (isCorrect) correctCount++;
-
-                                    let correctAnswer = data.correct || '';
-                                    let userAnswer = data.user || '';
-                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
-
-                                    tableRows += `
-                                        <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-                                });
-
-                                // Update skor di UI
-                                $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
-
-                                let percentage = (correctCount / total) * 100;
-                                let scoreCircle = $(".score-circle");
-                                if (percentage >= 80) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                                } else if (percentage >= 60) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                                } else {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                                }
-
-                                $("#resultsTableBody").html(tableRows);
-
-                                // tampilkan modal hasil
-                                showModal(`Score: ${correctCount} / ${total}`);
-                            } else {
-                                alert('Terjadi kesalahan: ' + response.message);
-                            }
-                        },
-                        error: function (xhr) {
-                            console.error(xhr.responseText);
-                            alert('Terjadi kesalahan: ' + xhr.status);
-                        }
-                    });
-                });
-            });
+        });
     </script>
 
     <script>
@@ -3194,8 +3095,6 @@
                             tipe_test: 'practice'
                         },
                         success: function (response) {
-                            console.log(response);
-
                             if (response.status === 'ok') {
                                 let correctCount = 0;
                                 let total = Object.keys(response.results).length;
@@ -3228,7 +3127,7 @@
 
                                 // Update skor di UI
                                 $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                $("#scorePercentage").text(`${Math.round((correctCount/total)*100)}%`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
                                 let percentage = (correctCount / total) * 100;
                                 let scoreCircle = $(".score-circle");
@@ -3283,20 +3182,144 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
                 );
+
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
+                const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
+                    let results = [];
+
+                    $('.q-item').each(function () {
+                        const type = $(this).data('type'); 
+                        const qnum = $(this).data('q');
+
+                        if (typeof type === 'undefined') return;
+
+                        let name = null;
+                        let answer = null;
+
+                        switch (type) {
+                            case 'tfng':
+                            case 'oc':
+                            case 'ynng':
+                                const checked = $(this).find('input[type="radio"]:checked');
+                                if (checked.length > 0) {
+                                    name = checked.attr('name');
+                                    answer = checked.val();
+                                } else {
+                                    // fallback jika belum dipilih
+                                    const anyRadio = $(this).find('input[type="radio"]').first();
+                                    if (anyRadio.length > 0) {
+                                        name = anyRadio.attr('name');
+                                    }
+                                }
+                                break;
+
+                            case 'sa':
+                            case 'tc':
+                                const input = $(this).find('input[type="text"]');
+                                if (input.length > 0) {
+                                    name = input.attr('name');
+                                    answer = input.val();
+                                }
+                                break;
+
+                            case 'mh':
+                            case 'mse':
+                                const select = $(this).find('select');
+                                if (select.length > 0) {
+                                    name = select.attr('name');
+                                    answer = select.val();
+                                }
+                                break;
+                        }
+
+                        results.push({
+                            type: type,
+                            name: name,
+                            answer: answer || null,
+                            question: qnum || null
+                        });
+                    });
+
+                    $.ajax({
+                        url: '/ielts/mock-test/check',
+                        type: 'POST',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            set_id: 'XJ3XOcvqPbgdZwyl',
+                            kategori: 'reading',
+                            answers: results,
+                            tipe_test: 'practice'
+                        },
+                        success: function (response) {
+                            console.log(response);
+
+                            if (response.status === 'ok') {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+                                let questionNumber = 1;
+
+                                $.each(response.results, function (key, data) {
+                                    let isCorrect = data.status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    let correctAnswer = data.correct || '';
+                                    let userAnswer = data.user || '';
+                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${questionNumber++}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+                                });
+
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan: ' + xhr.status);
+                        }
+                    });
                 }
             });
 
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
+            startCountdown(13 * 60);
         })();
     </script>
 

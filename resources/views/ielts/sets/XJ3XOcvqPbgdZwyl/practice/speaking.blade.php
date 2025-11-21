@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -30,9 +31,12 @@
         }
 
         button {
-            align-items: center;     /* sejajarkan ikon dan teks di tengah vertikal */
-            justify-content: center; /* pusatkan isi tombol */
-            gap: 8px;                /* jarak antara ikon dan teks */
+            align-items: center;
+            /* sejajarkan ikon dan teks di tengah vertikal */
+            justify-content: center;
+            /* pusatkan isi tombol */
+            gap: 8px;
+            /* jarak antara ikon dan teks */
             padding: 10px 20px;
             border: none;
             border-radius: 8px;
@@ -47,7 +51,7 @@
             z-index: 50;
             background: #4274BA;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -762,6 +766,7 @@
         }
 
         @media (max-width: 480px) {
+
             .video-controls button,
             .recorder-controls button {
                 padding: 8px 16px;
@@ -791,11 +796,13 @@
             width: fit-content;
             margin: 20px auto;
         }
+
         .recorded-video h4 {
             color: #4274BA;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
+
         .recorded-video video {
             width: 100%;
             max-width: 500px;
@@ -812,7 +819,8 @@
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 50px;margin-left: 20px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -829,7 +837,7 @@
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Selesai</span>
+                    <span class="label">Close</span>
                 </button>
             </div>
         </div>
@@ -881,23 +889,27 @@
                                         <h3>Instruction Video</h3>
                                         <div class="video-wrapper">
                                             <div class="video-placeholder">
-                                                <video id="myVideo">
-                                                    <source src="{{asset('own_assets/videos/XJ3XOcvqPbgdZwyl-1.mp4')}}" type="video/mp4">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/XJ3XOcvqPbgdZwyl-1.mp4') }}"
+                                                        type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
                                             </div>
                                         </div>
                                         <div class="video-controls">
                                             <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
-                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i> Pause</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
                                         </div>
                                     </div>
+
 
                                     <div class="recorder-container">
                                         <h3>Answer Recorder</h3>
                                         <div class="recorder-wrapper">
                                             <div class="recorder-placeholder">
-                                                <video id="preview" autoplay muted playsinline></video>
+                                                <video class="preview-video" autoplay muted playsinline></video>
                                                 <div class="recorder-placeholder">
                                                     <i class="fas fa-video"></i>
                                                     <p>Camera Preview</p>
@@ -905,23 +917,27 @@
                                             </div>
                                         </div>
                                         <div class="recorder-controls">
-                                            <button class="record-btn"><i class="fas fa-video"></i> Start Recording</button>
-                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i> Stop</button>
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
                                         </div>
                                         <div class="recording-indicator">
                                             <div class="recording-dot"></div>
                                             <span>Recording in progress...</span>
                                         </div>
-                                        <div class="timer">00:00</div>
+                                        <div class="timer" data-timer>00:00</div>
+
 
                                         <div class="recorded-video" style="display:none; margin-top:15px;">
                                             <h4>Recorded Video:</h4>
-                                            <video id="recordedVideo" controls></video>
+                                            <video class="recorded-video-element" controls></video>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="sq-submit">
                             <button class="sq-submit-btn">Submit</button>
@@ -1038,7 +1054,8 @@
                             <button class="sq-prev" disabled>Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 1:</b> <br>What skills and abilities do people most want to have today? Why
+                        <div class="sq-text"><b>Question 1:</b> <br>What skills and abilities do people most want to
+                            have today? Why
                         </div>
                     </div>
 
@@ -1057,7 +1074,8 @@
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 2:</b> <br>Which skills should children learn at school? Are there any skills which they should learn at home? What are they?
+                        <div class="sq-text"><b>Question 2:</b> <br>Which skills should children learn at school? Are
+                            there any skills which they should learn at home? What are they?
                             [Why?]
                         </div>
                     </div>
@@ -1077,7 +1095,8 @@
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 3:</b> <br>Which skills do you think will be important in the future? Why?</div>
+                        <div class="sq-text"><b>Question 3:</b> <br>Which skills do you think will be important in the
+                            future? Why?</div>
                     </div>
 
                     <div class="sq-actions">
@@ -1095,7 +1114,8 @@
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Which kinds of jobs have the highest salaries in your country? Why is this?</div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Which kinds of jobs have the highest salaries in
+                            your country? Why is this?</div>
                     </div>
 
                     <div class="sq-actions">
@@ -1113,7 +1133,8 @@
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Are there any other jobs that you think should have high salaries? Why do you think that?</div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Are there any other jobs that you think should have
+                            high salaries? Why do you think that?</div>
                     </div>
 
                     <div class="sq-actions">
@@ -1131,7 +1152,8 @@
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next" disabled>Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Some people say it would be better for society if everyone got the same salary. What do you think about that? Why?</div>
+                        <div class="sq-text"><b>Question 4:</b> <br>Some people say it would be better for society if
+                            everyone got the same salary. What do you think about that? Why?</div>
                     </div>
 
                     <div class="sq-actions">
@@ -1145,6 +1167,8 @@
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
         (function() {
@@ -1199,15 +1223,15 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
                 );
+
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
+                const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
+                    window.history.back();
                 }
             });
 
@@ -1432,103 +1456,312 @@
     </script>
 
     <script>
-        const video = document.getElementById('myVideo');
-        const playBtn = document.querySelector('.play-btn');
-        const pauseBtn = document.querySelector('.pause-btn');
+        (function() {
 
-        playBtn.addEventListener('click', function () {
-            video.play();
-            playBtn.disabled = true;
-            pauseBtn.disabled = false;
-        });
+            const hasMediaDevices = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+            const hasMediaRecorder = typeof MediaRecorder !== "undefined";
 
-        pauseBtn.addEventListener('click', function () {
-            video.pause();
-            playBtn.disabled = false;
-            pauseBtn.disabled = true;
-        });
-
-        // Jika video selesai otomatis reset tombol
-        video.addEventListener('ended', function () {
-            playBtn.disabled = false;
-            pauseBtn.disabled = true;
-        });
-
-        const recordBtn = document.querySelector('.record-btn');
-        const stopBtn = document.querySelector('.stop-btn');
-        const indicator = document.querySelector('.recording-indicator');
-        const timerDisplay = document.querySelector('.timer');
-        const preview = document.getElementById('preview');
-        const recordedVideo = document.getElementById('recordedVideo');
-        const recordedContainer = document.querySelector('.recorded-video');
-
-        let mediaRecorder;
-        let recordedChunks = [];
-        let timerInterval;
-        let seconds = 0;
-        let currentStream = null;
-
-        async function initCamera() {
-            try {
-                currentStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-                preview.srcObject = currentStream;
-                return currentStream;
-            } catch (err) {
-                alert('Camera or microphone access denied.');
-                console.error(err);
-            }
-        }
-
-        function stopCamera() {
-            if (currentStream) {
-                currentStream.getTracks().forEach(track => track.stop());
-                preview.srcObject = null;
-            }
-        }
-
-        recordBtn.addEventListener('click', async () => {
-            const stream = await initCamera();
-            recordedChunks = [];
-            mediaRecorder = new MediaRecorder(stream);
-
-            mediaRecorder.ondataavailable = event => {
-                if (event.data.size > 0) recordedChunks.push(event.data);
-            };
-
-            mediaRecorder.onstop = () => {
-                const blob = new Blob(recordedChunks, { type: 'video/webm' });
-                const url = URL.createObjectURL(blob);
-                recordedVideo.src = url;
-                recordedContainer.style.display = 'block';
-                stopCamera(); // 🔥 Kamera langsung dimatikan di sini juga
-            };
-
-            mediaRecorder.start();
-            recordBtn.disabled = true;
-            stopBtn.disabled = false;
-            indicator.classList.add('active');
-
-            // Timer start
-            seconds = 0;
-            timerInterval = setInterval(() => {
-                seconds++;
-                const min = Math.floor(seconds / 60);
-                const sec = seconds % 60;
-                timerDisplay.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-            }, 1000);
-        });
-
-        stopBtn.addEventListener('click', () => {
-            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-                mediaRecorder.stop();
+            // simple beep
+            function playBeep() {
+                const audioCtx = new AudioContext();
+                const oscillator = audioCtx.createOscillator();
+                oscillator.type = "sine";
+                oscillator.frequency.value = 900;
+                oscillator.connect(audioCtx.destination);
+                oscillator.start();
+                setTimeout(() => oscillator.stop(), 200);
             }
 
-            recordBtn.disabled = false;
-            stopBtn.disabled = true;
-            indicator.classList.remove('active');
-            clearInterval(timerInterval);
-        });
+            document.querySelectorAll(".speaking-question").forEach(container => {
+
+                /* ------------------------------
+                   VIDEO PLAYER
+                ------------------------------ */
+                const instructionVideo = container.querySelector('.video-player video');
+                const playBtn = container.querySelector(".play-btn");
+                const pauseBtn = container.querySelector(".pause-btn");
+
+                if (playBtn && pauseBtn && instructionVideo) {
+                    playBtn.addEventListener("click", () => {
+                        instructionVideo.play();
+                        playBtn.disabled = true;
+                        pauseBtn.disabled = false;
+                    });
+
+                    pauseBtn.addEventListener("click", () => {
+                        instructionVideo.pause();
+                        playBtn.disabled = false;
+                        pauseBtn.disabled = true;
+                    });
+
+                    instructionVideo.addEventListener("ended", () => {
+                        playBtn.disabled = false;
+                        pauseBtn.disabled = true;
+                    });
+                }
+
+
+                /* ------------------------------
+                   RECORDER ELEMENTS
+                ------------------------------ */
+                const preview = container.querySelector(".preview-video");
+                const recordBtn = container.querySelector(".record-btn");
+                const stopBtn = container.querySelector(".stop-btn");
+                const indicator = container.querySelector(".recording-indicator");
+                const timerDisplay = container.querySelector(".timer");
+                const recordedVideo = container.querySelector(".recorded-video-element");
+                const recordedContainer = container.querySelector(".recorded-video");
+
+                const warningBox = document.createElement("div");
+                warningBox.style.color = "red";
+                warningBox.style.fontWeight = "bold";
+                warningBox.style.marginTop = "5px";
+                warningBox.style.display = "none";
+                warningBox.textContent = "";
+                container.querySelector(".recorder-container").appendChild(warningBox);
+
+
+                /* ------------------------------
+                   STATE
+                ------------------------------ */
+                let mediaRecorder = null;
+                let currentStream = null;
+                let recordedChunks = [];
+                let timerInterval = null;
+                let seconds = 0;
+                let isRecording = false;
+
+                const MAX_RECORD_SECONDS = 10; // change freely
+
+
+                /* ------------------------------
+                   TIMER
+                ------------------------------ */
+                function resetTimer() {
+                    seconds = 0;
+                    timerDisplay.textContent = "00:00";
+                    timerDisplay.style.color = "#000";
+                    warningBox.style.display = "none";
+                }
+
+                function startTimer() {
+                    resetTimer();
+
+                    timerInterval = setInterval(() => {
+                        seconds++;
+
+                        const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+                        const s = String(seconds % 60).padStart(2, "0");
+                        timerDisplay.textContent = `${m}:${s}`;
+
+                        const remaining = MAX_RECORD_SECONDS - seconds;
+
+                        // last 10 seconds → turn red + show warning text
+                        if (remaining <= 10) {
+                            timerDisplay.style.color = "red";
+                            warningBox.style.display = "block";
+                            warningBox.textContent =
+                            `Recording will auto-stop in ${remaining} seconds…`;
+                        }
+
+                        // last 3 seconds → beep
+                        if (remaining <= 3 && remaining > 0) {
+                            playBeep();
+                        }
+
+                        // auto-stop
+                        if (seconds >= MAX_RECORD_SECONDS) {
+                            stopRecordingFlow();
+                        }
+
+                    }, 1000);
+                }
+
+                function stopTimer() {
+                    if (timerInterval) clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+
+
+                /* ------------------------------
+                   CAMERA
+                ------------------------------ */
+                async function initCamera() {
+                    if (!hasMediaDevices) throw new Error("Media devices not supported.");
+
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: true,
+                        audio: true
+                    });
+                    preview.srcObject = stream;
+                    currentStream = stream;
+                    return stream;
+                }
+
+                function stopCamera() {
+                    if (!currentStream) return;
+                    currentStream.getTracks().forEach(t => t.stop());
+                    currentStream = null;
+                    preview.srcObject = null;
+                }
+
+
+                /* ------------------------------
+                   START RECORDING
+                ------------------------------ */
+                async function startRecordingFlow() {
+                    if (isRecording) return;
+
+                    try {
+                        const stream = await initCamera();
+                        recordedChunks = [];
+
+                        let options = {};
+                        if (MediaRecorder.isTypeSupported("video/webm;codecs=vp8,opus")) {
+                            options.mimeType = "video/webm;codecs=vp8,opus";
+                        }
+
+                        mediaRecorder = new MediaRecorder(stream, options);
+
+                        mediaRecorder.ondataavailable = e => {
+                            if (e.data.size > 0) recordedChunks.push(e.data);
+                        };
+
+                        mediaRecorder.onstop = () => {
+                            const blob = new Blob(recordedChunks, {
+                                type: "video/webm"
+                            });
+                            const url = URL.createObjectURL(blob);
+                            recordedVideo.src = url;
+                            recordedContainer.style.display = "block";
+
+                            stopCamera();
+                            isRecording = false;
+                        };
+
+                        mediaRecorder.start();
+                        isRecording = true;
+
+                        recordBtn.disabled = true;
+                        stopBtn.disabled = false;
+                        indicator.classList.add("active");
+
+                        startTimer();
+                    } catch (err) {
+                        console.error("Start recording failed:", err);
+                        alert("Failed to start recording.");
+                    }
+                }
+
+
+                /* ------------------------------
+                   STOP RECORDING
+                ------------------------------ */
+                function stopRecordingFlow() {
+                    if (!isRecording) return;
+
+                    try {
+                        if (mediaRecorder && mediaRecorder.state !== "inactive") {
+                            mediaRecorder.stop();
+                        }
+                    } catch (e) {
+                        console.error("Stopping error:", e);
+                    }
+
+                    recordBtn.disabled = false;
+                    stopBtn.disabled = true;
+                    indicator.classList.remove("active");
+
+                    stopTimer();
+                    resetTimer();
+                }
+
+
+                /* ------------------------------
+                   EVENTS
+                ------------------------------ */
+                recordBtn.addEventListener("click", () => startRecordingFlow());
+                stopBtn.addEventListener("click", () => stopRecordingFlow());
+                stopBtn.disabled = true;
+
+            });
+
+        })();
     </script>
+
+    <script>
+$(function () {
+
+    $(".speaking-question").each(function () {
+
+        const block = $(this);
+        const submitBtn = block.find(".sq-submit-btn");
+        const recordedVideoElement = block.find(".recorded-video-element");
+
+        submitBtn.on("click", function () {
+
+            // cek apakah video pernah direkam
+            const videoEl = recordedVideoElement.get(0);
+
+            if (!videoEl || !videoEl.src) {
+                alert("Please record a video first before submitting.");
+                return;
+            }
+
+            const videoURL = videoEl.src;
+
+            // ambil blob dari objectURL browser
+            fetch(videoURL)
+                .then(r => r.blob())
+                .then(blob => {
+
+                    const formData = new FormData();
+
+                    // filename unik
+                    const filename =
+                        `recording_q${block.data("q") || ""}_${Date.now()}.webm`;
+
+                    formData.append("video", blob, filename);
+                    formData.append("question_id", block.data("q") || "");
+                    formData.append("timestamp", Date.now());
+                    formData.append("set_id", "XJ3XOcvqPbgdZwyl");
+                    formData.append("tipe", "speaking");
+                    formData.append("kategori", "speaking");
+                    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+
+                    console.log("Submitting video:", filename, blob);
+
+                    $.ajax({
+                        url: "/ielts/practice/check",
+                        method: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (res) {
+                            alert("Video submitted successfully!");
+                            console.log("Server response:", res);
+                        },
+                        error: function (xhr) {
+                            console.error("Upload error:", xhr);
+                            alert("Failed to submit the video.");
+                        }
+                    });
+
+                })
+                .catch(err => {
+                    console.error("Blob convert error:", err);
+                    alert("Unable to process the recorded video.");
+                });
+
+        });
+
+    });
+
+});
+</script>
+
+
+
 </body>
 
 </html>

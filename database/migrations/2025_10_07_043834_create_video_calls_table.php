@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('murid_id');
             $table->dateTime('scheduled_at');
             $table->integer('duration_minutes')->default(60);
-            $table->string('status')->default('pending'); // pending, approved, rejected, completed
+            $table->string('status')->default('pending');
             $table->string('room_url')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();
