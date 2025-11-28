@@ -7,6 +7,7 @@ use App\Models\SetSoal;
 use App\Models\Soal;
 use App\Models\TestDetailHistory;
 use App\Models\TestHistory;
+use App\Models\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -81,33 +82,41 @@ class IeltsController extends Controller
         try {
             $setId = $r->input('set_id');
             $tipe = $r->input('tipe');
-            $kategori = "$r->input('kategori')";
+            $kategori = $r->input('kategori');
 
             if ($kategori == 'speaking') {
                 $r->validate([
-                    'video' => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800', // 200MB
+                    'video' => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800',
                     'question_id' => 'nullable|string',
                     'timestamp' => 'nullable'
                 ]);
 
-                // generate unique filename
-                $questionId = $r->input('question_id', 'unknown');
-                $filename = 'recording_q' . $questionId . '_' . time() . '.webm';
+                $questionId = $r->input('question_id', null);
+                $part = $r->input('part', null);
+                $filename = 'recording_q-' . $setId . '-' . $questionId . '_' . time() . '.webm';
+                $path = $r->file('video')->storeAs('recordings', $filename, 'public');
+                $setSoal = SetSoal::where('kode', $setId)->first();
 
-                // Save to storage/app/public/recordings
-                $path = $r->file('video')->storeAs(
-                    'recordings',
-                    $filename,
-                    'public'
-                );
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Video uploaded successfully.',
-                    'file' => $filename,
-                    'path' => $path,
-                    'url' => Storage::url($path)
+                $saveVideos = Videos::create([
+                    'student_id' => Auth::user()->id,
+                    'set_soal_id' => $setSoal->id,
+                    'no_soal' => (int) $questionId,
+                    'part_soal' => (int) $part,
+                    'tipe' => 'practice',
+                    'video' => $filename
                 ]);
+
+                DB::commit();
+
+                if($saveVideos){
+                    return response()->json([
+                        'success' => true,
+                        'message' => 'Video uploaded successfully.',
+                        'file' => $filename,
+                        'path' => $path,
+                        'url' => Storage::url($path)
+                    ]);
+                }
             } else {
                 $results = [];
                 $score = 0;

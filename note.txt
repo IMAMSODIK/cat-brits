@@ -217,3 +217,63 @@ Di Mock Test IELTS Cambridge Listening 10 Test 1, nomor 11 dan 12 tidak bisa di 
 
 
 
+todo
+- save video practice speaking
+- penilaian untuk writing
+- speaking mock test
+- writing mock test
+
+video
+- teacher_id
+- user_id
+- set_soal_id
+- no_soal
+- tipe (mock/practice)
+- video
+
+nilaiVideo
+Fluency and Coherence
+        - Did the candidate speak and use:
+                - Repetition or self correction?
+                - Hesitation and pause?
+                - Speech rate features?
+        - Did the candidate use:
+                - Connectives?
+                - Discourse Markers?
+        - Did the candidate give:
+                - Relevant answers?
+        band
+
+Lexical Resource
+        - Did the candidate use:
+                - A range of vocabulary?
+        - Did the candidate use:
+                - Idiomatic vocabulary?
+                - Less-common vocabulary?
+                - Collacation?
+        - Did the candidate use:
+                - Parapharase?
+        band
+
+Grammatical Range and Accuracy
+        - Did the candidate use:
+                - A range of Structures?
+        - Did the candidate Produce:
+                - Error-free senteneces?
+        - Did the candidate use:
+                - Gramatical Features?
+        band
+
+Pronaunciation
+        - Did the candidate use:
+                - A range of pronaounciation features?
+        - Did the candidate be:
+                - Understood?
+        band
+
+remark
+
+
+
+
+modular

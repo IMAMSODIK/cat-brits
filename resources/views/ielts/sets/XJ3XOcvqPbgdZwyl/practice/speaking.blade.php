@@ -647,7 +647,7 @@
             position: relative;
         }
 
-        .video-placeholder,
+        /* .video-placeholder,
         .recorder-placeholder {
             width: 100%;
             height: 250px;
@@ -664,7 +664,35 @@
             font-size: 48px;
             margin-bottom: 10px;
             color: #4274BA;
+        } */
+
+        .recorder-placeholder,
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
         }
+
+        .preview-video,
+        .video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: contain !important;
+            background: black;
+        }
+
+        .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #555;
+        }
+
 
         .video-controls,
         .recorder-controls {
@@ -877,7 +905,7 @@
 
                     <div class="progress-dots"></div>
 
-                    <div class="speaking-question" data-q="1">
+                    <div class="speaking-question" data-q="1" data-part="1">
                         <div class="sq-navigation">
                             <div class="nav-buttons">
                                 <button class="sq-prev" disabled>Previous</button>
@@ -891,7 +919,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/XJ3XOcvqPbgdZwyl-1.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 1.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -944,61 +972,469 @@
                         </div>
                     </div>
 
-                    <div class="speaking-question" data-q="2" hidden>
+                    <div class="speaking-question" data-q="2" data-part="1" hidden>
                         <div class="sq-navigation">
                             <div class="nav-buttons">
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 2:</b> <br>Which is your favorite part of the weekend?
-                                [Why?]
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 2.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
 
                         <div class="sq-submit">
                             <button class="sq-submit-btn">Submit</button>
                         </div>
                     </div>
 
-                    <div class="speaking-question" data-q="3" hidden>
+                    <div class="speaking-question" data-q="3" data-part="1" hidden>
                         <div class="sq-navigation">
                             <div class="nav-buttons">
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next">Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 3:</b> <br>Do you think your weekends are long enough?
-                                [Why/Why
-                                note?]</div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 3.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
 
                         <div class="sq-submit">
                             <button class="sq-submit-btn">Submit</button>
                         </div>
                     </div>
 
-                    <div class="speaking-question" data-q="4" hidden>
+                    <div class="speaking-question" data-q="4" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 4.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="5" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 5.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="6" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 6.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="7" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 7.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="8" data-part="1" hidden>
                         <div class="sq-navigation">
                             <div class="nav-buttons">
                                 <button class="sq-prev">Previous</button>
                                 <button class="sq-next" disabled>Next</button>
                             </div>
-                            <div class="sq-text"><b>Question 4:</b> <br>How important do you think it is to have free
-                                time at
-                                the
-                                weekends? [Why?]</div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C10-t1/Part 1 - Question 8.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
 
                         <div class="sq-submit">
                             <button class="sq-submit-btn">Submit</button>
@@ -1017,21 +1453,67 @@
 
                 <div class="progress-dots" style="display: none"></div>
 
-                <div class="speaking-question" data-q="1">
+                <div class="speaking-question" data-q="1" data-part="2">
                     <div class="sq-navigation">
-                        <div class="sq-text"><b>Question 1:</b> <br>
-                            Describe someone you know who does something well. <br>
-                            You should say: <br>
-                            who this person is <br>
-                            how you know this person <br>
-                            what they do well <br>
-                            and explain why you think this person is so good at doing this.
+                        <div class="nav-buttons">
+                            <button class="sq-prev" disabled>Previous</button>
+                            <button class="sq-next" disabled>Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/PART 2.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
@@ -1048,117 +1530,402 @@
 
                 <div class="progress-dots"></div>
 
-                <div class="speaking-question" data-q="1">
+                <div class="speaking-question" data-q="1" data-part="3">
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev" disabled>Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 1:</b> <br>What skills and abilities do people most want to
-                            have today? Why
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 1.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
 
-                <div class="speaking-question" data-q="2" hidden>
+                <div class="speaking-question" data-q="2" data-part="3" hidden>
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 2:</b> <br>Which skills should children learn at school? Are
-                            there any skills which they should learn at home? What are they?
-                            [Why?]
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 2.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
 
-                <div class="speaking-question" data-q="3" hidden>
+                <div class="speaking-question" data-q="3" data-part="3" hidden>
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 3:</b> <br>Which skills do you think will be important in the
-                            future? Why?</div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 3.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
 
-                <div class="speaking-question" data-q="4" hidden>
+                <div class="speaking-question" data-q="4" data-part="3" hidden>
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Which kinds of jobs have the highest salaries in
-                            your country? Why is this?</div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 4.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
 
-                <div class="speaking-question" data-q="5" hidden>
+                <div class="speaking-question" data-q="5" data-part="3" hidden>
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next">Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Are there any other jobs that you think should have
-                            high salaries? Why do you think that?</div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 5.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
 
-                <div class="speaking-question" data-q="6" hidden>
+                <div class="speaking-question" data-q="6" data-part="3" hidden>
                     <div class="sq-navigation">
                         <div class="nav-buttons">
                             <button class="sq-prev">Previous</button>
                             <button class="sq-next" disabled>Next</button>
                         </div>
-                        <div class="sq-text"><b>Question 4:</b> <br>Some people say it would be better for society if
-                            everyone got the same salary. What do you think about that? Why?</div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 6.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="sq-actions">
-                        <button class="sq-record">🎙️ Start Recording</button>
-                    </div>
 
                     <div class="sq-submit">
                         <button class="sq-submit-btn">Submit</button>
@@ -1168,7 +1935,8 @@
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
     <script>
         (function() {
@@ -1561,7 +2329,7 @@
                             timerDisplay.style.color = "red";
                             warningBox.style.display = "block";
                             warningBox.textContent =
-                            `Recording will auto-stop in ${remaining} seconds…`;
+                                `Recording will auto-stop in ${remaining} seconds…`;
                         }
 
                         // last 3 seconds → beep
@@ -1690,75 +2458,79 @@
     </script>
 
     <script>
-$(function () {
+        $(function() {
 
-    $(".speaking-question").each(function () {
+            $(".speaking-question").each(function() {
 
-        const block = $(this);
-        const submitBtn = block.find(".sq-submit-btn");
-        const recordedVideoElement = block.find(".recorded-video-element");
+                const block = $(this);
+                const submitBtn = block.find(".sq-submit-btn");
+                const recordedVideoElement = block.find(".recorded-video-element");
 
-        submitBtn.on("click", function () {
+                submitBtn.on("click", function() {
 
-            // cek apakah video pernah direkam
-            const videoEl = recordedVideoElement.get(0);
+                    // cek apakah video pernah direkam
+                    const videoEl = recordedVideoElement.get(0);
 
-            if (!videoEl || !videoEl.src) {
-                alert("Please record a video first before submitting.");
-                return;
-            }
+                    if (!videoEl || !videoEl.src) {
+                        alert("Please record a video first before submitting.");
+                        return;
+                    }
 
-            const videoURL = videoEl.src;
+                    const videoURL = videoEl.src;
 
-            // ambil blob dari objectURL browser
-            fetch(videoURL)
-                .then(r => r.blob())
-                .then(blob => {
+                    // ambil blob dari objectURL browser
+                    fetch(videoURL)
+                        .then(r => r.blob())
+                        .then(blob => {
 
-                    const formData = new FormData();
+                            const formData = new FormData();
 
-                    // filename unik
-                    const filename =
-                        `recording_q${block.data("q") || ""}_${Date.now()}.webm`;
+                            // filename unik
+                            const filename =
+                                `recording_q${block.data("q") || ""}_${Date.now()}.webm`;
 
-                    formData.append("video", blob, filename);
-                    formData.append("question_id", block.data("q") || "");
-                    formData.append("timestamp", Date.now());
-                    formData.append("set_id", "XJ3XOcvqPbgdZwyl");
-                    formData.append("tipe", "speaking");
-                    formData.append("kategori", "speaking");
-                    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+                            formData.append("video", blob, filename);
+                            formData.append("question_id", block.data("q") || "");
+                            formData.append("part", block.data("part") || "");
+                            formData.append("timestamp", Date.now());
+                            formData.append("set_id", "XJ3XOcvqPbgdZwyl");
+                            formData.append("tipe", "speaking");
+                            formData.append("kategori", "speaking");
+                            formData.append("_token", $("meta[name='csrf-token']").attr(
+                                "content"));
 
-                    console.log("Submitting video:", filename, blob);
+                            console.log("Submitting video:", filename, blob);
 
-                    $.ajax({
-                        url: "/ielts/practice/check",
-                        method: "POST",
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function (res) {
-                            alert("Video submitted successfully!");
-                            console.log("Server response:", res);
-                        },
-                        error: function (xhr) {
-                            console.error("Upload error:", xhr);
-                            alert("Failed to submit the video.");
-                        }
-                    });
+                            $.ajax({
+                                url: "/ielts/practice/check",
+                                method: "POST",
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function(res) {
+                                    alert("Video submitted successfully!");
+                                    setInterval(function() {
+                                        location.reload();
+                                    }, 1000)
+                                },
+                                error: function(xhr) {
+                                    console.error("Upload error:", xhr);
+                                    alert("Failed to submit the video.");
+                                }
+                            });
 
-                })
-                .catch(err => {
-                    console.error("Blob convert error:", err);
-                    alert("Unable to process the recorded video.");
+                        })
+                        .catch(err => {
+                            console.error("Blob convert error:", err);
+                            alert("Unable to process the recorded video.");
+                        });
+
                 });
 
+            });
+
         });
-
-    });
-
-});
-</script>
+    </script>
 
 
 

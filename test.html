@@ -1,29 +1,174 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <body>
 
-<button onclick="getCurTime()" type="button">Get current time position</button>
-<button onclick="setCurTime()" type="button">Set time position to 5 seconds</button><br><br>
+  <form action="{{ route('video.assessment.store') }}" method="POST">
+    @csrf
 
-<audio id="myAudio" controls>
-  <source src="sample.mp3" type="audio/mpeg">
-  <source src="sample.ogg" type="audio/ogg">
-  Your browser does not support the audio element.
-</audio>
+    <input type="hidden" name="video_id" value="{{ $video->id }}">
 
-<script>
-let aud = document.getElementById("myAudio");
+    <!-- ================================================= -->
+    <!-- 1. Fluency and Coherence -->
+    <!-- ================================================= -->
+    <h4>Fluency and Coherence</h4>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="fc_repetition" class="form-check-input">
+                <span class="form-check-label">Repetition / Self correction</span>
+            </label>
 
-function getCurTime() { 
-  alert("Current time: " + aud.currentTime + " seconds");
-} 
+            <label class="form-check mt-2">
+                <input type="checkbox" name="fc_hesitation" class="form-check-input">
+                <span class="form-check-label">Hesitation & Pause</span>
+            </label>
 
-function setCurTime() { 
-  aud.currentTime = 5;
-} 
-</script>
+            <label class="form-check mt-2">
+                <input type="checkbox" name="fc_speech_rate" class="form-check-input">
+                <span class="form-check-label">Speech Rate Features</span>
+            </label>
+        </div>
 
-<p>Audio courtesy of <a href="https://www.soundhelix.com/examples" target="_blank">SoundHelix</a>.</p>
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="fc_connectives" class="form-check-input">
+                <span class="form-check-label">Connectives</span>
+            </label>
 
+            <label class="form-check mt-2">
+                <input type="checkbox" name="fc_discourse_markers" class="form-check-input">
+                <span class="form-check-label">Discourse Markers</span>
+            </label>
+
+            <label class="form-check mt-2">
+                <input type="checkbox" name="fc_relevant_answers" class="form-check-input">
+                <span class="form-check-label">Relevant Answers</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">Band Score</label>
+        <input type="number" step="0.1" name="fc_band" class="form-control w-25" placeholder="0 - 9">
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 2. Lexical Resource -->
+    <!-- ================================================= -->
+    <h4>Lexical Resource</h4>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="lr_range_vocab" class="form-check-input">
+                <span class="form-check-label">Range of Vocabulary</span>
+            </label>
+
+            <label class="form-check mt-2">
+                <input type="checkbox" name="lr_idiomatic" class="form-check-input">
+                <span class="form-check-label">Idiomatic Vocabulary</span>
+            </label>
+
+            <label class="form-check mt-2">
+                <input type="checkbox" name="lr_less_common" class="form-check-input">
+                <span class="form-check-label">Less-common Vocabulary</span>
+            </label>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="lr_collocation" class="form-check-input">
+                <span class="form-check-label">Collocation</span>
+            </label>
+
+            <label class="form-check mt-2">
+                <input type="checkbox" name="lr_paraphrase" class="form-check-input">
+                <span class="form-check-label">Paraphrase</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">Band Score</label>
+        <input type="number" step="0.1" name="lr_band" class="form-control w-25" placeholder="0 - 9">
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 3. Grammatical Range & Accuracy -->
+    <!-- ================================================= -->
+    <h4>Grammatical Range & Accuracy</h4>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="gra_range_structure" class="form-check-input">
+                <span class="form-check-label">Range of Structures</span>
+            </label>
+
+            <label class="form-check mt-2">
+                <input type="checkbox" name="gra_error_free" class="form-check-input">
+                <span class="form-check-label">Error-free Sentences</span>
+            </label>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="gra_grammar_features" class="form-check-input">
+                <span class="form-check-label">Grammatical Features</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">Band Score</label>
+        <input type="number" step="0.1" name="gra_band" class="form-control w-25" placeholder="0 - 9">
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 4. Pronunciation -->
+    <!-- ================================================= -->
+    <h4>Pronunciation</h4>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="pr_features" class="form-check-input">
+                <span class="form-check-label">Pronunciation Features</span>
+            </label>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-check">
+                <input type="checkbox" name="pr_understood" class="form-check-input">
+                <span class="form-check-label">Understandable</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">Band Score</label>
+        <input type="number" step="0.1" name="pr_band" class="form-control w-25" placeholder="0 - 9">
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- Remark -->
+    <!-- ================================================= -->
+    <div class="mb-4">
+        <label class="form-label fw-bold">Teacher Remark</label>
+        <textarea name="remark" rows="4" class="form-control"
+            placeholder="Tambahkan komentar atau catatan untuk siswa..."></textarea>
+    </div>
+
+    <!-- Submit -->
+    <button class="btn btn-primary px-4" type="submit">Submit Assessment</button>
+
+</form>
+
+  
 </body>
 </html>

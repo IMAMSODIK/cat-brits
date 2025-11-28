@@ -65,6 +65,16 @@ class User extends Authenticatable
         });
     }
 
+    public function userVideos(): HasMany
+    {
+        return $this->hasMany(Videos::class, 'student_id');
+    }
+
+    public function teacherVideos(): HasMany
+    {
+        return $this->hasMany(Videos::class, 'teacher_id');
+    }
+
     public function studentHistory(): HasMany
     {
         return $this->hasMany(TestHistory::class, 'student_id');
