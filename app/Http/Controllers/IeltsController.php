@@ -8,6 +8,7 @@ use App\Models\Soal;
 use App\Models\TestDetailHistory;
 use App\Models\TestHistory;
 use App\Models\Videos;
+use App\Models\Writing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -40,7 +41,17 @@ class IeltsController extends Controller
                 switch ($r->input('set-id')) {
                     case 'XJ3XOcvqPbgdZwyl':
                         $data['set_id'] = 'XJ3XOcvqPbgdZwyl';
-                        $data['title'] = 'Cambridge IELTS 10 Academic Reading Test 1';
+                        $data['title'] = 'Cambridge IELTS 10 Test 1';
+                        return view('ielts.categories', $data);
+                        break;
+                    case 'QmN0FYAE2DCXRPdC':
+                        $data['set_id'] = 'QmN0FYAE2DCXRPdC';
+                        $data['title'] = 'Cambridge IELTS 10 Test 2';
+                        return view('ielts.categories', $data);
+                        break;
+                    case 'BoXPeTu8aF68JZFw':
+                        $data['set_id'] = 'BoXPeTu8aF68JZFw';
+                        $data['title'] = 'Cambridge IELTS 10 Test 2';
                         return view('ielts.categories', $data);
                         break;
 
@@ -145,6 +156,38 @@ class IeltsController extends Controller
                         'file' => $filename,
                         'path' => $path,
                         'url' => Storage::url($path)
+                    ]);
+                }
+            } else if($kategori == 'writing'){
+                $r->validate([
+                    'answer' => 'required',
+                    'task' => 'required',
+                    'tipe' => 'required',
+                    'no_soal' => 'required',
+                    'set_id' => 'required',
+                    'kategori' => 'required',
+                ]);
+
+                $questionId = $r->input('no_soal', null);
+                $task = $r->input('task', null);
+                $answer = $r->input('answer', null);
+                $setSoal = SetSoal::where('kode', $setId)->first();
+                
+                $saveWriting = Writing::create([
+                    'student_id' => Auth::user()->id,
+                    'set_soal_id' => $setSoal->id,
+                    'no_soal' => (int) $questionId,
+                    'task' => (int) $task,
+                    'tipe' => 'practice',
+                    'answer' => $answer
+                ]);
+
+                DB::commit();
+
+                if($saveWriting){
+                    return response()->json([
+                        'success' => true,
+                        'message' => 'Task submited successfully.'
                     ]);
                 }
             } else {
