@@ -43,6 +43,36 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 10 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
+
+                    case 'Avfd93r1YAojm5Pb':
+                        $data['set_id'] = 'Avfd93r1YAojm5Pb';
+                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 1';
+                        return view('ielts.categories', $data);
+                        break;
+
+                    case 'BHByU4OTwRblfc5c':
+                        $data['set_id'] = 'BHByU4OTwRblfc5c';
+                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 2';
+                        return view('ielts.categories', $data);
+                        break;
+
+                    case '9uAizxgIsFCinyrq':
+                        $data['set_id'] = '9uAizxgIsFCinyrq';
+                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 3';
+                        return view('ielts.categories', $data);
+                        break;
+
+                    case 'GTZbRoMFOA5DZLNK':
+                        $data['set_id'] = 'GTZbRoMFOA5DZLNK';
+                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 4';
+                        return view('ielts.categories', $data);
+                        break;
+
+                    case 'blsodB9LLhUn0zcg':
+                        $data['set_id'] = 'blsodB9LLhUn0zcg';
+                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 1';
+                        return view('ielts.categories', $data);
+                        break;
                 }
             }
 
@@ -108,7 +138,7 @@ class IeltsController extends Controller
 
                 DB::commit();
 
-                if($saveVideos){
+                if ($saveVideos) {
                     return response()->json([
                         'success' => true,
                         'message' => 'Video uploaded successfully.',
