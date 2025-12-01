@@ -1982,7 +1982,7 @@
                             <form class="qa-body" id="form-matching_information">
                                 <fieldset class="q-item">
                                     <p class="lead"><b>Questions 1-4</b></p>
-                                    <p class="lead">The Reading Passage has six paragraphs,  <b>A-G</b>.</p>
+                                    <p class="lead">The Reading Passage has six paragraphs,  <b>A-F</b>.</p>
                                     <p>Which paragraph contains the following information?</p>
                                     <p class="lead">Write the correct letter, <b>A-F</b>, in boxes on your answer sheet <b>NB</b> You may use any letter more than once.</p>
                                 </fieldset>

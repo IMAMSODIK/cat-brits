@@ -1461,7 +1461,8 @@
 
                         <aside aria-label="Questions">
                             <form class="response-form" data-task="task2">
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="1
+                                ">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
@@ -1973,18 +1974,16 @@
                             submitBtn.text("Submit");
                             submitBtn.prop("disabled", false);
 
-                            if (res.status === "ok") {
-                                successMessage.fadeIn();
-
+                            if (res.status) {
                                 setTimeout(() => {
-                                    successMessage.fadeOut();
-                                }, 3000);
+                                    alert(res.message)
+                                }, 1000);
 
                                 textarea.val("");
                                 updateCharCount();
                                 autoResize();
                             } else {
-                                alert("Error: " + (res.message || "Unexpected error."));
+                                alert((res.message || "Unexpected error."));
                             }
                         },
                         error: function(xhr) {

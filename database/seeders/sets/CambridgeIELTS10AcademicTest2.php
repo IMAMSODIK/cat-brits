@@ -105,7 +105,7 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
             "Hardie", "19", "[GT8 2LC, GT82LC]", "hairdresser", "[dentist, dentist’s]", "lighting", "trains", "safe", "shower", "training",
             "competition", "global", "demand", "customers", "regulation", "project", "flexible", "leadership", "women", "self-employed",
         ];
-        $oc = ["a", "c", "c", "a", "a", "c", "c", "a", "b", "a"];
+        $oc = ["a", "c", "c", "a", "a", "c", "c", "a", "a", "c"];
         $matching_information = ["e", "f", "d", "h", "a", "b"];
         $two_choices = ["b", "c", "b", "e"];
 

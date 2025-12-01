@@ -17,7 +17,6 @@ class SoalSeeder extends Seeder
         $this->call([
             CambridgeIELTS10AcademicTest1::class,
             CambridgeIELTS10AcademicTest2::class,
-            CambridgeIELTS10AcademicTest3::class,
         ]);
     }
 }

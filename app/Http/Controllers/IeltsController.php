@@ -147,7 +147,7 @@ class IeltsController extends Controller
                     'student_id' => Auth::user()->id,
                     'set_soal_id' => $setSoal->id,
                     'no_soal' => (int) $questionId,
-                    'task' => (int) $task,
+                    'task' => $task,
                     'tipe' => 'practice',
                     'answer' => $answer
                 ]);
@@ -156,7 +156,7 @@ class IeltsController extends Controller
 
                 if($saveWriting){
                     return response()->json([
-                        'success' => true,
+                        'status' => true,
                         'message' => 'Task submited successfully.'
                     ]);
                 }

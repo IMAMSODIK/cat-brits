@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('student_id');
             $table->foreignId('set_soal_id');
             $table->integer('no_soal');
-            $table->integer('task')->nullable();
+            $table->string('task')->nullable();
 
             $table->enum('tipe', ['mock', 'practice']);
             $table->longText('answer');
