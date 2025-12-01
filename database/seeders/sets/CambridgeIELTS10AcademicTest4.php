@@ -5,7 +5,7 @@ namespace Database\Seeders\Sets;
 use Illuminate\Database\Seeder;
 use App\Models\Soal;
 
-class CambridgeIELTS10AcademicTest4 extends Seeder
+class CambridgeIELTS10AcademicTest3 extends Seeder
 {
     public function run()
     {

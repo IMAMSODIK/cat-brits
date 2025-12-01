@@ -218,9 +218,9 @@ Di Mock Test IELTS Cambridge Listening 10 Test 1, nomor 11 dan 12 tidak bisa di 
 
 
 todo
-- save video practice speaking
+- save video practice speaking (done)
 - penilaian untuk writing
-- speaking mock test
+- speaking mock test 
 - writing mock test
 
 video
@@ -277,3 +277,35 @@ remark
 
 
 modular
+
+
+
+
+
+
+
+
+reza
+Cambridge IELTS 11 Academic Reading Test 2 (34)
+Cambridge IELTS 12 Academic Reading Test 2 (30)
+
+rajes
+Cambridge IELTS 12 Academic Reading Test 3 (29)
+Cambridge IELTS 13 Academic Reading Test 3 (26)
+
+hans
+Cambridge IELTS 13 Academic Reading Test 4 (25)
+Cambridge IELTS 14 Academic Reading Test 4 (22)
+
+alex
+Cambridge IELTS 15 Academic Reading Test 1 (21)
+Cambridge IELTS 16 Academic Reading Test 1 (17)
+
+lowis
+Cambridge IELTS 16 Academic Reading Test 2 (16)
+Cambridge IELTS 17 Academic Reading Test 2 (13)
+
+
+
+
+

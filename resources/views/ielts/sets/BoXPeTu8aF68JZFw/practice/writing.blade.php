@@ -1461,7 +1461,7 @@
 
                         <aside aria-label="Questions">
                             <form class="response-form" data-task="task2">
-                                <fieldset class="q-item" data-q="2">
+                                <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
@@ -1893,155 +1893,115 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $(".response-form").each(function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.response-form').forEach(form => {
+                const textarea = form.querySelector('.js-response');
+                const question = form.querySelector('.q-item');
+                const charCount = form.querySelector('.char-count');
+                const submitBtn = form.querySelector('.js-submit');
+                const clearBtn = form.querySelector('.js-clear');
+                const successMessage = form.querySelector('.js-success');
+                const taskType = form.dataset.task;
 
-                const form = $(this);
-                const textarea = form.find(".js-response");
-                const charCount = form.find(".char-count");
-                const submitBtn = form.find(".js-submit");
-                const clearBtn = form.find(".js-clear");
-                const successMessage = form.find(".js-success");
-
-                const taskType = form.data("task");
-                const noSoal = form.find(".q-item").data("q");
-
-                /* ------------------------------
-                WORD COUNTER
-                --------------------------------*/
+                // 🔹 Update word count
                 function updateCharCount() {
-                    const words = textarea.val().trim() === "" ?
-                        0 :
-                        textarea.val().trim().split(/\s+/).length;
-
-                    charCount.text(words);
-                    submitBtn.prop("disabled", words === 0);
+                    const text = textarea.value.trim();
+                    const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+                    charCount.textContent = words;
+                    submitBtn.disabled = words === 0;
                 }
 
-                /* ------------------------------
-                AUTO RESIZE TEXTAREA
-                --------------------------------*/
+                // 🔹 Auto resize textarea
                 function autoResize() {
-                    textarea.css("height", "auto");
-                    textarea.css("height", Math.max(200, textarea[0].scrollHeight) + "px");
+                    textarea.style.height = 'auto';
+                    textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
                 }
 
-                /* ------------------------------
-                CLEAR BUTTON
-                --------------------------------*/
-                clearBtn.on("click", function() {
-                    if (confirm("Are you sure you want to clear all text?")) {
-                        textarea.val("");
+                // 🔹 Clear button
+                clearBtn.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to clear all text?')) {
+                        textarea.value = '';
                         updateCharCount();
                         autoResize();
                         textarea.focus();
                     }
                 });
 
-                /* ------------------------------
-                FORM SUBMISSION
-                --------------------------------*/
-                form.on("submit", function(e) {
+                // 🔹 Submit AJAX
+                form.addEventListener('submit', e => {
                     e.preventDefault();
 
-                    const text = textarea.val().trim();
-
+                    const text = textarea.value.trim();
                     if (!text) {
-                        alert("Please enter your response before submitting.");
+                        alert('Please enter your response before submitting.');
+                        textarea.focus();
                         return;
                     }
 
-                    submitBtn.text("Submitting...");
-                    submitBtn.prop("disabled", true);
+                    submitBtn.textContent = 'Submitting...';
+                    submitBtn.disabled = true;
 
-                    $.ajax({
-                        url: "/ielts/practice/check",
-                        type: "POST",
-                        data: {
-                            task: taskType,
-                            answer: text,
-                            tipe: "practice",
-                            no_soal: noSoal,
-                            set_id: 'XJ3XOcvqPbgdZwyl',
-                            kategori: "writing",
-                            _token: $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function(res) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
+                    fetch('/ielts/practice/check', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector(
+                                    'meta[name="csrf-token"]').content
+                            },
+                            body: JSON.stringify({
+                                task: taskType,
+                                answer: text,
+                                tipe: 'practice',
+                                no_soal: question.getAttribute('data-q'),
+                                set_soal: 'XJ3XOcvqPbgdZwyl',
+                                kategori: 'writing'
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
 
-                            if (res.status === "ok") {
-                                successMessage.fadeIn();
-
-                                setTimeout(() => {
-                                    successMessage.fadeOut();
-                                }, 3000);
-
-                                textarea.val("");
+                            if (data.status === 'ok') {
+                                successMessage.style.display = 'block';
+                                setTimeout(() => successMessage.style.display = 'none', 3000);
+                                textarea.value = '';
                                 updateCharCount();
                                 autoResize();
                             } else {
-                                alert("Error: " + (res.message || "Unexpected error."));
+                                alert('Error: ' + (data.message || 'Something went wrong.'));
                             }
-                        },
-                        error: function(xhr) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
-
-                            console.log("=== AJAX ERROR DEBUG ===");
-                            console.log("STATUS:", xhr.status);
-
-                            // tampilkan response Laravel yg sebenarnya
-                            console.log("RESPONSE:", xhr.responseText);
-
-                            // kalau JSON
-                            try {
-                                console.log("PARSED JSON:", JSON.parse(xhr
-                                    .responseText));
-                            } catch (e) {
-                                console.log("NOT JSON");
-                            }
-
-                            alert("Server Error: " + xhr.status);
-                        }
-
-
-                    });
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
+                            alert('Request failed.');
+                        });
                 });
 
-                /* ------------------------------
-                INPUT EVENT
-                --------------------------------*/
-                textarea.on("input", function() {
+                // 🔹 Input event
+                textarea.addEventListener('input', () => {
                     updateCharCount();
                     autoResize();
                 });
 
-                /* ------------------------------
-                MOBILE SCROLL FIX
-                --------------------------------*/
+                // 🔹 Scroll center in mobile
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.on("focus", function() {
-                        setTimeout(() => {
-                            textarea[0].scrollIntoView({
-                                behavior: "smooth",
-                                block: "center"
-                            });
-                        }, 300);
+                    textarea.addEventListener('focus', () => {
+                        setTimeout(() => textarea.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        }), 300);
                     });
                 }
 
-                // INIT
                 updateCharCount();
                 autoResize();
             });
         });
     </script>
-
-
 </body>
 
 </html>

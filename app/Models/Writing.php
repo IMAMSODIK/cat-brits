@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Videos extends Model
+class Writing extends Model
 {
-    /** @use HasFactory<\Database\Factories\VideosFactory> */
+    /** @use HasFactory<\Database\Factories\WritingFactory> */
     use HasFactory;
 
     protected $guarded = ['id'];
@@ -23,9 +22,5 @@ class Videos extends Model
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(User::class, 'teacher_id');
-    }
-
-    public function assesment(): HasOne{
-        return $this->hasOne(VideoAsessment::class);
     }
 }
