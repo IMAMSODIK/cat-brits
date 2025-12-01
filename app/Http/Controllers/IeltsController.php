@@ -43,6 +43,26 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 10 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
+                    case 'XW16JROLKCFE4BMH':
+                        $data['set_id'] = 'XW16JROLKCFE4BMH';
+                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 2';
+                        return view('ielts.categories', $data);
+                        break;
+                    case 'NmeBcwURSR2ZPfdX':
+                        $data['set_id'] = 'NmeBcwURSR2ZPfdX';
+                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 3';
+                        return view('ielts.categories', $data);
+                        break;
+                    case 'TqMfMy8BLvZp0JDm':
+                        $data['set_id'] = 'TqMfMy8BLvZp0JDm';
+                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 4';
+                        return view('ielts.categories', $data);
+                        break;
+                    case 'QUApDKzp0Wn1GCiA':
+                        $data['set_id'] = 'QUApDKzp0Wn1GCiA';
+                        $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 1';
+                        return view('ielts.categories', $data);
+                        break;
                 }
             }
 
@@ -108,7 +128,7 @@ class IeltsController extends Controller
 
                 DB::commit();
 
-                if($saveVideos){
+                if ($saveVideos) {
                     return response()->json([
                         'success' => true,
                         'message' => 'Video uploaded successfully.',
