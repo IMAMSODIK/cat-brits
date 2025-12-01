@@ -5,22 +5,22 @@ namespace Database\Seeders\Sets;
 use Illuminate\Database\Seeder;
 use App\Models\Soal;
 
-class CambridgeIELTS10AcademicTest4 extends Seeder
+class CambridgeIELTS11AcademicTest1 extends Seeder
 {
     public function run()
     {
         // Cambridge IELTS 10 Academic Reading Test 3 - Reading
-        $mh = ["ii", "i", "v", "vii"];
+        $mh = ["ii", "i", "v", "vii"]; //matching headings
         $tfng = [
             "true", "not given", "not given", "true", "not given", "false",
             "false", "true", "not given"
-        ];
-        $sentence_completion = ["[source of income, industry", "employer", "domestic tourism"];
-        $matching_information = ["C", "B", "H", "B", "E"];
-        $nc = ["[sun, sunlight", "upper", "dry", "north"];
-        $oc = ["b", "c", "a", "d", "c"];
-        $summary_completion = ["B", "F", "I", "G", "D"];
-        $ynng = ["no", "yes", "not given", "yes", "not given"];
+        ]; //true, false or not given
+        $sentence_completion = ["[source of income, industry]", "employer", "domestic tourism"]; //sentence completion
+        $matching_information = ["C", "B", "H", "B", "E"]; //matching information
+        $nc = ["[sun, sunlight]", "upper", "dry", "north"]; //note completion
+        $oc = ["b", "c", "a", "d", "c"]; //one choice
+        $summary_completion = ["B", "F", "I", "G", "D"]; // summary completion
+        $ynng = ["no", "yes", "not given", "yes", "not given"]; // yes, no, not given
 
         for($i = 1; $i <= count($mh); $i++){
             Soal::create([
