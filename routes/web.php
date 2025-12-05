@@ -83,20 +83,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/history', [TestHistoryController::class, 'index']);
     Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
 
+    Route::get('/history', [TestHistoryController::class, 'index']);
+    Route::get('/history/detail', [TestHistoryController::class, 'detail']);
+    Route::get('/history/search', [TestHistoryController::class, 'search']);
+    Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
+
     Route::get('/profile', [ProfileController::class, 'index']);
-
-
-
-    Route::get('video-calls/create', [VideoCallController::class,'create'])->name('video-calls.create');
-    Route::post('video-calls', [VideoCallController::class,'store'])->name('video-calls.store');
-
-    // guru
-    Route::get('video-calls/guru', [VideoCallController::class,'guruIndex'])->name('video-calls.guru.index');
-    Route::post('video-calls/{videoCall}/approve', [VideoCallController::class,'approve'])->name('video-calls.approve');
-    Route::post('video-calls/{videoCall}/reject', [VideoCallController::class,'reject'])->name('video-calls.reject');
-
-    // join
-    Route::get('video-calls/{videoCall}/join', [VideoCallController::class,'join'])->name('video-calls.join');
 });
 
 Route::get('/test', function () {

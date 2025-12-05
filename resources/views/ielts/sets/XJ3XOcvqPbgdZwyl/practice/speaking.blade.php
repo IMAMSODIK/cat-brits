@@ -899,6 +899,8 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
 
+                    <div class="x-panel-inner">Content: Part 1</div>
+
                     <fieldset class="q-item">
                         <p><b>Questions 1-4</b></p>
                     </fieldset>
@@ -1991,7 +1993,7 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
 
             });
@@ -2299,7 +2301,7 @@
                 let seconds = 0;
                 let isRecording = false;
 
-                const MAX_RECORD_SECONDS = 10; // change freely
+                const MAX_RECORD_SECONDS = 180; // change freely
 
 
                 /* ------------------------------

@@ -4,77 +4,295 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\TestHistory;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TestHistoryController extends Controller
 {
-    public function index(Request $r)
+    public function index()
     {
         try {
-            return view('history.index', [
-                'pageTitle' => 'Exam History',
-            ]);
+            $data = [
+                'pageTitle' => "Students",
+                'data' => User::where('role', 'student')
+                            ->where('verification_status', 1)
+                            ->orderBy('status', 'desc')
+                            ->orderBy('id', 'desc')
+                            ->take(20)
+                            ->get()
+            ];
+
+            return view('history.index', $data);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
         }
     }
 
-    public function loadData(Request $r)
+
+    public function store(Request $request)
     {
         try {
-            $limit = 20;
-            $offset = (int) $r->input('offset', 0);
+            $validator = Validator::make($request->all(), [
+                'nama'  => 'required|string|max:255',
+                'email' => 'required|email|max:255|unique:users,email',
+                'foto'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240'
+            ]);
 
-            $query = TestHistory::with(['student', 'teacher', 'setSoal', 'detailHistories'])
-                ->orderBy('created_at', 'desc');
-
-            // 🔹 Filter kategori
-            if ($r->filled('category')) {
-                $cats = $r->input('category');
-                if (!is_array($cats)) $cats = [$cats];
-                $query->whereIn('kategori', $cats);
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 422);
             }
 
-            // 🔹 Filter tipe
-            if ($r->filled('type')) {
-                $types = $r->input('type');
-                if (!is_array($types)) $types = [$types];
-                $query->whereIn('tipe', $types);
+            $path = null;
+            if ($request->hasFile('foto')) {
+                $path = $request->file('foto')->store('foto_profile', 'public');
             }
 
-            // 🔹 Filter set soal
-            if ($r->filled('set') && $r->input('set') !== '') {
-                $query->where('set_soal_id', $r->input('set'));
-            }
-
-            // 🔹 Filter tanggal
-            $start = $r->input('date_start');
-            $end   = $r->input('date_end');
-            if ($start && $end) {
-                $startDt = \Carbon\Carbon::parse($start)->startOfDay();
-                $endDt   = \Carbon\Carbon::parse($end)->endOfDay();
-                $query->whereBetween('created_at', [$startDt, $endDt]);
-            } elseif ($start) {
-                $query->whereDate('created_at', '>=', \Carbon\Carbon::parse($start)->toDateString());
-            } elseif ($end) {
-                $query->whereDate('created_at', '<=', \Carbon\Carbon::parse($end)->toDateString());
-            }
-
-            // 🔹 Ambil data sesuai offset dan limit
-            $histories = $query->skip($offset)->take($limit)->get();
+            $data = User::create([
+                'name'     => $request->nama,
+                'email'    => $request->email,
+                'password' => bcrypt($request->email),
+                'foto'  => $path,
+                'role'     => 'student'
+            ]);
 
             return response()->json([
-                'status' => true,
-                'data' => $histories,
-                'next_offset' => $offset + $histories->count(),
-                'has_more' => $histories->count() === $limit,
-            ]);
+                'status'  => true,
+                'message' => 'Student information saved successfully.',
+                'data'    => User::where('id', $data->id)->select('id', 'name', 'email', 'status', 'foto')->first()
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status' => false,
-                'message' => $e->getMessage(),
-            ]);
+                'message' => 'Something went wrong. Please try again later.',
+                'error'   => $e->getMessage()
+            ], 500);
         }
+    }
+
+    public function detail(Request $r)
+    {
+        try {
+            $validator = Validator::make($r->all(), [
+                'id' => 'required|uuid|exists:users,id'
+            ]);
+
+            if ($validator->fails()) {
+                return back()->with('error', 'User not found');
+            }
+
+            $user = User::with([
+    'studentHistory.setSoal.soals' => function ($q) {
+        $q->select('id', 'set_id', 'tipe_soal', 'kategori');
+    }
+])->where('id', $r->id)->first();
+dd($user);
+
+            if (!$user) {
+                return back()->with('error', 'User not found');
+            }
+
+            $data = [
+                'pageTitle' => 'Detail Student',
+                'user' => $user
+            ];
+
+            return view('history.detail', $data);
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to load data');
+        }
+    }
+
+    public function update(Request $r)
+    {
+        $validator = Validator::make($r->all(), [
+            'id'    => 'required|exists:users,id',
+            'nama'  => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $r->id,
+            'foto'  => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:10000'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation errors occurred.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user = User::findOrFail($r->id);
+
+            $user->name  = $r->nama;
+            $user->email = $r->email;
+
+            if ($r->hasFile('foto')) {
+                $path = $r->file('foto')->store('foto_profile', 'public');
+                $user->foto = $path;
+            }
+
+            $user->save();
+
+            return response()->json([
+                'status'  => true,
+                'message' => 'Student information updated successfully.',
+                'data'    => $user
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to update student information.',
+                'errors'  => ['exception' => [$e->getMessage()]]
+            ], 500);
+        }
+    }
+
+    public function resetPasssword(Request $r)
+    {
+        $validator = Validator::make($r->all(), [
+            'id'    => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation errors occurred.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user = User::findOrFail($r->id);
+
+            $user->password  = bcrypt($user->email);
+            $user->save();
+
+            return response()->json([
+                'status'  => true,
+                'message' => 'Password has been reset.',
+                'data'    => $user
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to update student information.',
+                'errors'  => ['exception' => [$e->getMessage()]]
+            ], 500);
+        }
+    }
+
+    public function delete(Request $r)
+    {
+        $validator = Validator::make($r->all(), [
+            'id'    => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation errors occurred.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user = User::findOrFail($r->id);
+
+            $user->status = 0;
+            $user->save();
+
+            return response()->json([
+                'status'  => true,
+                'message' => 'The student has been deactivated.',
+                'data'    => $user
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to update student information.',
+                'errors'  => ['exception' => [$e->getMessage()]]
+            ], 500);
+        }
+    }
+
+    public function activate(Request $r)
+    {
+        $validator = Validator::make($r->all(), [
+            'id'    => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation errors occurred.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user = User::findOrFail($r->id);
+            $user->status = 1;
+            $user->save();
+
+            return response()->json([
+                'status'  => true,
+                'message' => 'The student has been Activated.',
+                'data'    => $user
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to update student information.',
+                'errors'  => ['exception' => [$e->getMessage()]]
+            ], 500);
+        }
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->get('q');
+
+        $users = User::where('role', 'student')
+            ->where('verification_status', 1)
+            ->where(function ($query) use ($keyword) {
+                $query->where('name', 'like', "%{$keyword}%")
+                    ->orWhere('email', 'like', "%{$keyword}%");
+            })
+            ->get();
+
+        if ($users->isEmpty()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'No student found.'
+            ], 200);
+        }
+
+        return response()->json([
+            'status' => true,
+            'data' => $users
+        ], 200);
+    }
+
+    public function loadMore(Request $request)
+    {
+        $offset = (int) $request->get('offset', 0);
+        $limit  = 10;
+
+        $users = User::where('role', 'student')
+            ->where('verification_status', 1)
+            ->orderBy('id', 'desc')
+            ->skip($offset)
+            ->take($limit)
+            ->get();
+
+        return response()->json([
+            'status' => true,
+            'data'   => $users
+        ]);
     }
 }

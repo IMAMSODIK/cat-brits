@@ -1213,18 +1213,21 @@
     <style>
         /* Modal Styles */
         .custom-modal {
-            display: none !important; /* Pastikan modal tersembunyi secara default */
+            display: none !important;
+            /* Pastikan modal tersembunyi secara default */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             padding: 15px;
             box-sizing: border-box;
-            opacity: 0; /* Tambahkan opacity untuk transisi */
-            transition: opacity 0.3s ease; /* Smooth transition */
+            opacity: 0;
+            /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease;
+            /* Smooth transition */
         }
 
         /* State ketika modal ditampilkan */
@@ -1241,13 +1244,14 @@
             width: 100%;
             max-width: 700px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             max-height: 90vh;
             display: flex;
             flex-direction: column;
             margin: auto;
-            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
+            transform: scale(0.9) translateY(-20px);
+            /* State awal untuk animasi */
             transition: transform 0.3s ease;
         }
 
@@ -1264,7 +1268,7 @@
             padding: 20px 25px;
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .score-summary-header {
@@ -1283,8 +1287,8 @@
             justify-content: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            background: rgba(255,255,255,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
 
@@ -1322,7 +1326,7 @@
         }
 
         .modal-close:hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .custom-modal-body {
@@ -1339,7 +1343,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -1364,14 +1368,14 @@
             background-color: #f9f9f9;
         }
 
-        .answer-correct { 
-            color: #27ae60; 
-            font-weight: bold; 
+        .answer-correct {
+            color: #27ae60;
+            font-weight: bold;
         }
-        
-        .answer-wrong { 
-            color: #e74c3c; 
-            font-weight: bold; 
+
+        .answer-wrong {
+            color: #e74c3c;
+            font-weight: bold;
         }
 
         .status-badge {
@@ -1437,55 +1441,56 @@
             .custom-modal {
                 padding: 10px;
             }
-            
+
             .custom-modal-content {
                 max-height: 95vh;
             }
-            
+
             .custom-modal-header {
                 padding: 15px 20px;
             }
-            
+
             .score-circle {
                 width: 60px;
                 height: 60px;
             }
-            
+
             .score-circle span {
                 font-size: 1rem;
             }
-            
+
             .score-circle small {
                 font-size: 0.7rem;
             }
-            
+
             .modal-title {
                 font-size: 1.2rem;
                 margin-left: 10px;
             }
-            
+
             .modal-close {
                 width: 35px;
                 height: 35px;
                 font-size: 24px;
             }
-            
+
             .custom-modal-body {
                 padding: 15px;
             }
-            
+
             .result-table {
                 font-size: 0.9rem;
             }
-            
-            .result-table th, .result-table td {
+
+            .result-table th,
+            .result-table td {
                 padding: 10px 8px;
             }
-            
+
             .modal-actions {
                 flex-direction: column;
             }
-            
+
             .modal-btn {
                 width: 100%;
             }
@@ -1495,26 +1500,26 @@
             .custom-modal {
                 padding: 5px;
             }
-            
+
             .result-table {
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
             }
-            
+
             .score-circle {
                 width: 50px;
                 height: 50px;
             }
-            
+
             .score-circle span {
                 font-size: 0.9rem;
             }
-            
+
             .score-circle small {
                 font-size: 0.6rem;
             }
-            
+
             .status-badge {
                 font-size: 0.8rem;
                 padding: 4px 8px;
@@ -1528,7 +1533,6 @@
             border: 2px solid red;
             background: #ffe6e6;
         }
-
     </style>
 </head>
 
@@ -1538,7 +1542,8 @@
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1604,7 +1609,8 @@
                                     <div class="controls-container">
                                         <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                         <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
                                             <div class="timeText"><span class="current">0:00</span>
                                                 <span class="duration">0:00</span>
                                             </div>
@@ -1612,7 +1618,8 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="58" type="button">Start from here</button>
+                                        <button class="start-btn" data-start="58" type="button">Start from
+                                            here</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -1640,7 +1647,8 @@
                                         <div class="q-item" data-q="1">
                                             24
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                            <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text"
+                                                placeholder="">
                                             road
                                         </div>
                                     </td>
@@ -1658,7 +1666,8 @@
                                     <td>
                                         <div class="q-item" data-q="2">
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                            <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </td>
                                 </tr>
@@ -1717,10 +1726,12 @@
                                 </tr>
                             </table>
                             <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
+                                    Try Again
+                                </button>
                                 <button type="button" class="btn btn-primary" id="submit-nc">
                                     Submit
                                 </button>
-                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                             </div>
                         </form>
                     </div>
@@ -1741,7 +1752,8 @@
                                 <div class="controls-container">
                                     <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                     <div class="seek-container">
-                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <input type="range" min="0" max="100" value="0"
+                                            class="seekBar">
                                         <div class="timeText"><span class="current">0:00</span>
                                             <span class="duration">0:00</span>
                                         </div>
@@ -1749,7 +1761,8 @@
                                 </div>
 
                                 <div class="start-buttons">
-                                    <button class="start-btn" data-start="290" type="button">Start from here</button>
+                                    <button class="start-btn" data-start="290" type="button">Start from
+                                        here</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -1775,7 +1788,8 @@
                                 <td>
                                     <div class="q-item" data-q="1">
                                         <span class="q-number-box">1</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-1" class="q-text"
+                                            placeholder="">
                                         km
                                     </div>
                                 </td>
@@ -1788,7 +1802,8 @@
                                             <div class="q-item" data-q="2">
                                                 one
                                                 <span class="q-number-box">2</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-2" class="q-text"
+                                                    placeholder="">
                                             </div>
                                         </li>
                                     </ul>
@@ -1804,7 +1819,8 @@
                                     <div class="q-item" data-q="3">
                                         £
                                         <span class="q-number-box">3</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-3" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </td>
                                 <td>
@@ -1814,7 +1830,8 @@
                                         <li>
                                             <div class="q-item" data-q="4">
                                                 <span class="q-number-box">4</span>
-                                                <input type="text" name="XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
+                                                <input type="text" name="XJ3XOcvqPbgdZwyl-4" class="q-text"
+                                                    placeholder="">
                                             </div>
                                         </li>
                                     </ul>
@@ -1823,10 +1840,12 @@
                         </table>
 
                         <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary try-again" id="again-tc" style="display: none">
+                                Try Again
+                            </button>
                             <button type="button" class="btn btn-primary" id="submit-tc">
                                 Submit
                             </button>
-                            <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                         </div>
                     </form>
                 </div>
@@ -1846,7 +1865,8 @@
                                     <div class="controls-container">
                                         <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                         <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
                                             <div class="timeText"><span class="current">0:00</span>
                                                 <span class="duration">0:00</span>
                                             </div>
@@ -1854,7 +1874,8 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="30" type="button">Start from here</button>
+                                        <button class="start-btn" data-start="30" type="button">Start from
+                                            here</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -1900,10 +1921,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
+                                    Try Again
+                                </button>
                                 <button type="button" class="btn btn-primary" id="submit-two_choices">
                                     Submit
                                 </button>
-                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                             </div>
                         </form>
                     </div>
@@ -1923,7 +1946,8 @@
                                 <div class="controls-container">
                                     <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                     <div class="seek-container">
-                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <input type="range" min="0" max="100" value="0"
+                                            class="seekBar">
                                         <div class="timeText"><span class="current">0:00</span>
                                             <span class="duration">0:00</span>
                                         </div>
@@ -1931,7 +1955,8 @@
                                 </div>
 
                                 <div class="start-buttons">
-                                    <button class="start-btn" data-start="182" type="button">Start from here</button>
+                                    <button class="start-btn" data-start="182" type="button">Start from
+                                        here</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -1950,14 +1975,16 @@
                                     <div class="q-list" data-q="1">
                                         New members should describe any
                                         <span class="q-number-box">1</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-7" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-7" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="2">
                                         The
                                         <span class="q-number-box">2</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-8" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-8" class="q-text"
+                                            placeholder="">
                                         will be explained to you before you use the equipment.
                                     </div>
                                 </li>
@@ -1965,7 +1992,8 @@
                                     <div class="q-list" data-q="3">
                                         You will be given a six-week
                                         <span class="q-number-box">3</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-9" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-9" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1976,7 +2004,8 @@
                                     <div class="q-list" data-q="4">
                                         There is a compulsory £90
                                         <span class="q-number-box">4</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-10" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-10" class="q-text"
+                                            placeholder="">
                                         fee for members.
                                     </div>
                                 </li>
@@ -1984,7 +2013,8 @@
                                     <div class="q-list" data-q="5">
                                         Gold members are given
                                         <span class="q-number-box">5</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-11" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-11" class="q-text"
+                                            placeholder="">
                                         to all the LP clubs.
                                     </div>
                                 </li>
@@ -1992,7 +2022,8 @@
                                     <div class="q-list" data-q="6">
                                         Premier members are given priority during
                                         <span class="q-number-box">6</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-12" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-12" class="q-text"
+                                            placeholder="">
                                         hours.
                                     </div>
                                 </li>
@@ -2000,7 +2031,8 @@
                                     <div class="q-list" data-q="7">
                                         Premier members can bring some
                                         <span class="q-number-box">7</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-13" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-13" class="q-text"
+                                            placeholder="">
                                         every month.
                                     </div>
                                 </li>
@@ -2008,7 +2040,8 @@
                                     <div class="q-list" data-q="8">
                                         Members should always take their
                                         <span class="q-number-box">8</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-14" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-14" class="q-text"
+                                            placeholder="">
                                         with them.
                                     </div>
                                 </li>
@@ -2016,10 +2049,12 @@
                         </fieldset>
 
                         <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary try-again" id="again-nc2" style="display: none">
+                                Try Again
+                            </button>
                             <button type="button" class="btn btn-primary" id="submit-nc2">
                                 Submit
                             </button>
-                            <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                         </div>
                     </form>
                 </div>
@@ -2039,7 +2074,8 @@
                                     <div class="controls-container">
                                         <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                         <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
                                             <div class="timeText"><span class="current">0:00</span>
                                                 <span class="duration">0:00</span>
                                             </div>
@@ -2047,7 +2083,8 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="54" type="button">Start from here</button>
+                                        <button class="start-btn" data-start="54" type="button">Start from
+                                            here</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -2182,10 +2219,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
+                                    Try Again
+                                </button>
                                 <button type="button" class="btn btn-primary" id="submit-oc">
                                     Submit
                                 </button>
-                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                             </div>
                         </form>
                     </div>
@@ -2205,7 +2244,8 @@
                                 <div class="controls-container">
                                     <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                     <div class="seek-container">
-                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <input type="range" min="0" max="100" value="0"
+                                            class="seekBar">
                                         <div class="timeText"><span class="current">0:00</span>
                                             <span class="duration">0:00</span>
                                         </div>
@@ -2213,7 +2253,8 @@
                                 </div>
 
                                 <div class="start-buttons">
-                                    <button class="start-btn" data-start="270" type="button">Start from here</button>
+                                    <button class="start-btn" data-start="270" type="button">Start from
+                                        here</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -2229,14 +2270,16 @@
                                     <div class="q-list" data-q="1">
                                         John needs help preparing for his
                                         <span class="q-number-box">1</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-15" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-15" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="2">
                                         The professor advises John to make a
                                         <span class="q-number-box">2</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-16" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-16" class="q-text"
+                                            placeholder="">
                                         of his design.
                                     </div>
                                 </li>
@@ -2244,21 +2287,24 @@
                                     <div class="q-list" data-q="3">
                                         John’s main problem is getting good quality
                                         <span class="q-number-box">3</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-17" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-17" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="4">
                                         The professor suggests John apply for a
                                         <span class="q-number-box">4</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-18" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-18" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="5">
                                         The professor will check the
                                         <span class="q-number-box">5</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-19" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-19" class="q-text"
+                                            placeholder="">
                                         information in John’s written report.
                                     </div>
                                 </li>
@@ -2266,10 +2312,12 @@
                         </fieldset>
 
                         <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary try-again" id="again-nc3" style="display: none">
+                                Try Again
+                            </button>
                             <button type="button" class="btn btn-primary" id="submit-nc3">
                                 Submit
                             </button>
-                            <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                         </div>
                     </form>
                 </div>
@@ -2288,7 +2336,8 @@
                                 <div class="controls-container">
                                     <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
                                     <div class="seek-container">
-                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <input type="range" min="0" max="100" value="0"
+                                            class="seekBar">
                                         <div class="timeText"><span class="current">0:00</span>
                                             <span class="duration">0:00</span>
                                         </div>
@@ -2316,21 +2365,24 @@
                                     <div class="q-list" data-q="1">
                                         Its colour comes from an uncommon
                                         <span class="q-number-box">1</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-20" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-20" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="2">
                                         Local people believe that it has unusual
                                         <span class="q-number-box">2</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-21" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-21" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="3">
                                         They protect the bear from
                                         <span class="q-number-box">3</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-22" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-22" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -2342,7 +2394,8 @@
                                     <div class="q-list" data-q="4">
                                         Tree roots stop
                                         <span class="q-number-box">4</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-23" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-23" class="q-text"
+                                            placeholder="">
                                         along salmon streams.
                                     </div>
                                 </li>
@@ -2351,7 +2404,8 @@
                                     <div class="q-list" data-q="5">
                                         It is currently found on a small number of
                                         <span class="q-number-box">5</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-24" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-24" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -2362,7 +2416,8 @@
                                     <div class="q-list" data-q="6">
                                         Habitat is being lost due to deforestation and construction of
                                         <span class="q-number-box">6</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-25" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-25" class="q-text"
+                                            placeholder="">
                                         by logging companies.
                                     </div>
                                 </li>
@@ -2370,7 +2425,8 @@
                                     <div class="q-list" data-q="7">
                                         Unrestricted
                                         <span class="q-number-box">7</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-26" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-26" class="q-text"
+                                            placeholder="">
                                         is affecting the salmon supply.
                                     </div>
                                 </li>
@@ -2378,7 +2434,8 @@
                                     <div class="q-list" data-q="8">
                                         The bears’ existence is also threatened by their low rate of
                                         <span class="q-number-box">8</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-27" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-27" class="q-text"
+                                            placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -2390,7 +2447,8 @@
                                     <div class="q-list" data-q="9">
                                         Logging companies must improve their
                                         <span class="q-number-box">9</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-28" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-28" class="q-text"
+                                            placeholder="">
                                         by logging companies.
                                     </div>
                                 </li>
@@ -2398,7 +2456,8 @@
                                     <div class="q-list" data-q="10">
                                         Maintenance and
                                         <span class="q-number-box">10</span>
-                                        <input type="text" name="XJ3XOcvqPbgdZwyl-29" class="q-text" placeholder="">
+                                        <input type="text" name="XJ3XOcvqPbgdZwyl-29" class="q-text"
+                                            placeholder="">
                                         of the spirit bears’ territory is needed.
                                     </div>
                                 </li>
@@ -2406,10 +2465,12 @@
                         </fieldset>
 
                         <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary try-again" id="again-nc4" style="display: none">
+                                Try Again
+                            </button>
                             <button type="button" class="btn btn-primary" id="submit-nc4">
                                 Submit
                             </button>
-                            <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                         </div>
                     </form>
                 </div>
@@ -2481,7 +2542,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- Action Buttons -->
             <div class="modal-actions">
                 <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
@@ -2492,21 +2553,76 @@
 
     <!-- script bagian audio player -->
     <script>
-        let scoreMap = [
-            {min: 39, max: 40, score: 9.0},
-            {min: 37, max: 38, score: 8.5},
-            {min: 35, max: 36, score: 8.0},
-            {min: 33, max: 34, score: 7.5},
-            {min: 30, max: 32, score: 7.0},
-            {min: 27, max: 29, score: 6.5},
-            {min: 23, max: 26, score: 6.0},
-            {min: 19, max: 22, score: 5.5},
-            {min: 15, max: 18, score: 5.0},
-            {min: 13, max: 14, score: 4.5},
-            {min: 10, max: 12, score: 4.0},
-            {min: 8,  max: 9,  score: 3.5},
-            {min: 6,  max: 7,  score: 3.0},
-            {min: 4,  max: 5,  score: 2.5}
+        let scoreMap = [{
+                min: 39,
+                max: 40,
+                score: 9.0
+            },
+            {
+                min: 37,
+                max: 38,
+                score: 8.5
+            },
+            {
+                min: 35,
+                max: 36,
+                score: 8.0
+            },
+            {
+                min: 33,
+                max: 34,
+                score: 7.5
+            },
+            {
+                min: 30,
+                max: 32,
+                score: 7.0
+            },
+            {
+                min: 27,
+                max: 29,
+                score: 6.5
+            },
+            {
+                min: 23,
+                max: 26,
+                score: 6.0
+            },
+            {
+                min: 19,
+                max: 22,
+                score: 5.5
+            },
+            {
+                min: 15,
+                max: 18,
+                score: 5.0
+            },
+            {
+                min: 13,
+                max: 14,
+                score: 4.5
+            },
+            {
+                min: 10,
+                max: 12,
+                score: 4.0
+            },
+            {
+                min: 8,
+                max: 9,
+                score: 3.5
+            },
+            {
+                min: 6,
+                max: 7,
+                score: 3.0
+            },
+            {
+                min: 4,
+                max: 5,
+                score: 2.5
+            }
         ];
 
         function convertScore(correctCount) {
@@ -2621,7 +2737,7 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit test'
                 );
             });
 
@@ -2943,7 +3059,8 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest(
+                    '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -3046,7 +3163,10 @@
 
                 const question = panel.querySelector(`[data-q="${qNum}"]`);
                 if (question) {
-                    question.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    question.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
                     question.focus();
                 }
             }
@@ -3092,7 +3212,8 @@
                         const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
 
                         numbers.forEach(num => {
-                            const multiItem = fqList.querySelector(`[data-q="${num}"][data-part="${partId}"]`);
+                            const multiItem = fqList.querySelector(
+                                `[data-q="${num}"][data-part="${partId}"]`);
                             if (!multiItem) return;
 
                             if (checkedCount > 0) multiItem.classList.add('answered');
@@ -3119,7 +3240,8 @@
                     if (input.type === 'checkbox') {
                         const maxAllowed = parseInt(question.dataset.max || '0', 10);
                         if (maxAllowed > 0) {
-                            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+                            const checkedBoxes = question.querySelectorAll(
+                            'input[type="checkbox"]:checked');
                             if (checkedBoxes.length > maxAllowed) {
                                 input.checked = false;
                                 alert(`You can only select ${maxAllowed} answers for this question.`);
@@ -3134,7 +3256,8 @@
                             if (input.checked) label.classList.add('is-selected');
                             else label.classList.remove('is-selected');
                         } else {
-                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove('is-selected'));
+                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
+                                'is-selected'));
                             if (input.checked) label.classList.add('is-selected');
                         }
                     }
@@ -3158,7 +3281,8 @@
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-active') {
+                        if (mutation.type === 'attributes' && mutation.attributeName ===
+                            'data-active') {
                             const newPart = mutation.target.dataset.active;
                             if (newPart && newPart !== currentPart) {
                                 currentPart = newPart;
@@ -3170,7 +3294,10 @@
 
                 const tabsContainer = document.querySelector('.x-tabs');
                 if (tabsContainer)
-                    observer.observe(tabsContainer, { attributes: true, attributeFilter: ['data-active'] });
+                    observer.observe(tabsContainer, {
+                        attributes: true,
+                        attributeFilter: ['data-active']
+                    });
             }
 
             // 🔄 Update daftar soal tiap part
@@ -3202,7 +3329,7 @@
     <script>
         // Pastikan modal tersembunyi saat halaman dimuat
         $("#resultModal").removeClass("show").hide();
-        
+
         // Modal functions
         function showModal(title = "Hasil Jawaban Anda") {
             $("#modalScoreTitle").text(title);
@@ -3213,7 +3340,7 @@
         function closeModal() {
             $("#resultModal").removeClass("show");
             $("body").css("overflow", "auto");
-            
+
             // Pastikan modal benar-benar tersembunyi setelah animasi
             setTimeout(function() {
                 $("#resultModal").hide();
@@ -3221,19 +3348,6 @@
         }
 
         function retryQuiz() {
-            // closeModal();
-
-            // $("input[type=radio]").prop("checked", false);
-            // $('input[type="checkbox"]').prop('checked', false);
-            // $('input[type="text"]').val('');
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // // $("#scorePercentage").text("0");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($(".qa-body").offset().top);
-            // }, 350);
             location.reload();
         }
 
@@ -3253,14 +3367,18 @@
             }
         });
 
-        function submitHelper(form, setId, tipe) {
+        $(".try-again").on("click", function(){
+            location.reload();
+        })
+
+        function submitHelper(form, setId, tipe, button, againBtn) {
             let allAnswered = true;
 
-            $(`#${form}`).each(function () {
+            $(`#${form}`).each(function() {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
-                inputs.each(function () {
+                inputs.each(function() {
                     if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
                         isAnswered = true;
                     } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
@@ -3302,47 +3420,51 @@
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
 
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
+
                         let correctCount = response.score;
                         let total = Object.keys(response.results).length;
                         let tableRows = "";
                         let questionNumber = 1;
 
                         $.each(response.results, function(qid, data) {
-                        let isCorrect = data.status === "correct";
+                            let isCorrect = data.status === "correct";
 
-                        // ✅ 2. Ambil CORRECT ANSWER dengan fallback
-                        let correctAnswer = data.correct || '';
-                        let userAnswer = data.user || '';
-                        if (!correctAnswer && isCorrect) {
-                            correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
-                        }
-                        if (!correctAnswer) {
-                            correctAnswer = "NOT GIVEN";
-                        }
+                            // ✅ 2. Ambil CORRECT ANSWER dengan fallback
+                            let correctAnswer = data.correct || '';
+                            let userAnswer = data.user || '';
+                            if (!correctAnswer && isCorrect) {
+                                correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                            }
+                            if (!correctAnswer) {
+                                correctAnswer = "NOT GIVEN";
+                            }
 
-                        // ✅ 3. Highlight input aslinya
-                        let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                        questionElement.find("input, select, textarea").each(function () {
-                            if ($(this).is("input[type=radio], input[type=checkbox]")) {
-                                if ($(this).is(":checked")) {
+                            // ✅ 3. Highlight input aslinya
+                            let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                            questionElement.find("input, select, textarea").each(function() {
+                                if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                    if ($(this).is(":checked")) {
+                                        if (isCorrect) {
+                                            $(this).parent().addClass("correct");
+                                        } else {
+                                            $(this).parent().addClass("wrong");
+                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
+                                                .parent().addClass("correct");
+                                        }
+                                    }
+                                } else {
                                     if (isCorrect) {
-                                        $(this).parent().addClass("correct");
+                                        $(this).addClass("correct");
                                     } else {
-                                        $(this).parent().addClass("wrong");
-                                        $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                        $(this).addClass("wrong");
                                     }
                                 }
-                            } else {
-                                if (isCorrect) {
-                                    $(this).addClass("correct");
-                                } else {
-                                    $(this).addClass("wrong");
-                                }
-                            }
-                        });
+                            });
 
-                        // ✅ 4. Bangun tabel baris
-                        tableRows += `
+                            // ✅ 4. Bangun tabel baris
+                            tableRows += `
                             <tr>
                                 <td><strong>${questionNumber++}</strong></td>
                                 <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
@@ -3355,7 +3477,7 @@
                                 </td>
                             </tr>
                         `;
-                    });
+                        });
 
 
                         $("#scoreDisplay").text(`${correctCount}/${total}`);
@@ -3384,37 +3506,37 @@
 
         $("#submit-nc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc", "XJ3XOcvqPbgdZwyl", "nc");
+            submitHelper("form-nc", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc");
         });
 
         $("#submit-nc2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc2", "XJ3XOcvqPbgdZwyl", "nc");
+            submitHelper("form-nc2", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc2");
         });
 
         $("#submit-nc3").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc3", "XJ3XOcvqPbgdZwyl", "nc");
+            submitHelper("form-nc3", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc3");
         });
 
         $("#submit-nc4").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc4", "XJ3XOcvqPbgdZwyl", "nc");
+            submitHelper("form-nc4", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc4");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-oc", "XJ3XOcvqPbgdZwyl", "oc");
+            submitHelper("form-oc", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc");
+            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc");
         });
 
         $("#submit-two_choices").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices");
+            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices", $(this), "again-two_choices");
         });
     </script>
 
@@ -3469,11 +3591,17 @@
 
             // =============== SEEK BAR ===============
             seekBar.addEventListener("input", () => {
+                // Jangan izinkan seek sebelum metadata siap
+                if (!audio.duration || isNaN(audio.duration)) return;
+
                 isSeeking = true;
                 audio.currentTime = (seekBar.value / 100) * audio.duration;
             });
 
-            seekBar.addEventListener("change", () => isSeeking = false);
+            seekBar.addEventListener("change", () => {
+                isSeeking = false;
+            });
+
 
             setInterval(() => {
                 if (!audio.duration) return;
@@ -3508,7 +3636,6 @@
                 btn.className = "fas fa-play";
             }
         });
-
     </script>
 </body>
 

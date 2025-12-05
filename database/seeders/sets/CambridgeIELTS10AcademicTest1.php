@@ -126,7 +126,7 @@ class CambridgeIELTS10AcademicTest1 extends Seeder
         for($i = 1; $i <= count($two_choices); $i++){
             Soal::create([
                 'set_id' => 'XJ3XOcvqPbgdZwyl',
-                'id_soal' => 'XJ3XOcvqPbgdZwyl-1',
+                'id_soal' => 'XJ3XOcvqPbgdZwyl-' . ($i - 1),
                 'tipe_soal' => 'two_choices',
                 'kategori' => 'listening',
                 'jawaban_benar' => $two_choices[$i - 1]

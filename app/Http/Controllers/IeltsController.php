@@ -12,6 +12,7 @@ use App\Models\Writing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class IeltsController extends Controller
@@ -188,7 +189,7 @@ class IeltsController extends Controller
                         'url' => Storage::url($path)
                     ]);
                 }
-            } else if($kategori == 'writing'){
+            } else if ($kategori == 'writing') {
                 $r->validate([
                     'answer' => 'required',
                     'task' => 'required',
@@ -202,7 +203,7 @@ class IeltsController extends Controller
                 $task = $r->input('task', null);
                 $answer = $r->input('answer', null);
                 $setSoal = SetSoal::where('kode', $setId)->first();
-                
+
                 $saveWriting = Writing::create([
                     'student_id' => Auth::user()->id,
                     'set_soal_id' => $setSoal->id,
@@ -214,7 +215,7 @@ class IeltsController extends Controller
 
                 DB::commit();
 
-                if($saveWriting){
+                if ($saveWriting) {
                     return response()->json([
                         'status' => true,
                         'message' => 'Task submited successfully.'
@@ -375,9 +376,9 @@ class IeltsController extends Controller
     {
         DB::beginTransaction();
         try {
-            $setId = $r->input('set_id');
+            $setId    = $r->input('set_id');
             $kategori = $r->input('kategori');
-            $answers = $r->input('answers', []);
+            $answers  = $r->input('answers', []);
 
             if (empty($answers)) {
                 return response()->json([
@@ -387,54 +388,139 @@ class IeltsController extends Controller
             }
 
             $results = [];
-            $score = 0;
+            $score   = 0;
 
-            // Buat identifier unik
             foreach ($answers as $ans) {
-                $qid = $ans['question'] ?? null;
+
+                $qid  = $ans['question'] ?? null;
                 $type = $ans['type'] ?? null;
                 $name = $ans['name'] ?? null;
-                $userAns = trim($ans['answer'] ?? '');
+
+                $rawAnswer = $ans['answer'] ?? null;
+                if (is_array($rawAnswer)) {
+                    $userAns = implode(',', $rawAnswer);
+                } else {
+                    $userAns = trim($rawAnswer ?? '');
+                }
 
                 if (!$type) continue;
+                $cleanName = str_replace(['[]'], '', $name);
 
-                // Gunakan name jika ada, fallback ke type-question
-                $uniqueKey = "{$type}-{$name}";
+                $uniqueKey = "{$type}-{$cleanName}";
 
-                // Ambil soal berdasarkan kombinasi tipe + nomor
-                $name = explode("-", $name);
-                $name = $name[1] . '-' . $name[2];
+                $parts    = explode("-", $cleanName);
+                $lastPart = end($parts);
+
+                $nomor = preg_replace('/[^0-9]/', '', $lastPart);
+
+                if (!$nomor) {
+                    $nomor = $qid;
+                }
+
+                $idSoal = $setId . '-' . $nomor;
+                if ($type === 'two_choices') {
+
+                    $userList = is_array($rawAnswer) ? $rawAnswer : [$rawAnswer];
+                    $userList = array_map(fn($v) => strtolower(trim($v)), $userList);
+
+                    $soal1 = Soal::where('set_id', $setId)
+                        ->where('kategori', $kategori)
+                        ->where('tipe_soal', $type)
+                        ->where('id_soal', $setId . '-' . $nomor)
+                        ->first();
+
+                    $soal2 = Soal::where('set_id', $setId)
+                        ->where('kategori', $kategori)
+                        ->where('tipe_soal', $type)
+                        ->where('id_soal', $setId . '-' . ($nomor + 1))
+                        ->first();
+
+                    $correctPair = [];
+
+                    $parseAnswer = function ($raw) {
+                        $out = [];
+                        if ($raw === null || $raw === '') return $out;
+
+                        if (is_array($raw)) {
+                            $out = array_map(fn($v) => strtolower(trim($v)), $raw);
+                            return $out;
+                        }
+
+                        if (preg_match('/^\s*\[.*\]\s*$/', trim($raw))) {
+                            if (preg_match('/\[(.*?)\]/', $raw, $m)) {
+                                $parts = explode(',', $m[1]);
+                                $out = array_map(fn($v) => strtolower(trim($v)), $parts);
+                                return $out;
+                            }
+                        }
+
+                        $out[] = strtolower(trim($raw));
+                        return $out;
+                    };
+
+                    if ($soal1) {
+                        $correctPair = array_merge($correctPair, $parseAnswer($soal1->jawaban_benar));
+                    }
+                    if ($soal2) {
+                        $correctPair = array_merge($correctPair, $parseAnswer($soal2->jawaban_benar));
+                    }
+
+                    $correctPair = array_values(array_filter(array_unique($correctPair), fn($v) => $v !== ''));
+                    for ($i = 0; $i < 2; $i++) {
+                        $currentNomor = $nomor + $i;
+                        $userAns = strtolower(trim($userList[$i] ?? ''));
+
+                        $matched = false;
+                        if ($userAns !== '' && in_array($userAns, $correctPair, true)) {
+                            $matched = true;
+                            $score++;
+                        }
+
+                        $uniqueKeyChild = "{$type}-{$type}-{$setId}-{$currentNomor}";
+
+                        $results[$uniqueKeyChild] = [
+                            'status'   => $matched ? 'correct' : 'wrong',
+                            'user'     => $userAns ?: null,
+                            'correct'  => $correctPair,
+                            'question' => (string)$currentNomor,
+                            'type'     => $type,
+                        ];
+                    }
+                    continue;
+                }
 
                 $soal = Soal::where('set_id', $setId)
                     ->where('kategori', $kategori)
                     ->where('tipe_soal', $type)
-                    ->where('id_soal', $name)
+                    ->where('id_soal', $idSoal)
                     ->first();
 
                 if (!$soal) {
                     $results[$uniqueKey] = [
                         'status' => 'not_found',
-                        'user' => $userAns ?: null,
+                        'user'   => $userAns ?: null,
                         'correct' => null,
                     ];
                     continue;
                 }
 
-                $correctRaw = (string) $soal->jawaban_benar;
-                $correctNorm = mb_strtoupper(trim($correctRaw));
-                $userNorm = mb_strtoupper(trim($userAns));
+                $correctRaw  = (string)$soal->jawaban_benar;
+                $correctNorm = strtoupper(trim($correctRaw));
+                $userNorm    = strtoupper(trim($userAns));
 
                 $matched = false;
 
                 if (preg_match('/\[(.*?)\]/', $correctRaw, $matches)) {
                     $list = explode(',', $matches[1]);
-                    $list = array_map(fn($v) => mb_strtoupper(trim($v)), $list);
+                    $list = array_map(fn($v) => strtoupper(trim($v)), $list);
 
                     if (in_array($userNorm, $list)) {
                         $matched = true;
                     }
                 } else {
-                    $matched = ($userNorm === $correctNorm);
+                    if ($userNorm === $correctNorm) {
+                        $matched = true;
+                    }
                 }
 
                 if ($matched) $score++;
@@ -448,7 +534,6 @@ class IeltsController extends Controller
                 ];
             }
 
-            // Simpan hasil ke database
             $setSoal = SetSoal::where('kode', $setId)->first();
 
             $history = TestHistory::create([
@@ -465,8 +550,12 @@ class IeltsController extends Controller
                 TestDetailHistory::create([
                     'test_history_id' => $history->id,
                     'soal_id'         => $res['question'],
-                    'jawaban_user'    => $res['user'] ?? '',
-                    'jawaban_benar'   => $res['correct'] ?? '',
+                    'jawaban_user'    => is_array($res['user'])
+                        ? implode(',', $res['user'])
+                        : ($res['user'] ?? ''),
+                    'jawaban_benar'   => is_array($res['correct'])
+                        ? implode(',', $res['correct'])
+                        : ($res['correct'] ?? ''),
                     'status'          => $res['status'] === 'correct',
                 ]);
             }
@@ -481,13 +570,13 @@ class IeltsController extends Controller
             ]);
         } catch (\Exception $e) {
             DB::rollBack();
-
             return response()->json([
                 'status' => 'error',
                 'message' => $e->getMessage(),
             ], 500);
         }
     }
+
 
     public function mockTest(Request $r)
     {
