@@ -1544,7 +1544,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 1.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t/Part 3 - Question 1.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -1611,7 +1611,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 2.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t/Part 3 - Question 2.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -1678,7 +1678,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 3.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t/Part 3 - Question 3.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>

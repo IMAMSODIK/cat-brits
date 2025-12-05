@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -1386,18 +1387,14 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
                     Content: <strong>Task 1</strong> <br><br>
-                    You should spend about 20 minutes on this task. Write at least 150 words.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The first chart below shows how energy is used in an average Australian household.
-                                    The second chart shows the greenhouse gas emissions which result from this energy
-                                    use.</p>
-                                <p>Summarise the information by selecting and reporting the main features, and make
-                                    comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
+                                <p>The tables below give information about sales of Fairtrade-labelled coffee and bananas in 1999 and 2004 in five European countries.</p>
+                                <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-2-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1441,18 +1438,13 @@
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">
                     Content: <strong>Task 2</strong> <br><br>
-                    You should spend about 40 minutes on this task. Write at least 250 words.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>It is important for children to learn the difference between right and wrong at an
-                                    early age.
-                                    Punishment is necessary to help them learn this distinction.</p>
-                                <p>To what extent do you agree or disagree with this opinion?</p>
-                                <p>What sort of punishment should parents and teachers be allowed to use to teach good
-                                    behaviour to children?</p>
+                                <p>Some people think that all university students should study whatever they like. Others believe that they should only be allowed to study subjects that will be useful in the future, such as those related to science and technology.</p>
+                                <p>Discuss both these views and give your own opinion.</p>
                             </div>
                         </article>
 
@@ -1892,105 +1884,143 @@
         });
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.response-form').forEach(form => {
-                const textarea = form.querySelector('.js-response');
-                const charCount = form.querySelector('.char-count');
-                const submitBtn = form.querySelector('.js-submit');
-                const clearBtn = form.querySelector('.js-clear');
-                const successMessage = form.querySelector('.js-success');
-                const taskType = form.dataset.task;
+        $(document).ready(function() {
+            $(".response-form").each(function() {
 
-                // 🔹 Update word count
+                const form = $(this);
+                const textarea = form.find(".js-response");
+                const charCount = form.find(".char-count");
+                const submitBtn = form.find(".js-submit");
+                const clearBtn = form.find(".js-clear");
+                const successMessage = form.find(".js-success");
+
+                const taskType = form.data("task");
+                const noSoal = form.find(".q-item").data("q");
+
+                /* ------------------------------
+                WORD COUNTER
+                --------------------------------*/
                 function updateCharCount() {
-                    const text = textarea.value.trim();
-                    const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
-                    charCount.textContent = words;
-                    submitBtn.disabled = words === 0;
+                    const words = textarea.val().trim() === "" ?
+                        0 :
+                        textarea.val().trim().split(/\s+/).length;
+
+                    charCount.text(words);
+                    submitBtn.prop("disabled", words === 0);
                 }
 
-                // 🔹 Auto resize textarea
+                /* ------------------------------
+                AUTO RESIZE TEXTAREA
+                --------------------------------*/
                 function autoResize() {
-                    textarea.style.height = 'auto';
-                    textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
+                    textarea.css("height", "auto");
+                    textarea.css("height", Math.max(200, textarea[0].scrollHeight) + "px");
                 }
 
-                // 🔹 Clear button
-                clearBtn.addEventListener('click', () => {
-                    if (confirm('Are you sure you want to clear all text?')) {
-                        textarea.value = '';
+                /* ------------------------------
+                CLEAR BUTTON
+                --------------------------------*/
+                clearBtn.on("click", function() {
+                    if (confirm("Are you sure you want to clear all text?")) {
+                        textarea.val("");
                         updateCharCount();
                         autoResize();
                         textarea.focus();
                     }
                 });
 
-                // 🔹 Submit AJAX
-                form.addEventListener('submit', e => {
+                /* ------------------------------
+                FORM SUBMISSION
+                --------------------------------*/
+                form.on("submit", function(e) {
                     e.preventDefault();
 
-                    const text = textarea.value.trim();
+                    const text = textarea.val().trim();
+
                     if (!text) {
-                        alert('Please enter your response before submitting.');
-                        textarea.focus();
+                        alert("Please enter your response before submitting.");
                         return;
                     }
 
-                    submitBtn.textContent = 'Submitting...';
-                    submitBtn.disabled = true;
+                    submitBtn.text("Submitting...");
+                    submitBtn.prop("disabled", true);
 
-                    fetch('/writing/submit', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector(
-                                    'meta[name="csrf-token"]').content
-                            },
-                            body: JSON.stringify({
-                                task: taskType,
-                                response: text
-                            })
-                        })
-                        .then(res => res.json())
-                        .then(data => {
-                            submitBtn.textContent = 'Submit';
-                            submitBtn.disabled = false;
+                    $.ajax({
+                        url: "/ielts/practice/check",
+                        type: "POST",
+                        data: {
+                            task: taskType,
+                            answer: text,
+                            tipe: "practice",
+                            no_soal: noSoal,
+                            set_id: 'QmN0FYAE2DCXRPdC',
+                            kategori: "writing",
+                            _token: $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(res) {
+                            submitBtn.text("Submit");
+                            submitBtn.prop("disabled", false);
 
-                            if (data.status === 'ok') {
-                                successMessage.style.display = 'block';
-                                setTimeout(() => successMessage.style.display = 'none', 3000);
-                                textarea.value = '';
-                                updateCharCount();
-                                autoResize();
-                            } else {
-                                alert('Error: ' + (data.message || 'Something went wrong.'));
+                            alert(res.message)
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+
+                            textarea.val("");
+                            updateCharCount();
+                            autoResize();
+                        },
+                        error: function(xhr) {
+                            submitBtn.text("Submit");
+                            submitBtn.prop("disabled", false);
+
+                            console.log("=== AJAX ERROR DEBUG ===");
+                            console.log("STATUS:", xhr.status);
+
+                            // tampilkan response Laravel yg sebenarnya
+                            console.log("RESPONSE:", xhr.responseText);
+
+                            // kalau JSON
+                            try {
+                                console.log("PARSED JSON:", JSON.parse(xhr
+                                    .responseText));
+                            } catch (e) {
+                                console.log("NOT JSON");
                             }
-                        })
-                        .catch(err => {
-                            console.error(err);
-                            submitBtn.textContent = 'Submit';
-                            submitBtn.disabled = false;
-                            alert('Request failed.');
-                        });
+
+                            alert("Server Error: " + xhr.status);
+                        }
+
+
+                    });
                 });
 
-                // 🔹 Input event
-                textarea.addEventListener('input', () => {
+                /* ------------------------------
+                INPUT EVENT
+                --------------------------------*/
+                textarea.on("input", function() {
                     updateCharCount();
                     autoResize();
                 });
 
-                // 🔹 Scroll center in mobile
+                /* ------------------------------
+                MOBILE SCROLL FIX
+                --------------------------------*/
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.addEventListener('focus', () => {
-                        setTimeout(() => textarea.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        }), 300);
+                    textarea.on("focus", function() {
+                        setTimeout(() => {
+                            textarea[0].scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+                        }, 300);
                     });
                 }
 
+                // INIT
                 updateCharCount();
                 autoResize();
             });

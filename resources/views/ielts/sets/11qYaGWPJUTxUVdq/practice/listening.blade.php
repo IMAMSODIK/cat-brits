@@ -7,9 +7,9 @@
     <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -692,6 +692,7 @@
 
         #panel-tfng .q-options,
         #panel-tfng2 .q-options,
+        #panel-ynng .q-options,
         #panel-mse .q-options,
         #panel-tc .q-options {
             display: flex;
@@ -701,9 +702,9 @@
 
         #panel-tfng .q-number-box,
         #panel-tfng2 .q-number-box,
+        #panel-ynng .q-number-box,
         #panel-mse .q-number-box,
-        #panel-tc .q-number-box,
-        #panel-sa .q-number-box {
+        #panel-tc .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -717,6 +718,7 @@
 
         #panel-tfng .q-text,
         #panel-tfng2 .q-text,
+        #panel-ynng .q-text,
         #panel-mse .q-text,
         #panel-tc .q-text {
             flex: 1;
@@ -729,6 +731,7 @@
 
         /* #panel-tfng input,
         #panel-tfng2 input,
+        #panel-ynng input,
         #panel-mse input,
         #panel-tc input {
             padding: 6px 10px;
@@ -904,7 +907,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            left: 16px;
+            right: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -993,15 +996,15 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                left: 12px;
-                /* left: auto; */
+                right: 12px;
+                left: auto;
                 width: auto;
                 max-width: 100%;
             }
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                /* right: 12px; */
+                right: 12px;
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1020,141 +1023,189 @@
 
     {{-- style unutk audio player --}}
     <style>
-        /* ===============================
-   AUDIO PLAYER CONTAINER
-   =============================== */
-        .audio-player {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+        .audio-player:hover {
+            transform: translateY(-3px);
+        }
 
-            padding: 18px 20px;
-            border-radius: 18px;
-            margin: 20px 0;
+        .player-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
 
+        .player-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .player-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .controls-container {
             display: flex;
-            flex-direction: column;
-            gap: 14px;
-
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
-        /* ===============================
-   PLAY BUTTON (Tapi disembunyikan)
-   =============================== */
-        .ap-btn.ap-play {
-            display: none !important;
-        }
-
-        /* ===============================
-   VOLUME BUTTON (Minimalis)
-   =============================== */
-        .ap-btn.ap-vol {
+        /* ===== PLAY BUTTON ===== */
+        .play-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
             border: none;
-            background: rgba(255, 255, 255, 0.25);
-            padding: 6px 10px;
-            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            transition: 0.2s ease;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
         }
 
-        .ap-btn.ap-vol:hover {
-            background: rgba(255, 255, 255, 0.4);
+        .seek-container {
+            flex: 1;
         }
 
-        /* ===============================
-   TRACK WRAPPER
-   =============================== */
-        .ap-track {
+        .seekBar,
+        #seekBar,
+        .seekBar {
             width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 20px;
-            position: relative;
+            height: 7px;
+            appearance: none;
+            background: #e0e0e0;
+            border-radius: 10px;
+            outline: none;
             overflow: hidden;
         }
 
-        /* Progress bar */
-        .ap-progress {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            border-radius: inherit;
-            transition: width 0.2s linear;
+        .seekBar::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2575fc;
+            box-shadow: -400px 0 0 390px #2575fc;
         }
 
-        /* ===============================
-   SEEK (DISABLED)
-   =============================== */
-        .ap-seek {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: not-allowed !important;
-            pointer-events: none !important;
-        }
-
-        /* ===============================
-   TIME DISPLAY
-   =============================== */
-        .ap-time {
+        .timeText {
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 4px;
-
-            font-size: 14px;
-            color: #fff;
-            font-weight: 500;
+            justify-content: space-between;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #444;
         }
 
-        /* ===============================
-   REMOVE DEFAULT AUDIO ELEMENT
-   =============================== */
-        audio {
-            display: none !important;
+        .start-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
-        /* ===============================
-   RESPONSIVE
-   =============================== */
-        @media (max-width: 600px) {
-            .audio-player {
-                padding: 15px;
-                border-radius: 15px;
-            }
-
-            .ap-time {
-                font-size: 13px;
-            }
-        }
-    </style>
-
-    <style>
-        .floating-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 10px;
-            background-color: #fccb2a;
-            color: rgb(255, 255, 255);
-            border: none;
-            border-radius: 10%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        .start-btn {
+            padding: 9px 15px;
+            font-size: 0.9rem;
+            background: rgba(37, 117, 252, 0.08);
+            border: 1px solid rgba(37, 117, 252, 0.25);
+            color: #2575fc;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1000;
+            transition: 0.15s;
+            white-space: nowrap;
         }
 
-        .floating-btn:hover {
-            background-color: #fff309;
-            transform: scale(1.1);
+        .start-btn:hover {
+            background: rgba(37, 117, 252, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .audio-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            padding: 12px;
+            background: #f4f7ff;
+            border-radius: 10px;
+        }
+
+        .audio-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .audio-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .audio-source {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* =========================== */
+        /*        RESPONSIVE CSS       */
+        /* =========================== */
+
+        /* Mobile (max 480px) */
+        @media (max-width: 480px) {
+
+            .audio-player {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .player-title {
+                font-size: 1.15rem;
+            }
+
+            .play-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.85rem;
+            }
+
+            .start-btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .timeText {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tablet (480px – 768px) */
+        @media (max-width: 768px) {
+            .audio-player {
+                max-width: 100%;
+            }
+
+            .play-btn {
+                width: 46px;
+                height: 46px;
+            }
+
+            .start-btn {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Desktop Wide */
+        @media (min-width: 1200px) {
+            .audio-player {
+                max-width: 100%;
+            }
         }
     </style>
 
@@ -1162,21 +1213,18 @@
     <style>
         /* Modal Styles */
         .custom-modal {
-            display: none !important;
-            /* Pastikan modal tersembunyi secara default */
+            display: none !important; /* Pastikan modal tersembunyi secara default */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.5);
             z-index: 1000;
             padding: 15px;
             box-sizing: border-box;
-            opacity: 0;
-            /* Tambahkan opacity untuk transisi */
-            transition: opacity 0.3s ease;
-            /* Smooth transition */
+            opacity: 0; /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease; /* Smooth transition */
         }
 
         /* State ketika modal ditampilkan */
@@ -1193,14 +1241,13 @@
             width: 100%;
             max-width: 700px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             overflow: hidden;
             max-height: 90vh;
             display: flex;
             flex-direction: column;
             margin: auto;
-            transform: scale(0.9) translateY(-20px);
-            /* State awal untuk animasi */
+            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
             transition: transform 0.3s ease;
         }
 
@@ -1217,7 +1264,7 @@
             padding: 20px 25px;
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .score-summary-header {
@@ -1236,8 +1283,8 @@
             justify-content: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
         }
 
@@ -1275,7 +1322,7 @@
         }
 
         .modal-close:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255,255,255,0.2);
         }
 
         .custom-modal-body {
@@ -1292,7 +1339,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -1317,14 +1364,14 @@
             background-color: #f9f9f9;
         }
 
-        .answer-correct {
-            color: #27ae60;
-            font-weight: bold;
+        .answer-correct { 
+            color: #27ae60; 
+            font-weight: bold; 
         }
-
-        .answer-wrong {
-            color: #e74c3c;
-            font-weight: bold;
+        
+        .answer-wrong { 
+            color: #e74c3c; 
+            font-weight: bold; 
         }
 
         .status-badge {
@@ -1390,56 +1437,55 @@
             .custom-modal {
                 padding: 10px;
             }
-
+            
             .custom-modal-content {
                 max-height: 95vh;
             }
-
+            
             .custom-modal-header {
                 padding: 15px 20px;
             }
-
+            
             .score-circle {
                 width: 60px;
                 height: 60px;
             }
-
+            
             .score-circle span {
                 font-size: 1rem;
             }
-
+            
             .score-circle small {
                 font-size: 0.7rem;
             }
-
+            
             .modal-title {
                 font-size: 1.2rem;
                 margin-left: 10px;
             }
-
+            
             .modal-close {
                 width: 35px;
                 height: 35px;
                 font-size: 24px;
             }
-
+            
             .custom-modal-body {
                 padding: 15px;
             }
-
+            
             .result-table {
                 font-size: 0.9rem;
             }
-
-            .result-table th,
-            .result-table td {
+            
+            .result-table th, .result-table td {
                 padding: 10px 8px;
             }
-
+            
             .modal-actions {
                 flex-direction: column;
             }
-
+            
             .modal-btn {
                 width: 100%;
             }
@@ -1449,26 +1495,26 @@
             .custom-modal {
                 padding: 5px;
             }
-
+            
             .result-table {
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
             }
-
+            
             .score-circle {
                 width: 50px;
                 height: 50px;
             }
-
+            
             .score-circle span {
                 font-size: 0.9rem;
             }
-
+            
             .score-circle small {
                 font-size: 0.6rem;
             }
-
+            
             .status-badge {
                 font-size: 0.8rem;
                 padding: 4px 8px;
@@ -1483,30 +1529,6 @@
             background: #ffe6e6;
         }
 
-        #confirmModal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            background: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        #confirmModal .box {
-            background: white;
-            padding: 20px;
-            width: 320px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        #confirmModal button {
-            margin-top: 15px;
-            padding: 8px 16px;
-        }
     </style>
 </head>
 
@@ -1516,8 +1538,7 @@
             <div class="brand">
                 <div class="logo" aria-hidden="true">
                     <div class="logo" aria-hidden="true">
-                        <img class="" style="width: 70px;margin-left: 50px"
-                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                        <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1527,14 +1548,9 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
-                    <i class="fa-regular fa-clock"></i>
-                    <span id="timeText">00:00</span>
-                </div>
-
-                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
-                    <i class="fa-solid fa-rotate-right"></i>
-                    <span class="label">Try Again</span>
+                <button id="doneBtn" class="btn btn-danger">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span class="label">Close</span>
                 </button>
             </div>
         </div>
@@ -1557,28 +1573,47 @@
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
             <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Part 1</button>
+                aria-selected="true" data-id="tfng">Note Completion</button>
+            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
+                data-id="one">One Choice</button>
+            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
+                data-id="matching_information">Matching Information</button>
+            <button class="x-tab" role="tab" id="tab-mh" aria-controls="panel-mh" aria-selected="false"
+                data-id="mh">Two Choices</button>
+            <button class="x-tab" role="tab" id="tab-mh2" aria-controls="panel-mh2" aria-selected="false"
+                data-id="mh2">Two Choices 2</button>
+            <button class="x-tab" role="tab" id="tab-one2" aria-controls="panel-one2" aria-selected="false"
+                data-id="one2">One Choice 2</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
-                data-id="tfng2">Part 2</button>
-            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Part 3</button>
-            <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
-                data-id="mse">Part 4</button>
+                data-id="tfng2">Note Completion 2</button>
         </div>
 
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Content: Part 1</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="qa highlighted-content">
-                        <form class="qa-body">
+                <div class="x-panel-inner">Content: Note Completion</div>
+                <div class="reading-section highlighted-content" aria-label="Reading and Questions">
+                    <div class="qa">
+                        <form class="qa-body" id="form-nc">
                             <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
-                                <div class="audio-player">
-                                    <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-1.mp3"></audio>
-                                    <input type="range" class="timeline" value="0" disabled>
-                                    <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+                                <p class="lead">Listen and answer questions 1-10</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-1.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="53" type="button">Start from here</button>
+                                    </div>
                                 </div>
                             </fieldset>
 
@@ -1603,19 +1638,19 @@
                                 <tr>
                                     <td><b>Name:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="1" data-type="tfng">
+                                        <div class="q-item" data-q="1">
                                             Luisa 
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="tfng-QmN0FYAE2DCXRPdC-1" class="q-text" placeholder="">
+                                            <input type="text" name="QmN0FYAE2DCXRPdC-1" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Address:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="2" data-type="tfng">
+                                        <div class="q-item" data-q="2">
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="tfng-QmN0FYAE2DCXRPdC-2" class="q-text" placeholder="">
+                                            <input type="text" name="QmN0FYAE2DCXRPdC-2" class="q-text" placeholder="">
                                             White Stone Rd
                                         </div>
                                     </td>
@@ -1627,28 +1662,28 @@
                                 <tr>
                                     <td><b>Postcode:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="3" data-type="tfng">
+                                        <div class="q-item" data-q="3">
                                             <span class="q-number-box">3</span>
-                                            <input type="text" name="tfng-QmN0FYAE2DCXRPdC-3" class="q-text" placeholder="">
+                                            <input type="text" name="QmN0FYAE2DCXRPdC-3" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Occupation:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="4" data-type="tfng">
+                                        <div class="q-item" data-q="4">
                                             <span class="q-number-box">4</span>
-                                            <input type="text" name="tfng-QmN0FYAE2DCXRPdC-4" class="q-text" placeholder="">
+                                            <input type="text" name="QmN0FYAE2DCXRPdC-4" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Reason for visit to town:</b></td>
                                     <td>
-                                        <div class="q-item" data-q="5" data-type="tfng">
+                                        <div class="q-item" data-q="5">
                                         to go to the
                                             <span class="q-number-box">5</span>
-                                            <input type="text" name="tfng-QmN0FYAE2DCXRPdC-5" class="q-text" placeholder="">
+                                            <input type="text" name="QmN0FYAE2DCXRPdC-5" class="q-text" placeholder="">
                                         </div>
                                     </td>
                                 </tr>
@@ -1657,19 +1692,19 @@
                                         <p><b>Suggestions for improvement</b>:</p>
                                         <ul>
                                             <li>
-                                                <div class="q-item" data-q="6" data-type="tfng">
+                                                <div class="q-item" data-q="6">
                                                     better 
                                                     <span class="q-number-box">6</span>
-                                                    <input type="text" name="tfng-QmN0FYAE2DCXRPdC-6" class="q-text"
+                                                    <input type="text" name="QmN0FYAE2DCXRPdC-6" class="q-text"
                                                         placeholder="">
                                                 </div>
                                             </li>
                                             <li>have more footpaths</li>
                                             <li>
-                                                <div class="q-item" data-q="7" data-type="tfng">
+                                                <div class="q-item" data-q="7">
                                                     more frequent
                                                     <span class="q-number-box">7</span>
-                                                    <input type="text" name="tfng-QmN0FYAE2DCXRPdC-7" class="q-text"
+                                                    <input type="text" name="QmN0FYAE2DCXRPdC-7" class="q-text"
                                                         placeholder="">
                                                 </div>
                                             </li>
@@ -1681,28 +1716,28 @@
                                         <p><b>Things that would encourage cycling to work</b>:</p>
                                         <ul>
                                             <li>
-                                                <div class="q-item" data-q="8" data-type="tfng">
+                                                <div class="q-item" data-q="8">
                                                     having  
                                                     <span class="q-number-box">8</span>
-                                                    <input type="text" name="tfng-QmN0FYAE2DCXRPdC-8" class="q-text"
+                                                    <input type="text" name="QmN0FYAE2DCXRPdC-8" class="q-text"
                                                         placeholder="">
                                                     parking places for bicycles
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="q-item" data-q="9" data-type="tfng">
+                                                <div class="q-item" data-q="9">
                                                     being able to use a
                                                     <span class="q-number-box">9</span>
-                                                    <input type="text" name="tfng-QmN0FYAE2DCXRPdC-9" class="q-text"
+                                                    <input type="text" name="QmN0FYAE2DCXRPdC-9" class="q-text"
                                                         placeholder="">
                                                     at work
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="q-item" data-q="10" data-type="tfng">
+                                                <div class="q-item" data-q="10">
                                                     the opportunity to have cycling
                                                     <span class="q-number-box">10</span>
-                                                    <input type="text" name="tfng-QmN0FYAE2DCXRPdC-10" class="q-text"
+                                                    <input type="text" name="QmN0FYAE2DCXRPdC-10" class="q-text"
                                                         placeholder="">
                                                      on busy roads
                                                 </div>
@@ -1711,331 +1746,410 @@
                                     </td>
                                 </tr>
                             </table>
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-nc">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Content: Part 2</div>
-                <div class="qa highlighted-content">
-                    <form class="qa-body">
-                        <fieldset class="q-item">
-                            <p class="lead">Listen and answer questions 11-20</p>
-                            <div class="audio-player">
-                                <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-2.mp3"></audio>
-                                <input type="range" class="timeline" value="0" disabled>
-                                <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+            <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
+                <div class="x-panel-inner">Content: One Choice</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-oc">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-4</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-2.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="44" type="button">Start from here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-4</p>
+                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <h3><b>New city developments</b></h3>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1">
+                                <legend class="q-text">
+                                    <span class="q-number">1</span>
+                                    The idea for the two new developments in the city came from
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">local people.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">the City Council.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">the SWRDC.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="2">
+                                <legend class="q-text">
+                                    <span class="q-number">2</span>
+                                    What is unusual about Brackenside pool?
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">its architectural style</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">its heating system</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">its method of water treatment</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="3">
+                                <legend class="q-text">
+                                    <span class="q-number">3</span>
+                                    Local newspapers have raised worries about
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">the late opening date.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">the cost of the project.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">the size of the facilities.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="4">
+                                <legend class="q-text">
+                                    <span class="q-number">4</span>
+                                    What decision has not yet been made about the pool?
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">whose statue will be at the door</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">the exact opening times</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">who will open it</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-oc">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                             </div>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p>Questions 1-4</p>
-                            <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <h3><b>New city developments</b></h3>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="1" data-type="oc">
-                            <legend class="q-text">
-                                <span class="q-number">1</span>
-                                The idea for the two new developments in the city came from
-                            </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-1" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">local people.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-1" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">the City Council.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-1" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">the SWRDC.</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="2" data-type="oc">
-                            <legend class="q-text">
-                                <span class="q-number">2</span>
-                                What is unusual about Brackenside pool?
-                            </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-2" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">its architectural style</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-2" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">its heating system</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-2" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">its method of water treatment</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="3" data-type="oc">
-                            <legend class="q-text">
-                                <span class="q-number">3</span>
-                                Local newspapers have raised worries about
-                            </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-3" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">the late opening date.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-3" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">the cost of the project.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-3" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">the size of the facilities.</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="4" data-type="oc">
-                            <legend class="q-text">
-                                <span class="q-number">4</span>
-                                What decision has not yet been made about the pool?
-                            </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-4" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">whose statue will be at the door</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-4" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">the exact opening times</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-QmN0FYAE2DCXRPdC-4" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">who will open it</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p>Questions 1-6</p>
-                            <p>Which feature is related to each of the following areas of the world represented in the playground?</p>
-                            <p><i>Choose SIX answers from the box and write the correct letter, <b>A-I</b>, next to questions</i></p>
-                            <b>Features</b>
-
-                            <table cellspacing="15">
-                                <tr>
-                                    <td><b>A</b></td>
-                                    <td>ancient forts</td>
-                                </tr>
-                                <tr>
-                                    <td><b>B</b></td>
-                                    <td>waterways</td>
-                                </tr>
-                                <tr>
-                                    <td><b>C</b></td>
-                                    <td>ice and snow</td>
-                                </tr>
-                                <tr>
-                                    <td><b>D</b></td>
-                                    <td>jewels</td>
-                                </tr>
-                                <tr>
-                                    <td><b>E</b></td>
-                                    <td>local animals</td>
-                                </tr>
-                                <tr>
-                                    <td><b>F</b></td>
-                                    <td>mountains</td>
-                                </tr>
-                                <tr>
-                                    <td><b>G</b></td>
-                                    <td>music and film</td>
-                                </tr>
-                                <tr>
-                                    <td><b>H</b></td>
-                                    <td>space travel</td>
-                                </tr>
-                                <tr>
-                                    <td><b>I</b></td>
-                                    <td>volcanoes</td>
-                                </tr>
-                            </table>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <h3><b>Areas of the world</b></h3>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="1" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">1</span>
-                                <span style="flex: 1;">
-                                    Asia  
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-1" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="2" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">2</span>
-                                <span style="flex: 1;">
-                                    Antarctica 
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-2" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="3" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">3</span>
-                                <span style="flex: 1;">
-                                    South America 
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-3" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="4" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">4</span>
-                                <span style="flex: 1;">
-                                    North America 
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-4" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="5" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">5</span>
-                                <span style="flex: 1;">
-                                    Europe  
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-5" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="6" data-type="matching_information">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                <span class="q-number">6</span>
-                                <span style="flex: 1;">
-                                    Africa  
-                                    <span class="q-question">
-                                        <select name="matching_information-QmN0FYAE2DCXRPdC-6" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Content: Part 3</div>
+            <div id="panel-matching_information" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching Information</div>
                 <div class="reading-section">
-                    <div class="qa highlighted-content">
-                        <form class="qa-body">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-matching_information">
                             <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 21-30</p>
-                                <div class="audio-player">
-                                    <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-3.mp3"></audio>
-                                    <input type="range" class="timeline" value="0" disabled>
-                                    <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+                                <p class="lead">Listen and answer questions 1-6</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-2.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="208" type="button">Start from here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-6</p>
+                                <p>Which feature is related to each of the following areas of the world represented in the playground?</p>
+                                <p><i>Choose SIX answers from the box and write the correct letter, <b>A-I</b>, next to questions</i></p>
+                                <b>Features</b>
+
+                                <table cellspacing="15">
+                                    <tr>
+                                        <td><b>A</b></td>
+                                        <td>ancient forts</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>B</b></td>
+                                        <td>waterways</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>C</b></td>
+                                        <td>ice and snow</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>D</b></td>
+                                        <td>jewels</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>E</b></td>
+                                        <td>local animals</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>F</b></td>
+                                        <td>mountains</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>G</b></td>
+                                        <td>music and film</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>H</b></td>
+                                        <td>space travel</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>I</b></td>
+                                        <td>volcanoes</td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <h3><b>Areas of the world</b></h3>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">1</span>
+                                    <span style="flex: 1;">
+                                        Asia  
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-1" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="2">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">2</span>
+                                    <span style="flex: 1;">
+                                        Antarctica 
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-2" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="3">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">3</span>
+                                    <span style="flex: 1;">
+                                        South America 
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-3" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="4">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">4</span>
+                                    <span style="flex: 1;">
+                                        North America 
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-4" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="5">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">5</span>
+                                    <span style="flex: 1;">
+                                        Europe  
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-5" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="6">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">6</span>
+                                    <span style="flex: 1;">
+                                        Africa  
+                                        <span class="q-question">
+                                            <select name="QmN0FYAE2DCXRPdC-6" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                                <option value="H">H</option>
+                                                <option value="I">I</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
+                <div class="x-panel-inner">Content: Two Choices</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-two_choices">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-2</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="47" type="button">Start from here</button>
+                                    </div>
                                 </div>
                             </fieldset>
 
@@ -2044,7 +2158,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1">
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
                                     <span class="q-number">2</span>
@@ -2052,34 +2166,77 @@
                                 </legend>
                                 <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="checkbox" name="q1" value="A" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">camping</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="q1" value="B" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">climbing</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="q1" value="C" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">collecting</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="q1" value="D" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="D" />
                                         <span class="opt-code">D</span>
                                         <span class="opt-label">hunting</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="q1" value="E" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="E" />
                                         <span class="opt-code">E</span>
                                         <span class="opt-label">reading</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1">
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-two_choices">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-mh2" class="x-panel" role="tabpanel" aria-labelledby="tab-mh2" hidden>
+                <div class="x-panel-inner">Content: Two Choices</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-two_choices2">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-2</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="93" type="button">Start from here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-2</p>
+                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
                                     <span class="q-number">2</span>
@@ -2087,30 +2244,68 @@
                                 </legend>
                                 <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="q2" value="A" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">to examine ancient carvings</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q2" value="B" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">to experience an isolated place</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q2" value="C" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">to formulate a new theory</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q2" value="D" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="D" />
                                         <span class="opt-code">D</span>
                                         <span class="opt-label">to learn survival skills</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="q2" value="E" />
+                                        <input type="checkbox" name="QmN0FYAE2DCXRPdC-1[]" value="E" />
                                         <span class="opt-code">E</span>
                                         <span class="opt-label">to study the impact of an extreme environment</span>
                                     </label>
+                                </div>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-two_choices2">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-one2" class="x-panel" role="tabpanel" aria-labelledby="tab-one2" hidden>
+                <div class="x-panel-inner">Content: One Choice</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-oc2">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-4</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0" class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="198" type="button">Start from here</button>
+                                    </div>
                                 </div>
                             </fieldset>
 
@@ -2266,141 +2461,164 @@
                                     </label>
                                 </div>
                             </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-oc2">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-            <div class="x-panel-inner">Content: Part 4</div>
-            <div class="qa highlighted-content">
-                <form class="qa-body">
-                    <fieldset class="q-item">
-                        <p class="lead">Listen and answer questions 31-40</p>
-                        <div class="audio-player">
-                            <audio
-                                src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
-                            <input type="range" class="timeline" value="0" disabled>
-                            <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                <div class="x-panel-inner">Content: Note Completion 2</div>
+                <div class="qa highlighted-content">
+                    <form class="qa-body" id="form-nc2">
+                        <fieldset class="q-item">
+                            <p class="lead">Listen and answer questions 1-10</p>
+                            <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                <audio preload="auto"
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-10-academic-listening-2-audio-4.mp3">
+                                </audio>
+
+                                <div class="controls-container">
+                                    <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                    <div class="seek-container">
+                                        <input type="range" min="0" max="100" value="0" class="seekBar">
+                                        <div class="timeText"><span class="current">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="start-buttons">
+                                    <button class="start-btn" data-start="72" type="button">Start from here</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="q-item">
+                            <p>Questions 1-10</p>
+                            <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item">
+                            <p><b>THE FUTURE OF MANAGEMENT</b></p>
+                            <p><b>Business markets</b></p>
+                            <ul>
+                                <li>
+                                    <div class="q-list" data-q="11">
+                                        greater
+                                        <span class="q-number-box">1</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-11" class="q-text" placeholder="">
+                                        among companies
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="12">
+                                        increase in power of large
+                                        <span class="q-number-box">2</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-12" class="q-text" placeholder="">
+                                        Companies
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="13">
+                                        rising 
+                                        <span class="q-number-box">3</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-13" class="q-text" placeholder="">
+                                        in certain countries
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p><b>External influences on businesses</b></p>
+                            <ul>
+                                <li>
+                                    <div class="q-list" data-q="14">
+                                        more discussion with
+                                        <span class="q-number-box">4</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-14" class="q-text" placeholder="">
+                                        before making business decisions
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="15">
+                                        environmental concerns which may lead to more
+                                        <span class="q-number-box">5</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-15" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p><b>Business structures</b></p>
+                            <ul>
+                                <li>
+                                    <div class="q-list" data-q="16">
+                                        more teams will be formed to work on a particular
+                                        <span class="q-number-box">6</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-16" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="17">
+                                        businesses may need to offer hours that are
+                                        <span class="q-number-box">7</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-17" class="q-text" placeholder="">
+                                        , or the chance to work remotely
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p><b>Management styles</b></p>
+                            <ul>
+                                <li>
+                                    <div class="q-list" data-q="18">
+                                        increasing need for managers to provide good
+                                        <span class="q-number-box">8</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-18" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="19">
+                                        changes influenced by
+                                        <span class="q-number-box">9</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-19" class="q-text" placeholder="">
+                                        taking senior roles
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p><b>Changes in the economy</b></p>
+                            <ul>
+                                <li>
+                                    service sector continues to be important
+                                </li>
+                                <li>
+                                    increasing value of intellectual property
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="20">
+                                        more and more
+                                        <span class="q-number-box">10</span>
+                                        <input type="text" name="QmN0FYAE2DCXRPdC-20" class="q-text" placeholder="">
+                                        workers
+                                    </div>
+                                </li>
+                            </ul>
+                        </fieldset>
+
+                        <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary" id="submit-nc2">
+                                Submit
+                            </button>
+                            <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                         </div>
-                    </fieldset>
-
-                    <fieldset class="q-item">
-                        <p>Questions 31-40</p>
-                        <p>Complete the notes below.</p>
-                        <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                    </fieldset>
-
-                    <fieldset class="q-item">
-                        <h3><b>THE SPIRIT BEAR</b></h3>
-                        <p><b>General facts</b></p>
-                        <ul>
-                            <li>It is a white bear belonging to the black bear family.</li>
-                            <li>
-                                <div class="q-list" data-q="1" data-type="nc">
-                                    Its colour comes from an uncommon
-                                    <span class="q-number-box">31</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="2" data-type="nc">
-                                    Local people believe that it has unusual
-                                    <span class="q-number-box">32</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="3" data-type="nc">
-                                    They protect the bear from
-                                    <span class="q-number-box">33</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Habitat</b></p>
-                        <ul>
-                            <li>The bear’s relationship with the forest is complex.</li>
-                            <li>
-                                <div class="q-list" data-q="4" data-type="nc">
-                                    Tree roots stop
-                                    <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
-                                        placeholder="">
-                                    along salmon streams.
-                                </div>
-                            </li>
-                            <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
-                            <li>
-                                <div class="q-list" data-q="5" data-type="nc">
-                                    It is currently found on a small number of
-                                    <span class="q-number-box">35</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Threats</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="6" data-type="nc">
-                                    Habitat is being lost due to deforestation and construction of
-                                    <span class="q-number-box">36</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="7" data-type="nc">
-                                    Unrestricted
-                                    <span class="q-number-box">37</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
-                                        placeholder="">
-                                    is affecting the salmon supply.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="8" data-type="nc">
-                                    The bears’ existence is also threatened by their low rate of
-                                    <span class="q-number-box">38</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Going forward</b></p>
-                        <ul>
-                            <li>Interested parties are working together.</li>
-                            <li>
-                                <div class="q-list" data-q="9" data-type="nc">
-                                    Logging companies must improve their
-                                    <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="10" data-type="nc">
-                                    Maintenance and
-                                    <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
-                                        placeholder="">
-                                    of the spirit bears’ territory is needed.
-                                </div>
-                            </li>
-                        </ul>
-                    </fieldset>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -2420,10 +2638,6 @@
         </div>
     </div>
 
-    <button class="floating-btn" id="doneBtn">
-        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
-    </button>
-
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
         <div class="color-option green" data-color="green"></div>
@@ -2442,13 +2656,14 @@
         </div>
     </div>
 
+    <!-- Modal Wrapper -->
     <div id="resultModal" class="custom-modal">
         <div class="custom-modal-content">
             <div class="custom-modal-header">
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        <small id="scorePercentage">0</small>
+                        {{-- <small id="scorePercentage">0</small> --}}
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -2471,7 +2686,7 @@
                     </tbody>
                 </table>
             </div>
-
+            
             <!-- Action Buttons -->
             <div class="modal-actions">
                 <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
@@ -2480,34 +2695,23 @@
         </div>
     </div>
 
-    <!-- MODAL CONFIRMATION -->
-    <div id="confirmModal">
-        <div class="box">
-            <h3>Audio Notice</h3>
-            <p>The audio in this section can only be played once for each part.</p>
-            <button id="confirmYes">Yes, continue</button>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
-
+    <!-- script bagian audio player -->
     <script>
         let scoreMap = [
-            { score: 9.0, min: 39, max: 40 },
-            { score: 8.5, min: 37, max: 38 },
-            { score: 8.0, min: 35, max: 36 },
-            { score: 7.5, min: 32, max: 34 },
-            { score: 7.0, min: 30, max: 31 },
-            { score: 6.5, min: 26, max: 29 },
-            { score: 6.0, min: 23, max: 25 },
-            { score: 5.5, min: 18, max: 22 },
-            { score: 5.0, min: 16, max: 17 },
-            { score: 4.5, min: 13, max: 15 },
-            { score: 4.0, min: 11, max: 12 },
-            { score: 3.5, min: 8,  max: 10 },
-            { score: 3.0, min: 6,  max: 7 },
-            { score: 2.5, min: 4,  max: 5 },
+            {min: 39, max: 40, score: 9.0},
+            {min: 37, max: 38, score: 8.5},
+            {min: 35, max: 36, score: 8.0},
+            {min: 33, max: 34, score: 7.5},
+            {min: 30, max: 32, score: 7.0},
+            {min: 27, max: 29, score: 6.5},
+            {min: 23, max: 26, score: 6.0},
+            {min: 19, max: 22, score: 5.5},
+            {min: 15, max: 18, score: 5.0},
+            {min: 13, max: 14, score: 4.5},
+            {min: 10, max: 12, score: 4.0},
+            {min: 8,  max: 9,  score: 3.5},
+            {min: 6,  max: 7,  score: 3.0},
+            {min: 4,  max: 5,  score: 2.5}
         ];
 
         function convertScore(correctCount) {
@@ -2520,62 +2724,8 @@
         }
     </script>
 
-    <script>
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
-        }
 
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            closeModal();
-
-            // $("#form-tfng input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // $("#scorePercentage").text("0%");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($("#form-tfng").offset().top);
-            // }, 350);
-
-            location.reload()
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        $(document).ready(function() {
-            $("#resultModal").removeClass("show").hide();
-        });
-    </script>
-
-    <!-- script bagian audio player -->
-    <script>
+    {{-- <script>
         (function setupAudioPlayers() {
             const players = document.querySelectorAll('.audio-player');
 
@@ -2668,200 +2818,24 @@
                 });
             });
         })();
-    </script>
-
+    </script> --}}
 
     <script>
         (function() {
-            let remaining = 0;
-            let t = null;
-            const el = document.getElementById('timeText');
-            const wrap = document.getElementById('timer');
-
-            function format(mmss) {
-                const m = Math.floor(mmss / 60);
-                const s = mmss % 60;
-                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-            }
-
-            function tick() {
-                if (remaining <= 0) {
-                    clearInterval(t);
-                    t = null;
-                    el.textContent = '00:00';
-                    wrap.classList.add('danger');
-                    document.getElementById('doneBtn').disabled = true;
-                    document.getElementById('doneBtn').style.opacity = 0.7;
-                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
-
-                    $("#retake").css("display", "");
-
-                    let results = [];
-
-                    $('.q-item, .q-list').each(function() {
-                        // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                        if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
-
-                        const type = $(this).data('type');
-                        const qnum = $(this).data('q');
-
-                        if (typeof type === 'undefined') return;
-
-                        let name = null;
-                        let answer = null;
-
-                        switch (type) {
-                            case 'tfng':
-                            case 'oc':
-                            case 'ynng':
-                                const checked = $(this).find('input[type="radio"]:checked');
-                                if (checked.length > 0) {
-                                    name = checked.attr('name');
-                                    answer = checked.val();
-                                } else {
-                                    const anyRadio = $(this).find('input[type="radio"]').first();
-                                    if (anyRadio.length > 0) name = anyRadio.attr('name');
-                                }
-                                break;
-
-                            case 'sa':
-                            case 'tc':
-                            case 'nc':
-                                const input = $(this).find('input[type="text"]');
-                                if (input.length > 0) {
-                                    name = input.attr('name');
-                                    answer = input.val();
-                                }
-                                break;
-
-                            case 'mh':
-                            case 'mse':
-                                const select = $(this).find('select');
-                                if (select.length > 0) {
-                                    name = select.attr('name');
-                                    answer = select.val();
-                                }
-                                break;
-                        }
-
-                        results.push({
-                            type: type,
-                            name: name,
-                            answer: answer || null,
-                            question: qnum || null
-                        });
-                    });
-
-                    $.ajax({
-                        url: '/ielts/mock-test/check',
-                        type: 'POST',
-                        data: {
-                            _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'XJ3XOcvqPbgdZwyl',
-                            kategori: 'listening',
-                            answers: results,
-                            tipe_test: 'mock'
-                        },
-                        success: function(response) {
-                            console.log(response);
-
-                            if (response.status === 'ok') {
-                                let correctCount = 0;
-                                let total = Object.keys(response.results).length;
-                                let tableRows = '';
-                                let questionNumber = 1;
-
-                                $.each(response.results, function(key, data) {
-                                    let isCorrect = data.status === 'correct';
-                                    if (isCorrect) correctCount++;
-
-                                    let correctAnswer = data.correct || '';
-                                    let userAnswer = data.user || '';
-                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
-
-                                    tableRows += `
-                                        <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-                                });
-
-                                // Update skor di UI
-                                $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-                                let percentage = (correctCount / total) * 100;
-                                let scoreCircle = $(".score-circle");
-                                if (percentage >= 80) {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
-                                } else if (percentage >= 60) {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #f39c12, #e67e22)");
-                                } else {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
-                                }
-
-                                $("#resultsTableBody").html(tableRows);
-
-                                // tampilkan modal hasil
-                                showModal(`Score: ${correctCount} / ${total}`);
-                            } else {
-                                alert('Terjadi kesalahan: ' + response.message);
-                            }
-                        },
-                        error: function(xhr) {
-                            console.error(xhr.responseText);
-                            alert('Terjadi kesalahan: ' + xhr.status);
-                        }
-                    });
-
-                    return;
-                }
-                remaining -= 1;
-                el.textContent = format(remaining);
-                // Kedipkan danger saat < 60 detik
-                if (remaining <= 60) {
-                    wrap.classList.add('danger');
-                }
-            }
-
-            function startCountdown(seconds) {
-                if (t) clearInterval(t);
-                remaining = Math.max(0, Math.floor(seconds));
-                el.textContent = format(remaining);
-                wrap.classList.toggle('danger', remaining <= 60);
-                document.getElementById('doneBtn').disabled = false;
-                document.getElementById('doneBtn').style.opacity = 1;
-                document.getElementById('doneBtn').style.cursor = 'pointer';
-                t = setInterval(tick, 1000);
-            }
-
-            // Public API (opsional)
-            window.CATHeader = {
-                startCountdown
-            };
-
             // Events
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit test'
                 );
-
             });
-            // Mulai countdown (contoh: 15 menit)
-            startCountdown(13 * 60);
+
+            document.getElementById('doneBtn').addEventListener('click', function() {
+                const confirmFinish = confirm('Do you want to end the test now?');
+                if (confirmFinish) {
+                    window.history.back();
+                }
+            });
         })();
     </script>
 
@@ -3174,8 +3148,7 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest(
-                    '.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -3242,14 +3215,14 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
-            // Toggle collapse
+            // 🧩 Toggle collapse floating panel
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // Generate question numbers
+            // 🧩 Generate list nomor soal
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -3262,7 +3235,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -3272,22 +3244,19 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // 🧭 Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
 
                 const question = panel.querySelector(`[data-q="${qNum}"]`);
                 if (question) {
-                    question.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                    question.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     question.focus();
                 }
             }
 
-            // Update status soal (radio, dropdown, text)
+            // ✅ Update status soal
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -3309,6 +3278,10 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
+                    // Checkbox
+                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkboxChecked.length > 0) answered = true;
+
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -3317,18 +3290,65 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    if (answered) item.classList.add('answered');
+                    // Soal multi-nomor (contoh: data-q-multi="1,2")
+                    const multi = question.dataset.qMulti;
+                    if (multi) {
+                        const numbers = multi.split(',').map(n => n.trim());
+                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                        numbers.forEach(num => {
+                            const multiItem = fqList.querySelector(`[data-q="${num}"][data-part="${partId}"]`);
+                            if (!multiItem) return;
+
+                            if (checkedCount > 0) multiItem.classList.add('answered');
+                            else multiItem.classList.remove('answered');
+                        });
+                    } else {
+                        if (answered) item.classList.add('answered');
+                        else item.classList.remove('answered');
+                    }
                 }
             }
 
-            // Deteksi jawaban berubah
+            // 🧠 Perubahan jawaban
             function watchAnswerChanges() {
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
+                document.addEventListener('change', (e) => {
+                    const input = e.target;
+                    const question = input.closest('[data-q]');
+                    const group = input.closest('.q-options');
+                    const label = input.closest('.q-option');
+
+                    if (!question) return;
+
+                    // 🔹 Batasi jumlah checkbox
+                    if (input.type === 'checkbox') {
+                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
+                        if (maxAllowed > 0) {
+                            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+                            if (checkedBoxes.length > maxAllowed) {
+                                input.checked = false;
+                                alert(`You can only select ${maxAllowed} answers for this question.`);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 🔹 Update warna label pilihan
+                    if (group && label) {
+                        if (input.type === 'checkbox') {
+                            if (input.checked) label.classList.add('is-selected');
+                            else label.classList.remove('is-selected');
+                        } else {
+                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove('is-selected'));
+                            if (input.checked) label.classList.add('is-selected');
+                        }
+                    }
+
+                    // 🔄 Update status di floating panel
+                    updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('change', (e) => {
+                document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
                 });
@@ -3339,12 +3359,11 @@
                 });
             }
 
-            // Deteksi perubahan part
+            // 🔁 Ganti part soal
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName ===
-                            'data-active') {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-active') {
                             const newPart = mutation.target.dataset.active;
                             if (newPart && newPart !== currentPart) {
                                 currentPart = newPart;
@@ -3355,26 +3374,27 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
+                if (tabsContainer)
+                    observer.observe(tabsContainer, { attributes: true, attributeFilter: ['data-active'] });
             }
 
-            // Update question list untuk part aktif
+            // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
-                    'tfng': 10,
-                    'tfng2': 10,
-                    'ynng': 10,
-                    'mse': 10,
+                    'tfng': 6,
+                    'tfng2': 8,
+                    'ynng': 5,
+                    'mse': 5,
+                    'one': 5,
+                    'mh': 2,
+                    'tc': 4
                 };
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
-            // Init
+            // 🚀 Init
             updateQuestionListForPart('tfng');
             watchPartChanges();
             watchAnswerChanges();
@@ -3382,352 +3402,333 @@
         });
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script>
-        /* ====== Audio tab controller (fixed stop-on-switch) ====== */
-
-        let currentAudio = null;
-        let currentTimerId = null;
-
-        // format mm:ss
-        function formatTime(sec) {
-            sec = isNaN(sec) ? 0 : Math.floor(sec);
-            const m = Math.floor(sec / 60);
-            const s = sec % 60;
-            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        // Pastikan modal tersembunyi saat halaman dimuat
+        $("#resultModal").removeClass("show").hide();
+        
+        // Modal functions
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
         }
 
-        // reset UI for a panel's audio (progress+time)
-        function resetPanelUI(panel) {
-            const prog = panel.querySelector(".timeline");
-            const cur = panel.querySelector(".current");
-            const dur = panel.querySelector(".duration");
-            if (prog) prog.value = 0;
-            if (cur) cur.textContent = "0:00";
-            if (dur) {
-                // leave duration as-is (if already loaded) or show 0:00
-                if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
-                    dur.textContent = "0:00";
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+            
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            // closeModal();
+
+            // $("input[type=radio]").prop("checked", false);
+            // $('input[type="checkbox"]').prop('checked', false);
+            // $('input[type="text"]').val('');
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // // $("#scorePercentage").text("0");
+
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($(".qa-body").offset().top);
+            // }, 350);
+            location.reload();
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        function submitHelper(form, setId, tipe) {
+            let allAnswered = true;
+
+            $(`#${form}`).each(function () {
+                let isAnswered = false;
+                const inputs = $(this).find("input, select, textarea");
+
+                inputs.each(function () {
+                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
+                        isAnswered = true;
+                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
+                        isAnswered = true;
+                    } else if ($(this).is("select") && $(this).val() !== "") {
+                        isAnswered = true;
+                    }
+                });
+
+                if (!isAnswered) {
+                    allAnswered = false;
+                    $(this).addClass("unanswered-highlight");
+                } else {
+                    $(this).removeClass("unanswered-highlight");
                 }
-            }
-            // if you used a visual progress element instead of range, reset its width:
-            const visualProg = panel.querySelector(".seekbar-progress");
-            if (visualProg) visualProg.style.width = "0%";
-        }
+            });
 
-        // stop & reset current audio (completely)
-        function stopCurrentAudio() {
-            if (!currentAudio) return;
-
-            // pause & reset time
-            try {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-            } catch (e) {
-                /* ignore */ }
-
-            // clear interval timer if any
-            if (currentTimerId) {
-                clearInterval(currentTimerId);
-                currentTimerId = null;
-            }
-
-            // reset UI for the panel that had currentAudio
-            const panel = currentAudio.closest(".x-panel");
-            if (panel) resetPanelUI(panel);
-
-            // unset currentAudio reference
-            currentAudio = null;
-        }
-
-        // start timer to update UI every 1 second
-        function startPanelTimer(audio, panel) {
-            // clear existing
-            if (currentTimerId) {
-                clearInterval(currentTimerId);
-                currentTimerId = null;
-            }
-
-            const prog = panel.querySelector(".timeline");
-            const cur = panel.querySelector(".current");
-            const dur = panel.querySelector(".duration");
-            const visualProg = panel.querySelector(".seekbar-progress");
-
-            currentTimerId = setInterval(() => {
-                if (!audio.duration || isNaN(audio.duration)) return;
-                const pct = (audio.currentTime / audio.duration) * 100;
-                if (prog) prog.value = pct;
-                if (visualProg) visualProg.style.width = pct + "%";
-                if (cur) cur.textContent = formatTime(audio.currentTime);
-                if (dur) dur.textContent = formatTime(audio.duration);
-            }, 1000);
-        }
-
-        // play audio for a panel (only if not already played)
-        function playPanelAudio(panel) {
-            const audio = panel.querySelector("audio");
-            if (!audio) return;
-
-            // already played once? skip
-            if (audio.dataset.played === "yes") {
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
                 return;
             }
 
-            // if another audio is playing -> stop it first
-            if (currentAudio && currentAudio !== audio) {
-                stopCurrentAudio();
-            }
+            // ✅ KIRIM FORM DATA
+            let formData = new FormData($(`#${form}`)[0]);
+            formData.append("tipe", tipe);
+            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+            formData.append("set_id", setId);
+            formData.append("kategori", 'listening');
+            formData.append("tipe_test", 'practice');
 
-            // mark as current
-            currentAudio = audio;
+            $.ajax({
+                url: "/ielts/practice/check",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status === "ok") {
+                        $(".q-option").removeClass("correct wrong");
+                        $(".text-answer, .select-answer").removeClass("correct wrong");
 
-            // prepare UI duration if metadata already available
-            const durEl = panel.querySelector(".duration");
-            if (audio.duration && !isNaN(audio.duration) && durEl) {
-                durEl.textContent = formatTime(audio.duration);
-            }
+                        let correctCount = response.score;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = "";
+                        let questionNumber = 1;
 
-            // mute trick for autoplay compatibility
-            audio.muted = true;
+                        $.each(response.results, function(qid, data) {
+                        let isCorrect = data.status === "correct";
 
-            // play
-            audio.play().then(() => {
-                // mark one-time-play
-                audio.dataset.played = "yes";
+                        // ✅ 2. Ambil CORRECT ANSWER dengan fallback
+                        let correctAnswer = data.correct || '';
+                        let userAnswer = data.user || '';
+                        if (!correctAnswer && isCorrect) {
+                            correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                        }
+                        if (!correctAnswer) {
+                            correctAnswer = "NOT GIVEN";
+                        }
 
-                // unmute shortly after play to avoid autoplay block in some browsers
-                setTimeout(() => {
-                    try {
-                        audio.muted = false;
-                    } catch (e) {}
-                }, 150);
+                        // ✅ 3. Highlight input aslinya
+                        let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                        questionElement.find("input, select, textarea").each(function () {
+                            if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                if ($(this).is(":checked")) {
+                                    if (isCorrect) {
+                                        $(this).parent().addClass("correct");
+                                    } else {
+                                        $(this).parent().addClass("wrong");
+                                        $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                    }
+                                }
+                            } else {
+                                if (isCorrect) {
+                                    $(this).addClass("correct");
+                                } else {
+                                    $(this).addClass("wrong");
+                                }
+                            }
+                        });
 
-                // update status UI by starting timer per-second
-                startPanelTimer(audio, panel);
+                        // ✅ 4. Bangun tabel baris
+                        tableRows += `
+                            <tr>
+                                <td><strong>${questionNumber++}</strong></td>
+                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                <td>
+                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                        ${isCorrect ? 'Correct' : 'Wrong'}
+                                    </span>
+                                </td>
+                            </tr>
+                        `;
+                    });
 
-                // make sure ended handler resets UI/timer
-                audio.onended = () => {
-                    // clear timer
-                    if (currentTimerId) {
-                        clearInterval(currentTimerId);
-                        currentTimerId = null;
+
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+                        showModal(`Score: ${correctCount} / ${total}`);
                     }
-                    // finalize progress UI
-                    const visualProg = panel.querySelector(".seekbar-progress");
-                    if (visualProg) visualProg.style.width = "100%";
-                    const cur = panel.querySelector(".current");
-                    const dur = panel.querySelector(".duration");
-                    if (cur) cur.textContent = formatTime(audio.duration || 0);
-                    if (dur) dur.textContent = formatTime(audio.duration || 0);
-
-                    // mark played and unset currentAudio
-                    audio.dataset.played = "yes";
-                    currentAudio = null;
-                };
-
-            }).catch(err => {
-                // autoplay blocked — you may need user confirmation (modal)
-                console.warn("Autoplay blocked:", err);
-                // cleanup currentAudio reference if failed
-                currentAudio = null;
-            });
-
-            // prevent seeking by user (just in case)
-            audio.addEventListener("seeking", function() {
-                this.currentTime = this._lastTime || 0;
-            });
-            audio.addEventListener("timeupdate", function() {
-                this._lastTime = this.currentTime;
+                },
+                error: function(xhr) {
+                    alert("Terjadi kesalahan: " + xhr.status);
+                    console.log(xhr.responseText);
+                }
             });
         }
 
-        /* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
-        document.querySelectorAll(".x-tab").forEach(tab => {
-            tab.addEventListener("click", () => {
-                // activate tab classes
-                document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
-                tab.classList.add("is-active");
-
-                // show corresponding panel
-                const id = tab.dataset.id;
-                const panelId = `panel-${id}`;
-                document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
-                const targetPanel = document.getElementById(panelId);
-                if (!targetPanel) return;
-                targetPanel.classList.add("active", "is-open");
-
-                // STOP any currently playing audio when switching to a different panel
-                // (this ensures audio always stops)
-                if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
-                    stopCurrentAudio();
-                }
-
-                // play audio on the newly opened panel (if it has one and not played yet)
-                const audio = targetPanel.querySelector("audio");
-                if (audio && audio.dataset.played !== "yes") {
-                    playPanelAudio(targetPanel);
-                }
-            });
+        $("#submit-nc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-nc", "QmN0FYAE2DCXRPdC", "nc");
         });
 
-        /* ========== Initial modal confirm & autoplay first panel ========== */
-        const modal = document.getElementById("confirmModal");
-        const confirmBtn = document.getElementById("confirmYes");
+        $("#submit-matching_information").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-matching_information", "QmN0FYAE2DCXRPdC", "matching_information");
+        });
 
-        if (modal && confirmBtn) {
-            // show modal on load
-            window.addEventListener("load", () => {
-                modal.style.display = "flex";
-            });
-            confirmBtn.addEventListener("click", () => {
-                modal.style.display = "none";
-                // play currently active panel
-                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-                if (firstPanel) playPanelAudio(firstPanel);
-            });
-        } else {
-            // if no modal, autoplay first panel immediately (with mute trick)
-            window.addEventListener("load", () => {
-                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
-                if (firstPanel) playPanelAudio(firstPanel);
-            });
-        }
+        $("#submit-nc2").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-nc2", "QmN0FYAE2DCXRPdC", "nc");
+        });
+
+        $("#submit-nc3").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-nc3", "QmN0FYAE2DCXRPdC", "nc");
+        });
+
+        $("#submit-nc4").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-nc4", "QmN0FYAE2DCXRPdC", "nc");
+        });
+
+        $("#submit-oc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-oc", "QmN0FYAE2DCXRPdC", "oc");
+        });
+
+        $("#submit-oc2").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-oc2", "QmN0FYAE2DCXRPdC", "oc");
+        });
+
+        $("#submit-tc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-tc", "QmN0FYAE2DCXRPdC", "tc");
+        });
+
+        $("#submit-two_choices").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-two_choices", "QmN0FYAE2DCXRPdC", "two_choices");
+        });
+
+        $("#submit-two_choices2").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-two_choices2", "QmN0FYAE2DCXRPdC", "two_choices");
+        });
     </script>
 
     <script>
-        document.getElementById('doneBtn').addEventListener('click', function() {
-            const confirmFinish = confirm('Do you want to end the test now?');
-            if (confirmFinish) {
-                let results = [];
-                stopCurrentAudio();
-                $('.q-item, .q-list').each(function() {
-                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+        let currentPlaying = null;
 
-                    const type = $(this).data('type');
-                    const qnum = $(this).data('q');
+        document.querySelectorAll("[data-player]").forEach(player => {
 
-                    if (typeof type === 'undefined') return;
+            const audio = player.querySelector("audio");
+            const btnPlay = player.querySelector(".play-btn");
+            const icon = btnPlay.querySelector("i");
+            const seekBar = player.querySelector(".seekBar");
+            const curT = player.querySelector(".current");
+            const durT = player.querySelector(".duration");
 
-                    let name = null;
-                    let answer = null;
+            let isSeeking = false;
 
-                    switch (type) {
-                        case 'tfng':
-                        case 'oc':
-                        case 'ynng':
-                            const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
-                                name = checked.attr('name');
-                                answer = checked.val();
-                            } else {
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) name = anyRadio.attr('name');
-                            }
-                            break;
+            // =============== STOP AUDIO LAIN ===============
+            function stopOtherPlayers() {
+                if (currentPlaying && currentPlaying !== audio) {
+                    currentPlaying.pause();
+                    const otherBtn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                    otherBtn.className = "fas fa-play";
+                }
+                currentPlaying = audio;
+            }
 
-                        case 'sa':
-                        case 'tc':
-                        case 'nc':
-                            const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
-                                name = input.attr('name');
-                                answer = input.val();
-                            }
-                            break;
+            // =============== PLAY / PAUSE ===============
+            btnPlay.addEventListener("click", () => {
+                stopOtherPlayers();
 
-                        case 'mh':
-                        case 'mse':
-                            const select = $(this).find('select');
-                            if (select.length > 0) {
-                                name = select.attr('name');
-                                answer = select.val();
-                            }
-                            break;
-                    }
+                if (audio.paused) {
+                    audio.play();
+                    icon.className = "fas fa-pause";
+                } else {
+                    audio.pause();
+                    icon.className = "fas fa-play";
+                }
+            });
 
-                    results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
-                    });
+            // =============== START FROM X ===============
+            player.querySelectorAll(".start-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const offset = parseFloat(btn.dataset.start);
+
+                    stopOtherPlayers();
+                    audio.currentTime = offset;
+                    audio.play();
+                    icon.className = "fas fa-pause";
                 });
+            });
 
-                $.ajax({
-                    url: '/ielts/mock-test/check',
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
-                        kategori: 'listening',
-                        answers: results,
-                        tipe_test: 'mock'
-                    },
-                    success: function(response) {
-                        console.log(response);
+            // =============== SEEK BAR ===============
+            seekBar.addEventListener("input", () => {
+                isSeeking = true;
+                audio.currentTime = (seekBar.value / 100) * audio.duration;
+            });
 
-                        if (response.status === 'ok') {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-                            let questionNumber = 1;
+            seekBar.addEventListener("change", () => isSeeking = false);
 
-                            $.each(response.results, function(key, data) {
-                                let isCorrect = data.status === 'correct';
-                                if (isCorrect) correctCount++;
+            setInterval(() => {
+                if (!audio.duration) return;
 
-                                let correctAnswer = data.correct || '';
-                                let userAnswer = data.user || '';
-                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                if (!isSeeking) {
+                    seekBar.value = (audio.currentTime / audio.duration) * 100;
+                }
 
-                                tableRows += `
-                                        <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-                            });
+                curT.textContent = format(audio.currentTime);
+                durT.textContent = format(audio.duration);
 
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${convertScore(correctCount)}`);
+            }, 200);
 
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
+            audio.addEventListener("loadedmetadata", () => {
+                durT.textContent = format(audio.duration);
+            });
 
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
-                        } else {
-                            alert('Terjadi kesalahan: ' + response.message);
-                        }
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan: ' + xhr.status);
-                    }
-                });
+            function format(t) {
+                if (!t) return "0:00";
+                const m = Math.floor(t / 60);
+                const s = Math.floor(t % 60).toString().padStart(2, "0");
+                return `${m}:${s}`;
             }
         });
+
+        $(".x-tab").on("click", function() {
+            if (currentPlaying) {
+                currentPlaying.pause();
+
+                // Kembalikan icon play pada player tersebut
+                const btn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                btn.className = "fas fa-play";
+            }
+        });
+
     </script>
 </body>
 

@@ -900,7 +900,7 @@
                 <div class="x-panel-inner">
 
                     <fieldset class="q-item">
-                        <p><b>Questions 1-4</b></p>
+                        <p><b>Questions 1-8</b></p>
                     </fieldset>
 
                     <div class="progress-dots"></div>
@@ -919,7 +919,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 1.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 1.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -986,7 +986,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 2.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 2.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1053,7 +1053,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 3.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 3.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1120,7 +1120,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 4.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 4.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1187,7 +1187,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 5.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 5.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1254,7 +1254,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 6.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 6.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1321,7 +1321,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 7.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 7.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1388,7 +1388,7 @@
                                             <div class="video-placeholder">
                                                 <video class="video-element" data-role="instruction-video">
                                                     <source
-                                                        src="{{ asset('own_assets/videos/C10-t2/Part 1 - Question 8.mp4') }}"
+                                                        src="{{ asset('own_assets/videos/C10-t3/Part 1 - Question 8.mp4') }}"
                                                         type="video/mp4">
                                                     Your browser does not support HTML video.
                                                 </video>
@@ -1467,7 +1467,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t2/PART 2.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t3/PART 2.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -1544,7 +1544,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 1.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t3/Part 3 - Question 1.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -1611,7 +1611,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 2.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t3/Part 3 - Question 2.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -1678,7 +1678,7 @@
                                         <div class="video-placeholder">
                                             <video class="video-element" data-role="instruction-video">
                                                 <source
-                                                    src="{{ asset('own_assets/videos/C10-t1/Part 3 - Question 3.mp4') }}"
+                                                    src="{{ asset('own_assets/videos/C10-t3/Part 3 - Question 3.mp4') }}"
                                                     type="video/mp4">
                                                 Your browser does not support HTML video.
                                             </video>
@@ -2493,7 +2493,7 @@
                             formData.append("question_id", block.data("q") || "");
                             formData.append("part", block.data("part") || "");
                             formData.append("timestamp", Date.now());
-                            formData.append("set_id", "QmN0FYAE2DCXRPdC");
+                            formData.append("set_id", "s4gzzYRpwLnhLRFf");
                             formData.append("tipe", "speaking");
                             formData.append("kategori", "speaking");
                             formData.append("_token", $("meta[name='csrf-token']").attr(
