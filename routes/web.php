@@ -12,6 +12,8 @@ use App\Http\Controllers\TestCorrectionController;
 use App\Http\Controllers\TestHistoryController;
 use App\Http\Controllers\VideoAsessmentController;
 use App\Http\Controllers\VideoCallController;
+use App\Http\Controllers\WritingAssessmentController;
+use App\Http\Controllers\WritingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -91,6 +93,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
 
     Route::get('/test-correction', [TestCorrectionController::class, 'index']);
+    Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
+    Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
+
 
     Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
 

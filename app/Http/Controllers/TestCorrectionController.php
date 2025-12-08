@@ -16,7 +16,7 @@ class TestCorrectionController extends Controller
             $data = [
                 'pageTitle' => "Students",
                 'video_request' => Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get(),
-                'writing_request' => Writing::with(['student', 'setSoal'])->where('teacher_id', null)->get(),
+                'writing_request' => Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get(),
             ];
 
             return view('test_correction.index', $data);

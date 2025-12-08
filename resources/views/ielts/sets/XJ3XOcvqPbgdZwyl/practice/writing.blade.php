@@ -1391,7 +1391,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task1">
+                            <form class="response-form" data-task="Task 1">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
@@ -1445,7 +1445,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task2">
+                            <form class="response-form" data-task="Task 2">
                                 <fieldset class="q-item" data-q="1
                                 ">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>

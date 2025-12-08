@@ -27,10 +27,9 @@ class VideoAsessmentController extends Controller
             DB::beginTransaction();
 
             $video = Videos::lockForUpdate()->findOrFail($request->video_id);
-            $assessment = VideoAsessment::updateOrCreate(
+            $assessment = VideoAsessment::pdateOrCreate(
                 ['video_id' => $video->id],
                 [
-                    // FC
                     'fc_repetition'         => $this->bool($request->fc_repetition),
                     'fc_hesitation'         => $this->bool($request->fc_hesitation),
                     'fc_speech_rate'        => $this->bool($request->fc_speech_rate),
@@ -39,7 +38,6 @@ class VideoAsessmentController extends Controller
                     'fc_relevant_answers'   => $this->bool($request->fc_relevant_answers),
                     'fc_band'               => $request->fc_band,
 
-                    // LR
                     'lr_range_vocab'        => $this->bool($request->lr_range_vocab),
                     'lr_idiomatic'          => $this->bool($request->lr_idiomatic),
                     'lr_less_common'        => $this->bool($request->lr_less_common),
@@ -47,18 +45,15 @@ class VideoAsessmentController extends Controller
                     'lr_paraphrase'         => $this->bool($request->lr_paraphrase),
                     'lr_band'               => $request->lr_band,
 
-                    // GRA
                     'gra_range_structure'   => $this->bool($request->gra_range_structure),
                     'gra_error_free'        => $this->bool($request->gra_error_free),
                     'gra_grammar_features'  => $this->bool($request->gra_grammar_features),
                     'gra_band'              => $request->gra_band,
 
-                    // Pronunciation
                     'pr_features'           => $this->bool($request->pr_features),
                     'pr_understood'         => $this->bool($request->pr_understood),
                     'pr_band'               => $request->pr_band,
 
-                    // Remark
                     'remark'                => $request->remark,
                 ]
             );
