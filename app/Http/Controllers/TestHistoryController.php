@@ -17,11 +17,11 @@ class TestHistoryController extends Controller
             $data = [
                 'pageTitle' => "Students",
                 'data' => User::where('role', 'student')
-                            ->where('verification_status', 1)
-                            ->orderBy('status', 'desc')
-                            ->orderBy('id', 'desc')
-                            ->take(20)
-                            ->get()
+                    ->where('verification_status', 1)
+                    ->orderBy('status', 'desc')
+                    ->orderBy('id', 'desc')
+                    ->take(20)
+                    ->get()
             ];
 
             return view('history.index', $data);
@@ -29,7 +29,6 @@ class TestHistoryController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
         }
     }
-
 
     public function store(Request $request)
     {
@@ -87,11 +86,10 @@ class TestHistoryController extends Controller
             }
 
             $user = User::with([
-    'studentHistory.setSoal.soals' => function ($q) {
-        $q->select('id', 'set_id', 'tipe_soal', 'kategori');
-    }
-])->where('id', $r->id)->first();
-dd($user);
+                'studentHistory.setSoal.soals' => function ($q) {
+                    $q->select('id', 'set_id', 'tipe_soal', 'kategori');
+                }
+            ])->where('id', $r->id)->first();
 
             if (!$user) {
                 return back()->with('error', 'User not found');

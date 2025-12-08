@@ -2876,7 +2876,7 @@ table tbody .border-bottom-warning td {
 }
 
 .border-b-primary {
-  border-bottom: 1px solid #006666 !important;
+  border-bottom: 1px solid #4274BA !important;
 }
 
 .b-l-primary {
@@ -18854,7 +18854,7 @@ p.data-attributes svg {
   height: 25px;
   width: 25px;
   border-radius: 15px;
-  background-color: rgba(0, 102, 102, 0.1);
+  background-color: rgba(66, 116, 186, 0.1);
   position: absolute;
   -webkit-animation: floating 10s infinite ease-in;
           animation: floating 10s infinite ease-in;

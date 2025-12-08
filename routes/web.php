@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentVerificationController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TestCorrectionController;
 use App\Http\Controllers\TestHistoryController;
 use App\Http\Controllers\VideoCallController;
 use Illuminate\Http\Request;
@@ -80,13 +81,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
     Route::post('/ielts/mock-test/check', [IeltsController::class, 'mockTestCheck']);
 
-    Route::get('/history', [TestHistoryController::class, 'index']);
-    Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
+    // Route::get('/history', [TestHistoryController::class, 'index']);
+    // Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
 
     Route::get('/history', [TestHistoryController::class, 'index']);
     Route::get('/history/detail', [TestHistoryController::class, 'detail']);
     Route::get('/history/search', [TestHistoryController::class, 'search']);
     Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
+
+    Route::get('/test-correction', [TestCorrectionController::class, 'index']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
 });
