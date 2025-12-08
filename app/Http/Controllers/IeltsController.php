@@ -167,6 +167,7 @@ class IeltsController extends Controller
                 $part = $r->input('part', null);
                 $filename = 'recording_q-' . $setId . '-' . $questionId . '_' . time() . '.webm';
                 $path = $r->file('video')->storeAs('recordings', $filename, 'public');
+
                 $setSoal = SetSoal::where('kode', $setId)->first();
 
                 $saveVideos = Videos::create([
@@ -175,7 +176,7 @@ class IeltsController extends Controller
                     'no_soal' => (int) $questionId,
                     'part_soal' => (int) $part,
                     'tipe' => 'practice',
-                    'video' => $filename
+                    'video' => $filename,
                 ]);
 
                 DB::commit();
