@@ -51,10 +51,10 @@
         }
 
         /* #assessmentModal .btn-close:hover {
-                                                background: rgba(255, 255, 255, 0.3);
-                                                opacity: 1;
-                                                transform: rotate(90deg);
-                                            } */
+                                                        background: rgba(255, 255, 255, 0.3);
+                                                        opacity: 1;
+                                                        transform: rotate(90deg);
+                                                    } */
 
         /* Video Player Styling */
         #assessmentModal #modalVideoPlayer {
@@ -852,6 +852,36 @@
         }
     </style>
 
+    {{-- style modal --}}
+    <style>
+        .modal-content {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #4361ee, #3f37c9);
+            border-bottom: none;
+            padding: 20px 25px;
+        }
+
+        .modal-title {
+            color: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .modal-footer {
+            border-top: 1px solid #e9ecef;
+            padding: 20px 25px;
+        }
     </style>
 @endsection
 
@@ -1113,7 +1143,7 @@
 
                     <div class="project-details">
                         <div class="project-counter">
-                            <h2 class="f-w-600">{{$pendingSessions->count()}}</h2>
+                            <h2 class="f-w-600">{{ $pendingSessions->count() }}</h2>
                         </div>
 
                         <div class="product-sub bg-primary-light">
@@ -1143,7 +1173,7 @@
 
                     <div class="project-details">
                         <div class="project-counter">
-                            <h2 class="f-w-600">{{$upcomingSessions->count()}}</h2>
+                            <h2 class="f-w-600">{{ $upcomingSessions->count() }}</h2>
                         </div>
 
                         <div class="product-sub bg-primary-light">
@@ -1236,10 +1266,10 @@
                                                             data-bs-target="#rejectModal{{ $session->id }}">
                                                             <i class="fa fa-times"></i> Reject
                                                         </button>
-                                                        <a href="{{ route('mock-test.show', $session) }}"
-                                                            class="btn btn-info btn-sm">
+                                                        <button class="btn btn-info btn-sm btn-detail"
+                                                            data-id="{{ $session->id }}">
                                                             <i class="fa fa-eye"></i> Details
-                                                        </a>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -1543,6 +1573,120 @@
             </div>
         </div>
     </div>
+
+    <!-- Modals accept or reject -->
+    @foreach ($pendingSessions as $session)
+        <!-- Accept Modal -->
+        <div class="modal fade" id="acceptModal{{ $session->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form action="{{ route('mock-test.accept', $session) }}" method="POST">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                <i class="fas fa-check-circle me-2"></i>Accept Mock Test Session
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <p class="text-muted">You are about to accept the session:
+                                    <strong>"{{ $session->title }}"</strong> from
+                                    <strong>{{ $session->student->name }}</strong>.
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Scheduled Time:</label>
+                                <input type="datetime-local" name="scheduled_time" class="form-control" required
+                                    min="{{ now()->format('Y-m-d\TH:i') }}">
+                                <div class="form-text">Please select a time that works for both you and the student.</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Notes (Optional):</label>
+                                <textarea name="teacher_notes" class="form-control" rows="3"
+                                    placeholder="Add any notes or instructions for the student..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="fas fa-times me-1"></i>Cancel
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check me-1"></i>Accept Session
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reject Modal -->
+        <div class="modal fade" id="rejectModal{{ $session->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form action="{{ route('mock-test.reject', $session) }}" method="POST">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                <i class="fas fa-times-circle me-2"></i>Reject Mock Test Session
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <p class="text-muted">You are about to reject the session:
+                                    <strong>"{{ $session->title }}"</strong> from
+                                    <strong>{{ $session->student->name }}</strong>.
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Reason for Rejection:</label>
+                                <textarea name="rejection_reason" class="form-control" rows="4"
+                                    placeholder="Please provide a reason for rejecting this session..." required></textarea>
+                                <div class="form-text">This feedback will be shared with the student.</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="fas fa-times me-1"></i>Cancel
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-times me-1"></i>Reject Session
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    <div class="modal fade" id="detailModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Session Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" id="detailModalContent">
+                    <div class="p-5 text-center">
+                        <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
 @endsection
 
 @section('own_script')
@@ -1746,6 +1890,34 @@
             });
 
         });
+
+        $(document).on("click", ".btn-detail", function() {
+            let id = $(this).data("id");
+
+            $("#detailModalContent").html(`
+                <div class="p-5 text-center">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </div>
+            `);
+
+            $("#detailModal").modal("show");
+
+            $.ajax({
+                url: "/mock-test/" + id + "/show",
+                method: "GET",
+                success: function(res) {
+                    $("#detailModalContent").html(res.html);
+                },
+                error: function() {
+                    $("#detailModalContent").html(`
+                        <div class="alert alert-danger m-3">
+                            <i class="fa fa-exclamation-circle me-2"></i>
+                            Failed to load session details.
+                        </div>
+                    `);
+                }
+            });
+        });
     </script>
 
     <script>
@@ -1789,17 +1961,17 @@
             // Tambahkan CSS untuk active field
             const style = document.createElement('style');
             style.textContent = `
-        .active-field {
-            background: rgba(58, 143, 254, 0.05) !important;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .check-icon {
-            color: #00b894;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-    `;
+                .active-field {
+                    background: rgba(58, 143, 254, 0.05) !important;
+                    border-radius: 8px;
+                    transition: all 0.3s ease;
+                }
+                .check-icon {
+                    color: #00b894;
+                    font-weight: bold;
+                    margin-right: 5px;
+                }
+            `;
             document.head.appendChild(style);
         });
 
@@ -1919,6 +2091,29 @@
             }, 2000);
         });
     </script>
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Failed!',
+                text: '{{ session('error') }}',
+            });
+        </script>
+    @endif
+
 
     <script src="{{ asset('own_assets/scripts/history.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>

@@ -21,7 +21,14 @@ class VideoCallPolicy
      */
     public function view(User $user, VideoCall $videoCall): bool
     {
-        return false;
+        return $user->id === $videoCall->student_id ||
+               $user->id === $videoCall->teacher_id;
+    }
+
+    public function endSession(User $user, VideoCall $mockTestSession): bool
+    {
+        return $user->id === $mockTestSession->student_id ||
+               $user->id === $mockTestSession->teacher_id;
     }
 
     /**
@@ -37,6 +44,10 @@ class VideoCallPolicy
      */
     public function update(User $user, VideoCall $videoCall): bool
     {
+        if ($user->role === 'teacher') {
+            return true;
+        }
+        
         return false;
     }
 

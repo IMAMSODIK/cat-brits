@@ -88,6 +88,20 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mock-test/store', [VideoCallController::class, 'store'])->name('mock-test.post');
     Route::get('/mock-test/{mockTest}', [VideoCallController::class, 'show'])->name('mock-test.show');
 
+    Route::post('/mock-test/{mockTest}/accept', [VideoCallController::class, 'accept'])->name('mock-test.accept');
+    Route::post('/mock-test/{mockTest}/reject', [VideoCallController::class, 'reject'])->name('mock-test.reject');
+    Route::post('/mock-test/{mockTest}/end', [VideoCallController::class, 'endSession'])->name('mock-test.end');
+
+    Route::get('/mock-test/{mockTest}/show', [VideoCallController::class, 'show'])->name('mock-test.show');
+    Route::get('/mock-test/{mockTest}/start', [VideoCallController::class, 'startSession'])->name('mock-test.start');
+
+    Route::post('/mock-test/{mockTest}/recording', [VideoCallController::class, 'saveRecording'])->name('mock-test.save-recording');
+    Route::post('/mock-test/{mockTest}/recording-chunk', [VideoCallController::class, 'uploadRecordingChunk'])->name('mock-test.upload-chunk');
+    Route::get('/mock-test/{mockTest}/recording/view', [VideoCallController::class, 'viewRecording'])->name('mock-test.view-recording');
+    Route::get('/mock-test/{mockTest}/recording/download', [VideoCallController::class, 'downloadRecording'])->name('mock-test.download-recording');
+    Route::post('/mock-test/{mockTest}/screen-sharing', [VideoCallController::class, 'saveScreenSharing'])->name('mock-test.save-screen-sharing');
+    // end mock test video call
+
     // Route::get('/history', [TestHistoryController::class, 'index']);
     // Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
 
@@ -105,6 +119,9 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/profile', [ProfileController::class, 'index']);
+
+
+    Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 });
 
 Route::get('/test', function () {
