@@ -47,16 +47,6 @@ class DatabaseSeeder extends Seeder
             'token' => Str::random(5)
         ]);
 
-        for($i = 1; $i <= 60; $i++){
-            User::create([
-                'name' => 'Dustin Poirer ' . $i,
-                'password' => bcrypt('12345'),
-                'role' => 'teacher',
-                'email' => 'dustin@gmail.com' . $i,
-                'token' => Str::random(5)
-            ]);
-        }
-
         User::create([
             'name' => 'Michael Johnson',
             'password' => bcrypt('12345'),

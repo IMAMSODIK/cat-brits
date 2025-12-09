@@ -1512,9 +1512,9 @@
                     <span id="timeText">00:00</span>
                 </div>
 
-                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
-                    <i class="fa-solid fa-rotate-right"></i>
-                    <span class="label">Try Again</span>
+                <button onclick="confirmExit()" class="btn btn-danger">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span class="label">Close</span>
                 </button>
 
             </div>
@@ -2858,6 +2858,10 @@
         </div>
     </div>
 
+    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
+    </button>
+
     <button class="floating-btn" id="doneBtn">
         <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
     </button>
@@ -2921,6 +2925,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
+            }
+        }
+        
         let scoreMap = [
             {min: 39, max: 40, score: 9.0},
             {min: 37, max: 38, score: 8.5},
@@ -2969,16 +2979,6 @@
         function retryQuiz() {
             closeModal();
 
-            // $("#form-tfng input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // $("#scorePercentage").text("0%");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($("#form-tfng").offset().top);
-            // }, 350);
-
             location.reload()
         }
 
@@ -3026,8 +3026,6 @@
                     document.getElementById('doneBtn').disabled = true;
                     document.getElementById('doneBtn').style.opacity = 0.7;
                     document.getElementById('doneBtn').style.cursor = 'not-allowed';
-
-                    $("#retake").css("display", "");
                     
                     let results = [];
 
@@ -3095,6 +3093,9 @@
                             tipe_test: 'practice'
                         },
                         success: function (response) {
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
+
                             if (response.status === 'ok') {
                                 let correctCount = 0;
                                 let total = Object.keys(response.results).length;
@@ -3256,7 +3257,8 @@
                             tipe_test: 'practice'
                         },
                         success: function (response) {
-                            console.log(response);
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
 
                             if (response.status === 'ok') {
                                 let correctCount = 0;
@@ -3687,6 +3689,10 @@
 
     <!-- script bagian floating question list -->
     <script>
+        function retryQuiz() {
+            location.reload();
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');

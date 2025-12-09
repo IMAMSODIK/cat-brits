@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('set_soals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('thumbnail');
             $table->string('kode')->unique();
             $table->timestamps();
         });

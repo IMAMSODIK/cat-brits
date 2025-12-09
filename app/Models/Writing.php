@@ -18,9 +18,13 @@ class Writing extends Model
         return $this->belongsTo(User::class, 'student_id');
     }
 
-    // Teacher yang menilai video
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(User::class, 'teacher_id');
+    }
+
+    public function setSoal()
+    {
+        return $this->belongsTo(SetSoal::class, 'set_soal_id');
     }
 }

@@ -39,6 +39,8 @@
 <!-- Responsive css-->
 <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/responsive.css') }}">
 
+<link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/scrollable.css') }}">
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin="" />
@@ -57,3 +59,4 @@
 
 
 @yield('own_style')
+    

@@ -84,4 +84,25 @@ class User extends Authenticatable
     {
         return $this->hasMany(TestHistory::class, 'teacher_id');
     }
+
+    // video call
+    public function studentSessions()
+    {
+        return $this->hasMany(VideoCall::class, 'student_id');
+    }
+
+    public function teacherSessions()
+    {
+        return $this->hasMany(VideoCall::class, 'teacher_id');
+    }
+
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
+
+    public function isTeacher()
+    {
+        return $this->role === 'teacher';
+    }
 }

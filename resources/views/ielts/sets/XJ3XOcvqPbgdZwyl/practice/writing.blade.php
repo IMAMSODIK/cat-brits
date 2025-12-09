@@ -107,7 +107,7 @@
             color: var(--text);
             border-radius: 10px;
             padding: 8px 12px;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
@@ -1133,21 +1133,6 @@
             margin-top: 30px;
         }
 
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            outline: none;
-        }
-
         .btn-secondary {
             background: #e2e8f0;
             color: #4a5568;
@@ -1387,7 +1372,7 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
                     Content: <strong>Task 1</strong> <br><br>
-                    You should spend about 20 minutes on this task. Write at least 150 words.
+                    You should write at least 150 words on this task.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
@@ -1406,7 +1391,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task1">
+                            <form class="response-form" data-task="Task 1">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
@@ -1442,7 +1427,7 @@
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">
                     Content: <strong>Task 2</strong> <br><br>
-                    You should spend about 40 minutes on this task. Write at least 250 words.
+                    You should write at least 150 words on this task.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
@@ -1460,7 +1445,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task2">
+                            <form class="response-form" data-task="Task 2">
                                 <fieldset class="q-item" data-q="1
                                 ">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
@@ -1519,7 +1504,7 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
             });
 

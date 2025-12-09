@@ -8,8 +8,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentVerificationController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TestCorrectionController;
 use App\Http\Controllers\TestHistoryController;
+use App\Http\Controllers\VideoAsessmentController;
 use App\Http\Controllers\VideoCallController;
+use App\Http\Controllers\WritingAssessmentController;
+use App\Http\Controllers\WritingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -80,23 +84,44 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
     Route::post('/ielts/mock-test/check', [IeltsController::class, 'mockTestCheck']);
 
+    // mock test video call
+    Route::post('/mock-test/store', [VideoCallController::class, 'store'])->name('mock-test.post');
+    Route::get('/mock-test/{mockTest}', [VideoCallController::class, 'show'])->name('mock-test.show');
+
+    Route::post('/mock-test/{mockTest}/accept', [VideoCallController::class, 'accept'])->name('mock-test.accept');
+    Route::post('/mock-test/{mockTest}/reject', [VideoCallController::class, 'reject'])->name('mock-test.reject');
+    Route::post('/mock-test/{mockTest}/end', [VideoCallController::class, 'endSession'])->name('mock-test.end');
+
+    Route::get('/mock-test/{mockTest}/show', [VideoCallController::class, 'show'])->name('mock-test.show');
+    Route::get('/mock-test/{mockTest}/start', [VideoCallController::class, 'startSession'])->name('mock-test.start');
+
+    Route::post('/mock-test/{mockTest}/recording', [VideoCallController::class, 'saveRecording'])->name('mock-test.save-recording');
+    Route::post('/mock-test/{mockTest}/recording-chunk', [VideoCallController::class, 'uploadRecordingChunk'])->name('mock-test.upload-chunk');
+    Route::get('/mock-test/{mockTest}/recording/view', [VideoCallController::class, 'viewRecording'])->name('mock-test.view-recording');
+    Route::get('/mock-test/{mockTest}/recording/download', [VideoCallController::class, 'downloadRecording'])->name('mock-test.download-recording');
+    Route::post('/mock-test/{mockTest}/screen-sharing', [VideoCallController::class, 'saveScreenSharing'])->name('mock-test.save-screen-sharing');
+    // end mock test video call
+
+    // Route::get('/history', [TestHistoryController::class, 'index']);
+    // Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
+
     Route::get('/history', [TestHistoryController::class, 'index']);
-    Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
+    Route::get('/history/detail', [TestHistoryController::class, 'detail']);
+    Route::get('/history/search', [TestHistoryController::class, 'search']);
+    Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
+
+    Route::get('/test-correction', [TestCorrectionController::class, 'index']);
+    Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
+    Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
+
+
+    Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
+
 
     Route::get('/profile', [ProfileController::class, 'index']);
 
 
-
-    Route::get('video-calls/create', [VideoCallController::class,'create'])->name('video-calls.create');
-    Route::post('video-calls', [VideoCallController::class,'store'])->name('video-calls.store');
-
-    // guru
-    Route::get('video-calls/guru', [VideoCallController::class,'guruIndex'])->name('video-calls.guru.index');
-    Route::post('video-calls/{videoCall}/approve', [VideoCallController::class,'approve'])->name('video-calls.approve');
-    Route::post('video-calls/{videoCall}/reject', [VideoCallController::class,'reject'])->name('video-calls.reject');
-
-    // join
-    Route::get('video-calls/{videoCall}/join', [VideoCallController::class,'join'])->name('video-calls.join');
+    Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 });
 
 Route::get('/test', function () {

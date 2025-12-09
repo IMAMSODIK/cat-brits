@@ -118,6 +118,42 @@
                 @if (in_array(auth()->user()->role, ['admin', 'teacher']))
                     <li class="sidebar-main-title">
                         <div>
+                            <h6 class="">Request Correction</h6>
+                        </div>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/test-correction?category=ielts">
+                            <i class="fa fa-language text-white"></i>
+                            <span>IELTS</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/test-correction?category=toefl">
+                            <i class="fa fa-graduation-cap text-white"></i>
+                            <span>TOEFL</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/test-correction?category=general-english">
+                            <i class="fa fa-book text-white"></i>
+                            <span>GE</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/test-correction?category=sat">
+                            <i class="fa fa-pencil-alt text-white"></i>
+                            <span>SAT</span>
+                        </a>
+                    </li>
+
+                    {{-- /////////////////// --}}
+
+                    <li class="sidebar-main-title">
+                        <div>
                             <h6 class="">Exam Hisotry</h6>
                         </div>
                     </li>

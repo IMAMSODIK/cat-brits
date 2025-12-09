@@ -2,106 +2,139 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\VideoCall;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreVideoCallRequest;
-use App\Http\Requests\UpdateVideoCallRequest;
-use App\Mail\NewBookingForGuru;
+use App\Models\VideoCall;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
 class VideoCallController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
-    // Murid: form booking
-    public function create()
+    use AuthorizesRequests;
+    public function store(Request $request)
     {
-        // ambil daftar guru (sesuaikan query role)
-        $gurus = \App\Models\User::where('role', 'guru')->get();
-        return view('video_calls.create', compact('gurus'));
+        try {
+            $request->validate([
+                'teacher_id' => 'required|exists:users,id',
+                'title' => 'required|string|max:255',
+                'description' => 'nullable|string',
+                'proposed_time' => 'required|date|after:now',
+                'duration_minutes' => 'required|integer|min:15|max:180',
+            ]);
+
+            $proposedTime = \Carbon\Carbon::parse($request->proposed_time)
+                ->timezone(config('app.timezone'));
+
+            $session = VideoCall::create([
+                'student_id' => Auth::id(),
+                'teacher_id' => $request->teacher_id,
+                'title' => $request->title,
+                'description' => $request->description,
+                'proposed_time' => $proposedTime,
+                'duration_minutes' => $request->duration_minutes,
+                'status' => 'pending',
+            ]);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Mock test session requested successfully!',
+                'data' => $session
+            ]);
+        } catch (\Exception $e) {
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Server error: ' . $e->getMessage()
+            ], 500);
+        }
     }
 
-    public function store(Request $r)
+    public function accept(Request $request, VideoCall $mockTest)
     {
-        $r->validate([
-            'guru_id'=>'required|exists:users,id',
-            'scheduled_at'=>'required|date|after:now',
-            'duration_minutes'=>'nullable|integer|min:15',
+        $this->authorize('update', $mockTest);
+
+        $request->validate([
+            'scheduled_time' => 'required|date|after:now',
+            'teacher_notes' => 'nullable|string',
         ]);
 
-        $call = VideoCall::create([
-            'guru_id' => $r->guru_id,
-            'murid_id' => Auth::id(),
-            'scheduled_at' => $r->scheduled_at,
-            'duration_minutes' => $r->duration_minutes ?: 60,
-            'status' => 'pending',
-            'note' => $r->note,
+        $roomName = 'mocktest-' . $mockTest->id . '-' . uniqid();
+
+        $mockTest->update([
+            'status' => 'accepted',
+            'scheduled_time' => $request->scheduled_time,
+            'teacher_notes' => $request->teacher_notes,
+            'jitsi_room_name' => $roomName,
         ]);
 
-        // notifikasi email ke guru
-        Mail::to($call->guru->email)->queue(new NewBookingForGuru($call));
-
-        return response()->json(['status'=>'ok','message'=>'Booking terkirim']);
+        return back()->with('success', 'Mock test session accepted!');
     }
 
-    // Guru: list permintaan
-    public function guruIndex()
+    public function reject(Request $request, VideoCall $mockTest)
     {
-        $guruId = auth()->id();
-        $calls = VideoCall::where('guru_id',$guruId)->orderBy('scheduled_at','desc')->get();
-        return view('video_calls.guru_index', compact('calls'));
+        $this->authorize('update', $mockTest);
+
+        $request->validate([
+            'rejection_reason' => 'required|string',
+        ]);
+
+        $mockTest->update([
+            'status' => 'rejected',
+            'rejection_reason' => $request->rejection_reason,
+        ]);
+
+        return back()->with('success', 'Mock test session rejected.');
     }
 
-    // Approve
-    public function approve(Request $r, VideoCall $videoCall)
+    public function show(VideoCall $mockTest)
     {
-        $this->authorize('manage', $videoCall); // buat policy optional
-
-        if ($videoCall->status !== 'pending') {
-            return response()->json(['status'=>'error','message'=>'Sudah diproses'], 400);
+        if (Auth::id() !== $mockTest->student_id && Auth::id() !== $mockTest->teacher_id) {
+            return response()->json(['error' => 'Unauthorized'], 403);
         }
 
-        // generate Jitsi room (unik)
-        $videoCall->room_url = 'https://meet.jit.si/'.uniqid('room_');
-        $videoCall->status = 'approved';
-        $videoCall->save();
+        $html = view('ielts.partials.modals.detail_session', compact('mockTest'))->render();
 
-        // kirim notifikasi email ke murid
-        Mail::to($videoCall->murid->email)->queue(new BookingApprovedForStudent($videoCall));
-
-        return response()->json(['status'=>'ok','message'=>'Disetujui']);
+        return response()->json(['html' => $html]);
     }
 
-    public function reject(Request $r, VideoCall $videoCall)
+    public function startSession(VideoCall $mockTest)
     {
-        $this->authorize('manage', $videoCall);
+        $this->authorize('view', $mockTest);
 
-        $videoCall->status = 'rejected';
-        $videoCall->save();
-
-        // (opsional) kirim email penolakan
-        return response()->json(['status'=>'ok','message'=>'Ditolak']);
-    }
-
-    // Halaman join — embed
-    public function join(VideoCall $videoCall)
-    {
-        // cek akses: hanya guru atau murid terkait
-        $user = auth()->user();
-        if (!in_array($user->id, [$videoCall->guru_id, $videoCall->murid_id])) {
-            abort(403);
+        if (!$mockTest->canStart()) {
+            return redirect()->back()->with('error', 'Session cannot be started yet. Please wait until the scheduled time.');
         }
 
-        // cek apakah approved & joinable
-        if ($videoCall->status !== 'approved') {
-            return view('video_calls.not_ready', compact('videoCall'));
+        // Ensure room name exists
+        if (empty($mockTest->jitsi_room_name)) {
+            $mockTest->update([
+                'jitsi_room_name' => 'mocktest-' . $mockTest->id . '-' . uniqid()
+            ]);
+            $mockTest->refresh();
         }
 
-        return view('video_calls.join', compact('videoCall'));
+        // Mark session as started if not already
+        if (!$mockTest->started_at) {
+            $mockTest->update(['started_at' => now()]);
+        }
+
+        return view('ielts.mocktest-speaking.video-call', compact('mockTest'));
     }
+
+    public function endSession(VideoCall $mockTest)
+    {
+        $this->authorize('endSession', $mockTest);
+
+        $mockTest->update([
+            'status' => 'completed',
+            'ended_at' => now(),
+        ]);
+
+        if(Auth::user()->role == 'teacher'){
+            return redirect('/test-correction?category=ielts')->with('success', 'Mock test session completed!');
+        }else if(Auth::user()->role == 'student'){
+            return redirect('/ielts/mock-test?set-id=XJ3XOcvqPbgdZwyl&section=speaking')->with('success', 'Mock test session completed!');
+        }
+    }
+
 }

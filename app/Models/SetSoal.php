@@ -11,4 +11,9 @@ class SetSoal extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function soals()
+    {
+        return $this->hasMany(Soal::class, 'set_id', 'id');
+    }
 }

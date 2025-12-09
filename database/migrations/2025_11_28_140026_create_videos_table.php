@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreignId('set_soal_id');
             $table->integer('no_soal');
             $table->integer('part_soal');
-
+        
             $table->enum('tipe', ['mock', 'practice']);
             $table->string('video');
+            $table->integer('duration')->nullable();
 
             $table->timestamps();
         });

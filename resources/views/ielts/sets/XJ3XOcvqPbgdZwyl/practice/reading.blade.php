@@ -1713,10 +1713,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-tfng" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-tfng">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
 
                             </form>
@@ -1838,10 +1840,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-sa" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-sa">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
 
                             </form>
@@ -1983,10 +1987,12 @@
                                 </table>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-tc" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-tc">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
                             </form>
                         </aside>
@@ -2312,10 +2318,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-mh" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-mh">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
 
                             </form>
@@ -2516,10 +2524,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-tfng2" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-tfng2">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
                             </form>
                         </aside>
@@ -2735,10 +2745,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-oc">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
                             </form>
                         </aside>
@@ -2945,10 +2957,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-mse" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-mse">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
                             </form>
                         </aside>
@@ -3157,10 +3171,12 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-ynng" style="display: none">
+                                        Try Again
+                                    </button>
                                     <button type="button" class="btn btn-primary" id="submit-ynng">
                                         Submit
                                     </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
                             </form>
                         </aside>
@@ -3324,7 +3340,7 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
 
             });
@@ -3914,7 +3930,7 @@
             }
         });
 
-        function submitHelper(form, setId, tipe) {
+        function submitHelper(form, setId, tipe, button, againBtn) {
             let allAnswered = true;
 
             $(`#${form} fieldset[data-q]`).each(function () {
@@ -3960,6 +3976,9 @@
                 contentType: false,
                 success: function(response) {
                     if (response.status === "ok") {
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
+
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
 
@@ -4043,44 +4062,48 @@
             });
         }
 
+        $(".try-again").on("click", function(){
+            location.reload();
+        })
+
         $("#submit-tfng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng", "XJ3XOcvqPbgdZwyl", "tfng");
+            submitHelper("form-tfng", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng");
         });
 
         $("#submit-tfng2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng2", "XJ3XOcvqPbgdZwyl", "tfng");
+            submitHelper("form-tfng2", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng2");
         });
 
         $("#submit-ynng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-ynng", "XJ3XOcvqPbgdZwyl", "ynng");
+            submitHelper("form-ynng", "XJ3XOcvqPbgdZwyl", "ynng", $(this), "again-ynng");
         });
 
         $("#submit-mse").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mse", "XJ3XOcvqPbgdZwyl", "mse");
+            submitHelper("form-mse", "XJ3XOcvqPbgdZwyl", "mse", $(this), "again-mse");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-one", "XJ3XOcvqPbgdZwyl", "oc");
+            submitHelper("form-one", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc");
         });
 
         $("#submit-mh").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mh", "XJ3XOcvqPbgdZwyl", "mh");
+            submitHelper("form-mh", "XJ3XOcvqPbgdZwyl", "mh", $(this), "again-mh");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc");
+            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc");
         });
 
         $("#submit-sa").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-sa", "XJ3XOcvqPbgdZwyl", "sa");
+            submitHelper("form-sa", "XJ3XOcvqPbgdZwyl", "sa", $(this), "again-sa");
         });
     </script>
 

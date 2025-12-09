@@ -585,6 +585,13 @@
             display: none;
         }
 
+        .two .q-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
         .q-option .opt-code {
             font-weight: 800;
             color: #334155;
@@ -1536,6 +1543,11 @@
                     <i class="fa-solid fa-rotate-right"></i>
                     <span class="label">Try Again</span>
                 </button>
+
+                <button onclick="confirmExit()" class="btn btn-danger">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span class="label">Close</span>
+                </button>
             </div>
         </div>
     </header>
@@ -1565,7 +1577,6 @@
             <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
                 data-id="mse">Part 4</button>
         </div>
-
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">Content: Part 1</div>
@@ -1778,7 +1789,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1">
+                        <fieldset class="q-item two" data-type="two_choices" data-q="1">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
                                 <span class="q-number">12</span>
@@ -1786,32 +1797,39 @@
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                 <label class="q-option">
-                                    <input type="radio" name="q1" value="A" />
+                                    <input type="checkbox" name="two_choices-XJ3XOcvqPbgdZwyl-1[]"
+                                        value="A">
                                     <span class="opt-code">A</span>
                                     <span class="opt-label">the gym</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="q1" value="B" />
+                                    <input type="checkbox" name="two_choices-XJ3XOcvqPbgdZwyl-1[]"
+                                        value="B">
                                     <span class="opt-code">B</span>
                                     <span class="opt-label">the tracks</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="q1" value="C" />
+                                    <input type="checkbox" name="two_choices-XJ3XOcvqPbgdZwyl-1[]"
+                                        value="C">
                                     <span class="opt-code">C</span>
                                     <span class="opt-label">the indoor pool</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="q1" value="D" />
+                                    <input type="checkbox" name="two_choices-XJ3XOcvqPbgdZwyl-1[]"
+                                        value="D">
                                     <span class="opt-code">D</span>
                                     <span class="opt-label">the outdoor pool</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="q1" value="E" />
+                                    <input type="checkbox" name="two_choices-XJ3XOcvqPbgdZwyl-1[]"
+                                        value="E">
                                     <span class="opt-code">E</span>
                                     <span class="opt-label">the sports training for children</span>
                                 </label>
+
                             </div>
                         </fieldset>
+
 
                         <fieldset class="q-item">
                             <p><b>Questions 13-20</b></p>
@@ -2233,7 +2251,6 @@
                 </form>
             </div>
         </div>
-        </div>
     </section>
 
     <!-- Floating Question List -->
@@ -2251,6 +2268,10 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
+
+    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
+    </button>
 
     <button class="floating-btn" id="doneBtn">
         <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
@@ -2325,21 +2346,81 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let scoreMap = [
-            { score: 9.0, min: 39, max: 40 },
-            { score: 8.5, min: 37, max: 38 },
-            { score: 8.0, min: 35, max: 36 },
-            { score: 7.5, min: 32, max: 34 },
-            { score: 7.0, min: 30, max: 31 },
-            { score: 6.5, min: 26, max: 29 },
-            { score: 6.0, min: 23, max: 25 },
-            { score: 5.5, min: 18, max: 22 },
-            { score: 5.0, min: 16, max: 17 },
-            { score: 4.5, min: 13, max: 15 },
-            { score: 4.0, min: 11, max: 12 },
-            { score: 3.5, min: 8,  max: 10 },
-            { score: 3.0, min: 6,  max: 7 },
-            { score: 2.5, min: 4,  max: 5 },
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
+            }
+        }
+        let scoreMap = [{
+                score: 9.0,
+                min: 39,
+                max: 40
+            },
+            {
+                score: 8.5,
+                min: 37,
+                max: 38
+            },
+            {
+                score: 8.0,
+                min: 35,
+                max: 36
+            },
+            {
+                score: 7.5,
+                min: 32,
+                max: 34
+            },
+            {
+                score: 7.0,
+                min: 30,
+                max: 31
+            },
+            {
+                score: 6.5,
+                min: 26,
+                max: 29
+            },
+            {
+                score: 6.0,
+                min: 23,
+                max: 25
+            },
+            {
+                score: 5.5,
+                min: 18,
+                max: 22
+            },
+            {
+                score: 5.0,
+                min: 16,
+                max: 17
+            },
+            {
+                score: 4.5,
+                min: 13,
+                max: 15
+            },
+            {
+                score: 4.0,
+                min: 11,
+                max: 12
+            },
+            {
+                score: 3.5,
+                min: 8,
+                max: 10
+            },
+            {
+                score: 3.0,
+                min: 6,
+                max: 7
+            },
+            {
+                score: 2.5,
+                min: 4,
+                max: 5
+            },
         ];
 
         function convertScore(correctCount) {
@@ -2371,16 +2452,6 @@
 
         function retryQuiz() {
             closeModal();
-
-            // $("#form-tfng input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // $("#scorePercentage").text("0%");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($("#form-tfng").offset().top);
-            // }, 350);
 
             location.reload()
         }
@@ -2595,7 +2666,8 @@
                             tipe_test: 'mock'
                         },
                         success: function(response) {
-                            console.log(response);
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
 
                             if (response.status === 'ok') {
                                 let correctCount = 0;
@@ -2825,6 +2897,20 @@
 
     <!-- script bagian reading + questions  -->
     <script>
+        $(document).on('change', '.q-option input', function() {
+            let parent = $(this).closest('.q-item');
+            let option = $(this).closest('.q-option');
+
+            if (this.type === "radio") {
+                parent.find('.q-option').removeClass('is-selected');
+                option.addClass('is-selected');
+            }
+
+            if (this.type === "checkbox") {
+                option.toggleClass('is-selected', this.checked);
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
@@ -3007,7 +3093,7 @@
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
                     (!e.target.classList.contains('highlight') || !e.target.closest(
-                    '.highlighted-content')) &&
+                        '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -3255,7 +3341,8 @@
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
             } catch (e) {
-                /* ignore */ }
+                /* ignore */
+            }
 
             // clear interval timer if any
             if (currentTimerId) {
@@ -3426,140 +3513,187 @@
     </script>
 
     <script>
-        document.getElementById('doneBtn').addEventListener('click', function() {
+        document.getElementById('doneBtn').addEventListener('click', function () {
+
             const confirmFinish = confirm('Do you want to end the test now?');
-            if (confirmFinish) {
-                let results = [];
-                stopCurrentAudio();
-                $('.q-item, .q-list').each(function() {
-                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+            if (!confirmFinish) return;
 
-                    const type = $(this).data('type');
-                    const qnum = $(this).data('q');
+            stopCurrentAudio();
 
-                    if (typeof type === 'undefined') return;
+            let results = [];
 
-                    let name = null;
-                    let answer = null;
+            $('.q-item, .q-list').each(function () {
 
-                    switch (type) {
-                        case 'tfng':
-                        case 'oc':
-                        case 'ynng':
-                            const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
-                                name = checked.attr('name');
-                                answer = checked.val();
-                            } else {
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) name = anyRadio.attr('name');
-                            }
-                            break;
+                // Abaikan item dalam q-list (anak)
+                if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
 
-                        case 'sa':
-                        case 'tc':
-                        case 'nc':
-                            const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
-                                name = input.attr('name');
-                                answer = input.val();
-                            }
-                            break;
+                const type = $(this).data('type');
+                let qnum = $(this).data('q');
 
-                        case 'mh':
-                        case 'mse':
-                            const select = $(this).find('select');
-                            if (select.length > 0) {
-                                name = select.attr('name');
-                                answer = select.val();
-                            }
-                            break;
-                    }
+                // FIX utama error Undefined array key 'question'
+                if (qnum === undefined || qnum === null || qnum === "") {
+                    qnum = results.length + 1; 
+                }
 
-                    results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
-                    });
-                });
+                if (!type) return; // skip yang tidak punya type
 
-                $.ajax({
-                    url: '/ielts/mock-test/check',
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
-                        kategori: 'listening',
-                        answers: results,
-                        tipe_test: 'mock'
-                    },
-                    success: function(response) {
-                        console.log(response);
+                let name = null;
+                let answer = null;
 
-                        if (response.status === 'ok') {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-                            let questionNumber = 1;
+                switch (type) {
 
-                            $.each(response.results, function(key, data) {
-                                let isCorrect = data.status === 'correct';
-                                if (isCorrect) correctCount++;
+                    // ========================== RADIO ==========================
+                    case 'tfng':
+                    case 'oc':
+                    case 'ynng': {
 
-                                let correctAnswer = data.correct || '';
-                                let userAnswer = data.user || '';
-                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                        const selected = $(this).find('input[type="radio"]:checked');
 
-                                tableRows += `
-                                        <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-                            });
-
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
-
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
+                        if (selected.length > 0) {
+                            name = selected.attr('name');
+                            answer = selected.val();
                         } else {
-                            alert('Terjadi kesalahan: ' + response.message);
+                            const firstRadio = $(this).find('input[type="radio"]').first();
+                            name = firstRadio.attr('name') || ('q' + qnum);
+                            answer = null;
                         }
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan: ' + xhr.status);
+
+                        break;
                     }
+
+                    // ========================== TEXT INPUT ==========================
+                    case 'sa':
+                    case 'tc':
+                    case 'nc': {
+
+                        const inp = $(this).find('input[type="text"]');
+
+                        if (inp.length > 0) {
+                            name = inp.attr('name');
+                            answer = inp.val();
+                        }
+
+                        break;
+                    }
+
+                    // ========================== TWO CHECKBOX ==========================
+                    case 'two_choices': {
+
+                        const first = $(this).find('input[type="checkbox"]').first();
+                        const selected = $(this).find('input[type="checkbox"]:checked');
+
+                        name = first.attr('name') || ('q' + qnum);
+
+                        answer = selected.map(function () {
+                            return $(this).val();
+                        }).get();
+
+                        // jika jawaban kosong → answer = []
+                        break;
+                    }
+
+                    // ========================== SELECT ==========================
+                    case 'mh':
+                    case 'mse': {
+
+                        const sel = $(this).find('select');
+
+                        if (sel.length > 0) {
+                            name = sel.attr('name');
+                            answer = sel.val();
+                        }
+
+                        break;
+                    }
+                }
+
+                // >>>> FIX PENTING untuk elak error Undefined array key 'question'
+                if (!name) name = 'q' + qnum;
+
+                results.push({
+                    type: type,
+                    name: name,
+                    answer: (answer !== '' && answer !== undefined ? answer : null),
+                    question: qnum || null
                 });
-            }
+
+            });
+
+            console.log(results);
+
+            // ========================== AJAX ==========================
+            $.ajax({
+                url: '/ielts/mock-test/check',
+                type: 'POST',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    set_id: 'XJ3XOcvqPbgdZwyl',
+                    kategori: 'listening',
+                    answers: results,
+                    tipe_test: 'mock'
+                },
+                success: function (response) {
+                    $("#try-again").css('display', '');
+                    $("#doneBtn").css('display', 'none');
+
+                    if (response.status === 'ok') {
+                        let correctCount = 0;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = '';
+                        let questionNumber = 1;
+
+                        $.each(response.results, function (key, data) {
+                            let isCorrect = data.status === 'correct';
+                            if (isCorrect) correctCount++;
+
+                            let correctAnswer = data.correct || '';
+                            let userAnswer = data.user || '';
+                            if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                            if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                            tableRows += `
+                                <tr>
+                                    <td><strong>${questionNumber++}</strong></td>
+                                    <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                    <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                    <td>
+                                        <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                            <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                            ${isCorrect ? 'Correct' : 'Wrong'}
+                                        </span>
+                                    </td>
+                                </tr>`;
+                        });
+
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    } else {
+                        alert('Terjadi kesalahan: ' + response.message);
+                    }
+                },
+                error: function (xhr) {
+                    console.error(xhr.responseText);
+                    alert('Terjadi kesalahan: ' + xhr.status);
+                }
+            });
+
         });
+
     </script>
 </body>
 
