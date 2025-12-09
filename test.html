@@ -1,699 +1,987 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Teacher - Koreksi dan Live Test</title>
+    <title>Mock Test Sessions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        
+
         body {
-            background-color: #f5f7fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            padding: 20px;
             color: #333;
-            line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, #3a8ffe 0%, #1e5cb3 100%);
+
+        /* Card Styling */
+        .card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: none;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Header Styling */
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 25px 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px 35px;
+            border-bottom: none;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
         }
-        
-        .header-title h1 {
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 15s infinite linear reverse;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .page-title {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
-        
-        .header-title p {
+
+        .header-subtitle {
+            font-size: 15px;
             opacity: 0.9;
-            font-size: 16px;
+            font-weight: 400;
         }
-        
-        .teacher-info {
-            display: flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 12px 20px;
+
+        .user-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
             border-radius: 50px;
-        }
-        
-        .teacher-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: white;
-            color: #3a8ffe;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            gap: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .user-info i {
             font-size: 20px;
-            margin-right: 15px;
         }
-        
-        .teacher-details h3 {
-            font-size: 17px;
-            margin-bottom: 3px;
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.3);
         }
-        
-        .teacher-details p {
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(79, 172, 254, 0.4);
+            background: linear-gradient(135deg, #3a9ef8 0%, #00e0f2 100%);
+        }
+
+        .floating-icon {
+            position: absolute;
+            right: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 120px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        /* Card Body */
+        .card-body {
+            padding: 35px;
+        }
+
+        /* Alert */
+        .alert-success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 18px 25px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+
+        /* Filters */
+        .filters-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 24px;
+            border-radius: 50px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            color: #64748b;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-tab:hover {
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .filter-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 300px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: white;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        /* Desktop Table */
+        .desktop-view {
+            display: block;
+        }
+
+        .table-responsive {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .table {
+            margin: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .table thead th {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom: 2px solid #e2e8f0;
+            padding: 20px 25px;
+            font-weight: 700;
+            color: #475569;
             font-size: 14px;
-            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        .stats-summary {
+
+        .table tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .table tbody tr:hover {
+            background: #f8fafc;
+            transform: scale(1.005);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .table tbody td {
+            padding: 22px 25px;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-pending {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            border: 1px solid #fbbf24;
+        }
+
+        .badge-accepted {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+
+        .badge-rejected {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+
+        .badge-completed {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+
+        .badge-cancelled {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #374151;
+            border: 1px solid #9ca3af;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        .btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(139, 92, 246, 0.3);
+            background: linear-gradient(135deg, #935cf6 0%, #7c3aed 100%);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+            background: linear-gradient(135deg, #0da271 0%, #047857 100%);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px dashed #cbd5e1;
+        }
+
+        .empty-state i {
+            font-size: 80px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            opacity: 0.6;
+        }
+
+        .empty-state h4 {
+            font-size: 24px;
+            color: #475569;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .empty-state p {
+            color: #64748b;
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+
+        /* Mobile View */
+        .mobile-view {
+            display: none;
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .session-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-color: #e2e8f0;
+        }
+
+        .session-card h5 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .session-card .mb-2, .session-card .mb-3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #475569;
+        }
+
+        .session-card i {
+            color: #667eea;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Progress Bar */
+        .session-progress {
+            margin: 25px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .card-header {
+                padding: 25px;
+            }
+            
+            .floating-icon {
+                font-size: 80px;
+                right: 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .desktop-view {
+                display: none;
+            }
+            
+            .mobile-view {
+                display: block;
+            }
+            
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                min-width: 100%;
+            }
+            
+            .filter-tabs {
+                justify-content: center;
+            }
+            
+            .floating-icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .user-info {
+                justify-content: center;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-sm {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .session-card {
+                padding: 20px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -468px 0; }
+            100% { background-position: 468px 0; }
+        }
+
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 1000px 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+
+        /* Stats Cards */
+        .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
-        
+
         .stat-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 22px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
             display: flex;
             align-items: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            gap: 20px;
+            transition: transform 0.3s ease;
         }
-        
+
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
         }
-        
+
         .stat-icon {
             width: 60px;
             height: 60px;
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 18px;
-            font-size: 26px;
+            font-size: 24px;
+            color: white;
         }
-        
-        .video-icon {
-            background-color: #e6f2ff;
-            color: #3a8ffe;
-        }
-        
-        .essay-icon {
-            background-color: #f0f7ff;
-            color: #5a9cff;
-        }
-        
-        .call-icon {
-            background-color: #e8f4ff;
-            color: #1e5cb3;
-        }
-        
+
+        .stat-1 .stat-icon { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .stat-2 .stat-icon { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .stat-3 .stat-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .stat-4 .stat-icon { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
         .stat-info h3 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 5px;
+            color: #1e293b;
         }
-        
+
         .stat-info p {
-            color: #666;
-            font-size: 15px;
-        }
-        
-        .modules-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 1100px) {
-            .modules-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .module-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
-            transition: transform 0.3s;
-        }
-        
-        .module-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .module-header {
-            padding: 22px 25px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .module-title {
-            display: flex;
-            align-items: center;
-        }
-        
-        .module-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 20px;
-        }
-        
-        .module-title-text h2 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .module-title-text p {
-            color: #777;
+            color: #64748b;
             font-size: 14px;
-        }
-        
-        .badge {
-            background-color: #ff4757;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .module-content {
-            padding: 0;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        .task-item {
-            padding: 20px 25px;
-            border-bottom: 1px solid #f1f1f1;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.2s;
-        }
-        
-        .task-item:hover {
-            background-color: #f9fbfe;
-        }
-        
-        .task-item:last-child {
-            border-bottom: none;
-        }
-        
-        .student-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #e6f2ff;
-            color: #3a8ffe;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            margin-right: 18px;
-            flex-shrink: 0;
-        }
-        
-        .task-details {
-            flex-grow: 1;
-        }
-        
-        .task-details h4 {
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
-        
-        .task-meta {
-            display: flex;
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        
-        .task-meta span {
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .task-meta i {
-            margin-right: 6px;
-            font-size: 13px;
-        }
-        
-        .task-details p {
-            color: #777;
-            font-size: 14.5px;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        
-        .task-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .btn {
-            padding: 8px 16px;
-            border-radius: 6px;
-            border: none;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .btn-primary {
-            background-color: #3a8ffe;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #1e7dfc;
-        }
-        
-        .btn-secondary {
-            background-color: #f0f5ff;
-            color: #3a8ffe;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #e1ebff;
-        }
-        
-        .btn-success {
-            background-color: #00b894;
-            color: white;
-        }
-        
-        .btn-success:hover {
-            background-color: #00a085;
-        }
-        
-        .btn i {
-            margin-right: 6px;
-            font-size: 13px;
-        }
-        
-        .empty-state {
-            padding: 40px 20px;
-            text-align: center;
-            color: #999;
-        }
-        
-        .empty-state i {
-            font-size: 48px;
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-        
-        .empty-state p {
-            font-size: 16px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #777;
-            font-size: 14.5px;
-            border-top: 1px solid #eee;
-            margin-top: 20px;
-        }
-        
-        .priority-high {
-            border-left: 4px solid #ff4757;
-        }
-        
-        .priority-medium {
-            border-left: 4px solid #ffa502;
-        }
-        
-        .priority-low {
-            border-left: 4px solid #2ed573;
-        }
-        
-        /* Scrollbar styling */
-        .module-content::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .module-content::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        .module-content::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
-            border-radius: 10px;
-        }
-        
-        .module-content::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="header-content">
-                <div class="header-title">
-                    <h1>Teacher Dashboard</h1>
-                    <p>Kelola koreksi speaking, essai, dan request live test siswa</p>
-                </div>
-                <div class="teacher-info">
-                    <div class="teacher-avatar">TS</div>
-                    <div class="teacher-details">
-                        <h3>Teacher Sarah</h3>
-                        <p>English Language Instructor</p>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4 class="page-title">My Mock Test Sessions</h4>
+                            <p class="header-subtitle">Track and manage your speaking practice sessions</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="user-info">
+                                <i class="fas fa-user-circle"></i>
+                                <span>John Doe</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-plus me-2"></i>Request New Session
+                            </a>
+                        </div>
+                        <i class="fas fa-calendar-check floating-icon"></i>
                     </div>
-                </div>
-            </div>
-        </header>
-        
-        <div class="stats-summary">
-            <div class="stat-card">
-                <div class="stat-icon video-icon">
-                    <i class="fas fa-video"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>12</h3>
-                    <p>Video Speaking Menunggu Koreksi</p>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon essay-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>8</h3>
-                    <p>Essai Menunggu Koreksi</p>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon call-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>5</h3>
-                    <p>Request Video Call Live Test</p>
+
+                    <div class="card-body">
+                        <!-- Success Alert -->
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i>Your session request has been submitted successfully!
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="stats-container">
+                            <div class="stat-card stat-1">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>12</h3>
+                                    <p>Upcoming Sessions</p>
+                                </div>
+                            </div>
+                            <div class="stat-card stat-2">
+                                <div class="stat-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>24</h3>
+                                    <p>Completed</p>
+                                </div>
+                            </div>
+                            <div class="stat-card stat-3">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>8.5</h3>
+                                    <p>Average Score</p>
+                                </div>
+                            </div>
+                            <div class="stat-card stat-4">
+                                <div class="stat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>+15%</h3>
+                                    <p>Improvement</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filters -->
+                        <div class="filters-container">
+                            <div class="filter-tabs">
+                                <div class="filter-tab active" data-filter="all">
+                                    <i class="fas fa-list"></i> All
+                                </div>
+                                <div class="filter-tab" data-filter="upcoming">
+                                    <i class="fas fa-clock"></i> Upcoming
+                                </div>
+                                <div class="filter-tab" data-filter="completed">
+                                    <i class="fas fa-check-circle"></i> Completed
+                                </div>
+                                <div class="filter-tab" data-filter="pending">
+                                    <i class="fas fa-hourglass-half"></i> Pending
+                                </div>
+                            </div>
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search sessions...">
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="session-progress">
+                            <div class="progress-label">
+                                <span>Completion Progress</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Desktop View -->
+                        <div class="desktop-view">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th><i class="fas fa-heading me-2"></i>Title</th>
+                                            <th><i class="fas fa-chalkboard-teacher me-2"></i>Teacher</th>
+                                            <th><i class="fas fa-clock me-2"></i>Proposed Time</th>
+                                            <th><i class="fas fa-calendar-alt me-2"></i>Scheduled Time</th>
+                                            <th><i class="fas fa-info-circle me-2"></i>Status</th>
+                                            <th><i class="fas fa-cogs me-2"></i>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Session 1 -->
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-microphone me-3 text-primary"></i>
+                                                    IELTS Speaking Part 2 Practice
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="teacher-avatar me-2">
+                                                        <i class="fas fa-user-circle text-secondary"></i>
+                                                    </div>
+                                                    Sarah Johnson
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-clock text-muted me-2"></i>
+                                                    Dec 15, 2023 14:30
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-calendar-check text-success me-2"></i>
+                                                    Dec 16, 2023 10:00
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="status-badge badge-accepted">
+                                                    <i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>
+                                                    Accepted
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-success">
+                                                        <i class="fas fa-video me-1"></i>Join Session
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- Session 2 -->
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-language me-3 text-primary"></i>
+                                                    Business English Mock Interview
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="teacher-avatar me-2">
+                                                        <i class="fas fa-user-circle text-secondary"></i>
+                                                    </div>
+                                                    Michael Chen
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-clock text-muted me-2"></i>
+                                                    Dec 18, 2023 11:00
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">-</span>
+                                            </td>
+                                            <td>
+                                                <span class="status-badge badge-pending">
+                                                    <i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>
+                                                    Pending
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- Session 3 -->
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-graduation-cap me-3 text-primary"></i>
+                                                    TOEFL Speaking Practice
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="teacher-avatar me-2">
+                                                        <i class="fas fa-user-circle text-secondary"></i>
+                                                    </div>
+                                                    Robert Wilson
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-clock text-muted me-2"></i>
+                                                    Dec 10, 2023 09:00
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-calendar-check text-success me-2"></i>
+                                                    Dec 10, 2023 09:00
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="status-badge badge-completed">
+                                                    <i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>
+                                                    Completed
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-eye me-1"></i>View
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-chart-bar me-1"></i>Results
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Mobile View -->
+                        <div class="mobile-view">
+                            <!-- Mobile Session Card 1 -->
+                            <div class="session-card">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="fw-bold">
+                                        <i class="fas fa-microphone me-2 text-primary"></i>
+                                        IELTS Speaking Part 2
+                                    </h5>
+                                    <span class="status-badge badge-accepted">
+                                        Accepted
+                                    </span>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    <strong>Teacher:</strong> Sarah Johnson
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <i class="fas fa-clock"></i>
+                                    <strong>Proposed:</strong> Dec 15, 2023 14:30
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <strong>Scheduled:</strong> Dec 16, 2023 10:00
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <a href="#" class="btn btn-sm btn-info">
+                                        <i class="fas fa-eye me-1"></i>Details
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-success">
+                                        <i class="fas fa-video me-1"></i>Join
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile Session Card 2 -->
+                            <div class="session-card">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="fw-bold">
+                                        <i class="fas fa-language me-2 text-primary"></i>
+                                        Business English Mock
+                                    </h5>
+                                    <span class="status-badge badge-pending">
+                                        Pending
+                                    </span>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    <strong>Teacher:</strong> Michael Chen
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <i class="fas fa-clock"></i>
+                                    <strong>Proposed:</strong> Dec 18, 2023 11:00
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <strong>Scheduled:</strong> 
+                                    <span class="text-muted">Not scheduled</span>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <a href="#" class="btn btn-sm btn-info">
+                                        <i class="fas fa-eye me-1"></i>Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="modules-container">
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-title">
-                        <div class="module-icon" style="background-color: #e6f2ff; color: #3a8ffe;">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <div class="module-title-text">
-                            <h2>Video Speaking Student</h2>
-                            <p>Daftar video speaking yang membutuhkan koreksi</p>
-                        </div>
-                    </div>
-                    <div class="badge">12 Baru</div>
-                </div>
-                
-                <div class="module-content">
-                    <div class="task-item priority-high">
-                        <div class="student-avatar">AR</div>
-                        <div class="task-details">
-                            <h4>Andi Rahman</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 2 hari yang lalu</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 3:45</span>
-                                <span><i class="fas fa-signal"></i> Level: Intermediate</span>
-                            </div>
-                            <p>Topic: "My Holiday Experience" - Video berisi pengalaman liburan ke Bali dengan fokus pada penggunaan past tense.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-play-circle"></i> Tonton & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment-dots"></i> Beri Catatan</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-medium">
-                        <div class="student-avatar">SD</div>
-                        <div class="task-details">
-                            <h4>Sari Dewi</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 1 hari yang lalu</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 2:15</span>
-                                <span><i class="fas fa-signal"></i> Level: Beginner</span>
-                            </div>
-                            <p>Topic: "Introducing My Family" - Perkenalan anggota keluarga dengan fokus pada pronunciation.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-play-circle"></i> Tonton & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment-dots"></i> Beri Catatan</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-low">
-                        <div class="student-avatar">RF</div>
-                        <div class="task-details">
-                            <h4>Rizki Fadilah</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 5 jam yang lalu</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 4:20</span>
-                                <span><i class="fas fa-signal"></i> Level: Advanced</span>
-                            </div>
-                            <p>Topic: "Climate Change Solutions" - Presentasi tentang solusi perubahan iklim dengan fokus pada vocabulary dan fluency.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-play-circle"></i> Tonton & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment-dots"></i> Beri Catatan</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Modul 2: Daftar Essai -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-title">
-                        <div class="module-icon" style="background-color: #f0f7ff; color: #5a9cff;">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="module-title-text">
-                            <h2>Essai Student</h2>
-                            <p>Daftar essai yang membutuhkan koreksi</p>
-                        </div>
-                    </div>
-                    <div class="badge">8 Baru</div>
-                </div>
-                
-                <div class="module-content">
-                    <div class="task-item priority-high">
-                        <div class="student-avatar">MA</div>
-                        <div class="task-details">
-                            <h4>Maya Andini</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 1 hari yang lalu</span>
-                                <span><i class="fas fa-file-word"></i> 350 kata</span>
-                                <span><i class="fas fa-signal"></i> Level: Intermediate</span>
-                            </div>
-                            <p>Topic: "The Impact of Social Media on Teenagers" - Essai argumentatif tentang dampak media sosial pada remaja.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-eye"></i> Baca & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="fas fa-highlighter"></i> Beri Anotasi</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-medium">
-                        <div class="student-avatar">DW</div>
-                        <div class="task-details">
-                            <h4>Dedi Wahyudi</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 2 hari yang lalu</span>
-                                <span><i class="fas fa-file-word"></i> 250 kata</span>
-                                <span><i class="fas fa-signal"></i> Level: Beginner</span>
-                            </div>
-                            <p>Topic: "My Daily Routine" - Deskripsi rutinitas harian dengan fokus pada simple present tense.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-eye"></i> Baca & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="fas fa-highlighter"></i> Beri Anotasi</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-low">
-                        <div class="student-avatar">LS</div>
-                        <div class="task-details">
-                            <h4>Lisa Santoso</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> 3 hari yang lalu</span>
-                                <span><i class="fas fa-file-word"></i> 500 kata</span>
-                                <span><i class="fas fa-signal"></i> Level: Advanced</span>
-                            </div>
-                            <p>Topic: "Artificial Intelligence in Education" - Essai analitis tentang penerapan AI dalam bidang pendidikan.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-primary"><i class="fas fa-eye"></i> Baca & Koreksi</button>
-                                <button class="btn btn-secondary"><i class="fas fa-highlighter"></i> Beri Anotasi</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Modul 3: Request Video Call -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-title">
-                        <div class="module-icon" style="background-color: #e8f4ff; color: #1e5cb3;">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="module-title-text">
-                            <h2>Request Video Call</h2>
-                            <p>Live test speaking dengan teacher</p>
-                        </div>
-                    </div>
-                    <div class="badge">5 Menunggu</div>
-                </div>
-                
-                <div class="module-content">
-                    <div class="task-item priority-high">
-                        <div class="student-avatar">TA</div>
-                        <div class="task-details">
-                            <h4>Toni Ardianto</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> Request: Besok, 10:00 WIB</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 30 menit</span>
-                                <span><i class="fas fa-signal"></i> Level: Intermediate</span>
-                            </div>
-                            <p>Purpose: Persiapan ujian speaking IELTS bagian 2 & 3. Student ingin berlatih dengan simulasi tes yang sesungguhnya.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-success"><i class="fas fa-check-circle"></i> Terima Request</button>
-                                <button class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Jadwal Ulang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-medium">
-                        <div class="student-avatar">NR</div>
-                        <div class="task-details">
-                            <h4>Nina Rahmawati</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> Request: Hari ini, 14:30 WIB</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 45 menit</span>
-                                <span><i class="fas fa-signal"></i> Level: Beginner</span>
-                            </div>
-                            <p>Purpose: Praktek conversation sehari-hari untuk persiapan wawancara kerja dalam bahasa Inggris.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-success"><i class="fas fa-check-circle"></i> Terima Request</button>
-                                <button class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Jadwal Ulang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="task-item priority-low">
-                        <div class="student-avatar">HS</div>
-                        <div class="task-details">
-                            <h4>Hendra Setiawan</h4>
-                            <div class="task-meta">
-                                <span><i class="far fa-clock"></i> Request: Lusa, 13:15 WIB</span>
-                                <span><i class="fas fa-clock"></i> Durasi: 60 menit</span>
-                                <span><i class="fas fa-signal"></i> Level: Advanced</span>
-                            </div>
-                            <p>Purpose: Diskusi tentang artikel akademik dan presentasi singkat untuk meningkatkan fluency dan vocabulary teknis.</p>
-                            <div class="task-actions">
-                                <button class="btn btn-success"><i class="fas fa-check-circle"></i> Terima Request</button>
-                                <button class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Jadwal Ulang</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p>© 2023 English Learning Platform - Teacher Dashboard. Data diperbarui secara real-time.</p>
-        </footer>
     </div>
 
     <script>
-        // Fungsi untuk menangani aksi tombol
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const buttonText = this.textContent.trim();
-                    const studentName = this.closest('.task-item').querySelector('h4').textContent;
-                    
-                    if (buttonText.includes('Tonton') || buttonText.includes('Baca')) {
-                        alert(`Membuka tugas dari ${studentName} untuk dikoreksi...`);
-                    } else if (buttonText.includes('Terima')) {
-                        alert(`Request video call dari ${studentName} telah diterima!`);
-                        this.textContent = '✓ Diterima';
-                        this.classList.remove('btn-success');
-                        this.classList.add('btn-secondary');
-                        this.disabled = true;
-                    } else if (buttonText.includes('Beri Catatan') || buttonText.includes('Beri Anotasi')) {
-                        alert(`Membuka editor catatan untuk ${studentName}...`);
-                    } else if (buttonText.includes('Jadwal Ulang')) {
-                        alert(`Membuka kalender untuk menjadwalkan ulang dengan ${studentName}...`);
-                    }
+        // Filter Tabs Functionality
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.filter-tab').forEach(t => {
+                    t.classList.remove('active');
                 });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Here you would filter the sessions based on the data-filter attribute
+                const filter = this.getAttribute('data-filter');
+                console.log('Filtering by:', filter);
+                // Add your filtering logic here
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.querySelector('.search-box input');
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+            // Add your search logic here
+        });
+
+        // Progress Bar Animation
+        const progressFill = document.querySelector('.progress-fill');
+        let width = 0;
+        const targetWidth = 65;
+        const interval = setInterval(() => {
+            if (width >= targetWidth) {
+                clearInterval(interval);
+            } else {
+                width++;
+                progressFill.style.width = width + '%';
+            }
+        }, 20);
+
+        // Session Card Hover Effects
+        document.querySelectorAll('.session-card, .table tbody tr').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
             });
             
-            // Update waktu secara dinamis
-            function updateTimes() {
-                const timeElements = document.querySelectorAll('.task-meta span:first-child');
-                
-                timeElements.forEach(element => {
-                    const text = element.textContent;
-                    if (text.includes('jam yang lalu')) {
-                        const hours = parseInt(text);
-                        if (hours < 24) {
-                            const newHours = hours + 1;
-                            element.innerHTML = `<i class="far fa-clock"></i> ${newHours} jam yang lalu`;
-                        }
-                    }
-                });
-            }
-            
-            setInterval(updateTimes, 300000);
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
