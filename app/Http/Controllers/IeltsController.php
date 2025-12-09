@@ -7,8 +7,11 @@ use App\Models\SetSoal;
 use App\Models\Soal;
 use App\Models\TestDetailHistory;
 use App\Models\TestHistory;
+use App\Models\User;
+use App\Models\VideoCall;
 use App\Models\Videos;
 use App\Models\Writing;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +20,8 @@ use Illuminate\Support\Facades\Storage;
 
 class IeltsController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index(Request $r)
     {
         try {
@@ -578,7 +583,6 @@ class IeltsController extends Controller
         }
     }
 
-
     public function mockTest(Request $r)
     {
         try {
@@ -590,8 +594,20 @@ class IeltsController extends Controller
                     $data['set'] = $set;
                     $data['section'] = $r->input('section');
 
-                    $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
-                    return view($blade, $data);
+                    if($r->input('section') == 'speaking'){
+                        /** @var \App\Models\User $user */
+                        $user = Auth::user();
+
+                        if ($user->isStudent()) {
+                            $data['sessions'] = $user->studentSessions()->with('teacher')->latest()->get();
+                            $data['teachers'] = User::where('role', 'teacher')->get();
+                            $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
+                            return view($blade, $data);
+                        }
+                    }else{
+                        $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
+                        return view($blade, $data);
+                    }
                 } else {
                     return redirect()->back()->with('error', 'Question set not found.');
                 }

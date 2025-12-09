@@ -8,6 +8,7 @@ use App\Http\Requests\StoreVideoAsessmentRequest;
 use App\Http\Requests\UpdateVideoAsessmentRequest;
 use App\Models\Videos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class VideoAsessmentController extends Controller
@@ -60,7 +61,7 @@ class VideoAsessmentController extends Controller
 
 
             $video->update([
-                'teacher_id' => auth()->id()
+                'teacher_id' => Auth::id()
             ]);
 
             DB::commit();

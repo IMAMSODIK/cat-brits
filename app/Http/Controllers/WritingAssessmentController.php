@@ -6,6 +6,7 @@ use App\Models\WritingAssessment;
 use App\Http\Controllers\Controller;
 use App\Models\Writing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class WritingAssessmentController extends Controller
@@ -44,7 +45,7 @@ class WritingAssessmentController extends Controller
             }
 
             Writing::where('id', $r->writing_id)->update([
-                'teacher_id' => auth()->id(),
+                'teacher_id' => Auth::id(),
             ]);
 
             DB::commit();

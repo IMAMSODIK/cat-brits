@@ -51,10 +51,10 @@
         }
 
         /* #assessmentModal .btn-close:hover {
-                            background: rgba(255, 255, 255, 0.3);
-                            opacity: 1;
-                            transform: rotate(90deg);
-                        } */
+                                                background: rgba(255, 255, 255, 0.3);
+                                                opacity: 1;
+                                                transform: rotate(90deg);
+                                            } */
 
         /* Video Player Styling */
         #assessmentModal #modalVideoPlayer {
@@ -380,422 +380,491 @@
 
     {{-- modal assesment writing --}}
     <style>
-/* Writing Assessment Modal Custom Styles */
-#writingAssessmentModal .modal-dialog {
-    max-width: 800px;
-}
+        /* Writing Assessment Modal Custom Styles */
+        #writingAssessmentModal .modal-dialog {
+            max-width: 800px;
+        }
 
-#writingAssessmentModal .modal-content {
-    border-radius: 18px;
-    border: none;
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.18);
-    overflow: hidden;
-    background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
-}
+        #writingAssessmentModal .modal-content {
+            border-radius: 18px;
+            border: none;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+        }
 
-/* Header Styling */
-#writingAssessmentModal .modal-header {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    color: white;
-    border-bottom: none;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        /* Header Styling */
+        #writingAssessmentModal .modal-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-bottom: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
 
-#writingAssessmentModal .modal-title {
-    font-weight: 800;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    letter-spacing: 0.5px;
-}
+            50% {
+                background-position: 100% 50%;
+            }
 
-#writingAssessmentModal .modal-title::before {
-    content: '📝';
-    font-size: 1.8rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-/* Body Styling */
-#writingAssessmentModal .modal-body {
-    padding: 30px;
-    max-height: 70vh;
-    overflow-y: auto;
-    background: #ffffff;
-}
+        #writingAssessmentModal .modal-title {
+            font-weight: 800;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 0.5px;
+        }
 
-/* Student Answer Box */
-#writingAssessmentModal #writingAnswerBox {
-    background: linear-gradient(145deg, #f8faff 0%, #ffffff 100%);
-    border: 2px solid #e0e8ff;
-    border-radius: 12px;
-    padding: 20px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #2c3e50;
-    box-shadow: 
-        inset 0 2px 10px rgba(0, 0, 0, 0.03),
-        0 3px 15px rgba(106, 17, 203, 0.05);
-    position: relative;
-    min-height: 120px;
-    transition: all 0.3s ease;
-}
+        #writingAssessmentModal .modal-title::before {
+            content: '📝';
+            font-size: 1.8rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
 
-#writingAssessmentModal #writingAnswerBox:hover {
-    border-color: #a1c4fd;
-    box-shadow: 
-        inset 0 2px 15px rgba(0, 0, 0, 0.05),
-        0 5px 20px rgba(106, 17, 203, 0.08);
-}
+        /* Body Styling */
+        #writingAssessmentModal .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+            background: #ffffff;
+        }
 
-#writingAssessmentModal #writingAnswerBox::before {
-    content: '"';
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    font-size: 80px;
-    color: #6a11cb;
-    opacity: 0.0;
-    font-family: Georgia, serif;
-    font-weight: bold;
-}
+        /* Student Answer Box */
+        #writingAssessmentModal #writingAnswerBox {
+            background: linear-gradient(145deg, #f8faff 0%, #ffffff 100%);
+            border: 2px solid #e0e8ff;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2c3e50;
+            box-shadow:
+                inset 0 2px 10px rgba(0, 0, 0, 0.03),
+                0 3px 15px rgba(106, 17, 203, 0.05);
+            position: relative;
+            min-height: 120px;
+            transition: all 0.3s ease;
+        }
 
-/* Section Titles */
-#writingAssessmentModal h6 {
-    color: #34495e;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        #writingAssessmentModal #writingAnswerBox:hover {
+            border-color: #a1c4fd;
+            box-shadow:
+                inset 0 2px 15px rgba(0, 0, 0, 0.05),
+                0 5px 20px rgba(106, 17, 203, 0.08);
+        }
 
-#writingAssessmentModal h6::before {
-    content: '✍️';
-    font-size: 1.2rem;
-}
+        #writingAssessmentModal #writingAnswerBox::before {
+            content: '"';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 80px;
+            color: #6a11cb;
+            opacity: 0.0;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
 
-/* Form Styling */
-#writingAssessmentForm {
-    margin-top: 25px;
-}
+        /* Section Titles */
+        #writingAssessmentModal h6 {
+            color: #34495e;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-#writingAssessmentModal .mb-3 {
-    margin-bottom: 25px !important;
-    position: relative;
-}
+        #writingAssessmentModal h6::before {
+            content: '✍️';
+            font-size: 1.2rem;
+        }
 
-#writingAssessmentModal label {
-    display: block;
-    font-weight: 700;
-    color: #4a5568;
-    margin-bottom: 10px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        /* Form Styling */
+        #writingAssessmentForm {
+            margin-top: 25px;
+        }
 
-/* Band Score Inputs */
-#writingAssessmentModal input[type="number"] {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2c3e50;
-    background: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
+        #writingAssessmentModal .mb-3 {
+            margin-bottom: 25px !important;
+            position: relative;
+        }
 
-#writingAssessmentModal input[type="number"]:focus {
-    border-color: #6a11cb;
-    box-shadow: 
-        0 0 0 4px rgba(106, 17, 203, 0.15),
-        0 4px 12px rgba(106, 17, 203, 0.1);
-    outline: none;
-    transform: translateY(-2px);
-}
+        #writingAssessmentModal label {
+            display: block;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* Score Input Indicators */
-#writingAssessmentModal .mb-3::after {
-    content: '';
-    position: absolute;
-    right: 15px;
-    top: 45px;
-    width: 6px;
-    height: 40%;
-    background: linear-gradient(to bottom, #6a11cb, #2575fc);
-    border-radius: 3px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
+        /* Band Score Inputs */
+        #writingAssessmentModal input[type="number"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            background: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
 
-#writingAssessmentModal input[type="number"]:focus + .mb-3::after {
-    opacity: 1;
-}
+        #writingAssessmentModal input[type="number"]:focus {
+            border-color: #6a11cb;
+            box-shadow:
+                0 0 0 4px rgba(106, 17, 203, 0.15),
+                0 4px 12px rgba(106, 17, 203, 0.1);
+            outline: none;
+            transform: translateY(-2px);
+        }
 
-/* Score Range Indicators */
-#writingAssessmentModal input[type="number"]::-webkit-inner-spin-button {
-    height: 30px;
-    opacity: 0.7;
-}
+        /* Score Input Indicators */
+        #writingAssessmentModal .mb-3::after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 45px;
+            width: 6px;
+            height: 40%;
+            background: linear-gradient(to bottom, #6a11cb, #2575fc);
+            border-radius: 3px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
 
-/* Feedback Textarea */
-#writingAssessmentModal textarea {
-    width: 100%;
-    padding: 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #2c3e50;
-    background: white;
-    resize: vertical;
-    min-height: 120px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
+        #writingAssessmentModal input[type="number"]:focus+.mb-3::after {
+            opacity: 1;
+        }
 
-#writingAssessmentModal textarea:focus {
-    border-color: #2575fc;
-    box-shadow: 
-        0 0 0 4px rgba(37, 117, 252, 0.15),
-        0 4px 15px rgba(37, 117, 252, 0.1);
-    outline: none;
-    transform: translateY(-2px);
-}
+        /* Score Range Indicators */
+        #writingAssessmentModal input[type="number"]::-webkit-inner-spin-button {
+            height: 30px;
+            opacity: 0.7;
+        }
 
-#writingAssessmentModal textarea::placeholder {
-    color: #a0aec0;
-    font-style: italic;
-}
+        /* Feedback Textarea */
+        #writingAssessmentModal textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            resize: vertical;
+            min-height: 120px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
 
-/* Modal Footer */
-#writingAssessmentModal .modal-footer {
-    background: linear-gradient(145deg, #f8fbff 0%, #ffffff 100%);
-    padding: 20px 30px;
-    border-top: 1px solid #e0e8ff;
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-}
+        #writingAssessmentModal textarea:focus {
+            border-color: #2575fc;
+            box-shadow:
+                0 0 0 4px rgba(37, 117, 252, 0.15),
+                0 4px 15px rgba(37, 117, 252, 0.1);
+            outline: none;
+            transform: translateY(-2px);
+        }
 
-/* Save Button */
-#writingAssessmentModal #saveWritingAssessmentBtn {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    border: none;
-    border-radius: 12px;
-    padding: 14px 35px;
-    font-weight: 700;
-    font-size: 16px;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 6px 20px rgba(106, 17, 203, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
+        #writingAssessmentModal textarea::placeholder {
+            color: #a0aec0;
+            font-style: italic;
+        }
 
-#writingAssessmentModal #saveWritingAssessmentBtn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.7s;
-}
+        /* Modal Footer */
+        #writingAssessmentModal .modal-footer {
+            background: linear-gradient(145deg, #f8fbff 0%, #ffffff 100%);
+            padding: 20px 30px;
+            border-top: 1px solid #e0e8ff;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
 
-#writingAssessmentModal #saveWritingAssessmentBtn:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 10px 25px rgba(106, 17, 203, 0.4),
-        0 4px 8px rgba(0, 0, 0, 0.15);
-}
+        /* Save Button */
+        #writingAssessmentModal #saveWritingAssessmentBtn {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 35px;
+            font-weight: 700;
+            font-size: 16px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                0 6px 20px rgba(106, 17, 203, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
 
-#writingAssessmentModal #saveWritingAssessmentBtn:hover::before {
-    left: 100%;
-}
+        #writingAssessmentModal #saveWritingAssessmentBtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
 
-#writingAssessmentModal #saveWritingAssessmentBtn::after {
-    content: '💾';
-    font-size: 1.2rem;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
-}
+        #writingAssessmentModal #saveWritingAssessmentBtn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 10px 25px rgba(106, 17, 203, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.15);
+        }
 
-/* Scrollbar Styling */
-#writingAssessmentModal .modal-body::-webkit-scrollbar {
-    width: 10px;
-}
+        #writingAssessmentModal #saveWritingAssessmentBtn:hover::before {
+            left: 100%;
+        }
 
-#writingAssessmentModal .modal-body::-webkit-scrollbar-track {
-    background: #f1f5ff;
-    border-radius: 10px;
-    margin: 8px 0;
-}
+        #writingAssessmentModal #saveWritingAssessmentBtn::after {
+            content: '💾';
+            font-size: 1.2rem;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        }
 
-#writingAssessmentModal .modal-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    border-radius: 10px;
-    border: 2px solid #f1f5ff;
-}
+        /* Scrollbar Styling */
+        #writingAssessmentModal .modal-body::-webkit-scrollbar {
+            width: 10px;
+        }
 
-#writingAssessmentModal .modal-body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #5a0db5 0%, #1c68e8 100%);
-}
+        #writingAssessmentModal .modal-body::-webkit-scrollbar-track {
+            background: #f1f5ff;
+            border-radius: 10px;
+            margin: 8px 0;
+        }
 
-/* Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        #writingAssessmentModal .modal-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 10px;
+            border: 2px solid #f1f5ff;
+        }
 
-#writingAssessmentModal .modal-content {
-    animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+        #writingAssessmentModal .modal-body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a0db5 0%, #1c68e8 100%);
+        }
 
-/* Score Labels with Icons */
-#writingAssessmentModal label[for*="ta"]::before { content: '🎯'; }
-#writingAssessmentModal label[for*="cc"]::before { content: '🔗'; }
-#writingAssessmentModal label[for*="lr"]::before { content: '📚'; }
-#writingAssessmentModal label[for*="gra"]::before { content: '⚙️'; }
-#writingAssessmentModal label[for*="feedback"]::before { content: '💬'; }
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    #writingAssessmentModal .modal-dialog {
-        margin: 15px;
-        max-width: calc(100% - 30px);
-    }
-    
-    #writingAssessmentModal .modal-header {
-        padding: 20px 25px;
-    }
-    
-    #writingAssessmentModal .modal-body {
-        padding: 25px 20px;
-    }
-    
-    #writingAssessmentModal .modal-footer {
-        padding: 15px 20px;
-        flex-direction: column;
-    }
-    
-    #writingAssessmentModal #saveWritingAssessmentBtn {
-        width: 100%;
-        justify-content: center;
-    }
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Loading State */
-#writingAssessmentModal #writingAnswerBox.loading {
-    background: linear-gradient(90deg, #f0f5ff 25%, #e6eeff 50%, #f0f5ff 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-}
+        #writingAssessmentModal .modal-content {
+            animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-@keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
+        /* Score Labels with Icons */
+        #writingAssessmentModal label[for*="ta"]::before {
+            content: '🎯';
+        }
 
-/* Score Validation */
-#writingAssessmentModal input[type="number"]:invalid {
-    border-color: #ff6b6b;
-    background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
-}
+        #writingAssessmentModal label[for*="cc"]::before {
+            content: '🔗';
+        }
 
-#writingAssessmentModal input[type="number"]:valid {
-    border-color: #4274BA;
-}
+        #writingAssessmentModal label[for*="lr"]::before {
+            content: '📚';
+        }
 
-/* Tooltip for Band Scores */
-#writingAssessmentModal .mb-3 {
-    position: relative;
-}
+        #writingAssessmentModal label[for*="gra"]::before {
+            content: '⚙️';
+        }
 
-#writingAssessmentModal .mb-3:hover::before {
-    content: 'Band: 0-9 (use 0.5 increments)';
-    position: absolute;
-    top: -30px;
-    left: 0;
-    background: #2c3e50;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+        #writingAssessmentModal label[for*="feedback"]::before {
+            content: '💬';
+        }
 
-#writingAssessmentModal .mb-3:hover::after {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 20px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #2c3e50;
-    z-index: 1000;
-}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #writingAssessmentModal .modal-dialog {
+                margin: 15px;
+                max-width: calc(100% - 30px);
+            }
 
-/* Hover Effects for Form Elements */
-#writingAssessmentModal .mb-3 {
-    transition: transform 0.3s ease;
-}
+            #writingAssessmentModal .modal-header {
+                padding: 20px 25px;
+            }
 
-#writingAssessmentModal .mb-3:hover {
-    transform: translateX(5px);
-}
+            #writingAssessmentModal .modal-body {
+                padding: 25px 20px;
+            }
 
-/* Highlight Current Focus */
-#writingAssessmentModal .mb-3:has(input:focus),
-#writingAssessmentModal .mb-3:has(textarea:focus) {
-    background: rgba(106, 17, 203, 0.02);
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-}
+            #writingAssessmentModal .modal-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
 
-/* Section Divider */
-#writingAssessmentModal hr {
-    margin: 30px 0;
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #a1c4fd, #6a11cb, #a1c4fd, transparent);
-    opacity: 0.3;
-}
-</style>
+            #writingAssessmentModal #saveWritingAssessmentBtn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Loading State */
+        #writingAssessmentModal #writingAnswerBox.loading {
+            background: linear-gradient(90deg, #f0f5ff 25%, #e6eeff 50%, #f0f5ff 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Score Validation */
+        #writingAssessmentModal input[type="number"]:invalid {
+            border-color: #ff6b6b;
+            background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
+        }
+
+        #writingAssessmentModal input[type="number"]:valid {
+            border-color: #4274BA;
+        }
+
+        /* Tooltip for Band Scores */
+        #writingAssessmentModal .mb-3 {
+            position: relative;
+        }
+
+        #writingAssessmentModal .mb-3:hover::before {
+            content: 'Band: 0-9 (use 0.5 increments)';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #writingAssessmentModal .mb-3:hover::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #2c3e50;
+            z-index: 1000;
+        }
+
+        /* Hover Effects for Form Elements */
+        #writingAssessmentModal .mb-3 {
+            transition: transform 0.3s ease;
+        }
+
+        #writingAssessmentModal .mb-3:hover {
+            transform: translateX(5px);
+        }
+
+        /* Highlight Current Focus */
+        #writingAssessmentModal .mb-3:has(input:focus),
+        #writingAssessmentModal .mb-3:has(textarea:focus) {
+            background: rgba(106, 17, 203, 0.02);
+            border-radius: 10px;
+            padding: 10px;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        /* Section Divider */
+        #writingAssessmentModal hr {
+            margin: 30px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #a1c4fd, #6a11cb, #a1c4fd, transparent);
+            opacity: 0.3;
+        }
+    </style>
+
+    {{-- mobile version video call --}}
+    <style>
+        <style>
+
+        /* Hide card layout by default (desktop) */
+        .mobile-card {
+            display: none;
+        }
+
+        /* Mobile behavior */
+        @media (max-width: 768px) {
+            .desktop-table {
+                display: none !important;
+            }
+
+            .mobile-card {
+                display: block;
+            }
+
+            .mobile-card .card {
+                border: 1px solid #e5e5e5;
+                margin-bottom: 12px;
+            }
+
+            .mobile-card .card-body strong {
+                color: #444;
+            }
+        }
+    </style>
+
+    </style>
 @endsection
 
 @section('content')
+    <div class="row mt-2">
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show mb-3">
+                <i class="fa fa-exclamation-circle me-2"></i>{{ session('error') }}
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
+    </div>
+
     <div class="row mt-2">
         <div class="col-12">
             <div class="card o-hidden small-widget">
@@ -830,7 +899,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-xl-4">
+        <div class="col-12 col-xl-6">
             <div class="card o-hidden small-widget">
                 <div class="card-body total-project border-b-primary border-2">
                     <span class="f-light f-w-500 f-14">Video Speaking Menunggu Koreksi</span>
@@ -860,7 +929,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-xl-4">
+        <div class="col-12 col-xl-6">
             <div class="card o-hidden small-widget">
                 <div class="card-body total-project border-b-primary border-2">
                     <span class="f-light f-w-500 f-14">Essai Menunggu Koreksi</span>
@@ -872,36 +941,6 @@
 
                         <div class="product-sub bg-primary-light">
                             <i class="fas fa-file-alt text-primary"></i>
-                        </div>
-                    </div>
-
-                    <ul class="bubbles">
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                        <li class="bubble"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-xl-4">
-            <div class="card o-hidden small-widget">
-                <div class="card-body total-project border-b-primary border-2">
-                    <span class="f-light f-w-500 f-14">Request Video Call Live Test</span>
-
-                    <div class="project-details">
-                        <div class="project-counter">
-                            <h2 class="f-w-600">12</h2>
-                        </div>
-
-                        <div class="product-sub bg-primary-light">
-                            <i class="fas fa-phone-alt text-primary"></i>
                         </div>
                     </div>
 
@@ -939,7 +978,7 @@
                     <div class="vertical-scroll scroll-demo scroll-b-none">
                         <div class="list-group main-lists-content">
 
-                            @foreach ($video_request as $v)
+                            @forelse ($video_request as $v)
                                 <div class="list-group-item list-group-item-action list-hover-primary btn-review-speaking"
                                     style="cursor: pointer" data-id="{{ $v->id }}"
                                     data-video="{{ asset('storage/recordings/' . $v->video) }}"
@@ -966,7 +1005,8 @@
                                                 <p class="text-dark" style="font-size: 13px;">
                                                     <b>Topic: {{ $v->setSoal->name }}</b><br>
                                                     {{ $v->setSoal->thumbnail }} <br>
-                                                    <small class="text-primary">Part {{ $v->part_soal }} &nbsp; • &nbsp; Number {{ $v->no_soal }}</small>
+                                                    <small class="text-primary">Part {{ $v->part_soal }} &nbsp; • &nbsp;
+                                                        Number {{ $v->no_soal }}</small>
                                                 </p>
 
                                                 <button class="btn btn-sm btn-primary mt-2">
@@ -977,8 +1017,11 @@
 
                                     </div>
                                 </div>
-                            @endforeach
-
+                            @empty
+                                <div class="text-center text-muted py-3">
+                                    No writing submissions found.
+                                </div>
+                            @endforelse
 
                         </div>
                     </div>
@@ -999,7 +1042,7 @@
                     <span class="badge bg-danger text-white">
                         {{ $writing_request->count() }}
                     </span>
-                </div>                
+                </div>
 
                 <div class="card-body">
                     <div class="vertical-scroll scroll-demo scroll-b-none">
@@ -1032,7 +1075,8 @@
                                                 <p class="text-dark" style="font-size: 13px;">
                                                     <b>Topic: {{ $w->setSoal->name }}</b><br>
                                                     {{ $w->setSoal->thumbnail }} <br>
-                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number {{ $v->no_soal }}</small>
+                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number
+                                                        {{ $v->no_soal }}</small>
                                                 </p>
 
                                                 <!-- BUTTON -->
@@ -1059,7 +1103,71 @@
 
     </div>
 
+    <hr>
+
     <div class="row">
+        <div class="col-12 col-xl-6">
+            <div class="card o-hidden small-widget">
+                <div class="card-body total-project border-b-primary border-2">
+                    <span class="f-light f-w-500 f-14">Request Video Call Live Test</span>
+
+                    <div class="project-details">
+                        <div class="project-counter">
+                            <h2 class="f-w-600">{{$pendingSessions->count()}}</h2>
+                        </div>
+
+                        <div class="product-sub bg-primary-light">
+                            <i class="fas fa-phone-alt text-primary"></i>
+                        </div>
+                    </div>
+
+                    <ul class="bubbles">
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-6">
+            <div class="card o-hidden small-widget">
+                <div class="card-body total-project border-b-primary border-2">
+                    <span class="f-light f-w-500 f-14">Upcoming Sessions</span>
+
+                    <div class="project-details">
+                        <div class="project-counter">
+                            <h2 class="f-w-600">{{$upcomingSessions->count()}}</h2>
+                        </div>
+
+                        <div class="product-sub bg-primary-light">
+                            <i class="fas fa-phone-alt text-primary"></i>
+                        </div>
+                    </div>
+
+                    <ul class="bubbles">
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                        <li class="bubble"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row video-call-row">
         <div class="col-12 col-xxl-6 col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -1068,84 +1176,208 @@
                 </div>
 
                 <div class="card-body">
+
                     <ul class="nav nav-tabs" id="videoCallTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="request-tab" data-bs-toggle="tab"
-                                data-bs-target="#requests" type="button" role="tab">
-                                Requests & Acceptance
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#requests"
+                                type="button">
+                                Requests
+                                <span class="badge bg-primary ms-1">{{ $pendingSessions->count() }}</span>
                             </button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="accepted-tab" data-bs-toggle="tab"
-                                data-bs-target="#acceptedSessions" type="button" role="tab">
-                                Accepted Sessions
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#acceptedSessions"
+                                type="button">
+                                Accepted
+                                <span class="badge bg-success ms-1">{{ $upcomingSessions->count() }}</span>
                             </button>
                         </li>
                     </ul>
 
-                    <div class="tab-content mt-3" id="videoCallTabContent">
-                        <div class="tab-pane fade show active" id="requests" role="tabpanel">
-                            <div class="vertical-scroll scroll-demo scroll-b-none">
-                                <div class="list-group main-lists-content">
-                                    <a class="list-group-item list-group-item-action list-hover-primary" href="#">
-                                        <div class="row">
-                                            <div class="col-12 col-md-8">
-                                                <h6 class="mb-1">John Doe</h6>
+                    <div class="tab-content mt-3">
 
-                                                <p class="mb-1 text-muted" style="font-size: 13px;">
-                                                    <i class="fa fa-calendar"></i> Request Date: 2025-01-14
-                                                </p>
+                        {{-- REQUESTS TAB --}}
+                        <div class="tab-pane fade show active" id="requests">
 
-                                                <p class="text-primary" style="font-size: 13px;">
-                                                    Preferred Time: 19:30 – 20:00
-                                                </p>
-                                            </div>
-                                            <div class="col-12 col-md-4 d-flex flex-column justify-content-center">
-                                                <button class="btn btn-sm btn-success mb-2">
-                                                    <i class="fa fa-check"></i> Accept
-                                                </button>
+                            @if ($pendingSessions->isEmpty())
+                                <div class="text-center py-4 text-muted">
+                                    <i class="fa fa-inbox fa-2x mb-2"></i>
+                                    <p class="mb-0">No pending requests</p>
+                                </div>
+                            @else
+                                {{-- DESKTOP TABLE --}}
+                                <div class="table-responsive d-none d-md-block">
+                                    <table class="table table-bordered align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Student</th>
+                                                <th>Title</th>
+                                                <th>Proposed Time</th>
+                                                <th>Duration</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($pendingSessions as $session)
+                                                <tr>
+                                                    <td>{{ $session->student->name }}</td>
+                                                    <td>{{ $session->title }}</td>
+                                                    <td><i class="fa fa-calendar text-primary me-1"></i>
+                                                        {{ $session->proposed_time->format('M d, Y H:i') }}</td>
+                                                    <td><span class="badge bg-info">{{ $session->duration_minutes }}
+                                                            min</span></td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-success btn-sm me-1" data-bs-toggle="modal"
+                                                            data-bs-target="#acceptModal{{ $session->id }}">
+                                                            <i class="fa fa-check"></i> Accept
+                                                        </button>
+                                                        <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal"
+                                                            data-bs-target="#rejectModal{{ $session->id }}">
+                                                            <i class="fa fa-times"></i> Reject
+                                                        </button>
+                                                        <a href="{{ route('mock-test.show', $session) }}"
+                                                            class="btn btn-info btn-sm">
+                                                            <i class="fa fa-eye"></i> Details
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                                                <button class="btn btn-sm btn-danger">
-                                                    <i class="fa fa-times"></i> Reject
-                                                </button>
+                                {{-- MOBILE CARDS --}}
+                                <div class="d-block d-md-none">
+                                    @foreach ($pendingSessions as $session)
+                                        <div class="card mb-3 shadow-sm">
+                                            <div class="card-body">
+                                                <strong>Student:</strong> {{ $session->student->name }} <br>
+                                                <strong>Title:</strong> {{ $session->title }} <br>
+                                                <strong>Proposed:</strong>
+                                                {{ $session->proposed_time->format('M d, Y H:i') }} <br>
+                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min <br>
+
+                                                <div class="mt-3">
+                                                    <button class="btn btn-success btn-sm me-1" data-bs-toggle="modal"
+                                                        data-bs-target="#acceptModal{{ $session->id }}">
+                                                        <i class="fa fa-check"></i> Accept
+                                                    </button>
+
+                                                    <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal"
+                                                        data-bs-target="#rejectModal{{ $session->id }}">
+                                                        <i class="fa fa-times"></i> Reject
+                                                    </button>
+
+                                                    <a href="{{ route('mock-test.show', $session) }}"
+                                                        class="btn btn-info btn-sm">
+                                                        <i class="fa fa-eye"></i> Details
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    @endforeach
                                 </div>
-                            </div>
+                            @endif
+
                         </div>
 
-                        <div class="tab-pane fade" id="acceptedSessions" role="tabpanel">
-                            <div class="vertical-scroll scroll-demo scroll-b-none">
-                                <div class="list-group main-lists-content">
-                                    <a class="list-group-item list-group-item-action list-hover-primary" href="#">
-                                        <div class="row">
-                                            <div class="col-12 col-md-8">
-                                                <h6 class="mb-1">John Doe</h6>
+                        {{-- ACCEPTED SESSIONS TAB --}}
+                        <div class="tab-pane fade" id="acceptedSessions">
 
-                                                <p class="mb-1 text-muted" style="font-size: 13px;">
-                                                    <i class="fa fa-calendar"></i> Scheduled: 2025-01-17
-                                                    &nbsp; • &nbsp;
-                                                    <i class="fa fa-clock"></i> 19:30 – 20:00
-                                                </p>
+                            @if ($upcomingSessions->isEmpty())
+                                <div class="text-center py-4 text-muted">
+                                    <i class="fa fa-calendar-times fa-2x mb-2"></i>
+                                    <p class="mb-0">No upcoming accepted sessions</p>
+                                </div>
+                            @else
+                                {{-- DESKTOP TABLE --}}
+                                <div class="table-responsive d-none d-md-block">
+                                    <table class="table table-bordered align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Student</th>
+                                                <th>Title</th>
+                                                <th>Scheduled Time</th>
+                                                <th>Duration</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($upcomingSessions as $session)
+                                                <tr>
+                                                    <td>{{ $session->student->name }}</td>
+                                                    <td>{{ $session->title }}</td>
+                                                    <td><i class="fa fa-clock text-success me-1"></i>
+                                                        {{ $session->scheduled_time->format('M d, Y H:i') }}</td>
+                                                    <td><span class="badge bg-success">{{ $session->duration_minutes }}
+                                                            min</span></td>
+                                                    <td class="text-center">
+                                                        @if ($session->canStart())
+                                                            <a href="{{ route('mock-test.start', $session) }}"
+                                                                class="btn btn-success btn-sm me-1">
+                                                                <i class="fa fa-video"></i> Start
+                                                            </a>
+                                                        @else
+                                                            <button class="btn btn-secondary btn-sm me-1" disabled>
+                                                                <i class="fa fa-clock"></i>
+                                                                Starts {{ $session->scheduled_time->diffForHumans() }}
+                                                            </button>
+                                                        @endif
 
-                                                <p class="text-primary" style="font-size: 13px;">
-                                                    Meeting Type: Mock Speaking Test
-                                                </p>
-                                            </div>
-                                            <div class="col-12 col-md-4 d-flex align-items-center justify-content-end">
-                                                <button class="btn btn-sm btn-primary">
-                                                    <i class="fa fa-video"></i> Join Session
-                                                </button>
+                                                        <a href="{{ route('mock-test.show', $session) }}"
+                                                            class="btn btn-info btn-sm">
+                                                            <i class="fa fa-eye"></i> Details
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                {{-- MOBILE CARDS --}}
+                                <div class="d-block d-md-none">
+                                    @foreach ($upcomingSessions as $session)
+                                        <div class="card mb-3 shadow-sm">
+                                            <div class="card-body">
+                                                <strong>Student:</strong> {{ $session->student->name }} <br>
+                                                <strong>Title:</strong> {{ $session->title }} <br>
+                                                <strong>Scheduled:</strong>
+                                                {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
+                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min <br>
+
+                                                <div class="mt-3">
+                                                    @if ($session->canStart())
+                                                        <a href="{{ route('mock-test.start', $session) }}"
+                                                            class="btn btn-success btn-sm me-1">
+                                                            <i class="fa fa-video"></i> Start
+                                                        </a>
+                                                    @else
+                                                        <button class="btn btn-secondary btn-sm me-1" disabled>
+                                                            <i class="fa fa-clock"></i> Starts
+                                                            {{ $session->scheduled_time->diffForHumans() }}
+                                                        </button>
+                                                    @endif
+
+                                                    <a href="{{ route('mock-test.show', $session) }}"
+                                                        class="btn btn-info btn-sm">
+                                                        <i class="fa fa-eye"></i> Details
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    @endforeach
                                 </div>
-                            </div>
+                            @endif
+
                         </div>
+
                     </div>
+
                 </div>
+
+
             </div>
         </div>
 
@@ -1579,13 +1811,13 @@
                     answerBox.addClass('loading');
                 }
             }
-            
+
             animateAnswerBox();
 
             // Score validation and formatting
             $('input[type="number"]').on('input', function() {
                 let value = parseFloat($(this).val());
-                
+
                 // Validate range
                 if (value > 9) {
                     $(this).val(9);
@@ -1595,7 +1827,7 @@
                     $(this).val(0);
                     value = 0;
                 }
-                
+
                 // Format to one decimal place
                 if (!isNaN(value)) {
                     const decimal = value % 1;
@@ -1605,7 +1837,7 @@
                         $(this).val(rounded.toFixed(1));
                     }
                 }
-                
+
                 // Color coding based on score
                 const scoreColor = getScoreColor(value);
                 $(this).css({
@@ -1613,22 +1845,37 @@
                     'background': scoreColor.background
                 });
             });
-            
+
             function getScoreColor(score) {
-                if (score >= 7) return { border: '#4274BA', background: 'linear-gradient(145deg, #f0fff4 0%, #ffffff 100%)' };
-                if (score >= 5) return { border: '#ffd43b', background: 'linear-gradient(145deg, #fff9db 0%, #ffffff 100%)' };
-                if (score >= 3) return { border: '#ff922b', background: 'linear-gradient(145deg, #fff4e6 0%, #ffffff 100%)' };
-                return { border: '#ff6b6b', background: 'linear-gradient(145deg, #fff5f5 0%, #ffffff 100%)' };
+                if (score >= 7) return {
+                    border: '#4274BA',
+                    background: 'linear-gradient(145deg, #f0fff4 0%, #ffffff 100%)'
+                };
+                if (score >= 5) return {
+                    border: '#ffd43b',
+                    background: 'linear-gradient(145deg, #fff9db 0%, #ffffff 100%)'
+                };
+                if (score >= 3) return {
+                    border: '#ff922b',
+                    background: 'linear-gradient(145deg, #fff4e6 0%, #ffffff 100%)'
+                };
+                return {
+                    border: '#ff6b6b',
+                    background: 'linear-gradient(145deg, #fff5f5 0%, #ffffff 100%)'
+                };
             }
-            
+
             // Character counter for feedback
             $('textarea[name="feedback"]').on('input', function() {
                 const charCount = $(this).val().length;
-                const counter = $(this).parent().find('.char-counter') || 
-                            $('<small class="char-counter text-muted" style="display:block; margin-top:5px;"></small>').appendTo($(this).parent());
-                
+                const counter = $(this).parent().find('.char-counter') ||
+                    $(
+                        '<small class="char-counter text-muted" style="display:block; margin-top:5px;"></small>'
+                    )
+                    .appendTo($(this).parent());
+
                 counter.text(`${charCount} characters`);
-                
+
                 if (charCount > 1000) {
                     counter.css('color', '#ff6b6b');
                 } else if (charCount > 500) {
@@ -1637,34 +1884,35 @@
                     counter.css('color', '#868e96');
                 }
             });
-            
+
             // Auto-expand textarea
             $('textarea[name="feedback"]').on('input', function() {
                 this.style.height = 'auto';
                 this.style.height = (this.scrollHeight) + 'px';
             });
-            
+
             // Save button loading state
             $('#saveWritingAssessmentBtn').on('click', function() {
                 const btn = $(this);
                 const originalText = btn.html();
-                
+
                 btn.html('<span class="spinner-border spinner-border-sm me-2"></span> Saving...');
                 btn.prop('disabled', true);
-                
+
                 // Simulate save process
                 setTimeout(() => {
                     btn.html('✓ Saved Successfully!');
                     btn.css('background', 'linear-gradient(135deg, #4274BA 0%, #40c057 100%)');
-                    
+
                     setTimeout(() => {
                         btn.html(originalText);
                         btn.prop('disabled', false);
-                        btn.css('background', 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)');
+                        btn.css('background',
+                            'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)');
                     }, 2000);
                 }, 1500);
             });
-            
+
             // Remove loading class when content is loaded
             setTimeout(() => {
                 $('#writingAnswerBox').removeClass('loading');
