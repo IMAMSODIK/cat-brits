@@ -79,5 +79,28 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 11 Test 1',
             'kode' => 'BoXPeTu8aF68JZFw',
         ]);
+
+        // 18 START
+        
+        SetSoal::create([
+            'name' => 'Cambridge 18 Test 4',
+            'kode' => 'yPLnQeqINAxbrnva',
+        ]);
+
+        // 18 END
+
+        // 19 START
+        SetSoal::create([
+            'name' => 'Cambridge 19 Test 1',
+            'kode' => 'kNyuF8ZeAt9Trm90',
+        ]);
+        SetSoal::create([
+            'name' => 'Cambridge 19 Test 2',
+            'kode' => 'kVklZiFhgKeBhovY',
+        ]);
+        SetSoal::create([
+            'name' => 'Cambridge 19 Test 3',
+            'kode' => 'kqQSrG7Rs5yw1AuD',
+        ]);
     }
 }
