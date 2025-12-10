@@ -1334,6 +1334,7 @@
     </style>
 </head>
 
+
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
@@ -1392,12 +1393,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The first chart below shows how energy is used in an average Australian household.
-                                    The second chart shows the greenhouse gas emissions which result from this energy
-                                    use.</p>
-                                <p>Summarise the information by selecting and reporting the main features, and make
-                                    comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
+                                <p>The diagrams below show the life cycle of a speicies of large fish called the salmon.</p>
+                                <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-4-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1447,12 +1445,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>It is important for children to learn the difference between right and wrong at an
-                                    early age.
-                                    Punishment is necessary to help them learn this distinction.</p>
+                                <p>Many museums charge for admission while others are free.</p>
                                 <p>To what extent do you agree or disagree with this opinion?</p>
-                                <p>What sort of punishment should parents and teachers be allowed to use to teach good
-                                    behaviour to children?</p>
+                                <p>Do you think the advantages of charging people for admission to museums outweigh the disadvantages?</p>
                             </div>
                         </article>
 

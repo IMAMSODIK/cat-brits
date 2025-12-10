@@ -1392,9 +1392,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The tables below give information about sales of Fairtrade-labelled coffee and bananas in 1999 and 2004 in five European countries.</p>
+                                <p>The diagrams below show the life cycle of a speicies of large fish called the salmon.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-2-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-4-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1443,8 +1443,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Some people think that all university students should study whatever they like. Others believe that they should only be allowed to study subjects that will be useful in the future, such as those related to science and technology.</p>
-                                <p>Discuss both these views and give your own opinion.</p>
+                                <p>Many museums charge for admission while others are free.</p>
+                                <p>Do you think the advantages of charging people for admission to museums outweigh the disadvantages?</p>
                             </div>
                         </article>
 
