@@ -120,7 +120,7 @@ class SetSoalSeeder extends Seeder
         SetSoal::create([
             'name' => 'Cambridge 18 Test 4',
             'thumbnail' => 'Job details from employment agency',
-            'kode' => 'yPLnQeqINAxbrnva',
+            'kode' => 'z4hGzQcnxdtntccI',
         ]);
 
         //19
