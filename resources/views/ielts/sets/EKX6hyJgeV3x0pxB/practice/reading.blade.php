@@ -1,0 +1,3615 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --danger: #ef4444;
+            --ring: rgba(37, 99, 235, 0.35);
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+        }
+
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: #4274BA;
+            box-shadow: var(--shadow);
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            color: #4f46e5;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            user-select: none;
+        }
+
+        .title-wrap {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .app-title {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .app-subtitle {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 0 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            color: var(--text);
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            touch-action: manipulation;
+        }
+
+        .btn:active {
+            transform: translateY(1px) scale(0.99);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--ring);
+            outline-offset: 2px;
+        }
+
+        .btn-ghost {
+            border-color: #e5e7eb;
+            background: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: #fff;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 10px;
+        }
+
+        .timer {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "ss01" 1;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: #f8fafc;
+            color: var(--text);
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            min-width: 84px;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .timer.danger {
+            background: #fef2f2;
+            color: #b91c1c;
+            border-color: #fecaca;
+        }
+
+        .timer .fa-clock {
+            color: var(--primary);
+        }
+
+        .timer.danger .fa-clock {
+            color: #ef4444;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 420px) {
+            .app-title {
+                font-size: 13px;
+            }
+
+            .app-subtitle {
+                display: none;
+            }
+
+            .btn span.label {
+                display: none;
+            }
+
+            .btn {
+                padding: 8px 10px;
+            }
+
+            .timer {
+                min-width: 76px;
+                padding: 8px 10px;
+            }
+        }
+
+        .resizable-grid {
+            display: grid;
+            grid-template-columns: minmax(250px, 1fr) 6px minmax(250px, 1fr);
+            /* kiri - handle - kanan */
+            gap: 0;
+            align-items: stretch;
+            height: 100%;
+            /* opsional, biar penuh */
+        }
+
+        .resize-handle {
+            background: #e5e7eb;
+            cursor: col-resize;
+            width: 6px;
+            transition: background 0.2s;
+        }
+
+        .resize-handle:hover {
+            background: #cbd5e1;
+        }
+    </style>
+
+    <!-- style informasi ujian (di bawah header) -->
+    <style>
+        .session-info {
+            background: #f8fafc;
+            border-top: 1px solid #111113;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 10px 12px;
+        }
+
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 12px;
+        }
+
+        .kv.right {
+            text-align: right;
+        }
+
+        .kv {
+            min-width: 0;
+        }
+
+        .k {
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.1;
+            margin-bottom: 2px;
+        }
+
+        .v {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 420px) {
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- style bagian part soal -->
+    <style>
+        .parts-section {
+            padding: 10px 12px 0 12px !important;
+            box-sizing: border-box;
+        }
+
+        /* Opsional: pastikan konten panel tidak menempel ke tepi */
+        .parts-section .x-panels {
+            margin-top: 10px;
+            margin-right: 0;
+            /* biarkan ikut padding parent */
+        }
+
+        /* Scroll container = x-tabs */
+        .x-tabs {
+            display: inline-flex;
+            /* baris horizontal */
+            flex-wrap: nowrap;
+            /* jangan pindah baris */
+            gap: 8px;
+            width: 100%;
+            padding: 8px 12px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+
+            overflow-x: auto;
+            /* inti scroll horizontal */
+            overflow-y: hidden;
+            white-space: nowrap;
+            /* cegah wrap */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            -ms-overflow-style: none;
+            scrollbar-width: thin;
+
+            position: relative;
+            /* untuk edge hint */
+        }
+
+        .x-tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .x-tabs::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 999px;
+        }
+
+        .x-tabs::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Tab pill */
+        .x-tab {
+            flex: 0 0 auto;
+            /* tiap tab lebar kontennya, tidak menyusut */
+            scroll-snap-align: start;
+            border: 1px solid #e5e7eb;
+            background: #f8fafc;
+            color: #0f172a;
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            cursor: pointer;
+            transition: background .15s ease, color .15s ease, border-color .15s ease, transform .06s ease;
+            user-select: none;
+        }
+
+        .x-tab:hover {
+            border-color: #cbd5e1;
+            background: #f1f5f9;
+        }
+
+        .x-tab:active {
+            transform: translateY(1px);
+        }
+
+        .x-tab.is-active {
+            color: #0b5dd7;
+            background: #e8f0ff;
+            border-color: #c7ddff;
+        }
+
+        /* Edge shadow hint (kiri/kanan) langsung di x-tabs */
+        .x-tabs::before,
+        .x-tabs::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .15s ease;
+        }
+
+        .x-tabs::before {
+            left: 0;
+            background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .x-tabs::after {
+            right: 0;
+            background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .x-tabs.has-left::before {
+            opacity: 1;
+        }
+
+        .x-tabs.has-right::after {
+            opacity: 1;
+        }
+
+        /* Panels */
+        .x-panels {
+            margin-top: 10px;
+        }
+
+        .x-panel {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+        }
+
+        .x-panel[hidden] {
+            display: none;
+        }
+
+        .x-panel.is-open {
+            display: block;
+        }
+
+        .x-panel-inner {
+            padding: 12px;
+            font-size: 14px;
+            color: #0f172a;
+        }
+
+        /* Mobile tuning */
+        @media (max-width: 768px) {
+            .x-tab {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .x-tab {
+                padding: 10px 10px;
+                font-size: 13px;
+            }
+        }
+    </style>
+
+    <!-- style bagian reading + questions -->
+    <style>
+        .reading-section {
+            padding: 10px 12px 12px 12px;
+            box-sizing: border-box;
+        }
+
+        /* Grid dua kolom (kiri naratif, kanan soal) */
+        .reading-grid {
+            display: grid;
+            /* grid-template-columns: 1.1fr 1fr; */
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        /* Panel kiri: naratif */
+        .passage {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            max-height: min(72vh, 820px);
+        }
+
+        .passage-title {
+            margin: 12px 12px 0 12px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .passage-body {
+            padding: 10px 12px 12px 12px;
+            overflow: auto;
+            /* scrollable */
+            line-height: 1.6;
+            color: #0f172a;
+        }
+
+        /* Panel kanan: instruksi + soal */
+        .qa {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            max-height: min(72vh, 820px);
+            overflow: hidden;
+            /* biar sticky bekerja di dalam */
+        }
+
+        /* Instruksi sticky di atas */
+        .qa-instructions {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px;
+        }
+
+        .qa-instructions .lead {
+            font-weight: 700;
+            margin: 0 0 6px 0;
+        }
+
+        .qa-instructions .legend {
+            margin: 6px 0 0 18px;
+            padding: 0;
+        }
+
+        .qa-instructions .legend li {
+            margin: 2px 0;
+        }
+
+        /* Isi soal scrollable */
+        .qa-body {
+            padding: 10px 12px 12px 12px;
+            overflow: auto;
+            /* scrollable */
+        }
+
+        /* Soal */
+        .q-item {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        td .q-item {
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            outline: none !important;
+            background: none !important;
+        }
+
+        .q-text {
+            /* font-weight: 00; */
+            color: #0f172a;
+            margin: 0 0 8px 0;
+        }
+
+        .q-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 22px;
+            height: 22px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        /* Opsi */
+        .q-options {
+            display: grid;
+            gap: 8px;
+        }
+
+        .q-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            user-select: none;
+            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+        }
+
+        .q-option:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .q-option input {
+            display: none;
+        }
+
+        .q-option .opt-code {
+            font-weight: 800;
+            color: #334155;
+        }
+
+        .q-option .opt-label {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* State terpilih */
+        .q-option.is-selected {
+            border-color: #2563eb;
+            background: #eef2ff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
+        }
+
+        .q-option.is-selected .opt-code {
+            color: #1d4ed8;
+        }
+
+        .q-option.is-selected .opt-label {
+            color: #1d4ed8;
+        }
+
+        .q-dropdown {
+            width: 50px;
+            /* Lebar dropdown */
+            padding: 6px 10px;
+            /* Ruang dalam dropdown */
+            border: 1px solid #ccc;
+            /* Border abu-abu */
+            border-radius: 6px;
+            /* Sudut membulat */
+            background-color: #fff;
+            /* Warna background */
+            font-size: 14px;
+            /* Ukuran font */
+            color: #333;
+            /* Warna teks */
+            appearance: none;
+            /* Hilangkan style default browser */
+            -webkit-appearance: none;
+            /* Safari / Chrome */
+            -moz-appearance: none;
+            /* Firefox */
+            cursor: pointer;
+            /* Tanda pointer saat hover */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        /* Hover & fokus */
+        .q-dropdown:hover {
+            border-color: #888;
+        }
+
+        .q-dropdown:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+            outline: none;
+        }
+
+        /* Tambahan: arrow custom (opsional) */
+        .q-dropdown-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .q-dropdown-wrapper::after {
+            content: "▾";
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #555;
+            font-size: 12px;
+        }
+
+
+        /* Responsif: tumpuk vertikal di layar kecil */
+        @media (max-width: 767px) {
+            .reading-grid {
+                grid-template-columns: 1fr;
+                /* tumpuk atas-bawah */
+                grid-template-rows: auto auto;
+                /* reading di atas, soal di bawah */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .reading-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .passage,
+            .qa {
+                max-height: none;
+            }
+
+            .q-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        #panel-tc .q-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #panel-nc .q-number-box,
+        #panel-summary_completion .q-number-box,
+        #panel-summary_completion2 .q-number-box {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            height: 28px;
+            font-weight: bold;
+            border: 2px solid #333;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+
+        #panel-nc .q-text,
+        #panel-summary_completion .q-text {
+            flex: 1;
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        #panel-nc input,
+        #panel-summary_completion input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 5px;
+            width: 120px;
+        }
+
+        #panel-sa input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 5px;
+            width: 120px;
+        }
+
+        .q-option.correct {
+            background-color: #c8f7c5;
+            /* hijau muda */
+            border: 2px solid #27ae60;
+            border-radius: 6px;
+        }
+
+        .q-option.wrong {
+            background-color: #f9c0c0;
+            /* merah muda */
+            border: 2px solid #e74c3c;
+            border-radius: 6px;
+        }
+    </style>
+
+    <style>
+        /* Highlight Styles */
+        .highlight {
+            padding: 2px 0;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .highlight:hover {
+            filter: brightness(90%);
+        }
+
+        .highlight-yellow {
+            background-color: rgba(255, 255, 0, 0.3);
+        }
+
+        .highlight-green {
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+
+        .highlight-blue {
+            background-color: rgba(0, 0, 255, 0.3);
+        }
+
+        .highlight-pink {
+            background-color: rgba(255, 0, 255, 0.3);
+        }
+
+        .highlight-orange {
+            background-color: rgba(255, 165, 0, 0.3);
+        }
+
+        /* Toolbar */
+        .highlight-toolbar {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            padding: 6px 10px;
+            z-index: 1000;
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .color-option {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border-color: #333;
+        }
+
+        .color-option.yellow {
+            background-color: rgba(255, 255, 0, 0.7);
+        }
+
+        .color-option.green {
+            background-color: rgba(0, 255, 0, 0.7);
+        }
+
+        .color-option.blue {
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+
+        .color-option.pink {
+            background-color: rgba(255, 0, 255, 0.7);
+        }
+
+        .color-option.orange {
+            background-color: rgba(255, 165, 0, 0.7);
+        }
+
+        .highlight-toolbar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .highlight-toolbar button:hover {
+            background: #f0f0f0;
+        }
+
+        /* Note Popup */
+        .note-popup {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-width: 250px;
+            font-size: 14px;
+            z-index: 2000;
+            display: none;
+        }
+
+
+        .note-popup textarea {
+            width: 100%;
+            height: 80px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            resize: vertical;
+        }
+
+        .note-popup button {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .note-popup button.save {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .note-popup button.cancel {
+            background: #95a5a6;
+            color: #fff;
+        }
+
+        .note-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #e74c3c;
+            border-radius: 50%;
+            margin-left: 4px;
+        }
+    </style>
+
+    <!-- style untuk floating informasi nomor soal -->
+    <style>
+        .floating-questions {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Floating Action Button (FAB) */
+        .fq-fab {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: #2563eb;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .fq-fab:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* Panel soal */
+        .fq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 10px;
+        }
+
+        .floating-questions.expanded .fq-body {
+            max-height: 400px;
+            /* tampil penuh saat expanded */
+            padding: 12px;
+        }
+
+        .fq-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+            gap: 6px;
+        }
+
+        .fq-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #f8fafc;
+            color: #0f172a;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .fq-item:hover {
+            background: #f1f5f9;
+        }
+
+        /* Status */
+        .fq-item.answered {
+            background: #dcfce7;
+            border-color: #16a34a;
+            color: #15803d;
+        }
+
+        .fq-item.current {
+            background: #dbeafe;
+            border-color: #2563eb;
+            color: #1d4ed8;
+        }
+
+        /* Mobile full width panel */
+        @media (max-width: 768px) {
+            .floating-questions {
+                bottom: 12px;
+                right: 12px;
+                left: auto;
+                width: auto;
+                max-width: 100%;
+            }
+
+            .floating-questions.expanded {
+                width: calc(100% - 24px);
+                right: 12px;
+                left: 12px;
+                border-radius: 16px;
+            }
+
+            .fq-list {
+                grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+            }
+
+            .fq-item {
+                width: 44px;
+                height: 44px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    {{-- style unutk audio player --}}
+    <style>
+        .audio-player {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .ap-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e5e7eb;
+            background: #f8fafc;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background .12s ease, border-color .12s ease, transform .06s ease;
+        }
+
+        .ap-btn:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .ap-btn:active {
+            transform: translateY(1px);
+        }
+
+        .ap-play {
+            width: 44px;
+            height: 44px;
+            font-weight: 800;
+        }
+
+        .ap-icon {
+            line-height: 1;
+        }
+
+        .ap-track {
+            position: relative;
+            height: 19px;
+            background: #f1f5f9;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .ap-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            background: linear-gradient(90deg, #60a5fa, #2563eb);
+            border-right: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .ap-seek {
+            -webkit-appearance: none;
+            appearance: none;
+            position: relative;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            outline: none;
+        }
+
+        .ap-seek::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+            margin-top: -4px;
+        }
+
+        .ap-seek::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+        }
+
+        .ap-time {
+            font-variant-numeric: tabular-nums;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 6px 8px;
+        }
+
+        .ap-time .ap-sep {
+            opacity: .7;
+            margin: 0 4px;
+        }
+
+        /* Mobile */
+        @media (max-width: 520px) {
+            .audio-player {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas: "play track time" "vol track time";
+                gap: 8px;
+            }
+
+            .ap-play {
+                grid-area: play;
+            }
+
+            .ap-track {
+                grid-area: track;
+            }
+
+            .ap-time {
+                grid-area: time;
+            }
+
+            .ap-vol {
+                grid-area: vol;
+            }
+        }
+    </style>
+
+    {{-- style modal --}}
+    <style>
+        /* Modal Styles */
+        .custom-modal {
+            display: none !important; /* Pastikan modal tersembunyi secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            padding: 15px;
+            box-sizing: border-box;
+            opacity: 0; /* Tambahkan opacity untuk transisi */
+            transition: opacity 0.3s ease; /* Smooth transition */
+        }
+
+        /* State ketika modal ditampilkan */
+        .custom-modal.show {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .custom-modal-content {
+            background: #fff;
+            padding: 0;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            transform: scale(0.9) translateY(-20px); /* State awal untuk animasi */
+            transition: transform 0.3s ease;
+        }
+
+        /* Animasi ketika modal muncul */
+        .custom-modal.show .custom-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* ... CSS lainnya tetap sama ... */
+        .custom-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .score-summary-header {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .score-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .score-circle span {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .score-circle small {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .modal-title {
+            margin-left: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+            margin-left: 15px;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .custom-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .score-summary {
+            display: none;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .result-table th {
+            background-color: #f1f8ff;
+            padding: 14px 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .result-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e1e8ed;
+            transition: background-color 0.2s;
+        }
+
+        .result-table tr:hover td {
+            background-color: #f9f9f9;
+        }
+
+        .answer-correct { 
+            color: #27ae60; 
+            font-weight: bold; 
+        }
+        
+        .answer-wrong { 
+            color: #e74c3c; 
+            font-weight: bold; 
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        .status-badge.wrong {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+        }
+
+        .status-icon {
+            margin-right: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            border-top: 1px solid #e1e8ed;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #dde4e6;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .custom-modal {
+                padding: 10px;
+            }
+            
+            .custom-modal-content {
+                max-height: 95vh;
+            }
+            
+            .custom-modal-header {
+                padding: 15px 20px;
+            }
+            
+            .score-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .score-circle span {
+                font-size: 1rem;
+            }
+            
+            .score-circle small {
+                font-size: 0.7rem;
+            }
+            
+            .modal-title {
+                font-size: 1.2rem;
+                margin-left: 10px;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                font-size: 24px;
+            }
+            
+            .custom-modal-body {
+                padding: 15px;
+            }
+            
+            .result-table {
+                font-size: 0.9rem;
+            }
+            
+            .result-table th, .result-table td {
+                padding: 10px 8px;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .custom-modal {
+                padding: 5px;
+            }
+            
+            .result-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .score-circle {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .score-circle span {
+                font-size: 0.9rem;
+            }
+            
+            .score-circle small {
+                font-size: 0.6rem;
+            }
+            
+            .status-badge {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+
+    {{-- other --}}
+    <style>
+        .unanswered-highlight {
+            border: 2px solid red;
+            background: #ffe6e6;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="app-header" role="banner">
+        <div class="header-row" aria-label="Header CAT Bahasa Inggris">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">
+                    <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="infoBtn" class="btn btn-ghost icon-btn" aria-label="Informasi">
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
+
+                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="timeText">00:00</span>
+                </div>
+
+                <button id="doneBtn" class="btn btn-danger">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span class="label">Close</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="session-info" aria-label="Keterangan Sesi">
+        <div class="session-grid">
+            <div class="kv">
+                <div class="k">Set Information</div>
+                <div class="v" id="siName">{{ $set->name }} - {{ ucfirst($section) }}</div>
+            </div>
+            <div class="kv right">
+                <div class="k">User</div>
+                <div class="v" id="siUser">{{ auth()->user()->name }}</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
+        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="nc">
+            <button class="x-tab is-active" role="tab" id="tab-nc" aria-controls="panel-nc"
+                aria-selected="true" data-id="nc">Note Completion</button>
+            <button class="x-tab" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
+                data-id="matching_information">Matching Information</button>
+            <button class="x-tab" role="tab" id="tab-summary_completion" aria-controls="panel-summary_completion" aria-selected="false"
+                data-id="summary_completion">Summary Completion</button>
+            <button class="x-tab" role="tab" id="tab-two_choices" aria-controls="panel-two_choices" aria-selected="false"
+                data-id="two_choices">Two Choices</button>
+            <button class="x-tab" role="tab" id="tab-two_choices2" aria-controls="panel-two_choices2" aria-selected="false"
+                data-id="two_choices2">Two Choices</button>
+            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
+                data-id="ynng">Yes/No/Not Given</button>
+            <button class="x-tab" role="tab" id="tab-summary_completion2" aria-controls="panel-summary_completion2" aria-selected="false"
+                data-id="summary_completion2">Summary Completion</button>
+            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
+                data-id="one">One Choice</button>
+        </div>
+
+        <div class="x-panels">
+            <div id="panel-nc" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-nc">
+                <div class="x-panel-inner">Content: Note Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">Manatees</h3>
+                            <div class="passage-body">
+                                <p>Manatees, also known as sea cows, are aquatic mammals that belong to a group of animals called Sirenia. This group also contains dugongs. Dugongs and manatees look quite alike – they are similar in size, colour and shape, and both have flexible flippers for forelimbs. However, the manatee has a broad, rounded tail, whereas the dugongs is fluked, like that of a whale. There are three species of manatees: the West Indian manatee (Trichechus manatus), the African manatee (Trichechus senegalensis) and the Amazonian manatee (Trichechus inunguis).</p>
+                                <p>Unlike most mammals, manatees have only six bones in their neck – most others, including humans and giraffes, have seven. This short neck allows a manatee to move its head up and down, but not side to side. To see something on its left or its right, a manatee must turn its entire body, steering with its flippers. Manatees have pectoral flippers but no back limbs, only a tail for propulsion. They do have pelvic bones, however – a leftover from their evolution from a four-legged to a fully aquatic animal. Manatees share some visual similarities to elephants. Like elephants, manatees have thick, wrinkled skin. They also have some hairs covering their bodies which help them sense vibrations in the water around them.</p>
+                                <p>Seagrasses and other marine plants make up most of a manatee’s diet. Manatees spend about eight hours each day grazing and uprooting plants. They eat up to 15% of their weight in food each day. African manatees are omnivorous – studies have shown that molluscs and fish make up a small part of their diets. West Indian and Amazonian manatees are both herbivores.</p>
+                                <p>Manatees’ teeth are all molars – flat, rounded teeth for grinding food. Due to manatees’ abrasive aquatic plant diet, these teeth get worn down and they eventually fall out, so they continually grow new teeth that get pushed forward to replace the ones they lose. Instead of having incisors to grasp their food, manatees have lips which function like a pair of hands to help tear food away from the seafloor.</p>
+                                <p>Manatees are fully aquatic, but as mammals, they need to come up to the surface to breathe. When awake, they typically surface every two to four minutes, but they can hold their breath for much longer. Adult manatees sleep underwater for 10-12 hours a day, but they come up for air every 15-20 minutes. Active manatees need to breathe more frequently. It’s thought that manatees use their muscular diaphragm and breathing to adjust their buoyancy. They may use diaphragm contractions to compress and store gas in folds in their large intestine to help them float.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-nc">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-6</h3>
+                                    <p class="lead">Complete the notes below.</p>
+                                    <p>Choose <b>ONE WORD AND/OR A NUMBER</b> from the passage for each answer.</p>
+                                </fieldset>
+
+                                <fieldset class="q-item">
+                                    <p><b>Appearance</b></p>
+                                    <ul>
+                                        <li>
+                                            <div class="q-list" data-q="1">
+                                                look similar to dugongs, but with a differently shaped
+                                                <span class="q-number-box">1</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-1" class="q-text" placeholder="">
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p><b>Movement</b></p>
+                                    <ul>
+                                        <li>have fewer neck bones than most mammals</li>
+                                        <li>
+                                            <div class="q-list" data-q="2">
+                                                need to use their
+                                                <span class="q-number-box">2</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-2" class="q-text" placeholder="">
+                                                to help to turn their bodies around in order to look sideways
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="q-list" data-q="3">
+                                                sense vibrations in the water by means of
+                                                <span class="q-number-box">3</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-3" class="q-text" placeholder="">
+                                                on their skin
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p><b>Feeding</b></p>
+                                    <ul>
+                                        <li>
+                                            <div class="q-list" data-q="4">
+                                                eat mainly aquatic vegetation, such as
+                                                <span class="q-number-box">4</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-4" class="q-text" placeholder="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="q-list" data-q="5">
+                                                grasp and pull up plants with their
+                                                <span class="q-number-box">5</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-5" class="q-text" placeholder="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <p><b>Breathing</b></p>
+                                    <ul>
+                                        <li>come to the surface for air every 2-4 minutes when awake and every 15-20 while sleeping</li>
+                                        <li>
+                                            <div class="q-list" data-q="6">
+                                                may regulate the
+                                                <span class="q-number-box">6</span>
+                                                <input type="text" name="EKX6hyJgeV3x0pxB-6" class="q-text" placeholder="">
+                                                of their bodies by using muscles of diaphragm to store air internally
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-nc">
+                                        Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-tfng" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng">
+                <div class="x-panel-inner">Content: True/False/Not Given</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>The West Indian manatee reaches about 3.5 metros long and weighs on average around 500 kilo grammes. It moves between fresh water and salt water, taking advantage of coastal mangroves and coral reefs, rivers, lakes and inland lagoons. There are two subspecies of West Indian manatee: the Antillean manatee is found in waters from the Bahamas to Brazil, whereas the Florida manatee is found in US waters, although some individuals have been recorded in the Bahamas. In winter, the Florida manatee is typically restricted to Florida. When the ambient water temperature drops below 20°C, it takes refuge in naturally and artificially warmed water, such as at the warm-water outfalls from powerplants.</p>
+                                <p>The African manatee is also about 3.5 metros long and found in the sea along the west coast of Africa, from Mauritania down to Angola. The species also makes use of rivers, with the mammals seen in landlocked countries such as Mali and Niger. The Amazonian manatee is the smallest species, though it is still a big animal. It grows to about 2.5 metros long and 350 kilo grammes. Amazonian manatees favour calm, shallow waters that are above 23°C This species is found in fresh water in the Amazon Basin in Brazil, as well as in Colombia, Ecuador and Peru.</p>
+                                <p>All three manatee species are endangered or at a heightened risk of extinction. The African manatee and Amazonian manatee are both listed as Vulnerable by the International Union for Conservation of Nature (IUCN). It is estimated that 140,000 Amazonian manatees were killed between 1935 and 1954 for their meat, fat and skin, with the latter used to make leather. In more recent years, African manatee decline has been tied to incidental capture in fishing nets and hunting. Manatee hunting is now illegal in every country the African species is found in.</p>
+                                <p>The two subspecies of West Indian manatee are listed as Endangered by the IUCN. Both are also expected to undergo a decline of 20% over the next 40 years. A review of almost 1,800 cases of entanglement in fishing nets and of plastic consumption among marine mammals in US waters from 2009 to 2020 found that at least 700 cases involved manatees. The chief cause of death in Florida manatees is boat strikes. However, laws in certain parts of Florida now limit boat speeds during winter, allowing slow-moving manatees more time to respond.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-tfng">
+                                <fieldset class="q-item">
+                                    <p><b>Questions 1-7</b></p>
+                                    <p class="lead">Do the following statements agree with the information given in
+                                        the
+                                        Reading Passage?
+                                    </p>
+                                    <p>In boxes on your answer sheet, write</p>
+                                    <ul class="legend">
+                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
+                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
+                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        West Indian manatees can be found in a variety of different aquatic habitats.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">2</span>
+                                        The Florida manatee lives in warmer waters than the Antillean manatee.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text">
+                                        <span class="q-number">3</span>
+                                        The African manatee’s range is limited to coastal waters between the West African countries of Mauritania and Angola.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text">
+                                        <span class="q-number">4</span>
+                                        The extent of the loss of Amazonian manatees in the mid-twentieth century was only revealed many years later.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        It is predicted that West Indian manatee populations will fall in the coming decades.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="6">
+                                    <legend class="q-text">
+                                        <span class="q-number">6</span>
+                                        The risk to manatees from entanglement and plastic consumption increased significantly in the period 2009-2020.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="7">
+                                    <legend class="q-text">
+                                        <span class="q-number">7</span>
+                                        There is some legislation in place which aims to reduce the likelihood of boat strikes on manatees in Florida.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-7" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-7" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-7" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-tfng" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-tfng">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-matching_information" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching Information</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>B</h3>
+                                <p>Contrary to popular belief, procrastination is not due to laziness or poor time management. Scientific studies suggest procrastination is, in fact, caused by poor mood management. This makes sense if we consider that people are more likely to put off starting or completing tasks that they are really not keen to do. If just thinking about the task threatens our sense of self-worth or makes us anxious, we will be more likely to put it off. Research involving brain imaging has found that areas of the brain linked to detection of threats and emotion regulation are actually different in people who chronically procrastinate compared to those who don’t procrastinate frequently.</p>
+                                <h3>C</h3>
+                                <p>Tasks that are emotionally loaded or difficult, such as preparing for exams, are prime candidates for procrastination. People with low self-esteem are more likely to procrastinate. Another group of people who tend to procrastinate are perfectionists, who worry their work will be judged harshly by others. We know that if we don’t finish that report or complete those home repairs, then what we did can’t be evaluated. When we avoid such tasks, we also avoid the negative emotions associated with them. This is rewarding, and it conditions us to use procrastination to repair our mood. If we engage in more enjoyable tasks instead, we get another mood boost. In the long run, however, procrastination isn’t an effective way of managing emotions. The ‘mood repair’ we experience is temporary. Afterwards, people tend to be left with a sense of guilt that not only increases their negative mood, but also reinforces their tendency to procrastinate.</p>
+                                <h3>D</h3>
+                                <p>So why is this such a problem? When most people think of the costs of procrastination, they think of the toll on productivity. For example, studies have shown that procrastination negatively impacts on student performance. But putting off reading textbooks and writing essays may affect other areas of students’ lives. In one study of over 3,000 German students over a six-month period, those who reported procrastinating over their university work were also more likely to engage in study-related misconduct, such as cheating and plagiarism. But the behaviour that procrastination was most closely linked with was using fraudulent excuses to get deadline extensions. Other research shows that employees on average spend almost a quarter of their workday procrastinating, and again this is linked with negative outcomes. In fact, in one US survey of over 22,000 employees, participants who said they regularly procrastinated had less annual income and less employment stability. For every one-point increase on a measure of chronic procrastination, annual income decreased by US$15,000.</p>
+                                <h3>E</h3>
+                                <p>Procrastination also correlates with serious health and well-being problems. A tendency to procrastinate is linked to poor mental health, including higher levels of depression and anxiety. Across numerous studies, I’ve found people who regularly procrastinate report a greater number of health issues, such as headaches, flu and colds, and digestive issues. They also experience higher levels of stress and poor sleep quality. They are less likely to practise healthy behaviours, such as eating a healthy diet and regularly exercising, and use destructive coping strategies to manage their stress. In one study of over 700 people, I found people prone to procrastination had a 63% greater risk ofpoor heart health after accounting for other personality traits and demographics.</p>
+                                <h3>F</h3>
+                                <p>Finding better ways of managing our emotions is one route out of the vicious cycle of procrastination. An important first step is to manage our environment and how we view the task. There are a number of evidence-based strategies that can help us fend off distractions that can occupy our minds when we should be focusing on the thing we should be getting on with. For example, reminding ourselves about why the task is important and valuable can increase positive feelings towards it. Forgiving ourselves and feeling compassion when we procrastinate can help break the procrastination cycle. We should admit that we feel bad, but not be overly critical of ourselves. We should remind ourselves that we’re not the first person to procrastinate, nor the last. Doing this can take the edge off the negative feelings we have about ourselves when we procrastinate. This can all make it easier to get back on track.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-matching_information">
+                                <fieldset class="q-item">
+                                    <p><b>Questions 1-3</b></p>
+                                    <p class="lead">Reading Passage has six paragraphs,</p>
+                                    <p class="lead">Which paragraph contains the following information?</p>
+                                    <p>Write the correct letter,<b>A-F</b>, in boxes on your answer sheet.</p>
+                                    <p><b>NB</b> You may use any letter more than once.</p>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            mention of false assumptions about why people procrastinate
+                                            <span class="q-question">
+                                                <select name="EKX6hyJgeV3x0pxB-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            reference to the realisation that others also procrastinate
+                                            <span class="q-question">
+                                                <select name="EKX6hyJgeV3x0pxB-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            neurological evidence of a link between procrastination and emotion
+                                            <span class="q-question">
+                                                <select name="EKX6hyJgeV3x0pxB-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-matching_information" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                        Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
+                <div class="x-panel-inner">Content: Summary Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>B</h3>
+                                <b>Contrary to popular belief, procrastination is not due to laziness or poor time management. Scientific studies suggest procrastination is, in fact, caused by poor mood management. This makes sense if we consider that people are more likely to put off starting or completing tasks that they are really not keen to do. If just thinking about the task threatens our sense of self-worth or makes us anxious, we will be more likely to put it off. Research involving brain imaging has found that areas of the brain linked to detection of threats and emotion regulation are actually different in people who chronically procrastinate compared to those who don’t procrastinate frequently.</b>
+                                <h3>C</h3>
+                                <b>Tasks that are emotionally loaded or difficult, such as preparing for exams, are prime candidates for procrastination. People with low self-esteem are more likely to procrastinate. Another group of people who tend to procrastinate are perfectionists, who worry their work will be judged harshly by others. We know that if we don’t finish that report or complete those home repairs, then what we did can’t be evaluated. When we avoid such tasks, we also avoid the negative emotions associated with them. This is rewarding, and it conditions us to use procrastination to repair our mood. If we engage in more enjoyable tasks instead, we get another mood boost. In the long run, however, procrastination isn’t an effective way of managing emotions. The ‘mood repair’ we experience is temporary. Afterwards, people tend to be left with a sense of guilt that not only increases their negative mood, but also reinforces their tendency to procrastinate.</b>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-summary_completion">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-6</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p>Write your answers in boxes on your answer sheet.</p>
+
+                                    <p><b>What makes us procrastinate?</b></p>
+                                    <p>
+                                        Many people think that procrastination is the result of
+                                        <span class="q-number-box">1</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-1" class="q-text" placeholder="">
+                                        Others believe it to be the result of an inability to organise time efficiently.
+                                    </p>
+                                    <p>
+                                        But scientific studies suggest that procrastination is actually due to poor mood management. The tasks we are most likely to put off are those that could damage our self-esteem or cause us to feel
+                                        <span class="q-number-box">2</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-2" class="q-text" placeholder="">
+                                        when we think about them. Research comparing chronic procrastinators with other people even found differences in the brain regions associated with regulating emotions and identifying 
+                                        <span class="q-number-box">3</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-3" class="q-text" placeholder="">
+                                    </p>
+                                    <p>
+                                        Emotionally loaded and difficult tasks often cause us to procrastinate. Getting ready to take
+                                        <span class="q-number-box">4</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-4" class="q-text" placeholder="">
+                                        might be a typical example of one such task.
+                                    </p>
+                                    <p>
+                                        People who are likely to procrastinate tend to be either
+                                        <span class="q-number-box">5</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-5" class="q-text" placeholder="">
+                                        or those with low self-esteem.
+                                    </p>
+                                    <p>
+                                        Procrastination is only a short-term measure for managing emotions. It’s often followed by a feeling of
+                                        <span class="q-number-box">6</span>
+                                        <input type="text" name="EKX6hyJgeV3x0pxB-6" class="q-text" placeholder="">
+                                        , which worsens our mood and leads to more procrastination.
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
+                                        Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-two_choices" class="x-panel" role="tabpanel" aria-labelledby="tab-two_choices" hidden>
+                <div class="x-panel-inner">Content: Two Choices</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>D</h3>
+                                <b>So why is this such a problem? When most people think of the costs of procrastination, they think of the toll on productivity. For example, studies have shown that procrastination negatively impacts on student performance. But putting off reading textbooks and writing essays may affect other areas of students’ lives. In one study of over 3,000 German students over a six-month period, those who reported procrastinating over their university work were also more likely to engage in study-related misconduct, such as cheating and plagiarism. But the behaviour that procrastination was most closely linked with was using fraudulent excuses to get deadline extensions. Other research shows that employees on average spend almost a quarter of their workday procrastinating, and again this is linked with negative outcomes. In fact, in one US survey of over 22,000 employees, participants who said they regularly procrastinated had less annual income and less employment stability. For every one-point increase on a measure of chronic procrastination, annual income decreased by US$15,000.</b>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-two_choices">
+                                
+
+                                <fieldset class="q-item">
+                                    <p>Questions 1-2</p>
+                                    <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                                    <p>Write the correct letters in boxes on your answer sheet.</p>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        <span class="q-number">2</span>
+                                        Which <b>TWO</b> comparisons between employees who often procrastinate and those who do not are mentioned in the text?
+                                    </legend>
+                                    <div class="q-options" role="group" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-1[]" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">Their salaries are lower.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-1[]" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">The quality of their work is inferior.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-1[]" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">They don’t keep their jobs for as long.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-1[]" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">They don’t enjoy their working lives as much.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-1[]" value="E" />
+                                            <span class="opt-code">E</span>
+                                            <span class="opt-label">They have poorer relationships with colleagues.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-two_choices">
+                                        Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-two_choices2" class="x-panel" role="tabpanel" aria-labelledby="tab-two_choices2" hidden>
+                <div class="x-panel-inner">Content: Two Choices 2</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>F</h3>
+                                <b>Finding better ways of managing our emotions is one route out of the vicious cycle of procrastination. An important first step is to manage our environment and how we view the task. There are a number of evidence-based strategies that can help us fend off distractions that can occupy our minds when we should be focusing on the thing we should be getting on with. For example, reminding ourselves about why the task is important and valuable can increase positive feelings towards it. Forgiving ourselves and feeling compassion when we procrastinate can help break the procrastination cycle. We should admit that we feel bad, but not be overly critical of ourselves. We should remind ourselves that we’re not the first person to procrastinate, nor the last. Doing this can take the edge off the negative feelings we have about ourselves when we procrastinate. This can all make it easier to get back on track.</b>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-two_choices2">
+                                <fieldset class="q-item">
+                                    <p>Questions 1-2</p>
+                                    <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                                    <p>Write the correct letters in boxes on your answer sheet.</p>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        <span class="q-number">2</span>
+                                        Which <b>TWO</b> recommendations for getting out of a cycle of procrastination does the writer give?
+                                    </legend>
+                                    <div class="q-options" role="group" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-3[]" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">not judging ourselves harshly</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-3[]" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">setting ourselves manageable aims</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-3[]" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">rewarding ourselves for tasks achieved</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-3[]" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">prioritising tasks according to their importance</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="checkbox" name="EKX6hyJgeV3x0pxB-3[]" value="E" />
+                                            <span class="opt-code">E</span>
+                                            <span class="opt-label">avoiding things that stop us concentrating on our tasks</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-two_choices2" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-two_choices2">
+                                        Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
+                <div class="x-panel-inner">Content: Yes/No/Not Given</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3 class="passage-title">Invasion of the Robot Umpires</h3>
+                                <p>A few years ago, Fred DeJesus from Brooklyn, New York became the first umpire in a minor league baseball game to use something called the Automated Ball-Strike System (ABS), often referred to as the ‘rob-umpire’. Instead of making any judgments himself about a strike*, DeJesus had decisions fed to him through an earpiece, connected to a modified missile-tracking system. The contraption looked like a large black pizza box with one glowing green eye, it was mounted above the press stand.</p>
+                                <p>Major League Baseball (MLB), who had commissioned the system, wanted human umpires to announce the calls, just as they would have done in the past. When the first pitch came in, a recorded voice told DeJesus it was a strike. Previously, calling a strike was a judgment call on the part of the umpire. Even if the batter does not hit the ball, a pitch that passes through the ‘strike zone’ (an imaginary zone about seventeen inches wide, stretching from the batter’s knees to the middle of his chest) is considered a strike. During that first game, when DeJesus announced calls, there was no heckling and no shouted disagreement. Nobody said a word.</p>
+                                <p>For a hundred and fifty years or so, the strike zone has been the game’s animating force – countless arguments between a team’s manager and the umpire have taken place over its boundaries and whether a ball had crossed through it. The rules of play have evolved in various stages. Today, everyone knows that you may scream your disagreement in an umpire’s face, but you must never shout personal abuse at them or touch them. That’s a no-no. When the robe-umpires came, however, the arguments stopped.</p>
+                                <p>During the first robe-umpire season, players complained about some strange calls. In response, MLB decided to tweak the dimensions of the zone, and the following year the consensus was that ABS is profoundly consistent. MLB says the device is near-perfect, precise to within fractions of an inch. “It’ll reduce controversy in the game, and be good for the game,” says Rob Manfred, who is Commissioner for MLB. But the question is whether controversy is worth reducing, or whether it is the sign of a human hand.</p>
+                                <p>A human, at least, yells back. When I spoke with Frank Viola, a coach for a North Carolina team, he said that ABS works as designed, but that it was also unforgiving and pedantic, almost legalistic. “Manfred is a lawyer,” Viola noted. Some pitchers have complained that, compared with a humans, the robot’s strike zone seems too precise. Viola was once a major-league player himself. When he was pitching, he explained, umpires rewarded skill. “Throw it where you aimed, and it would be a strike, even if it was an inch or two outside. There was a dialogue between pitcher and umpire.”</p>
+                                <p>The executive tasked with running the experiment for MLB is Morgan Sword, who’s in charge of baseball operations. According to Sword, ABS was part of a larger project to make baseball more exciting since executives are terrified of losing younger fans, as has been the case with horse racing and boxing. He explains how they began the process by asking fans what version of baseball they found most exciting. The results showed that everyone wanted more action: more hits, more defense, more baserunning. This type of baseball essentially hasn’t existed since the 1960s, when the hundred-mile-an-hour fastball, which is difficult to hit and control, entered the game. It flattened the game into strikeouts, walks, and home runs – a type of play lacking much action.</p>
+                                <p>Sword’s team brainstormed potential fixes. Any rule that existed, they talked about changing – from changing the bats to changing the geometry of the field. But while all of these were ruled out as potential fixes, ABS was seen as a perfect vehicle for change. According to Sword, once you get the technology right, you can load any strike zone you want into the system. “It might be a triangle, or a blob, or something shaped like Texas. Over time, as baseball evolves, ABS can allow the zone to change with it.”</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-ynng">
+                                <fieldset class="q-item">
+                                    <p><b>Questions 1-6</b></p>
+                                    <p class="lead">Do the following statements agree with the information given in
+                                        the
+                                        Reading Passage?
+                                    </p>
+                                    <p>In boxes on your answer sheet, write</p>
+                                    <ul class="legend">
+                                        <li><strong>YES</strong> if the statement agrees with the information</li>
+                                        <li><strong>NO</strong> if the statement contradicts the information</li>
+                                        <li><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks
+                                            about this.</li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        When DeJesus first used ABS, he shared decision-making about strikes with it.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">2</span>
+                                        MLB considered it necessary to amend the size of the strike zone when criticisms were received from players.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text">
+                                        <span class="q-number">3</span>
+                                        MLB is keen to justify the money spent on improving the accuracy of ABS’s calculations.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text">
+                                        <span class="q-number">4</span>
+                                        The hundred-mile-an-hour fastball led to a more exciting style of play.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        The differing proposals for alterations to the baseball bat led to fierce debate on Sword’s team.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-5" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="6">
+                                    <legend class="q-text">
+                                        <span class="q-number">6</span>
+                                        ABS makes changes to the shape of the strike zone feasible.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-6" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-ynng" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-ynng">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-summary_completion2" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion2" hidden>
+                <div class="x-panel-inner">Content: Summary Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>Major League Baseball (MLB), who had commissioned the system, wanted human umpires to announce the calls, just as they would have done in the past. When the first pitch came in, a recorded voice told DeJesus it was a strike. Previously, calling a strike was a judgment call on the part of the umpire. Even if the batter does not hit the ball, a pitch that passes through the ‘strike zone’ (an imaginary zone about seventeen inches wide, stretching from the batter’s knees to the middle of his chest) is considered a strike. During that first game, when DeJesus announced calls, there was no heckling and no shouted disagreement. Nobody said a word.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-summary_completion2">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-5</h3>
+                                    <p class="lead">Complete the summary using the list of words and phrases, <b>A-H</b>, below.</p>
+                                    <p><i>Write the correct letter, <b>A-H</b>, in boxes on your answer sheet.</i></p>
+                                    <table cellpadding="10">
+                                        <tr>
+                                            <td><b>A</b> pitch boundary</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>B</b> numerous disputes</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>C</b> team tactics</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>D</b> subjective assessment</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>E</b> widespread approval</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>F</b> former roles</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>G</b> total silence</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>H</b> perceived area</td>
+                                        </tr>
+                                    </table>
+
+                                    <h3>Calls by the umpire</h3>
+
+                                    <p>
+                                        <div>
+                                            Even after ABS was developed, MLB still wanted human umpires to shout out decisions as they had in their
+                                            <span class="q-number-box">1</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="EKX6hyJgeV3x0pxB-1" data-q="1" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                            . The umpire’s job had, at one time, required a
+                                            <span class="q-number-box">2</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="EKX6hyJgeV3x0pxB-2" data-q="2" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                    </select>,
+                                                </span>
+                                            </span>
+                                            about whether a ball was a strike. A ball is considered a strike when the batter does not hit it and it crosses through a
+                                            <span class="q-number-box">3</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="EKX6hyJgeV3x0pxB-3" data-q="3" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                            extending approximately from the batter’s knee to his chest.
+                                        </div>
+                                    </p>
+
+                                    <p>
+                                        <div>
+                                            In the past,
+                                            <span class="q-number-box">4</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="EKX6hyJgeV3x0pxB-4" data-q="4" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                            over strike calls were not uncommon, but today everyone accepts the complete ban on pushing or shoving the umpire. One difference, however, is that during the first game DeJesus used ABS, strike calls were met with
+                                            <span class="q-number-box">5</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="EKX6hyJgeV3x0pxB-5" data-q="5" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion2" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion2">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
+                <div class="x-panel-inner">Content: One Choice</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>A human, at least, yells back. When I spoke with Frank Viola, a coach for a North Carolina team, he said that ABS works as designed, but that it was also unforgiving and pedantic, almost legalistic. “Manfred is a lawyer,” Viola noted. Some pitchers have complained that, compared with a humans, the robot’s strike zone seems too precise. Viola was once a major-league player himself. When he was pitching, he explained, umpires rewarded skill. “Throw it where you aimed, and it would be a strike, even if it was an inch or two outside. There was a dialogue between pitcher and umpire.”</p>
+                                <p>The executive tasked with running the experiment for MLB is Morgan Sword, who’s in charge of baseball operations. According to Sword, ABS was part of a larger project to make baseball more exciting since executives are terrified of losing younger fans, as has been the case with horse racing and boxing. He explains how they began the process by asking fans what version of baseball they found most exciting. The results showed that everyone wanted more action: more hits, more defense, more baserunning. This type of baseball essentially hasn’t existed since the 1960s, when the hundred-mile-an-hour fastball, which is difficult to hit and control, entered the game. It flattened the game into strikeouts, walks, and home runs – a type of play lacking much action.</p>
+                                <p>Sword’s team brainstormed potential fixes. Any rule that existed, they talked about changing – from changing the bats to changing the geometry of the field. But while all of these were ruled out as potential fixes, ABS was seen as a perfect vehicle for change. According to Sword, once you get the technology right, you can load any strike zone you want into the system. “It might be a triangle, or a blob, or something shaped like Texas. Over time, as baseball evolves, ABS can allow the zone to change with it.”</p>
+                                <p>“In the past twenty years, sports have moved away from judgment calls. Soccer has Video Assistant Referees (for offside decisions, for example). Tennis has Hawk-Eye (for line calls, for example). For almost a decade, baseball has used instant replay on the base paths. This is widely liked, even if the precision can sometimes cause problems. But these applications deal with something physical: bases, lines, goals. The boundaries of action are precise, delineated like the keys of a piano. This is not the case with ABS and the strike zone. Historically, a certain discretion has been appreciated.”</p>
+                                <p>I decided to email Alva Noe, a professor at Berkeley University and a baseball fan, for his opinion. “Hardly a day goes by that I don’t wake up and run through the reasons that this [robe-umpires] is such a terrible idea,” he replied. He later told me, “This is part of a movement to use algorithms to take the hard choices of living out of life.” Perhaps he’s right. We watch baseball to kill time, not to maximize it. Some players I have met take a dissenting stance toward the robots too, believing that accuracy is not the answer.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-one">
+                                <fieldset class="q-item">
+                                    <p><b>Questions 1-3</b></p>
+                                    <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
+                                        <b>D</b>.
+                                    </p>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text">
+                                        <span class="q-number">1</span>
+                                        What does the writer suggest about ABS in the fifth paragraph?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">It is bound to make key decisions that are wrong.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">It may reduce some of the appeal of the game.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">It will lead to the disappearance of human umpires.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-1" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">lt may increase calls for the rules of baseball to be changed.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text">
+                                        <span class="q-number">2</span>
+                                        Morgan Sword says that the introduction of ABS
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">was regarded as an experiment without a guaranteed outcome.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">was intended to keep up with developments in other sports.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">was a response to changing attitudes about the role of sport.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-2" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">was an attempt to ensure baseball retained a young audience</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text">
+                                        <span class="q-number">3</span>
+                                        Why does the writer include the views of Not and Russo?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">to show that attitudes to technology vary widely</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">to argue that people have unrealistic expectations of sport</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">to indicate that accuracy is not the same thing as enjoyment</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-3" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">to suggest that the number of baseball fans needs to increase</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text">
+                                        <span class="q-number">4</span>
+                                        In the last paragraph, the writer suggests that it is important for employees to
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">be aware of their company’s goals.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">feel that their contributions are valued.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">have respect for their co-workers‟
+                                                achievements.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="EKX6hyJgeV3x0pxB-4" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">understand why certain management decisions are
+                                                made.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-oc">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Question List -->
+    <div class="floating-questions collapsed" id="floatingQuestions">
+        <!-- Tombol Icon -->
+        <button class="fq-fab" id="fqToggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Panel Soal -->
+        <div class="fq-body" id="fqBody">
+            <div class="fq-list" id="fqList"></div>
+        </div>
+    </div>
+
+    <div class="highlight-toolbar" id="highlightToolbar">
+        <div class="color-option yellow" data-color="yellow"></div>
+        <div class="color-option green" data-color="green"></div>
+        <div class="color-option blue" data-color="blue"></div>
+        <div class="color-option pink" data-color="pink"></div>
+        <div class="color-option orange" data-color="orange"></div>
+        <button id="highlightNote" title="Add Note">📝</button>
+        <button id="removeHighlight" title="Remove Highlight">✕</button>
+    </div>
+
+    <div class="note-popup" id="notePopup">
+        <textarea id="noteText" placeholder="Tulis catatan..."></textarea>
+        <div>
+            <button id="saveNote" class="save">Simpan</button>
+            <button id="cancelNote" class="cancel">Batal</button>
+        </div>
+    </div>
+
+    <!-- Modal Wrapper -->
+    <div id="resultModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <div class="score-summary-header">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreDisplay">0/0</span>
+                        {{-- <small id="scorePercentage">0</small> --}}
+                    </div>
+                    <div class="modal-title">Your Results</div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="custom-modal-body">
+                <!-- Results Table -->
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="modal-actions">
+                <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
+                <button class="modal-btn btn-primary" onclick="retryQuiz()">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let scoreMap = [
+            {min: 39, max: 40, score: 9.0},
+            {min: 37, max: 38, score: 8.5},
+            {min: 35, max: 36, score: 8.0},
+            {min: 33, max: 34, score: 7.5},
+            {min: 30, max: 32, score: 7.0},
+            {min: 27, max: 29, score: 6.5},
+            {min: 23, max: 26, score: 6.0},
+            {min: 19, max: 22, score: 5.5},
+            {min: 15, max: 18, score: 5.0},
+            {min: 13, max: 14, score: 4.5},
+            {min: 10, max: 12, score: 4.0},
+            {min: 8,  max: 9,  score: 3.5},
+            {min: 6,  max: 7,  score: 3.0},
+            {min: 4,  max: 5,  score: 2.5}
+        ];
+
+        function convertScore(correctCount) {
+            for (let row of scoreMap) {
+                if (correctCount >= row.min && correctCount <= row.max) {
+                    return row.score;
+                }
+            }
+            return 0; // jika kurang dari 4 benar
+        }
+    </script>
+
+    <script>
+        (function() {
+            let remaining = 0;
+            let t = null;
+            const el = document.getElementById('timeText');
+            const wrap = document.getElementById('timer');
+
+            function format(mmss) {
+                const m = Math.floor(mmss / 60);
+                const s = mmss % 60;
+                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            }
+
+            function tick() {
+                if (remaining <= 0) {
+                    clearInterval(t);
+                    t = null;
+                    el.textContent = '00:00';
+                    wrap.classList.add('danger');
+                    document.getElementById('doneBtn').disabled = true;
+                    document.getElementById('doneBtn').style.opacity = 0.7;
+                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
+                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+                    return;
+                }
+                remaining -= 1;
+                el.textContent = format(remaining);
+                // Kedipkan danger saat < 60 detik
+                if (remaining <= 60) {
+                    wrap.classList.add('danger');
+                }
+            }
+
+            function startCountdown(seconds) {
+                if (t) clearInterval(t);
+                remaining = Math.max(0, Math.floor(seconds));
+                el.textContent = format(remaining);
+                wrap.classList.toggle('danger', remaining <= 60);
+                document.getElementById('doneBtn').disabled = false;
+                document.getElementById('doneBtn').style.opacity = 1;
+                document.getElementById('doneBtn').style.cursor = 'pointer';
+                t = setInterval(tick, 1000);
+            }
+
+            // Public API (opsional)
+            window.CATHeader = {
+                startCountdown
+            };
+
+            // Events
+            document.getElementById('infoBtn').addEventListener('click', function() {
+                // Ganti dengan modal/informasi instruksi Anda
+                alert(
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                );
+
+            });
+
+            document.getElementById('doneBtn').addEventListener('click', function() {
+                const confirmFinish = confirm('Do you want to end the test now?');
+                if (confirmFinish) {
+                    window.history.back();
+                }
+            });
+
+            // Mulai countdown (contoh: 15 menit)
+            startCountdown(15 * 60);
+        })();
+    </script>
+
+    <!-- script bagian part soal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.querySelector('.parts-section');
+            if (!section) return;
+
+            const xTabs = section.querySelector('.x-tabs');
+            const tabs = Array.from(xTabs.querySelectorAll('.x-tab'));
+            const panels = Array.from(section.querySelectorAll('.x-panel'));
+
+            function updateEdgeHints() {
+                const max = xTabs.scrollWidth - xTabs.clientWidth;
+                const x = Math.round(xTabs.scrollLeft);
+                xTabs.classList.toggle('has-left', x > 0);
+                xTabs.classList.toggle('has-right', x < max - 1);
+            }
+
+            function setActive(id) {
+                tabs.forEach(btn => {
+                    const active = btn.dataset.id === id;
+                    btn.classList.toggle('is-active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                    btn.tabIndex = active ? 0 : -1;
+                    if (active) {
+                        btn.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
+                    }
+                });
+                panels.forEach(p => {
+                    const open = p.id === `panel-${id}`;
+                    if (open) {
+                        p.removeAttribute('hidden');
+                        p.classList.add('is-open');
+                    } else {
+                        p.setAttribute('hidden', '');
+                        p.classList.remove('is-open');
+                    }
+                });
+                xTabs.dataset.active = id;
+            }
+
+            /* Event delegation untuk klik tab (lebih andal) */
+            xTabs.addEventListener('click', (e) => {
+                const btn = e.target.closest('.x-tab');
+                if (!btn || !xTabs.contains(btn)) return;
+                setActive(btn.dataset.id);
+            });
+
+            /* Drag/Swipe pada .x-tabs */
+            let down = false,
+                moved = false,
+                startX = 0,
+                startLeft = 0,
+                pid = null;
+            xTabs.addEventListener('pointerdown', (e) => {
+                // Hanya izinkan drag jika bukan klik pada tab
+                if (e.target.closest('.x-tab')) {
+                    down = false;
+                    return;
+                }
+                down = true;
+                moved = false;
+                pid = e.pointerId;
+                xTabs.setPointerCapture(pid);
+                startX = e.clientX;
+                startLeft = xTabs.scrollLeft;
+            });
+            xTabs.addEventListener('pointermove', (e) => {
+                if (!down) return;
+                const dx = e.clientX - startX;
+                if (Math.abs(dx) > 3) moved = true;
+                xTabs.scrollLeft = startLeft - dx;
+            });
+
+            function endDrag(e) {
+                if (pid) {
+                    try {
+                        xTabs.releasePointerCapture(pid);
+                    } catch {}
+                }
+                pid = null;
+                down = false;
+                if (moved && e && e.target.closest('.x-tab')) e.preventDefault(); /* cegah klik nyangkut */
+                moved = false;
+            }
+            xTabs.addEventListener('pointerup', endDrag);
+            xTabs.addEventListener('pointercancel', endDrag);
+            xTabs.addEventListener('pointerleave', endDrag);
+
+            /* Wheel vertikal -> horizontal (trackpad/mouse) */
+            xTabs.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && xTabs.scrollWidth > xTabs.clientWidth) {
+                    xTabs.scrollBy({
+                        left: e.deltaY,
+                        behavior: 'auto'
+                    });
+                    e.preventDefault();
+                }
+            }, {
+                passive: false
+            });
+
+            /* Keyboard navigation */
+            tabs.forEach(btn => {
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    const idx = tabs.indexOf(btn);
+                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 +
+                        tabs.length) % tabs.length;
+                    tabs[nextIdx].focus();
+                    tabs[nextIdx].click();
+                });
+            });
+
+            /* Init */
+            updateEdgeHints();
+            xTabs.addEventListener('scroll', updateEdgeHints);
+            window.addEventListener('resize', updateEdgeHints);
+            setActive('nc');
+        });
+    </script>
+
+    <!-- script bagian reading + questions  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Semua panel
+            const panels = document.querySelectorAll('.x-panel');
+
+            panels.forEach(panel => {
+                const section = panel.querySelector('.reading-section');
+                if (!section) return;
+
+                // --- Pilihan soal (radio) ---
+                section.addEventListener('click', function(e) {
+                    const opt = e.target.closest('.q-option');
+                    if (!opt) return;
+                    const fieldset = opt.closest('.q-item');
+                    const input = opt.querySelector('input[type="radio"]');
+                    if (!fieldset || !input) return;
+
+                    // Set radio checked
+                    input.checked = true;
+
+                    // Hapus highlight semua sibling
+                    fieldset.querySelectorAll('.q-option').forEach(el => el.classList.remove(
+                        'is-selected'));
+                    opt.classList.add('is-selected');
+                });
+
+                section.addEventListener('change', function(e) {
+                    const radio = e.target;
+                    if (!(radio instanceof HTMLInputElement)) return;
+                    if (radio.type !== 'radio') return;
+                    const fieldset = radio.closest('.q-item');
+                    if (!fieldset) return;
+                    fieldset.querySelectorAll('.q-option').forEach(el => {
+                        const r = el.querySelector('input[type="radio"]');
+                        el.classList.toggle('is-selected', r && r.checked);
+                    });
+                });
+
+                // --- Resize handle ---
+                const grid = section.querySelector('.resizable-grid');
+                const handle = section.querySelector('.resize-handle');
+                if (!grid || !handle) return;
+
+                let isDragging = false;
+
+                handle.addEventListener('mousedown', e => {
+                    e.preventDefault();
+                    isDragging = true;
+                    document.body.style.cursor = 'col-resize';
+                });
+
+                window.addEventListener('mousemove', e => {
+                    if (!isDragging) return;
+                    const gridRect = grid.getBoundingClientRect();
+                    const totalWidth = gridRect.width;
+                    const offsetX = e.clientX - gridRect.left;
+
+                    const leftWidth = Math.max(250, offsetX);
+                    const rightWidth = Math.max(250, totalWidth - leftWidth - handle.offsetWidth);
+
+                    grid.style.gridTemplateColumns =
+                        `${leftWidth}px ${handle.offsetWidth}px ${rightWidth}px`;
+                });
+
+                window.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        document.body.style.cursor = 'default';
+                    }
+                });
+
+            }); // end forEach panel
+
+            // Optional: function global ambil jawaban panel tertentu
+            window.getPanelAnswers = function(panelEl) {
+                const out = {};
+                const section = panelEl.querySelector('.reading-section');
+                if (!section) return out;
+
+                section.querySelectorAll('.q-item').forEach(fs => {
+                    const name = fs.querySelector('input[type="radio"]')?.name;
+                    const checked = fs.querySelector('input[type="radio"]:checked');
+                    if (name) out[name] = checked ? checked.value : null;
+                });
+
+                return out;
+            };
+        });
+    </script>
+
+    <!-- script bagian highlight + note -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toolbar = document.getElementById('highlightToolbar');
+            const notePopup = document.getElementById('notePopup');
+            const noteText = document.getElementById('noteText');
+
+            let currentSelection = null;
+            let selectedColor = 'yellow';
+            let currentHighlight = null;
+            let activePassage = null;
+
+            // === Pilih warna highlight ===
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    selectedColor = option.dataset.color;
+                    applyHighlight(selectedColor, false);
+                });
+            });
+
+            // === Toolbar tombol catatan ===
+            document.getElementById('highlightNote').addEventListener('click', () => {
+                if (currentSelection) {
+                    applyHighlight(selectedColor, true);
+                }
+            });
+
+            // === Hapus highlight ===
+            document.getElementById('removeHighlight').addEventListener('click', () => {
+                if (currentSelection) {
+                    const node = currentSelection.startContainer.parentNode;
+                    if (node.classList.contains('highlight')) {
+                        const textNode = document.createTextNode(node.textContent);
+                        node.replaceWith(textNode);
+                    }
+                    hideToolbar();
+                    window.getSelection().removeAllRanges();
+                    currentSelection = null;
+                }
+            });
+
+            // === Save & Cancel Note ===
+            document.getElementById('saveNote').addEventListener('click', () => {
+                if (currentHighlight) {
+                    const note = noteText.value.trim();
+                    if (note) {
+                        currentHighlight.dataset.note = note;
+                        if (!currentHighlight.querySelector('.note-indicator')) {
+                            const dot = document.createElement('span');
+                            dot.className = 'note-indicator';
+                            currentHighlight.appendChild(dot);
+                        }
+                    } else {
+                        delete currentHighlight.dataset.note;
+                        const dot = currentHighlight.querySelector('.note-indicator');
+                        if (dot) dot.remove();
+                    }
+                }
+                hideNotePopup();
+            });
+
+            document.getElementById('cancelNote').addEventListener('click', hideNotePopup);
+
+            // === Init highlight di semua panel ===
+            document.querySelectorAll('.x-panel').forEach(panel => {
+                const passageBody = panel.querySelector('.highlighted-content');
+
+                passageBody.addEventListener('mouseup', (e) => {
+                    const selection = window.getSelection();
+                    if (selection && !selection.isCollapsed) {
+                        currentSelection = selection.getRangeAt(0);
+                        activePassage = passageBody;
+                        const rect = currentSelection.getBoundingClientRect();
+                        showToolbar(rect);
+                    } else {
+                        hideToolbar();
+                    }
+                });
+
+                // Klik highlight untuk buka note
+                passageBody.addEventListener('click', e => {
+                    if (e.target.classList.contains('highlight') && e.target.dataset.note) {
+                        currentHighlight = e.target;
+                        showNotePopup(e.target, e.target.dataset.note);
+                    }
+                });
+            });
+
+            // === Klik luar → tutup toolbar & note popup ===
+            document.addEventListener('click', e => {
+                if (!toolbar.contains(e.target) &&
+                    !notePopup.contains(e.target) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                    !window.getSelection().toString()) {
+                    hideToolbar();
+                    hideNotePopup();
+                }
+            });
+
+            // === Fungsi helper ===
+            function applyHighlight(color, withNote = false) {
+                if (!currentSelection) return;
+
+                const span = document.createElement('span');
+                span.className = `highlight highlight-${color}`;
+                span.textContent = currentSelection.toString();
+                currentSelection.deleteContents();
+                currentSelection.insertNode(span);
+
+                if (withNote) {
+                    currentHighlight = span;
+                    showNotePopup(span);
+                }
+
+                hideToolbar();
+                window.getSelection().removeAllRanges();
+                currentSelection = null;
+            }
+
+            function showToolbar(rect) {
+                toolbar.style.display = 'flex';
+                toolbar.style.left = rect.left + window.scrollX + 'px';
+                toolbar.style.top = rect.top + window.scrollY - 40 + 'px';
+            }
+
+            function hideToolbar() {
+                toolbar.style.display = 'none';
+                currentSelection = null;
+            }
+
+            function showNotePopup(highlightEl, existing = '') {
+                noteText.value = existing;
+                const rect = highlightEl.getBoundingClientRect();
+                notePopup.style.display = 'block';
+                notePopup.style.left = rect.left + window.scrollX + 'px';
+                notePopup.style.top = rect.bottom + window.scrollY + 5 + 'px';
+            }
+
+            function hideNotePopup() {
+                notePopup.style.display = 'none';
+                currentHighlight = null;
+            }
+        });
+    </script>
+
+    <!-- script bagian floating question list -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingQ = document.getElementById('floatingQuestions');
+            const fqBody = document.getElementById('fqBody');
+            const fqList = document.getElementById('fqList');
+            const fqToggle = document.getElementById('fqToggle');
+
+            if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
+
+            let isCollapsed = false;
+            let currentPart = 'nc';
+            let questionCount = 0;
+
+            fqToggle.addEventListener('click', () => {
+                isCollapsed = !isCollapsed;
+                floatingQ.classList.toggle('collapsed', isCollapsed);
+                floatingQ.classList.toggle('expanded', !isCollapsed);
+            });
+
+            // Generate question numbers
+            function generateQuestionList(partId, count) {
+                fqList.innerHTML = '';
+                questionCount = count;
+
+                for (let i = 1; i <= count; i++) {
+                    const item = document.createElement('a');
+                    item.href = '#';
+                    item.className = 'fq-item';
+                    item.textContent = i;
+                    item.dataset.q = i;
+                    item.dataset.part = partId;
+
+                    // Scroll ke soal saat diklik
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        scrollToQuestion(i, partId);
+                    });
+
+                    fqList.appendChild(item);
+                }
+            }
+
+            // Scroll ke soal tertentu
+            function scrollToQuestion(qNum, partId) {
+                const panel = document.getElementById(`panel-${partId}`);
+                if (!panel) return;
+
+                const question = panel.querySelector(`[data-q="${qNum}"]`);
+                if (question) {
+                    question.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    question.focus();
+                }
+            }
+
+            // Update status soal (radio, dropdown, text)
+            function updateQuestionStatus(partId) {
+                const panel = document.getElementById(`panel-${partId}`);
+                if (!panel) return;
+
+                fqList.querySelectorAll('.fq-item').forEach(item => {
+                    item.classList.remove('answered', 'current');
+                });
+
+                for (let i = 1; i <= questionCount; i++) {
+                    const item = fqList.querySelector(`[data-q="${i}"][data-part="${partId}"]`);
+                    if (!item) continue;
+
+                    const question = panel.querySelector(`[data-q="${i}"]`);
+                    if (!question) continue;
+
+                    let answered = false;
+
+                    // Radio
+                    const radioChecked = question.querySelector('input[type="radio"]:checked');
+                    if (radioChecked) answered = true;
+
+                    // Dropdown
+                    const dropdown = question.querySelector('select.q-dropdown');
+                    if (dropdown && dropdown.value !== '') answered = true;
+
+                    // Text input
+                    const textInput = question.querySelector('input[type="text"], textarea');
+                    if (textInput && textInput.value.trim() !== '') answered = true;
+
+                    if (answered) item.classList.add('answered');
+                }
+            }
+
+            // Deteksi jawaban berubah
+            function watchAnswerChanges() {
+                document.addEventListener('input', (e) => {
+                    const question = e.target.closest('[data-q]');
+                    if (question) updateQuestionStatus(currentPart);
+                });
+
+                document.addEventListener('change', (e) => {
+                    const question = e.target.closest('[data-q]');
+                    if (question) updateQuestionStatus(currentPart);
+                });
+
+                document.addEventListener('click', (e) => {
+                    const option = e.target.closest('.q-option');
+                    if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
+                });
+            }
+
+            // Deteksi perubahan part
+            function watchPartChanges() {
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName ===
+                            'data-active') {
+                            const newPart = mutation.target.dataset.active;
+                            if (newPart && newPart !== currentPart) {
+                                currentPart = newPart;
+                                updateQuestionListForPart(newPart);
+                            }
+                        }
+                    });
+                });
+
+                const tabsContainer = document.querySelector('.x-tabs');
+                if (tabsContainer) observer.observe(tabsContainer, {
+                    attributes: true,
+                    attributeFilter: ['data-active']
+                });
+            }
+
+            // Update question list untuk part aktif
+            function updateQuestionListForPart(partId) {
+                const questionCounts = {
+                    'nc': 5,
+                    'tfng2': 5,
+                    'ynng': 5,
+                    'mse': 5,
+                    'one': 4,
+                    'mh': 8,
+                    'tc': 5,
+                    'sa': 3
+                };
+                const count = questionCounts[partId] || 5;
+                generateQuestionList(partId, count);
+                updateQuestionStatus(partId);
+            }
+
+            // Init
+            updateQuestionListForPart('nc');
+            watchPartChanges();
+            watchAnswerChanges();
+            setInterval(() => updateQuestionStatus(currentPart), 2000);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script>
+        // Pastikan modal tersembunyi saat halaman dimuat
+        $("#resultModal").removeClass("show").hide();
+        
+        // Modal functions
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+            
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            // closeModal();
+
+            // $(".qa-body input[type=radio]").prop("checked", false);
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // // $("#scorePercentage").text("0");
+
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($(".qa-body").offset().top);
+            // }, 350);
+            location.reload();
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        function submitHelper(form, setId, tipe, button, againBtn) {
+            let allAnswered = true;
+
+            $(`#${form} fieldset[data-q]`).each(function () {
+                let isAnswered = false;
+                const inputs = $(this).find("input, select, textarea");
+
+                inputs.each(function () {
+                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
+                        isAnswered = true;
+                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
+                        isAnswered = true;
+                    } else if ($(this).is("select") && $(this).val() !== "") {
+                        isAnswered = true;
+                    }
+                });
+
+                if (!isAnswered) {
+                    allAnswered = false;
+                    $(this).addClass("unanswered-highlight");
+                } else {
+                    $(this).removeClass("unanswered-highlight");
+                }
+            });
+
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
+                return;
+            }
+
+            // ✅ KIRIM FORM DATA
+            let formData = new FormData($(`#${form}`)[0]);
+            formData.append("tipe", tipe);
+            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+            formData.append("set_id", setId);
+            formData.append("kategori", 'reading');
+            formData.append("tipe_test", 'practice');
+
+            $.ajax({
+                url: "/ielts/practice/check",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status === "ok") {
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
+
+                        $(".q-option").removeClass("correct wrong");
+                        $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        let correctCount = response.score;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = "";
+                        let questionNumber = 1;
+
+                        $.each(response.results, function(qid, data) {
+                        let isCorrect = data.status === "correct";
+
+                        // ✅ 2. Ambil CORRECT ANSWER dengan fallback
+                        let correctAnswer = data.correct || '';
+                        let userAnswer = data.user || '';
+                        if (!correctAnswer && isCorrect) {
+                            correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                        }
+                        if (!correctAnswer) {
+                            correctAnswer = "NOT GIVEN";
+                        }
+
+                        // ✅ 3. Highlight input aslinya
+                        let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                        questionElement.find("input, select, textarea").each(function () {
+                            if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                if ($(this).is(":checked")) {
+                                    if (isCorrect) {
+                                        $(this).parent().addClass("correct");
+                                    } else {
+                                        $(this).parent().addClass("wrong");
+                                        $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                    }
+                                }
+                            } else {
+                                if (isCorrect) {
+                                    $(this).addClass("correct");
+                                } else {
+                                    $(this).addClass("wrong");
+                                }
+                            }
+                        });
+
+                        // ✅ 4. Bangun tabel baris
+                        tableRows += `
+                            <tr>
+                                <td><strong>${questionNumber++}</strong></td>
+                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                <td>
+                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                        ${isCorrect ? 'Correct' : 'Wrong'}
+                                    </span>
+                                </td>
+                            </tr>
+                        `;
+                    });
+
+
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    }
+                },
+                error: function(xhr) {
+                    alert("Terjadi kesalahan: " + xhr.status);
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+
+        $(".try-again").on("click", function(){
+            location.reload();
+        })
+
+        $("#submit-tfng").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-tfng", "EKX6hyJgeV3x0pxB", "tfng", $(this), "again-tfng");
+        });
+
+        $("#submit-tfng2").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-tfng2", "EKX6hyJgeV3x0pxB", "tfng", $(this), "again-tfng2");
+        });
+
+        $("#submit-ynng").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-ynng", "EKX6hyJgeV3x0pxB", "ynng", $(this), "again-ynng");
+        });
+
+        $("#submit-mse").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-mse", "EKX6hyJgeV3x0pxB", "mse", $(this), "again-mse");
+        });
+
+        $("#submit-oc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-one", "EKX6hyJgeV3x0pxB", "oc", $(this), "again-oc");
+        });
+
+        $("#submit-mh").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-mh", "EKX6hyJgeV3x0pxB", "mh", $(this), "again-mh");
+        });
+
+        $("#submit-tc").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-tc", "EKX6hyJgeV3x0pxB", "tc", $(this), "again-tc");
+        });
+
+        $("#submit-sa").on("click", function(e) {
+            e.preventDefault();
+            submitHelper("form-sa", "EKX6hyJgeV3x0pxB", "sa", $(this), "again-sa");
+        });
+    </script>
+
+
+</body>
+
+</html>

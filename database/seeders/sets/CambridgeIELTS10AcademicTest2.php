@@ -21,8 +21,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($mh); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'mh',
                 'kategori' => 'reading',
                 'jawaban_benar' => $mh[$i - 1]
@@ -31,8 +31,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($tfng); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'tfng',
                 'kategori' => 'reading',
                 'jawaban_benar' => $tfng[$i - 1]
@@ -41,8 +41,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($matching_information); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'matching_information',
                 'kategori' => 'reading',
                 'jawaban_benar' => $matching_information[$i - 1]
@@ -51,8 +51,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($matching_features); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'matching_features',
                 'kategori' => 'reading',
                 'jawaban_benar' => $matching_features[$i - 1]
@@ -61,8 +61,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($sentence_completion); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'sentence_completion',
                 'kategori' => 'reading',
                 'jawaban_benar' => $sentence_completion[$i - 1]
@@ -71,8 +71,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($summary_completion); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'summary_completion',
                 'kategori' => 'reading',
                 'jawaban_benar' => $summary_completion[$i - 1]
@@ -81,8 +81,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($oc); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'oc',
                 'kategori' => 'reading',
                 'jawaban_benar' => $oc[$i - 1]
@@ -91,8 +91,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($ynng); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'ynng',
                 'kategori' => 'reading',
                 'jawaban_benar' => $ynng[$i - 1]
@@ -111,8 +111,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($nc); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'nc',
                 'kategori' => 'listening',
                 'jawaban_benar' => $nc[$i - 1]
@@ -121,8 +121,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($oc); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'oc',
                 'kategori' => 'listening',
                 'jawaban_benar' => $oc[$i - 1]
@@ -131,8 +131,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($two_choices); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-1',
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-1',
                 'tipe_soal' => 'two_choices',
                 'kategori' => 'listening',
                 'jawaban_benar' => $two_choices[$i - 1]
@@ -141,8 +141,8 @@ class CambridgeIELTS10AcademicTest2 extends Seeder
 
         for($i = 1; $i <= count($matching_information); $i++){
             Soal::create([
-                'set_id' => 'QmN0FYAE2DCXRPdC',
-                'id_soal' => 'QmN0FYAE2DCXRPdC-' . $i,
+                'set_id' => 'nHmZBcocwalVytdH',
+                'id_soal' => 'nHmZBcocwalVytdH-' . $i,
                 'tipe_soal' => 'matching_information',
                 'kategori' => 'listening',
                 'jawaban_benar' => $matching_information[$i - 1]
