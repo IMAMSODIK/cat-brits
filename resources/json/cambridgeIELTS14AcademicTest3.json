@@ -1,0 +1,107 @@
+{
+  "reading": {
+    "tc": [
+      "[B, C]",
+      "[B, C]"
+    ],
+    "matching_features": [
+      "B",
+      "C",
+      "B",
+      "A",
+      "A",
+      "C",
+      "A",
+      "B",
+      "G",
+      "F",
+      "E",
+      "C"
+    ],
+    "ynng": [
+      "NOT GIVEN",
+      "NO",
+      "YES",
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "YES"
+    ],
+    "sentence_completion": [
+      "productive",
+      "perfectionists",
+      "dissatisfied"
+    ],
+    "matching_information": [
+      "B",
+      "A",
+      "D",
+      "C",
+      "H",
+      "A",
+      "F",
+      "I",
+      "B",
+      "E"
+    ],
+    "summary_completion": [
+      "ecology",
+      "prey",
+      "habitats",
+      "antibiotics",
+      "encouraging",
+      "desire",
+      "autonomy",
+      "targeted"
+    ]
+  },
+  "listening": {
+    "tc": [
+      "[A, E",
+      "[A, E]",
+      "[B, E]",
+      "[B, E]"
+    ],
+    "matching_information": [
+      "F",
+      "A",
+      "E",
+      "G",
+      "D",
+      "C",
+      "D",
+      "B",
+      "E",
+      "F"
+    ],
+    "nc": [
+      "Tesla",
+      "microphone",
+      "exhibition",
+      "wifi",
+      "45",
+      "135",
+      "pool",
+      "airport",
+      "sea",
+      "clubs",
+      "50",
+      "regional",
+      "carnival",
+      "drummer",
+      "film",
+      "parade",
+      "violin",
+      "energy",
+      "complex",
+      "opera",
+      "disturbing",
+      "clarinet",
+      "diversity",
+      "physics",
+      "dance",
+      "Olympics"
+    ]
+  }
+}
