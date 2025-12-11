@@ -5,14 +5,20 @@ namespace Database\Seeders\Sets;
 use Illuminate\Database\Seeder;
 use App\Models\Soal;
 
-abstract class CambridgeIELTSBaseSeeder extends Seeder
+class CambridgeIELTSBaseSeeder extends Seeder
 {
-  abstract protected function getSetId(): string;
-  abstract protected function getJsonFileName(): string;
+  protected function getSetId(): string
+  {
+    return '';
+  }
+  protected function getJsonFileName(): string
+  {
+    return '';
+  }
 
   public function run()
   {
-    $file = database_path('resources/json/' . $this->getJsonFileName());
+    $file = base_path('resources/json/' . $this->getJsonFileName());
     if (!is_file($file)) {
       throw new \Exception("JSON file not found: {$file}");
     }
