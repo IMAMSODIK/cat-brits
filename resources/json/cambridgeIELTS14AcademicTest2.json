@@ -1,0 +1,106 @@
+{
+  "reading": {
+    "mh": [
+      "vi",
+      "i",
+      "iii",
+      "ii",
+      "ix",
+      "vii",
+      "iv",
+      "viii"
+    ],
+    "tfng": [
+      "false",
+      "true",
+      "not given",
+      "false",
+      "not given",
+      "true",
+      "false",
+      "true",
+      "true",
+      "false",
+      "not given"
+    ],
+    "sentence_completion": [
+      "productive",
+      "perfectionists",
+      "dissatisfied"
+    ],
+    "matching_information": [
+      "F",
+      "C",
+      "E",
+      "D",
+      "B"
+    ],
+    "nc": [
+      "merchant",
+      "equipment",
+      "gifts",
+      "canoe",
+      "mountains"
+    ],
+    "summary_completion": [
+      "[design, designs]",
+      "pathogens",
+      "tuberculosis",
+      "wards",
+      "communal",
+      "public",
+      "miasmas",
+      "cholera"
+    ]
+  },
+  "listening": {
+    "oc": [
+      "B",
+      "C",
+      "C",
+      "B",
+      "A",
+      "B",
+      "C",
+      "A",
+      "A"
+    ],
+    "matching_information": [
+      "E",
+      "D",
+      "A",
+      "H",
+      "G",
+      "C"
+    ],
+    "nc": [
+      "[219 442 9785, 2194429785]",
+      "[10 October, 10th October]",
+      "manager",
+      "Cawley",
+      "knee",
+      "3 weeks",
+      "tennis",
+      "running",
+      "shoulder",
+      "vitamins",
+      "dances",
+      "survival",
+      "clouds",
+      "festivals",
+      "comets",
+      "sky",
+      "instruments",
+      "thermometer",
+      "storms",
+      "telegraph"
+    ],
+    "plan_labeling": [
+      "H",
+      "D",
+      "F",
+      "A",
+      "E"
+    ]
+  }
+}
