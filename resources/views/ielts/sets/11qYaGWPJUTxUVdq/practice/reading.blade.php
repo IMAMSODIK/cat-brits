@@ -696,7 +696,8 @@
         }
 
         #panel-tc .q-number-box,
-        #panel-summary_completion .q-number-box{
+        #panel-summary_completion .q-number-box,
+        #panel-mh .q-number-box{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -708,7 +709,9 @@
             margin-left: 5px;
         }
 
-        #panel-tc .q-text{
+        #panel-tc .q-text,
+        #panel-mh .q-text,
+        #panel-summary_completion .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -1526,232 +1529,124 @@
     <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="mh">
             <button class="x-tab is-active" role="tab" id="tab-mh" aria-controls="panel-mh" aria-selected="true"
-                data-id="mh">Matching Headings</button>
+                data-id="mh">Note Completion</button>
             <button class="x-tab" role="tab" id="tab-tfng" aria-controls="panel-tfng"
                 aria-selected="false" data-id="tfng">True/False/Not Given</button>
-            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
-                data-id="matching_information">Matching Information</button>
-            <button class="x-tab" role="tab" id="tab-matching_features" aria-controls="panel-matching_features" aria-selected="false"
-                data-id="matching_features">Matching Features</button>
-            <button class="x-tab" role="tab" id="tab-sentence_completion" aria-controls="panel-sentence_completion" aria-selected="false"
-                data-id="sentence_completion">Sentence Completion</button>
             <button class="x-tab" role="tab" id="tab-summary_completion" aria-controls="panel-summary_completion" aria-selected="false"
                 data-id="summary_completion">Summary Completion</button>
+            <button class="x-tab" role="tab" id="tab-matching_features" aria-controls="panel-matching_features" aria-selected="false"
+                data-id="matching_features">Matching Features</button>
+            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
+                data-id="matching_information">Matching Information</button>
             <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
                 data-id="one">One Choice</button>
+            <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
+                data-id="mse">Matching Sentence ending</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
                 data-id="ynng">Yes/No/Not Given</button>
         </div>
 
         <div class="x-panels">
             <div id="panel-mh" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-mh">
-                <div class="x-panel-inner">Content: Matching Headings</div>
+                <div class="x-panel-inner">Content: Note Completion</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <h3 class="passage-title">B</h3>
-                                <p>Tourism in the mass form as we know it today is a distinctly twentieth-century phenomenon. Historians suggest that the advent of mass tourism began in England during the industrial revolution with the rise of the middle class and the availability of relatively inexpensive transportation. The creation of the commercial airline industry following the Second World War and the subsequent development of the jet aircraft in the 1950s signalled the rapid growth and expansion of international travel. This growth led to the development of a major new industry: tourism. In turn, international tourism became the concern of a number of world governments since it not only provided new employment opportunities but also produced a means of earning foreign exchange.</p>
-                                <h3 class="passage-title">C</h3>
-                                <p>Tourism today has grown significantly in both economic and social importance. In most industrialised countries over the past few years the fastest growth has been seen in the area of services. One of the largest segments of the service industry, although largely unrecognised as an entity in some of these countries, is travel and tourism. According to the World Travel and Tourism Council (1992), Travel and tourism is the largest industry in the world on virtually any economic measure including value-added capital investment, employment and tax contributions. In 1992, the industry’s gross output was estimated to be $3.5 trillion, over 12 per cent of all consumer spending. The travel and tourism industry is the world’s largest employer the almost 130 million jobs, or almost 7 per cent of all employees. This industry is the world’s leading industrial contributor, producing over 6 per cent of the world’s national product and accounting for capital investment in excess of $422 billion in direct indirect and personal taxes each year. Thus, tourism has a profound impact both on the world economy and, because of the educative effect of travel and the effects on employment, on society itself.</p>
-                                <h3 class="passage-title">D</h3>
-                                <p>However, the major problems of the travel and tourism industry that have hidden, or obscured, its economic impact are the diversity and fragmentation of the industry itself. The travel industry includes: hotels, motels and other types of accommodation; restaurants and other food services; transportation services and facilities; amusements, attractions and other leisure facilities; gift shops and a large number of other enterprises. Since many of these businesses also serve local residents, the impact of spending by visitors can easily be overlooked or underestimated. In addition, Meis (1992) points out that the tourism industry involves concepts that have remained amorphous to both analysts and decision makers. Moreover, in all nations this problem has made it difficult for the industry to develop any type of reliable or credible tourism information base in order to estimate the contribution it makes to regional, national and global economies. However, the nature of this very diversity makes travel and tourism ideal vehicles for economic development in a wide variety of countries, regions or communities.</p>
-                                <h3 class="passage-title">E</h3>
-                                <p>Once the exclusive province of the wealthy, travel and tourism have become an institutionalised way of life for most of the population. In fact, McIntosh and Goeldner (1990) suggest that tourism has become the largest commodity in international trade for many nations and, for a significant number of other countries, it ranks second or third. For example, tourism is the major source of income in Bermuda, Greece, Italy, Spain, Switzerland and most Caribbean countries. In addition, Hawkins and Ritchie, quoting from data published by the American Express Company, suggest that the travel and tourism industry is the number one ranked employer in the Bahamas, Brazil, Canada, France, (the former) West Germany, Hong Kong, Italy, Jamaica, Japan, Singapore, the United Kingdom and the United States. However, because of problems of definition, which directly affect statistical measurement, it is not possible with any degree of certainty to provide precise, valid or reliable data about the extent of world-wide tourism participation or its economic impact. In many cases, similar difficulties arise when attempts are made to measure domestic tourism.</p>
+                                <h3 class="passage-title">The megafires of California</h3>
+                                <p><i>Drought, housing expansion, and oversupply of tinder make for bigger, hotter fires in the western United States</i></p>
+                                <p>Wildfires are becoming an increasing menace in the western United States, with Southern California being the hardest hit area. There’s a reason fire squads battling more frequent blazes in Southern California are having such difficulty containing the flames, despite better preparedness than ever and decades of experience fighting fires fanned by the ‘Santa Ana Winds’. The wildfires themselves, experts say, are generally hotter, faster, and spread more erratically than in the past.</p>
+                                <p>Megafires, also called ‘siege fires’, are the increasingly frequent blazes that burn 500,000 acres or more – 10 times the size of the average forest fire of 20 years ago. Some recent wildfires are among the biggest ever in California in terms of acreage burned, according to state figures and news reports.</p>
+                                <p>One explanation for the trend to more superhot fires is that the region, which usually has dry summers, has had significantly below normal precipitation in many recent years. Another reason, experts say, is related to the century- long policy of the US Forest Service to stop wildfires as quickly as possible. The unintentional consequence has been to halt the natural eradication of underbrush, now the primary fuel for megafires.</p>
+                                <p>Three other factors contribute to the trend, they add. First is climate change, marked by a 1-degree Fahrenheit rise in average yearly temperature across the western states. Second is fire seasons that on average are 78 days longer than they were 20 years ago. Third is increased construction of homes in wooded areas.</p>
+                                <p>‘We are increasingly building our homes in fire-prone ecosystems,’ says Dominik Kulakowski, adjunct professor of biology at Clark University Graduate School of Geography in Worcester, Massachusetts. ‘Doing that in many of the forests of the western US is like building homes on the side of an active volcano.’</p>
                             </div>
                         </article>
 
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-mh">
+                            <form class="qa-body" id="form-nc">
                                 <fieldset class="q-item">
-                                    <p class="lead"><b>Questions 1-7</b></p>
-                                    <p class="lead">The Reading Passage has nine paragraphs, <b>A-G</b>.</p>
-                                    <p>Choose the correct heading for each paragraph from the list of headings below.</p>
-                                    <p>Write the correct number, <b>i-ix</b>, in boxes on your answer sheet.</p>
-                                    <p><b>List of Headings</b></p>
-                                    <ul class="legend">
-                                        <li><strong>i</strong> The search for the reasons for an increase in population</li>
-                                        <li><strong>ii</strong> Industrialisation and the fear of unemployment</li>
-                                        <li><strong>iii</strong> The development of cities in Japan 4 The time and place of the Industrial Revolution</li>
-                                        <li><strong>iv</strong> The time and place of the Industrial Revolution</li>
-                                        <li><strong>v</strong> The cases of Holland, France and China</li>
-                                        <li><strong>vi</strong> Changes in drinking habits in Britain</li>
-                                        <li><strong>vii</strong> Two keys to Britain’s industrial revolution</li>
-                                        <li><strong>viii</strong> Conditions required for industrialisation</li>
-                                        <li><strong>ix</strong>  Comparisons with Japan lead to the answer</li>
+                                    <h3>Questions 1-6</h3>
+                                    <p class="lead">Complete the notes below.</p>
+                                    <p>Choose <b>ONE WORD AND/OR A NUMBER</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet</i></p>
+                                </fieldset>
+
+                                <fieldset class="q-item">
+                                    <p><b>Wildfires</b></p>
+                                    <ul>
+                                        <li>
+                                            Characteristics of wildfires and wildfire conditions today compared to the past:
+                                            <ul>
+                                                <li>occurrence: more frequent</li>
+                                                <li>temperature: hotter</li>
+                                                <li>speed: faster</li>                                                
+                                                <li>
+                                                    <div class="q-list" data-q="1">
+                                                        movement:
+                                                        <span class="q-number-box">1</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-1" class="q-text" placeholder="">
+                                                        more unpredictably
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="q-list" data-q="2">
+                                                        size of fires:
+                                                        <span class="q-number-box">2</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-2" class="q-text" placeholder="">
+                                                        greater on average than two decades ago
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            Reasons wildfires cause more damage today compared to the past:
+                                            <ul>
+                                                <li>
+                                                    <div class="q-list" data-q="3">
+                                                        rainfall:
+                                                        <span class="q-number-box">3</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-3" class="q-text" placeholder="">
+                                                        average
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="q-list" data-q="4">
+                                                        more brush to act as
+                                                        <span class="q-number-box">4</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-4" class="q-text" placeholder="">
+                                                    </div>
+                                                </li>
+                                                <li>increase in yearly temperature</li>
+                                                <li>
+                                                    <div class="q-list" data-q="5">
+                                                        extended fire 
+                                                        <span class="q-number-box">5</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-5" class="q-text" placeholder="">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="q-list" data-q="6">
+                                                        more building of
+                                                        <span class="q-number-box">6</span>
+                                                        <input type="text" name="s4gzzYRpwLnhLRFf-6" class="q-text" placeholder="">
+                                                        in vulnerable places
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">1</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>A</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">2</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>B</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-2" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">3</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>C</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">4</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>D</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-4" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">5</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>E</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-5" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">6</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>G</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-6" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="7">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">7</span>
-                                        <span style="flex: 1;">
-                                            Paragraph <b>H</b>
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-7" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="i">i</option>
-                                                    <option value="ii">ii</option>
-                                                    <option value="iii">iii</option>
-                                                    <option value="iv">iv</option>
-                                                    <option value="v">v</option>
-                                                    <option value="vi">vi</option>
-                                                    <option value="vii">vii</option>
-                                                    <option value="viii">viii</option>
-                                                    <option value="ix">ix</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
                                 <div style="text-align: center;">
-                                    <button type="button" class="btn btn-primary" id="submit-mh">
+                                    <button type="button" class="btn btn-primary" id="submit-nc">
                                         Submit
                                     </button>
                                     <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
-
                             </form>
                         </aside>
                     </div>
@@ -1763,14 +1658,12 @@
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <h3 class="passage-title">C</h3>
-                                <p>The missing factors, he proposes, are to be found in almost even kitchen cupboard. Tea and beer, two of the nation’s favourite drinks, fuelled the revolution. The antiseptic properties of tannin, the active ingredient in tea, and of hops in beer – plus the fact that both are made with boiled water – allowed urban communities to flourish at close quarters without succumbing to water-borne diseases such as dysentery. The theory sounds eccentric but once he starts to explain the detective work that went into his deduction, the scepticism gives way to wary admiration. Macfarlanes case has been strengthened by support from notable quarters – Roy Porter, the distinguished medical historian, recently wrote a favourable appraisal of his research.</p>
-                                <h3 class="passage-title">D</h3>
-                                <p>Macfarlane had wondered for a long time how the Industrial Revolution came about. Historians had alighted on one interesting factor around the mid-18th century that required explanation. Between about 1650 and 1740, the population in Britain was static. But then there was a burst in population growth. Macfarlane says: ‘The infant mortality rate halved in the space of 20 years, and this happened in both rural areas and cities, and across all classes. People suggested four possible causes. Was there a sudden change in the viruses and bacteria around? Unlikely. Was there a revolution in medical science? But this was a century before Lister’s revolution*. Was there a change in environmental conditions? There were improvements in agriculture that wiped out malaria, but these were small gains. Sanitation did not become widespread until the 19th century. The only option left is food. But the height and weight statistics show a decline. So the food must have got worse. Efforts to explain this sudden reduction in child deaths appeared to draw a blank.’</p>
-                                <h3 class="passage-title">E</h3>
-                                <p>This population burst seemed to happen at just the right time to provide labour for the Industrial Revolution. ‘When you start moving towards an industrial revolution, it is economically efficient to have people living close together,’ says Macfarlane. ‘But then you get disease, particularly from human waste.’ Some digging around in historical records revealed that there was a change in the incidence of water-borne disease at that time, especially dysentery. Macfarlane deduced that whatever the British were drinking must have been important in regulating disease. He says, ‘We drank beer. For a long time, the English were protected by the strong antibacterial agent in hops, which were added to help preserve the beer. But in the late 17th century a tax was introduced on malt, the basic ingredient of beer. The poor turned to water and gin and in the 1720s the mortality rate began to rise again. Then it suddenly dropped again. What caused this?’</p>
-                                <h3 class="passage-title">F</h3>
-                                <p>Macfarlane looked to Japan, which was also developing large cities about the same time, and also had no sanitation. Water-borne diseases had a much looser grip on the Japanese population than those in Britain. Could it be the prevalence of tea in their culture? Macfarlane then noted that the history of tea in Britain provided an extraordinary coincidence of dates. Tea was relatively expensive until Britain started a direct clipper trade with China in the early 18th century. By the 1740s, about the time that infant mortality was dipping, the drink was common. Macfarlane guessed that the fact that water had to be boiled, together with the stomach-purifying properties of tea meant that the breast milk provided by mothers was healthier than it had ever been. No other European nation sipped tea like the British, which, by Macfarlanes logic, pushed these other countries out of contention for the revolution.</p>
+                                <p>In California, where population growth has averaged more than 600,000 a year for at least a decade, more residential housing is being built. ‘What once was open space is now residential homes providing fuel to make fires burn with greater intensity,’ says Terry McHale of the California Department of Forestry firefighters’ union. ‘With so much dryness, so many communities to catch fire, so many fronts to fight, it becomes an almost incredible job.’</p>
+                                <p>That said, many experts give California high marks for making progress on preparedness in recent years, after some of the largest fires in state history scorched thousands of acres, burned thousands of homes, and killed numerous people. Stung in the past by criticism of bungling that allowed fires to spread when they might have been contained, personnel are meeting the peculiar challenges of neighborhood – and canyon- hopping fires better than previously, observers say.</p>
+                                <p>State promises to provide more up-to-date engines, planes, and helicopters to fight fires have been fulfilled. Firefighters’ unions that in the past complained of dilapidated equipment, old fire engines, and insufficient blueprints for fire safety are now praising the state’s commitment, noting that funding for firefighting has increased, despite huge cuts in many other programs. ‘We are pleased that the current state administration has been very proactive in its support of us, and [has] come through with budgetary support of the infrastructure needs we have long sought,’ says Mr. McHale of the firefighters’ union.</p>
+                                <p>Besides providing money to upgrade the fire engines that must traverse the mammoth state and wind along serpentine canyon roads, the state has invested in better command-and-control facilities as well as in the strategies to run them. ‘In the fire sieges of earlier years, we found that other jurisdictions and states were willing to offer mutual-aid help, but we were not able to communicate adequately with them,’ says Kim Zagaris, chief of the state’s Office of Emergency Services Fire and Rescue Branch.</p>
+                                <p>After a commission examined and revamped communications procedures, the statewide response ‘has become far more professional and responsive,’ he says. There is a sense among both government officials and residents that the speed, dedication, and coordination of firefighters from several states and jurisdictions are resulting in greater efficiency than in past ‘siege fire’ situations.</p>
+                                <p>In recent years, the Southern California region has improved building codes, evacuation procedures, and procurement of new technology. ‘I am extraordinarily impressed by the improvements we have witnessed,’ says Randy Jacobs, a Southern California- based lawyer who has had to evacuate both his home and business to escape wildfires. ‘Notwithstanding all the damage that will continue to be caused by wildfires, we will no longer suffer the loss of life endured in the past because of the fire prevention and firefighting measures that have been put in place,’ he says.</p>
                             </div>
                         </article>
 
@@ -1779,7 +1672,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tfng">
                                 <fieldset class="q-item">
-                                    <p class="lead"><b>Questions 1-6</b></p>
+                                    <p class="lead"><b>Questions 1-7</b></p>
                                     <p class="lead">Do the following statements agree with the information given in the Reading Passage?</p>
                                     <p>In boxes on your answer sheet, write</p>
                                     <ul class="legend">
@@ -1791,7 +1684,7 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        China’s transport system was not suitable for industry in the 18th century.
+                                        The amount of open space in California has diminished over the last ten years.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
@@ -1815,7 +1708,7 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        Tea and beer both helped to prevent dysentery in Britain.
+                                        Many experts believe California has made little progress in readying itself to fight fires.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
@@ -1839,7 +1732,7 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Roy Porter disagrees with Professor Macfarlane’s findings.
+                                        Personnel in the past have been criticised for mishandling fire containment.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
@@ -1863,7 +1756,7 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        After 1740，there was a reduction in population in Britain.
+                                        California has replaced a range of firefighting tools.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
@@ -1887,7 +1780,7 @@
                                 <fieldset class="q-item" data-q="5">
                                     <legend class="q-text">
                                         <span class="q-number">5</span>
-                                        People in Britain used to make beer at home.
+                                        More firefighters have been hired to improve fire-fighting capacity.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
@@ -1911,7 +1804,7 @@
                                 <fieldset class="q-item" data-q="6">
                                     <legend class="q-text">
                                         <span class="q-number">6</span>
-                                        The tax on malt indirectly caused a rise in the death rate.
+                                        Citizens and government groups disapprove of the efforts of different states and agencies working together.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 6 options">
                                         <label class="q-option">
@@ -1932,6 +1825,30 @@
                                     </div>
                                 </fieldset>
 
+                                <fieldset class="q-item" data-q="7">
+                                    <legend class="q-text">
+                                        <span class="q-number">7</span>
+                                        Randy Jacobs believes that loss of life from fires will continue at the same levels, despite changes made.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-7" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-7" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-7" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
                                 <div style="text-align: center;">
                                     <button type="button" class="btn btn-primary" id="submit-tfng">
                                         Submit
@@ -1944,125 +1861,57 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-matching_information" class="x-panel" role="tabpanel"                            aria-labelledby="tab-matching_information" hidden>
-                <div class="x-panel-inner">Content: Matching Information</div>
+            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
+                <div class="x-panel-inner">Content: Summary Completion</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <h3>Gifted children and learning</h3>
-                                <h3 class="passage-title">A</h3>
-                                <p>Internationally, ‘giftedness’ is most frequently determined by a score on a general intelligence test, known as an IQ test, which is above a chosen cutoff point, usually at around the top 2-5%. Children’s educational environment contributes to the IQ score and the way intelligence is used. For example, a very close positive relationship was found when children’s IQ scores were compared with their home educational provision (Freeman, 2010). The higher the children’s IQ scores, especially over IQ 130, the better the quality of their educational backup, measured in terms of reported verbal interactions with parents, number of books and activities in their home etc. Because IQ tests are decidedly influenced by what the child has learned, they are to some extent measures of current achievement based on age-norms; that is, how well the children have learned to manipulate their knowledge and know-how within the terms of the test. The vocabulary aspect, for example, is dependent on having heard those words. But IQ tests can neither identify the processes of learning and thinking nor predict creativity.</p>
-                                <h3 class="passage-title">B</h3>
-                                <p>Excellence does not emerge without appropriate help. To reach an exceptionally high standard in any area very able children need the means to learn, which includes material to work with and focused challenging tuition -and the encouragement to follow their dream. There appears to be a qualitative difference in the way the intellectually highly able think, compared with more average-ability or older pupils, for whom external regulation by the teacher often compensates for lack of internal regulation. To be at their most effective in their self-regulation, all children can be helped to identify their own ways of learning – metacognition – which will include strategies of planning, monitoring, evaluation, and choice of what to learn. Emotional awareness is also part of metacognition, so children should be helped to be aware of their feelings around the area to be learned, feelings of curiosity or confidence, for example.</p>
-                                <h3 class="passage-title">C</h3>
-                                <p>High achievers have been found to use self-regulatory learning strategies more often and more effectively than lower achievers, and are better able to transfer these strategies to deal with unfamiliar tasks. This happens to such a high degree in some children that they appear to be demonstrating talent in particular areas. Overviewing research on the thinking process of highly able children, (Shore and Kanevsky, 1993) put the instructor’s problem succinctly: ‘If they [the gifted] merely think more quickly, then .we need only teach more quickly. If they merely make fewer errors, then we can shorten the practice’. But of course, this is not entirely the case; adjustments have to be made in methods of learning and teaching, to take account of the many ways individuals think.</p>
-                                <h3 class="passage-title">D</h3>
-                                <p>Yet in order to learn by themselves, the gifted do need some support from their teachers. Conversely, teachers who have a tendency to ‘overdirect’ can diminish their gifted pupils’ learning autonomy. Although ‘spoon-feeding’ can produce extremely high examination results, these are not always followed by equally impressive life successes. Too much dependence on the teachers risks loss of autonomy and motivation to discover. However, when teachers help pupils to reflect on their own learning and thinking activities, they increase their pupils’ self-regulation. For a young child, it may be just the simple question ‘What have you learned today?’ which helps them to recognise what they are doing. Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils, improving pupils’ learning to learn techniques should be a major outcome of the school experience, especially for the highly competent. There are quite a number of new methods which can help, such as child- initiated learning, ability-peer tutoring, etc. Such practices have been found to be particularly useful for bright children from deprived areas.</p>
-                                <h3 class="passage-title">E</h3>
-                                <p>But scientific progress is not all theoretical, knowledge is also vital to outstanding performance: individuals who know a great deal about a specific domain will achieve at a higher level than those who do not (Elshout, 1995). Research with creative scientists by Simonton (1988) brought him to the conclusion that above a certain high level, characteristics such as independence seemed to contribute more to reaching the highest levels of expertise than intellectual skills, due to the great demands of effort and time needed for learning and practice. Creativity in all forms can be seen as expertise se mixed with a high level of motivation (Weisberg, 1993).</p>
-                                <h3 class="passage-title">F</h3>
-                                <p>To sum up, learning is affected by emotions of both the individual and significant others. Positive emotions facilitate the creative aspects of earning and negative emotions inhibit it. Fear, for example, can limit the development of curiosity, which is a strong force in scientific advance, because it motivates problem-solving behaviour. In Boekaerts’ (1991) review of emotion the learning of very high IQ and highly achieving children, she found emotional forces in harness. They were not only curious, but often had a strong desire to control their environment, improve their learning efficiency and increase their own learning resources.</p>
+                                <p><b>Second nature</b></p>
+                                <p><i>Your personality isn’t necessarily set in stone. With a little experimentation, people can reshape their temperaments and inject passion, optimism, joy and courage into their lives</i></p>
+                                <h3>A</h3>
+                                <p>Psychologists have long held that a person’s character cannot undergo a transformation in any meaningful way and that the key traits of personality are determined at a very young age. However, researchers have begun looking more closely at ways we can change. Positive psychologists have identified 24 qualities we admire, such as loyalty and kindness, and are studying them to find out why they come so naturally to some people. What they’re discovering is that many of these qualities amount to habitual behaviour that determines the way we respond to the world. The good news is that all this can be learned.</p>
+                                <p>Some qualities are less challenging to develop than others, optimism being one of them. However, developing qualities requires mastering a range of skills which are diverse and sometimes surprising. For example, to bring more joy and passion into your life, you must be open to experiencing negative emotions. Cultivating such qualities will help you realise your full potential.</p>
                             </div>
                         </article>
 
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-matching_information">
+                            <form class="qa-body" id="form-summary_completion">
                                 <fieldset class="q-item">
-                                    <p class="lead"><b>Questions 1-4</b></p>
-                                    <p class="lead">The Reading Passage has six paragraphs,  <b>A-F</b>.</p>
-                                    <p>Which paragraph contains the following information?</p>
-                                    <p class="lead">Write the correct letter, <b>A-F</b>, in boxes on your answer sheet <b>NB</b> You may use any letter more than once.</p>
-                                </fieldset>
+                                    <h3>Questions 1-5</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+                                    <p><i>on your answer sheet.</i></p>
 
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">1</span>
-                                        <span style="flex: 1;">
-                                            a reference to the influence of the domestic background on the gifted child.
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">2</span>
-                                        <span style="flex: 1;">
-                                            reference to what can be lost if learners are given too much guidance. 
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-2" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">3</span>
-                                        <span style="flex: 1;">
-                                            a reference to the damaging effects of anxiety.
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">4</span>
-                                        <span style="flex: 1;">
-                                            examples of classroom techniques which favour socially-disadvantaged children.
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-4" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
+                                    <p>
+                                        Psychologists have traditionally believed that a personality 
+                                        <span class="q-number-box">1</span>
+                                        <input type="text" name="s4gzzYRpwLnhLRFf-1" class="q-text" placeholder="">
+                                        was impossible and that by a
+                                        <span class="q-number-box">2</span>
+                                        <input type="text" name="s4gzzYRpwLnhLRFf-2" class="q-text" placeholder="">
+                                        a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is
+                                        <span class="q-number-box">3</span>
+                                        <input type="text" name="s4gzzYRpwLnhLRFf-3" class="q-text" placeholder="">
+                                        However, regardless of the quality, it is necessary to learn a wide variety of different
+                                        <span class="q-number-box">4</span>
+                                        <input type="text" name="s4gzzYRpwLnhLRFf-4" class="q-text" placeholder="">
+                                        in order for a new quality to develop; for example, a person must understand and feel some
+                                        <span class="q-number-box">5</span>
+                                        <input type="text" name="s4gzzYRpwLnhLRFf-5" class="q-text" placeholder="">
+                                        in order to increase their happiness.
+                                    </p>
                                 </fieldset>
 
                                 <div style="text-align: center;">
-                                    <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
                                         Submit
                                     </button>
                                     <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
+
                             </form>
                         </aside>
                     </div>
@@ -2074,19 +1923,22 @@
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <h3>Gifted children and learning</h3>
-                                <h3>A</h3>
-                                <p>Internationally, ‘giftedness’ is most frequently determined by a score on a general intelligence test, known as an IQ test, which is above a chosen cutoff point, usually at around the top 2-5%. Children’s educational environment contributes to the IQ score and the way intelligence is used. For example, a very close positive relationship was found when children’s IQ scores were compared with their home educational provision (Freeman, 2010). The higher the children’s IQ scores, especially over IQ 130, the better the quality of their educational backup, measured in terms of reported verbal interactions with parents, number of books and activities in their home etc. Because IQ tests are decidedly influenced by what the child has learned, they are to some extent measures of current achievement based on age-norms; that is, how well the children have learned to manipulate their knowledge and know-how within the terms of the test. The vocabulary aspect, for example, is dependent on having heard those words. But IQ tests can neither identify the processes of learning and thinking nor predict creativity.</p>
                                 <h3>B</h3>
-                                <p>Excellence does not emerge without appropriate help. To reach an exceptionally high standard in any area very able children need the means to learn, which includes material to work with and focused challenging tuition -and the encouragement to follow their dream. There appears to be a qualitative difference in the way the intellectually highly able think, compared with more average-ability or older pupils, for whom external regulation by the teacher often compensates for lack of internal regulation. To be at their most effective in their self-regulation, all children can be helped to identify their own ways of learning – metacognition – which will include strategies of planning, monitoring, evaluation, and choice of what to learn. Emotional awareness is also part of metacognition, so children should be helped to be aware of their feelings around the area to be learned, feelings of curiosity or confidence, for example.</p>
+                                <p>‘The evidence is good that most personality traits can be altered,’ says Christopher Peterson, professor of psychology at the University of Michigan, who cites himself as an example. Inherently introverted, he realised early on that as an academic, his reticence would prove disastrous in the lecture hall. So he learned to be more outgoing and to entertain his classes. ‘Now my extroverted behaviour is spontaneous,’ he says.</p>
                                 <h3>C</h3>
-                                <p>High achievers have been found to use self-regulatory learning strategies more often and more effectively than lower achievers, and are better able to transfer these strategies to deal with unfamiliar tasks. This happens to such a high degree in some children that they appear to be demonstrating talent in particular areas. Overviewing research on the thinking process of highly able children, (Shore and Kanevsky, 1993) put the instructor’s problem succinctly: ‘If they [the gifted] merely think more quickly, then .we need only teach more quickly. If they merely make fewer errors, then we can shorten the practice’. But of course, this is not entirely the case; adjustments have to be made in methods of learning and teaching, to take account of the many ways individuals think.</p>
+                                <p>David Fajgenbaum had to make a similar transition. He was preparing for university, when he had an accident that put an end to his sports career. On campus, he quickly found that beyond ordinary counselling, the university had no services for students who were undergoing physical rehabilitation and suffering from depression like him. He therefore launched a support group to help others in similar situations. He took action despite his own pain – a typical response of an optimist.</p>
                                 <h3>D</h3>
-                                <p>Yet in order to learn by themselves, the gifted do need some support from their teachers. Conversely, teachers who have a tendency to ‘overdirect’ can diminish their gifted pupils’ learning autonomy. Although ‘spoon-feeding’ can produce extremely high examination results, these are not always followed by equally impressive life successes. Too much dependence on the teachers risks loss of autonomy and motivation to discover. However, when teachers help pupils to reflect on their own learning and thinking activities, they increase their pupils’ self-regulation. For a young child, it may be just the simple question ‘What have you learned today?’ which helps them to recognise what they are doing. Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils, improving pupils’ learning to learn techniques should be a major outcome of the school experience, especially for the highly competent. There are quite a number of new methods which can help, such as child- initiated learning, ability-peer tutoring, etc. Such practices have been found to be particularly useful for bright children from deprived areas.</p>
+                                <p>Suzanne Segerstrom, professor of psychology at the University of Kentucky, believes that the key to increasing optimism is through cultivating optimistic behaviour, rather than positive thinking. She recommends you train yourself to pay attention to good fortune by writing down three positive things that come about each day. This will help you convince yourself that favourable outcomes actually happen all the time, making it easier to begin taking action.</p>
                                 <h3>E</h3>
-                                <p>But scientific progress is not all theoretical, knowledge is also vital to outstanding performance: individuals who know a great deal about a specific domain will achieve at a higher level than those who do not (Elshout, 1995). Research with creative scientists by Simonton (1988) brought him to the conclusion that above a certain high level, characteristics such as independence seemed to contribute more to reaching the highest levels of expertise than intellectual skills, due to the great demands of effort and time needed for learning and practice. Creativity in all forms can be seen as expertise se mixed with a high level of motivation (Weisberg, 1993).</p>
+                                <p>You can recognise a person who is passionate about a pursuit by the way they are so strongly involved in it. Tanya Streeter’s passion is freediving – the sport of plunging deep into the water without tanks or other breathing equipment. Beginning in 1998, she set nine world records and can hold her breath for six minutes. The physical stamina required for this sport is intense but the psychological demands are even more overwhelming. Streeter learned to untangle her fears from her judgment of what her body and mind could do. ‘In my career as a competitive freediver, there was a limit to what I could do – but it wasn’t anywhere near what I thought it was/ she says.</p>
                                 <h3>F</h3>
-                                <p>To sum up, learning is affected by emotions of both the individual and significant others. Positive emotions facilitate the creative aspects of earning and negative emotions inhibit it. Fear, for example, can limit the development of curiosity, which is a strong force in scientific advance, because it motivates problem-solving behaviour. In Boekaerts’ (1991) review of emotion the learning of very high IQ and highly achieving children, she found emotional forces in harness. They were not only curious, but often had a strong desire to control their environment, improve their learning efficiency and increase their own learning resources.</p>
+                                <p>Finding a pursuit that excites you can improve anyone’s life. The secret about consuming passions, though, according to psychologist Paul Silvia of the University of North Carolina, is that ‘they require discipline, hard work and ability, which is why they are so rewarding.’ Psychologist Todd Kashdan has this advice for those people taking up a new passion: ‘As a newcomer, you also have to tolerate and laugh at your own ignorance. You must be willing to accept the negative feelings that come your way,’ he says.</p>
+                                <h3>G</h3>
+                                <p>In 2004, physician-scientist Mauro Zappaterra began his PhD research at Harvard Medical School. Unfortunately, he was miserable as his research wasn’t compatible with his curiosity about healing. He finally took a break and during eight months in Santa Fe, Zappaterra learned about alternative healing techniques not taught at Harvard. When he got back, he switched labs to study how cerebrospinal fluid nourishes the developing nervous system. He also vowed to look for the joy in everything, including failure, as this could help him learn about his research and himself.</p>
+                                <p>One thing that can hold joy back is a person’s concentration on avoiding failure rather than their looking forward to doing something well. ‘Focusing on being safe might get in the way of your reaching your goals,’ explains Kashdan. For example, are you hoping to get through a business lunch without embarrassing yourself, or are you thinking about how fascinating the conversation might be?</p>
+                                <h3>H</h3>
+                                <p>Usually, we think of courage in physical terms but ordinary life demands something else. For marketing executive Kenneth Pedeleose, it meant speaking out against something he thought was ethically wrong. The new manager was intimidating staff so Pedeleose carefully recorded each instance of bullying and eventually took the evidence to a senior director, knowing his own job security would be threatened. Eventually the manager was the one to go. According to Cynthia Pury, a psychologist at Clemson University, Pedeleose’s story proves the point that courage is not motivated by fearlessness, but by moral obligation. Pury also believes that people can acquire courage. Many of her students said that faced with a risky situation, they first tried to calm themselves down, then looked for a way to mitigate the danger, just as Pedeleose did by documenting his allegations.</p>
+                                <p>Over the long term, picking up a new character trait may help you move toward being the person you want to be. And in the short term, the effort itself could be surprisingly rewarding, a kind of internal adventure.</p>
                             </div>
                         </article>
 
@@ -2095,25 +1947,25 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-matching_features">
                                 <fieldset class="q-item">
-                                    <h3>Questions 1-5</h3>
+                                    <h3>Questions 1-4</h3>
                                     <p class="lead">Look at the following statements and the list of people below.</p>
-                                    <p>Match each statement with the correct person or people, <b>A-E</b>.</p>
-                                    <p>Write the correct letter, <b>A-E</b>, in boxes on your answer sheet.</p>
-                                    <b>List of People</b>
-                                    <ul class="legend">
-                                        <li><strong>A</strong> Freeman</li>
-                                        <li><strong>B</strong> Shore and Kanevsky</li>
-                                        <li><strong>C</strong> Elshout</li>
-                                        <li><strong>D</strong> Simonton</li>
-                                        <li><strong>E</strong> Boekaerts</li>
-                                    </ul>
+                                    <p>Match each statement with the correct person or people, <b>A-G</b>.</p>
+                                    <p><i>Write the correct letter, <b>A-G</b>, in boxes on your answer sheet.</i></p>
+                                    <b>List of People</b> <br>
+                                    <strong>A</strong>&nbsp;&nbsp; Christopher Peterson <br>
+                                    <strong>B</strong>&nbsp;&nbsp; David Fajgenbaum <br>
+                                    <strong>C</strong>&nbsp;&nbsp; Suzanne Segerstrom <br>
+                                    <strong>D</strong>&nbsp;&nbsp; Tanya Streeter <br>
+                                    <strong>E</strong>&nbsp;&nbsp; Todd Kashdan <br>
+                                    <strong>F</strong>&nbsp;&nbsp; Kenneth Pedeleose <br>
+                                    <strong>G</strong>&nbsp;&nbsp; Cynthia Pury <br>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">1</span>
                                         <span style="flex: 1;">
-                                            Less time can be spent on exercises with gifted pupils who produce accurate work.
+                                            People must accept that they do not know much when first trying something new.
                                             <span class="q-question">
                                                 <select name="QmN0FYAE2DCXRPdC-1" class="q-dropdown">
                                                     <option value=""></option>
@@ -2122,6 +1974,8 @@
                                                     <option value="C">C</option>
                                                     <option value="D">D</option>
                                                     <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -2132,7 +1986,7 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">2</span>
                                         <span style="flex: 1;">
-                                            Self-reliance is a valuable tool that helps gifted students reach their goals.
+                                            It is important for people to actively notice when good things happen.
                                             <span class="q-question">
                                                 <select name="QmN0FYAE2DCXRPdC-2" class="q-dropdown">
                                                     <option value=""></option>
@@ -2141,6 +1995,8 @@
                                                     <option value="C">C</option>
                                                     <option value="D">D</option>
                                                     <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -2151,7 +2007,7 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">3</span>
                                         <span style="flex: 1;">
-                                            Gifted children know how to channel their feelings to assist their learning.
+                                            Courage can be learned once its origins in a sense of responsibility are understood.
                                             <span class="q-question">
                                                 <select name="QmN0FYAE2DCXRPdC-3" class="q-dropdown">
                                                     <option value=""></option>
@@ -2160,6 +2016,8 @@
                                                     <option value="C">C</option>
                                                     <option value="D">D</option>
                                                     <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -2170,7 +2028,7 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">4</span>
                                         <span style="flex: 1;">
-                                            The very gifted child benefits from appropriate support from close relatives. 
+                                            It is possible to overcome shyness when faced with the need to speak in public.
                                             <span class="q-question">
                                                 <select name="QmN0FYAE2DCXRPdC-4" class="q-dropdown">
                                                     <option value=""></option>
@@ -2179,25 +2037,8 @@
                                                     <option value="C">C</option>
                                                     <option value="D">D</option>
                                                     <option value="E">E</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">5</span>
-                                        <span style="flex: 1;">
-                                            Really successful students have learnt a considerable amount about their subject.
-                                            <span class="q-question">
-                                                <select name="QmN0FYAE2DCXRPdC-5" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -2215,277 +2056,134 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-sentence_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-sentence_completion" hidden>
-                <div class="x-panel-inner">Content: Sentence Completion</div>
+            <div id="panel-matching_information" class="x-panel" role="tabpanel"                            aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching Information</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <h3>Gifted children and learning</h3>
-                                <h3>A</h3>
-                                <p>Internationally, ‘giftedness’ is most frequently determined by a score on a general intelligence test, known as an IQ test, which is above a chosen cutoff point, usually at around the top 2-5%. Children’s educational environment contributes to the IQ score and the way intelligence is used. For example, a very close positive relationship was found when children’s IQ scores were compared with their home educational provision (Freeman, 2010). The higher the children’s IQ scores, especially over IQ 130, the better the quality of their educational backup, measured in terms of reported verbal interactions with parents, number of books and activities in their home etc. Because IQ tests are decidedly influenced by what the child has learned, they are to some extent measures of current achievement based on age-norms; that is, how well the children have learned to manipulate their knowledge and know-how within the terms of the test. The vocabulary aspect, for example, is dependent on having heard those words. But IQ tests can neither identify the processes of learning and thinking nor predict creativity.</p>
-                                <h3>B</h3>
-                                <p>Excellence does not emerge without appropriate help. To reach an exceptionally high standard in any area very able children need the means to learn, which includes material to work with and focused challenging tuition -and the encouragement to follow their dream. There appears to be a qualitative difference in the way the intellectually highly able think, compared with more average-ability or older pupils, for whom external regulation by the teacher often compensates for lack of internal regulation. To be at their most effective in their self-regulation, all children can be helped to identify their own ways of learning – metacognition – which will include strategies of planning, monitoring, evaluation, and choice of what to learn. Emotional awareness is also part of metacognition, so children should be helped to be aware of their feelings around the area to be learned, feelings of curiosity or confidence, for example.</p>
-                                <h3>C</h3>
-                                <p>High achievers have been found to use self-regulatory learning strategies more often and more effectively than lower achievers, and are better able to transfer these strategies to deal with unfamiliar tasks. This happens to such a high degree in some children that they appear to be demonstrating talent in particular areas. Overviewing research on the thinking process of highly able children, (Shore and Kanevsky, 1993) put the instructor’s problem succinctly: ‘If they [the gifted] merely think more quickly, then .we need only teach more quickly. If they merely make fewer errors, then we can shorten the practice’. But of course, this is not entirely the case; adjustments have to be made in methods of learning and teaching, to take account of the many ways individuals think.</p>
-                                <h3>D</h3>
-                                <p>Yet in order to learn by themselves, the gifted do need some support from their teachers. Conversely, teachers who have a tendency to ‘overdirect’ can diminish their gifted pupils’ learning autonomy. Although ‘spoon-feeding’ can produce extremely high examination results, these are not always followed by equally impressive life successes. Too much dependence on the teachers risks loss of autonomy and motivation to discover. However, when teachers help pupils to reflect on their own learning and thinking activities, they increase their pupils’ self-regulation. For a young child, it may be just the simple question ‘What have you learned today?’ which helps them to recognise what they are doing. Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils, improving pupils’ learning to learn techniques should be a major outcome of the school experience, especially for the highly competent. There are quite a number of new methods which can help, such as child- initiated learning, ability-peer tutoring, etc. Such practices have been found to be particularly useful for bright children from deprived areas.</p>
+                                <h3 class="passage-title">C</h3>
+                                <p>David Fajgenbaum had to make a similar transition. He was preparing for university, when he had an accident that put an end to his sports career. On campus, he quickly found that beyond ordinary counselling, the university had no services for students who were undergoing physical rehabilitation and suffering from depression like him. He therefore launched a support group to help others in similar situations. He took action despite his own pain – a typical response of an optimist.</p>
+                                <h3 class="passage-title">D</h3>
+                                <p>Suzanne Segerstrom, professor of psychology at the University of Kentucky, believes that the key to increasing optimism is through cultivating optimistic behaviour, rather than positive thinking. She recommends you train yourself to pay attention to good fortune by writing down three positive things that come about each day. This will help you convince yourself that favourable outcomes actually happen all the time, making it easier to begin taking action.</p>
+                                <h3 class="passage-title">E</h3>
+                                <p>You can recognise a person who is passionate about a pursuit by the way they are so strongly involved in it. Tanya Streeter’s passion is freediving – the sport of plunging deep into the water without tanks or other breathing equipment. Beginning in 1998, she set nine world records and can hold her breath for six minutes. The physical stamina required for this sport is intense but the psychological demands are even more overwhelming. Streeter learned to untangle her fears from her judgment of what her body and mind could do. ‘In my career as a competitive freediver, there was a limit to what I could do – but it wasn’t anywhere near what I thought it was/ she says.</p>
+                                <h3 class="passage-title">F</h3>
+                                <p>Finding a pursuit that excites you can improve anyone’s life. The secret about consuming passions, though, according to psychologist Paul Silvia of the University of North Carolina, is that ‘they require discipline, hard work and ability, which is why they are so rewarding.’ Psychologist Todd Kashdan has this advice for those people taking up a new passion: ‘As a newcomer, you also have to tolerate and laugh at your own ignorance. You must be willing to accept the negative feelings that come your way,’ he says.</p>
+                                <h3 class="passage-title">G</h3>
+                                <p>In 2004, physician-scientist Mauro Zappaterra began his PhD research at Harvard Medical School. Unfortunately, he was miserable as his research wasn’t compatible with his curiosity about healing. He finally took a break and during eight months in Santa Fe, Zappaterra learned about alternative healing techniques not taught at Harvard. When he got back, he switched labs to study how cerebrospinal fluid nourishes the developing nervous system. He also vowed to look for the joy in everything, including failure, as this could help him learn about his research and himself.</p>
+                                <p>One thing that can hold joy back is a person’s concentration on avoiding failure rather than their looking forward to doing something well. ‘Focusing on being safe might get in the way of your reaching your goals,’ explains Kashdan. For example, are you hoping to get through a business lunch without embarrassing yourself, or are you thinking about how fascinating the conversation might be?</p>
+                                <h3 class="passage-title">H</h3>
+                                <p>Usually, we think of courage in physical terms but ordinary life demands something else. For marketing executive Kenneth Pedeleose, it meant speaking out against something he thought was ethically wrong. The new manager was intimidating staff so Pedeleose carefully recorded each instance of bullying and eventually took the evidence to a senior director, knowing his own job security would be threatened. Eventually the manager was the one to go. According to Cynthia Pury, a psychologist at Clemson University, Pedeleose’s story proves the point that courage is not motivated by fearlessness, but by moral obligation. Pury also believes that people can acquire courage. Many of her students said that faced with a risky situation, they first tried to calm themselves down, then looked for a way to mitigate the danger, just as Pedeleose did by documenting his allegations.</p>
+                                <p>Over the long term, picking up a new character trait may help you move toward being the person you want to be. And in the short term, the effort itself could be surprisingly rewarding, a kind of internal adventure.</p>
                             </div>
                         </article>
 
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-sentence_completion">
+                            <form class="qa-body" id="form-matching_information">
                                 <fieldset class="q-item">
-                                    <h3>Questions 1-4</h3>
-                                    <p class="lead">Complete the sentences below.</p>
-                                    <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
-                                    <p><i>Write your answers in boxes on your answer sheet</i></p>
+                                    <p class="lead"><b>Questions 1-4</b></p>
+                                    <p class="lead">The Reading Passage has eight sections,  <b>A-H</b>.</p>
+                                    <p>Which paragraph contains the following information?</p>
+                                    <p class="lead">Write the correct letter, <b>A-H</b>, in boxes on your answer sheet</p>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="1">
+                                <fieldset class="q-item" data-q="1">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">1</span>
                                         <span style="flex: 1;">
-                                            One study found a strong connection between children’s IQ and the availability of books and
+                                            a mention of how rational thinking enabled someone to achieve physical goals
                                             <span class="q-question">
-                                                <input type="text" name="QmN0FYAE2DCXRPdC-1" class="q-text"
-                                                    placeholder=""> at home.
-                                            </span>
+                                                <select name="QmN0FYAE2DCXRPdC-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="2">
+                                <fieldset class="q-item" data-q="2">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">2</span>
                                         <span style="flex: 1;">
-                                            Children of average ability seem to need more direction from teachers because they do not have
+                                            an account of how someone overcame a sad experience
                                             <span class="q-question">
-                                                <input type="text" name="QmN0FYAE2DCXRPdC-2" class="q-text"
-                                                    placeholder="">
+                                                <select name="QmN0FYAE2DCXRPdC-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="3">
+                                <fieldset class="q-item" data-q="3">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">3</span>
                                         <span style="flex: 1;">
-                                            Meta-cognition involves children understanding their own learning strategies, as well as developing
+                                            a description of how someone decided to rethink their academic career path
                                             <span class="q-question">
-                                                <input type="text" name="QmN0FYAE2DCXRPdC-3" class="q-text"
-                                                    placeholder="">
+                                                <select name="QmN0FYAE2DCXRPdC-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="4">
+                                <fieldset class="q-item" data-q="4">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">4</span>
                                         <span style="flex: 1;">
-                                            Teachers who rely on what is known as
+                                            an example of how someone risked his career out of a sense of duty
                                             <span class="q-question">
-                                                <input type="text" name="QmN0FYAE2DCXRPdC-4" class="q-text"
-                                                    placeholder=""> often produce sets of impressive grades in class tests.
+                                                <select name="QmN0FYAE2DCXRPdC-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
                                 <div style="text-align: center;">
-                                    <button type="button" class="btn btn-primary" id="submit-sentence_completion">
+                                    <button type="button" class="btn btn-primary" id="submit-matching_information">
                                         Submit
                                     </button>
                                     <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
                                 </div>
-
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
-                <div class="x-panel-inner">Content: Summary Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>However, if Mona Lisa was a famous novel, few people would bother to go to a museum to read the writer’s actual manuscript rather than a printed reproduction. This might be explained by the fact that the novel has evolved precisely because of technological developments that made it possible to print out huge numbers of texts, whereas oil paintings have always been produced as unique objects. In addition, it could be argued that the practice of interpreting or ‘reading’ each medium follows different conventions. With novels, the reader attends mainly to the meaning of words rather than the way they are printed on the page, whereas the ‘reader’ of a painting must attend just as closely to the material form of marks and shapes in the picture as to any ideas they may signify.</p>
-                                <p>Yet it has always been possible to make very accurate facsimiles of pretty well any fine art work. The seven surviving versions of Mona Lisa bear witness to the fact that in the 16th century, artists seemed perfectly content to assign the reproduction of their creations to their workshop apprentices as regular ‘bread and butter’ work. And today the task of reproducing pictures is incomparably more simple and reliable, with reprographic techniques that allow the production of high-quality prints made exactly to the original scale, with faithful colour values, and even with duplication of the surface relief of the painting.</p>
-                                <p>But despite an implicit recognition that the spread of good reproductions can be culturally valuable, museums continue to promote the special status of original work.</p>
-                                <p>Unfortunately, this seems to place severe limitations on the kind of experience offered to visitors.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-summary_completion">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-5</h3>
-                                    <p class="lead">Complete the summary using the list of words, <b>A-L</b>, below.</p>
-                                    <p>Write the correct letter, <b>A-L</b>, in boxes</p>
-                                    <p><i>on your answer sheet.</i></p>
-                                    <table cellpadding="10">
-                                        <tr>
-                                            <td><b>A</b> institution</td>
-                                            <td><b>B</b> mass production</td>
-                                            <td><b>C</b> mechanical processes</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>D</b> public</td>
-                                            <td><b>E</b> paints</td>
-                                            <td><b>F</b> artist</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>G</b> size</td>
-                                            <td><b>H</b> underlying ideas</td>
-                                            <td><b>I</b> basic technology</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>J</b> readers</td>
-                                            <td><b>K</b> picture frames</td>
-                                            <td><b>L</b> assistants</td>
-                                        </tr>
-                                    </table>
-
-                                    <h3>The value attached to original works of art</h3>
-
-                                    <p>
-                                        <div>
-                                            People go to art museums because they accept the value of seeing an original work of art. But they do not go to museums to read original manuscripts of novels, perhaps because the availability of novels has depended on
-                                            <span class="q-number-box">1</span>
-                                            <span style="flex: 1;">
-                                                <span class="q-question">
-                                                    <select name="QmN0FYAE2DCXRPdC-1" data-q="1" class="q-dropdown">
-                                                        <option value=""></option>
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                    </select>
-                                                </span>
-                                            </span>
-                                            for so long, and also because with novels, the 
-                                            <span class="q-number-box">2</span>
-                                            <span style="flex: 1;">
-                                                <span class="q-question">
-                                                    <select name="QmN0FYAE2DCXRPdC-2" data-q="2" class="q-dropdown">
-                                                        <option value=""></option>
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                    </select>
-                                                </span>
-                                            </span>
-                                            are the most important thing.
-                                        </div>
-                                    </p>
-
-                                    <p>
-                                        <div>
-                                            However, in historical times artists such as Leonardo were happy to instruct
-                                            <span class="q-number-box">3</span>
-                                            <span style="flex: 1;">
-                                                <span class="q-question">
-                                                    <select name="QmN0FYAE2DCXRPdC-3" data-q="3" class="q-dropdown">
-                                                        <option value=""></option>
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                    </select>
-                                                </span>
-                                            </span>
-                                            to produce copies of their work and these days new methods of reproduction allow excellent replication of surface relief features as well as colour and
-                                            <span class="q-number-box">4</span>
-                                            <span style="flex: 1;">
-                                                <span class="q-question">
-                                                    <select name="QmN0FYAE2DCXRPdC-4" data-q="4" class="q-dropdown">
-                                                        <option value=""></option>
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                    </select>
-                                                </span>
-                                            </span>
-                                            are the most important thing.
-                                        </div>
-                                    </p>
-
-                                    <p>
-                                        <div>
-                                            It is regrettable that museums still promote the superiority of original works of art, since this may not be in the interests of the 
-                                            <span class="q-number-box">5</span>
-                                            <span style="flex: 1;">
-                                                <span class="q-question">
-                                                    <select name="QmN0FYAE2DCXRPdC-5" data-q="5" class="q-dropdown">
-                                                        <option value=""></option>
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                    </select>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </p>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
-                                        Submit
-                                    </button>
-                                    <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
-                                </div>
-
                             </form>
                         </aside>
                     </div>
@@ -2497,10 +2195,13 @@
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>One limitation is related to the way the museum presents its exhibits. As repositories of unique historical objects, art museums are often called ‘treasure houses’. We are reminded of this even before we view a collection by the presence of security guards, attendants, ropes and display cases to keep us away from the exhibits. In many cases, the architectural style of the building further reinforces that notion. In addition, a major collection like that of London’s National Gallery is housed in numerous rooms, each with dozens of works, any one of which is likely to be worth more than all the average visitor possesses. In a society that judges the personal status of the individual so much by their material worth, it is therefore difficult not to be impressed by one’s own relative ‘worthlessness’ in such an environment.</p>
-                                <p>Furthermore, consideration of the ‘value’ of the original work in its treasure house setting impresses upon the viewer that, since these works were originally produced, they have been assigned a huge monetary value by some person or institution more powerful than themselves. Evidently, nothing the viewer thinks about the work is going to alter that value, and so today’s viewer is deterred from trying to extend that spontaneous, immediate, self-reliant kind of reading which would originally have met the work.</p>
-                                <p>The visitor may then be struck by the strangeness of seeing such diverse paintings, drawings and sculptures brought together in an environment for which they were not originally created. This ‘displacement effect’ is further heightened by the sheer volume of exhibits. In the case of a major collection, there are probably more works on display than we could realistically view in weeks or even months.</p>
-                                <p>This is particularly distressing because time seems to be a vital factor in the appreciation of all art forms. A fundamental difference between paintings and other art forms is that there is no prescribed time over which a painting is viewed. By contrast, the audience encourage an opera or a play over a specific time, which is the duration of the performance. Similarly novels and poems are read in a prescribed temporal sequence, whereas a picture has no clear place at which to start viewing, or at which to finish. Thus art works themselves encourage us to view them superficially, without appreciating the richness of detail and labour that is involved.</p>
+                                <p>While Lombroso was measuring criminals, a Belgian palaeontologist called Louis Dollo was studying fossil records and coming to the opposite conclusion. In 1890 he proposed that evolution was irreversible: that ‘an organism is unable to return, even partially, to a previous stage already realised in the ranks of its ancestors. Early 20th-century biologists came to a similar conclusion, though they qualified it in terms of probability, stating that there is no reason why evolution cannot run backwards -it is just very unlikely. And so the idea of irreversibility in evolution stuck and came to be known as ‘Dollo’s law.</p>
+                                <p>If Dollo’s law is right, atavisms should occur only very rarely, if at all. Yet almost since the idea took root, exceptions have been cropping up. In 1919, for example, a humpback whale with a pair of leglike appendages over a metre long, complete with a full set of limb bones, was caught off Vancouver Island in Canada. Explorer Roy Chapman Andrews argued at the time that the whale must be a throwback to a land-living ancestor. ‘I can see no other explanation,’ he wrote in 1921.</p>
+                                <p>Since then, so many other examples have been discovered that it no longer makes sense to say that evolution is as good as irreversible. And this poses a puzzle: how can characteristics that disappeared millions of years ago suddenly reappear</p>
+                                <p>In 1994, Rudolf Raff and colleagues at Indiana University in the USA decided to use genetics to put a number on the probability of evolution going into reverse. They reasoned that while some evolutionary changes involve the loss of genes and are therefore irreversible, others may be the result of genes being switched off. If these silent genes are somehow switched back on, they argued, long-lost traits could reappear.</p>
+                                <p>Raff’s team went on to calculate the likelihood of it happening. Silent genes accumulate random mutations, they reasoned, eventually rendering them useless. So how long can a gene survive in a species if it is no longer used? The team calculated that there is a good chance of silent genes surviving for up to 6 million years in at least a few individuals in a population, and that some might survive as long as 10 million years. In other words, throwbacks are possible, but only to the relatively recent evolutionary past.</p>
+                                <p>As a possible example, the team pointed to the mole salamanders of Mexico and California. Like most amphibians these begin life in a juvenile ‘tadpole’ state, then metamorphose into the adult form – except for one species, the axolotl, which famously lives its entire life as a juvenile. The simplest explanation for this is that the axolotl lineage alone lost the ability to metamorphose, while others retained it. From a detailed analysis of the salamanders’ family tree, however, it is clear that the other lineages evolved from an ancestor that itself had lost the ability to metamorphose. In other words, metamorphosis in mole salamanders is an atavism. The salamander example fits with Raff’s 10million-year time frame.</p>
+                                <p>More recently, however, examples have been reported that break the time limit, suggesting that silent genes may not be the whole story. In a paper published last year, biologist Gunter Wagner of Yale University reported some work on the evolutionary history of a group of South American lizards called Bachia. Many of these have minuscule limbs; some look more like snakes than lizards and a few have completely lost the toes on their hind limbs. Other species, however, sport up to four toes on their hind legs. The simplest explanation is that the toed lineages never lost their toes, but Wagner begs to differ. According to his analysis of the Bachia family tree, the toed species re-evolved toes from toeless ancestors and, what is more, digit loss and gain has occurred on more than one occasion over tens of millions of years.</p>
                             </div>
                         </article>
 
@@ -2509,6 +2210,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-one">
                                 <fieldset class="q-item">
+                                    <h3>Questions 1-4</h3>
                                     <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
                                         <b>D</b>.
                                     </p>
@@ -2517,28 +2219,28 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        The writer mentions London’s National Gallery to illustrate
+                                        When discussing the theory developed by Louis Dollo, the writer says that
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">the undesirable cost to a nation of maintaining a huge collection of a</span>
+                                            <span class="opt-label">it was immediately referred to as Dollo’s law.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">the conflict that may arise in society between financial and artistic values.</span>
+                                            <span class="opt-label">it supported the possibility of evolutionary throwbacks.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">the negative effect a museum can have on visitors’ opinions of themselves.</span>
+                                            <span class="opt-label">it was modified by biologists in the early twentieth century.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-1" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">the need to put individual well-being above large-scale artistic schemes.</span>
+                                            <span class="opt-label">it was based on many years of research.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2546,28 +2248,28 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        The writer says that today, viewers may be unwilling to criticise a because
+                                        The humpback whale caught off Vancouver Island is mentioned because of
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">they lack the knowledge needed to support an opinion.</span>
+                                            <span class="opt-label">the exceptional size of its body.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">they fear it may have financial implications.</span>
+                                            <span class="opt-label">the way it exemplifies Dollo’s law.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">they have no real concept of the work’s value.</span>
+                                            <span class="opt-label">the amount of local controversy it caused.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-2" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">they feel their personal reaction is of no significance.</span>
+                                            <span class="opt-label">the reason given for its unusual features.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2575,28 +2277,28 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        According to the writer, the ‘displacement effect’ on the visitor is caused by
+                                        What is said about ‘silent genes’?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">the variety of works on display and the way they are arranged.</span>
+                                            <span class="opt-label">Their numbers vary according to species.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">the impossibility of viewing particular works of art over a long period.</span>
+                                            <span class="opt-label">Raff disagreed with the use of the term.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">the similar nature of the paintings and the lack of great works.</span>
+                                            <span class="opt-label">They could lead to the re-emergence of certain characteristics.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-3" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">the inappropriate nature of the individual works selected for exhibition.</span>
+                                            <span class="opt-label">They can have an unlimited life span.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2604,28 +2306,57 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        The writer says that unlike other forms of art, a painting does not
+                                        The writer mentions the mole salamander because
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">involve direct contact with an audience.</span>
+                                            <span class="opt-label">it exemplifies what happens in the development of most amphibians.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">require a specific location for a performance.</span>
+                                            <span class="opt-label">it suggests that Raff’s theory is correct.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">need the involvement of other professionals.</span>
+                                            <span class="opt-label">it has lost and regained more than one ability.</span>
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">have a specific beginning or end.</span>
+                                            <span class="opt-label">its ancestors have become the subject of extensive research.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        Which of the following does Wagner claim?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">Members of the Bachia lizard family have lost and regained certain features several times.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">Evidence shows that the evolution of the Bachia lizard is due to the environment.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">His research into South American lizards supports Raff’s assertions.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">His findings will apply to other species of South American lizards.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2641,14 +2372,172 @@
                     </div>
                 </div>
             </div>
+            <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
+                <div class="x-panel-inner">Content: Matching Sentence Ending</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p><b>When evolution runs backwards</b></p>
+                                <p><i>Evolution isn’t supposed to run backwards – yet an increasing number of examples show that it does and that it can sometimes represent the future of a species.</i></p>
+                                <p>The description of any animal as an ‘evolutionary throwback’ is controversial. For the better part of a century, most biologists have been reluctant to use those words, mindful of a principle of evolution that says ‘evolution cannot run backwards. But as more and more examples come to light and modern genetics enters the scene, that principle is having to be rewritten. Not only are evolutionary throwbacks possible, they sometimes play an important role in the forward march of evolution.</p>
+                                <p>The technical term for an evolutionary throwback is an ‘atavism’, from the Latin atavus, meaning forefather. The word has ugly connotations thanks largely to Cesare Lombroso, a 19th-century Italian medic who argued that criminals were born not made and could be identified by certain physical features that were throwbacks to a primitive, sub-human state.</p>
+                                <p>While Lombroso was measuring criminals, a Belgian palaeontologist called Louis Dollo was studying fossil records and coming to the opposite conclusion. In 1890 he proposed that evolution was irreversible: that ‘an organism is unable to return, even partially, to a previous stage already realised in the ranks of its ancestors. Early 20th-century biologists came to a similar conclusion, though they qualified it in terms of probability, stating that there is no reason why evolution cannot run backwards -it is just very unlikely. And so the idea of irreversibility in evolution stuck and came to be known as ‘Dollo’s law.</p>
+                                <p>If Dollo’s law is right, atavisms should occur only very rarely, if at all. Yet almost since the idea took root, exceptions have been cropping up. In 1919, for example, a humpback whale with a pair of leglike appendages over a metre long, complete with a full set of limb bones, was caught off Vancouver Island in Canada. Explorer Roy Chapman Andrews argued at the time that the whale must be a throwback to a land-living ancestor. ‘I can see no other explanation,’ he wrote in 1921.</p>
+                                <p>Since then, so many other examples have been discovered that it no longer makes sense to say that evolution is as good as irreversible. And this poses a puzzle: how can characteristics that disappeared millions of years ago suddenly reappear?</p>
+                                <p>In 1994, Rudolf Raff and colleagues at Indiana University in the USA decided to use genetics to put a number on the probability of evolution going into reverse. They reasoned that while some evolutionary changes involve the loss of genes and are therefore irreversible, others may be the result of genes being switched off. If these silent genes are somehow switched back on, they argued, long-lost traits could reappear.</p>
+                                <p>Raff’s team went on to calculate the likelihood of it happening. Silent genes accumulate random mutations, they reasoned, eventually rendering them useless. So how long can a gene survive in a species if it is no longer used? The team calculated that there is a good chance of silent genes surviving for up to 6 million years in at least a few individuals in a population, and that some might survive as long as 10 million years. In other words, throwbacks are possible, but only to the relatively recent evolutionary past.</p>
+                                <p>As a possible example, the team pointed to the mole salamanders of Mexico and California. Like most amphibians these begin life in a juvenile ‘tadpole’ state, then metamorphose into the adult form – except for one species, the axolotl, which famously lives its entire life as a juvenile. The simplest explanation for this is that the axolotl lineage alone lost the ability to metamorphose, while others retained it. From a detailed analysis of the salamanders’ family tree, however, it is clear that the other lineages evolved from an ancestor that itself had lost the ability to metamorphose. In other words, metamorphosis in mole salamanders is an atavism. The salamander example fits with Raff’s 10million-year time frame.</p>
+                                <p>More recently, however, examples have been reported that break the time limit, suggesting that silent genes may not be the whole story. In a paper published last year, biologist Gunter Wagner of Yale University reported some work on the evolutionary history of a group of South American lizards called Bachia. Many of these have minuscule limbs; some look more like snakes than lizards and a few have completely lost the toes on their hind limbs. Other species, however, sport up to four toes on their hind legs. The simplest explanation is that the toed lineages never lost their toes, but Wagner begs to differ. According to his analysis of the Bachia family tree, the toed species re-evolved toes from toeless ancestors and, what is more, digit loss and gain has occurred on more than one occasion over tens of millions of years.</p>
+                                <p>So what’s going on? One possibility is that these traits are lost and then simply reappear, in much the same way that similar structures can independently arise in unrelated species, such as the dorsal fins of sharks and killer whales. Another more intriguing possibility is that the genetic information needed to make toes somehow survived for tens or perhaps hundreds of millions of years in the lizards and was reactivated. These atavistic traits provided an advantage and spread through the population, effectively reversing evolution.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-mse">
+                                <fieldset class="q-item">
+                                    <p><b>Questions 1-5</b></p>
+                                    <p class="lead">Complete each sentence with the correct ending, A-G, below.
+                                    </p>
+                                    <p><i>Write the correct letter, <b>A-G</b>, in boxes on your answer sheet</i></p>
+                                    <strong>A</strong>&nbsp;&nbsp; the question of how certain long-lost traits could reappear.
+                                    <br><strong>B</strong>&nbsp;&nbsp; the occurrence of a particular feature in different species.
+                                    <br><strong>C</strong>&nbsp;&nbsp; parallels drawn between behaviour and appearance.
+                                    <br><strong>D</strong>&nbsp;&nbsp; the continued existence of certain genetic information.
+                                    <br><strong>E</strong>&nbsp;&nbsp; the doubts felt about evolutionary throwbacks.
+                                    <br><strong>F</strong>&nbsp;&nbsp; the possibility of evolution being reversible.
+                                    <br><strong>G</strong>&nbsp;&nbsp; Dollo’s findings and the convictions held by Lombroso.
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            For a long time biologists rejected
+                                            <span class="q-question">
+                                                <select name="XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            Opposing views on evolutionary throwbacks are represented by
+                                            <span class="q-question">
+                                                <select name="XJ3XOcvqPbgdZwyl-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            Examples of evolutionary throwbacks have led to
+                                            <span class="q-question">
+                                                <select name="XJ3XOcvqPbgdZwyl-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            The shark and killer whale are mentioned to exemplify
+                                            <span class="q-question">
+                                                <select name="XJ3XOcvqPbgdZwyl-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            One explanation for the findings of Wagner’s research is
+                                            <span class="q-question">
+                                                <select name="XJ3XOcvqPbgdZwyl-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-mse" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-mse">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Yes/No/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Consequently, the dominant critical approach becomes that of the art historian, a specialised academic approach devoted to ‘discovering the meaning’ of art within the cultural context of its time. This is in perfect harmony with the museum’s function, since the approach is dedicated to seeking out and conserving ‘authentic’, original, readings of the exhibits. Again, this seems to put paid to that spontaneous, participators criticism which can be found in abundance in criticism of classic works of literature, but is absent from most art history.</p>
-                                <p>The displays of art museums serve as a warning of what critical practices can emerge when spontaneous criticism is suppressed. The museum public, like any other audience, experience art more rewardingly when given the confidence to express their views. If appropriate works of fine art could be rendered permanently accessible to the public by means of high-fidelity reproductions, as literature and music already are, the public may feel somewhat less in awe of them. Unfortunately, that may be too much to ask from those who seek to maintain and control the art establishment.</p>
+                                <p>More recently, however, examples have been reported that break the time limit, suggesting that silent genes may not be the whole story. In a paper published last year, biologist Gunter Wagner of Yale University reported some work on the evolutionary history of a group of South American lizards called Bachia. Many of these have minuscule limbs; some look more like snakes than lizards and a few have completely lost the toes on their hind limbs. Other species, however, sport up to four toes on their hind legs. The simplest explanation is that the toed lineages never lost their toes, but Wagner begs to differ. According to his analysis of the Bachia family tree, the toed species re-evolved toes from toeless ancestors and, what is more, digit loss and gain has occurred on more than one occasion over tens of millions of years.</p>
+                                <p>So what’s going on? One possibility is that these traits are lost and then simply reappear, in much the same way that similar structures can independently arise in unrelated species, such as the dorsal fins of sharks and killer whales. Another more intriguing possibility is that the genetic information needed to make toes somehow survived for tens or perhaps hundreds of millions of years in the lizards and was reactivated. These atavistic traits provided an advantage and spread through the population, effectively reversing evolution.</p>
+                                <p>But if silent genes degrade within 6 to million years, how can long-lost traits be reactivated over longer timescales? The answer may lie in the womb. Early embryos of many species develop ancestral features. Snake embryos, for example, sprout hind limb buds. Later in development these features disappear thanks to developmental programs that say ‘lose the leg’. If for any reason this does not happen, the ancestral feature may not disappear, leading to an atavism.</p>
                             </div>
                         </article>
 
@@ -2657,7 +2546,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-ynng">
                                 <fieldset class="q-item">
-                                    <h3>Questions 1-5</h3>
+                                    <h3>Questions 1-4</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -2673,7 +2562,7 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        Art history should focus on discovering the meaning of art using a range of media.
+                                        Wagner was the first person to do research on South American lizards.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
@@ -2697,7 +2586,7 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        The approach of art historians conflicts with that of art museums.
+                                        Wagner believes that Bachia lizards with toes had toeless ancestors.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
@@ -2721,7 +2610,7 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        People should be encouraged to give their opinions openly on works of art.
+                                        The temporary occurrence of long-lost traits in embryos is rare.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
@@ -2745,7 +2634,7 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        Reproductions of fine art should only be sold to the public if they are of high quality.
+                                        Evolutionary throwbacks might be caused by developmental problems in the womb.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
@@ -2760,30 +2649,6 @@
                                         </label>
                                         <label class="q-option">
                                             <input type="radio" name="QmN0FYAE2DCXRPdC-4" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        In the future, those with power are likely to encourage more people to enjoy art.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="YES" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">YES</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="NO" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">NO</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="QmN0FYAE2DCXRPdC-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -3472,7 +3337,7 @@
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
-                    'mh': 7,
+                    'nc': 6,
                     'tfng': 6,
                     'matching_information': 4,
                     'matching_features': 5,
@@ -3487,7 +3352,7 @@
             }
 
             // Init
-            updateQuestionListForPart('tfng');
+            updateQuestionListForPart('nc');
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);

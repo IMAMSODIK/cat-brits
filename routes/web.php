@@ -113,8 +113,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test-correction', [TestCorrectionController::class, 'index']);
     Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
     Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
-
-
     Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
 
 
