@@ -1,6 +1,6 @@
 {
   "reading": {
-    "tc": [
+    "two_choices": [
       "[B, C]",
       "[B, C]"
     ],
@@ -57,8 +57,8 @@
     ]
   },
   "listening": {
-    "tc": [
-      "[A, E",
+    "two_choices": [
+      "[A, E]",
       "[A, E]",
       "[B, E]",
       "[B, E]"

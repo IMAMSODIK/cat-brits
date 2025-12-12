@@ -5,7 +5,7 @@ namespace Database\Seeders\Sets;
 use Illuminate\Database\Seeder;
 use App\Models\Soal;
 
-class CambridgeIELTSBaseSeeder extends Seeder
+abstract class CambridgeIELTSBaseSeeder extends Seeder
 {
   protected function getSetId(): string
   {

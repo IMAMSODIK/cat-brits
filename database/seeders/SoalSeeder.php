@@ -37,6 +37,7 @@ class SoalSeeder extends Seeder
             CambridgeIELTS20AcademicTest4::class,
             CambridgeIELTS14AcademicTest2::class,
             CambridgeIELTS14AcademicTest3::class,
+            CambridgeIELTS16AcademicTest1::class,
         ]);
     }
 }
