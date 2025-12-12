@@ -1,3 +1,4 @@
+@props(['tab'])
 <div class="x-panel-inner">Content: Summary Completion</div>
 <div class="reading-section" aria-label="Reading and Questions">
     <div class="reading-grid resizable-grid highlighted-content">
@@ -21,7 +22,7 @@
         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
         <aside class="qa" aria-label="Questions">
-            <form class="qa-body" id="form-summary_completion2">
+            <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
                     <h3>Questions 1-6</h3>
                     <p class="lead">Complete the summary using the list of phrases,
@@ -176,10 +177,10 @@
                 </fieldset>
 
                 <div style="text-align: center;">
-                    <button type="button" class="btn btn-primary" id="submit-summary_completion2">
+                    <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">
                         Submit
                     </button>
-                    <button class="btn btn-info" type="button" id="again-summary_completion2" onclick="retryQuiz()">Try
+                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display: none">Try
                         Again</button>
                 </div>
             </form>

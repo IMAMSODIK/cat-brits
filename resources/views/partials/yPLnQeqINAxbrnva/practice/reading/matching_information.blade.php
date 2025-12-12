@@ -1,3 +1,5 @@
+@props(['tab'])
+
 <div class="x-panel-inner">Content: Matching Information</div>
 
 <div class="reading-section" aria-label="Reading and Questions">
@@ -60,7 +62,7 @@
             <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
             <aside class="qa" aria-label="Questions">
-                <form class="qa-body" id="form-matching_information">
+                <form class="qa-body" id="form-{{ $tab['id']}}">
                     <fieldset class="q-item">
                         <p class="lead"><b>Questions 1-5</b></p>
                         <p class="lead">The Reading Passage has six paragraphs, <b>A-E</b>.</p>
@@ -169,10 +171,10 @@
                     </fieldset>
 
                     <div style="text-align: center;">
-                        <button type="button" class="btn btn-primary" id="submit-matching_information">
+                        <button type="button" class="btn btn-primary" id="submit-{{ $tab['id']}}">
                             Submit
                         </button>
-                        <button class="btn btn-info" type="button" onclick="retryQuiz()">Try
+                        <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display: none">Try
                             Again</button>
                     </div>
                 </form>

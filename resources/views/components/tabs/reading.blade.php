@@ -14,7 +14,8 @@
     @foreach ($tabs as $tab)
         <div id="panel-{{ $tab['id'] }}" class="x-panel {{ $loop->first ? 'is-open' : '' }}" role="tabpanel"
             aria-labelledby="tab-{{ $tab['id'] }}" @if (!$loop->first) hidden @endif>
-            {!! $tab['content'] !!}
+            {{-- i want to send data tab inside this content --}}
+            @include($tab['content'], ['tab' => $tab])
         </div>
     @endforeach
 </div>

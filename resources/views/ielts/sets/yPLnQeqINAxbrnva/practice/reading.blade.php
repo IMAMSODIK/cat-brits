@@ -1617,61 +1617,71 @@
             $tabs = [
                 [
                     'id' => 'matching_information',
+                    'tipe' => 'matching_information',
                     'title' => 'Matching Information',
-                    'content' => view(
+                    'content' =>
                         'partials.yPLnQeqINAxbrnva.practice.reading.matching_information',
-                    )->render(),
+
                 ],
                 [
                     'id' => 'summary_completion',
+                    'tipe' => 'summary_completion',
                     'title' => 'Summary Completion',
-                    'content' => view(
+                    'content' =>
                         'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion',
-                    )->render(),
+
                 ],
                 [
                     'id' => 'two_choice',
+                    'tipe' => 'two_choice',
                     'title' => 'Two Choice',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.two_choice')->render(),
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice'
                 ],
                 [
                     'id' => 'two_choice2',
+                    'tipe' => 'two_choice',
                     'title' => 'Two Choice 2',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.two_choice2')->render(),
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice2'
                 ],
                 [
                     'id' => 'one',
+                    'tipe' => 'oc',
                     'title' => 'One Choice',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.one_choice')->render(),
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one_choice'
                 ],
                 [
                     'id' => 'matching_features',
+                    'tipe' => 'matching_features',
                     'title' => 'Matching Features',
-                    'content' => view(
+                    'content' =>
                         'partials.yPLnQeqINAxbrnva.practice.reading.matching_features',
-                    )->render(),
+
                 ],
                 [
                     'id' => 'ynng',
+                    'tipe' => 'ynng',
                     'title' => 'Yes/No/Not Given',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.ynng')->render(),
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng'
                 ],
                 [
                     'id' => 'ynng2',
-                    'title' => 'Yes/No/Not Given',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.ynng2')->render(),
+                    'tipe' => 'ynng',
+                    'title' => 'Yes/No/Not Given 2',
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng2'
                 ],
                 [
                     'id' => 'summary_completion2',
+                    'tipe' => 'summary_completion',
                     'title' => 'Summary Completion 2',
-                    'content' => view(
+                    'content' =>
                         'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion2',
-                    )->render(),
+
                 ],
                 [
                     'id' => 'one2',
+                    'tipe' => 'oc',
                     'title' => 'One Choice 2',
-                    'content' => view('partials.yPLnQeqINAxbrnva.practice.reading.one2')->render(),
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one2'
                 ],
             ];
         @endphp
@@ -1752,77 +1762,23 @@
         </div>
     </div>
 
+
     <script>
-        let scoreMap = [{
-            min: 39,
-            max: 40,
-            score: 9.0
-        },
-        {
-            min: 37,
-            max: 38,
-            score: 8.5
-        },
-        {
-            min: 35,
-            max: 36,
-            score: 8.0
-        },
-        {
-            min: 33,
-            max: 34,
-            score: 7.5
-        },
-        {
-            min: 30,
-            max: 32,
-            score: 7.0
-        },
-        {
-            min: 27,
-            max: 29,
-            score: 6.5
-        },
-        {
-            min: 23,
-            max: 26,
-            score: 6.0
-        },
-        {
-            min: 19,
-            max: 22,
-            score: 5.5
-        },
-        {
-            min: 15,
-            max: 18,
-            score: 5.0
-        },
-        {
-            min: 13,
-            max: 14,
-            score: 4.5
-        },
-        {
-            min: 10,
-            max: 12,
-            score: 4.0
-        },
-        {
-            min: 8,
-            max: 9,
-            score: 3.5
-        },
-        {
-            min: 6,
-            max: 7,
-            score: 3.0
-        },
-        {
-            min: 4,
-            max: 5,
-            score: 2.5
-        }
+        let scoreMap = [
+            { min: 39, max: 40, score: 9.0 },
+            { min: 37, max: 38, score: 8.5 },
+            { min: 35, max: 36, score: 8.0 },
+            { min: 33, max: 34, score: 7.5 },
+            { min: 30, max: 32, score: 7.0 },
+            { min: 27, max: 29, score: 6.5 },
+            { min: 23, max: 26, score: 6.0 },
+            { min: 19, max: 22, score: 5.5 },
+            { min: 15, max: 18, score: 5.0 },
+            { min: 13, max: 14, score: 4.5 },
+            { min: 10, max: 12, score: 4.0 },
+            { min: 8, max: 9, score: 3.5 },
+            { min: 6, max: 7, score: 3.0 },
+            { min: 4, max: 5, score: 2.5 }
         ];
 
         function convertScore(correctCount) {
@@ -1888,7 +1844,7 @@
             document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
 
             });
@@ -2027,7 +1983,8 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive('matching_information');
+
+            setActive(@json($tabs)[0]['id']);
         });
     </script>
 
@@ -2214,8 +2171,7 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest(
-                        '.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -2279,7 +2235,7 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'mh';
+            let currentPart = 'tfng';
             let questionCount = 0;
 
             fqToggle.addEventListener('click', () => {
@@ -2400,7 +2356,6 @@
                     updateQuestionStatus(currentPart);
                 });
 
-
                 document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
@@ -2442,14 +2397,14 @@
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
-                    'mh': 7,
-                    'tfng': 6,
-                    'matching_information': 4,
-                    'matching_features': 5,
-                    'sentence_completion': 4,
-                    'summary_completion': 5,
-                    'one': 4,
+                    'tfng': 5,
+                    'tfng2': 5,
                     'ynng': 5,
+                    'mse': 5,
+                    'one': 4,
+                    'mh': 8,
+                    'tc': 5,
+                    'sa': 3
                 };
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
@@ -2466,6 +2421,8 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
     <script>
         // Pastikan modal tersembunyi saat halaman dimuat
         $("#resultModal").removeClass("show").hide();
@@ -2518,16 +2475,8 @@
             }
         });
 
-        function submitHelper(form, setId, tipe) {
+        function submitHelper(form, setId, tipe, button, againBtn) {
             let allAnswered = true;
-
-            $(`#${form} select[data-q]`).each(function () {
-                if (!$(this).closest("fieldset").length) {
-                    const q = $(this).data("q");
-                    $(this).wrap(`<fieldset data-q="${q}" class="temp-fieldset"></fieldset>`);
-                }
-            });
-
 
             $(`#${form} fieldset[data-q]`).each(function () {
                 let isAnswered = false;
@@ -2572,6 +2521,9 @@
                 contentType: false,
                 success: function (response) {
                     if (response.status === "ok") {
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
+
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
 
@@ -2602,8 +2554,7 @@
                                             $(this).parent().addClass("correct");
                                         } else {
                                             $(this).parent().addClass("wrong");
-                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
-                                                .parent().addClass("correct");
+                                            $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
                                         }
                                     }
                                 } else {
@@ -2656,59 +2607,27 @@
             });
         }
 
-        $("#submit-two_choice").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-two_choice", "yPLnQeqINAxbrnva", "two_choice");
+        $(".try-again").on("click", function () {
+            location.reload();
         });
 
-        $("#submit-tfng").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-tfng", "yPLnQeqINAxbrnva", "tfng");
+        const tabs = @json($tabs);
+        tabs.forEach(tab => {
+            const id = tab.id;
+            const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
+
+            $(`#submit-${id}`).on("click", function (e) {
+                e.preventDefault();
+                submitHelper(
+                    `form-${id}`,            // form
+                    "yPLnQeqINAxbrnva",     // folder
+                    tipe,                   // tipe
+                    $(this),
+                    `again-${id}`           // again
+                );
+            });
         });
 
-        $("#submit-matching_information").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-matching_information", "yPLnQeqINAxbrnva", "matching_information");
-        });
-
-        $("#submit-matching_features").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-matching_features", "yPLnQeqINAxbrnva", "matching_features");
-        });
-
-        $("#submit-sentence_completion").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-sentence_completion", "yPLnQeqINAxbrnva", "sentence_completion");
-        });
-
-        $("#submit-summary_completion").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-summary_completion", "yPLnQeqINAxbrnva", "summary_completion");
-        });
-        $("#submit-summary_completion2").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-summary_completion2", "yPLnQeqINAxbrnva", "summary_completion");
-        });
-
-
-        $("#submit-oc").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-one", "yPLnQeqINAxbrnva", "oc");
-        });
-
-        $("#submit-oc2").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-one2", "yPLnQeqINAxbrnva", "oc");
-        });
-
-        $("#submit-ynng").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-ynng", "yPLnQeqINAxbrnva", "ynng");
-        });
-        $("#submit-ynng2").on("click", function (e) {
-            e.preventDefault();
-            submitHelper("form-ynng2", "yPLnQeqINAxbrnva", "ynng");
-        });
     </script>
 
 

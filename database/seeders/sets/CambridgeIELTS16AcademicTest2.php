@@ -5,27 +5,54 @@ namespace Database\Seeders\Sets;
 use Illuminate\Database\Seeder;
 use App\Models\Soal;
 
-class CambridgeIELTS10AcademicTest3 extends Seeder
+class CambridgeIELTS16AcademicTest2 extends Seeder
 {
     public function run()
     {
         // Cambridge IELTS 16 Academic Reading Test 2 - Reading
         $tfng = [
-            "true", "not given", "true", "false", "false", "true", "true", "not given",
-            "false", "not given", "not given", "true", "true"
+            "true",
+            "not given",
+            "true",
+            "false",
+            "false",
+            "true",
+            "true",
+            "not given",
+            "false",
+            "not given",
+            "not given",
+            "true",
+            "true"
         ];
         $summary_completion = [
-            "Ridgeway", "documents", "soil", "fertility", "Rhiannon",
-            "G", "B", "H", "E",
-            "D", "A", "C", "F", "G"
+            "Ridgeway",
+            "documents",
+            "soil",
+            "fertility",
+            "Rhiannon",
+            "G",
+            "B",
+            "H",
+            "E",
+            "D",
+            "A",
+            "C",
+            "F",
+            "G"
         ];
         $oc = [
-            "d", "c", "a",
-            "b", "c", "b", "d"
+            "d",
+            "c",
+            "a",
+            "b",
+            "c",
+            "b",
+            "d"
         ];
         $ynng = ["yes", "no", "not given", "yes", "not given", "no"];
-    
-        for($i = 1; $i <= count($tfng); $i++){
+
+        for ($i = 1; $i <= count($tfng); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -35,7 +62,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
             ]);
         }
 
-        for($i = 1; $i <= count($summary_completion); $i++){
+        for ($i = 1; $i <= count($summary_completion); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -45,7 +72,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
             ]);
         }
 
-        for($i = 1; $i <= count($oc); $i++){
+        for ($i = 1; $i <= count($oc); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -55,7 +82,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
             ]);
         }
 
-        for($i = 1; $i <= count($ynng); $i++){
+        for ($i = 1; $i <= count($ynng); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -68,19 +95,47 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
 
         // Cambridge IELTS 16 Academic Listening Test 2 - Listening
         $nc = [
-            "frame", "195", "payment", "Grandparents", "[colour, color]", "hand", "background", "focus", "[ten, 10 days]", "plastic",
-            "creativity", "therapy", "fitness", "balance", "brain", "motivation", "isolation", "calories", "obesity", "habit"];
+            "frame",
+            "195",
+            "payment",
+            "Grandparents",
+            "[colour, color]",
+            "hand",
+            "background",
+            "focus",
+            "[ten, 10 days]",
+            "plastic",
+            "creativity",
+            "therapy",
+            "fitness",
+            "balance",
+            "brain",
+            "motivation",
+            "isolation",
+            "calories",
+            "obesity",
+            "habit"
+        ];
         $oc = [
-            "c", "b", "a", "a", "c",
-            "b", "a", "c", "c"
+            "c",
+            "b",
+            "a",
+            "a",
+            "c",
+            "b",
+            "a",
+            "c",
+            "c"
         ];
         $matching_information = [
-            "d", "a", "b"
+            "d",
+            "a",
+            "b"
         ];
         $two_choices = ["b", "c"];
         $fc_completion = ["history", "paper", "[humans, people]", "stress", "graph", "evaluate"];
 
-        for($i = 1; $i <= count($nc); $i++){
+        for ($i = 1; $i <= count($nc); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -89,7 +144,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
                 'jawaban_benar' => $nc[$i - 1]
             ]);
         }
-        for($i = 1; $i <= count($oc); $i++){
+        for ($i = 1; $i <= count($oc); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -98,7 +153,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
                 'jawaban_benar' => $oc[$i - 1]
             ]);
         }
-        for($i = 1; $i <= count($matching_information); $i++){
+        for ($i = 1; $i <= count($matching_information); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -107,7 +162,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
                 'jawaban_benar' => $matching_information[$i - 1]
             ]);
         }
-        for($i = 1; $i <= count($two_choices); $i++){
+        for ($i = 1; $i <= count($two_choices); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -116,7 +171,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
                 'jawaban_benar' => $two_choices[$i - 1]
             ]);
         }
-        for($i = 1; $i <= count($fc_completion); $i++){
+        for ($i = 1; $i <= count($fc_completion); $i++) {
             Soal::create([
                 'set_id' => 's4gzzYRpwLnhLRFf',
                 'id_soal' => 's4gzzYRpwLnhLRFf-' . $i,
@@ -126,8 +181,8 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
             ]);
         }
 
-        
 
-        
+
+
     }
 }

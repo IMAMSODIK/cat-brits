@@ -40,85 +40,54 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
             }
         }
 
-
-
-
-        // Cambridge IELTS 10 Academic Listening Test 3 - Listening
-        $form_completion = ["4", "46 Wombat", "Thursday", "8.30", "red", "lunch", "glasses", "BALL", "aunt", "month"];
-        $two_choices = ["c", "e"];
-        $oc = [
-            "b",
-            "a",
-            "c",
-            "c",
-            "a",
-            "a",
-            "b",
-            "b",
+        $answer_listening = [
+            "id" => "yPLnQeqINAxbrnva",
+            "kategori" => "listening",
+            "questions" => [
+                "nc" => [
+                    "receptionist",
+                    "Medical",
+                    "Chastons",
+                    "appointments",
+                    "database",
+                    "experience",
+                    "confident",
+                    "temporary",
+                    "1.15",
+                    "parking",
+                    "plot",
+                    "poverty",
+                    "Europe",
+                    "poetry",
+                    "drawings",
+                    "furniture",
+                    "lamps",
+                    "harbour, harbor",
+                    "children",
+                    "relatives"
+                ],
+                "oc" => ["B", "A", "A", "C", "A", "B", "C"],
+                "matching_information" => ["F", "G", "E", "A", "C", "B", "D", "A", "C", "G", "F"],
+                "two_choices" => ["B", "D"],
+            ]
         ];
-        $matching_information = [
-            "b",
-            "c",
-            "d",
-            "d",
-            "a",
-            "e",
-            "d",
-            "a",
-            "g",
-            "c",
-        ];
 
-        $nc = ["[achievement, achievements]", "[personality, character]", "Situational", "friend", "[aspirations, ambitions]", "style", "development", "vision", "structures", "[innovation, innovations]"];
+        $setId = $answer_listening['id'];
+        $kategori = $answer_listening['kategori'];
 
-        for ($i = 1; $i <= count($form_completion); $i++) {
-            Soal::create([
-                'set_id' => 'yPLnQeqINAxbrnva',
-                'id_soal' => 'yPLnQeqINAxbrnva-' . $i,
-                'tipe_soal' => 'form_completion',
-                'kategori' => 'listening',
-                'jawaban_benar' => $form_completion[$i - 1]
-            ]);
+        foreach ($answer_listening['questions'] as $tipe_soal => $answers) {
+            foreach ($answers as $index => $jawaban) {
+
+                Soal::create([
+                    'set_id' => $setId,
+                    'id_soal' => $setId . '-' . ($index + 1), // ID unik
+                    'tipe_soal' => $tipe_soal,
+                    'kategori' => $kategori,
+                    'jawaban_benar' => $jawaban
+                ]);
+
+            }
         }
 
-        for ($i = 1; $i <= count($two_choices); $i++) {
-            Soal::create([
-                'set_id' => 'yPLnQeqINAxbrnva',
-                'id_soal' => 'yPLnQeqINAxbrnva-' . $i,
-                'tipe_soal' => 'two_choices',
-                'kategori' => 'listening',
-                'jawaban_benar' => $two_choices[$i - 1]
-            ]);
-        }
-
-        for ($i = 1; $i <= count($oc); $i++) {
-            Soal::create([
-                'set_id' => 'yPLnQeqINAxbrnva',
-                'id_soal' => 'yPLnQeqINAxbrnva-' . $i,
-                'tipe_soal' => 'oc',
-                'kategori' => 'listening',
-                'jawaban_benar' => $oc[$i - 1]
-            ]);
-        }
-
-        for ($i = 1; $i <= count($matching_information); $i++) {
-            Soal::create([
-                'set_id' => 'yPLnQeqINAxbrnva',
-                'id_soal' => 'yPLnQeqINAxbrnva-' . $i,
-                'tipe_soal' => 'matching_information',
-                'kategori' => 'listening',
-                'jawaban_benar' => $matching_information[$i - 1]
-            ]);
-        }
-
-        for ($i = 1; $i <= count($nc); $i++) {
-            Soal::create([
-                'set_id' => 'yPLnQeqINAxbrnva',
-                'id_soal' => 'yPLnQeqINAxbrnva-' . $i,
-                'tipe_soal' => 'nc',
-                'kategori' => 'listening',
-                'jawaban_benar' => $nc[$i - 1]
-            ]);
-        }
     }
 }
