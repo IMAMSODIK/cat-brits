@@ -25,7 +25,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-two_choice2">
+                            <form class="qa-body" id="form-two_choice">
                                 <fieldset class="q-item">
                                     <p class="lead"><b>Questions 1-2</b></p>
                                     <p class="lead"><i>Choose Two Letters<b>A-E</b>.</i></p>
@@ -38,30 +38,30 @@
                                 <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                     <div class="q-options" role="group" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="checkbox" name="yPLnQeqINAxbrnva-1[]" value="A" />
+                                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">to provide habitats for a wide range of
                                                 species</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="yPLnQeqINAxbrnva-1[]" value="B" />
+                                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">to grow plants successfully even in the wettest
                                                 climates</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="yPLnQeqINAxbrnva-1[]" value="C" />
+                                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">to regulate the temperature of the immediate
                                                 environment</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="yPLnQeqINAxbrnva-1[]" value="D" />
+                                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">to generate power from a sustainable source</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="yPLnQeqINAxbrnva-1[]" value="E" />
+                                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="E" />
                                             <span class="opt-code">E</span>
                                             <span class="opt-label">to collect water to supply other buildings</span>
                                         </label>
@@ -69,7 +69,7 @@
                                 </fieldset>
 
                                 <div style="text-align: center;">
-                                    <button type="button" class="btn btn-primary" id="submit-two_choices2">
+                                    <button type="button" class="btn btn-primary" id="submit-two_choices">
                                         Submit
                                     </button>
                                     <button class="btn btn-info" type="button" id="again-two_choices2"

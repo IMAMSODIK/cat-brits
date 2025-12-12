@@ -53,17 +53,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="YES" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="NO" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="NOT GIVEN" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -78,17 +78,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="YES" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="NO" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="NOT GIVEN" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -103,17 +103,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-3" value="YES" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-7" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-3" value="NO" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-7" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-3" value="NOT GIVEN" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-7" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -128,17 +128,17 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="YES" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-8" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="NO" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-8" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="NOT GIVEN" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-8" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>

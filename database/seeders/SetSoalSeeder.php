@@ -120,7 +120,7 @@ class SetSoalSeeder extends Seeder
         SetSoal::create([
             'name' => 'Cambridge 18 Test 4',
             'thumbnail' => 'Job details from employment agency',
-            'kode' => 'z4hGzQcnxdtntccI',
+            'kode' => 'yPLnQeqINAxbrnva',
         ]);
 
         //19
@@ -179,27 +179,19 @@ class SetSoalSeeder extends Seeder
             'kode' => 'cwwPbLf22UsNEqIp',
         ]);
 
-        // 18 START
 
-        SetSoal::create([
-            'name' => 'Cambridge 18 Test 4',
-            'kode' => 'yPLnQeqINAxbrnva',
-        ]);
-
-        // 18 END
-
-        // 19 START
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 1',
-            'kode' => 'kNyuF8ZeAt9Trm90',
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 2',
-            'kode' => 'kVklZiFhgKeBhovY',
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 3',
-            'kode' => 'kqQSrG7Rs5yw1AuD',
-        ]);
+        // // 19 START
+        // SetSoal::create([
+        //     'name' => 'Cambridge 19 Test 1',
+        //     'kode' => 'kNyuF8ZeAt9Trm90',
+        // ]);
+        // SetSoal::create([
+        //     'name' => 'Cambridge 19 Test 2',
+        //     'kode' => 'kVklZiFhgKeBhovY',
+        // ]);
+        // SetSoal::create([
+        //     'name' => 'Cambridge 19 Test 3',
+        //     'kode' => 'kqQSrG7Rs5yw1AuD',
+        // ]);
     }
 }

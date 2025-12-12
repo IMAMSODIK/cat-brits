@@ -66,26 +66,26 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="A" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">describing what motivated him to write the
                                                 book</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="B" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">explaining why it is desirable to read the whole
                                                 book</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="c" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="c" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">suggesting why Wegener pursued so many
                                                 different careers</span>
                                         </label>
 
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-1" value="D" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">indicating what aspects of Wegener’s life interested
                                                 him most
@@ -101,24 +101,24 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="A" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">He was not a particularly ambitious person.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="B" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">He kept a record of all his scientific
                                                 observations.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="C" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">He did not adopt many of the scientific practices of
                                                 the time.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-2" value="D" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-5" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">He enjoyed discussing new discoveries with other
                                                 scientists.</span>
@@ -166,25 +166,25 @@
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="A" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">It is not enough in life to have good
                                                 intentions.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="B" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">People need to plan carefully if they want to
                                                 succeed.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="C" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">People have little control over many aspects of
                                                 their lives.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="yPLnQeqINAxbrnva-4" value="D" />
+                                            <input type="radio" name="yPLnQeqINAxbrnva-6" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">It is important that people ensure they have the
                                                 freedom to act</span>

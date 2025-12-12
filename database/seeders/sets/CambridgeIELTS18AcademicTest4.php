@@ -17,7 +17,7 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
                 "matching_features" => ["c", "b", "a", "e", "b", "d"],
                 "two_choices" => ["c", "d", "a", "d"],
                 "matching_information" => ["D", "C", "E", "B", "D"],
-                "summary_completion" => ["energi", "food", "gardening", "obesity", "i", "f", "a", "c", "h"],
+                "summary_completion" => ["energi", "food", "gardening", "obesity", "i", "f", "a", "c", "h", "e"],
                 "oc" => ["b", "c", "d", "b", "a", "d", "c"],
                 "ynng" => ["yes", "no", "not given", "yes", "yes", "not given", "no", "no"]
             ]
