@@ -85,6 +85,11 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
+                    case 'nHmZBcocwalVytdH':
+                        $data['set_id'] = 'nHmZBcocwalVytdH';
+                        $data['title'] = 'Cambridge IELTS 14 Academic Reading Test 2';
+                        return view('ielts.categories', $data);
+                        break;
 
                     case 'BHByU4OTwRblfc5c':
                         $data['set_id'] = 'BHByU4OTwRblfc5c';
@@ -629,7 +634,7 @@ class IeltsController extends Controller
                     $data['set'] = $set;
                     $data['section'] = $r->input('section');
 
-                    if($r->input('section') == 'speaking'){
+                    if ($r->input('section') == 'speaking') {
                         /** @var \App\Models\User $user */
                         $user = Auth::user();
 
@@ -639,7 +644,7 @@ class IeltsController extends Controller
                             $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
                             return view($blade, $data);
                         }
-                    }else{
+                    } else {
                         $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
                         return view($blade, $data);
                     }
