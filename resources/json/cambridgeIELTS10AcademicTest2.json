@@ -1,0 +1,110 @@
+{
+  "reading": {
+    "mh": [
+      "iv",
+      "viii",
+      "vii",
+      "i",
+      "vi",
+      "ix",
+      "ii"
+    ],
+    "tfng": [
+      "not given",
+      "true",
+      "false",
+      "false",
+      "not given",
+      "true"
+    ],
+    "matching_information": [
+      "A",
+      "D",
+      "F",
+      "D"
+    ],
+    "matching_features": [
+      "B",
+      "D",
+      "E",
+      "A",
+      "C"
+    ],
+    "sentence_completion": [
+      "activities",
+      "[internal regulation, self-regulation]",
+      "emotional awareness",
+      "spoon-feeding"
+    ],
+    "summary_completion": [
+      "B",
+      "H",
+      "L",
+      "G",
+      "D"
+    ],
+    "oc": [
+      "c",
+      "d",
+      "a",
+      "d"
+    ],
+    "ynng": [
+      "not given",
+      "no",
+      "yes",
+      "not given",
+      "no"
+    ]
+  },
+  "listening": {
+    "nc": [
+      "Hardie",
+      "19",
+      "[GT8 2LC, GT82LC]",
+      "hairdresser",
+      "[dentist, dentist’s]",
+      "lighting",
+      "trains",
+      "safe",
+      "shower",
+      "training",
+      "competition",
+      "global",
+      "demand",
+      "customers",
+      "regulation",
+      "project",
+      "flexible",
+      "leadership",
+      "women",
+      "self-employed"
+    ],
+    "oc": [
+      "a",
+      "c",
+      "c",
+      "a",
+      "a",
+      "c",
+      "c",
+      "a",
+      "a",
+      "c"
+    ],
+    "matching_information": [
+      "e",
+      "f",
+      "d",
+      "h",
+      "a",
+      "b"
+    ],
+    "two_choices": [
+      "b",
+      "c",
+      "b",
+      "e"
+    ]
+  }
+}
