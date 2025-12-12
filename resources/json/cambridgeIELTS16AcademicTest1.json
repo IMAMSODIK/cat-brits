@@ -1,0 +1,112 @@
+{
+  "reading": {
+    "tfng": [
+      "FALSE",
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE",
+      "TRUE",
+      "FALSE",
+      "TRUE"
+    ],
+    "tc": [
+      "violent",
+      "tool",
+      "meat",
+      "photographer",
+      "game",
+      "frustration"
+    ],
+    "mh": [
+      "iv",
+      "vii",
+      "ii",
+      "v",
+      "i",
+      "viii",
+      "vi"
+    ],
+    "nc": [
+      "city",
+      "priests",
+      "trench",
+      "location"
+    ],
+    "two_choices": [
+      "[B, D]",
+      "[B, D]"
+    ],
+    "oc": [
+      "B",
+      "D",
+      "C",
+      "D"
+    ],
+    "summary_completion": [
+      "G",
+      "E",
+      "C",
+      "F"
+    ],
+    "matching_features": [
+      "B",
+      "A",
+      "C",
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "listening": {
+    "nc": [
+      "egg",
+      "tower",
+      "car",
+      "animals",
+      "bridge",
+      "[movie, film]",
+      "decorate",
+      "Wednesdays",
+      "Fradstone",
+      "parking",
+      "practical",
+      "publication",
+      "choices",
+      "negative",
+      "play",
+      "capitalism",
+      "depression",
+      "logic",
+      "opportunity",
+      "[practice, practise]"
+    ],
+    "oc": [
+      "C",
+      "A",
+      "B",
+      "C"
+    ],
+    "map_labeling": [
+      "H",
+      "C",
+      "G",
+      "B",
+      "I",
+      "A"
+    ],
+    "two_choices": [
+      "[C, E]",
+      "[C, E]",
+      "[B, E]",
+      "[B, E]"
+    ],
+    "matching_information": [
+      "D",
+      "C",
+      "A",
+      "H",
+      "F",
+      "G"
+    ]
+  }
+}
