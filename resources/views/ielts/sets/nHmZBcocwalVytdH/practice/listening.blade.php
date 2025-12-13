@@ -1576,12 +1576,44 @@
                     'content' => 'partials.nHmZBcocwalVytdH.practice.listening.note_completion',
                 ],
                 [
-                    'id' => 'oc',
+                    'id' => 'one_choice',
                     'tipe' => 'oc',
                     'title' => 'One Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-2-audio-2.mp3',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.oc',
+                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.one_choice',
+                ],
+                [
+                    'id' => 'plan_labeling',
+                    'tipe' => 'plan_labeling',
+                    'title' => 'Plan Labeling',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-2-audio-2.mp3',
+                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.plan_labeling',
+                ],
+                [
+                    'id' => 'one_choice2',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-2-audio-3.mp3',
+                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.one_choice2',
+                ],
+                [
+                    'id' => 'matching_information',
+                    'tipe' => 'matching_information',
+                    'title' => 'Matching Information',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-2-audio-3.mp3',
+                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.matching_information',
+                ],
+                [
+                    'id' => 'note_completion2',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-2-audio-4.mp3',
+                    'content' => 'partials.nHmZBcocwalVytdH.practice.listening.note_completion2',
                 ],
             ];
         @endphp
