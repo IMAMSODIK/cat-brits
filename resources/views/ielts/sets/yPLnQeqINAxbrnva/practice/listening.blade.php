@@ -1574,7 +1574,56 @@
                     'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-1.mp3',
                     'content' =>
                         'partials.yPLnQeqINAxbrnva.practice.listening.note_completion',
-                ]
+                ],
+                [
+                    'id' => 'one_choice',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.one_choice',
+                ],
+                [
+                    'id' => 'matching_information',
+                    'tipe' => 'matching_information',
+                    'title' => 'Matching',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.matching_information',
+                ],
+                [
+                    'id' => 'two_choice',
+                    'tipe' => 'two_choice',
+                    'title' => 'Two Choice',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.two_choice',
+                ],
+                [
+                    'id' => 'matching_information2',
+                    'tipe' => 'matching_information',
+                    'title' => 'Matching 2',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.matching_information2',
+                ],
+                [
+                    'id' => 'one_choice2',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice 2',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.one_choice2',
+                ],
+                [
+                    'id' => 'note_completion2',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion 2',
+                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-4.mp3',
+                    'content' =>
+                        'partials.yPLnQeqINAxbrnva.practice.listening.note_completion2',
+                ],
+
             ];
         @endphp
 
@@ -2228,7 +2277,7 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'tfng';
+            let currentPart = @json($tabs)[0]['id'];
             let questionCount = 0;
 
             // 🧩 Toggle collapse floating panel
@@ -2406,22 +2455,24 @@
 
             // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
-                const questionCounts = {
-                    'tfng': 6,
-                    'tfng2': 8,
-                    'ynng': 5,
-                    'mse': 5,
-                    'one': 5,
-                    'mh': 2,
-                    'tc': 4
-                };
+                const dataJson = @json($tabs);
+                const questionCounts = {}
+                dataJson.forEach(tab => {
+                    const panel = document.querySelector(`#panel-${tab.id}`);
+                    if (panel) {
+                        const count = panel.querySelectorAll('[data-q]').length;
+                        questionCounts[tab.id] = count;
+                    }
+                });
+
+                console.log(questionCounts);
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
             // 🚀 Init
-            updateQuestionListForPart('tfng');
+            updateQuestionListForPart(@json($tabs)[0]['id']);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
