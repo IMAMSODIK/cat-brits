@@ -701,6 +701,7 @@
         }
 
         #panel-tfng .q-number-box,
+        #panel-fc_completion .q-number-box,
         #panel-tfng2 .q-number-box,
         #panel-ynng .q-number-box,
         #panel-mse .q-number-box,
@@ -718,6 +719,7 @@
         }
 
         #panel-tfng .q-text,
+        #panel-fc_completion .q-text,
         #panel-tfng2 .q-text,
         #panel-ynng .q-text,
         #panel-mse .q-text,
@@ -1577,18 +1579,14 @@
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
             <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
                 aria-selected="true" data-id="tfng">Note Completion</button>
-            <button class="x-tab" role="tab" id="tab-mh" aria-controls="panel-mh" aria-selected="false"
-                data-id="mh">Two Choices</button>
-            <button class="x-tab" role="tab" id="tab-mh2" aria-controls="panel-mh2" aria-selected="false"
-                data-id="mh2">Two Choices 2</button>
-            <button class="x-tab" role="tab" id="tab-matching" aria-controls="panel-matching" aria-selected="false"
-                data-id="matching">Matching</button>
-            <button class="x-tab" role="tab" id="tab-mh3" aria-controls="panel-mh3" aria-selected="false"
-                data-id="mh3">Two Choices 3</button>
-            <button class="x-tab" role="tab" id="tab-mh4" aria-controls="panel-mh4" aria-selected="false"
-                data-id="mh4">Two Choices 4</button>
             <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
                 data-id="one">One Choice</button>
+            <button class="x-tab" role="tab" id="tab-matching" aria-controls="panel-matching" aria-selected="false"
+                data-id="matching">Matching</button>
+            <button class="x-tab" role="tab" id="tab-mh" aria-controls="panel-mh" aria-selected="false"
+                data-id="mh">Two Choices</button>
+            <button class="x-tab" role="tab" id="tab-fc_completion" aria-controls="panel-fc_completion" aria-selected="false"
+                data-id="fc_completion">Flow Chart Completion</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2"
                 aria-selected="false" data-id="tfng2">Note Completion 2</button>
         </div>
@@ -1600,10 +1598,10 @@
                     <div class="qa">
                         <form class="qa-body" id="form-nc">
                             <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-6 the Reading Passage?</p>
+                                <p class="lead">Listen and answer questions 1-10 the Reading Passage?</p>
                                 <div class="audio-player" data-player role="group" aria-label="Audio controls">
                                     <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-1.mp3">
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-1.mp3">
                                     </audio>
 
                                     <div class="controls-container">
@@ -1618,7 +1616,7 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="102" type="button">Start from
+                                        <button class="start-btn" data-start="76" type="button">Start from
                                             here</button>
                                     </div>
                                 </div>
@@ -1631,78 +1629,104 @@
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <p><b>Advice on Family Visit</b></p>
+                                <p><b>Copying photos to digital format</b></p>
+                                <hr>
+                                <p><b>Name of company: Picturerep</b></p>
+                                <hr>
 
-                                <p><b>Accommodation</b></p>
-                                <p>
-                                    <span class="q-number-box">1</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-1" class="q-text" placeholder="">
-                                    Hotel on George Street Cost of family room per night: £
-                                    <span class="q-number-box">2</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-2" class="q-text" placeholder="">
-                                    (approx.)
-                                </p>
-
-                                <p><b>Recommended Trips</b></p>
-                                <p>
-                                    A
-                                    <span class="q-number-box">3</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-3" class="q-text" placeholder="">
-                                    tour of the city centre (starts in Carlton Square) A trip by
-                                    <span class="q-number-box">4</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-4" class="q-text" placeholder="">
-                                    to the old fort
-                                </p>
-
-                                <p><b>Science Museum</b></p>
-                                <p>
-                                    Best day to visit:
-                                    <span class="q-number-box">5</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-5" class="q-text" placeholder="">
-                                    See the exhibition about
-                                    <span class="q-number-box">6</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-6" class="q-text" placeholder="">
-                                    which opens soon
-                                </p>
-
-                                <p><b>Food</b></p>
-                                <p>Clacton Market:</p>
+                                <p>Requirements</p>
                                 <ul>
+                                    <li>Maximum size of photos is 30 cm, minimum size 4 cm.</li>
                                     <li>
-                                        <div class="q-list" data-q="7">
-                                            Good for
-                                            <span class="q-number-box">7</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-7" class="q-text" placeholder="">
-                                            food
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="8">
-                                            Need to have lunch before
-                                            <span class="q-number-box">8</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-8" class="q-text" placeholder="">
-                                            p.m.
+                                        <div class="q-list" data-q="1">
+                                            Photos must not be in a
+                                            <span class="q-number-box">1</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
+                                            or an album.
                                         </div>
                                     </li>
                                 </ul>
 
-                                <p><b>Theatre Tickets</b></p>
-                                <p>
-                                    Save up to
-                                    <span class="q-number-box">9</span>
-                                    <input type="text" name="4JIjUOPpLAJ2FYdl-9" class="q-text" placeholder="">
-                                    % on ticket prices at bargaintickets.com
-                                </p>
-
-                                <p><b>Free Activities</b></p>
-                                <p>Blakewell Gardens:</p>
+                                <p>Cost</p>
                                 <ul>
-                                    <li>Roots Music Festival</li>
+                                    <li>
+                                        <div class="q-list" data-q="2">
+                                            The cost for 360 photos is £
+                                            <span class="q-number-box">2</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
+                                            (including one disk).
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="3">
+                                            Before the complete order is sent,
+                                            <span class="q-number-box">3</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
+                                            is required.
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <p>Services included in the price</p>
+                                <ul>
+                                    <li>
+                                        <div class="q-list" data-q="4">
+                                            Photos can be placed in a folder, e.g. with the name
+                                            <span class="q-number-box">4</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="5">
+                                            The 
+                                            <span class="q-number-box">5</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
+                                            and contrast can be improved if necessary.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="6">
+                                            Photos which are very fragile will be scanned by
+                                            <span class="q-number-box">6</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <p>Special restore service (costs extra)</p>
+                                <ul>
+                                    <li>
+                                        <div class="q-list" data-q="7">
+                                            It may be possible to remove an object from a photo, or change the
+                                            <span class="q-number-box">7</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-7" class="q-text" placeholder="">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="8">
+                                            A photo which is not correctly in
+                                            <span class="q-number-box">8</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-8" class="q-text" placeholder="">
+                                            cannot be fixed.
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <p>Other information</p>
+                                <ul>
+                                    <li>
+                                        <div class="q-list" data-q="9">
+                                            Orders are completed within
+                                            <span class="q-number-box">9</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-9" class="q-text" placeholder="">
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="q-list" data-q="10">
-                                            Climb Telegraph Hill to see a view of the
+                                            Send the photos in a box (not
                                             <span class="q-number-box">10</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-10" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-10" class="q-text" placeholder="">
+                                            ).
                                         </div>
                                     </li>
                                 </ul>
@@ -1720,522 +1744,6 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
-                <div class="x-panel-inner">Content: Two Choices</div>
-                <div class="reading-section">
-                    <div class="qa highlighted-content" aria-label="Questions">
-                        <form class="qa-body" id="form-two_choices">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-2</p>
-                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
-                                    <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-2.mp3">
-                                    </audio>
-
-                                    <div class="controls-container">
-                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
-                                        <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0"
-                                                class="seekBar">
-                                            <div class="timeText"><span class="current">0:00</span>
-                                                <span class="duration">0:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="start-buttons">
-                                        <button class="start-btn" data-start="55" type="button">Start from
-                                            here</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 1-2</p>
-                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                                <legend class="q-text">
-                                    <span class="q-number">1</span>
-                                    <span class="q-number">2</span>
-                                    Which <b>TWO</b> things does the speaker say about visiting the football stadium with children?
-                                </legend>
-                                <div class="q-options" role="group" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-1[]" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">Children can get their photo taken with a football player</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-1[]" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">There is a competition for children today</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-1[]" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">Parents must stay with their children at all times</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-1[]" value="D" />
-                                        <span class="opt-code">D</span>
-                                        <span class="opt-label">Children will need sunhats and drinks</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-1[]" value="E" />
-                                        <span class="opt-code">E</span>
-                                        <span class="opt-label">The café has a special offer on meals for children</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
-                                    Try Again
-                                </button>
-                                <button type="button" class="btn btn-primary" id="submit-two_choices">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-mh2" class="x-panel" role="tabpanel" aria-labelledby="tab-mh2" hidden>
-                <div class="x-panel-inner">Content: Two Choices</div>
-                <div class="reading-section">
-                    <div class="qa highlighted-content" aria-label="Questions">
-                        <form class="qa-body" id="form-two_choices2">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-2</p>
-                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
-                                    <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-2.mp3">
-                                    </audio>
-
-                                    <div class="controls-container">
-                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
-                                        <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0"
-                                                class="seekBar">
-                                            <div class="timeText"><span class="current">0:00</span>
-                                                <span class="duration">0:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="start-buttons">
-                                        <button class="start-btn" data-start="146" type="button">Start from
-                                            here</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 1-2</p>
-                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                                <legend class="q-text">
-                                    <span class="q-number">1</span>
-                                    <span class="q-number">2</span>
-                                    Which <b>TWO</b> features of the stadium tour are new this year?
-                                </legend>
-                                <div class="q-options" role="group" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-3[]" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">VIP tour</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-3[]" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">360 cinema experience</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-3[]" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">audio guide</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-3[]" value="D" />
-                                        <span class="opt-code">D</span>
-                                        <span class="opt-label">dressing room tour</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-3[]" value="E" />
-                                        <span class="opt-code">E</span>
-                                        <span class="opt-label">tours in other languages</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-two_choices2" style="display: none">
-                                    Try Again
-                                </button>
-                                <button type="button" class="btn btn-primary" id="submit-two_choices2">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-matching" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
-                <div class="x-panel-inner">Content: Matching</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="qa highlighted-content" aria-label="Questions">
-                        <form class="qa-body" id="form-matching_information">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-6</p>
-                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
-                                    <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-2.mp3">
-                                    </audio>
-
-                                    <div class="controls-container">
-                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
-                                        <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0"
-                                                class="seekBar">
-                                            <div class="timeText"><span class="current">0:00</span>
-                                                <span class="duration">0:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="start-buttons">
-                                        <button class="start-btn" data-start="261" type="button">Start from
-                                            here</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 1-6</p>
-                                <p>Which event in the history of football in the UK took place in each of the following years?</p>
-                                <p><i>Choose <b>SIX</b> answers from the box and write the correct letter, <b>A-H</b>, next to questions.</i></p>
-                                <p><b>Events in the history of football</b></p>
-
-                                <strong>A</strong>&nbsp;&nbsp; the introduction of pay for the players
-                                <strong>B</strong>&nbsp;&nbsp; a change to the design of the goal<br>
-                                <strong>C</strong>&nbsp;&nbsp; the first use of lights for matches<br>
-                                <strong>D</strong>&nbsp;&nbsp; the introduction of goalkeepers<br>
-                                <strong>E</strong>&nbsp;&nbsp; the first international match<br>
-                                <strong>F</strong>&nbsp;&nbsp; two changes to the rules of the game<br>
-                                <strong>G</strong>&nbsp;&nbsp; the introduction of a fee for spectators<br>
-                                <strong>H</strong>&nbsp;&nbsp; an agreement on the length of a game<br>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">1</span>
-                                    <span style="flex: 1;">
-                                        1870 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-1" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="2">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">2</span>
-                                    <span style="flex: 1;">
-                                        1874 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-2" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="3">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">3</span>
-                                    <span style="flex: 1;">
-                                        1875 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-3" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="4">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">4</span>
-                                    <span style="flex: 1;">
-                                        1877 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-4" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="5">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">5</span>
-                                    <span style="flex: 1;">
-                                        1878 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-5" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="6">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">6</span>
-                                    <span style="flex: 1;">
-                                        1880 
-                                        <span class="q-question">
-                                            <select name="4JIjUOPpLAJ2FYdl-6" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary" id="submit-matching_information">
-                                    Submit
-                                </button>
-                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-mh3" class="x-panel" role="tabpanel" aria-labelledby="tab-mh3" hidden>
-                <div class="x-panel-inner">Content: Two Choices 3</div>
-                <div class="reading-section">
-                    <div class="qa highlighted-content" aria-label="Questions">
-                        <form class="qa-body" id="form-two_choices3">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-2</p>
-                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
-                                    <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-3.mp3">
-                                    </audio>
-
-                                    <div class="controls-container">
-                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
-                                        <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0"
-                                                class="seekBar">
-                                            <div class="timeText"><span class="current">0:00</span>
-                                                <span class="duration">0:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="start-buttons">
-                                        <button class="start-btn" data-start="50" type="button">Start from
-                                            here</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 1-2</p>
-                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                                <legend class="q-text">
-                                    <span class="q-number">1</span>
-                                    <span class="q-number">2</span>
-                                    Which <b>TWO</b> benefits for children of learning to write did both students find surprising?
-                                </legend>
-                                <div class="q-options" role="group" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-5[]" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">improved fine motor skills</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-5[]" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">improved memory</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-5[]" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">improved concentration</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-5[]" value="D" />
-                                        <span class="opt-code">D</span>
-                                        <span class="opt-label">improved imagination</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-5[]" value="E" />
-                                        <span class="opt-code">E</span>
-                                        <span class="opt-label">improved spatial awareness</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-two_choices3" style="display: none">
-                                    Try Again
-                                </button>
-                                <button type="button" class="btn btn-primary" id="submit-two_choices3">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-mh4" class="x-panel" role="tabpanel" aria-labelledby="tab-mh4" hidden>
-                <div class="x-panel-inner">Content: Two Choices 4</div>
-                <div class="reading-section">
-                    <div class="qa highlighted-content" aria-label="Questions">
-                        <form class="qa-body" id="form-two_choices4">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-2</p>
-                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
-                                    <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-3.mp3">
-                                    </audio>
-
-                                    <div class="controls-container">
-                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
-                                        <div class="seek-container">
-                                            <input type="range" min="0" max="100" value="0"
-                                                class="seekBar">
-                                            <div class="timeText"><span class="current">0:00</span>
-                                                <span class="duration">0:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="start-buttons">
-                                        <button class="start-btn" data-start="148" type="button">Start from
-                                            here</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 1-2</p>
-                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                                <legend class="q-text">
-                                    <span class="q-number">1</span>
-                                    <span class="q-number">2</span>
-                                    For children with dyspraxia, which <b>TWO</b> problems with handwriting do the students think are easiest to correct?
-                                </legend>
-                                <div class="q-options" role="group" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-7[]" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">not spacing letters correctly</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-7[]" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">not writing in a straight line</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-7[]" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">applying too much pressure when writing</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-7[]" value="D" />
-                                        <span class="opt-code">D</span>
-                                        <span class="opt-label">confusing letter shapes</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="checkbox" name="4JIjUOPpLAJ2FYdl-7[]" value="E" />
-                                        <span class="opt-code">E</span>
-                                        <span class="opt-label">writing very slowly</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-two_choices4" style="display: none">
-                                    Try Again
-                                </button>
-                                <button type="button" class="btn btn-primary" id="submit-two_choices4">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
             <div id="panel-one" class="x-panel" role="tabpanel" aria-labelledby="tab-one" hidden>
                 <div class="x-panel-inner">Content: One Choice</div>
                 <div class="reading-section">
@@ -2245,7 +1753,7 @@
                                 <p class="lead">Listen and answer questions 1-6</p>
                                 <div class="audio-player" data-player role="group" aria-label="Audio controls">
                                     <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-3.mp3">
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-2.mp3">
                                     </audio>
 
                                     <div class="controls-container">
@@ -2260,37 +1768,37 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="275" type="button">Start from
+                                        <button class="start-btn" data-start="54" type="button">Start from
                                             here</button>
                                     </div>
                                 </div>
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <p>Questions 1-6</p>
+                                <p>Questions 1-5</p>
                                 <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
                             </fieldset>
 
                             <fieldset class="q-item" data-q="1">
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
-                                    What does the woman say about using laptops to teach writing to children with dyslexia?
+                                    Dartfield House school used to be
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-1" value="A" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-1" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">Children often lack motivation to learn that way</span>
+                                        <span class="opt-label">a tourist information centre.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-1" value="B" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-1" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">Children become fluent relatively quickly</span>
+                                        <span class="opt-label">a private home.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-1" value="C" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-1" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">Children react more positively if they make a mistake</span>
+                                        <span class="opt-label">a local council building.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2298,23 +1806,23 @@
                             <fieldset class="q-item" data-q="2">
                                 <legend class="q-text">
                                     <span class="q-number">2</span>
-                                    When discussing whether to teach cursive or print writing, the woman thinks that
+                                    What is planned with regard to the lower school?
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-2" value="A" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-2" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">cursive writing disadvantages a certain group of children</span>
+                                        <span class="opt-label">All buildings on the main site will be improved.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-2" value="B" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-2" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">print writing is associated with lower academic performance</span>
+                                        <span class="opt-label">The lower school site will be used for new homes.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-2" value="C" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-2" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">most teachers in the UK prefer a traditional approach to handwriting</span>
+                                        <span class="opt-label">Additional school buildings will be constructed on the lower school site.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2322,23 +1830,23 @@
                             <fieldset class="q-item" data-q="3">
                                 <legend class="q-text">
                                     <span class="q-number">3</span>
-                                    According to the students, what impact does poor handwriting have on exam performance?
+                                    The catering has been changed because of
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-3" value="A" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-3" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">There is evidence to suggest grades are affected by poor handwriting</span>
+                                        <span class="opt-label">long queuing times.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-3" value="B" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-3" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">Neat handwriting is less important now than it used to be</span>
+                                        <span class="opt-label">changes to the school timetable.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-3" value="C" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-3" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">Candidates write more slowly and produce shorter answers</span>
+                                        <span class="opt-label">dissatisfaction with the menus.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2346,23 +1854,23 @@
                             <fieldset class="q-item" data-q="4">
                                 <legend class="q-text">
                                     <span class="q-number">4</span>
-                                    What prediction does the man make about the future of handwriting?
+                                    Parents are asked to
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-4" value="A" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-4" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">Touch typing will be taught before writing by hand</span>
+                                        <span class="opt-label">help their children to decide in advance which serving point to use.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-4" value="B" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-4" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">Children will continue to learn to write by hand</span>
+                                        <span class="opt-label">make sure their children have enough money for food.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-4" value="C" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-4" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">People will dislike handwriting on digital devices</span>
+                                        <span class="opt-label">advise their children on healthy food to eat.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2370,47 +1878,23 @@
                             <fieldset class="q-item" data-q="5">
                                 <legend class="q-text">
                                     <span class="q-number">5</span>
-                                    The woman is concerned that relying on digital devices has made it difficult for her to
+                                    What does the speaker say about the existing canteen?
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-5" value="A" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-5" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">take detailed notes</span>
+                                        <span class="opt-label">Food will still be served there.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-5" value="B" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-5" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">spell and punctuate</span>
+                                        <span class="opt-label">Only staff will have access to it.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-5" value="C" />
+                                        <input type="radio" name="XW16JROLKCFE4BMH-5" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">read old documents</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="6">
-                                <legend class="q-text">
-                                    <span class="q-number">6</span>
-                                    How do the students feel about their own handwriting?
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-6" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">concerned they are unable to write quickly</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-6" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">embarrassed by comments made about it</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="4JIjUOPpLAJ2FYdl-6" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">regretful that they have lost the habit</span>
+                                        <span class="opt-label">Pupils can take their food into it.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2427,16 +1911,16 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Content: Note Completion 2</div>
-                <div class="reading-section highlighted-content" aria-label="Reading and Questions">
-                    <div class="qa">
-                        <form class="qa-body" id="form-nc2">
+            <div id="panel-matching" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-matching_information">
                             <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-10 the Reading Passage?</p>
+                                <p class="lead">Listen and answer questions 1-6</p>
                                 <div class="audio-player" data-player role="group" aria-label="Audio controls">
                                     <audio preload="auto"
-                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-4-audio-part-4.mp3">
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-2.mp3">
                                     </audio>
 
                                     <div class="controls-container">
@@ -2451,7 +1935,517 @@
                                     </div>
 
                                     <div class="start-buttons">
-                                        <button class="start-btn" data-start="89" type="button">Start from
+                                        <button class="start-btn" data-start="282" type="button">Start from
+                                            here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-3</p>
+                                <p>What comment does the speaker make about each of the following serving points in the Food Hall?</p>
+                                <p>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A-D</b>, next to Questions.</p>
+                                <p><b>Comments</b></p>
+
+                                <strong>A</strong>&nbsp;&nbsp; pupils help to plan menus
+                                <strong>B</strong>&nbsp;&nbsp; only vegetarian food<br>
+                                <strong>C</strong>&nbsp;&nbsp; different food every week<br>
+                                <strong>D</strong>&nbsp;&nbsp; daily change in menu<br>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p><b>Food available at serving points in Food Hall</b></p>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">1</span>
+                                    <span style="flex: 1;">
+                                        World Adventures
+                                        <span class="q-question">
+                                            <select name="XW16JROLKCFE4BMH-1" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="2">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">2</span>
+                                    <span style="flex: 1;">
+                                        Street Life
+                                        <span class="q-question">
+                                            <select name="XW16JROLKCFE4BMH-2" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="3">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">3</span>
+                                    <span style="flex: 1;">
+                                        Speedy Italian
+                                        <span class="q-question">
+                                            <select name="XW16JROLKCFE4BMH-3" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                    Submit
+                                </button>
+                                <button class="btn btn-info" type="button" onclick="retryQuiz()">Try Again</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-mh" class="x-panel" role="tabpanel" aria-labelledby="tab-mh" hidden>
+                <div class="x-panel-inner">Content: Two Choices</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-two_choices">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-2</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-2.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="358" type="button">Start from
+                                            here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-2</p>
+                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                                <legend class="q-text">
+                                    <span class="q-number">1</span>
+                                    <span class="q-number">2</span>
+                                    Which <b>TWO</b> optional after-school lessons are new?
+                                </legend>
+                                <div class="q-options" role="group" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="checkbox" name="XW16JROLKCFE4BMH-1[]" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">swimming</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="XW16JROLKCFE4BMH-1[]" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">piano</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="XW16JROLKCFE4BMH-1[]" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">acting</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="XW16JROLKCFE4BMH-1[]" value="D" />
+                                        <span class="opt-code">D</span>
+                                        <span class="opt-label">cycling</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="XW16JROLKCFE4BMH-1[]" value="E" />
+                                        <span class="opt-code">E</span>
+                                        <span class="opt-label">theatre sound and lighting</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
+                                    Try Again
+                                </button>
+                                <button type="button" class="btn btn-primary" id="submit-two_choices">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-one2" class="x-panel" role="tabpanel" aria-labelledby="tab-one2" hidden>
+                <div class="x-panel-inner">Content: One Choice 2</div>
+                <div class="reading-section">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-oc2">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-4</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="54" type="button">Start from
+                                            here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-4</p>
+                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+                            </fieldset>
+
+                            <fieldset class="q-">
+                                <h3>Assignment on sleep and dreams</h3>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1">
+                                <legend class="q-text">
+                                    <span class="q-number">1</span>
+                                    Luke read that one reason why we often forget dreams is that
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-6" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">our memories cannot cope with too much information.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-6" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">we might other wise be confused about what is real.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-6" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">we do not think they are important.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="2">
+                                <legend class="q-text">
+                                    <span class="q-number">2</span>
+                                    What do Luke and Susie agree about dreams predicting the future?
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-7" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">It may just be due to chance.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-7" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">It only happens with certain types of event.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-7" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">It happens more often than some people think.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="3">
+                                <legend class="q-text">
+                                    <span class="q-number">3</span>
+                                    Susie says that a study on pre-school children having a short nap in the day
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-8" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">had controversial results.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-8" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">used faulty researh methodology.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-8" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">failed to reach any clear conclusions.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="4">
+                                <legend class="q-text">
+                                    <span class="q-number">4</span>
+                                    In their last assignment, both students had problems with
+                                </legend>
+                                <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-9" value="A" />
+                                        <span class="opt-code">A</span>
+                                        <span class="opt-label">statistical analysis.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-9" value="B" />
+                                        <span class="opt-code">B</span>
+                                        <span class="opt-label">making an action plan.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="radio" name="XW16JROLKCFE4BMH-9" value="C" />
+                                        <span class="opt-code">C</span>
+                                        <span class="opt-label">self-assessment</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-oc2" style="display: none">
+                                    Try Again
+                                </button>
+                                <button type="button" class="btn btn-primary" id="submit-oc2">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-fc_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-fc_completion" hidden>
+                <div class="x-panel-inner">Content: Flow Chart Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-fc_completion">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-6</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="250" type="button">Start from
+                                            here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-6</p>
+                                <p>Complete the flow chart below.</p>
+                                <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Decide on research question:</p>
+                                                <p>Is there a relationship between hours of sleep and number of dreams?</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Decide on sample:</p>
+                                                <p>
+                                                    <div class="q-list" data-q="1">
+                                                        Twelve students from the
+                                                        <span class="q-number-box">1</span>
+                                                        <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
+                                                        department
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Decide on methodology:</p>
+                                                <p>Self-reporting</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Decide on procedure:</p>
+                                                <p>
+                                                    <div class="q-list" data-q="2">
+                                                        Answers on 
+                                                        <span class="q-number-box">2</span>
+                                                        <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="3">
+                                                        Check ethical guidelines for working with
+                                                        <span class="q-number-box">3</span>
+                                                        <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
+                                                    </div>
+                                                    <div class="q-list" data-q="4">
+                                                        Ensure that risk is assessed and
+                                                        <span class="q-number-box">4</span>
+                                                        <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
+                                                        is kept to a minimum
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="5">
+                                                        Analyse the results Calculate the correlation and make a 
+                                                        <span class="q-number-box">5</span>
+                                                        <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <p>
+                                    <div class="q-list" data-q="6">
+                                        Analyse the results Calculate the correlation and make a 
+                                        <span class="q-number-box">6</span>
+                                        <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
+                                    </div>
+                                </p>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-fc_completion" style="display: none">
+                                    Try Again
+                                </button>
+                                <button type="button" class="btn btn-primary" id="submit-fc_completion">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                <div class="x-panel-inner">Content: Note Completion 2</div>
+                <div class="reading-section highlighted-content" aria-label="Reading and Questions">
+                    <div class="qa">
+                        <form class="qa-body" id="form-nc2">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-10 the Reading Passage?</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-4.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="70" type="button">Start from
                                             here</button>
                                     </div>
                                 </div>
@@ -2464,103 +2458,104 @@
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <p><b>Research in the Area Around the Chem be Bird Sanctuary</b></p>
-                                <p><b>The importance of birds of prey to local communities</b></p>
+                                <p><b>Health benefits of dance</b></p>
+                                <p><b>Recent findings:</b></p>
                                 <ul>
+                                    <li>All forms of dance produce various hormones associated with feelings of happiness.</li>
+                                    <li>Dancing with others has a more positive impact than dancing alone.</li>
                                     <li>
                                         <div class="q-list" data-q="1">
-                                            They destroy
+                                            An experiment on university students suggested that dance increases
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-11" class="q-text" placeholder="">
-                                            and other rodents.
+                                            <input type="text" name="XW16JROLKCFE4BMH-11" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="2">
-                                            They help prevent farmers from being bitten by
+                                            For those with mental illness, dance could be used as a form of
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-12" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-12" class="q-text" placeholder="">
                                         </div>
                                     </li>
-                                    <li>They have been an important part of local culture for many years.</li>
+                                </ul>
+
+                                <p><b>Benefits of dance for older people:</b></p>
+                                <ul>
+                                    <li>
+                                        <div class="q-list" data-q="3">
+                                            accessible for people with low levels of
+                                            <span class="q-number-box">3</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-13" class="q-text" placeholder="">
+                                            when hunting or sleeping.
+                                        </div>
+                                    </li>
+                                    <li>reduces the risk of heart disease</li>
                                     <li>
                                         <div class="q-list" data-q="4">
-                                            They now support the economy by encouraging
+                                            better 
                                             <span class="q-number-box">4</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-13" class="q-text" placeholder="">
-                                            in the area.
+                                            <input type="text" name="XW16JROLKCFE4BMH-14" class="q-text" placeholder="">
+                                            reduces the risk of accidents
                                         </div>
                                     </li>
-                                </ul>
-
-                                <p><b>Falling numbers of birds of prey</b></p>
-                                <ul>
-                                    <li>The birds may be accidentally killed:</li>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="4">
-                                                By 
-                                                <span class="q-number-box">4</span>
-                                                <input type="text" name="4JIjUOPpLAJ2FYdl-14" class="q-text" placeholder="">
-                                                when hunting or sleeping.
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="5">
-                                                By electrocution from power lines, especially during times of high
-                                                <span class="q-number-box">5</span>
-                                                <input type="text" name="4JIjUOPpLAJ2FYdl-15" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <li>
+                                        <div class="q-list" data-q="5">
+                                            improves  
+                                            <span class="q-number-box">5</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-15" class="q-text" placeholder="">
+                                            function by making it work faster
+                                        </div>
+                                    </li>
+                                    <li>improves participants’ general well-being</li>
                                     <li>
                                         <div class="q-list" data-q="6">
-                                            Local farmers may illegally shoot them or
+                                            gives people more
                                             <span class="q-number-box">6</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-16" class="q-text" placeholder="">
-                                            them.
+                                            <input type="text" name="XW16JROLKCFE4BMH-16" class="q-text" placeholder="">
+                                            to take exercise
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="7">
+                                            can lessen the feeling of
+                                            <span class="q-number-box">7</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-17" class="q-text" placeholder="">
+                                            , very common in older people
                                         </div>
                                     </li>
                                 </ul>
 
-                                <p><b>Ways of protecting chickens from birds of prey</b></p>
+                                <p><b>Benefits of Zumba:</b></p>
                                 <ul>
-                                    <li>Clearing away vegetation (unhelpful).</li>
                                     <li>
-                                        <div class="q-list" data-q="7">
-                                            Providing a
-                                            <span class="q-number-box">7</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-17" class="q-text" placeholder="">
-                                            for chickens (expensive).
+                                        <div class="q-list" data-q="8">
+                                            A study at The University of Wisconsin showed that doing Zumba for 40 minutes uses up as many
+                                            <span class="q-number-box">8</span>
+                                            <input type="text" name="XW16JROLKCFE4BMH-18" class="q-text" placeholder="">
+                                            as other quite intense forms of exercise.
                                         </div>
                                     </li>
-                                    <li>Frightening birds of prey by:</li>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="8">
-                                                Keeping a
-                                                <span class="q-number-box">8</span>
-                                                <input type="text" name="4JIjUOPpLAJ2FYdl-18" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="9">
-                                                Making a
-                                                <span class="q-number-box">9</span>
-                                                <input type="text" name="4JIjUOPpLAJ2FYdl-19" class="q-text" placeholder="">
-                                                (e.g., with metal objects).
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <li>
-                                        <div class="q-list" data-q="10">
-                                            A
-                                            <span class="q-number-box">10</span>
-                                            <input type="text" name="4JIjUOPpLAJ2FYdl-20" class="q-text" placeholder="">
-                                            of methods is usually most effective.
-                                        </div>
-                                    </li>
+                                    <li>The American Journal of Health Behavior study showed that:</li>
                                 </ul>
+
+                                <br>
+
+                                <p>
+                                    <div class="q-list" data-q="9">
+                                        – women suffering from
+                                        <span class="q-number-box">9</span>
+                                        <input type="text" name="XW16JROLKCFE4BMH-19" class="q-text" placeholder="">
+                                        benefited from doing Zumba.
+                                    </div>
+                                </p>
+                                <p>
+                                    <div class="q-list" data-q="10">
+                                        – Zumba became a
+                                        <span class="q-number-box">10</span>
+                                        <input type="text" name="XW16JROLKCFE4BMH-20" class="q-text" placeholder="">
+                                        for the participants.
+                                    </div>
+                                </p>
                             </fieldset>
 
                             <div style="text-align: center;">
@@ -3606,37 +3601,37 @@
 
         $("#submit-nc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc");
+            submitHelper("form-nc", "XW16JROLKCFE4BMH", "nc", $(this), "again-nc");
         });
 
         $("#submit-nc2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc2", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc2");
+            submitHelper("form-nc2", "XW16JROLKCFE4BMH", "nc", $(this), "again-nc2");
         });
 
         $("#submit-nc3").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc3", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc3");
+            submitHelper("form-nc3", "XW16JROLKCFE4BMH", "nc", $(this), "again-nc3");
         });
 
         $("#submit-nc4").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc4", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc4");
+            submitHelper("form-nc4", "XW16JROLKCFE4BMH", "nc", $(this), "again-nc4");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-oc", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc");
+            submitHelper("form-oc", "XW16JROLKCFE4BMH", "oc", $(this), "again-oc");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc");
+            submitHelper("form-tc", "XW16JROLKCFE4BMH", "tc", $(this), "again-tc");
         });
 
         $("#submit-two_choices").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices", $(this), "again-two_choices");
+            submitHelper("form-two_choices", "XW16JROLKCFE4BMH", "two_choices", $(this), "again-two_choices");
         });
     </script>
 
