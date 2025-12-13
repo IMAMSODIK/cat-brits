@@ -1587,7 +1587,7 @@
                                 <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-1.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-4-audio-1.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
@@ -1601,104 +1601,94 @@
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <p><b>Copying photos to digital format</b></p>
-                                <hr>
-                                <p><b>Name of company: Picturerep</b></p>
-                                <hr>
+                                <h3>Holiday rental</h3>
+                                <p><b>Owner’s names</b>: Jack Fitzgerald and Shirley Fitzgerald</p>
 
-                                <p>Requirements</p>
+                                <p>Granary Cottage</p>
                                 <ul>
-                                    <li>Maximum size of photos is 30 cm, minimum size 4 cm.</li>
                                     <li>
                                         <div class="q-list" data-q="1">
-                                            Photos must not be in a
+                                            available for week beginning
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
-                                            or an album.
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-1" class="q-text" placeholder="">
+                                            May
                                         </div>
                                     </li>
-                                </ul>
-
-                                <p>Cost</p>
-                                <ul>
                                     <li>
                                         <div class="q-list" data-q="2">
-                                            The cost for 360 photos is £
+                                            cost for the week: £
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
-                                            (including one disk).
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="3">
-                                            Before the complete order is sent,
-                                            <span class="q-number-box">3</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
-                                            is required.
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-2" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                 </ul>
 
-                                <p>Services included in the price</p>
+                                <p>
+                                    <div class="q-list" data-q="3">
+                                        <span class="q-number-box">3</span>
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-3" class="q-text" placeholder="">
+                                        <p>Cottage</p>
+                                    </div>
+                                </p>
+
                                 <ul>
+                                    <li>cost for the week: £480</li>
                                     <li>
                                         <div class="q-list" data-q="4">
-                                            Photos can be placed in a folder, e.g. with the name
+                                            building was originally a
                                             <span class="q-number-box">4</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-4" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="5">
-                                            The 
+                                            walk through doors from living room into a
                                             <span class="q-number-box">5</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
-                                            and contrast can be improved if necessary.
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-5" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="6">
-                                            Photos which are very fragile will be scanned by
+                                            several 
                                             <span class="q-number-box">6</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-6" class="q-text" placeholder="">
+                                            spaces at the front
                                         </div>
                                     </li>
-                                </ul>
-
-                                <p>Special restore service (costs extra)</p>
-                                <ul>
+                                    <li>bathroom has a shower</li>
                                     <li>
                                         <div class="q-list" data-q="7">
-                                            It may be possible to remove an object from a photo, or change the
+                                            central heating and stove that burns
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-7" class="q-text" placeholder="">
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-7" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="8">
-                                            A photo which is not correctly in
+                                            views of old
                                             <span class="q-number-box">8</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-8" class="q-text" placeholder="">
-                                            cannot be fixed.
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-8" class="q-text" placeholder="">
+                                            from living room
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="q-list" data-q="9">
+                                            view of hilltop
+                                            <span class="q-number-box">9</span>
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-9" class="q-text" placeholder="">
+                                            from the bedroom
                                         </div>
                                     </li>
                                 </ul>
 
-                                <p>Other information</p>
+                                <p><b>Payment</b></p>
                                 <ul>
-                                    <li>
-                                        <div class="q-list" data-q="9">
-                                            Orders are completed within
-                                            <span class="q-number-box">9</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-9" class="q-text" placeholder="">
-                                        </div>
-                                    </li>
+                                    <li>deposit: £144</li>
                                     <li>
                                         <div class="q-list" data-q="10">
-                                            Send the photos in a box (not
+                                            deadline for final payment: end of
                                             <span class="q-number-box">10</span>
-                                            <input type="text" name="nc-XW16JROLKCFE4BMH-10" class="q-text" placeholder="">
-                                            ).
+                                            <input type="text" name="nc-TqMfMy8BLvZp0JDm-10" class="q-text" placeholder="">
                                         </div>
                                     </li>
                                 </ul>
@@ -1715,7 +1705,7 @@
                             <p class="lead">Listen and answer questions 11-20</p>
                             <div class="audio-player">
                                 <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-2.mp3"></audio>
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-4-audio-2.mp3"></audio>
                                 <input type="range" class="timeline" value="0" disabled>
                                 <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                             </div>
@@ -1723,30 +1713,34 @@
 
                         {{-- oc --}}
                         <fieldset class="q-item">
-                            <p>Questions 11-15</p>
+                            <p>Questions 11-14</p>
                             <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item">
+                            <p><b>Local council report on traffic and highways</b></p>
                         </fieldset>
 
                         <fieldset class="q-item" data-q="11">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
-                                Dartfield House school used to be
+                                A survey found people’s main concern about traffic in the area was
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 11 options">
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-1" value="A" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-1" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">a tourist information centre.</span>
+                                    <span class="opt-label">cuts to public transport.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-1" value="B" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-1" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">a private home.</span>
+                                    <span class="opt-label">poor maintenance of roads.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-1" value="C" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-1" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">a local council building.</span>
+                                    <span class="opt-label">changes in the type of traffic.</span>
                                 </label>
                             </div>
                         </fieldset>
@@ -1754,23 +1748,23 @@
                         <fieldset class="q-item" data-q="12">
                             <legend class="q-text">
                                 <span class="q-number">12</span>
-                                What is planned with regard to the lower school?
+                                Which change will shortly be made to the cycle path next to the river?
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 12 options">
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-2" value="A" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-2" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">All buildings on the main site will be improved.</span>
+                                    <span class="opt-label">It will be widened.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-2" value="B" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-2" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">The lower school site will be used for new homes.</span>
+                                    <span class="opt-label">It will be extended.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-2" value="C" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-2" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">Additional school buildings will be constructed on the lower school site.</span>
+                                    <span class="opt-label">It will be resurfaced.</span>
                                 </label>
                             </div>
                         </fieldset>
@@ -1778,23 +1772,23 @@
                         <fieldset class="q-item" data-q="13">
                             <legend class="q-text">
                                 <span class="q-number">13</span>
-                                The catering has been changed because of
+                                Plans for a pedestrian crossing have been postponed because
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 13 options">
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-3" value="A" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-3" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">long queuing times.</span>
+                                    <span class="opt-label">the Post Office has moved.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-3" value="B" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-3" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">changes to the school timetable.</span>
+                                    <span class="opt-label">the proposed location is unsafe.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-3" value="C" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-3" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">dissatisfaction with the menus.</span>
+                                    <span class="opt-label">funding is not available at present.</span>
                                 </label>
                             </div>
                         </fieldset>
@@ -1802,80 +1796,79 @@
                         <fieldset class="q-item" data-q="14">
                             <legend class="q-text">
                                 <span class="q-number">14</span>
-                                Parents are asked to
+                                On Station Road, notices have been erected
                             </legend>
                             <div class="q-options" role="radiogroup" aria-label="Question 14 options">
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-4" value="A" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-4" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">help their children to decide in advance which serving point to use.</span>
+                                    <span class="opt-label">telling cyclists not to leave their bikes outside the station ticket office.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-4" value="B" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-4" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">make sure their children have enough money for food.</span>
+                                    <span class="opt-label">asking motorists to switch off engines when waiting at the level crossing.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-4" value="C" />
+                                    <input type="radio" name="oc-TqMfMy8BLvZp0JDm-4" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">advise their children on healthy food to eat.</span>
+                                    <span class="opt-label">warning pedestrians to leave enough time when crossing the railway line.</span>
                                 </label>
                             </div>
+                        </fieldset>
+
+                        {{-- map_labeling --}}
+                        <fieldset class="q-item">
+                            <h3>Questions 15-20</h3>
+                            <p>Label the map below.</p>
+                            <p><i>Write the correct letter, <b>A-I</b>, next to Questions.</i></p>
+                        </fieldset>
+
+                        <fieldset class="q-item">
+                            <h3>Recreation ground after proposed changes</h3>
+                            <img src="{{asset('own_assets/images/cambridge-ielts-16-academic-listening-test-4-15-20.jpg')}}" alt="" width="100%">
                         </fieldset>
 
                         <fieldset class="q-item" data-q="15">
-                            <legend class="q-text">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">15</span>
-                                What does the speaker say about the existing canteen?
+                                <span style="flex: 1;">
+                                    New car park
+                                    <span class="q-question">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-1" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
+                                        </select>
+                                    </span>
+                                </span>
                             </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 15 options">
-                                <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-5" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">Food will still be served there.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-5" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">Only staff will have access to it.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="oc-XW16JROLKCFE4BMH-5" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">Pupils can take their food into it.</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        {{-- matching_information --}}
-                        <fieldset class="q-item">
-                            <p>Questions 16-18</p>
-                            <p>What comment does the speaker make about each of the following serving points in the Food Hall?</p>
-                            <p>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A-D</b>, next to Questions.</p>
-                            <p><b>Comments</b></p>
-
-                            <strong>A</strong>&nbsp;&nbsp; pupils help to plan menus
-                            <strong>B</strong>&nbsp;&nbsp; only vegetarian food<br>
-                            <strong>C</strong>&nbsp;&nbsp; different food every week<br>
-                            <strong>D</strong>&nbsp;&nbsp; daily change in menu<br>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p><b>Food available at serving points in Food Hall</b></p>
                         </fieldset>
 
                         <fieldset class="q-item" data-q="16">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">16</span>
                                 <span style="flex: 1;">
-                                    World Adventures
+                                    New cricket pitch
                                     <span class="q-question">
-                                        <select name="matching_information-XW16JROLKCFE4BMH-16" class="q-dropdown">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-2" class="q-dropdown">
                                             <option value=""></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
                                             <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
                                         </select>
                                     </span>
                                 </span>
@@ -1886,14 +1879,19 @@
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">17</span>
                                 <span style="flex: 1;">
-                                    Street Life
+                                    Children’s playground
                                     <span class="q-question">
-                                        <select name="matching_information-XW16JROLKCFE4BMH-17" class="q-dropdown">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-3" class="q-dropdown">
                                             <option value=""></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
                                             <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
                                         </select>
                                     </span>
                                 </span>
@@ -1904,59 +1902,69 @@
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">18</span>
                                 <span style="flex: 1;">
-                                    Speedy Italian
+                                    Skateboard ramp 
                                     <span class="q-question">
-                                        <select name="matching_information-XW16JROLKCFE4BMH-18" class="q-dropdown">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-4" class="q-dropdown">
                                             <option value=""></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
                                             <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
                                         </select>
                                     </span>
                                 </span>
                             </legend>
                         </fieldset>
 
-                        {{-- two_choices --}}
-                        <fieldset class="q-item">
-                            <p>Questions 19-20</p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        <fieldset class="q-item" data-q="19">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-number">19</span>
+                                <span style="flex: 1;">
+                                    Pavilion 
+                                    <span class="q-question">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-5" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </legend>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                            <legend class="q-text">
-                                <span class="q-number">19</span>
+                        <fieldset class="q-item" data-q="20">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">20</span>
-                                Which <b>TWO</b> optional after-school lessons are new?
+                                <span style="flex: 1;">
+                                    Notice board
+                                    <span class="q-question">
+                                        <select name="map_labeling-TqMfMy8BLvZp0JDm-6" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                            <option value="I">I</option>
+                                        </select>
+                                    </span>
+                                </span>
                             </legend>
-                            <div class="q-options" role="group" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-XW16JROLKCFE4BMH-1[]" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">swimming</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-XW16JROLKCFE4BMH-1[]" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">piano</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-XW16JROLKCFE4BMH-1[]" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">acting</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-XW16JROLKCFE4BMH-1[]" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">cycling</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-XW16JROLKCFE4BMH-1[]" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">theatre sound and lighting</span>
-                                </label>
-                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -1970,247 +1978,238 @@
                                 <p class="lead">Listen and answer questions 21-30</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-3.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-4-audio-3.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
                             </fieldset>
 
-                            {{-- oc 2 --}}
+                            {{-- two_choices --}}
                             <fieldset class="q-item">
-                                <p>Questions 21-24</p>
-                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+                                <p>Questions 21-22</p>
+                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-">
-                                <h3>Assignment on sleep and dreams</h3>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="21">
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">21</span>
-                                    Luke read that one reason why we often forget dreams is that
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 21 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-6" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">our memories cannot cope with too much information.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-6" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">we might other wise be confused about what is real.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-6" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">we do not think they are important.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="22">
-                                <legend class="q-text">
                                     <span class="q-number">22</span>
-                                    What do Luke and Susie agree about dreams predicting the future?
+                                    Which <b>TWO</b> benefits of city bike-sharing schemes do the students agree are the most important?
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 22 options">
+                                <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-7" value="A" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-1[]" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">It may just be due to chance.</span>
+                                        <span class="opt-label">reducing noise pollution</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-7" value="B" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-1[]" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">It only happens with certain types of event.</span>
+                                        <span class="opt-label">reducing traffic congestion</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-7" value="C" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-1[]" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">It happens more often than some people think.</span>
+                                        <span class="opt-label">improving air quality</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-1[]" value="D" />
+                                        <span class="opt-code">D</span>
+                                        <span class="opt-label">encouraging health and fitness</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-1[]" value="E" />
+                                        <span class="opt-code">E</span>
+                                        <span class="opt-label">making cycling affordable</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="23">
+                            {{-- two_choices 2 --}}
+                            <fieldset class="q-item">
+                                <p>Questions 23-24</p>
+                                <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                            </fieldset>
+
+                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">23</span>
-                                    Susie says that a study on pre-school children having a short nap in the day
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 23 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-8" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">had controversial results.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-8" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">used faulty researh methodology.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-8" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">failed to reach any clear conclusions.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="24">
-                                <legend class="q-text">
                                     <span class="q-number">24</span>
-                                    In their last assignment, both students had problems with
+                                    Which <b>TWO</b> things do the students think are necessary for successful bike-sharing schemes?
                                 </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 24 options">
+                                <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-9" value="A" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-3[]" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">statistical analysis.</span>
+                                        <span class="opt-label">Bikes should have a GPS system.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-9" value="B" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-3[]" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">making an action plan.</span>
+                                        <span class="opt-label">The app should be easy to use.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-XW16JROLKCFE4BMH-9" value="C" />
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-3[]" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">self-assessment</span>
+                                        <span class="opt-label">Public awareness should be raised.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-3[]" value="D" />
+                                        <span class="opt-code">D</span>
+                                        <span class="opt-label">Only one scheme should be available.</span>
+                                    </label>
+                                    <label class="q-option">
+                                        <input type="checkbox" name="two_choices-TqMfMy8BLvZp0JDm-3[]" value="E" />
+                                        <span class="opt-code">E</span>
+                                        <span class="opt-label">There should be a large network of cycle lanes.</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            {{-- fc_completion --}}
+                            {{-- matching_information --}}
                             <fieldset class="q-item">
-                                <p>Questions 25-30</p>
-                                <p>Complete the flow chart below.</p>
-                                <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                                <h3>Questions 25-30</h3>
+                                <p>What is the speakers’ opinion of the bike-sharing schemes in each of the following cities?</p>
+                                <p>Choose <b>SIX</b> answers from the box and write the correct letter, <b>A-G</b>, next to Questions.</p>
                             </fieldset>
 
-                            <p style="text-align: center"><b>Assignment plan</b></p>
                             <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>Decide on research question:</p>
-                                                <p>Is there a relationship between hours of sleep and number of dreams?</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <h3>Opinion of bike-sharing scheme</h3>
+                                <p><b>A</b> They agree it has been disappointing.</p>
+                                <p><b>B</b> They think it should be cheaper.</p>
+                                <p><b>C</b> They are surprised it has been so successful.</p>
+                                <p><b>D</b> They agree that more investment is required.</p>
+                                <p><b>E</b> They think the system has been well designed.</p>
+                                <p><b>F</b> They disagree about the reasons for its success.</p>
+                                <p><b>G</b> They think it has expanded too quickly.</p>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>Decide on sample:</p>
-                                                <p>
-                                                    <div class="q-list" data-q="25">
-                                                        Twelve students from the
-                                                        <span class="q-number-box">25</span>
-                                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
-                                                        department
-                                                    </div>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <p><b>Cities</b></p>
+
+                            <fieldset class="q-item" data-q="25">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">25</span>
+                                    <span style="flex: 1;">
+                                        Amsterdam 
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-1" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>Decide on methodology:</p>
-                                                <p>Self-reporting</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <fieldset class="q-item" data-q="26">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">26</span>
+                                    <span style="flex: 1;">
+                                        Dublin 
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-2" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>Decide on procedure:</p>
-                                                <p>
-                                                    <div class="q-list" data-q="26">
-                                                        Answers on 
-                                                        <span class="q-number-box">26</span>
-                                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
-                                                    </div>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <fieldset class="q-item" data-q="27">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">27</span>
+                                    <span style="flex: 1;">
+                                        London 
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-3" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>
-                                                    <div class="q-list" data-q="27">
-                                                        Check ethical guidelines for working with
-                                                        <span class="q-number-box">27</span>
-                                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
-                                                    </div>
-                                                    <div class="q-list" data-q="28">
-                                                        Ensure that risk is assessed and
-                                                        <span class="q-number-box">28</span>
-                                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
-                                                        is kept to a minimum
-                                                    </div>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <fieldset class="q-item" data-q="28">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">28</span>
+                                    <span style="flex: 1;">
+                                        Buenos Aires
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-4" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <table class=" aligncenter">
-                                    <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>
-                                                    <div class="q-list" data-q="29">
-                                                        Analyse the results Calculate the correlation and make a 
-                                                        <span class="q-number-box">29</span>
-                                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
-                                                    </div>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <fieldset class="q-item" data-q="29">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">29</span>
+                                    <span style="flex: 1;">
+                                        New York
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-5" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
-                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item">
-                                <p>
-                                    <div class="q-list" data-q="30">
-                                        Analyse the results Calculate the correlation and make a 
-                                        <span class="q-number-box">30</span>
-                                        <input type="text" name="fc_completion-XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
-                                    </div>
-                                </p>
+                            <fieldset class="q-item" data-q="30">
+                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <span class="q-number">30</span>
+                                    <span style="flex: 1;">
+                                        Sydney 
+                                        <span class="q-question">
+                                            <select name="matching_information-TqMfMy8BLvZp0JDm-6" class="q-dropdown">
+                                                <option value=""></option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                                <option value="G">G</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </legend>
                             </fieldset>
                         </form>
                     </div>
@@ -2224,7 +2223,7 @@
                             <p class="lead">Listen and answer questions 31-40</p>
                             <div class="audio-player">
                                 <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-2-audio-4.mp3"></audio>
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-4-audio-4.mp3"></audio>
                                 <input type="range" class="timeline" value="0" disabled>
                                 <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                             </div>
@@ -2238,104 +2237,102 @@
                         </fieldset>
 
                         <fieldset class="q-item">
-                            <p><b>Health benefits of dance</b></p>
-                            <p><b>Recent findings:</b></p>
+                            <h3>THE EXTINCTION OF THE DODO BIRD</h3>
+                            <p>The dodo was a large flightless bird which used to inhabit the island of Mauritius.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item">
+                            <p><b>History</b></p>
                             <ul>
-                                <li>All forms of dance produce various hormones associated with feelings of happiness.</li>
-                                <li>Dancing with others has a more positive impact than dancing alone.</li>
                                 <li>
                                     <div class="q-list" data-q="31">
-                                        An experiment on university students suggested that dance increases
+                                        1507 – Portuguese ships transporting
                                         <span class="q-number-box">31</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-11" class="q-text" placeholder="">
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-11" class="q-text" placeholder="">
+                                        stopped at the island to collect food and water.
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="32">
-                                        For those with mental illness, dance could be used as a form of
+                                        1638 – The Dutch established a
                                         <span class="q-number-box">32</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-12" class="q-text" placeholder="">
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-12" class="q-text" placeholder="">
+                                        on the island.
                                     </div>
                                 </li>
+                                <li>They killed the dodo birds for their meat.</li>
+                                <li>The last one was killed in 1681.</li>
                             </ul>
 
-                            <p><b>Benefits of dance for older people:</b></p>
+                            <p><b>Description</b></p>
                             <ul>
+                                <li>The only record we have is written descriptions and pictures (possibly unreliable).</li>
                                 <li>
                                     <div class="q-list" data-q="33">
-                                        accessible for people with low levels of
+                                        A Dutch painting suggests the dodo was very
                                         <span class="q-number-box">33</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-13" class="q-text" placeholder="">
-                                        when hunting or sleeping.
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-13" class="q-text" placeholder="">
                                     </div>
                                 </li>
-                                <li>reduces the risk of heart disease</li>
                                 <li>
                                     <div class="q-list" data-q="34">
-                                        better 
+                                        The only remaining soft tissue is a dried
                                         <span class="q-number-box">34</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-14" class="q-text" placeholder="">
-                                        reduces the risk of accidents
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-14" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="35">
-                                        improves  
+                                        Recent studies of a dodo skeleton suggest the birds were capable of rapid
                                         <span class="q-number-box">35</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-15" class="q-text" placeholder="">
-                                        function by making it work faster
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-15" class="q-text" placeholder="">
                                     </div>
                                 </li>
-                                <li>improves participants’ general well-being</li>
                                 <li>
                                     <div class="q-list" data-q="36">
-                                        gives people more
+                                        It’s thought they were able to use their small wings to maintain
                                         <span class="q-number-box">36</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-16" class="q-text" placeholder="">
-                                        to take exercise
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-16" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="37">
-                                        can lessen the feeling of
+                                        Their 
                                         <span class="q-number-box">37</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-17" class="q-text" placeholder="">
-                                        , very common in older people
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-17" class="q-text" placeholder="">
+                                        was of average size.
                                     </div>
                                 </li>
-                            </ul>
-
-                            <p><b>Benefits of Zumba:</b></p>
-                            <ul>
                                 <li>
                                     <div class="q-list" data-q="38">
-                                        A study at The University of Wisconsin showed that doing Zumba for 40 minutes uses up as many
+                                        Their sense of
                                         <span class="q-number-box">38</span>
-                                        <input type="text" name="nc-XW16JROLKCFE4BMH-18" class="q-text" placeholder="">
-                                        as other quite intense forms of exercise.
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-18" class="q-text" placeholder="">
+                                        enabled them to find food.
                                     </div>
                                 </li>
-                                <li>The American Journal of Health Behavior study showed that:</li>
                             </ul>
 
-                            <br>
-
-                            <p>
-                                <div class="q-list" data-q="39">
-                                    – women suffering from
-                                    <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-XW16JROLKCFE4BMH-19" class="q-text" placeholder="">
-                                    benefited from doing Zumba.
-                                </div>
-                            </p>
-                            <p>
-                                <div class="q-list" data-q="40">
-                                    – Zumba became a
-                                    <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-XW16JROLKCFE4BMH-20" class="q-text" placeholder="">
-                                    for the participants.
-                                </div>
-                            </p>
+                            <p><b>Reasons for extinction</b></p>
+                            <ul>
+                                <li>Hunting was probably not the main cause.</li>
+                                <li>Sailors brought dogs and monkeys.</li>
+                                <li>
+                                    <div class="q-list" data-q="39">
+                                        also escaped onto the island and ate the birds’ eggs.
+                                        <span class="q-number-box">39</span>
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-19" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="40">
+                                        The arrival of farming meant the
+                                        <span class="q-number-box">40</span>
+                                        <input type="text" name="nc-TqMfMy8BLvZp0JDm-20" class="q-text" placeholder="">
+                                        was destroyed.
+                                    </div>
+                                </li>
+                            </ul>
                         </fieldset>
                     </form>
                 </div>
@@ -2750,7 +2747,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'XW16JROLKCFE4BMH',
+                            set_id: 'TqMfMy8BLvZp0JDm',
                             kategori: 'listening',
                             answers: results,
                             tipe_test: 'mock'
@@ -3717,7 +3714,7 @@
                 type: 'POST',
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                    set_id: 'XW16JROLKCFE4BMH',
+                    set_id: 'TqMfMy8BLvZp0JDm',
                     kategori: 'listening',
                     answers: results,
                     tipe_test: 'mock'
