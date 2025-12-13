@@ -1393,9 +1393,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The diagram below shows the manufacturing process for making sugar from sugar cane.</p>
+                                <p>The diagram below shows the process for recycling plastic bottles.</p>
                                 <p>Summarize the information by selecting and reporting the main features, and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-16-academic-writing-test-2-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-16-academic-writing-test-4-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1445,8 +1445,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>In their advertising, businesses nowadays usually emphasise that their products are new in some way.</p>
-                                <p>Why is this? Do you think it is a positive or negative development?</p>
+                                <p>In the future all cars, buses and trucks will be driverless. The only people travelling inside these vehicles will be passengers.</p>
+                                <p>Do you think the advantages of driverless vehicles outweigh the disadvantages?</p>
                             </div>
                         </article>
 
