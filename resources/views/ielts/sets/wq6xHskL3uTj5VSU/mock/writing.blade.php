@@ -1334,7 +1334,6 @@
     </style>
 </head>
 
-
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
@@ -1393,9 +1392,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The maps below show an industrial area in the town of Norbiton, and planned future development of the site.</p>
+                                <p>The chart below gives information about how families in one country spent their weekly income in 1968 and in 2018.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-17-academic-writing-test-1-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-17-academic-writing-test-3-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1445,8 +1444,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>It is important for people to take risks, both in their professional lives and their personal lives.</p>
-                                <p>Do you think the advantages of taking risks outweigh the disadvantages?</p>
+                                <p>Some people believe that professionals, such as doctors and engineers, should be required to work in the country where they did their training. Others believe they should be free to work in another country if they wish.</p>
+                                <p>Discuss both these views and give your own opinion.</p>
                             </div>
                         </article>
 

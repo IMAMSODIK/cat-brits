@@ -1558,16 +1558,18 @@
                 <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">The development of the London underground railway</h3>
+                            <h3 class="passage-title">The thylacine</h3>
                             <div class="passage-body">
-                                <p>In the first half of the 1800s, London’s population grew at an astonishing rate, and the central area became increasingly congested. In addition, the expansion of the overground railway network resulted in more and more passengers arriving in the capital. However, in 1846, a Royal Commission decided that the railways should not be allowed to enter the City, the capital’s historic and business centre. The result was that the overground railway stations formed a ring around the City. The area within consisted of poorly built, overcrowded slums and the streets were full of horse-drawn traffic. Crossing the City became a nightmare. It could take an hour and a half to travel 8 km by horse-drawn carriage or bus. Numerous schemes were proposed to resolve these problems, but few succeeded.</p>
-                                <p>Amongst the most vocal advocates for a solution to London’s traffic problems was Charles Pearson, who worked as a solicitor for the City of London. He saw both social and economic advantages in building an underground railway that would link the overground railway stations together and clear London slums at the same time. His idea was to relocate the poor workers who lived in the inner-city slums to newly constructed suburbs, and to provide cheap rail travel for them to get to work. Pearson’s ideas gained support amongst some businessmen and in 1851 he submitted a plan to Parliament. It was rejected, but coincided with a proposal from another group for an underground connecting line, which Parliament passed.</p>
-                                <p>The two groups merged and established the Metropolitan Railway Company in August 1854. The company’s plan was to construct an underground railway line from the Great Western Railway’s (GWR) station at Paddington to the edge of the City at Farringdon Street – a distance of almost 5 km. The organisation had difficulty in raising the funding for such a radical and expensive scheme, not least because of the critical articles printed by the press. Objectors argued that the tunnels would collapse under the weight of traffic overhead, buildings would be shaken and passengers would be poisoned by the emissions from the train engines. However, Pearson and his partners persisted.</p>
-                                <p>The GWR, aware that the new line would finally enable them to run trains into the heart of the City, invested almost £250,000 in the scheme. Eventually, over a five-year period, £1m was raised. The chosen route ran beneath existing main roads to minimise the expense of demolishing buildings. Originally scheduled to be completed in 21 months, the construction of the underground line took three years. It was built just below street level using a technique known as ‘cut and cover’. A trench about ten metres wide and six metres deep was dug, and the sides temporarily help up with timber beams. Brick walls were then constructed, and finally a brick arch was added to create a tunnel. A two-metre-deep layer of soil was laid on top of the tunnel and the road above rebuilt.</p>
-                                <p>The Metropolitan line, which opened on 10 January 1863, was the world’s first underground railway. On its first day, almost 40,000 passengers were carried between Paddington and Farringdon, the journey taking about 18 minutes. By the end of the Metropolitan’s first year of operation, 9.5 million journeys had been made.</p>
-                                <p>Even as the Metropolitan began operation, the first extensions to the line were being authorised; these were built over the next five years, reaching Moorgate in the east of London and Hammersmith in the west. The original plan was to pull the trains with steam locomotives, using firebricks in the boilers to provide steam, but these engines were never introduced. Instead, the line used specially designed locomotives that were fitted with water tanks in which steam could be condensed. However, smoke and fumes remained a problem, even though ventilation shafts were added to the tunnels.</p>
-                                <p>Despite the extension of the underground railway, by the 1880s, congestion on London’s streets had become worse. The problem was partly that the existing underground lines formed a circuit around the centre of London and extended to the suburbs, but did not cross the capital’s centre. The ‘cut and cover’ method of construction was not an option in this part of the capital. The only alternative was to tunnel deep underground.</p>
-                                <p>Although the technology to create these tunnels existed, steam locomotives could not be used in such a confined space. It wasn’t until the development of a reliable electric motor, and a means of transferring power from the generator to a moving train, that the world’s first deep-level electric railway, the City & South London, became possible. The line opened in 1890, and ran from the City to Stockwell, south of the River Thames. The trains were made up of three carriages and driven by electric engines. The carriages were narrow and had tiny windows just below the roof because it was thought that passengers would not want to look out at the tunnel walls. The line was not without its problems, mainly caused by an unreliable power supply. Although the City & South London Railway was a great technical achievement, it did not make a profit. Then, in 1900, the Central London Railway, known as the ‘Tuppenny Tube’, began operation using new electric locomotives. It was very popular and soon afterwards new railways and extensions were added to the growing tube network. By 1907, the heart of today’s Underground system was in place.</p>
+                                <p>The extinct thylacine, also known as the Tasmanian tiger, was a marsupial* that bore a superficial resemblance to a dog. Its most distinguishing feature was the 13-19 dark brown stripes over its back, beginning at the rear of the body and extending onto the tail. The thylacine’s average nose-to-tail length for adult males was 162.6 cm, compared to 153.7 cm for females.</p>
+                                <p>The thylacine appeared to occupy most types of terrain except dense rainforest, with open eucalyptus forest thought to be its prime habitat. In terms of feeding, it was exclusively carnivorous, and its stomach was muscular with an ability to distend so that it could eat large amounts of food at one time, probably an adaptation to compensate for long periods when hunting was unsuccessful and food scarce. The thylacine was not a fast runner and probably caught its prey by exhausting it during a long pursuit. During long-distance chases, thylacines were likely to have relied more on scent than any other sense. They emerged to hunt during the evening, night and early morning and tended to retreat to the hills and forest for shelter during the day. Despite the common name ‘tiger’, the thylacine had a shy, nervous temperament. Although mainly nocturnal, it was sighted moving during the day and some individuals were even recorded basking in the sun.</p>
+                                <p>The thylacine had an extended breeding season from winter to spring, with indications that some breeding took place throughout the year. The thylacine, like all marsupials, was tiny and hairless when born. Newborns crawled into the pouch on the belly of their mother, and attached themselves to one of the four teats, remaining there for up to three months. When old enough to leave the pouch, the young stayed in a lair such as a deep rocky cave, well-hidden nest or hollow log, whilst the mother hunted.</p>
+                                <p>Approximately 4,000 years ago, the thylacine was widespread throughout New Guinea and most of mainland Australia, as well as the island of Tasmania. The most recent, well-dated occurrence of a thylacine on the mainland is a carbon-dated fossil from Murray Cave in Western Australia, which is around 3,100 years old. Its extinction coincided closely with the arrival of wild dogs called dingoes in Australia and a similar predator in New Guinea. Dingoes never reached Tasmania, and most scientists see this as the main reason for the thylacine’s survival there.</p>
+                                <p>The dramatic decline of the thylacine in Tasmania, which began in the 1830s and continued for a century, is generally attributed to the relentless efforts of sheep farmers and bounty hunters** with shotguns. While this determined campaign undoubtedly played a large part, it is likely that various other factors also contributed to the decline and eventual extinction of the species. These include competition with wild dogs introduced by European settlers, loss of habitat along with the disappearance of prey species, and a distemper-like disease which may also have affected the thylacine.</p>
+                                <p>There was only one successful attempt to breed a thylacine in captivity, at Melbourne Zoo in 1899. This was despite the large numbers that went through some zoos, particularly London Zoo and Tasmania’s Hobart Zoo. The famous naturalist John Gould foresaw the thylacine’s demise when he published his Mammals of Australia between 1848 and 1863, writing, ‘The numbers of this singular animal will speedily diminish, extermination will have its full sway, and it will then, like the wolf of England and Scotland, be recorded as an animal of the past.’</p>
+                                <p>However, there seems to have been little public pressure to preserve the thylacine, nor was much concern expressed by scientists at the decline of this species in the decades that followed. A notable exception was T.T. Flynn, Professor of Biology at the University of Tasmania. In 1914, he was sufficiently concerned about the scarcity of the thylacine to suggest that some should be captured and placed on a small island. But it was not until 1929, with the species on the very edge of extinction, that Tasmania’s Animals and Birds Protection Board passed a motion protecting thylacines only for the month of December, which was thought to be their prime breeding season. The last known wild thylacine to be killed was shot by a farmer in the north-east of Tasmania in 1930, leaving just captive specimens. Official protection of the species by the Tasmanian government was introduced in July 1936, 59 days before the last known individual died in Hobart Zoo on 7th September, 1936.</p>
+                                <p>There have been numerous expeditions and searches for the thylacine over the years, none of which has produced definitive evidence that thylacines still exist. The species was declared extinct by the Tasmanian government in 1986.</p>
+                                <p><i>*marsupial: a mammal, such as a kangaroo, whose young are born incompletely developed and are typically carried and suckled in a pouch on the mother’s belly</i></p>
+                                <p><i>**bounty hunters: people who are paid a reward for killing a wild animal</i></p>
                             </div>
                         </article>
 
@@ -1577,71 +1579,52 @@
                             <form class="qa-body">
                                 {{-- nc --}}
                                 <fieldset class="q-item">
-                                    <h3>Questions 1-6</h3>
+                                    <h3>Questions 1-5</h3>
                                     <p class="lead">Complete the notes below.</p>
                                     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
                                     <p><b>The London underground railway</b></p>
                                 </fieldset>
 
                                 <fieldset class="q-item">
-                                    <p><b>The problem</b></p>
+                                    <h3>The thylacine</h3>
+                                    <p><b>Appearance and behaviour</b></p>
                                     <ul>
+                                        <li>looked rather like a dog</li>
+                                        <li>had a series of stripes along its body and tail</li>
                                         <li>
                                             <div class="q-list" data-q="1">
-                                                The 
+                                                ate an entirely
                                                 <span class="q-number-box">1</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-1" class="q-text" placeholder="">
-                                                of London increased rapidly between 1800 and 1850
+                                                <input type="text" name="nc-wq6xHskL3uTj5VSU-1" class="q-text" placeholder="">
+                                                diet
                                             </div>
                                         </li>
-                                        <li>The streets were full of horse-drawn vehicles</li>
-                                    </ul>
-
-                                    <p><b>The proposed solution</b></p>
-                                    <ul>
-                                        <li>Charles Pearson, a solicitor, suggested building an underground railway</li>
                                         <li>
                                             <div class="q-list" data-q="2">
-                                                Building the railway would make it possible to move people to better housing in the
+                                                probably depended mainly on
                                                 <span class="q-number-box">2</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-2" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="3">
-                                                A number of 
-                                                <span class="q-number-box">3</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-3" class="q-text" placeholder="">
-                                                agreed with Pearson’s idea
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="4">
-                                                The company initially had problems getting the
-                                                <span class="q-number-box">4</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-4" class="q-text" placeholder="">
-                                                needed for the project
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="5">
-                                                Negative articles about the project appeared in the
-                                                <span class="q-number-box">5</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-5" class="q-text" placeholder="">
-                                                needed for the project
+                                                <input type="text" name="nc-wq6xHskL3uTj5VSU-2" class="q-text" placeholder="">
+                                                when hunting
                                             </div>
                                         </li>
                                     </ul>
 
-                                    <p><b>The construction</b></p>
+                                    <p><b>Decline and extinction</b></p>
                                     <ul>
-                                        <li>The chosen route did not require many buildings to be pulled down</li>
-                                        <li>The ‘cut and cover’ method was used to construct the tunnels</li>
                                         <li>
-                                            <div class="q-list" data-q="6">
-                                                With the completion of the brick arch, the tunnel was covered with
-                                                <span class="q-number-box">6</span>
-                                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-6" class="q-text" placeholder="">
+                                            <div class="q-list" data-q="4">
+                                                last evidence in mainland Australia is a 3,100-year-old
+                                                <span class="q-number-box">4</span>
+                                                <input type="text" name="nc-wq6xHskL3uTj5VSU-4" class="q-text" placeholder="">
+                                            </div>
+                                        </li>
+                                        <li>probably went extinct in mainland Australia due to animals known as dingoes</li>
+                                        <li>
+                                            <div class="q-list" data-q="5">
+                                                reduction in
+                                                <span class="q-number-box">5</span>
+                                                <input type="text" name="nc-wq6xHskL3uTj5VSU-5" class="q-text" placeholder="">
+                                                and available sources of food were partly responsible for decline in Tasmania
                                             </div>
                                         </li>
                                     </ul>
@@ -1649,7 +1632,7 @@
 
                                 {{-- tfng --}}
                                 <fieldset class="q-item">
-                                    <p><b>Questions 7-13</b></p>
+                                    <p><b>Questions 6-13</b></p>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -1661,24 +1644,48 @@
                                         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="7">
+                                <fieldset class="q-item" data-q="6">
                                     <legend class="q-text">
-                                        <span class="q-number">7</span>
-                                        Other countries had built underground railways before the Metropolitan line opened.
+                                        <span class="q-number">6</span>
+                                        Significant numbers of thylacines were killed by humans from the 1830s onwards.
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
+                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-1" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-1" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-1" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-1" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-1" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-1" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="7">
+                                    <legend class="q-text">
+                                        <span class="q-number">7</span>
+                                        Several thylacines were born in zoos during the late 1800s.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-2" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-2" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1688,21 +1695,21 @@
                                 <fieldset class="q-item" data-q="8">
                                     <legend class="q-text">
                                         <span class="q-number">8</span>
-                                        More people than predicted travelled on the Metropolitan line on the first day.
+                                        John Gould’s prediction about the thylacine surprised some biologists.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 8 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-2" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-3" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-2" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-3" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-2" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1712,21 +1719,21 @@
                                 <fieldset class="q-item" data-q="9">
                                     <legend class="q-text">
                                         <span class="q-number">9</span>
-                                        The use of ventilation shafts failed to prevent pollution in the tunnels.
+                                        In the early 1900s, many scientists became worried about the possible extinction of the thylacine.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 9 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-3" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-4" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-3" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-4" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-3" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1736,21 +1743,21 @@
                                 <fieldset class="q-item" data-q="10">
                                     <legend class="q-text">
                                         <span class="q-number">10</span>
-                                        A different approach from the ‘cut and cover’ technique was required in London’s central area.
+                                        T.T. Flynn’s proposal to rehome captive thylacines on an island proved to be impractical.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 10 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-4" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-5" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-4" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-5" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-4" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1760,69 +1767,69 @@
                                 <fieldset class="q-item" data-q="11">
                                     <legend class="q-text">
                                         <span class="q-number">11</span>
-                                        The windows on City & South London trains were at eye level.
+                                        There were still reasonable numbers of thylacines in existence when a piece of legislation protecting the species during their breeding season was passed.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 11 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-5" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-6" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-5" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-6" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-5" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="12">
-                                    <legend class="q-text">
-                                        <span class="q-number">12</span>
-                                        The City & South London Railway was a financial success.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 12 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-6" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-6" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-6" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-6" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
                                 
-                                <fieldset class="q-item" data-q="13">
+                                <fieldset class="q-item" data-q="12">
                                     <legend class="q-text">
-                                        <span class="q-number">13</span>
-                                        Trains on the ‘Tuppenny Tube’ nearly always ran on time.
+                                        <span class="q-number">12</span>
+                                        From 1930 to 1936, the only known living thylacines were all in captivity.
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 13 options">
+                                    <div class="q-options" role="radiogroup" aria-label="Question 12 options">
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-7" value="TRUE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-7" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-7" value="FALSE" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-7" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="tfng-QUApDKzp0Wn1GCiA-7" value="NOT GIVEN" />
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-7" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="13">
+                                    <legend class="q-text">
+                                        <span class="q-number">13</span>
+                                        Attempts to find living thylacines are now rarely made.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 13 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-8" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-8" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="tfng-wq6xHskL3uTj5VSU-8" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1838,31 +1845,26 @@
                 <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">Stadiums: past, present and future</h3>
+                            <h3 class="passage-title">Palm oil</h3>
                             <div class="passage-body">
                                 <h3 class="passage-title">A</h3>
-                                <p>Stadiums are among the oldest forms of urban architecture: vast stadiums where the public could watch sporting events were at the centre of western city life as far back as the ancient Greek and Roman Empires, well before the construction of the great medieval cathedrals and the grand 19th- and 20th-century railway stations which dominated urban skylines in later eras.</p>
-                                <p>Today, however, stadiums are regarded with growing scepticism. Construction costs can soar above £1 billion, and stadiums finished for major events such as the Olympic Games or the FIFA World Cup have notably fallen into disuse and disrepair.</p>
-                                <p>But this need not be the cause. History shows that stadiums can drive urban development and adapt to the culture of every age. Even today, architects and planners are finding new ways to adapt the mono-functional sports arenas which became emblematic of modernisation during the 20th century.</p>
+                                <p>Palm oil is an edible oil derived from the fruit of the African oil palm tree, and is currently the most consumed vegetable oil in the world. It’s almost certainly in the soap we wash with in the morning, the sandwich we have for lunch, and the biscuits we snack on during the day. Why is palm oil so attractive for manufacturers? Primarily because its unique properties – such as remaining solid at room temperature – make it an ideal ingredient for long-term preservation, allowing many packaged foods on supermarket shelves to have ‘best before’ dates of months, even years, into the future.</p>
                                 <h3 class="passage-title">B</h3>
-                                <p>The amphitheatre* of Arles in southwest France, with a capacity of 25,000 spectators, is perhaps the best example of just how versatile stadiums can be. Built by the Romans in 90 AD, it became a fortress with four towers after the fifth century, and was then transformed into a village containing more than 200 houses. With the growing interest in conservation during the 19th century, it was converted back into an arena for the staging of bullfights, thereby returning the structure to its original use as a venue for public spectacles.</p>
-                                <p>Another example is the imposing arena of Verona in northern Italy, with space for 30,000 spectators, which was built 60 years before the Arles amphitheatre and 40 years before Rome’s famous Colosseum. It has endured the centuries and is currently considered one of the world’s prime sites for opera, thanks to its outstanding acoustics.</p>
+                                <p>Many farmers have seized the opportunity to maximise the planting of oil palm trees. Between 1990 and 2012, the global land area devoted to growing oil palm trees grew from 6 to 17 million hectares, now accounting for around ten percent of total cropland in the entire world. From a mere two million tonnes of palm oil being produced annually globally 50 years ago, there are now around 60 million tonnes produced every single year, a figure looking likely to double or even triple by the middle of the century.</p>
                                 <h3 class="passage-title">C</h3>
-                                <p>The area in the centre of the Italian town of Lucca, known as the Piazza dell’ Anfiteatro, is yet another impressive example of an amphitheatre becoming absorbed into the fabric of the city. The site evolved in a similar way to Arles and was progressively filled with buildings from the Middle Ages until the 19th century, variously used as houses, a salt depot and a prison. But rather than reverting to an arena, it became a market square, designed by Romanticist architect Lorenzo Nottolini. Today, the ruins of the amphitheatre remain embedded in the various shops and residences surrounding the public square.</p>
+                                <p>However, there are multiple reasons why conservationists cite the rapid spread of oil palm plantations as a major concern. There are countless news stories of deforestation, habitat destruction and dwindling species populations, all as a direct result of land clearing to establish oil palm tree monoculture on an industrial scale, particularly in Malaysia and Indonesia. Endangered species – most famously the Sumatran orangutan, but also rhinos, elephants, tigers, and numerous other fauna – have suffered from the unstoppable spread of oil palm plantations.</p>
                                 <h3 class="passage-title">D</h3>
-                                <p>There are many similarities between modern stadiums and the ancient amphitheatres intended for games. But some of the flexibility was lost at the beginning of the 20th century, as stadiums were developed using new products such as steel and reinforced concrete, and made use of bright lights for night-time matches.</p>
-                                <p>Many such stadiums are situated in suburban areas, designed for sporting use only and surrounded by parking lots. These factors mean that they may not be as accessible to the general public, require more energy to run and contribute to urban heat.</p>
+                                <p>‘Palm oil is surely one of the greatest threats to global biodiversity,’ declares Dr Farnon Ellwood of the University of the West of England, Bristol. ‘Palm oil is replacing rainforest, and rainforest is where all the species are. That’s a problem.’ This has led to some radical questions among environmentalists, such as whether consumers should try to boycott palm oil entirely.</p>
+                                <p>Meanwhile Bhavani Shankar, Professor at London’s School of Oriental and African Studies, argues, ‘It’s easy to say that palm oil is the enemy and we should be against it. It makes for a more dramatic story, and it’s very intuitive. But given the complexity of the argument, I think a much more nuanced story is closer to the truth.’</p>
                                 <h3 class="passage-title">E</h3>
-                                <p>But many of today’s most innovative architects see scope for the stadium to help improve the city. Among the current strategies, two seem to be having particular success: the stadium as an urban hub, and as a power plant.</p>
-                                <p>There’s a growing trend for stadiums to be equipped with public spaces and services that serve a function beyond sport, such as hotels, retail outlets, conference centres, restaurants and bars, children’s playgrounds and green space. Creating mixed-use developments such as this reinforces compactness and multi-functionality, making more efficient use of land and helping to regenerate urban spaces.</p>
-                                <p>This opens the space up to families and a wider cross-section of society, instead of catering only to sportspeople and supporters. There have been many examples of this in the UK: the mixed-use facilities at Wembley and Old Trafford have become a blueprint for many other stadiums in the world.</p>
+                                <p>One response to the boycott movement has been the argument for the vital role palm oil plays in lifting many millions of people in the developing world out of poverty. Is it desirable to have palm oil boycotted, replaced, eliminated from the global supply chain, given how many low-income people in developing countries depend on it for their livelihoods? How best to strike a utilitarian balance between these competing factors has become a serious bone of contention.</p>
                                 <h3 class="passage-title">F</h3>
-                                <p>The phenomenon of stadium as power stations has arisen from the idea that energy problems can be overcome by integrating interconnected buildings by means of a smart grid, which is an electricity supply network that uses digital communications technology to detect and react to local changes in usage, without significant energy losses. Stadiums are ideal for these purposes, because their canopies have a large surface area for fitting photovoltaic panels and rise high enough (more than 40 metres) to make use of micro wind turbines.</p>
-                                <p>Freiburg Mage Solar Stadium in Germany is the first of a new wave of stadiums as power plants, which also includes the Amsterdam Arena and the Kaohsiung Stadium. The latter, inaugurated in 2009, has 8,844 photovoltaic panels producing up to 1.14 GWh of electricity annually. This reduces the annual output of carbon dioxide by 660 tons and supplies up to 80 percent of the surrounding area when the stadium is not in use. This is proof that a stadium can serve its city, and have a decidedly positive impact in terms of reduction of CO2 emissions.</p>
+                                <p>Even the deforestation argument isn’t as straightforward as it seems. Oil palm plantations produce at least four and potentially up to ten times more oil per hectare than soybean, rapeseed, sunflower or other competing oils. That immensely high yield – which is predominantly what makes it so profitable – is potentially also an ecological benefit. If ten times more palm oil can be produced from a patch of land than any competing oil, then ten times more land would need to be cleared in order to produce the same volume of oil from that competitor.</p>
+                                <p>As for the question of carbon emissions, the issue really depends on what oil palm trees are replacing. Crops vary in the degree to which they sequester carbon – in other words, the amount of carbon they capture from the atmosphere and store within the plant. The more carbon a plant sequesters, the more it reduces the effect of climate change. As Shankar explains: ‘[Palm oil production] actually sequesters more carbon in some ways than other alternatives. […] Of course, if you’re cutting down virgin forest it’s terrible – that’s what’s happening in Indonesia and Malaysia, it’s been allowed to get out of hand. But if it’s replacing rice, for example, it might actually sequester more carbon.’</p>
                                 <h3 class="passage-title">G</h3>
-                                <p>Sporting arenas have always been central to the life and culture of cities. In every era, the stadium has acquired new value and uses: from military fortress to residential village, public space to theatre and most recently a field for experimentation in advanced engineering. The stadium of today now brings together multiple functions, thus helping cities to create a sustainable future.</p>
-                                <hr>
-                                <p>* amphitheatre: (especially in Greek and Roman architecture) an open circular or oval building with a central space surrounded by tiers of seats for spectators, for the presentation of dramatic or sporting events</p>
+                                <p>The industry is now regulated by a group called the Roundtable on Sustainable Palm Oil (RSPO), consisting of palm growers, retailers, product manufacturers, and other interested parties. Over the past decade or so, an agreement has gradually been reached regarding standards that producers of palm oil have to meet in order for their product to be regarded as officially ‘sustainable’. The RSPO insists upon no virgin forest clearing, transparency and regular assessment of carbon stocks, among other criteria. Only once these requirements are fully satisfied is the oil allowed to be sold as certified sustainable palm oil (CSPO). Recent figures show that the RSPO now certifies around 12 million tonnes of palm oil annually, equivalent to roughly 21 percent of the world’s total palm oil production.</p>
+                                <h3 class="passage-title">H</h3>
+                                <p>There is even hope that oil palm plantations might not need to be such sterile monocultures, or ‘green deserts’, as Ellwood describes them. New research at Ellwood’s lab hints at one plant which might make all the difference. The bird’s nest fern (Asplenium nidus) grows on trees in an epiphytic fashion (meaning it’s dependent on the tree only for support, not for nutrients), and is native to many tropical regions, where as a keystone species it performs a vital ecological role. Ellwood believes that reintroducing the bird’s nest fern into oil palm plantations could potentially allow these areas to recover their biodiversity, providing a home for all manner of species, from fungi and bacteria, to invertebrates such as insects, amphibians, reptiles and even mammals.</p>
                             </div>
                         </article>
 
@@ -1870,21 +1872,19 @@
 
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body">
-                                {{-- matching_information --}}
                                 <fieldset class="q-item">
-                                    <p class="lead"><b>Questions 14-17</b></p>
-                                    <p class="lead">The passage has seven paragraphs, <b>A-G</b>.</p>
-                                    <p>Which section contains the following information?</p>
-                                    <p><b>NB</b> You may use any letter more than once.</p>
+                                    <p class="lead"><b>Questions 14-20</b></p>
+                                    <p class="lead">The passage has eight paragraphs, <b>A-H</b>.</p>
+                                    <p>Write the correct letter, <b>A-H</b>, in boxes on your answer sheet.</p>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="14">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">14</span>
                                         <span style="flex: 1;">
-                                            a mention of negative attitudes towards stadium building projects
+                                            examples of a range of potential environmental advantages of oil palm tree cultivation
                                             <span class="q-question">
-                                                <select name="matching_information-QUApDKzp0Wn1GCiA-1" class="q-dropdown">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-1" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -1893,6 +1893,7 @@
                                                     <option value="E">E</option>
                                                     <option value="F">F</option>
                                                     <option value="G">G</option>
+                                                    <option value="H">H</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1903,9 +1904,9 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">15</span>
                                         <span style="flex: 1;">
-                                            figures demonstrating the environmental benefits of a certain stadium
+                                            description of an organisation which controls the environmental impact of palm oil production
                                             <span class="q-question">
-                                                <select name="matching_information-QUApDKzp0Wn1GCiA-2" class="q-dropdown">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-2" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -1914,6 +1915,7 @@
                                                     <option value="E">E</option>
                                                     <option value="F">F</option>
                                                     <option value="G">G</option>
+                                                    <option value="H">H</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1924,9 +1926,9 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">16</span>
                                         <span style="flex: 1;">
-                                            examples of the wide range of facilities available at some new stadiums
+                                            examples of the widespread global use of palm oil
                                             <span class="q-question">
-                                                <select name="matching_information-QUApDKzp0Wn1GCiA-3" class="q-dropdown">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-3" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -1935,6 +1937,7 @@
                                                     <option value="E">E</option>
                                                     <option value="F">F</option>
                                                     <option value="G">G</option>
+                                                    <option value="H">H</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1945,9 +1948,9 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">17</span>
                                         <span style="flex: 1;">
-                                            reference to the disadvantages of the stadiums built during a certain era
+                                            reference to a particular species which could benefit the ecosystem of oil palm plantations
                                             <span class="q-question">
-                                                <select name="matching_information-QUApDKzp0Wn1GCiA-4" class="q-dropdown">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-4" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -1956,116 +1959,183 @@
                                                     <option value="E">E</option>
                                                     <option value="F">F</option>
                                                     <option value="G">G</option>
+                                                    <option value="H">H</option>
                                                 </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                {{-- summary_completion --}}
+                                <fieldset class="q-item" data-q="18">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">18</span>
+                                        <span style="flex: 1;">
+                                            figures illustrating the rapid expansion of the palm oil industry
+                                            <span class="q-question">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
 
-                                <fieldset class="q-item">
-                                    <h3>Questions 18-22</h3>
-                                    <p><i>Complete the summary below.</i></p>
-                                    <p class="lead">Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                <fieldset class="q-item" data-q="19">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">19</span>
+                                        <span style="flex: 1;">
+                                            an economic justification for not opposing the palm oil industry
+                                            <span class="q-question">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-6" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
 
-                                    <h3>Roman amphitheatres</h3>
-
-                                    <p>
-                                        The Roman stadium of Europe have proved very versatile. The amphitheatre of Arles, for example, was converted first into a
-                                        <span class="q-number-box">18</span>
-                                        <input type="text" name="summary_completion-QUApDKzp0Wn1GCiA-18" class="q-text" placeholder="">
-                                        , then into a residential area and finally into an arena where spectators could watch
-                                        <span class="q-number-box">19</span>
-                                        <input type="text" name="summary_completion-QUApDKzp0Wn1GCiA-19" class="q-text" placeholder="">
-                                        . Meanwhile, the arena in Verona, one of the oldest Roman amphitheatres, is famous today as a venue where
-                                        <span class="q-number-box">20</span>
-                                        <input type="text" name="summary_completion-QUApDKzp0Wn1GCiA-20" class="q-text" placeholder="">
-                                        is performed. The site of Lucca’s amphitheatre has also been used for many purposes over the centuries, including the storage of
-                                        <span class="q-number-box">21</span>
-                                        <input type="text" name="summary_completion-QUApDKzp0Wn1GCiA-21" class="q-text" placeholder="">
-                                        . It is now a market square with
-                                        <span class="q-number-box">22</span>
-                                        <input type="text" name="summary_completion-QUApDKzp0Wn1GCiA-22" class="q-text" placeholder="">
-                                        and homes incorporated into the remains of the Roman amphitheatre.
-                                    </p>
+                                <fieldset class="q-item" data-q="20">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">20</span>
+                                        <span style="flex: 1;">
+                                            examples of creatures badly affected by the establishment of oil palm plantations  
+                                            <span class="q-question">
+                                                <select name="matching_information-wq6xHskL3uTj5VSU-7" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
                                 </fieldset>
 
                                 {{-- two_choices --}}
                                 <fieldset class="q-item">
-                                    <p>Questions 23-24</p>
+                                    <p>Questions 21-22</p>
                                     <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
-                                        <span class="q-number">23</span>
-                                        <span class="q-number">24</span>
-                                        When comparing twentieth-century stadiums to ancient amphitheatres in Section D, which <b>TWO</b> negative features does the writer mention?
+                                        <span class="q-number">21</span>
+                                        <span class="q-number">22</span>
+                                        Which <b>TWO</b> statements are made about the Roundtable on Sustainable Palm Oil (RSPO)?
                                     </legend>
                                     <div class="q-options" role="group" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-1[]" value="A" />
+                                            <input type="checkbox" name="two_choices-wq6xHskL3uTj5VSU-1[]" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">They are less imaginatively designed.</span>
+                                            <span class="opt-label">Its membership has grown steadily over the course of the last decade.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-1[]" value="B" />
+                                            <input type="checkbox" name="two_choices-wq6xHskL3uTj5VSU-1[]" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">They are less spacious.</span>
+                                            <span class="opt-label">It demands that certified producers be open and honest about their practices.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-1[]" value="C" />
+                                            <input type="checkbox" name="two_choices-wq6xHskL3uTj5VSU-1[]" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">They are in less convenient locations.</span>
+                                            <span class="opt-label">It took several years to establish its set of criteria for sustainable palm oil certification.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-1[]" value="D" />
+                                            <input type="checkbox" name="two_choices-wq6xHskL3uTj5VSU-1[]" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">They are less versatile.</span>
+                                            <span class="opt-label">Its regulations regarding sustainability are stricter than those governing other industries.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-1[]" value="E" />
+                                            <input type="checkbox" name="two_choices-wq6xHskL3uTj5VSU-1[]" value="E" />
                                             <span class="opt-code">E</span>
-                                            <span class="opt-label">They are made of less durable materials</span>
+                                            <span class="opt-label">It was formed at the request of environmentalists concerned about the loss of virgin forests.</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-q-multi="1,2" data-max="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">25</span>
-                                        <span class="q-number">26</span>
-                                        Which <b>TWO</b> advantages of modern stadium design does the writer mention?
+                                {{-- sentence_completion --}}
+                                <fieldset class="q-item">
+                                    <h3>Questions 23-26</h3>
+                                    <p class="lead">Complete the sentences below.</p>
+                                    <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet</i></p>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="23">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">23</span>
+                                        <span style="flex: 1;">
+                                            One advantage of palm oil for manufacturers is that it stays
+                                            <span class="q-question">
+                                                <input type="text" name="sentence_completion-wq6xHskL3uTj5VSU-1" class="q-text"
+                                                    placeholder="">
+                                            </span>
+                                            even when not refrigerated.
+                                        </span>
                                     </legend>
-                                    <div class="q-options" role="group" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-3[]" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">offering improved amenities for the enjoyment of sports events</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-3[]" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">bringing community life back into the city environment</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-3[]" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">facilitating research into solar and wind energy solutions</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-3[]" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">enabling local residents to reduce their consumption of electricity</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="checkbox" name="two_choices-QUApDKzp0Wn1GCiA-3[]" value="E" />
-                                            <span class="opt-code">E</span>
-                                            <span class="opt-label">alterations in the usual flow of water in the seas</span>
-                                        </label>
-                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="24">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">24</span>
+                                        <span style="flex: 1;">
+                                            The 
+                                            <span class="q-question">
+                                                <input type="text" name="sentence_completion-wq6xHskL3uTj5VSU-2" class="q-text"
+                                                    placeholder="">
+                                            </span>
+                                            is the best known of the animals suffering habitat loss as a result of the spread of oil palm plantations.
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="25">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">25</span>
+                                        <span style="flex: 1;">
+                                            As one of its criteria for the certification of sustainable palm oil, the RSPO insists that growers check
+                                            <span class="q-question">
+                                                <input type="text" name="sentence_completion-wq6xHskL3uTj5VSU-3" class="q-text"
+                                                    placeholder="">
+                                            </span>
+                                            on a routine basis.
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item questions-item" data-q="26">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">26</span>
+                                        <span style="flex: 1;">
+                                            Ellwood and his researchers are looking into whether the bird’s nest fern could restore
+                                            <span class="q-question">
+                                                <input type="text" name="sentence_completion-wq6xHskL3uTj5VSU-4" class="q-text"
+                                                    placeholder="">
+                                            </span>
+                                            in areas where oil palm trees are grown.
+                                        </span>
+                                    </legend>
                                 </fieldset>
                             </form>
                         </aside>
@@ -2095,134 +2165,157 @@
 
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body">
-                                {{-- summary_completion --}}
+                                {{-- oc --}}
                                 <fieldset class="q-item">
-                                    <h3>Questions 27-31</h3>
-                                    <p class="lead">Complete the summary using the list of words, <b>A-J</b>, below.</p>
-
-                                    <table cellspacing="20" class="q-table q-table-letters">
-                                        <tr>
-                                            <td><b>A</b></td><td>military innovation</td>
-                                            <td><b>B</b></td><td>large reward</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>C</b></td><td>widespread conspiracy</td>
-                                            <td><b>D</b></td><td>relative safety</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>E</b></td><td>new government</td>
-                                            <td><b>F</b></td><td>decisive victory</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>G</b></td><td>political debate</td>
-                                            <td><b>H</b></td><td>strategic alliance</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>I</b></td><td>popular solution</td>
-                                            <td><b>J</b></td><td>religious conviction</td>
-                                        </tr>
-                                    </table>
-
-                                    <h3>The story behind the hunt for Charles II</h3>
-
-                                    <p>
-                                        Charles II’s father was executed by the Parliamentarian forces in 1649. Charles II then formed a
-                                        <span class="q-number-box">27</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="summary_completion-QUApDKzp0Wn1GCiA-1" data-q="27" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="J">J</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        with the Scots, and in order to become King of Scots, he abandoned an important
-                                        <span class="q-number-box">28</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="summary_completion-QUApDKzp0Wn1GCiA-2" data-q="28" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="J">J</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        that was held by his father and had contributed to his father’s death. The opposing sides then met outside Worcester in 1651. The battle led to a
-                                        <span class="q-number-box">29</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="summary_completion-QUApDKzp0Wn1GCiA-3" data-q="29" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="J">J</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        for the Parliamentarians and Charles had to flee for his life. A
-                                        <span class="q-number-box">30</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="summary_completion-QUApDKzp0Wn1GCiA-4" data-q="30" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="J">J</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        was offered for Charles’s capture, but after six weeks spent in hiding, he eventually managed to reach the
-                                        <span class="q-number-box">31</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="summary_completion-QUApDKzp0Wn1GCiA-5" data-q="31" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                    <option value="H">H</option>
-                                                    <option value="I">I</option>
-                                                    <option value="J">J</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        of continental Europe.
+                                    <p><b>Questions 27-31</b></p>
+                                    <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
+                                        <b>D</b>.
                                     </p>
+                                    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
+                                </fieldset>
+                                <fieldset class="q-item" data-q="27">
+                                    <legend class="q-text">
+                                        <span class="q-number">27</span>
+                                        What point does Shester make about Barr’s book in the first paragraph?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 27 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-1" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">It gives a highly original explanation for urban development.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-1" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">Elements of Barr’s research papers are incorporated throughout the book.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-1" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">Other books that are available on the subject have taken a different approach.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-1" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">It covers a range of factors that affected the development of New York.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="28">
+                                    <legend class="q-text">
+                                        <span class="q-number">28</span>
+                                        How does Shester respond to the information in the book about tenements?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 28 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-2" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">She describes the reasons for Barr’s interest.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-2" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">She indicates a potential problem with Barr’s analysis.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-2" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">She compares Barr’s conclusion with that of other writers.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-2" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">She provides details about the sources Barr used for his research.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="29">
+                                    <legend class="q-text">
+                                        <span class="q-number">29</span>
+                                        What does Shester say about chapter six of the book?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 29 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-3" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">It contains conflicting data.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-3" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">It focuses too much on possible trends.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-3" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">It is too specialised for most readers.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-3" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">It draws on research that is out of date.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="30">
+                                    <legend class="q-text">
+                                        <span class="q-number">30</span>
+                                        What does Shester suggest about the chapters focusing on the 1920s building boom?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 30 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="30-wq6xHskL3uTj5VSU-4" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">The information should have been organised differently.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="30-wq6xHskL3uTj5VSU-4" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">More facts are needed about the way construction was financed.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="30-wq6xHskL3uTj5VSU-4" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">The explanation that is given for the building boom is unlikely.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="30-wq6xHskL3uTj5VSU-4" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">Some parts will have limited appeal to certain people.</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="31">
+                                    <legend class="q-text">
+                                        <span class="q-number">31</span>
+                                        What impresses Shester the most about the chapter on land values?
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 31 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-5" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">the broad time period that is covered</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-5" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">the interesting questions that Barr asks</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-5" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">the nature of the research into the topic</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-wq6xHskL3uTj5VSU-5" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">the recommendations Barr makes for the future</span>
+                                        </label>
+                                    </div>
                                 </fieldset>
 
                                 {{-- ynng --}}
@@ -2243,21 +2336,21 @@
                                 <fieldset class="q-item" data-q="32">
                                     <legend class="q-text">
                                         <span class="q-number">32</span>
-                                        Charles chose Pepys for the task because he considered him to be trustworthy.
+                                        The description in the first chapter of how New York probably looked from the air in the early 1600s lacks interest.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 32 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-1" value="YES" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-1" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-1" value="NO" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-1" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-1" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2267,21 +2360,21 @@
                                 <fieldset class="q-item" data-q="33">
                                     <legend class="q-text">
                                         <span class="q-number">33</span>
-                                        Charles’s personal recollection of the escape lacked sufficient detail.
+                                        Chapters two and three prepare the reader well for material yet to come.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 33 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-2" value="YES" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-2" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-2" value="NO" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-2" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-2" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2291,21 +2384,21 @@
                                 <fieldset class="q-item" data-q="34">
                                     <legend class="q-text">
                                         <span class="q-number">34</span>
-                                        Charles indicated to Pepys that he had planned his escape before the battle.
+                                        The biggest problem for many nineteenth-century New York immigrant neighbourhoods was a lack of amenities.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 34 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-3" value="YES" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-3" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-3" value="NO" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-3" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-3" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2315,178 +2408,156 @@
                                 <fieldset class="q-item" data-q="35">
                                     <legend class="q-text">
                                         <span class="q-number">35</span>
-                                        The inclusion of Charles’s account is a positive aspect of the book.
+                                        In the nineteenth century, New York’s immigrant neighbourhoods tended to concentrate around the harbour.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 35 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-4" value="YES" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-4" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-4" value="NO" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-4" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-QUApDKzp0Wn1GCiA-4" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-wq6xHskL3uTj5VSU-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                {{-- oc --}}
+                                {{-- summary_completion --}}
                                 <fieldset class="q-item">
-                                    <p><b>Questions 36-40</b></p>
-                                    <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
-                                        <b>D</b>.
+                                    <h3>Questions 36-40</h3>
+                                    <p class="lead">Complete the summary using the list of words, <b>A-J</b>, below.</p>
+                                    <p><i>Write the correct letter, <b>A-J</b>, in boxes on your answer sheet.</i></p>
+
+                                    <table cellspacing="20" class="q-table q-table-letters">
+                                        <tr>
+                                            <td><b>A</b></td><td>development plans</td>
+                                            <td><b>B</b></td><td>deep excavations</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>C</b></td><td>widgreat distance</td>
+                                            <td><b>D</b></td><td>excessive expense</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>E</b></td><td>impossible tasks</td>
+                                            <td><b>F</b></td><td>associated risks</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>G</b></td><td>water level</td>
+                                            <td><b>H</b></td><td>specific areas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>I</b></td><td>total expenditure</td>
+                                            <td><b>J</b></td><td>construction guidelines</td>
+                                        </tr>
+                                    </table>
+
+                                    <h3>The bedrock myth</h3>
+
+                                    <p>
+                                        In chapter seven, Barr indicates how the lack of bedrock close to the surface does not explain why skyscrapers are absent from
+                                        <span class="q-number-box">36</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-wq6xHskL3uTj5VSU-1" data-q="36" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                    <option value="I">I</option>
+                                                    <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                        . He points out that although the cost of foundations increases when bedrock is deep below the surface, this cannot be regarded as
+                                        <span class="q-number-box">37</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-wq6xHskL3uTj5VSU-2" data-q="37" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                    <option value="I">I</option>
+                                                    <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                        , especially when compared to
+                                        <span class="q-number-box">38</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-wq6xHskL3uTj5VSU-3" data-q="38" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                    <option value="I">I</option>
+                                                    <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                        . A particularly enjoyable part of the chapter was Barr’s account of how foundations are built. He describes not only how
+                                        <span class="q-number-box">39</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-wq6xHskL3uTj5VSU-4" data-q="39" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                    <option value="I">I</option>
+                                                    <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                        are made possible by the use of caissons, but he also discusses their
+                                        <span class="q-number-box">40</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-wq6xHskL3uTj5VSU-5" data-q="40" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                    <option value="I">I</option>
+                                                    <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                        . The chapter is well researched but relatively easy to understand.
                                     </p>
-                                    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
-                                </fieldset>
-                                <fieldset class="q-item" data-q="36">
-                                    <legend class="q-text">
-                                        <span class="q-number">36</span>
-                                        What is the reviewer’s main purpose in the first paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 36 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-1" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">to describe what happened during the Battle of Worcester</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-1" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">to give an account of the circumstances leading to Charles II’s escape</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-1" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">to provide details of the Parliamentarians’ political views</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-1" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">to compare Charles II’s beliefs with those of his father</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="37">
-                                    <legend class="q-text">
-                                        <span class="q-number">37</span>
-                                        Why does the reviewer include examples of the fugitives’ behaviour in the third paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 37 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-2" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">to explain how close Charles II came to losing his life</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-2" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">to suggest that Charles II’s supporters were badly prepared</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-2" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">to illustrate how the events of the six weeks are brought to life</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-2" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">to argue that certain aspects are not as well known as they should be</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="38">
-                                    <legend class="q-text">
-                                        <span class="q-number">38</span>
-                                        What point does the reviewer make about Charles II in the fourth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 38 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-3" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">He chose to celebrate what was essentially a defeat.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-3" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">He misunderstood the motives of his opponents.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-3" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">He aimed to restore people’s faith in the monarchy.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-3" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">He was driven by a desire to be popular.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="39">
-                                    <legend class="q-text">
-                                        <span class="q-number">39</span>
-                                        What does the reviewer say about Charles Spencer in the fifth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 39 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-4" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">His decision to write the book comes as a surprise.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-4" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">He takes an unbiased approach to the subject matter.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-4" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">His descriptions of events would be better if they included more detail.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-4" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">He chooses language that is suitable for a twenty-first-century audience.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="40">
-                                    <legend class="q-text">
-                                        <span class="q-number">40</span>
-                                        When the reviewer says the book ‘doesn’t quite hit the mark’, she is making the point that
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 40 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">it overlooks the impact of events on ordinary people.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">it lacks an analysis of prevalent views on monarchy.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">it omits any references to the deceit practised by Charles II during his time in hiding.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="oc-QUApDKzp0Wn1GCiA-5" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">it fails to address whether Charles II’s experiences had a lasting influence on him.</span>
-                                        </label>
-                                    </div>
                                 </fieldset>
                             </form>
                         </aside>
@@ -2741,7 +2812,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'QUApDKzp0Wn1GCiA',
+                            set_id: 'wq6xHskL3uTj5VSU',
                             kategori: 'reading',
                             answers: results,
                             tipe_test: 'practice'
@@ -2905,7 +2976,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'QUApDKzp0Wn1GCiA',
+                            set_id: 'wq6xHskL3uTj5VSU',
                             kategori: 'reading',
                             answers: results,
                             tipe_test: 'practice'
