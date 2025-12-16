@@ -2475,6 +2475,7 @@
                                         </tr>
                                     </table>
 
+                                    <p><b>The characteristics of wise reasoning</b></p>
                                     <p>
                                         Igor Grossmann and colleagues have established four characteristics which enable us to make wise decisions. It is important to have a certain degree of
                                         <span class="q-number-box">1</span>

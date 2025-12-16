@@ -2286,6 +2286,7 @@
                                 <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
                             </fieldset>
 
+                            <p style="text-align: center"><b>Assignment plan</b></p>
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>

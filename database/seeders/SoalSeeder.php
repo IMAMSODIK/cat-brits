@@ -51,7 +51,7 @@ class SoalSeeder extends Seeder
             CambridgeIELTS17AcademicTest1::class,
             CambridgeIELTS17AcademicTest3::class,
             CambridgeIELTS17AcademicTest4::class,
-            CambridgeIELTS18AcademicTest2::class
+            CambridgeIELTS18AcademicTest2::class    
         ]);
     }
 }
