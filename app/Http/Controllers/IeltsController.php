@@ -139,6 +139,11 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
+                    case '15gOXcE7omDCL1uE':
+                        $data['set_id'] = '15gOXcE7omDCL1uE';
+                        $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 4';
+                        return view('ielts.categories', $data);
+                        break;
                         // 18 test 4
                     case 'yPLnQeqINAxbrnva':
                         $data['set_id'] = 'yPLnQeqINAxbrnva';

@@ -748,7 +748,7 @@
             </a>
             
             <div class="nav-links" id="navLinks">
-                <a href="#features">Tester</a>
+                <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#pricing">Pricing</a>
