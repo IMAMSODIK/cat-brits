@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
@@ -129,6 +130,7 @@
         }
 
         .btn-primary {
+
             background: var(--primary);
             border-color: var(--primary);
             color: #fff;
@@ -270,178 +272,663 @@
         }
     </style>
 
+    {{-- panel video call --}}
     <style>
-        /* Panel Styling */
-        .x-panel {
-            max-width: 700px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
         }
 
-        /* Progress Dots */
-        .progress-dots {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin: 1rem 0;
+        /* Card Styling */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
         }
 
-        .dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #ccc;
-            transition: background 0.3s;
-        }
-
-        .dot.active {
-            background: #007bff;
-            /* biru utk soal aktif */
-        }
-
-        .dot.completed {
-            background: #28a745;
-            /* hijau kalau sudah record/upload */
-        }
-
-
-        /* Navigation */
-        .sq-navigation {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .nav-buttons {
+        /* Card Header */
+        .card-header {
+            background: #4274ba;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px 12px 0 0;
+            border-bottom: none;
             display: flex;
             justify-content: space-between;
-            gap: 0.5rem;
-        }
-
-        .sq-navigation button {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: none;
-            border-radius: 8px;
-            background: #007bff;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .sq-navigation button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .sq-navigation button:hover:not(:disabled) {
-            background: #0056b3;
-        }
-
-        .sq-text {
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        /* Actions */
-        .sq-actions {
-            display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 1rem;
-            margin: 1rem 0;
         }
 
-        .sq-record {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
-            color: #fff;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        .page-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
         }
 
-        .sq-record:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
         }
 
-        .sq-record.recorded {
-            background: #28a745;
+        .user-info i {
+            font-size: 18px;
         }
 
-        /* Submit */
-        .sq-submit {
+        .btn-primary:hover {
+            background: #4274ba;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Card Body */
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Alert */
+        .alert-success {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        /* Desktop Table */
+        .desktop-view {
+            display: block;
+        }
+
+        .table-responsive {
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .table {
+            margin: 0;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table thead {
+            background: #f1f5f9;
+        }
+
+        .table thead th {
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .table thead th i {
+            color: #4274ba;
+            margin-right: 8px;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid #f1f5f9;
+            transition: background 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .table tbody td {
+            padding: 18px 20px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .table tbody .fw-semibold {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-pending {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fbbf24;
+        }
+
+        .badge-accepted {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+
+        .badge-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+
+        .badge-completed {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+
+        .badge-cancelled {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #9ca3af;
+        }
+
+        .status-badge i {
+            font-size: 8px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-info {
+            background: #f0f9ff;
+            color: #0369a1;
+            border-color: #bae6fd;
+        }
+
+        .btn-info:hover {
+            background: #e0f2fe;
+            transform: translateY(-1px);
+        }
+
+        .btn-success {
+            background: #f0fdf4;
+            color: #15803d;
+            border-color: #bbf7d0;
+        }
+
+        .btn-success:hover {
+            background: #dcfce7;
+            transform: translateY(-1px);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: #64748b;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: #cbd5e1;
+        }
+
+        .empty-state h4 {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+            max-width: 400px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+
+        /* Mobile View */
+        .mobile-view {
+            display: none;
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .session-card h5 {
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .session-card .mb-2,
+        .session-card .mb-3 {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .session-card i {
+            color: #4274ba;
+            width: 16px;
             text-align: center;
         }
 
-        .sq-submit-btn {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            background: #28a745;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .sq-submit-btn:hover {
-            background: #218838;
+        .session-card .text-muted {
+            color: #94a3b8;
         }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .sq-navigation .nav-buttons {
-                flex-direction: row;
+        @media (max-width: 768px) {
+            .desktop-view {
+                display: none;
             }
 
-            .sq-text {
-                font-size: 1rem;
+            .mobile-view {
+                display: block;
             }
 
-            .sq-actions {
+            .card-header {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .user-info {
+                justify-content: center;
+            }
+
+            .action-buttons {
                 flex-direction: column;
             }
 
-            .sq-record {
+            .btn-sm {
                 width: 100%;
+                justify-content: center;
+            }
+
+            .card-body {
+                padding: 20px;
             }
         }
 
-        .sq-upload-label {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        @media (max-width: 576px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .card {
+                border-radius: 8px;
+            }
+
+            .session-card {
+                padding: 16px;
+            }
         }
 
-        .sq-upload-label:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        /* Simple Animations */
+        .table tbody tr {
+            animation: fadeIn 0.3s ease;
         }
 
-        .sq-upload-label.uploaded {
-            background: #28a745;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .q-item {
+        /* Time Icons */
+        .table tbody td .d-flex i {
+            color: #94a3b8;
+            margin-right: 8px;
+        }
+
+        .text-success {
+            color: #10b981;
+        }
+
+        .text-muted {
+            color: #94a3b8;
+        }
+    </style>
+
+    <style>
+        /* Modal Custom Styles */
+        #requestSessionModal .modal-dialog {
+            max-width: 700px;
+        }
+
+        #requestSessionModal .modal-content {
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        #requestSessionModal .modal-header {
+            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
+            color: white;
+            padding: 25px 30px;
+            border-bottom: none;
+            position: relative;
+        }
+
+        #requestSessionModal .modal-header::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe, #4facfe);
+        }
+
+        #requestSessionModal .modal-title {
+            font-weight: 700;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #requestSessionModal .modal-title::before {
+            content: '🎯';
+            font-size: 20px;
+        }
+
+        #requestSessionModal .btn-close {
+            border-radius: 50%;
+            padding: 10px;
+            background-size: 12px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        #requestSessionModal .btn-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        #requestSessionModal .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* Info Box */
+        #requestSessionModal .info-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        #requestSessionModal .info-box i {
+            color: #4274ba;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        #requestSessionModal .info-box p {
+            margin: 0;
+            color: #1e40af;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+
+        /* Form Styles */
+        #requestSessionModal .form-group {
+            margin-bottom: 25px;
+        }
+
+        #requestSessionModal .form-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+        #requestSessionModal .form-label i {
+            color: #4274ba;
+            font-size: 16px;
+            width: 20px;
+        }
+
+        #requestSessionModal .form-control,
+        .form-select {
             border: 2px solid #e5e7eb;
             border-radius: 10px;
-            padding: 0 0 0 10px;
-            margin-bottom: 30px;
+            padding: 14px 16px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+
+        #requestSessionModal .form-control:focus,
+        .form-select:focus {
+            border-color: #4274ba;
+            box-shadow: 0 0 0 4px rgba(66, 116, 186, 0.1);
+            outline: none;
+            background: white;
+        }
+
+        #requestSessionModal .form-control::placeholder {
+            color: #9ca3af;
+        }
+
+        #requestSessionModal textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Form Actions */
+        #requestSessionModal .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        #requestSessionModal .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        #requestSessionModal .btn-primary {
+            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
+            color: white;
+            flex: 1;
+            box-shadow: 0 4px 15px rgba(66, 116, 186, 0.2);
+        }
+
+        #requestSessionModal .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 116, 186, 0.3);
+            background: linear-gradient(135deg, #3a68a8 0%, #254d87 100%);
+        }
+
+        #requestSessionModal .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            flex: 1;
+        }
+
+        #requestSessionModal .btn-secondary:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+            color: #1f2937;
+        }
+
+        /* Floating Icon */
+        #requestSessionModal .floating-icon {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 80px;
+            opacity: 0.1;
+        }
+
+        /* Scrollbar Styling */
+        #requestSessionModal .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #requestSessionModal .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        #requestSessionModal .modal-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
+            border-radius: 4px;
+        }
+
+        #requestSessionModal .modal-body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3a68a8 0%, #254d87 100%);
+        }
+
+        /* Animation */
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        #requestSessionModal .modal-content {
+            animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #requestSessionModal .modal-dialog {
+                margin: 15px;
+            }
+
+            #requestSessionModal .modal-body {
+                padding: 20px;
+            }
+
+            #requestSessionModal .form-actions {
+                flex-direction: column;
+            }
+
+            #requestSessionModal .btn {
+                width: 100%;
+            }
+
+            #requestSessionModal .floating-icon {
+                display: none;
+            }
+        }
+
+        /* Teacher Selection Highlight */
+        #requestSessionModal .form-select option {
+            padding: 12px;
+        }
+
+        /* Required Field Indicator */
+        #requestSessionModal .form-label::after {
+            content: '*';
+            color: #ef4444;
+            margin-left: 4px;
+        }
+
+        /* Loading State */
+        #requestSessionModal .btn-primary.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        #requestSessionModal .btn-primary.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -452,7 +939,8 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 70px;margin-left: 50px" src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <img class="" style="width: 70px;margin-left: 50px"
+                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
                 </div>
             </div>
 
@@ -487,373 +975,492 @@
         </div>
     </section>
 
-
-    <section class="parts-section" aria-label="Pilihan Part Soal">
-        <div class="x-panels">
-            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">
-
-                    <fieldset class="q-item">
-                        <p><b>Questions 1-4</b></p>
-                    </fieldset>
-
-                    <div class="progress-dots" id="progressDots"></div>
-
-                    <div class="speaking-question" data-q="1">
-                        <div class="sq-navigation">
-                            <div class="nav-buttons">
-                                <button class="sq-prev" disabled>Previous</button>
-                                <button class="sq-next">Next</button>
-                            </div>
-                            <div class="sq-text"><b>Question 1:</b> <br>How do you usually spend your weekends? [Why?]</div>
+    <div class="container" style="margin-top: 20px">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <h4 class="page-title mb-0">Mock Test Speaking Sessions</h4>
                         </div>
-
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
-
-                        <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit</button>
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-primary request-session">
+                                <i class="fas fa-plus me-2"></i>Request New Session
+                            </button>
                         </div>
                     </div>
 
-                    <div class="speaking-question" data-q="2" hidden>
-                        <div class="sq-navigation">
-                            <div class="nav-buttons">
-                                <button class="sq-prev">Previous</button>
-                                <button class="sq-next">Next</button>
+                    <div class="card-body">
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
                             </div>
-                            <div class="sq-text"><b>Question 2:</b> <br>Which is your favorite part of the weekend? [Why?]
-                            </div>
+                        @endif
+
+                        <!-- Desktop View -->
+                        <div class="desktop-view">
+                            @if ($sessions->count() > 0)
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th><i class="fas fa-heading me-2"></i>Title</th>
+                                                <th><i class="fas fa-chalkboard-teacher me-2"></i>Teacher</th>
+                                                <th><i class="fas fa-clock me-2"></i>Proposed Time</th>
+                                                <th><i class="fas fa-calendar-alt me-2"></i>Scheduled Time</th>
+                                                <th><i class="fas fa-info-circle me-2"></i>Status</th>
+                                                <th><i class="fas fa-cogs me-2"></i>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($sessions as $session)
+                                                <tr>
+                                                    <td class="fw-semibold">{{ $session->title }}</td>
+                                                    <td>{{ $session->teacher->name }}</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="fas fa-clock text-muted me-2"></i>
+                                                            {{ $session->proposed_time->format('M d, Y H:i') }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        @if ($session->scheduled_time)
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="fas fa-calendar-check text-success me-2"></i>
+                                                                {{ $session->scheduled_time->format('M d, Y H:i') }}
+                                                            </div>
+                                                        @else
+                                                            <span class="text-muted">-</span>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @php
+                                                            $badgeClass = 'badge-pending';
+                                                            if ($session->status === 'accepted') {
+                                                                $badgeClass = 'badge-accepted';
+                                                            } elseif ($session->status === 'rejected') {
+                                                                $badgeClass = 'badge-rejected';
+                                                            } elseif ($session->status === 'completed') {
+                                                                $badgeClass = 'badge-completed';
+                                                            } elseif ($session->status === 'cancelled') {
+                                                                $badgeClass = 'badge-cancelled';
+                                                            }
+                                                        @endphp
+                                                        <span class="status-badge {{ $badgeClass }}">
+                                                            <i class="fas fa-circle me-1"
+                                                                style="font-size: 0.5rem;"></i>
+                                                            {{ ucfirst($session->status) }}
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-buttons">
+                                                            <a href="{{ route('mock-test.show', $session) }}"
+                                                                class="btn btn-sm btn-info">
+                                                                <i class="fas fa-eye me-1"></i>View
+                                                            </a>
+                                                            @if ($session->status === 'accepted' && $session->canStart())
+                                                                <a href="{{ route('mock-test.start', $session) }}"
+                                                                    class="btn btn-sm btn-success">
+                                                                    <i class="fas fa-video me-1"></i>Join Session
+                                                                </a>
+                                                            @endif
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div class="empty-state">
+                                    <i class="fas fa-calendar-times mb-4"></i>
+                                    <h4>No Mock Test Speaking Sessions Yet</h4>
+                                    <p>You haven't requested any Mock Test Speaking sessions yet. Start by requesting
+                                        your first
+                                        session!</p>
+                                    <button class="btn btn-primary request-session">
+                                        <i class="fas fa-plus"></i>Request New Session
+                                    </button>
+                                </div>
+                            @endif
                         </div>
 
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
+                        <!-- Mobile View -->
+                        <div class="mobile-view">
+                            @if ($sessions->count() > 0)
+                                @foreach ($sessions as $session)
+                                    <div class="session-card">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="fw-bold">{{ $session->title }}</h5>
+                                            @php
+                                                $badgeClass = 'badge-pending';
+                                                if ($session->status === 'accepted') {
+                                                    $badgeClass = 'badge-accepted';
+                                                } elseif ($session->status === 'rejected') {
+                                                    $badgeClass = 'badge-rejected';
+                                                } elseif ($session->status === 'completed') {
+                                                    $badgeClass = 'badge-completed';
+                                                } elseif ($session->status === 'cancelled') {
+                                                    $badgeClass = 'badge-cancelled';
+                                                }
+                                            @endphp
+                                            <span class="status-badge {{ $badgeClass }}">
+                                                {{ ucfirst($session->status) }}
+                                            </span>
+                                        </div>
 
-                        <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit</button>
+                                        <div class="mb-2">
+                                            <i class="fas fa-chalkboard-teacher text-primary me-2"></i>
+                                            <strong>Teacher:</strong> {{ $session->teacher->name }}
+                                        </div>
+
+                                        <div class="mb-2">
+                                            <i class="fas fa-clock text-primary me-2"></i>
+                                            <strong>Proposed:</strong>
+                                            {{ $session->proposed_time->format('M d, Y H:i') }}
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                            <strong>Scheduled:</strong>
+                                            @if ($session->scheduled_time)
+                                                {{ $session->scheduled_time->format('M d, Y H:i') }}
+                                            @else
+                                                <span class="text-muted">Not scheduled</span>
+                                            @endif
+                                        </div>
+
+                                        <div class="action-buttons">
+                                            <a href="{{ route('mock-test.show', $session) }}"
+                                                class="btn btn-sm btn-info">
+                                                <i class="fas fa-eye me-1"></i>Details
+                                            </a>
+                                            @if ($session->status === 'accepted' && $session->canStart())
+                                                <a href="{{ route('mock-test.start', $session) }}"
+                                                    class="btn btn-sm btn-success">
+                                                    <i class="fas fa-video me-1"></i>Join
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="empty-state">
+                                    <i class="fas fa-calendar-times mb-4"></i>
+                                    <h4>No Sessions Yet</h4>
+                                    <p>Start by requesting your first Mock Test Speaking Session!</p>
+                                    <button class="btn btn-primary mt-3 request-session">
+                                        <i class="fas fa-plus me-2"></i>Request Session
+                                    </button>
+                                </div>
+                            @endif
                         </div>
                     </div>
-
-                    <div class="speaking-question" data-q="3" hidden>
-                        <div class="sq-navigation">
-                            <div class="nav-buttons">
-                                <button class="sq-prev">Previous</button>
-                                <button class="sq-next">Next</button>
-                            </div>
-                            <div class="sq-text"><b>Question 3:</b> <br>Do you think your weekends are long enough? [Why/Why
-                                note?]</div>
-                        </div>
-
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
-
-                        <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit</button>
-                        </div>
-                    </div>
-
-                    <div class="speaking-question" data-q="4" hidden>
-                        <div class="sq-navigation">
-                            <div class="nav-buttons">
-                                <button class="sq-prev">Previous</button>
-                                <button class="sq-next" disabled>Next</button>
-                            </div>
-                            <div class="sq-text"><b>Question 4:</b> <br>How important do you think it is to have free time at
-                                the
-                                weekends? [Why?]</div>
-                        </div>
-
-                        <div class="sq-actions">
-                            <button class="sq-record">🎙️ Start Recording</button>
-                        </div>
-
-                        <div class="sq-submit">
-                            <button class="sq-submit-btn">Submit</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    {{-- <script>
-        (function() {
-            let remaining = 0;
-            let t = null;
-            const el = document.getElementById('timeText');
-            const wrap = document.getElementById('timer');
+    <div class="modal fade" id="requestSessionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request Mock Test Speaking Session</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Please fill out all the required information to request a mock test speaking session. Your
+                            teacher
+                            will review and respond to your request.</p>
+                    </div>
 
-            function format(mmss) {
-                const m = Math.floor(mmss / 60);
-                const s = mmss % 60;
-                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-            }
+                    <form id="mockTestForm">
+                        <div class="form-group">
+                            <label for="teacher_id" class="form-label">
+                                <i class="fas fa-chalkboard-teacher"></i> Select Teacher
+                            </label>
+                            <select name="teacher_id" id="teacher_id" class="form-select" required>
+                                <option value="">Choose a teacher...</option>
+                                @foreach ($teachers as $teacher)
+                                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback">Please select a teacher.</div>
+                        </div>
 
-            function tick() {
-                if (remaining <= 0) {
-                    clearInterval(t);
-                    t = null;
-                    el.textContent = '00:00';
-                    wrap.classList.add('danger');
-                    document.getElementById('doneBtn').disabled = true;
-                    document.getElementById('doneBtn').style.opacity = 0.7;
-                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
-                    return;
-                }
-                remaining -= 1;
-                el.textContent = format(remaining);
-                // Kedipkan danger saat < 60 detik
-                if (remaining <= 60) {
-                    wrap.classList.add('danger');
-                }
-            }
+                        <div class="form-group">
+                            <label for="title" class="form-label">
+                                <i class="fas fa-heading"></i> Session Title
+                            </label>
+                            <input type="text" name="title" id="title" class="form-control"
+                                placeholder="e.g., IELTS Speaking Practice Test" required>
+                            <div class="invalid-feedback">Please enter a session title.</div>
+                        </div>
 
-            function startCountdown(seconds) {
-                if (t) clearInterval(t);
-                remaining = Math.max(0, Math.floor(seconds));
-                el.textContent = format(remaining);
-                wrap.classList.toggle('danger', remaining <= 60);
-                document.getElementById('doneBtn').disabled = false;
-                document.getElementById('doneBtn').style.opacity = 1;
-                document.getElementById('doneBtn').style.cursor = 'pointer';
-                t = setInterval(tick, 1000);
-            }
+                        <div class="form-group">
+                            <label for="description" class="form-label">
+                                <i class="fas fa-align-left"></i> Description
+                            </label>
+                            <textarea name="description" id="description" class="form-control" rows="4"
+                                placeholder="Briefly describe what you'd like to focus on during this session..."></textarea>
+                        </div>
 
-            // Public API (opsional)
-            window.CATHeader = {
-                startCountdown
-            };
+                        <div class="form-group">
+                            <label for="proposed_time" class="form-label">
+                                <i class="fas fa-calendar-alt"></i> Proposed Time
+                            </label>
+                            <input type="datetime-local" name="proposed_time" id="proposed_time"
+                                class="form-control" required min="{{ date('Y-m-d\TH:i') }}">
+                            <div class="invalid-feedback">Please select a future date and time.</div>
+                        </div>
 
-            // Events
-            document.getElementById('infoBtn').addEventListener('click', function() {
-                // Ganti dengan modal/informasi instruksi Anda
-                alert(
-                    'Instruksi:\n- Baca soal dengan cermat\n- Waktu berjalan otomatis\n- Klik "Selesai" untuk mengumpulkan'
-                );
-            });
+                        <div class="form-group">
+                            <label for="duration_minutes" class="form-label">
+                                <i class="fas fa-clock"></i> Duration
+                            </label>
+                            <select name="duration_minutes" id="duration_minutes" class="form-select" required>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60" selected>60 minutes</option>
+                                <option value="90">90 minutes</option>
+                                <option value="120">120 minutes</option>
+                            </select>
+                        </div>
 
-            document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Yakin ingin menyelesaikan tes sekarang?');
-                if (confirmFinish) {
-                    // TODO: trigger submit/finish callback
-                    console.log('Tes diselesaikan');
-                }
-            });
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" id="submitRequestBtn">
+                                <i class="fas fa-paper-plane me-2"></i> Submit Request
+                            </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="fas fa-arrow-left me-2"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
-        })();
-    </script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- script bagian part soal -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const section = document.querySelector('.parts-section');
-            if (!section) return;
+            // Add animation to table rows
+            const tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach((row, index) => {
+                row.style.animationDelay = `${index * 0.1}s`;
+            });
 
-            const xTabs = section.querySelector('.x-tabs');
-            const tabs = Array.from(xTabs.querySelectorAll('.x-tab'));
-            const panels = Array.from(section.querySelectorAll('.x-panel'));
+            // Add hover effects to session cards
+            const sessionCards = document.querySelectorAll('.session-card');
+            sessionCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
 
-            function updateEdgeHints() {
-                const max = xTabs.scrollWidth - xTabs.clientWidth;
-                const x = Math.round(xTabs.scrollLeft);
-                xTabs.classList.toggle('has-left', x > 0);
-                xTabs.classList.toggle('has-right', x < max - 1);
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            let modal = null;
+
+            function initModal() {
+                modal = new bootstrap.Modal(document.getElementById('requestSessionModal'));
             }
 
-            function setActive(id) {
-                tabs.forEach(btn => {
-                    const active = btn.dataset.id === id;
-                    btn.classList.toggle('is-active', active);
-                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
-                    btn.tabIndex = active ? 0 : -1;
-                    if (active) {
-                        btn.scrollIntoView({
-                            behavior: 'smooth',
-                            inline: 'center',
-                            block: 'nearest'
+            $(document).on('click', '.request-session', function(e) {
+                e.preventDefault();
+                setDefaultDateTime();
+                initModal();
+                modal.show();
+            });
+
+            function setDefaultDateTime() {
+                const now = new Date();
+                const tomorrow = new Date(now);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(10, 0, 0, 0);
+
+                const formattedDateTime = tomorrow.toISOString().slice(0, 16);
+                $('#proposed_time').val(formattedDateTime);
+            }
+
+            function validateForm() {
+                let isValid = true;
+                $('.form-control, .form-select').removeClass('is-invalid');
+                $('.invalid-feedback').hide();
+
+                if (!$('#teacher_id').val()) {
+                    $('#teacher_id').addClass('is-invalid').next('.invalid-feedback').show();
+                    isValid = false;
+                }
+
+                if (!$('#title').val().trim()) {
+                    $('#title').addClass('is-invalid').next('.invalid-feedback').show();
+                    isValid = false;
+                }
+
+                const proposedTime = new Date($('#proposed_time').val());
+                const now = new Date();
+                if (!proposedTime || proposedTime <= now) {
+                    $('#proposed_time').addClass('is-invalid').next('.invalid-feedback').show();
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            function showSuccessMessage() {
+                const form = $('#sessionRequestForm');
+                const successHTML = `
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Success!</strong> Your session request has been submitted. The teacher will review it soon.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+
+                form.before(successHTML);
+
+                setTimeout(() => {
+                    $('.alert-success').alert('close');
+                }, 5000);
+            }
+
+            function resetForm() {
+                $('#sessionRequestForm')[0].reset();
+                setDefaultDateTime();
+                $('.form-control, .form-select').removeClass('is-invalid');
+                $('.invalid-feedback').hide();
+                $('.alert-success').alert('close');
+            }
+
+            $('.form-control, .form-select').on('blur', function() {
+                if (this.checkValidity()) {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+
+            $('#description').on('input', function() {
+                const charCount = $(this).val().length;
+                const counter = $(this).parent().find('.char-counter') ||
+                    $(
+                        '<small class="char-counter text-muted" style="display:block; margin-top:5px;"></small>'
+                        )
+                    .insertAfter($(this));
+
+                counter.text(`${charCount}/500 characters`);
+
+                if (charCount > 400) {
+                    counter.css('color', '#ef4444');
+                } else if (charCount > 300) {
+                    counter.css('color', '#f59e0b');
+                } else {
+                    counter.css('color', '#6b7280');
+                }
+            });
+
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape' && modal) {
+                    modal.hide();
+                    resetForm();
+                }
+            });
+
+            $("#submitRequestBtn").on("click", function() {
+                let form = $("#mockTestForm");
+
+                let formData = {
+                    teacher_id: $("#teacher_id").val(),
+                    title: $("#title").val(),
+                    description: $("#description").val(),
+                    proposed_time: $("#proposed_time").val(),
+                    duration_minutes: $("#duration_minutes").val(),
+                    _token: "{{ csrf_token() }}"
+                };
+
+                $.ajax({
+                    url: "{{ route('mock-test.post') }}",
+                    method: "POST",
+                    data: formData,
+                    beforeSend: function() {
+                        $("#submitRequestBtn").prop("disabled", true).html(`
+                        <i class="fas fa-spinner fa-spin"></i> Processing...
+                    `);
+                    },
+                    success: function(response) {
+                        Swal.fire({
+                            toast: true,
+                            position: "top-end",
+                            icon: "success",
+                            title: "Mock test request submitted!",
+                            showConfirmButton: false,
+                            timer: 2500
                         });
-                    }
-                });
-                panels.forEach(p => {
-                    const open = p.id === `panel-${id}`;
-                    if (open) {
-                        p.removeAttribute('hidden');
-                        p.classList.add('is-open');
-                    } else {
-                        p.setAttribute('hidden', '');
-                        p.classList.remove('is-open');
-                    }
-                });
-                xTabs.dataset.active = id;
-            }
 
-            /* Event delegation untuk klik tab (lebih andal) */
-            xTabs.addEventListener('click', (e) => {
-                const btn = e.target.closest('.x-tab');
-                if (!btn || !xTabs.contains(btn)) return;
-                setActive(btn.dataset.id);
-            });
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1200);
+                    },
+                    error: function(xhr) {
+                        try {
+                            if (xhr.status === 422) {
+                                let errors = xhr.responseJSON.errors;
+                                $(".is-invalid").removeClass("is-invalid");
 
-            /* Drag/Swipe pada .x-tabs */
-            let down = false,
-                moved = false,
-                startX = 0,
-                startLeft = 0,
-                pid = null;
-            xTabs.addEventListener('pointerdown', (e) => {
-                // Hanya izinkan drag jika bukan klik pada tab
-                if (e.target.closest('.x-tab')) {
-                    down = false;
-                    return;
-                }
-                down = true;
-                moved = false;
-                pid = e.pointerId;
-                xTabs.setPointerCapture(pid);
-                startX = e.clientX;
-                startLeft = xTabs.scrollLeft;
-            });
-            xTabs.addEventListener('pointermove', (e) => {
-                if (!down) return;
-                const dx = e.clientX - startX;
-                if (Math.abs(dx) > 3) moved = true;
-                xTabs.scrollLeft = startLeft - dx;
-            });
+                                for (let field in errors) {
+                                    $(`#${field}`).addClass("is-invalid");
+                                }
 
-            function endDrag(e) {
-                if (pid) {
-                    try {
-                        xTabs.releasePointerCapture(pid);
-                    } catch {}
-                }
-                pid = null;
-                down = false;
-                if (moved && e && e.target.closest('.x-tab')) e.preventDefault(); /* cegah klik nyangkut */
-                moved = false;
-            }
-            xTabs.addEventListener('pointerup', endDrag);
-            xTabs.addEventListener('pointercancel', endDrag);
-            xTabs.addEventListener('pointerleave', endDrag);
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    icon: "error",
+                                    title: "Please check your input.",
+                                    showConfirmButton: false,
+                                    timer: 2500
+                                });
 
-            /* Wheel vertikal -> horizontal (trackpad/mouse) */
-            xTabs.addEventListener('wheel', (e) => {
-                if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && xTabs.scrollWidth > xTabs.clientWidth) {
-                    xTabs.scrollBy({
-                        left: e.deltaY,
-                        behavior: 'auto'
-                    });
-                    e.preventDefault();
-                }
-            }, {
-                passive: false
-            });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Error!",
+                                    text: "Something went wrong. Please try again.",
+                                });
+                            }
 
-            /* Keyboard navigation */
-            tabs.forEach(btn => {
-                btn.addEventListener('keydown', (e) => {
-                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-                    e.preventDefault();
-                    const idx = tabs.indexOf(btn);
-                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 +
-                        tabs.length) % tabs.length;
-                    tabs[nextIdx].focus();
-                    tabs[nextIdx].click();
-                });
-            });
-
-            /* Init */
-            updateEdgeHints();
-            xTabs.addEventListener('scroll', updateEdgeHints);
-            window.addEventListener('resize', updateEdgeHints);
-            setActive('tfng');
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const questions = document.querySelectorAll('.speaking-question');
-            const totalQuestions = questions.length;
-            const progressDots = document.getElementById('progressDots');
-
-            // Generate dots
-            for (let i = 0; i < totalQuestions; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (i === 0) dot.classList.add('active');
-                progressDots.appendChild(dot);
-            }
-
-            function updateProgress(currentIdx) {
-                const dots = progressDots.querySelectorAll('.dot');
-                dots.forEach((dot, idx) => {
-                    dot.classList.remove('active');
-                    if (idx === currentIdx) dot.classList.add('active');
-                    // jangan auto completed, hanya update active
-                });
-            }
-
-            function markCompleted(idx) {
-                const dots = progressDots.querySelectorAll('.dot');
-                if (dots[idx]) {
-                    dots[idx].classList.add('completed');
-                }
-            }
-
-            // Navigation
-            questions.forEach((q, idx) => {
-                const prevBtn = q.querySelector('.sq-prev');
-                const nextBtn = q.querySelector('.sq-next');
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        q.hidden = true;
-                        questions[idx - 1].hidden = false;
-                        updateProgress(idx - 1);
-                    });
-                }
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        q.hidden = true;
-                        questions[idx + 1].hidden = false;
-                        updateProgress(idx + 1);
-                    });
-                }
-            });
-
-            // Record button simulation
-            document.querySelectorAll('.sq-record').forEach((btn, idx) => {
-                btn.addEventListener('click', () => {
-                    btn.textContent = "✅ Recorded";
-                    btn.classList.add("recorded");
-                    markCompleted(idx); // dot jadi hijau
-                });
-            });
-
-            // Upload audio
-            document.querySelectorAll('.sq-upload').forEach((input, idx) => {
-                input.addEventListener('change', () => {
-                    if (input.files.length > 0) {
-                        const label = input.closest('.sq-actions').querySelector(
-                            '.sq-upload-label');
-                        if (label) {
-                            label.textContent = "✅ Audio Uploaded";
-                            label.classList.add("uploaded");
+                        } catch (e) {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Unexpected Error",
+                                text: e.message,
+                            });
                         }
-                        markCompleted(idx); // dot jadi hijau
+
+                    },
+                    complete: function() {
+                        $("#submitRequestBtn").prop("disabled", false).html(`
+                        <i class="fas fa-paper-plane me-2"></i> Submit Request
+                    `);
                     }
                 });
+
             });
+
+            setDefaultDateTime();
         });
     </script>
-
-
 
 </body>
 

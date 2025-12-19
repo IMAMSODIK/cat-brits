@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
+use function PHPUnit\Framework\isEmpty;
+use function Symfony\Component\Translation\t;
+
 class IeltsController extends Controller
 {
     use AuthorizesRequests;
@@ -134,28 +137,28 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
-                        // 18 test 4
-                        case 'yPLnQeqINAxbrnva':
+                    // 18 test 4
+                    case 'yPLnQeqINAxbrnva':
                         $data['set_id'] = 'yPLnQeqINAxbrnva';
                         $data['title'] = 'Cambridge IELTS 18 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
-                        // 18 END
+                    // 18 END
 
-                        // 19 START
-                        case 'kNyuF8ZeAt9Trm90':
+                    // 19 START
+                    case 'kNyuF8ZeAt9Trm90':
                         $data['set_id'] = 'kNyuF8ZeAt9Trm90';
                         $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
-                        
-                        case 'kVklZiFhgKeBhovY':
+
+                    case 'kVklZiFhgKeBhovY':
                         $data['set_id'] = 'kVklZiFhgKeBhovY';
                         $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
 
-                        case 'kqQSrG7Rs5yw1AuD':
+                    case 'kqQSrG7Rs5yw1AuD':
                         $data['set_id'] = 'kqQSrG7Rs5yw1AuD';
                         $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 3';
                         return view('ielts.categories', $data);
@@ -293,15 +296,15 @@ class IeltsController extends Controller
                         foreach ($userAnswer as $ua) {
                             if (in_array(strtolower($ua), array_map('strtolower', $jawabanBenar))) {
                                 $results[$soalId . '-' . $index++] = [
-                                    'status'  => 'correct',
-                                    'user'    => $ua,
+                                    'status' => 'correct',
+                                    'user' => $ua,
                                     'correct' => implode(', ', $jawabanBenar),
                                 ];
                                 $score++;
                             } else {
                                 $results[$soalId . '-' . $index++] = [
-                                    'status'  => 'wrong',
-                                    'user'    => $ua ?: null,
+                                    'status' => 'wrong',
+                                    'user' => $ua ?: null,
                                     'correct' => implode(', ', $jawabanBenar),
                                 ];
                             }
@@ -310,22 +313,22 @@ class IeltsController extends Controller
                         $setSoal = SetSoal::where('kode', $setId)->first();
 
                         $history = TestHistory::create([
-                            'student_id'   => Auth::id(),
-                            'teacher_id'   => null,
-                            'tipe_test'    => 'practice',
-                            'kategori'     => $kategori,
-                            'tipe'         => $tipe,
-                            'set_soal_id'  => $setSoal->id,
-                            'score'        => $score,
+                            'student_id' => Auth::id(),
+                            'teacher_id' => null,
+                            'tipe_test' => 'practice',
+                            'kategori' => $kategori,
+                            'tipe' => $tipe,
+                            'set_soal_id' => $setSoal->id,
+                            'score' => $score,
                         ]);
 
                         foreach ($results as $qid => $res) {
                             TestDetailHistory::create([
                                 'test_history_id' => $history->id,
-                                'soal_id'         => preg_replace('/-\d+$/', '', $qid),
-                                'jawaban_user'    => $res['user'] ?? '',
-                                'jawaban_benar'   => $res['correct'] ?? '',
-                                'status'          => $res['status'] === 'correct',
+                                'soal_id' => preg_replace('/-\d+$/', '', $qid),
+                                'jawaban_user' => $res['user'] ?? '',
+                                'jawaban_benar' => $res['correct'] ?? '',
+                                'status' => $res['status'] === 'correct',
                             ]);
                         }
                     }
@@ -368,34 +371,35 @@ class IeltsController extends Controller
                             $matched = ($userNorm === $correctNorm);
                         }
 
-                        if ($matched) $score++;
+                        if ($matched)
+                            $score++;
 
                         $results[$qid] = [
-                            'status'  => $matched ? 'correct' : 'wrong',
-                            'user'    => $rawUser ?: null,
+                            'status' => $matched ? 'correct' : 'wrong',
+                            'user' => $rawUser ?: null,
                             'correct' => $correctRaw ?: null,
                         ];
                     }
 
                     $setSoal = SetSoal::where('kode', $setId)->first();
                     $history = TestHistory::create([
-                        'student_id'   => Auth::id(),
-                        'teacher_id'   => null,
-                        'tipe_test'    => 'practice',
-                        'kategori'     => $kategori,
-                        'tipe'         => $tipe,
-                        'set_soal_id'  => $setSoal->id,
-                        'score'        => $score,
+                        'student_id' => Auth::id(),
+                        'teacher_id' => null,
+                        'tipe_test' => 'practice',
+                        'kategori' => $kategori,
+                        'tipe' => $tipe,
+                        'set_soal_id' => $setSoal->id,
+                        'score' => $score,
                     ]);
 
                     // ✅ Simpan ke test_detail_histories
                     foreach ($results as $qid => $res) {
                         TestDetailHistory::create([
                             'test_history_id' => $history->id,
-                            'soal_id'         => $qid,
-                            'jawaban_user'    => $res['user'] ?? '',
-                            'jawaban_benar'   => $res['correct'] ?? '',
-                            'status'          => $res['status'] === 'correct',
+                            'soal_id' => $qid,
+                            'jawaban_user' => $res['user'] ?? '',
+                            'jawaban_benar' => $res['correct'] ?? '',
+                            'status' => $res['status'] === 'correct',
                         ]);
                     }
                 }
@@ -403,8 +407,8 @@ class IeltsController extends Controller
                 DB::commit();
 
                 return response()->json([
-                    'status'  => 'ok',
-                    'score'   => $score,
+                    'status' => 'ok',
+                    'score' => $score,
                     'results' => $results,
                     'history_id' => $history->id // Bisa dipakai untuk redirect ke halaman hasil
                 ]);
@@ -422,9 +426,9 @@ class IeltsController extends Controller
     {
         DB::beginTransaction();
         try {
-            $setId    = $r->input('set_id');
+            $setId = $r->input('set_id');
             $kategori = $r->input('kategori');
-            $answers  = $r->input('answers', []);
+            $answers = $r->input('answers', []);
 
             if (empty($answers)) {
                 return response()->json([
@@ -434,11 +438,11 @@ class IeltsController extends Controller
             }
 
             $results = [];
-            $score   = 0;
+            $score = 0;
 
             foreach ($answers as $ans) {
 
-                $qid  = $ans['question'] ?? null;
+                $qid = $ans['question'] ?? null;
                 $type = $ans['type'] ?? null;
                 $name = $ans['name'] ?? null;
 
@@ -449,12 +453,13 @@ class IeltsController extends Controller
                     $userAns = trim($rawAnswer ?? '');
                 }
 
-                if (!$type) continue;
+                if (!$type)
+                    continue;
                 $cleanName = str_replace(['[]'], '', $name);
 
                 $uniqueKey = "{$type}-{$cleanName}";
 
-                $parts    = explode("-", $cleanName);
+                $parts = explode("-", $cleanName);
                 $lastPart = end($parts);
 
                 $nomor = preg_replace('/[^0-9]/', '', $lastPart);
@@ -485,7 +490,8 @@ class IeltsController extends Controller
 
                     $parseAnswer = function ($raw) {
                         $out = [];
-                        if ($raw === null || $raw === '') return $out;
+                        if ($raw === null || $raw === '')
+                            return $out;
 
                         if (is_array($raw)) {
                             $out = array_map(fn($v) => strtolower(trim($v)), $raw);
@@ -525,11 +531,11 @@ class IeltsController extends Controller
                         $uniqueKeyChild = "{$type}-{$type}-{$setId}-{$currentNomor}";
 
                         $results[$uniqueKeyChild] = [
-                            'status'   => $matched ? 'correct' : 'wrong',
-                            'user'     => $userAns ?: null,
-                            'correct'  => $correctPair,
-                            'question' => (string)$currentNomor,
-                            'type'     => $type,
+                            'status' => $matched ? 'correct' : 'wrong',
+                            'user' => $userAns ?: null,
+                            'correct' => $correctPair,
+                            'question' => (string) $currentNomor,
+                            'type' => $type,
                         ];
                     }
                     continue;
@@ -544,15 +550,15 @@ class IeltsController extends Controller
                 if (!$soal) {
                     $results[$uniqueKey] = [
                         'status' => 'not_found',
-                        'user'   => $userAns ?: null,
+                        'user' => $userAns ?: null,
                         'correct' => null,
                     ];
                     continue;
                 }
 
-                $correctRaw  = (string)$soal->jawaban_benar;
+                $correctRaw = (string) $soal->jawaban_benar;
                 $correctNorm = strtoupper(trim($correctRaw));
-                $userNorm    = strtoupper(trim($userAns));
+                $userNorm = strtoupper(trim($userAns));
 
                 $matched = false;
 
@@ -569,48 +575,49 @@ class IeltsController extends Controller
                     }
                 }
 
-                if ($matched) $score++;
+                if ($matched)
+                    $score++;
 
                 $results[$uniqueKey] = [
-                    'status'   => $matched ? 'correct' : 'wrong',
-                    'user'     => $userAns ?: null,
-                    'correct'  => $correctRaw ?: null,
+                    'status' => $matched ? 'correct' : 'wrong',
+                    'user' => $userAns ?: null,
+                    'correct' => $correctRaw ?: null,
                     'question' => $qid,
-                    'type'     => $type,
+                    'type' => $type,
                 ];
             }
 
             $setSoal = SetSoal::where('kode', $setId)->first();
 
             $history = TestHistory::create([
-                'student_id'   => Auth::id(),
-                'teacher_id'   => null,
-                'tipe_test'    => 'mock',
-                'kategori'     => $kategori,
-                'tipe'         => 'mixed',
-                'set_soal_id'  => $setSoal?->id,
-                'score'        => $score,
+                'student_id' => Auth::id(),
+                'teacher_id' => null,
+                'tipe_test' => 'mock',
+                'kategori' => $kategori,
+                'tipe' => 'mixed',
+                'set_soal_id' => $setSoal?->id,
+                'score' => $score,
             ]);
 
             foreach ($results as $key => $res) {
                 TestDetailHistory::create([
                     'test_history_id' => $history->id,
-                    'soal_id'         => $res['question'],
-                    'jawaban_user'    => is_array($res['user'])
+                    'soal_id' => $res['question'],
+                    'jawaban_user' => is_array($res['user'])
                         ? implode(',', $res['user'])
                         : ($res['user'] ?? ''),
-                    'jawaban_benar'   => is_array($res['correct'])
+                    'jawaban_benar' => is_array($res['correct'])
                         ? implode(',', $res['correct'])
                         : ($res['correct'] ?? ''),
-                    'status'          => $res['status'] === 'correct',
+                    'status' => $res['status'] === 'correct',
                 ]);
             }
 
             DB::commit();
 
             return response()->json([
-                'status'  => 'ok',
-                'score'   => $score,
+                'status' => 'ok',
+                'score' => $score,
                 'results' => $results,
                 'history_id' => $history->id,
             ]);
@@ -622,6 +629,181 @@ class IeltsController extends Controller
             ], 500);
         }
     }
+
+    function parseStringArray($value)
+    {
+        if (is_array($value)) {
+            return $value;
+        }
+
+        $value = trim((string) $value);
+
+        // BUKAN array string → kembalikan string apa adanya
+        if (!str_starts_with($value, '[') || !str_ends_with($value, ']')) {
+            return $value;
+        }
+
+        // Coba JSON decode
+        $decoded = json_decode($value, true);
+        if (is_array($decoded)) {
+            return array_map(fn($v) => $v === null ? '' : $v, $decoded);
+        }
+
+        // Single-quote array
+        $jsonLike = preg_replace("/'([^']*)'/", '"$1"', $value);
+        $decoded = json_decode($jsonLike, true);
+
+        if (is_array($decoded)) {
+            return array_map(fn($v) => $v === null ? '' : $v, $decoded);
+        }
+
+        // Manual fallback
+        $clean = trim($value, '[]');
+
+        return array_map(function ($item) {
+            $item = trim($item);
+            return strtolower($item) === 'null'
+                ? ''
+                : trim($item, "\"'");
+        }, explode(',', $clean));
+    }
+
+    public function mockTestCheckV2(Request $r)
+    {
+        DB::beginTransaction();
+        try {
+            $data = $r->input('data', []);
+            $kategori = $r->input('kategori', '');
+            $score = 0;
+            $results = [];
+            $q = 1;
+
+
+            $filledAnswers = collect($data)->pluck('answer')->filter(function ($answer) {
+                return !empty($answer);
+            });
+
+            if ($filledAnswers->isEmpty()) {
+                throw new \Exception('Tidak ada jawaban yang dikirim.', 400);
+            }
+
+            foreach ($data as $item) {
+                $parts = explode('-', $item['name']);
+                $type = $parts[0] ?? null;
+                $id = $parts[1] ?? null;
+                $number = isset($parts[2]) ? str_replace('[]', '', $parts[2]) : null;
+                $answer = $item['answer'] ?? null;
+
+                $soal = Soal::where('set_id', $id)
+                    ->where('kategori', $kategori)
+                    ->where('tipe_soal', $type)
+                    ->where('id_soal', $id . '-' . $number)
+                    ->first();
+
+                if (!$soal) {
+                    throw new \Exception("Soal tidak ditemukan.", 404);
+                }
+
+                $jawaban = false;
+                $parsedSoal = $this->parseStringArray($soal->jawaban_benar);
+                $parsedAnswer = $this->parseStringArray($answer);
+                if (is_array($parsedSoal)) {
+                    if (is_array($parsedAnswer)) {
+                        foreach ($parsedSoal as $i => $ps) {
+                            $currentAnswer = $parsedAnswer[$i] ?? null;
+
+                            $jawaban = in_array(strtolower(trim($currentAnswer)), array_map('strtolower', array_map('trim', $parsedSoal)));
+
+                            if ($jawaban) {
+                                $score++;
+                            }
+
+                            $results[$type . '-' . $q] = [
+                                'status' => $jawaban ? 'correct' : 'wrong',
+                                'user' => $currentAnswer,
+                                'correct' => $ps,
+                            ];
+
+                            $q++;
+                        }
+                    } else {
+                        $jawaban = in_array(strtolower(trim((string) $answer)), array_map('strtolower', array_map('trim', $parsedSoal)));
+
+                        if ($jawaban) {
+                            $score++;
+                        }
+
+                        $results[$type . '-' . $q] = [
+                            'status' => $jawaban ? 'correct' : 'wrong',
+                            'user' => $answer,
+                            'correct' => $parsedSoal,
+                        ];
+
+                        $q++;
+
+                    }
+                } else {
+                    $jawaban = strtolower(trim((string) $answer)) === strtolower(trim((string) $soal->jawaban_benar));
+
+                    if ($jawaban) {
+                        $score++;
+                    }
+
+                    $results[$type . '-' . $q] = [
+                        'status' => $jawaban ? 'correct' : 'wrong',
+                        'user' => $answer,
+                        'correct' => $soal->jawaban_benar,
+                    ];
+
+                    $q++;
+                }
+
+
+            }
+            $setSoal = SetSoal::where('kode', $id)->first();
+
+            $history = TestHistory::create([
+                'student_id' => Auth::id(),
+                'teacher_id' => null,
+                'tipe_test' => 'mock',
+                'kategori' => $kategori,
+                'tipe' => 'mixed',
+                'set_soal_id' => $setSoal?->id,
+                'score' => $score,
+            ]);
+
+            foreach ($results as $key => $res) {
+                TestDetailHistory::create([
+                    'test_history_id' => $history->id,
+                    'soal_id' => explode('-', $key)[1],
+                    'jawaban_user' => is_array($res['user'])
+                        ? implode(',', $res['user'])
+                        : ($res['user'] ?? ''),
+                    'jawaban_benar' => is_array($res['correct'])
+                        ? implode(',', $res['correct'])
+                        : ($res['correct'] ?? ''),
+                    'status' => $res['status'] === 'correct',
+                ]);
+            }
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'ok',
+                'score' => $score,
+                'results' => $results,
+            ]);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], $e->getCode() ?: 500);
+        }
+
+    }
+
 
     public function mockTest(Request $r)
     {

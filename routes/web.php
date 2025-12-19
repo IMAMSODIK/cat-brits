@@ -76,13 +76,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ielts/practice', [IeltsController::class, 'practice']);
     Route::post('/ielts/practice/check', [IeltsController::class, 'check']);
 
-    Route::get('/ielts/mock-test/instructuion', function(Request $r){
+    Route::get('/ielts/mock-test/instructuion', function (Request $r) {
         return view('ielts.instruction', [
-            'redirect' => '/ielts/mock-test?set-id=' . $r->query('set-id') . '&section=' . $r->query('section') 
+            'redirect' => '/ielts/mock-test?set-id=' . $r->query('set-id') . '&section=' . $r->query('section')
         ]);
     });
     Route::get('/ielts/mock-test', [IeltsController::class, 'mockTest']);
     Route::post('/ielts/mock-test/check', [IeltsController::class, 'mockTestCheck']);
+    Route::post('/ielts/mock-test/check-v2', [IeltsController::class, 'mockTestCheckV2']);
 
     // mock test video call
     Route::post('/mock-test/store', [VideoCallController::class, 'store'])->name('mock-test.post');

@@ -5,7 +5,7 @@
     <div class="reading-grid resizable-grid highlighted-content">
         <article class="passage" aria-label="Reading Passage" tabindex="0">
             <div class="passage-body">
-                <h3>The growth mindset</h3>
+                <h3 class="passage-title">The growth mindset</h3>
                 <p>
                     Over the past century, a powerful idea has taken root in the educational landscape.
                     The concept of intelligence as something innate has been supplanted by the idea that

@@ -2396,23 +2396,22 @@
 
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                const questionCounts = {
-                    'tfng': 5,
-                    'tfng2': 5,
-                    'ynng': 5,
-                    'mse': 5,
-                    'one': 4,
-                    'mh': 8,
-                    'tc': 5,
-                    'sa': 3
-                };
+                const dataJson = @json($tabs);
+                const questionCounts = {}
+                dataJson.forEach(tab => {
+                    const panel = document.querySelector(`#panel-${tab.id}`);
+                    if (panel) {
+                        const count = panel.querySelectorAll('[data-q]').length;
+                        questionCounts[tab.id] = count;
+                    }
+                });
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
             // Init
-            updateQuestionListForPart('tfng');
+            updateQuestionListForPart(@json($tabs)[0]['id']);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);

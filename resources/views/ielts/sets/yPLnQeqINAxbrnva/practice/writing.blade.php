@@ -107,7 +107,7 @@
             color: var(--text);
             border-radius: 10px;
             padding: 8px 12px;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
@@ -1133,21 +1133,6 @@
             margin-top: 30px;
         }
 
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            outline: none;
-        }
-
         .btn-secondary {
             background: #e2e8f0;
             color: #4a5568;
@@ -1376,8 +1361,8 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Task 1</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">Task 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
                 data-id="tfng2">Task 2</button>
         </div>
@@ -1393,12 +1378,11 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The first chart below shows how energy is used in an average Australian household.
-                                    The second chart shows the greenhouse gas emissions which result from this energy
-                                    use.</p>
+                                <p>The graph below shows the average monthly change in the prices of three metals during
+                                    2014.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make
                                     comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-18-academic-writing-test-4-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1406,13 +1390,15 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task1">
+                            <form class="response-form" data-task="Task 1">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 1 Answer" required spellcheck="false"></textarea>
+                                                <textarea class="form-textarea js-response"
+                                                    placeholder="Enter your Task 1 Answer" required
+                                                    spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
@@ -1420,10 +1406,8 @@
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="button"
-                                                    class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit"
-                                                    class="btn btn-primary js-submit">Submit</button>
+                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
                                             </div>
 
                                             <div class="success-message js-success" style="display:none;">
@@ -1448,26 +1432,28 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>It is important for children to learn the difference between right and wrong at an
-                                    early age.
-                                    Punishment is necessary to help them learn this distinction.</p>
+                                <p>In many countries, people are now living longer than ever before. Some people say an
+                                    ageing population creates problems for governments. Other people think there are
+                                    benefits if society has more elderly people.</p>
                                 <p>To what extent do you agree or disagree with this opinion?</p>
-                                <p>What sort of punishment should parents and teachers be allowed to use to teach good
-                                    behaviour to children?</p>
+                                <p>To what extent do the advantages of having an ageing population outweigh the
+                                    disadvantages?</p>
                             </div>
                         </article>
 
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task2">
+                            <form class="response-form" data-task="Task 2">
                                 <fieldset class="q-item" data-q="1
                                 ">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 2 Answer" required spellcheck="false"></textarea>
+                                                <textarea class="form-textarea js-response"
+                                                    placeholder="Enter your Task 2 Answer" required
+                                                    spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
@@ -1475,10 +1461,8 @@
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="button"
-                                                    class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit"
-                                                    class="btn btn-primary js-submit">Submit</button>
+                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
                                             </div>
 
                                             <div class="success-message js-success" style="display:none;">
@@ -1514,16 +1498,16 @@
     </div>
 
     <script>
-        (function() {
+        (function () {
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function() {
+            document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function() {
+            document.getElementById('doneBtn').addEventListener('click', function () {
                 const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
                     window.history.back();
@@ -1534,7 +1518,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1613,7 +1597,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch {}
+                    } catch { }
                 }
                 pid = null;
                 down = false;
@@ -1660,7 +1644,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -1669,7 +1653,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function(e) {
+                section.addEventListener('click', function (e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -1685,7 +1669,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function(e) {
+                section.addEventListener('change', function (e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -1733,7 +1717,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function(panelEl) {
+            window.getPanelAnswers = function (panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -1894,11 +1878,11 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $(".response-form").each(function() {
+        $(document).ready(function () {
+            $(".response-form").each(function () {
 
                 const form = $(this);
                 const textarea = form.find(".js-response");
@@ -1933,7 +1917,7 @@
                 /* ------------------------------
                 CLEAR BUTTON
                 --------------------------------*/
-                clearBtn.on("click", function() {
+                clearBtn.on("click", function () {
                     if (confirm("Are you sure you want to clear all text?")) {
                         textarea.val("");
                         updateCharCount();
@@ -1945,7 +1929,7 @@
                 /* ------------------------------
                 FORM SUBMISSION
                 --------------------------------*/
-                form.on("submit", function(e) {
+                form.on("submit", function (e) {
                     e.preventDefault();
 
                     const text = textarea.val().trim();
@@ -1966,11 +1950,11 @@
                             answer: text,
                             tipe: "practice",
                             no_soal: noSoal,
-                            set_id: 'XJ3XOcvqPbgdZwyl',
+                            set_id: 'yPLnQeqINAxbrnva',
                             kategori: "writing",
                             _token: $('meta[name="csrf-token"]').attr('content')
                         },
-                        success: function(res) {
+                        success: function (res) {
                             submitBtn.text("Submit");
                             submitBtn.prop("disabled", false);
 
@@ -1986,7 +1970,7 @@
                                 alert((res.message || "Unexpected error."));
                             }
                         },
-                        error: function(xhr) {
+                        error: function (xhr) {
                             submitBtn.text("Submit");
                             submitBtn.prop("disabled", false);
 
@@ -2014,7 +1998,7 @@
                 /* ------------------------------
                 INPUT EVENT
                 --------------------------------*/
-                textarea.on("input", function() {
+                textarea.on("input", function () {
                     updateCharCount();
                     autoResize();
                 });
@@ -2023,7 +2007,7 @@
                 MOBILE SCROLL FIX
                 --------------------------------*/
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.on("focus", function() {
+                    textarea.on("focus", function () {
                         setTimeout(() => {
                             textarea[0].scrollIntoView({
                                 behavior: "smooth",
