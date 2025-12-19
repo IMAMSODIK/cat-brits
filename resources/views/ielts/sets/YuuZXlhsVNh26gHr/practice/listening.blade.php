@@ -1571,59 +1571,58 @@
                     'id' => 'note_completion',
                     'tipe' => 'nc',
                     'title' => 'Note Completion',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-1.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.note_completion',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-1.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.note_completion',
                 ],
                 [
-                    'id' => 'one_choice',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.one_choice',
+                    'id' => 'two_choice',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choice',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-2.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.two_choice',
+                ],
+                [
+                    'id' => 'two_choice2',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choice 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-2.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.two_choice2',
                 ],
                 [
                     'id' => 'matching_information',
                     'tipe' => 'matching_information',
                     'title' => 'Matching',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.matching_information',
-                ],
-                [
-                    'id' => 'two_choice',
-                    'tipe' => 'two_choice',
-                    'title' => 'Two Choice',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.two_choice',
-                ],
-                [
-                    'id' => 'matching_information2',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching 2',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.matching_information2',
-                ],
-                [
-                    'id' => 'one_choice2',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice 2',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.one_choice2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-2.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.matching_information',
                 ],
                 [
                     'id' => 'note_completion2',
                     'tipe' => 'nc',
                     'title' => 'Note Completion 2',
-                    'audioUri' => 'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-4.mp3',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.listening.note_completion2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-3.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.note_completion2',
                 ],
-
+                [
+                    'id' => 'matching_information2',
+                    'tipe' => 'matching_information',
+                    'title' => 'Matching 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-3.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.matching_information2',
+                ],
+                [
+                    'id' => 'note_completion3',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion 3',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-4.mp3',
+                    'content' => 'partials.YuuZXlhsVNh26gHr.practice.listening.note_completion3',
+                ],
             ];
         @endphp
 
@@ -1706,75 +1705,75 @@
     <!-- script bagian audio player -->
     <script>
         let scoreMap = [{
-            min: 39,
-            max: 40,
-            score: 9.0
-        },
-        {
-            min: 37,
-            max: 38,
-            score: 8.5
-        },
-        {
-            min: 35,
-            max: 36,
-            score: 8.0
-        },
-        {
-            min: 33,
-            max: 34,
-            score: 7.5
-        },
-        {
-            min: 30,
-            max: 32,
-            score: 7.0
-        },
-        {
-            min: 27,
-            max: 29,
-            score: 6.5
-        },
-        {
-            min: 23,
-            max: 26,
-            score: 6.0
-        },
-        {
-            min: 19,
-            max: 22,
-            score: 5.5
-        },
-        {
-            min: 15,
-            max: 18,
-            score: 5.0
-        },
-        {
-            min: 13,
-            max: 14,
-            score: 4.5
-        },
-        {
-            min: 10,
-            max: 12,
-            score: 4.0
-        },
-        {
-            min: 8,
-            max: 9,
-            score: 3.5
-        },
-        {
-            min: 6,
-            max: 7,
-            score: 3.0
-        },
-        {
-            min: 4,
-            max: 5,
-            score: 2.5
-        }
+                min: 39,
+                max: 40,
+                score: 9.0
+            },
+            {
+                min: 37,
+                max: 38,
+                score: 8.5
+            },
+            {
+                min: 35,
+                max: 36,
+                score: 8.0
+            },
+            {
+                min: 33,
+                max: 34,
+                score: 7.5
+            },
+            {
+                min: 30,
+                max: 32,
+                score: 7.0
+            },
+            {
+                min: 27,
+                max: 29,
+                score: 6.5
+            },
+            {
+                min: 23,
+                max: 26,
+                score: 6.0
+            },
+            {
+                min: 19,
+                max: 22,
+                score: 5.5
+            },
+            {
+                min: 15,
+                max: 18,
+                score: 5.0
+            },
+            {
+                min: 13,
+                max: 14,
+                score: 4.5
+            },
+            {
+                min: 10,
+                max: 12,
+                score: 4.0
+            },
+            {
+                min: 8,
+                max: 9,
+                score: 3.5
+            },
+            {
+                min: 6,
+                max: 7,
+                score: 3.0
+            },
+            {
+                min: 4,
+                max: 5,
+                score: 2.5
+            }
         ];
 
         function convertScore(correctCount) {
@@ -1885,16 +1884,16 @@
     </script> --}}
 
     <script>
-        (function () {
+        (function() {
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function () {
+            document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
                     'Instructions:\n- Read the questions carefully\n- Click "Close" to quit test'
                 );
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function () {
+            document.getElementById('doneBtn').addEventListener('click', function() {
                 const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
                     window.history.back();
@@ -1905,7 +1904,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1984,7 +1983,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -2031,7 +2030,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -2040,7 +2039,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function (e) {
+                section.addEventListener('click', function(e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2056,7 +2055,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function (e) {
+                section.addEventListener('change', function(e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2104,7 +2103,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function (panelEl) {
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -2268,7 +2267,7 @@
 
     <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -2479,8 +2478,8 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script>
         // Pastikan modal tersembunyi saat halaman dimuat
         $("#resultModal").removeClass("show").hide();
@@ -2497,7 +2496,7 @@
             $("body").css("overflow", "auto");
 
             // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function () {
+            setTimeout(function() {
                 $("#resultModal").hide();
             }, 300);
         }
@@ -2506,34 +2505,34 @@
             location.reload();
         }
 
-        $(document).on("click", ".modal-close, .btn-secondary", function () {
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
             closeModal();
         });
 
-        $(document).on("click", function (e) {
+        $(document).on("click", function(e) {
             if (e.target.id === "resultModal") {
                 closeModal();
             }
         });
 
-        $(document).on("keydown", function (e) {
+        $(document).on("keydown", function(e) {
             if (e.key === "Escape") {
                 closeModal();
             }
         });
 
-        $(".try-again").on("click", function () {
+        $(".try-again").on("click", function() {
             location.reload();
         })
 
         function submitHelper(form, setId, tipe, button, againBtn) {
             let allAnswered = true;
 
-            $(`#${form}`).each(function () {
+            $(`#${form}`).each(function() {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
-                inputs.each(function () {
+                inputs.each(function() {
                     if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
                         isAnswered = true;
                     } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
@@ -2570,7 +2569,7 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function (response) {
+                success: function(response) {
                     if (response.status === "ok") {
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
@@ -2583,7 +2582,7 @@
                         let tableRows = "";
                         let questionNumber = 1;
 
-                        $.each(response.results, function (qid, data) {
+                        $.each(response.results, function(qid, data) {
                             let isCorrect = data.status === "correct";
 
                             // ✅ 2. Ambil CORRECT ANSWER dengan fallback
@@ -2598,7 +2597,7 @@
 
                             // ✅ 3. Highlight input aslinya
                             let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                            questionElement.find("input, select, textarea").each(function () {
+                            questionElement.find("input, select, textarea").each(function() {
                                 if ($(this).is("input[type=radio], input[type=checkbox]")) {
                                     if ($(this).is(":checked")) {
                                         if (isCorrect) {
@@ -2652,7 +2651,7 @@
                         showModal(`Score: ${correctCount} / ${total}`);
                     }
                 },
-                error: function (xhr) {
+                error: function(xhr) {
                     alert("Terjadi kesalahan: " + xhr.status);
                     console.log(xhr.responseText);
                 }
@@ -2664,14 +2663,14 @@
             const id = tab.id;
             const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
 
-            $(`#submit-${id}`).on("click", function (e) {
+            $(`#submit-${id}`).on("click", function(e) {
                 e.preventDefault();
                 submitHelper(
-                    `form-${id}`,            // form
-                    "yPLnQeqINAxbrnva",     // folder
-                    tipe,                   // tipe
+                    `form-${id}`, // form
+                    "YuuZXlhsVNh26gHr", // folder
+                    tipe, // tipe
                     $(this),
-                    `again-${id}`           // again
+                    `again-${id}` // again
                 );
             });
         });
@@ -2764,7 +2763,7 @@
             }
         });
 
-        $(".x-tab").on("click", function () {
+        $(".x-tab").on("click", function() {
             if (currentPlaying) {
                 currentPlaying.pause();
 
