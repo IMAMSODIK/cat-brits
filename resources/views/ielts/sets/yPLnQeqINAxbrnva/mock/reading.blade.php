@@ -1924,7 +1924,7 @@
                                 } else {
                                     data.push({
                                         name: name,
-                                        answer: value
+                                        answer: type === 'checkbox' ? `[${value}]` : value
                                     });
                                     prevData = { name: name, index: prevData.index + 1, answer: value }
                                 }
