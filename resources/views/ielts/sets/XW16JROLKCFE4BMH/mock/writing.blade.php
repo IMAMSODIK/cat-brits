@@ -1393,8 +1393,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The diagram below shows how fabric is manufactured from bamboo. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/Cambridge-IELTS-20-Academic-Writing-Test-4-1.png') }}"
+                                <p>The diagram below shows the manufacturing process for making sugar from sugar cane.</p>
+                                <p>Summarize the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-16-academic-writing-test-2-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1444,8 +1445,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Write about the following topic:</p>
-                                <p>Many aspects of the way people dress today are influenced by global fashion trends. How has global fashion become such a strong influence on people’s lives? Do you think this is a positive or negative development? Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>
+                                <p>In their advertising, businesses nowadays usually emphasise that their products are new in some way.</p>
+                                <p>Why is this? Do you think it is a positive or negative development?</p>
                             </div>
                         </article>
 
