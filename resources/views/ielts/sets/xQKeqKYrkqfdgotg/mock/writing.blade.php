@@ -1393,9 +1393,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The diagram below shows the floor plan of a public library 20 years ago and how it looks now.</p>
+                                <p>The first table below shows changes in the total population of New York City from 1800 to 2000. The second and third tables show changes in the population of the five districts of the city (Manhattan, Brooklyn, Bronx, Queens, Staten Island) over the same period.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-18-academic-writing-test-3-1.jpg') }}"
+                                <img src="{{ asset('own_assets/images/Cambridge-IELTS-20-Academic-Writing-Test-1-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1445,8 +1445,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>In many countries around the world, rural people are moving to cities, so the population in the countryside is decreasing.</p>
-                                <p>Do you think this is a positive or a negative development?</p>
+                                <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>
+                                <p>Access to clean water is a basic human right. Therefore, every home should have a water supply that is provided free of charge. Do you agree or disagree?</p>
+                                <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>
                             </div>
                         </article>
 

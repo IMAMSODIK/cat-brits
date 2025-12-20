@@ -1587,7 +1587,7 @@
                                 <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-2-audio-1.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-1-audio-1.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
@@ -1595,122 +1595,102 @@
 
                             {{-- nc --}}
                             <fieldset class="q-item">
-                                <p>Questions 1-5</p>
-                                <p><i>Complete the notes below.</i></p>
-                                <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <h3>Working at Milo’s Restaurants</h3>
-
-                                <p><b>Benefits</b></p>
-                                <ul>
-                                    <li>
-                                        <div class="q-list" data-q="1">
-                                            <span class="q-number-box">1</span>
-                                            <input type="text" name="nc-JSRJ0oDlxC0yFMgt-1" class="q-text" placeholder="">
-                                            provided for all staff
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="2">
-                                            <span class="q-number-box">2</span>
-                                            <input type="text" name="nc-JSRJ0oDlxC0yFMgt-2" class="q-text" placeholder="">
-                                            during weekdays at all Milo’s Restaurants
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="3">
-                                            <span class="q-number-box">3</span>
-                                            <input type="text" name="nc-JSRJ0oDlxC0yFMgt-3" class="q-text" placeholder="">
-                                            provided after midnight
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <p><b>Person specification</b></p>
-                                <ul>
-                                    <li>must be prepared to work well in a team</li>
-                                    <li>
-                                        <div class="q-list" data-q="4">
-                                            must care about maintaining a high standard of
-                                            <span class="q-number-box">4</span>
-                                            <input type="text" name="nc-JSRJ0oDlxC0yFMgt-4" class="q-text" placeholder="">
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="5">
-                                            must have a qualification in
-                                            <span class="q-number-box">5</span>
-                                            <input type="text" name="nc-JSRJ0oDlxC0yFMgt-5" class="q-text" placeholder="">
-                                        </div>
-                                    </li>
-                                </ul>
-
-                            </fieldset>
-
-                            {{-- tc --}}
-                            <fieldset class="q-item">
-                                <p>Questions 6-10</p>
-                                <p><i>Complete the table below.</i></p>
+                                <p>Questions 1-10</p>
+                                <p>Complete the notes below.</p>
                                 <p>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.</p>
                             </fieldset>
 
-                            <table border="1" cellpadding="8" cellspacing="0"
-                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                            <h3>Restaurant Recommendations</h3>
+                            <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                                 <tr>
+                                    <th><b>Name of restaurant</b></th>
                                     <th><b>Location</b></th>
-                                    <th><b>Job title</b></th>
-                                    <th><b>Responsibilities include</b></th>
-                                    <th><b>Pay and conditions</b></th>
+                                    <th><b>Reason for recommendation</b></th>
+                                    <th><b>Other comments</b></th>
                                 </tr>
                                 <tr>
+                                    <td>The Junction</td>
+                                    <td>Greyson Street, near the station</td>
+                                    <td>
+                                        <div class="q-item" data-q="1">
+                                            Good for people who are especially keen on
+                                            <span class="q-number-box">1</span>
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-1" class="q-text"
+                                                placeholder="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="q-item" data-q="2">
+                                            Quite expensive The 
+                                            <span class="q-number-box">2</span>
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-2" class="q-text"
+                                                placeholder="">
+                                            is a good place for a drink
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Paloma</td>
+                                    <td>In Bow Street next to the cinema</td>
+                                    <td>
+                                        <div class="q-item" data-q="3">
+                                            <span class="q-number-box">3</span>
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-3" class="q-text"
+                                                placeholder="">
+                                            food, good for sharing
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="q-item" data-q="4">
+                                            Staff are very friendly Need to pay £50 deposit A limited selection of 
+                                            <span class="q-number-box">4</span>
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-4" class="q-text"
+                                                placeholder="">
+                                            food on the menu
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="q-item" data-q="5">
+                                            The 
+                                            <span class="q-number-box">5</span>
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-5" class="q-text"
+                                                placeholder="">
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="q-item" data-q="6">
+                                            At the top of a
                                             <span class="q-number-box">6</span>
-                                            <input type="text" name="tc-JSRJ0oDlxC0yFMgt-1" class="q-text"
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-6" class="q-text"
                                                 placeholder="">
-                                            Street
                                         </div>
                                     </td>
-                                    <th>Breakfast supervisor</th>
                                     <td>
                                         <div class="q-item" data-q="7">
-                                            Checking portions, etc. are correct <br>Making sure 
+                                            A famous chef <br>All the
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="tc-JSRJ0oDlxC0yFMgt-2" class="q-text"
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-7" class="q-text"
                                                 placeholder="">
-                                            is clean
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="q-item" data-q="8">
-                                            Starting salary £
+                                            are very good <br>Only uses
                                             <span class="q-number-box">8</span>
-                                            <input type="text" name="tc-JSRJ0oDlxC0yFMgt-3" class="q-text"
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-8" class="q-text"
                                                 placeholder="">
-                                            per hour Start work at 5.30 a.m.
+                                            ingredients
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>City Road</td>
-                                    <td>Junior chef</td>
                                     <td>
                                         <div class="q-item" data-q="9">
-                                            Maintaining stock and organising
+                                            Set lunch costs £
                                             <span class="q-number-box">9</span>
-                                            <input type="text" name="tc-JSRJ0oDlxC0yFMgt-4" class="q-text"
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-9" class="q-text"
                                                 placeholder="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="q-item" data-q="10">
-                                            Annual salary £23,000 <br>No work on a
+                                            per person <br> Portions probably of 
                                             <span class="q-number-box">10</span>
-                                            <input type="text" name="tc-JSRJ0oDlxC0yFMgt-5" class="q-text"
+                                            <input type="text" name="nc-xQKeqKYrkqfdgotg-10" class="q-text"
                                                 placeholder="">
-                                            once a month
+                                            size
                                         </div>
                                     </td>
                                 </tr>
@@ -1727,238 +1707,241 @@
                             <p class="lead">Listen and answer questions 11-20</p>
                             <div class="audio-player">
                                 <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-2-audio-2.mp3"></audio>
+                                    src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-1-audio-2.mp3"></audio>
                                 <input type="range" class="timeline" value="0" disabled>
                                 <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                             </div>
                         </fieldset>
 
-                        {{-- two_choices --}}
-
+                        {{-- oc --}}
                         <fieldset class="q-item">
-                            <p>Questions 11-12</p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                            <p>Questions 11-16</p>
+                            <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="11">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
-                                <span class="q-number">12</span>
-                                What are the <b>TWO</b> main reasons why this site has been chosen for the housing development?
+                                Heather says pottery differs from other art forms because
                             </legend>
-                            <div class="q-options" role="group" aria-label="Question 1 options">
+                            <div class="q-options" role="radiogroup" aria-label="Question 11 options">
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-1[]" value="A" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">It has suitable geographical features.</span>
+                                    <span class="opt-label">It lasts longer in the ground.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-1[]" value="B" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">There is easy access to local facilities.</span>
+                                    <span class="opt-label">It is practised by more people.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-1[]" value="C" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">It has good connections with the airport.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-1[]" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">The land is of little agricultural value.</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-1[]" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">It will be convenient for workers.</span>
+                                    <span class="opt-label">It can be repaired more easily.</span>
                                 </label>
                             </div>
                         </fieldset>
 
-                        <fieldset class="q-item">
-                            <p>Questions 13-14</p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        <fieldset class="q-item" data-q="12">
+                            <legend class="q-text">
+                                <span class="q-number">12</span>
+                                Archaeologists sometimes identify the use of ancient pottery from
+                            </legend>
+                            <div class="q-options" role="radiogroup" aria-label="Question 12 options">
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">The clay it was made with.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">The marks that are on it.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">The basic shape of it.</span>
+                                </label>
+                            </div>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="13">
                             <legend class="q-text">
                                 <span class="q-number">13</span>
-                                <span class="q-number">14</span>
-                                Which <b>TWO</b> aspects of the planned housing development have people given positive feedback about?
+                                Some people join Heather’s pottery class because they want to
                             </legend>
-                            <div class="q-options" role="group" aria-label="Question 1 options">
+                            <div class="q-options" role="radiogroup" aria-label="Question 13 options">
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-3[]" value="A" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="A" />
                                     <span class="opt-code">A</span>
-                                    <span class="opt-label">the facilities for cyclists</span>
+                                    <span class="opt-label">Create an item that looks very old.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-3[]" value="B" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="B" />
                                     <span class="opt-code">B</span>
-                                    <span class="opt-label">the impact on the environment</span>
+                                    <span class="opt-label">Find something that they are good at.</span>
                                 </label>
                                 <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-3[]" value="C" />
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="C" />
                                     <span class="opt-code">C</span>
-                                    <span class="opt-label">the encouragement of good relations between residents</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-3[]" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">the low cost of all the accommodation</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-3[]" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">the rural location</span>
+                                    <span class="opt-label">Make something that will outlive them.</span>
                                 </label>
                             </div>
                         </fieldset>
 
-                        {{-- map_labeling --}}
-                        <fieldset class="q-item">
-                            <p>Questions 15-20</p>
-                            <p>Label the map below</p>
-                            <p>Write the correct letter, <b>A-l</b>, next to Questions.</p>
-                            <img src="{{asset('own_assets/images/cambridge-ielts-18-academic-listening-test-2-15-20.jpg')}}" alt="">
+                        <fieldset class="q-item" data-q="14">
+                            <legend class="q-text">
+                                <span class="q-number">14</span>
+                                What does Heather value most about being a potter?
+                            </legend>
+                            <div class="q-options" role="radiogroup" aria-label="Question 14 options">
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">Its calming effect</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">Its messy nature</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Its physical benefits</span>
+                                </label>
+                            </div>
                         </fieldset>
 
                         <fieldset class="q-item" data-q="15">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <legend class="q-text">
                                 <span class="q-number">15</span>
-                                <span style="flex: 1;">
-                                    School 
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-1" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Most of the visitors to Edelman Pottery
                             </legend>
+                            <div class="q-options" role="radiogroup" aria-label="Question 15 options">
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-5" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">Bring friends to join courses.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-5" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">Have never made a pot before.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-5" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Try to learn techniques too quickly.</span>
+                                </label>
+                            </div>
                         </fieldset>
 
                         <fieldset class="q-item" data-q="16">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <legend class="q-text">
                                 <span class="q-number">16</span>
-                                <span style="flex: 1;">
-                                    Sports centre 
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-2" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Heather reminds her visitors that they should
                             </legend>
+                            <div class="q-options" role="radiogroup" aria-label="Question 166 options">
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-6" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">Put on their aprons.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-6" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">Change their clothes.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="radio" name="oc-xQKeqKYrkqfdgotg-6" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Take off their jewellery.</span>
+                                </label>
+                            </div>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="17">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        {{-- two_choices --}}
+                        <fieldset class="q-item">
+                            <p>Questions 17-18</p>
+                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                            <legend class="q-text">
                                 <span class="q-number">17</span>
-                                <span style="flex: 1;">
-                                    Clinic  
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-3" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="18">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">18</span>
-                                <span style="flex: 1;">
-                                    Community centre 
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-4" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Which <b>TWO</b> things does Heather explain about kilns?
                             </legend>
+                            <div class="q-options" role="group" aria-label="Question 1 options">
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-1[]" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">What their function is</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-1[]" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">When they were invented</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-1[]" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Ways of keeping them safe</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-1[]" value="D" />
+                                    <span class="opt-code">D</span>
+                                    <span class="opt-label">Where to put one in your home</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-1[]" value="E" />
+                                    <span class="opt-code">E</span>
+                                    <span class="opt-label">What some people use instead of one</span>
+                                </label>
+                            </div>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="19">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        <fieldset class="q-item">
+                            <p>Questions 19-20</p>
+                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                            <legend class="q-text">
                                 <span class="q-number">19</span>
-                                <span style="flex: 1;">
-                                    Supermarket  
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-5" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="20">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">20</span>
-                                <span style="flex: 1;">
-                                    Playground  
-                                    <span class="q-question">
-                                        <select name="map_labeling-JSRJ0oDlxC0yFMgt-6" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                            <option value="I">I</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Which points does Heather make about a potter’s tools?
                             </legend>
+                            <div class="q-options" role="group" aria-label="Question 1 options">
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-3[]" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">Mushrooms should always be peeled before eating.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-3[]" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">Mushrooms eaten by animals may be unsafe.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-3[]" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Cooking destroys toxins in mushrooms.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-3[]" value="D" />
+                                    <span class="opt-code">D</span>
+                                    <span class="opt-label">Brightly coloured mushrooms can be edible.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-xQKeqKYrkqfdgotg-3[]" value="E" />
+                                    <span class="opt-code">E</span>
+                                    <span class="opt-label">All poisonous mushrooms have a bad smell.</span>
+                                </label>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -1972,252 +1955,51 @@
                                 <p class="lead">Listen and answer questions 21-30</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-2-audio-3.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2025/07/cambridge-ielts-20-academic-listening-1-audio-3.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
                             </fieldset>
 
-                            {{-- oc --}}
+                            {{-- two_chocies --}}
                             <fieldset class="q-item">
-                                <p>Questions 21-24</p>
-                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="21">
-                                <legend class="q-text">
-                                    <span class="q-number">21</span>
-                                    Why do the students think the Laki eruption of 1783 is so important?
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 21 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-1" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">It was the most severe eruption in modern times.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-1" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">It led to the formal study of volcanoes.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-1" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">It had a profound effect on society.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="22">
-                                <legend class="q-text">
-                                    <span class="q-number">22</span>
-                                    What surprised Adam about observations made at the time?
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 22 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-2" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">the number of places producing them</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-2" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">the contradictions in them</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-2" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">the lack of scientific data to support them</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="23">
-                                <legend class="q-text">
-                                    <span class="q-number">23</span>
-                                    According to Michelle, what did the contemporary sources say about the Laki haze?
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 23 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-3" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">People thought it was similar to ordinary fog.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-3" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">It was associated with health issues.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-3" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">It completely blocked out the sun for weeks.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="24">
-                                <legend class="q-text">
-                                    <span class="q-number">24</span>
-                                    Adam corrects Michelle when she claims that Benjamin Franklin
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 24 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-4" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">came to the wrong conclusion about the cause of the haze.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-4" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">was the first to identify the reason for the haze.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-JSRJ0oDlxC0yFMgt-4" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">supported the opinions of other observers about the haze.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            {{-- two_choices --}}
-                            <fieldset class="q-item">
-                                <p>Questions 25-26</p>
+                                <p>Questions 21-22</p>
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
                             <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
-                                    <span class="q-number">25</span>
-                                    <span class="q-number">26</span>
-                                    Which <b>TWO</b> issues following the Laki eruption surprised the students?
+                                    <span class="q-number">21</span>
+                                    <span class="q-number">22</span>
+                                    Which <b>TWO</b> things do the students both believe are responsible for the increase in loneliness?
                                 </legend>
                                 <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-5[]" value="A" />
+                                        <input type="checkbox" name="two_chocies-xQKeqKYrkqfdgotg-5[]" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">how widespread the effects were</span>
+                                        <span class="opt-label">Social media</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-5[]" value="B" />
+                                        <input type="checkbox" name="two_chocies-xQKeqKYrkqfdgotg-5[]" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">how long-lasting the effects were</span>
+                                        <span class="opt-label">Smaller nuclear families</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-5[]" value="C" />
+                                        <input type="checkbox" name="two_chocies-xQKeqKYrkqfdgotg-5[]" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">the number of deaths it caused</span>
+                                        <span class="opt-label">Urban design</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-5[]" value="D" />
+                                        <input type="checkbox" name="two_chocies-xQKeqKYrkqfdgotg-5[]" value="D" />
                                         <span class="opt-code">D</span>
-                                        <span class="opt-label">the speed at which the volcanic ash cloud spread</span>
+                                        <span class="opt-label">Longer lifespans</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="checkbox" name="two_choices-JSRJ0oDlxC0yFMgt-5[]" value="E" />
+                                        <input type="checkbox" name="two_chocies-xQKeqKYrkqfdgotg-5[]" value="E" />
                                         <span class="opt-code">E</span>
-                                        <span class="opt-label">how people ignored the warning signs</span>
+                                        <span class="opt-label">A mobile workforce</span>
                                     </label>
                                 </div>
-                            </fieldset>
-
-                            {{-- matching_information --}}
-                            <fieldset class="q-item">
-                                <h3>Questions 27-30</h3>
-                                <p>What comment do the students make about the impact of the Laki eruption on the following countries?</p>
-                                <p><i>Choose <b>FOUR</b> answers from the box and write the correct letter, <b>A-F</b>, next to Questions.</i></p>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <h3>Comments</h3>
-                                <p><b>A</b> This country suffered the most severe loss of life.</p>
-                                <p><b>B</b> The impact on agriculture was predictable.</p>
-                                <p><b>C</b> There was a significant increase in deaths of young people.</p>
-                                <p><b>D</b> Animals suffered from a sickness.</p>
-                                <p><b>E</b> This country saw the highest rise in food prices in the world.</p>
-                                <p><b>F</b> It caused a particularly harsh winter.</p>
-                            </fieldset>
-
-                            <p><b>Countries</b></p>
-
-                            <fieldset class="q-item" data-q="27">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">27</span>
-                                    <span style="flex: 1;">
-                                        Iceland 
-                                        <span class="q-question">
-                                            <select name="matching_information-JSRJ0oDlxC0yFMgt-1" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="28">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">28</span>
-                                    <span style="flex: 1;">
-                                        Egypt  
-                                        <span class="q-question">
-                                            <select name="matching_information-JSRJ0oDlxC0yFMgt-2" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="29">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">29</span>
-                                    <span style="flex: 1;">
-                                        UK  
-                                        <span class="q-question">
-                                            <select name="matching_information-JSRJ0oDlxC0yFMgt-3" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="30">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">30</span>
-                                    <span style="flex: 1;">
-                                        USA  
-                                        <span class="q-question">
-                                            <select name="matching_information-JSRJ0oDlxC0yFMgt-4" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
                             </fieldset>
                         </form>
                     </div>

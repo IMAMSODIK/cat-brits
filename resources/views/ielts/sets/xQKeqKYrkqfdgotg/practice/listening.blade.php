@@ -2222,33 +2222,33 @@
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
                                     <span class="q-number">2</span>
-                                    Which <b>TWO</b> health risks associated with loneliness do the students agree are based on solid evidence?
+                                    Which <b>TWO</b> things do the students both believe are responsible for the increase in loneliness?
                                 </legend>
                                 <div class="q-options" role="group" aria-label="Question 1 options">
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-7[]" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">A weakened immune system</span>
+                                        <span class="opt-label">Social media</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-7[]" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">Dementia</span>
+                                        <span class="opt-label">Smaller nuclear families</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-7[]" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">Cancer</span>
+                                        <span class="opt-label">Urban design</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-7[]" value="D" />
                                         <span class="opt-code">D</span>
-                                        <span class="opt-label">Obesity</span>
+                                        <span class="opt-label">Longer lifespans</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-7[]" value="E" />
                                         <span class="opt-code">E</span>
-                                        <span class="opt-label">Cardiovascular disease</span>
+                                        <span class="opt-label">A mobile workforce</span>
                                     </label>
                                 </div>
                             </fieldset>
