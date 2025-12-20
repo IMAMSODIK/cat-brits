@@ -4,7 +4,7 @@
     <div class="reading-grid resizable-grid highlighted-content">
         <article class="passage" aria-label="Reading Passage" tabindex="0">
             <div class="passage-body">
-                <h3>Alfred Wegener: science, exploration and the theory of continental drift</h3>
+                <h3 class="passage-title">Alfred Wegener: science, exploration and the theory of continental drift</h3>
                 <p><i>by Mott T Greene</i></p>
                 <p>....</p>
                 <p>

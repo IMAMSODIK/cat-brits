@@ -1561,8 +1561,8 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Part 1</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">Part 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
                 data-id="tfng2">Part 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
@@ -1831,16 +1831,14 @@
                                     <div class="q-list" data-q="3" data-type="nc">
                                         New members should describe any
                                         <span class="q-number-box">13</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text" placeholder="">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="q-list" data-q="4" data-type="nc">
                                         The
                                         <span class="q-number-box">14</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text" placeholder="">
                                         will be explained to you before you use the equipment.
                                     </div>
                                 </li>
@@ -1848,8 +1846,7 @@
                                     <div class="q-list" data-q="5" data-type="nc">
                                         You will be given a six-week
                                         <span class="q-number-box">15</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text" placeholder="">
                                     </div>
                                 </li>
                             </ul>
@@ -1860,8 +1857,7 @@
                                     <div class="q-list" data-q="6" data-type="nc">
                                         There is a compulsory £90
                                         <span class="q-number-box">16</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text" placeholder="">
                                         fee for members.
                                     </div>
                                 </li>
@@ -1869,8 +1865,7 @@
                                     <div class="q-list" data-q="7" data-type="nc">
                                         Gold members are given
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text" placeholder="">
                                         to all the LP clubs.
                                     </div>
                                 </li>
@@ -1878,8 +1873,7 @@
                                     <div class="q-list" data-q="8" data-type="nc">
                                         Premier members are given priority during
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text" placeholder="">
                                         hours.
                                     </div>
                                 </li>
@@ -1887,8 +1881,7 @@
                                     <div class="q-list" data-q="9" data-type="nc">
                                         Premier members can bring some
                                         <span class="q-number-box">19</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text" placeholder="">
                                         every month.
                                     </div>
                                 </li>
@@ -1896,8 +1889,7 @@
                                     <div class="q-list" data-q="10" data-type="nc">
                                         Members should always take their
                                         <span class="q-number-box">20</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text"
-                                            placeholder="">
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text" placeholder="">
                                         with them.
                                     </div>
                                 </li>
@@ -2136,24 +2128,21 @@
                                 <div class="q-list" data-q="1" data-type="nc">
                                     Its colour comes from an uncommon
                                     <span class="q-number-box">31</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text" placeholder="">
                                 </div>
                             </li>
                             <li>
                                 <div class="q-list" data-q="2" data-type="nc">
                                     Local people believe that it has unusual
                                     <span class="q-number-box">32</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text" placeholder="">
                                 </div>
                             </li>
                             <li>
                                 <div class="q-list" data-q="3" data-type="nc">
                                     They protect the bear from
                                     <span class="q-number-box">33</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text" placeholder="">
                                 </div>
                             </li>
                         </ul>
@@ -2165,8 +2154,7 @@
                                 <div class="q-list" data-q="4" data-type="nc">
                                     Tree roots stop
                                     <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text" placeholder="">
                                     along salmon streams.
                                 </div>
                             </li>
@@ -2175,8 +2163,7 @@
                                 <div class="q-list" data-q="5" data-type="nc">
                                     It is currently found on a small number of
                                     <span class="q-number-box">35</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text" placeholder="">
                                 </div>
                             </li>
                         </ul>
@@ -2187,8 +2174,7 @@
                                 <div class="q-list" data-q="6" data-type="nc">
                                     Habitat is being lost due to deforestation and construction of
                                     <span class="q-number-box">36</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text" placeholder="">
                                     by logging companies.
                                 </div>
                             </li>
@@ -2196,8 +2182,7 @@
                                 <div class="q-list" data-q="7" data-type="nc">
                                     Unrestricted
                                     <span class="q-number-box">37</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text" placeholder="">
                                     is affecting the salmon supply.
                                 </div>
                             </li>
@@ -2205,8 +2190,7 @@
                                 <div class="q-list" data-q="8" data-type="nc">
                                     The bears’ existence is also threatened by their low rate of
                                     <span class="q-number-box">38</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text" placeholder="">
                                 </div>
                             </li>
                         </ul>
@@ -2218,8 +2202,7 @@
                                 <div class="q-list" data-q="9" data-type="nc">
                                     Logging companies must improve their
                                     <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text" placeholder="">
                                     by logging companies.
                                 </div>
                             </li>
@@ -2227,8 +2210,7 @@
                                 <div class="q-list" data-q="10" data-type="nc">
                                     Maintenance and
                                     <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
-                                        placeholder="">
+                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text" placeholder="">
                                     of the spirit bears’ territory is needed.
                                 </div>
                             </li>
@@ -2243,8 +2225,8 @@
     <div class="floating-questions collapsed" id="floatingQuestions">
         <!-- Tombol Icon -->
         <button class="fq-fab" id="fqToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
@@ -2324,8 +2306,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
         function confirmExit() {
@@ -2333,77 +2315,77 @@
                 location.href = '/ielts/categories?set-id={{ $set->kode }}';
             }
         }
-        
+
         let scoreMap = [{
-                score: 9.0,
-                min: 39,
-                max: 40
-            },
-            {
-                score: 8.5,
-                min: 37,
-                max: 38
-            },
-            {
-                score: 8.0,
-                min: 35,
-                max: 36
-            },
-            {
-                score: 7.5,
-                min: 32,
-                max: 34
-            },
-            {
-                score: 7.0,
-                min: 30,
-                max: 31
-            },
-            {
-                score: 6.5,
-                min: 26,
-                max: 29
-            },
-            {
-                score: 6.0,
-                min: 23,
-                max: 25
-            },
-            {
-                score: 5.5,
-                min: 18,
-                max: 22
-            },
-            {
-                score: 5.0,
-                min: 16,
-                max: 17
-            },
-            {
-                score: 4.5,
-                min: 13,
-                max: 15
-            },
-            {
-                score: 4.0,
-                min: 11,
-                max: 12
-            },
-            {
-                score: 3.5,
-                min: 8,
-                max: 10
-            },
-            {
-                score: 3.0,
-                min: 6,
-                max: 7
-            },
-            {
-                score: 2.5,
-                min: 4,
-                max: 5
-            },
+            score: 9.0,
+            min: 39,
+            max: 40
+        },
+        {
+            score: 8.5,
+            min: 37,
+            max: 38
+        },
+        {
+            score: 8.0,
+            min: 35,
+            max: 36
+        },
+        {
+            score: 7.5,
+            min: 32,
+            max: 34
+        },
+        {
+            score: 7.0,
+            min: 30,
+            max: 31
+        },
+        {
+            score: 6.5,
+            min: 26,
+            max: 29
+        },
+        {
+            score: 6.0,
+            min: 23,
+            max: 25
+        },
+        {
+            score: 5.5,
+            min: 18,
+            max: 22
+        },
+        {
+            score: 5.0,
+            min: 16,
+            max: 17
+        },
+        {
+            score: 4.5,
+            min: 13,
+            max: 15
+        },
+        {
+            score: 4.0,
+            min: 11,
+            max: 12
+        },
+        {
+            score: 3.5,
+            min: 8,
+            max: 10
+        },
+        {
+            score: 3.0,
+            min: 6,
+            max: 7
+        },
+        {
+            score: 2.5,
+            min: 4,
+            max: 5
+        },
         ];
 
         function convertScore(correctCount) {
@@ -2428,7 +2410,7 @@
             $("body").css("overflow", "auto");
 
             // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#resultModal").hide();
             }, 300);
         }
@@ -2439,23 +2421,23 @@
             location.reload()
         }
 
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
+        $(document).on("click", ".modal-close, .btn-secondary", function () {
             closeModal();
         });
 
-        $(document).on("click", function(e) {
+        $(document).on("click", function (e) {
             if (e.target.id === "resultModal") {
                 closeModal();
             }
         });
 
-        $(document).on("keydown", function(e) {
+        $(document).on("keydown", function (e) {
             if (e.key === "Escape") {
                 closeModal();
             }
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#resultModal").removeClass("show").hide();
         });
     </script>
@@ -2558,7 +2540,7 @@
 
 
     <script>
-        (function() {
+        (function () {
             let remaining = 0;
             let t = null;
             const el = document.getElementById('timeText');
@@ -2584,7 +2566,7 @@
 
                     let results = [];
 
-                    $('.q-item, .q-list').each(function() {
+                    $('.q-item, .q-list').each(function () {
                         // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
                         if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
 
@@ -2648,7 +2630,7 @@
                             answers: results,
                             tipe_test: 'mock'
                         },
-                        success: function(response) {
+                        success: function (response) {
                             console.log(response);
 
                             if (response.status === 'ok') {
@@ -2657,7 +2639,7 @@
                                 let tableRows = '';
                                 let questionNumber = 1;
 
-                                $.each(response.results, function(key, data) {
+                                $.each(response.results, function (key, data) {
                                     let isCorrect = data.status === 'correct';
                                     if (isCorrect) correctCount++;
 
@@ -2706,7 +2688,7 @@
                                 alert('Terjadi kesalahan: ' + response.message);
                             }
                         },
-                        error: function(xhr) {
+                        error: function (xhr) {
                             console.error(xhr.responseText);
                             alert('Terjadi kesalahan: ' + xhr.status);
                         }
@@ -2739,7 +2721,7 @@
             };
 
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function() {
+            document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
                     'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
@@ -2753,7 +2735,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -2832,7 +2814,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch {}
+                    } catch { }
                 }
                 pid = null;
                 down = false;
@@ -2879,7 +2861,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -2888,7 +2870,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function(e) {
+                section.addEventListener('click', function (e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2904,7 +2886,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function(e) {
+                section.addEventListener('change', function (e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2952,7 +2934,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function(panelEl) {
+            window.getPanelAnswers = function (panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -3116,7 +3098,7 @@
 
     <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -3385,7 +3367,7 @@
                 setTimeout(() => {
                     try {
                         audio.muted = false;
-                    } catch (e) {}
+                    } catch (e) { }
                 }, 150);
 
                 // update status UI by starting timer per-second
@@ -3419,10 +3401,10 @@
             });
 
             // prevent seeking by user (just in case)
-            audio.addEventListener("seeking", function() {
+            audio.addEventListener("seeking", function () {
                 this.currentTime = this._lastTime || 0;
             });
-            audio.addEventListener("timeupdate", function() {
+            audio.addEventListener("timeupdate", function () {
                 this._lastTime = this.currentTime;
             });
         }
@@ -3481,12 +3463,12 @@
     </script>
 
     <script>
-        document.getElementById('doneBtn').addEventListener('click', function() {
+        document.getElementById('doneBtn').addEventListener('click', function () {
             const confirmFinish = confirm('Do you want to end the test now?');
             if (confirmFinish) {
                 let results = [];
                 stopCurrentAudio();
-                $('.q-item, .q-list').each(function() {
+                $('.q-item, .q-list').each(function () {
                     // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
                     if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
 
@@ -3550,7 +3532,7 @@
                         answers: results,
                         tipe_test: 'mock'
                     },
-                    success: function(response) {
+                    success: function (response) {
                         console.log(response);
 
                         if (response.status === 'ok') {
@@ -3559,7 +3541,7 @@
                             let tableRows = '';
                             let questionNumber = 1;
 
-                            $.each(response.results, function(key, data) {
+                            $.each(response.results, function (key, data) {
                                 let isCorrect = data.status === 'correct';
                                 if (isCorrect) correctCount++;
 
@@ -3608,7 +3590,7 @@
                             alert('Terjadi kesalahan: ' + response.message);
                         }
                     },
-                    error: function(xhr) {
+                    error: function (xhr) {
                         console.error(xhr.responseText);
                         alert('Terjadi kesalahan: ' + xhr.status);
                     }

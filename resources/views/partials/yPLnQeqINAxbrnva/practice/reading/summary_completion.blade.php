@@ -4,7 +4,7 @@
     <div class="reading-grid resizable-grid highlighted-content">
         <article class="passage" aria-label="Reading Passage" tabindex="0">
             <div class="passage-body">
-                <h3>Green roofs</h3>
+                <h3 class="passage-title">Green roofs</h3>
                 <h3>A</h3>
                 <p>
                     Rooftops covered with grass, vegetable gardens and lush foliage are now a common

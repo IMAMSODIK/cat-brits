@@ -2465,7 +2465,6 @@
                     }
                 });
 
-                console.log(questionCounts);
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
