@@ -1,89 +1,61 @@
-<h3 class="passage-title">Green roofs</h3>
+<h3 class="passage-title">Why we need to protect polar bears</h3>
 <div class="passage-body">
     <p><strong>A</strong></p>
     <p>
-        Rooftops covered with grass, vegetable gardens and lush foliage are now a common sight in many cities around the
-        world. More and more private companies and city authorities are investing in green roofs, drawn to their
-        wide-ranging benefits. Among the benefits are saving on energy costs, mitigating the risk of floods, making
-        habitats
-        for urban wildlife, tackling air pollution and even growing food. These increasingly radical urban designs can
-        help
-        cities adapt to the monumental problems they face, such as access to resources and a lack of green space due to
-        development. But the involvement of city authorities, businesses and other institutions is crucial to ensuring
-        their
-        success – as is research investigating different options to suit the variety of rooftop spaces found in cities.
-        The
-        UK is relatively new to developing green roofs, and local governments and institutions are playing a major role
-        in
-        spreading the practice. London is home to much of the UK’s green roof market, mainly due to forward-thinking
-        policies such as the London Plan, which has paved the way to more than doubling the area of green roofs in the
-        capital.
+        Polar bears are being increasingly threatened by the effects of climate change, but their disappearance could
+        have far-reaching consequences. They are uniquely adapted to the extreme conditions of the Arctic Circle, where
+        temperatures can reach —40°C. One reason for this is that they have up to 11 centimetres of fat underneath their
+        skin. Humans with comparative levels of adipose tissue would be considered obese and would be likely to suffer
+        from diabetes and heart disease. Yet the polar bear experiences no such consequences.
     </p>
 
     <p><strong>B</strong></p>
     <p>
-        Ongoing research is showcasing how green roofs in cities can integrate with ‘living walls’: environmentally
-        friendly
-        walls which are partially or completely covered with greenery, including a growing medium, such as soil or
-        water.
-        Research also indicates that green roofs can be integrated with drainage systems on the ground, such as street
-        trees, so that the water is managed better and the built environment is made more sustainable. There is also
-        evidence to demonstrate the social value of green roofs. Doctors are increasingly prescribing time spent
-        gardening
-        outdoors for patients dealing with anxiety and depression. And research has found that access to even the most
-        basic
-        green spaces can provide a better quality of life for dementia sufferers and help people avoid obesity.
+        A 2014 study by Shi Ping Liu and colleagues sheds light on this mystery. They compared the genetic structure of
+        polar bears with that of their closest relatives from a warmer climate, the brown bears. This allowed them to
+        determine the genes that have allowed polar bears to survive in one of the toughest environments on Earth. Liu
+        and his colleagues found the polar bears had a gene known as APoB, which reduces levels of low-density
+        lipoproteins (LDLs) – a form of ‘bad’ cholesterol. In humans, mutations of this gene are associated with
+        increased
+        risk of heart disease. Polar bears may therefore be an important study model to understand heart disease in
+        humans.
     </p>
 
     <p><strong>C</strong></p>
     <p>
-        In North America, green roofs have become mainstream, with a wide array of expansive, accessible and
-        food-producing
-        roofs installed in buildings. Again, city leaders and authorities have helped push the movement forward – only
-        recently, San Francisco, USA, created a policy requiring new buildings to have green roofs. Toronto, Canada, has
-        policies dating from the 1990s, encouraging the development of urban farms on rooftops. These countries also
-        benefit
-        from having newer buildings than in many parts of the world, which makes it easier to install green roofs. Being
-        able to keep enough water at roof height and distribute it right across the rooftop is crucial to maintaining
-        the
-        plants on any green roof – especially on ‘edible roofs’ where fruit and vegetables are farmed. And it’s much
-        easier
-        to do this in newer buildings, which can typically hold greater weight, than to retro-fit old ones. Having a
-        stronger roof also makes it easier to grow a greater variety of plants, since the soil can be deeper.
+        The genome of the polar bear may also provide the solution for another condition, one that particularly affects
+        our older generation: osteoporosis. This is a disease where bones show reduced density, usually caused by
+        insufficient exercise, reduced calcium intake or food starvation. Bone tissue is constantly being remodelled,
+        meaning that bone is added or removed, depending on nutrient availability and the stress that the bone is under.
+        Female polar bears, however, undergo extreme conditions during every pregnancy. Once autumn comes around, these
+        females will dig maternity dens in the snow and will remain there throughout the winter, both before and after
+        the birth of their cubs. This process results in about six months of fasting, where the female bears have to
+        keep
+        themselves and their cubs alive, depleting their own calcium and calorie reserves. Despite this, their bones
+        remain strong and dense.
     </p>
 
     <p><strong>D</strong></p>
     <p>
-        For green roofs to become the norm for new developments, there needs to be support from public authorities and
-        private investors. Those responsible for maintaining buildings may have to acquire new skills, such as
-        landscaping,
-        and in some cases, volunteers may be needed to help out. Other considerations include installing drainage paths,
-        meeting health and safety requirements and perhaps allowing access for the public, as well as planning
-        restrictions
-        and disruption from regular activities in and around the buildings during installation. To convince investors
-        and
-        developers that installing green roofs is worthwhile, economic arguments are still the most important. The term
-        ‘natural capital’ has been developed to explain the economic value of nature; for example, measuring the money
-        saved
-        by installing natural solutions to protect against flood damage, adapt to climate change or help people lead
-        healthier and happier lives.
+        Physiologists Alanda Lennox and Allen Goodship found an explanation for this paradox in 2008. They discovered
+        that
+        pregnant bears were able to increase the density of their bones before they started to build their dens. In
+        addition, six months later, when they finally emerged from the den with their cubs, there was no evidence of
+        significant loss of bone density. Hibernating brown bears do not have this capacity and must therefore resort to
+        major bone reformation in the following spring. If the mechanism of bone remodelling in polar bears can be
+        understood, many bedridden humans, and even astronauts, could potentially benefit.
     </p>
 
     <p><strong>E</strong></p>
     <p>
-        As the expertise about green roofs grows, official standards have been developed to ensure that they are
-        designed,
-        constructed and maintained properly, and function well. Improvements in the science and technology underpinning
-        green roof development have also led to new variations in the concept. For example, ‘blue roofs’ enable
-        buildings to
-        hold water over longer periods of time, rather than draining it away quickly – crucial in times of heavier
-        rainfall.
-        There are also combinations of green roofs with solar panels, and ‘brown roofs’ which are wilder in nature and
-        maximise biodiversity. If the trend continues, it could create new jobs and a more vibrant and sustainable local
-        food economy – alongside many other benefits. There are still barriers to overcome, but the evidence so far
-        indicates that green roofs have the potential to transform cities and help them function sustainably long into
-        the
-        future. The success stories need to be studied and replicated elsewhere, to make green, blue, brown and
-        food-producing roofs the norm in cities around the world.
+        The medical benefits of the polar bear for humanity certainly have their importance in our conservation efforts,
+        but these should not be the only factors taken into consideration. We tend to want to protect animals we think
+        are intelligent and possess emotions, such as elephants and primates. Bears, on the other hand, seem to be
+        perceived as stupid and in many cases violent. And yet anecdotal evidence from the field challenges those
+        assumptions, suggesting for example that polar bears have good problem-solving abilities. Studies and
+        observations show deliberate and focused manipulation, creative behaviour, and even emotional responses such as
+        frustration. Polar bears have also been seen forming unusual relationships with other species and even humans.
+        If climate change were to lead to their extinction, this would mean not only the loss of potential breakthroughs
+        in human medicine, but more importantly, the disappearance of an intelligent, majestic animal.
     </p>
 </div>

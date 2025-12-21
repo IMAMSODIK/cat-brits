@@ -7,133 +7,153 @@
 
 <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px;">
     <tr>
-        <th colspan="2">Victor Hugo</th>
+        <th colspan="2">Stoicism</th>
     </tr>
 
-    <!-- Les Misérables -->
+    <!-- Relevance -->
     <tr>
-        <td colspan="2"><b>His novel, Les Misérables</b></td>
+        <td colspan="2"><b>Relevance of Stoicism</b></td>
     </tr>
     <tr>
         <td colspan="2">
-            <ul style="margin:0; padding-left:18px;">
-                <li>It has been adapted for theatre and cinema.</li>
-                <li>
-                    We know more about its overall
-                    <div class="q-item" data-q="1" style="display:inline-block;">
-                        <span class="q-number-box">31</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text" placeholder="">
-                    </div>
-                    than about its author.
-                </li>
-            </ul>
+            Stoicism is still relevant today because of its
+            <div class="q-item" data-q="1" style="display:inline-block;">
+                <span class="q-number-box">31</span>
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text">
+            </div>
+            appeal.
         </td>
     </tr>
 
-    <!-- Early career -->
+    <!-- Ancient Stoics -->
     <tr>
-        <td colspan="2"><b>His early career</b></td>
+        <td colspan="2"><b>Ancient Stoics</b></td>
     </tr>
     <tr>
         <td colspan="2">
             <ul style="margin:0; padding-left:18px;">
-                <li>In Paris, his career was successful and he led the Romantic movement.</li>
+                <li>Stoicism was founded over 2,000 years ago in Greece.</li>
                 <li>
-                    He spoke publicly about social issues, such as
+                    The Stoics’ ideas are surprisingly well known, despite not being intended for
                     <div class="q-item" data-q="2" style="display:inline-block;">
                         <span class="q-number-box">32</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text" placeholder="">
-                    </div>
-                    and education.
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text">
+                    </div>.
                 </li>
-                <li>Napoleon III disliked his views and exiled him.</li>
             </ul>
         </td>
     </tr>
 
-    <!-- Exile -->
+    <!-- Stoic principles -->
     <tr>
-        <td colspan="2"><b>His exile from France</b></td>
+        <td colspan="2"><b>Stoic principles</b></td>
     </tr>
     <tr>
         <td colspan="2">
             <ul style="margin:0; padding-left:18px;">
+                <li>Happiness could be achieved by leading a virtuous life.</li>
+                <li>Controlling emotions was essential.</li>
                 <li>
-                    Victor Hugo had to live elsewhere in
+                    Epictetus said that external events cannot be controlled but the
                     <div class="q-item" data-q="3" style="display:inline-block;">
                         <span class="q-number-box">33</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text" placeholder="">
-                    </div>.
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text">
+                    </div>
+                    people make in response can be controlled.
                 </li>
                 <li>
-                    He used his income from the sale of some
+                    A Stoic is someone who has a different view on experiences which others would consider
+                    as
                     <div class="q-item" data-q="4" style="display:inline-block;">
                         <span class="q-number-box">34</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text" placeholder="">
-                    </div>
-                    he had written to buy a house on Guernsey.
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text">
+                    </div>.
                 </li>
             </ul>
         </td>
     </tr>
 
-    <!-- House on Guernsey -->
+    <!-- Influence -->
     <tr>
-        <td colspan="2"><b>His house on Guernsey</b></td>
+        <td colspan="2"><b>The influence of Stoicism</b></td>
     </tr>
     <tr>
         <td colspan="2">
             <ul style="margin:0; padding-left:18px;">
-                <li>Victor Hugo lived in this house until the end of the Empire in France.</li>
                 <li>
-                    The ground floor contains portraits,
+                    George Washington organised a
                     <div class="q-item" data-q="5" style="display:inline-block;">
                         <span class="q-number-box">35</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text" placeholder="">
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text">
                     </div>
-                    and tapestries that he valued.
+                    about Cato to motivate his men.
                 </li>
+                <li>The French artist Delacroix was a Stoic.</li>
                 <li>
-                    He bought cheap
+                    Adam Smith’s ideas on
                     <div class="q-item" data-q="6" style="display:inline-block;">
                         <span class="q-number-box">36</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text" placeholder="">
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text">
                     </div>
-                    made of wood and turned this into beautiful wall carvings.
+                    were influenced by Stoicism.
                 </li>
+                <li>Some of today’s political leaders are inspired by the Stoics.</li>
                 <li>
-                    The first floor consists of furnished areas with wallpaper and
-                    <div class="q-item" data-q="7" style="display:inline-block;">
-                        <span class="q-number-box">37</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text" placeholder="">
-                    </div>
-                    that have a Chinese design.
-                </li>
-                <li>The library still contains many of his favourite books.</li>
-                <li>
-                    He wrote in a room at the top of the house that had a view of the
-                    <div class="q-item" data-q="8" style="display:inline-block;">
-                        <span class="q-number-box">38</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text" placeholder="">
-                    </div>.
-                </li>
-                <li>
-                    He entertained other writers as well as poor
-                    <div class="q-item" data-q="9" style="display:inline-block;">
-                        <span class="q-number-box">39</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text" placeholder="">
-                    </div>
-                    in his house.
-                </li>
-                <li>
-                    Victor Hugo’s
-                    <div class="q-item" data-q="10" style="display:inline-block;">
-                        <span class="q-number-box">40</span>
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text" placeholder="">
-                    </div>
-                    gave ownership of the house to the city of Paris in 1927.
+                    Cognitive Behaviour Therapy (CBT)
                 </li>
             </ul>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <ul style="margin:0; padding-left:18px;">
+                <li>
+                    the treatment for
+                    <div class="q-item" data-q="7" style="display:inline-block;">
+                        <span class="q-number-box">37</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text">
+                    </div>
+                    is based on ideas from Stoicism.
+                </li>
+                <li>
+                    people learn to base their thinking on
+                    <div class="q-item" data-q="8" style="display:inline-block;">
+                        <span class="q-number-box">38</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text">
+                    </div>.
+                </li>
+            </ul>
+        </td>
+    </tr>
+
+    <!-- Business -->
+    <tr>
+        <td colspan="2">
+            In business, people benefit from Stoicism by identifying obstacles as
+            <div class="q-item" data-q="9" style="display:inline-block;">
+                <span class="q-number-box">39</span>
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text">
+            </div>.
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><b>Relevance of Stoicism</b></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            It requires a lot of
+            <div class="q-item" data-q="10" style="display:inline-block;">
+                <span class="q-number-box">40</span>
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text">
+            </div>
+            but Stoicism can help people to lead a good life.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            It teaches people that having a strong character is more important than anything else.
         </td>
     </tr>
 </table>

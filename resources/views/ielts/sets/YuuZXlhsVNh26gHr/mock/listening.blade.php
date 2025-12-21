@@ -585,6 +585,13 @@
             display: none;
         }
 
+        .two .q-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
         .q-option .opt-code {
             font-weight: 800;
             color: #334155;
@@ -699,11 +706,7 @@
             gap: 10px;
         }
 
-        #panel-tfng .q-number-box,
-        #panel-tfng2 .q-number-box,
-        #panel-mse .q-number-box,
-        #panel-tc .q-number-box,
-        #panel-sa .q-number-box {
+        [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -715,10 +718,7 @@
             margin-left: 5px;
         }
 
-        #panel-tfng .q-text,
-        #panel-tfng2 .q-text,
-        #panel-mse .q-text,
-        #panel-tc .q-text {
+        [id^="panel-"] .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -1536,6 +1536,11 @@
                     <i class="fa-solid fa-rotate-right"></i>
                     <span class="label">Try Again</span>
                 </button>
+
+                <button onclick="confirmExit()" class="btn btn-danger">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span class="label">Close</span>
+                </button>
             </div>
         </div>
     </header>
@@ -1555,693 +1560,56 @@
 
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
-        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Part 1</button>
-            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
-                data-id="tfng2">Part 2</button>
-            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Part 3</button>
-            <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
-                data-id="mse">Part 4</button>
-        </div>
+        @php
+            $tabs = [
+                'kategori' => 'listening',
+                'id' => 'YuuZXlhsVNh26gHr',
+                'data' => [
+                    'part1' => [
+                        'label' => 'Part 1',
+                        'subtitle' => 'Listen and answer questions 1-10',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-1.mp3',
+                        'tipe' => ['nc'],
+                        'contents' => 'partials.YuuZXlhsVNh26gHr.mock.listening.part1',
+                    ],
+                    'part2' => [
+                        'label' => 'Part 2',
+                        'subtitle' => 'Listen and answer questions 11-20',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-2.mp3',
+                        'tipe' => ['two_choices', 'two_choices', 'matching_information'],
+                        'contents' => 'partials.YuuZXlhsVNh26gHr.mock.listening.part2',
+                    ],
+                    'part3' => [
+                        'label' => 'Part 3',
+                        'subtitle' => 'Listen and answer questions 21-30',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-3.mp3',
+                        'tipe' => ['nc', 'matching_information'],
+                        'contents' => 'partials.YuuZXlhsVNh26gHr.mock.listening.part3',
+                    ],
+                    'part4' => [
+                        'label' => 'Part 4',
+                        'subtitle' => 'Listen and answer questions 31-40',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-3-audio-4.mp3',
+                        'tipe' => ['nc'],
+                        'contents' => 'partials.YuuZXlhsVNh26gHr.mock.listening.part4',
+                    ],
+                ],
+            ];
+        @endphp
 
-        <div class="x-panels">
-            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Content: Part 1</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="qa highlighted-content">
-                        <form class="qa-body">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
-                                <div class="audio-player">
-                                    <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-1.mp3"></audio>
-                                    <input type="range" class="timeline" value="0" disabled>
-                                    <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p><b>Questions 1-6</b></p>
-                                <p><i>Write <b>ONE WORD</b> for each answer.</i></p>
-                            </fieldset>
-
-                            <table cellpadding="8" cellspacing="0"
-                                style="border-collapse: collapse; margin-bottom: 20px;">
-                                <tr>
-                                    <th colspan="2">SELF-DRIVE TOURS IN THE USA</th>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><i>Example</i></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Name:</b></td>
-                                    <td><b>Andrea </b><i>......Brown.....</i></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Address:</b></td>
-                                    <td>
-                                        <div class="q-item" data-q="1" data-type="nc">
-                                            24
-                                            <span class="q-number-box">1</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-1" class="q-text"
-                                                placeholder="">
-                                            road
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Postcode:</b></td>
-                                    <td>BH5 2OP</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Phone:</b></td>
-                                    <td>(mobile) 077 8664 3091</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Heard about company from:</b></td>
-                                    <td>
-                                        <div class="q-item" data-q="2" data-type="nc">
-                                            <span class="q-number-box">2</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-2" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><b>Possible self-drive tours</b></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <p>Trip One:</p>
-                                        <ul>
-                                            <li>
-                                                <div class="q-item" data-q="3" data-type="nc">
-                                                    Los Angeles: customer wants to visit some
-                                                    <span class="q-number-box">3</span>
-                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-3" class="q-text"
-                                                        placeholder="">
-                                                    parks with her children
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="q-item" data-q="4" data-type="nc">
-                                                    Yosemite Park: customer wants to stay in a lodge, not a
-                                                    <span class="q-number-box">4</span>
-                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-4" class="q-text"
-                                                        placeholder="">
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <p>Trip Two:</p>
-                                        <ul>
-                                            <li>
-                                                <div class="q-item" data-q="5" data-type="nc">
-                                                    Customer wants to see the
-                                                    <span class="q-number-box">5</span>
-                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-5" class="q-text"
-                                                        placeholder="">
-                                                    on the way to Cambria
-                                                </div>
-                                            </li>
-                                            <li>At Santa Monica: not interested in shopping</li>
-                                            <li>
-                                                Yosemite Park: customer wants to stay in a lodge, not a
-                                                <div class="q-item" data-q="6" data-type="nc">
-                                                    At San Diego, wants to spend time on the
-                                                    <span class="q-number-box">6</span>
-                                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-6" class="q-text"
-                                                        placeholder="">
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <fieldset class="q-item">
-                                <p><b>Questions 7-10</b></p>
-                                <p>Complete the table below.</p>
-                                <p>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.</p>
-                            </fieldset>
-
-                            <table border="1" cellpadding="8" cellspacing="0"
-                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                                <tr>
-                                    <th></th>
-                                    <th><b>Number of days</b></th>
-                                    <th><b>Total distance</b></th>
-                                    <th><b>Price (per person)</b></th>
-                                    <th><b>Includes</b></th>
-                                </tr>
-                                <tr>
-                                    <th><b>Trip One</b></th>
-                                    <td>12 days</td>
-                                    <td>
-                                        <div class="q-item" data-q="7" data-type="tc">
-                                            <span class="q-number-box">7</span>
-                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-1" class="q-text"
-                                                placeholder="">
-                                            km
-                                        </div>
-                                    </td>
-                                    <td>£525</td>
-                                    <td>
-                                        <ul>
-                                            <li>accommodation</li>
-                                            <li>car</li>
-                                            <li>
-                                                <div class="q-item" data-q="8" data-type="tc">
-                                                    one
-                                                    <span class="q-number-box">8</span>
-                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-2" class="q-text"
-                                                        placeholder="">
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><b>Trip Two</b></th>
-                                    <td>9 days</td>
-                                    <td>
-                                        980 km
-                                    </td>
-                                    <td>
-                                        <div class="q-item" data-q="9" data-type="tc">
-                                            £
-                                            <span class="q-number-box">9</span>
-                                            <input type="text" name="tc-XJ3XOcvqPbgdZwyl-3" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul>
-                                            <li>accommodation</li>
-                                            <li>car</li>
-                                            <li>
-                                                <div class="q-item" data-q="10" data-type="tc">
-                                                    <span class="q-number-box">10</span>
-                                                    <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text"
-                                                        placeholder="">
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Content: Part 2</div>
-                <div class="qa highlighted-content">
-                    <form class="qa-body">
-                        <fieldset class="q-item">
-                            <p class="lead">Listen and answer questions 11-20</p>
-                            <div class="audio-player">
-                                <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-2.mp3"></audio>
-                                <input type="range" class="timeline" value="0" disabled>
-                                <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p><b>Questions 11-12</b></p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="1">
-                            <legend class="q-text">
-                                <span class="q-number">11</span>
-                                <span class="q-number">12</span>
-                                Which TWO facilities at the leisure club have recently been improved?
-                            </legend>
-                            <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="radio" name="q1" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">the gym</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="q1" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">the tracks</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="q1" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">the indoor pool</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="q1" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">the outdoor pool</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="radio" name="q1" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">the sports training for children</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p><b>Questions 13-20</b></p>
-                            <p>Complete the notes below.</p>
-                            <p>Write <b>NO MORE THEN TWO WORDS</b> for each answer.</p>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p><b>Joining the leisure club</b></p>
-                            <p><i>Personal Assessment</i></p>
-                            <ul>
-                                <li>
-                                    <div class="q-list" data-q="3" data-type="nc">
-                                        New members should describe any
-                                        <span class="q-number-box">13</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-7" class="q-text"
-                                            placeholder="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="4" data-type="nc">
-                                        The
-                                        <span class="q-number-box">14</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-8" class="q-text"
-                                            placeholder="">
-                                        will be explained to you before you use the equipment.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="5" data-type="nc">
-                                        You will be given a six-week
-                                        <span class="q-number-box">15</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-9" class="q-text"
-                                            placeholder="">
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <p><i>Types of membership</i></p>
-                            <ul>
-                                <li>
-                                    <div class="q-list" data-q="6" data-type="nc">
-                                        There is a compulsory £90
-                                        <span class="q-number-box">16</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-10" class="q-text"
-                                            placeholder="">
-                                        fee for members.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="7" data-type="nc">
-                                        Gold members are given
-                                        <span class="q-number-box">17</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-11" class="q-text"
-                                            placeholder="">
-                                        to all the LP clubs.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="8" data-type="nc">
-                                        Premier members are given priority during
-                                        <span class="q-number-box">18</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-12" class="q-text"
-                                            placeholder="">
-                                        hours.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="9" data-type="nc">
-                                        Premier members can bring some
-                                        <span class="q-number-box">19</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-13" class="q-text"
-                                            placeholder="">
-                                        every month.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="q-list" data-q="10" data-type="nc">
-                                        Members should always take their
-                                        <span class="q-number-box">20</span>
-                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-14" class="q-text"
-                                            placeholder="">
-                                        with them.
-                                    </div>
-                                </li>
-                            </ul>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-            <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Content: Part 3</div>
-                <div class="reading-section">
-                    <div class="qa highlighted-content">
-                        <form class="qa-body">
-                            <fieldset class="q-item">
-                                <p class="lead">Listen and answer questions 21-30</p>
-                                <div class="audio-player">
-                                    <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-3.mp3"></audio>
-                                    <input type="range" class="timeline" value="0" disabled>
-                                    <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p>Questions 21-25</p>
-                                <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <h3><b>Global Design Competition</b></h3>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="1" data-type="oc">
-                                <legend class="q-text">
-                                    <span class="q-number">21</span>
-                                    Students entering the design competition have to
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">produce an energy-efficient design.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">adapt an existing energy-saving appliance.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-1" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">develop a new use for current technology.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="2" data-type="oc">
-                                <legend class="q-text">
-                                    <span class="q-number">22</span>
-                                    John chose a dishwasher because he wanted to make dishwashers
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">more appealing.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">more common.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-2" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">more economical.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="3" data-type="oc">
-                                <legend class="q-text">
-                                    <span class="q-number">23</span>
-                                    The stone in John’s ‘Rockpool’ design is used
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">for decoration.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">to switch it on.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-3" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">to stop water escaping.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="4" data-type="oc">
-                                <legend class="q-text">
-                                    <span class="q-number">24</span>
-                                    In the holding chamber, the carbon dioxide
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">changes back to a gas.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">dries the dishes.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-4" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">is allowed to cool.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="5" data-type="oc">
-                                <legend class="q-text">
-                                    <span class="q-number">25</span>
-                                    At the end of the cleaning process, the carbon dioxide
-                                </legend>
-                                <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="A" />
-                                        <span class="opt-code">A</span>
-                                        <span class="opt-label">is released into the air.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="B" />
-                                        <span class="opt-code">B</span>
-                                        <span class="opt-label">is disposed of with the waste.</span>
-                                    </label>
-                                    <label class="q-option">
-                                        <input type="radio" name="oc-XJ3XOcvqPbgdZwyl-5" value="C" />
-                                        <span class="opt-code">C</span>
-                                        <span class="opt-label">is collected ready to be re-used.</span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="q-item">
-                                <p><b>Questions 26-30</b></p>
-                                <p>Complete the notes below.</p>
-                                <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                            </fieldset>
-
-                            <fieldset class="q-item" id="panel-sa">
-                                <ul>
-                                    <li>
-                                        <div class="q-list" data-q="6" data-type="nc">
-                                            John needs help preparing for his
-                                            <span class="q-number-box">26</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-15" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="7" data-type="nc">
-                                            The professor advises John to make a
-                                            <span class="q-number-box">27</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-16" class="q-text"
-                                                placeholder="">
-                                            of his design.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="8" data-type="nc">
-                                            John’s main problem is getting good quality
-                                            <span class="q-number-box">28</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-17" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="9" data-type="nc">
-                                            The professor suggests John apply for a
-                                            <span class="q-number-box">29</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-18" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="q-list" data-q="10" data-type="nc">
-                                            The professor will check the
-                                            <span class="q-number-box">30</span>
-                                            <input type="text" name="nc-XJ3XOcvqPbgdZwyl-19" class="q-text"
-                                                placeholder="">
-                                            information in John’s written report.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-            <div class="x-panel-inner">Content: Part 4</div>
-            <div class="qa highlighted-content">
-                <form class="qa-body">
-                    <fieldset class="q-item">
-                        <p class="lead">Listen and answer questions 31-40</p>
-                        <div class="audio-player">
-                            <audio
-                                src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
-                            <input type="range" class="timeline" value="0" disabled>
-                            <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="q-item">
-                        <p>Questions 31-40</p>
-                        <p>Complete the notes below.</p>
-                        <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                    </fieldset>
-
-                    <fieldset class="q-item">
-                        <h3><b>THE SPIRIT BEAR</b></h3>
-                        <p><b>General facts</b></p>
-                        <ul>
-                            <li>It is a white bear belonging to the black bear family.</li>
-                            <li>
-                                <div class="q-list" data-q="1" data-type="nc">
-                                    Its colour comes from an uncommon
-                                    <span class="q-number-box">31</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="2" data-type="nc">
-                                    Local people believe that it has unusual
-                                    <span class="q-number-box">32</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="3" data-type="nc">
-                                    They protect the bear from
-                                    <span class="q-number-box">33</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Habitat</b></p>
-                        <ul>
-                            <li>The bear’s relationship with the forest is complex.</li>
-                            <li>
-                                <div class="q-list" data-q="4" data-type="nc">
-                                    Tree roots stop
-                                    <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
-                                        placeholder="">
-                                    along salmon streams.
-                                </div>
-                            </li>
-                            <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
-                            <li>
-                                <div class="q-list" data-q="5" data-type="nc">
-                                    It is currently found on a small number of
-                                    <span class="q-number-box">35</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Threats</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="6" data-type="nc">
-                                    Habitat is being lost due to deforestation and construction of
-                                    <span class="q-number-box">36</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="7" data-type="nc">
-                                    Unrestricted
-                                    <span class="q-number-box">37</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
-                                        placeholder="">
-                                    is affecting the salmon supply.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="8" data-type="nc">
-                                    The bears’ existence is also threatened by their low rate of
-                                    <span class="q-number-box">38</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
-
-                        <p><b>Going forward</b></p>
-                        <ul>
-                            <li>Interested parties are working together.</li>
-                            <li>
-                                <div class="q-list" data-q="9" data-type="nc">
-                                    Logging companies must improve their
-                                    <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="10" data-type="nc">
-                                    Maintenance and
-                                    <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
-                                        placeholder="">
-                                    of the spirit bears’ territory is needed.
-                                </div>
-                            </li>
-                        </ul>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-        </div>
+        <x-tabs.listening-mock :tabs="$tabs" />
     </section>
 
     <!-- Floating Question List -->
     <div class="floating-questions collapsed" id="floatingQuestions">
         <!-- Tombol Icon -->
         <button class="fq-fab" id="fqToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
@@ -2251,6 +1619,10 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
+
+    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
+    </button>
 
     <button class="floating-btn" id="doneBtn">
         <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
@@ -2325,21 +1697,81 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let scoreMap = [
-            { score: 9.0, min: 39, max: 40 },
-            { score: 8.5, min: 37, max: 38 },
-            { score: 8.0, min: 35, max: 36 },
-            { score: 7.5, min: 32, max: 34 },
-            { score: 7.0, min: 30, max: 31 },
-            { score: 6.5, min: 26, max: 29 },
-            { score: 6.0, min: 23, max: 25 },
-            { score: 5.5, min: 18, max: 22 },
-            { score: 5.0, min: 16, max: 17 },
-            { score: 4.5, min: 13, max: 15 },
-            { score: 4.0, min: 11, max: 12 },
-            { score: 3.5, min: 8,  max: 10 },
-            { score: 3.0, min: 6,  max: 7 },
-            { score: 2.5, min: 4,  max: 5 },
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
+            }
+        }
+        let scoreMap = [{
+                score: 9.0,
+                min: 39,
+                max: 40
+            },
+            {
+                score: 8.5,
+                min: 37,
+                max: 38
+            },
+            {
+                score: 8.0,
+                min: 35,
+                max: 36
+            },
+            {
+                score: 7.5,
+                min: 32,
+                max: 34
+            },
+            {
+                score: 7.0,
+                min: 30,
+                max: 31
+            },
+            {
+                score: 6.5,
+                min: 26,
+                max: 29
+            },
+            {
+                score: 6.0,
+                min: 23,
+                max: 25
+            },
+            {
+                score: 5.5,
+                min: 18,
+                max: 22
+            },
+            {
+                score: 5.0,
+                min: 16,
+                max: 17
+            },
+            {
+                score: 4.5,
+                min: 13,
+                max: 15
+            },
+            {
+                score: 4.0,
+                min: 11,
+                max: 12
+            },
+            {
+                score: 3.5,
+                min: 8,
+                max: 10
+            },
+            {
+                score: 3.0,
+                min: 6,
+                max: 7
+            },
+            {
+                score: 2.5,
+                min: 4,
+                max: 5
+            },
         ];
 
         function convertScore(correctCount) {
@@ -2371,16 +1803,6 @@
 
         function retryQuiz() {
             closeModal();
-
-            // $("#form-tfng input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // $("#scorePercentage").text("0%");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($("#form-tfng").offset().top);
-            // }, 350);
 
             location.reload()
         }
@@ -2528,95 +1950,89 @@
 
                     $("#retake").css("display", "");
 
-                    let results = [];
+                    const data = [];
+                    let prevData = {
+                        name: null,
+                        index: 0,
+                        answer: null
+                    };
+                    const element = $('.qa-body');
 
-                    $('.q-item, .q-list').each(function() {
-                        // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                        if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+                    element
+                        .find('input, textarea, select, checkbox, radio')
+                        .not(':disabled')
+                        .each(function(index, elem) {
+                            const name = $(this).attr('name');
+                            const type = $(this).attr('type');
+                            let value = null;
 
-                        const type = $(this).data('type');
-                        const qnum = $(this).data('q');
-
-                        if (typeof type === 'undefined') return;
-
-                        let name = null;
-                        let answer = null;
-
-                        switch (type) {
-                            case 'tfng':
-                            case 'oc':
-                            case 'ynng':
-                                const checked = $(this).find('input[type="radio"]:checked');
-                                if (checked.length > 0) {
-                                    name = checked.attr('name');
-                                    answer = checked.val();
-                                } else {
-                                    const anyRadio = $(this).find('input[type="radio"]').first();
-                                    if (anyRadio.length > 0) name = anyRadio.attr('name');
+                            if (type === 'radio') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
                                 }
-                                break;
-
-                            case 'sa':
-                            case 'tc':
-                            case 'nc':
-                                const input = $(this).find('input[type="text"]');
-                                if (input.length > 0) {
-                                    name = input.attr('name');
-                                    answer = input.val();
+                            } else if (type === 'checkbox') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
                                 }
-                                break;
+                            } else {
+                                value = $(this).val();
+                            }
 
-                            case 'mh':
-                            case 'mse':
-                                const select = $(this).find('select');
-                                if (select.length > 0) {
-                                    name = select.attr('name');
-                                    answer = select.val();
+
+                            if (prevData.name === name) {
+                                if (value != null) {
+                                    if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
+                                        data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                                    } else {
+                                        data[prevData.index - 1].answer = value;
+                                    }
+                                    prevData.answer = value;
                                 }
-                                break;
-                        }
-
-                        results.push({
-                            type: type,
-                            name: name,
-                            answer: answer || null,
-                            question: qnum || null
+                            } else {
+                                data.push({
+                                    name: name,
+                                    answer: type === 'checkbox' ? `[${value}]` : value
+                                });
+                                prevData = {
+                                    name: name,
+                                    index: prevData.index + 1,
+                                    answer: value
+                                }
+                            }
                         });
-                    });
+
+                    console.log(data)
 
                     $.ajax({
-                        url: '/ielts/mock-test/check',
-                        type: 'POST',
+                        url: "/ielts/mock-test/check-v2",
+                        type: "POST",
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'XJ3XOcvqPbgdZwyl',
-                            kategori: 'listening',
-                            answers: results,
-                            tipe_test: 'mock'
+                            data: data,
+                            kategori: @json($tabs['kategori']),
                         },
                         success: function(response) {
-                            console.log(response);
-
-                            if (response.status === 'ok') {
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
+                            if (response.status === "ok") {
                                 let correctCount = 0;
                                 let total = Object.keys(response.results).length;
                                 let tableRows = '';
-                                let questionNumber = 1;
 
                                 $.each(response.results, function(key, data) {
-                                    let isCorrect = data.status === 'correct';
-                                    if (isCorrect) correctCount++;
+                                    const index = key.split('-')[1];
+                                    const status = data.status || '';
+                                    const user = data.user || 'NOT GIVEN';
+                                    const correct = data.correct || '';
 
-                                    let correctAnswer = data.correct || '';
-                                    let userAnswer = data.user || '';
-                                    if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                    if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                                    let isCorrect = status === 'correct';
+                                    if (isCorrect) correctCount++;
 
                                     tableRows += `
                                         <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
                                             <td>
                                                 <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
                                                     <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
@@ -2625,8 +2041,8 @@
                                             </td>
                                         </tr>
                                     `;
-                                });
 
+                                })
                                 // Update skor di UI
                                 $("#scoreDisplay").text(`${correctCount}/${total}`);
                                 $("#scorePercentage").text(`${convertScore(correctCount)}`);
@@ -2651,12 +2067,15 @@
                             } else {
                                 alert('Terjadi kesalahan: ' + response.message);
                             }
+
                         },
                         error: function(xhr) {
+                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                                .message : 'An error occurred while submitting answers.';
+                            alert(errorMsg);
                             console.error(xhr.responseText);
-                            alert('Terjadi kesalahan: ' + xhr.status);
                         }
-                    });
+                    })
 
                     return;
                 }
@@ -2819,12 +2238,26 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive('tfng');
+            setActive(Object.keys(@json($tabs).data)[0]);
         });
     </script>
 
     <!-- script bagian reading + questions  -->
     <script>
+        $(document).on('change', '.q-option input', function() {
+            let parent = $(this).closest('.q-item');
+            let option = $(this).closest('.q-option');
+
+            if (this.type === "radio") {
+                parent.find('.q-option').removeClass('is-selected');
+                option.addClass('is-selected');
+            }
+
+            if (this.type === "checkbox") {
+                option.toggleClass('is-selected', this.checked);
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
@@ -3007,7 +2440,7 @@
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
                     (!e.target.classList.contains('highlight') || !e.target.closest(
-                    '.highlighted-content')) &&
+                        '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -3195,19 +2628,23 @@
 
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                const questionCounts = {
-                    'tfng': 10,
-                    'tfng2': 10,
-                    'ynng': 10,
-                    'mse': 10,
-                };
+                const dataJson = @json($tabs).data;
+                const questionCounts = {};
+                Object.entries(dataJson).forEach(([key, tab]) => {
+                    const panel = document.querySelector(`#panel-${key}`);
+
+                    if (panel) {
+                        const count = panel.querySelectorAll('[data-q]').length;
+                        questionCounts[key] = count;
+                    }
+                });
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
             // Init
-            updateQuestionListForPart('tfng');
+            updateQuestionListForPart(Object.keys(@json($tabs).data)[0]);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
@@ -3255,7 +2692,8 @@
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
             } catch (e) {
-                /* ignore */ }
+                /* ignore */
+            }
 
             // clear interval timer if any
             if (currentTimerId) {
@@ -3427,97 +2865,95 @@
 
     <script>
         document.getElementById('doneBtn').addEventListener('click', function() {
+
             const confirmFinish = confirm('Do you want to end the test now?');
-            if (confirmFinish) {
-                let results = [];
-                stopCurrentAudio();
-                $('.q-item, .q-list').each(function() {
-                    // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
-                    if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+            if (!confirmFinish) return;
 
-                    const type = $(this).data('type');
-                    const qnum = $(this).data('q');
+            stopCurrentAudio();
 
-                    if (typeof type === 'undefined') return;
+            const data = [];
+            let prevData = {
+                name: null,
+                index: 0,
+                answer: null
+            };
+            const element = $('.qa-body');
 
-                    let name = null;
-                    let answer = null;
+            element
+                .find('input, textarea, select, checkbox, radio')
+                .not(':disabled')
+                .each(function(index, elem) {
+                    const name = $(this).attr('name');
+                    const type = $(this).attr('type');
+                    let value = null;
 
-                    switch (type) {
-                        case 'tfng':
-                        case 'oc':
-                        case 'ynng':
-                            const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
-                                name = checked.attr('name');
-                                answer = checked.val();
-                            } else {
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) name = anyRadio.attr('name');
-                            }
-                            break;
-
-                        case 'sa':
-                        case 'tc':
-                        case 'nc':
-                            const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
-                                name = input.attr('name');
-                                answer = input.val();
-                            }
-                            break;
-
-                        case 'mh':
-                        case 'mse':
-                            const select = $(this).find('select');
-                            if (select.length > 0) {
-                                name = select.attr('name');
-                                answer = select.val();
-                            }
-                            break;
+                    if (type === 'radio') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else if (type === 'checkbox') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else {
+                        value = $(this).val();
                     }
 
-                    results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
-                    });
+
+                    if (prevData.name === name) {
+                        if (value != null) {
+                            if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
+                                data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                            } else {
+                                data[prevData.index - 1].answer = value;
+                            }
+                            prevData.answer = value;
+                        }
+                    } else {
+                        data.push({
+                            name: name,
+                            answer: type === 'checkbox' ? `[${value}]` : value
+                        });
+                        prevData = {
+                            name: name,
+                            index: prevData.index + 1,
+                            answer: value
+                        }
+                    }
                 });
 
-                $.ajax({
-                    url: '/ielts/mock-test/check',
-                    type: 'POST',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
-                        kategori: 'listening',
-                        answers: results,
-                        tipe_test: 'mock'
-                    },
-                    success: function(response) {
-                        console.log(response);
+            console.log(data)
 
-                        if (response.status === 'ok') {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-                            let questionNumber = 1;
+            $.ajax({
+                url: "/ielts/mock-test/check-v2",
+                type: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    data: data,
+                    kategori: @json($tabs['kategori']),
+                },
+                success: function(response) {
+                    $("#try-again").css('display', '');
+                    $("#doneBtn").css('display', 'none');
+                    if (response.status === "ok") {
+                        let correctCount = 0;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = '';
 
-                            $.each(response.results, function(key, data) {
-                                let isCorrect = data.status === 'correct';
-                                if (isCorrect) correctCount++;
+                        $.each(response.results, function(key, data) {
+                            const index = key.split('-')[1];
+                            const status = data.status || '';
+                            const user = data.user || 'NOT GIVEN';
+                            const correct = data.correct || '';
 
-                                let correctAnswer = data.correct || '';
-                                let userAnswer = data.user || '';
-                                if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                                if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                            let isCorrect = status === 'correct';
+                            if (isCorrect) correctCount++;
 
-                                tableRows += `
+                            tableRows += `
                                         <tr>
-                                            <td><strong>${questionNumber++}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
                                             <td>
                                                 <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
                                                     <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
@@ -3526,39 +2962,39 @@
                                             </td>
                                         </tr>
                                     `;
-                            });
 
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${convertScore(correctCount)}`);
+                        })
+                        // Update skor di UI
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
-
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
                         } else {
-                            alert('Terjadi kesalahan: ' + response.message);
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
                         }
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan: ' + xhr.status);
+
+                        $("#resultsTableBody").html(tableRows);
+
+                        // tampilkan modal hasil
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    } else {
+                        alert('Terjadi kesalahan: ' + response.message);
                     }
-                });
-            }
+
+                },
+                error: function(xhr) {
+                    const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                        .message : 'An error occurred while submitting answers.';
+                    alert(errorMsg);
+                    console.error(xhr.responseText);
+                }
+            })
+
         });
     </script>
 </body>

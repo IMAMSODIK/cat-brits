@@ -39,27 +39,27 @@
                 </legend>
                 <div class="q-options" role="group" aria-label="Question 1 options">
                     <label class="q-option">
-                        <input type="checkbox" name="YuuZXlhsVNh26gHr-3[]" value="A" />
+                        <input type="checkbox" name="YuuZXlhsVNh26gHr-2[]" value="A" />
                         <span class="opt-code">A</span>
                         <span class="opt-label">learning how to be part of a team</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="YuuZXlhsVNh26gHr-3[]" value="B" />
+                        <input type="checkbox" name="YuuZXlhsVNh26gHr-2[]" value="B" />
                         <span class="opt-code">B</span>
                         <span class="opt-label">having a sense of purpose</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="YuuZXlhsVNh26gHr-3[]" value="C" />
+                        <input type="checkbox" name="YuuZXlhsVNh26gHr-2[]" value="C" />
                         <span class="opt-code">C</span>
                         <span class="opt-label">realising how lucky they are</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="YuuZXlhsVNh26gHr-3[]" value="D" />
+                        <input type="checkbox" name="YuuZXlhsVNh26gHr-2[]" value="D" />
                         <span class="opt-code">D</span>
                         <span class="opt-label">improved ability at time management</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="YuuZXlhsVNh26gHr-3[]" value="E" />
+                        <input type="checkbox" name="YuuZXlhsVNh26gHr-2[]" value="E" />
                         <span class="opt-code">E</span>
                         <span class="opt-label">boosting their employment prospects</span>
                     </label>

@@ -1563,37 +1563,41 @@
         @php
             $tabs = [
                 'kategori' => 'listening',
-                "id" => "yPLnQeqINAxbrnva",
-                "data" => [
-                    "part1" => [
-                        "label" => "Part 1",
-                        "subtitle" => "Listen and answer questions 1-10",
-                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-1.mp3",
-                        "tipe" => ["nc"],
-                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part1",
+                'id' => 'blsodB9LLhUn0zcg',
+                'data' => [
+                    'part1' => [
+                        'label' => 'Part 1',
+                        'subtitle' => 'Listen and answer questions 1-10',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-1.mp3',
+                        'tipe' => ['nc'],
+                        'contents' => 'partials.blsodB9LLhUn0zcg.mock.listening.part1',
                     ],
-                    "part2" => [
-                        "label" => "Part 2",
-                        "subtitle" => "Listen and answer questions 11-20",
-                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3",
-                        "tipe" => ["oc", "matching_information"],
-                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part2",
+                    'part2' => [
+                        'label' => 'Part 2',
+                        'subtitle' => 'Listen and answer questions 11-20',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-2.mp3',
+                        'tipe' => ['oc', 'map_labeling'],
+                        'contents' => 'partials.blsodB9LLhUn0zcg.mock.listening.part2',
                     ],
-                    "part3" => [
-                        "label" => "Part 3",
-                        "subtitle" => "Listen and answer questions 21-30",
-                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3",
-                        "tipe" => ["two_choices", "matching_information", "oc"],
-                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part3",
+                    'part3' => [
+                        'label' => 'Part 3',
+                        'subtitle' => 'Listen and answer questions 21-30',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-3.mp3',
+                        'tipe' => ['two_choices', 'two_choices', 'matching_information'],
+                        'contents' => 'partials.blsodB9LLhUn0zcg.mock.listening.part3',
                     ],
-                    "part4" => [
-                        "label" => "Part 4",
-                        "subtitle" => "Listen and answer questions 31-40",
-                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-4.mp3",
-                        "tipe" => ["nc"],
-                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part4",
-                    ]
-                ]
+                    'part4' => [
+                        'label' => 'Part 4',
+                        'subtitle' => 'Listen and answer questions 31-40',
+                        'audioUri' =>
+                            'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-4.mp3',
+                        'tipe' => ['nc'],
+                        'contents' => 'partials.blsodB9LLhUn0zcg.mock.listening.part4',
+                    ],
+                ],
             ];
         @endphp
 
@@ -1689,8 +1693,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
     <script>
         function confirmExit() {
@@ -1699,75 +1703,75 @@
             }
         }
         let scoreMap = [{
-            score: 9.0,
-            min: 39,
-            max: 40
-        },
-        {
-            score: 8.5,
-            min: 37,
-            max: 38
-        },
-        {
-            score: 8.0,
-            min: 35,
-            max: 36
-        },
-        {
-            score: 7.5,
-            min: 32,
-            max: 34
-        },
-        {
-            score: 7.0,
-            min: 30,
-            max: 31
-        },
-        {
-            score: 6.5,
-            min: 26,
-            max: 29
-        },
-        {
-            score: 6.0,
-            min: 23,
-            max: 25
-        },
-        {
-            score: 5.5,
-            min: 18,
-            max: 22
-        },
-        {
-            score: 5.0,
-            min: 16,
-            max: 17
-        },
-        {
-            score: 4.5,
-            min: 13,
-            max: 15
-        },
-        {
-            score: 4.0,
-            min: 11,
-            max: 12
-        },
-        {
-            score: 3.5,
-            min: 8,
-            max: 10
-        },
-        {
-            score: 3.0,
-            min: 6,
-            max: 7
-        },
-        {
-            score: 2.5,
-            min: 4,
-            max: 5
-        },
+                score: 9.0,
+                min: 39,
+                max: 40
+            },
+            {
+                score: 8.5,
+                min: 37,
+                max: 38
+            },
+            {
+                score: 8.0,
+                min: 35,
+                max: 36
+            },
+            {
+                score: 7.5,
+                min: 32,
+                max: 34
+            },
+            {
+                score: 7.0,
+                min: 30,
+                max: 31
+            },
+            {
+                score: 6.5,
+                min: 26,
+                max: 29
+            },
+            {
+                score: 6.0,
+                min: 23,
+                max: 25
+            },
+            {
+                score: 5.5,
+                min: 18,
+                max: 22
+            },
+            {
+                score: 5.0,
+                min: 16,
+                max: 17
+            },
+            {
+                score: 4.5,
+                min: 13,
+                max: 15
+            },
+            {
+                score: 4.0,
+                min: 11,
+                max: 12
+            },
+            {
+                score: 3.5,
+                min: 8,
+                max: 10
+            },
+            {
+                score: 3.0,
+                min: 6,
+                max: 7
+            },
+            {
+                score: 2.5,
+                min: 4,
+                max: 5
+            },
         ];
 
         function convertScore(correctCount) {
@@ -1792,7 +1796,7 @@
             $("body").css("overflow", "auto");
 
             // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function () {
+            setTimeout(function() {
                 $("#resultModal").hide();
             }, 300);
         }
@@ -1803,23 +1807,23 @@
             location.reload()
         }
 
-        $(document).on("click", ".modal-close, .btn-secondary", function () {
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
             closeModal();
         });
 
-        $(document).on("click", function (e) {
+        $(document).on("click", function(e) {
             if (e.target.id === "resultModal") {
                 closeModal();
             }
         });
 
-        $(document).on("keydown", function (e) {
+        $(document).on("keydown", function(e) {
             if (e.key === "Escape") {
                 closeModal();
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#resultModal").removeClass("show").hide();
         });
     </script>
@@ -1922,7 +1926,7 @@
 
 
     <script>
-        (function () {
+        (function() {
             let remaining = 0;
             let t = null;
             const el = document.getElementById('timeText');
@@ -1947,13 +1951,17 @@
                     $("#retake").css("display", "");
 
                     const data = [];
-                    let prevData = { name: null, index: 0, answer: null };
+                    let prevData = {
+                        name: null,
+                        index: 0,
+                        answer: null
+                    };
                     const element = $('.qa-body');
 
                     element
                         .find('input, textarea, select, checkbox, radio')
                         .not(':disabled')
-                        .each(function (index, elem) {
+                        .each(function(index, elem) {
                             const name = $(this).attr('name');
                             const type = $(this).attr('type');
                             let value = null;
@@ -1973,7 +1981,7 @@
 
                             if (prevData.name === name) {
                                 if (value != null) {
-                                    if (data[prevData.index - 1].answer != "") {
+                                    if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
                                         data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
                                     } else {
                                         data[prevData.index - 1].answer = value;
@@ -1985,7 +1993,11 @@
                                     name: name,
                                     answer: type === 'checkbox' ? `[${value}]` : value
                                 });
-                                prevData = { name: name, index: prevData.index + 1, answer: value }
+                                prevData = {
+                                    name: name,
+                                    index: prevData.index + 1,
+                                    answer: value
+                                }
                             }
                         });
 
@@ -1999,7 +2011,7 @@
                             data: data,
                             kategori: @json($tabs['kategori']),
                         },
-                        success: function (response) {
+                        success: function(response) {
                             $("#try-again").css('display', '');
                             $("#doneBtn").css('display', 'none');
                             if (response.status === "ok") {
@@ -2007,7 +2019,7 @@
                                 let total = Object.keys(response.results).length;
                                 let tableRows = '';
 
-                                $.each(response.results, function (key, data) {
+                                $.each(response.results, function(key, data) {
                                     const index = key.split('-')[1];
                                     const status = data.status || '';
                                     const user = data.user || 'NOT GIVEN';
@@ -2038,11 +2050,14 @@
                                 let percentage = (correctCount / total) * 100;
                                 let scoreCircle = $(".score-circle");
                                 if (percentage >= 80) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
                                 } else if (percentage >= 60) {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #f39c12, #e67e22)");
                                 } else {
-                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
                                 }
 
                                 $("#resultsTableBody").html(tableRows);
@@ -2054,8 +2069,9 @@
                             }
 
                         },
-                        error: function (xhr) {
-                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
+                        error: function(xhr) {
+                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                                .message : 'An error occurred while submitting answers.';
                             alert(errorMsg);
                             console.error(xhr.responseText);
                         }
@@ -2088,7 +2104,7 @@
             };
 
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function () {
+            document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
                     'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
@@ -2102,7 +2118,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -2181,7 +2197,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -2228,7 +2244,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        $(document).on('change', '.q-option input', function () {
+        $(document).on('change', '.q-option input', function() {
             let parent = $(this).closest('.q-item');
             let option = $(this).closest('.q-option');
 
@@ -2242,7 +2258,7 @@
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -2251,7 +2267,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function (e) {
+                section.addEventListener('click', function(e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2267,7 +2283,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function (e) {
+                section.addEventListener('change', function(e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2315,7 +2331,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function (panelEl) {
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -2479,7 +2495,7 @@
 
     <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -2752,7 +2768,7 @@
                 setTimeout(() => {
                     try {
                         audio.muted = false;
-                    } catch (e) { }
+                    } catch (e) {}
                 }, 150);
 
                 // update status UI by starting timer per-second
@@ -2786,10 +2802,10 @@
             });
 
             // prevent seeking by user (just in case)
-            audio.addEventListener("seeking", function () {
+            audio.addEventListener("seeking", function() {
                 this.currentTime = this._lastTime || 0;
             });
-            audio.addEventListener("timeupdate", function () {
+            audio.addEventListener("timeupdate", function() {
                 this._lastTime = this.currentTime;
             });
         }
@@ -2848,7 +2864,7 @@
     </script>
 
     <script>
-        document.getElementById('doneBtn').addEventListener('click', function () {
+        document.getElementById('doneBtn').addEventListener('click', function() {
 
             const confirmFinish = confirm('Do you want to end the test now?');
             if (!confirmFinish) return;
@@ -2856,13 +2872,17 @@
             stopCurrentAudio();
 
             const data = [];
-            let prevData = { name: null, index: 0, answer: null };
+            let prevData = {
+                name: null,
+                index: 0,
+                answer: null
+            };
             const element = $('.qa-body');
 
             element
                 .find('input, textarea, select, checkbox, radio')
                 .not(':disabled')
-                .each(function (index, elem) {
+                .each(function(index, elem) {
                     const name = $(this).attr('name');
                     const type = $(this).attr('type');
                     let value = null;
@@ -2882,7 +2902,7 @@
 
                     if (prevData.name === name) {
                         if (value != null) {
-                            if (data[prevData.index - 1].answer != "") {
+                            if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
                                 data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
                             } else {
                                 data[prevData.index - 1].answer = value;
@@ -2894,7 +2914,11 @@
                             name: name,
                             answer: type === 'checkbox' ? `[${value}]` : value
                         });
-                        prevData = { name: name, index: prevData.index + 1, answer: value }
+                        prevData = {
+                            name: name,
+                            index: prevData.index + 1,
+                            answer: value
+                        }
                     }
                 });
 
@@ -2908,7 +2932,7 @@
                     data: data,
                     kategori: @json($tabs['kategori']),
                 },
-                success: function (response) {
+                success: function(response) {
                     $("#try-again").css('display', '');
                     $("#doneBtn").css('display', 'none');
                     if (response.status === "ok") {
@@ -2916,7 +2940,7 @@
                         let total = Object.keys(response.results).length;
                         let tableRows = '';
 
-                        $.each(response.results, function (key, data) {
+                        $.each(response.results, function(key, data) {
                             const index = key.split('-')[1];
                             const status = data.status || '';
                             const user = data.user || 'NOT GIVEN';
@@ -2963,15 +2987,15 @@
                     }
 
                 },
-                error: function (xhr) {
-                    const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
+                error: function(xhr) {
+                    const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                        .message : 'An error occurred while submitting answers.';
                     alert(errorMsg);
                     console.error(xhr.responseText);
                 }
             })
 
         });
-
     </script>
 </body>
 
