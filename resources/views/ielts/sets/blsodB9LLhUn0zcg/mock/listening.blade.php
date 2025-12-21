@@ -7,9 +7,9 @@
     <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -34,7 +34,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: #4274BA;
+            background: #4274ba;
             box-shadow: var(--shadow);
             padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
@@ -435,6 +435,7 @@
 
     <!-- style bagian reading + questions -->
     <style>
+        /* Layout container dengan jarak kiri-kanan seimbang */
         .reading-section {
             padding: 10px 12px 12px 12px;
             box-sizing: border-box;
@@ -584,6 +585,13 @@
             display: none;
         }
 
+        .two .q-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
         .q-option .opt-code {
             font-weight: 800;
             color: #334155;
@@ -689,16 +697,16 @@
             }
         }
 
+        #panel-tfng .q-options,
+        #panel-tfng2 .q-options,
+        #panel-mse .q-options,
         #panel-tc .q-options {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        #panel-tc .q-number-box,
-        #panel-two_choice .q-number-box,
-        #panel-two_choice2 .q-number-box,
-        #panel-summary_completion .q-number-box {
+        [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -710,7 +718,7 @@
             margin-left: 5px;
         }
 
-        #panel-summary_completion .q-text {
+        [id^="panel-"] .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -719,15 +727,9 @@
             box-sizing: border-box;
         }
 
-        #panel-tc .q-text {
-            flex: 1;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-
+        /* #panel-tfng input,
+        #panel-tfng2 input,
+        #panel-mse input,
         #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -735,30 +737,15 @@
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
-        }
+        } */
 
-        #panel-sa input,
-        #panel-sentence_completion input {
+        #panel-sa input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
-        }
-
-        .q-option.correct {
-            background-color: #c8f7c5;
-            /* hijau muda */
-            border: 2px solid #27ae60;
-            border-radius: 6px;
-        }
-
-        .q-option.wrong {
-            background-color: #f9c0c0;
-            /* merah muda */
-            border: 2px solid #e74c3c;
-            border-radius: 6px;
         }
     </style>
 
@@ -917,7 +904,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            right: 16px;
+            left: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -1006,15 +993,15 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                right: 12px;
-                left: auto;
+                left: 12px;
+                /* left: auto; */
                 width: auto;
                 max-width: 100%;
             }
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                right: 12px;
+                /* right: 12px; */
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1033,201 +1020,147 @@
 
     {{-- style unutk audio player --}}
     <style>
+        /* ===============================
+   AUDIO PLAYER CONTAINER
+   =============================== */
         .audio-player {
-            display: grid;
-            grid-template-columns: auto 1fr auto auto;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-            padding: 10px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            padding: 18px 20px;
+            border-radius: 18px;
+            margin: 20px 0;
+
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
-        .ap-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #e5e7eb;
-            background: #f8fafc;
-            border-radius: 12px;
+        /* ===============================
+   PLAY BUTTON (Tapi disembunyikan)
+   =============================== */
+        .ap-btn.ap-play {
+            display: none !important;
+        }
+
+        /* ===============================
+   VOLUME BUTTON (Minimalis)
+   =============================== */
+        .ap-btn.ap-vol {
+            border: none;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 10px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
-            transition: background .12s ease, border-color .12s ease, transform .06s ease;
+            transition: 0.2s ease;
         }
 
-        .ap-btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
+        .ap-btn.ap-vol:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
 
-        .ap-btn:active {
-            transform: translateY(1px);
-        }
-
-        .ap-play {
-            width: 44px;
-            height: 44px;
-            font-weight: 800;
-        }
-
-        .ap-icon {
-            line-height: 1;
-        }
-
+        /* ===============================
+   TRACK WRAPPER
+   =============================== */
         .ap-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
             position: relative;
-            height: 19px;
-            background: #f1f5f9;
-            border: 1px solid #e5e7eb;
-            border-radius: 999px;
             overflow: hidden;
         }
 
+        /* Progress bar */
         .ap-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
+            height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #60a5fa, #2563eb);
-            border-right: 1px solid rgba(0, 0, 0, 0.06);
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: inherit;
+            transition: width 0.2s linear;
         }
 
+        /* ===============================
+   SEEK (DISABLED)
+   =============================== */
         .ap-seek {
-            -webkit-appearance: none;
-            appearance: none;
-            position: relative;
+            position: absolute;
             width: 100%;
-            height: 8px;
-            background: transparent;
-            outline: none;
+            height: 100%;
+            opacity: 0;
+            cursor: not-allowed !important;
+            pointer-events: none !important;
         }
 
-        .ap-seek::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
-            margin-top: -4px;
-        }
-
-        .ap-seek::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
-        }
-
+        /* ===============================
+   TIME DISPLAY
+   =============================== */
         .ap-time {
-            font-variant-numeric: tabular-nums;
-            font-size: 12px;
-            font-weight: 700;
-            color: #0f172a;
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 6px 8px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
         }
 
-        .ap-time .ap-sep {
-            opacity: .7;
-            margin: 0 4px;
+        /* ===============================
+   REMOVE DEFAULT AUDIO ELEMENT
+   =============================== */
+        audio {
+            display: none !important;
         }
 
-        /* Mobile */
-        @media (max-width: 520px) {
+        /* ===============================
+   RESPONSIVE
+   =============================== */
+        @media (max-width: 600px) {
             .audio-player {
-                grid-template-columns: auto 1fr auto;
-                grid-template-areas: "play track time" "vol track time";
-                gap: 8px;
-            }
-
-            .ap-play {
-                grid-area: play;
-            }
-
-            .ap-track {
-                grid-area: track;
+                padding: 15px;
+                border-radius: 15px;
             }
 
             .ap-time {
-                grid-area: time;
+                font-size: 13px;
             }
+        }
+    </style>
 
-            .ap-vol {
-                grid-area: vol;
-            }
+    <style>
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #fccb2a;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            background-color: #fff309;
+            transform: scale(1.1);
         }
     </style>
 
     {{-- style modal --}}
     <style>
         /* Modal Styles */
-
-
-        /* options */
-        .q-options {
-            display: grid;
-            gap: 8px;
-        }
-
-        .q-option {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 10px 12px;
-            cursor: pointer;
-            user-select: none;
-            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
-        }
-
-        .q-option:hover {
-            border-color: #cbd5e1;
-            background: #f8fafc;
-        }
-
-        .q-option input {
-            display: none;
-        }
-
-        .q-option .opt-code {
-            font-weight: 800;
-            color: #334155;
-        }
-
-        .q-option .opt-label {
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        /* State terpilih */
-        .q-option.is-selected {
-            border-color: #2563eb;
-            background: #eef2ff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
-        }
-
-        .q-option.is-selected .opt-code {
-            color: #1d4ed8;
-        }
-
-        .q-option.is-selected .opt-label {
-            color: #1d4ed8;
-        }
-
         .custom-modal {
             display: none !important;
             /* Pastikan modal tersembunyi secara default */
@@ -1541,24 +1474,6 @@
                 padding: 4px 8px;
             }
         }
-
-        @media (max-width: 900px) {
-
-            .q-options {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* #panel-tfng .q-options,
-                #panel-two_choice .q-options,
-        #panel-tfng2 .q-options,
-        #panel-ynng .q-options,
-        #panel-mse .q-options,
-        #panel-tc .q-options {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        } */
     </style>
 
     {{-- other --}}
@@ -1566,6 +1481,31 @@
         .unanswered-highlight {
             border: 2px solid red;
             background: #ffe6e6;
+        }
+
+        #confirmModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #confirmModal .box {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #confirmModal button {
+            margin-top: 15px;
+            padding: 8px 16px;
         }
     </style>
 </head>
@@ -1575,8 +1515,10 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 70px;margin-left: 50px"
-                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <div class="logo" aria-hidden="true">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -1585,12 +1527,17 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
+                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeText">00:00</span>
                 </div>
 
-                <button id="doneBtn" class="btn btn-danger">
+                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span class="label">Try Again</span>
+                </button>
+
+                <button onclick="confirmExit()" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
                     <span class="label">Close</span>
                 </button>
@@ -1612,55 +1559,45 @@
     </section>
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
+    <section class="parts-section" aria-label="Pilihan Part Soal">
         @php
             $tabs = [
-                [
-                    'id' => 'tfng',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng',
-                ],
-                [
-                    'id' => 'nc',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.nc',
-                ],
-                [
-                    'id' => 'matching_information',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching Information',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.matching_information',
-                ],
-                [
-                    'id' => 'summary_completion',
-                    'tipe' => 'summary_completion',
-                    'title' => 'Summary Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.summary_completion',
-                ],
-                [
-                    'id' => 'mh',
-                    'tipe' => 'mh',
-                    'title' => 'Matching Headings',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.mh',
-                ],
-                [
-                    'id' => 'sentence_completion',
-                    'tipe' => 'sentence_completion',
-                    'title' => 'Sentence Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.sentence_completion',
-                ],
-                [
-                    'id' => 'tfng2',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given 2',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng2',
-                ],
+                'kategori' => 'listening',
+                "id" => "yPLnQeqINAxbrnva",
+                "data" => [
+                    "part1" => [
+                        "label" => "Part 1",
+                        "subtitle" => "Listen and answer questions 1-10",
+                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-1.mp3",
+                        "tipe" => ["nc"],
+                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part1",
+                    ],
+                    "part2" => [
+                        "label" => "Part 2",
+                        "subtitle" => "Listen and answer questions 11-20",
+                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-2.mp3",
+                        "tipe" => ["oc", "matching_information"],
+                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part2",
+                    ],
+                    "part3" => [
+                        "label" => "Part 3",
+                        "subtitle" => "Listen and answer questions 21-30",
+                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3",
+                        "tipe" => ["two_choices", "matching_information", "oc"],
+                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part3",
+                    ],
+                    "part4" => [
+                        "label" => "Part 4",
+                        "subtitle" => "Listen and answer questions 31-40",
+                        "audioUri" => "https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-4.mp3",
+                        "tipe" => ["nc"],
+                        "contents" => "partials.yPLnQeqINAxbrnva.mock.listening.part4",
+                    ]
+                ]
             ];
         @endphp
 
-        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="matching_information" />
+        <x-tabs.listening-mock :tabs="$tabs" />
     </section>
 
     <!-- Floating Question List -->
@@ -1678,6 +1615,14 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
+
+    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
+    </button>
+
+    <button class="floating-btn" id="doneBtn">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
+    </button>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -1697,14 +1642,13 @@
         </div>
     </div>
 
-    <!-- Modal Wrapper -->
     <div id="resultModal" class="custom-modal">
         <div class="custom-modal-content">
             <div class="custom-modal-header">
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        {{-- <small id="scorePercentage">0</small> --}}
+                        <small id="scorePercentage">0</small>
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -1736,78 +1680,94 @@
         </div>
     </div>
 
+    <!-- MODAL CONFIRMATION -->
+    <div id="confirmModal">
+        <div class="box">
+            <h3>Audio Notice</h3>
+            <p>The audio in this section can only be played once for each part.</p>
+            <button id="confirmYes">Yes, continue</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
-        let scoreMap = [{
-                min: 39,
-                max: 40,
-                score: 9.0
-            },
-            {
-                min: 37,
-                max: 38,
-                score: 8.5
-            },
-            {
-                min: 35,
-                max: 36,
-                score: 8.0
-            },
-            {
-                min: 33,
-                max: 34,
-                score: 7.5
-            },
-            {
-                min: 30,
-                max: 32,
-                score: 7.0
-            },
-            {
-                min: 27,
-                max: 29,
-                score: 6.5
-            },
-            {
-                min: 23,
-                max: 26,
-                score: 6.0
-            },
-            {
-                min: 19,
-                max: 22,
-                score: 5.5
-            },
-            {
-                min: 15,
-                max: 18,
-                score: 5.0
-            },
-            {
-                min: 13,
-                max: 14,
-                score: 4.5
-            },
-            {
-                min: 10,
-                max: 12,
-                score: 4.0
-            },
-            {
-                min: 8,
-                max: 9,
-                score: 3.5
-            },
-            {
-                min: 6,
-                max: 7,
-                score: 3.0
-            },
-            {
-                min: 4,
-                max: 5,
-                score: 2.5
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
             }
+        }
+        let scoreMap = [{
+            score: 9.0,
+            min: 39,
+            max: 40
+        },
+        {
+            score: 8.5,
+            min: 37,
+            max: 38
+        },
+        {
+            score: 8.0,
+            min: 35,
+            max: 36
+        },
+        {
+            score: 7.5,
+            min: 32,
+            max: 34
+        },
+        {
+            score: 7.0,
+            min: 30,
+            max: 31
+        },
+        {
+            score: 6.5,
+            min: 26,
+            max: 29
+        },
+        {
+            score: 6.0,
+            min: 23,
+            max: 25
+        },
+        {
+            score: 5.5,
+            min: 18,
+            max: 22
+        },
+        {
+            score: 5.0,
+            min: 16,
+            max: 17
+        },
+        {
+            score: 4.5,
+            min: 13,
+            max: 15
+        },
+        {
+            score: 4.0,
+            min: 11,
+            max: 12
+        },
+        {
+            score: 3.5,
+            min: 8,
+            max: 10
+        },
+        {
+            score: 3.0,
+            min: 6,
+            max: 7
+        },
+        {
+            score: 2.5,
+            min: 4,
+            max: 5
+        },
         ];
 
         function convertScore(correctCount) {
@@ -1821,7 +1781,148 @@
     </script>
 
     <script>
-        (function() {
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function () {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            closeModal();
+
+            location.reload()
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function () {
+            closeModal();
+        });
+
+        $(document).on("click", function (e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function (e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        $(document).ready(function () {
+            $("#resultModal").removeClass("show").hide();
+        });
+    </script>
+
+    <!-- script bagian audio player -->
+    <script>
+        (function setupAudioPlayers() {
+            const players = document.querySelectorAll('.audio-player');
+
+            players.forEach(player => {
+                const audio = player.querySelector('audio');
+                const playBtn = player.querySelector('.ap-play');
+                const muteBtn = player.querySelector('.ap-vol');
+                const seek = player.querySelector('.ap-seek');
+                const progress = player.querySelector('.ap-progress');
+                const cur = player.querySelector('.ap-current');
+                const dur = player.querySelector('.ap-duration');
+                const iconPlay = player.querySelector('.ap-icon-play');
+                const iconPause = player.querySelector('.ap-icon-pause');
+                const track = player.querySelector('.ap-track');
+
+                function fmt(t) {
+                    if (!isFinite(t)) return '0:00';
+                    const m = Math.floor(t / 60);
+                    const s = Math.floor(t % 60);
+                    return m + ':' + String(s).padStart(2, '0');
+                }
+
+                // durasi
+                audio.addEventListener('loadedmetadata', () => {
+                    dur.textContent = fmt(audio.duration);
+                });
+
+                // update progress
+                audio.addEventListener('timeupdate', () => {
+                    cur.textContent = fmt(audio.currentTime);
+                    const pct = (audio.currentTime / (audio.duration || 1)) * 100;
+                    progress.style.width = pct + '%';
+                    seek.value = pct;
+                });
+
+                // play/pause toggle
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (audio.paused) audio.play();
+                    else audio.pause();
+                });
+
+                audio.addEventListener('play', () => {
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'inline';
+                    playBtn.setAttribute('aria-label', 'Pause audio');
+                });
+
+                audio.addEventListener('pause', () => {
+                    iconPlay.style.display = 'inline';
+                    iconPause.style.display = 'none';
+                    playBtn.setAttribute('aria-label', 'Play audio');
+                });
+
+                // seek slider
+                seek.addEventListener('input', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const t = (parseFloat(seek.value) / 100) * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Seek input →", t);
+                });
+
+                seek.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const t = (parseFloat(seek.value) / 100) * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Seek change →", t);
+                });
+
+                // klik progress bar
+                track.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const rect = track.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const pct = x / rect.width;
+                    const t = pct * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Track click →", t);
+                });
+
+                // mute toggle
+                muteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    audio.muted = !audio.muted;
+                    muteBtn.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
+                    muteBtn.setAttribute('aria-label', audio.muted ? 'Unmute audio' : 'Mute audio');
+                });
+            });
+        })();
+    </script>
+
+
+    <script>
+        (function () {
             let remaining = 0;
             let t = null;
             const el = document.getElementById('timeText');
@@ -1842,7 +1943,124 @@
                     document.getElementById('doneBtn').disabled = true;
                     document.getElementById('doneBtn').style.opacity = 0.7;
                     document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+
+                    $("#retake").css("display", "");
+
+                    const data = [];
+                    let prevData = { name: null, index: 0, answer: null };
+                    const element = $('.qa-body');
+
+                    element
+                        .find('input, textarea, select, checkbox, radio')
+                        .not(':disabled')
+                        .each(function (index, elem) {
+                            const name = $(this).attr('name');
+                            const type = $(this).attr('type');
+                            let value = null;
+
+                            if (type === 'radio') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
+                                }
+                            } else if (type === 'checkbox') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
+                                }
+                            } else {
+                                value = $(this).val();
+                            }
+
+
+                            if (prevData.name === name) {
+                                if (value != null) {
+                                    if (data[prevData.index - 1].answer != "") {
+                                        data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                                    } else {
+                                        data[prevData.index - 1].answer = value;
+                                    }
+                                    prevData.answer = value;
+                                }
+                            } else {
+                                data.push({
+                                    name: name,
+                                    answer: type === 'checkbox' ? `[${value}]` : value
+                                });
+                                prevData = { name: name, index: prevData.index + 1, answer: value }
+                            }
+                        });
+
+                    console.log(data)
+
+                    $.ajax({
+                        url: "/ielts/mock-test/check-v2",
+                        type: "POST",
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            data: data,
+                            kategori: @json($tabs['kategori']),
+                        },
+                        success: function (response) {
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
+                            if (response.status === "ok") {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+
+                                $.each(response.results, function (key, data) {
+                                    const index = key.split('-')[1];
+                                    const status = data.status || '';
+                                    const user = data.user || 'NOT GIVEN';
+                                    const correct = data.correct || '';
+
+                                    let isCorrect = status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+
+                                })
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+
+                        },
+                        error: function (xhr) {
+                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
+                            alert(errorMsg);
+                            console.error(xhr.responseText);
+                        }
+                    })
+
                     return;
                 }
                 remaining -= 1;
@@ -1870,29 +2088,21 @@
             };
 
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function() {
+            document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
                 );
 
             });
-
-            document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Do you want to end the test now?');
-                if (confirmFinish) {
-                    window.history.back();
-                }
-            });
-
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
+            startCountdown(13 * 60);
         })();
     </script>
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1971,7 +2181,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch {}
+                    } catch { }
                 }
                 pid = null;
                 down = false;
@@ -2012,14 +2222,27 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-
-            setActive(@json($tabs)[0]['id']);
+            setActive(Object.keys(@json($tabs).data)[0]);
         });
     </script>
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        $(document).on('change', '.q-option input', function () {
+            let parent = $(this).closest('.q-item');
+            let option = $(this).closest('.q-option');
+
+            if (this.type === "radio") {
+                parent.find('.q-option').removeClass('is-selected');
+                option.addClass('is-selected');
+            }
+
+            if (this.type === "checkbox") {
+                option.toggleClass('is-selected', this.checked);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -2028,7 +2251,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function(e) {
+                section.addEventListener('click', function (e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2044,7 +2267,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function(e) {
+                section.addEventListener('change', function (e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2092,7 +2315,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function(panelEl) {
+            window.getPanelAnswers = function (panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -2256,7 +2479,7 @@
 
     <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -2268,6 +2491,7 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
+            // Toggle collapse
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
@@ -2348,44 +2572,6 @@
 
             // Deteksi jawaban berubah
             function watchAnswerChanges() {
-                document.addEventListener('change', (e) => {
-                    const input = e.target;
-                    const question = input.closest('[data-q]');
-                    const group = input.closest('.q-options');
-                    const label = input.closest('.q-option');
-
-                    if (!question) return;
-
-                    // 🔹 Batasi jumlah checkbox
-                    if (input.type === 'checkbox') {
-                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
-                        if (maxAllowed > 0) {
-                            const checkedBoxes = question.querySelectorAll(
-                                'input[type="checkbox"]:checked');
-                            if (checkedBoxes.length > maxAllowed) {
-                                input.checked = false;
-                                alert(`You can only select ${maxAllowed} answers for this question.`);
-                                return;
-                            }
-                        }
-                    }
-
-                    // 🔹 Update warna label pilihan
-                    if (group && label) {
-                        if (input.type === 'checkbox') {
-                            if (input.checked) label.classList.add('is-selected');
-                            else label.classList.remove('is-selected');
-                        } else {
-                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
-                                'is-selected'));
-                            if (input.checked) label.classList.add('is-selected');
-                        }
-                    }
-
-                    // 🔄 Update status di floating panel
-                    updateQuestionStatus(currentPart);
-                });
-
                 document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
@@ -2426,13 +2612,14 @@
 
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                const dataJson = @json($tabs);
-                const questionCounts = {}
-                dataJson.forEach(tab => {
-                    const panel = document.querySelector(`#panel-${tab.id}`);
+                const dataJson = @json($tabs).data;
+                const questionCounts = {};
+                Object.entries(dataJson).forEach(([key, tab]) => {
+                    const panel = document.querySelector(`#panel-${key}`);
+
                     if (panel) {
                         const count = panel.querySelectorAll('[data-q]').length;
-                        questionCounts[tab.id] = count;
+                        questionCounts[key] = count;
                     }
                 });
                 const count = questionCounts[partId] || 5;
@@ -2441,180 +2628,321 @@
             }
 
             // Init
-            updateQuestionListForPart(@json($tabs)[0]['id']);
+            updateQuestionListForPart(Object.keys(@json($tabs).data)[0]);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
-
-
     <script>
-        // Pastikan modal tersembunyi saat halaman dimuat
-        $("#resultModal").removeClass("show").hide();
+        /* ====== Audio tab controller (fixed stop-on-switch) ====== */
 
-        // Modal functions
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
+        let currentAudio = null;
+        let currentTimerId = null;
+
+        // format mm:ss
+        function formatTime(sec) {
+            sec = isNaN(sec) ? 0 : Math.floor(sec);
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
         }
 
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            // closeModal();
-
-            // $(".qa-body input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // // $("#scorePercentage").text("0");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($(".qa-body").offset().top);
-            // }, 350);
-            location.reload();
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        function submitHelper(form, setId, tipe, button, againBtn) {
-            let allAnswered = true;
-
-            $(`#${form} fieldset[data-q]`).each(function() {
-                let isAnswered = false;
-                const inputs = $(this).find("input, select, textarea");
-
-                inputs.each(function() {
-                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
-                        isAnswered = true;
-                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
-                        isAnswered = true;
-                    } else if ($(this).is("select") && $(this).val() !== "") {
-                        isAnswered = true;
-                    }
-                });
-
-                if (!isAnswered) {
-                    allAnswered = false;
-                    $(this).addClass("unanswered-highlight");
-                } else {
-                    $(this).removeClass("unanswered-highlight");
+        // reset UI for a panel's audio (progress+time)
+        function resetPanelUI(panel) {
+            const prog = panel.querySelector(".timeline");
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            if (prog) prog.value = 0;
+            if (cur) cur.textContent = "0:00";
+            if (dur) {
+                // leave duration as-is (if already loaded) or show 0:00
+                if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
+                    dur.textContent = "0:00";
                 }
-            });
+            }
+            // if you used a visual progress element instead of range, reset its width:
+            const visualProg = panel.querySelector(".seekbar-progress");
+            if (visualProg) visualProg.style.width = "0%";
+        }
 
-            if (!allAnswered) {
-                alert("Please answer all questions before submitting!");
+        // stop & reset current audio (completely)
+        function stopCurrentAudio() {
+            if (!currentAudio) return;
+
+            // pause & reset time
+            try {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            } catch (e) {
+                /* ignore */
+            }
+
+            // clear interval timer if any
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
+            }
+
+            // reset UI for the panel that had currentAudio
+            const panel = currentAudio.closest(".x-panel");
+            if (panel) resetPanelUI(panel);
+
+            // unset currentAudio reference
+            currentAudio = null;
+        }
+
+        // start timer to update UI every 1 second
+        function startPanelTimer(audio, panel) {
+            // clear existing
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
+            }
+
+            const prog = panel.querySelector(".timeline");
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            const visualProg = panel.querySelector(".seekbar-progress");
+
+            currentTimerId = setInterval(() => {
+                if (!audio.duration || isNaN(audio.duration)) return;
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (prog) prog.value = pct;
+                if (visualProg) visualProg.style.width = pct + "%";
+                if (cur) cur.textContent = formatTime(audio.currentTime);
+                if (dur) dur.textContent = formatTime(audio.duration);
+            }, 1000);
+        }
+
+        // play audio for a panel (only if not already played)
+        function playPanelAudio(panel) {
+            const audio = panel.querySelector("audio");
+            if (!audio) return;
+
+            // already played once? skip
+            if (audio.dataset.played === "yes") {
                 return;
             }
 
-            // ✅ KIRIM FORM DATA
-            let formData = new FormData($(`#${form}`)[0]);
-            formData.append("tipe", tipe);
-            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-            formData.append("set_id", setId);
-            formData.append("kategori", 'reading');
-            formData.append("tipe_test", 'practice');
+            // if another audio is playing -> stop it first
+            if (currentAudio && currentAudio !== audio) {
+                stopCurrentAudio();
+            }
+
+            // mark as current
+            currentAudio = audio;
+
+            // prepare UI duration if metadata already available
+            const durEl = panel.querySelector(".duration");
+            if (audio.duration && !isNaN(audio.duration) && durEl) {
+                durEl.textContent = formatTime(audio.duration);
+            }
+
+            // mute trick for autoplay compatibility
+            audio.muted = true;
+
+            // play
+            audio.play().then(() => {
+                // mark one-time-play
+                audio.dataset.played = "yes";
+
+                // unmute shortly after play to avoid autoplay block in some browsers
+                setTimeout(() => {
+                    try {
+                        audio.muted = false;
+                    } catch (e) { }
+                }, 150);
+
+                // update status UI by starting timer per-second
+                startPanelTimer(audio, panel);
+
+                // make sure ended handler resets UI/timer
+                audio.onended = () => {
+                    // clear timer
+                    if (currentTimerId) {
+                        clearInterval(currentTimerId);
+                        currentTimerId = null;
+                    }
+                    // finalize progress UI
+                    const visualProg = panel.querySelector(".seekbar-progress");
+                    if (visualProg) visualProg.style.width = "100%";
+                    const cur = panel.querySelector(".current");
+                    const dur = panel.querySelector(".duration");
+                    if (cur) cur.textContent = formatTime(audio.duration || 0);
+                    if (dur) dur.textContent = formatTime(audio.duration || 0);
+
+                    // mark played and unset currentAudio
+                    audio.dataset.played = "yes";
+                    currentAudio = null;
+                };
+
+            }).catch(err => {
+                // autoplay blocked — you may need user confirmation (modal)
+                console.warn("Autoplay blocked:", err);
+                // cleanup currentAudio reference if failed
+                currentAudio = null;
+            });
+
+            // prevent seeking by user (just in case)
+            audio.addEventListener("seeking", function () {
+                this.currentTime = this._lastTime || 0;
+            });
+            audio.addEventListener("timeupdate", function () {
+                this._lastTime = this.currentTime;
+            });
+        }
+
+        /* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
+        document.querySelectorAll(".x-tab").forEach(tab => {
+            tab.addEventListener("click", () => {
+                // activate tab classes
+                document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
+                tab.classList.add("is-active");
+
+                // show corresponding panel
+                const id = tab.dataset.id;
+                const panelId = `panel-${id}`;
+                document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
+                const targetPanel = document.getElementById(panelId);
+                if (!targetPanel) return;
+                targetPanel.classList.add("active", "is-open");
+
+                // STOP any currently playing audio when switching to a different panel
+                // (this ensures audio always stops)
+                if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
+                    stopCurrentAudio();
+                }
+
+                // play audio on the newly opened panel (if it has one and not played yet)
+                const audio = targetPanel.querySelector("audio");
+                if (audio && audio.dataset.played !== "yes") {
+                    playPanelAudio(targetPanel);
+                }
+            });
+        });
+
+        /* ========== Initial modal confirm & autoplay first panel ========== */
+        const modal = document.getElementById("confirmModal");
+        const confirmBtn = document.getElementById("confirmYes");
+
+        if (modal && confirmBtn) {
+            // show modal on load
+            window.addEventListener("load", () => {
+                modal.style.display = "flex";
+            });
+            confirmBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+                // play currently active panel
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        } else {
+            // if no modal, autoplay first panel immediately (with mute trick)
+            window.addEventListener("load", () => {
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        }
+    </script>
+
+    <script>
+        document.getElementById('doneBtn').addEventListener('click', function () {
+
+            const confirmFinish = confirm('Do you want to end the test now?');
+            if (!confirmFinish) return;
+
+            stopCurrentAudio();
+
+            const data = [];
+            let prevData = { name: null, index: 0, answer: null };
+            const element = $('.qa-body');
+
+            element
+                .find('input, textarea, select, checkbox, radio')
+                .not(':disabled')
+                .each(function (index, elem) {
+                    const name = $(this).attr('name');
+                    const type = $(this).attr('type');
+                    let value = null;
+
+                    if (type === 'radio') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else if (type === 'checkbox') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else {
+                        value = $(this).val();
+                    }
+
+
+                    if (prevData.name === name) {
+                        if (value != null) {
+                            if (data[prevData.index - 1].answer != "") {
+                                data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                            } else {
+                                data[prevData.index - 1].answer = value;
+                            }
+                            prevData.answer = value;
+                        }
+                    } else {
+                        data.push({
+                            name: name,
+                            answer: type === 'checkbox' ? `[${value}]` : value
+                        });
+                        prevData = { name: name, index: prevData.index + 1, answer: value }
+                    }
+                });
+
+            console.log(data)
 
             $.ajax({
-                url: "/ielts/practice/check",
+                url: "/ielts/mock-test/check-v2",
                 type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    data: data,
+                    kategori: @json($tabs['kategori']),
+                },
+                success: function (response) {
+                    $("#try-again").css('display', '');
+                    $("#doneBtn").css('display', 'none');
                     if (response.status === "ok") {
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
-
-                        $(".q-option").removeClass("correct wrong");
-                        $(".text-answer, .select-answer").removeClass("correct wrong");
-
-                        let correctCount = response.score;
+                        let correctCount = 0;
                         let total = Object.keys(response.results).length;
-                        let tableRows = "";
-                        let questionNumber = 1;
+                        let tableRows = '';
 
-                        $.each(response.results, function(qid, data) {
-                            let isCorrect = data.status === "correct";
+                        $.each(response.results, function (key, data) {
+                            const index = key.split('-')[1];
+                            const status = data.status || '';
+                            const user = data.user || 'NOT GIVEN';
+                            const correct = data.correct || '';
 
-                            // ✅ 2. Ambil CORRECT ANSWER dengan fallback
-                            let correctAnswer = data.correct || '';
-                            let userAnswer = data.user || '';
-                            if (!correctAnswer && isCorrect) {
-                                correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
-                            }
-                            if (!correctAnswer) {
-                                correctAnswer = "NOT GIVEN";
-                            }
+                            let isCorrect = status === 'correct';
+                            if (isCorrect) correctCount++;
 
-                            // ✅ 3. Highlight input aslinya
-                            let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                            questionElement.find("input, select, textarea").each(function() {
-                                if ($(this).is("input[type=radio], input[type=checkbox]")) {
-                                    if ($(this).is(":checked")) {
-                                        if (isCorrect) {
-                                            $(this).parent().addClass("correct");
-                                        } else {
-                                            $(this).parent().addClass("wrong");
-                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
-                                                .parent().addClass("correct");
-                                        }
-                                    }
-                                } else {
-                                    if (isCorrect) {
-                                        $(this).addClass("correct");
-                                    } else {
-                                        $(this).addClass("wrong");
-                                    }
-                                }
-                            });
-
-                            // ✅ 4. Bangun tabel baris
                             tableRows += `
-                            <tr>
-                                <td><strong>${questionNumber++}</strong></td>
-                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                <td>
-                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                        ${isCorrect ? 'Correct' : 'Wrong'}
-                                    </span>
-                                </td>
-                            </tr>
-                        `;
-                        });
+                                        <tr>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
 
-
+                        })
+                        // Update skor di UI
                         $("#scoreDisplay").text(`${correctCount}/${total}`);
-                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
+                        $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
                         let percentage = (correctCount / total) * 100;
                         let scoreCircle = $(".score-circle");
@@ -2627,39 +2955,24 @@
                         }
 
                         $("#resultsTableBody").html(tableRows);
+
+                        // tampilkan modal hasil
                         showModal(`Score: ${correctCount} / ${total}`);
+                    } else {
+                        alert('Terjadi kesalahan: ' + response.message);
                     }
+
                 },
-                error: function(xhr) {
-                    alert("Terjadi kesalahan: " + xhr.status);
-                    console.log(xhr.responseText);
+                error: function (xhr) {
+                    const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
+                    alert(errorMsg);
+                    console.error(xhr.responseText);
                 }
-            });
-        }
+            })
 
-        $(".try-again").on("click", function() {
-            location.reload();
         });
 
-        const tabs = @json($tabs);
-        tabs.forEach(tab => {
-            const id = tab.id;
-            const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
-
-            $(`#submit-${id}`).on("click", function(e) {
-                e.preventDefault();
-                submitHelper(
-                    `form-${id}`, // form
-                    "nHmZBcocwalVytdH", // folder
-                    tipe, // tipe
-                    $(this),
-                    `again-${id}` // again
-                );
-            });
-        });
     </script>
-
-
 </body>
 
 </html>

@@ -1619,43 +1619,49 @@
                     'id' => 'tfng',
                     'tipe' => 'tfng',
                     'title' => 'True/False/Not Given',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.tfng',
                 ],
                 [
-                    'id' => 'nc',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.nc',
-                ],
-                [
-                    'id' => 'matching_information',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching Information',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.matching_information',
-                ],
-                [
-                    'id' => 'summary_completion',
-                    'tipe' => 'summary_completion',
-                    'title' => 'Summary Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.summary_completion',
+                    'id' => 'tc',
+                    'tipe' => 'tc',
+                    'title' => 'Table Completion',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.tc',
                 ],
                 [
                     'id' => 'mh',
                     'tipe' => 'mh',
                     'title' => 'Matching Headings',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.mh',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.mh',
                 ],
                 [
-                    'id' => 'sentence_completion',
-                    'tipe' => 'sentence_completion',
-                    'title' => 'Sentence Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.sentence_completion',
+                    'id' => 'nc',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.nc',
                 ],
                 [
-                    'id' => 'tfng2',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given 2',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng2',
+                    'id' => 'two_choice',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choices',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.two_choice',
+                ],
+                [
+                    'id' => 'one',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.one_choice',
+                ],
+                [
+                    'id' => 'summary_completion',
+                    'tipe' => 'summary_completion',
+                    'title' => 'Summary Completion',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.summary_completion',
+                ],
+                [
+                    'id' => 'matching_features',
+                    'tipe' => 'matching_features',
+                    'title' => 'Matching Features',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.reading.matching_features',
                 ],
             ];
         @endphp
@@ -2650,7 +2656,7 @@
                 e.preventDefault();
                 submitHelper(
                     `form-${id}`, // form
-                    "nHmZBcocwalVytdH", // folder
+                    "blsodB9LLhUn0zcg", // folder
                     tipe, // tipe
                     $(this),
                     `again-${id}` // again

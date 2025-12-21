@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -34,7 +33,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: #4274BA;
+            background: #4274ba;
             box-shadow: var(--shadow);
             padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
@@ -107,7 +106,7 @@
             color: var(--text);
             border-radius: 10px;
             padding: 8px 12px;
-            font-size: 14px;
+            font-size: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
@@ -435,6 +434,7 @@
 
     <!-- style bagian reading + questions -->
     <style>
+        /* Layout container dengan jarak kiri-kanan seimbang */
         .reading-section {
             padding: 10px 12px 12px 12px;
             box-sizing: border-box;
@@ -695,10 +695,7 @@
             gap: 10px;
         }
 
-        #panel-tc .q-number-box,
-        #panel-two_choice .q-number-box,
-        #panel-two_choice2 .q-number-box,
-        #panel-summary_completion .q-number-box {
+        #panel-tc .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -708,15 +705,6 @@
             border: 2px solid #333;
             border-radius: 4px;
             margin-left: 5px;
-        }
-
-        #panel-summary_completion .q-text {
-            flex: 1;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
         }
 
         #panel-tc .q-text {
@@ -737,28 +725,13 @@
             width: 120px;
         }
 
-        #panel-sa input,
-        #panel-sentence_completion input {
+        #panel-sa input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
-        }
-
-        .q-option.correct {
-            background-color: #c8f7c5;
-            /* hijau muda */
-            border: 2px solid #27ae60;
-            border-radius: 6px;
-        }
-
-        .q-option.wrong {
-            background-color: #f9c0c0;
-            /* merah muda */
-            border: 2px solid #e74c3c;
-            border-radius: 6px;
         }
     </style>
 
@@ -912,125 +885,6 @@
         }
     </style>
 
-    <!-- style untuk floating informasi nomor soal -->
-    <style>
-        .floating-questions {
-            position: fixed;
-            bottom: 16px;
-            right: 16px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        /* Floating Action Button (FAB) */
-        .fq-fab {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: none;
-            background: #2563eb;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .fq-fab:hover {
-            background: #1d4ed8;
-            transform: scale(1.05);
-        }
-
-        /* Panel soal */
-        .fq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 10px;
-        }
-
-        .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
-        }
-
-        .fq-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-            gap: 6px;
-        }
-
-        .fq-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #f8fafc;
-            color: #0f172a;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .fq-item:hover {
-            background: #f1f5f9;
-        }
-
-        /* Status */
-        .fq-item.answered {
-            background: #dcfce7;
-            border-color: #16a34a;
-            color: #15803d;
-        }
-
-        .fq-item.current {
-            background: #dbeafe;
-            border-color: #2563eb;
-            color: #1d4ed8;
-        }
-
-        /* Mobile full width panel */
-        @media (max-width: 768px) {
-            .floating-questions {
-                bottom: 12px;
-                right: 12px;
-                left: auto;
-                width: auto;
-                max-width: 100%;
-            }
-
-            .floating-questions.expanded {
-                width: calc(100% - 24px);
-                right: 12px;
-                left: 12px;
-                border-radius: 16px;
-            }
-
-            .fq-list {
-                grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-            }
-
-            .fq-item {
-                width: 44px;
-                height: 44px;
-                font-size: 14px;
-            }
-        }
-    </style>
-
     {{-- style unutk audio player --}}
     <style>
         .audio-player {
@@ -1171,412 +1025,325 @@
         }
     </style>
 
-    {{-- style modal --}}
     <style>
-        /* Modal Styles */
-
-
-        /* options */
-        .q-options {
-            display: grid;
-            gap: 8px;
-        }
-
-        .q-option {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 10px 12px;
-            cursor: pointer;
-            user-select: none;
-            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
-        }
-
-        .q-option:hover {
-            border-color: #cbd5e1;
-            background: #f8fafc;
-        }
-
-        .q-option input {
-            display: none;
-        }
-
-        .q-option .opt-code {
-            font-weight: 800;
-            color: #334155;
-        }
-
-        .q-option .opt-label {
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        /* State terpilih */
-        .q-option.is-selected {
-            border-color: #2563eb;
-            background: #eef2ff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
-        }
-
-        .q-option.is-selected .opt-code {
-            color: #1d4ed8;
-        }
-
-        .q-option.is-selected .opt-label {
-            color: #1d4ed8;
-        }
-
-        .custom-modal {
-            display: none !important;
-            /* Pastikan modal tersembunyi secara default */
-            position: fixed;
-            top: 0;
-            left: 0;
+        .form-container {
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            padding: 15px;
-            box-sizing: border-box;
-            opacity: 0;
-            /* Tambahkan opacity untuk transisi */
-            transition: opacity 0.3s ease;
-            /* Smooth transition */
-        }
-
-        /* State ketika modal ditampilkan */
-        .custom-modal.show {
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
-        }
-
-        .custom-modal-content {
-            background: #fff;
-            padding: 0;
-            width: 100%;
-            max-width: 700px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
             overflow: hidden;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            transform: scale(0.9) translateY(-20px);
-            /* State awal untuk animasi */
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        /* Animasi ketika modal muncul */
-        .custom-modal.show .custom-modal-content {
-            transform: scale(1) translateY(0);
+        .form-container:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
         }
 
-        /* ... CSS lainnya tetap sama ... */
-        .custom-modal-header {
+        .form-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .form-body {
+            padding: 35px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-textarea {
+            width: 91%;
+            min-height: 200px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 16px;
+            font-family: inherit;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f8fafc;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            resize: vertical;
+            outline: none;
+        }
+
+        .form-textarea:focus {
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-textarea::placeholder {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .char-counter {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 25px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .score-summary-header {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-
-        .score-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .score-circle span {
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        .score-circle small {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            margin-top: 2px;
-        }
-
-        .modal-title {
-            margin-left: 15px;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: white;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.2s;
-            margin-left: 15px;
-        }
-
-        .modal-close:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .custom-modal-body {
-            padding: 20px;
-            overflow-y: auto;
-            flex-grow: 1;
-        }
-
-        .score-summary {
-            display: none;
-        }
-
-        .result-table {
-            width: 100%;
-            border-collapse: collapse;
             margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
+            font-size: 12px;
+            color: #718096;
         }
 
-        .result-table th {
-            background-color: #f1f8ff;
-            padding: 14px 12px;
-            text-align: center;
-            font-weight: 600;
-            color: #2c3e50;
-            border-bottom: 2px solid #e1e8ed;
-        }
-
-        .result-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #e1e8ed;
-            transition: background-color 0.2s;
-        }
-
-        .result-table tr:hover td {
-            background-color: #f9f9f9;
-        }
-
-        .answer-correct {
-            color: #27ae60;
-            font-weight: bold;
-        }
-
-        .answer-wrong {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .char-count {
             font-weight: 600;
         }
 
-        .status-badge.correct {
-            background-color: rgba(39, 174, 96, 0.15);
-            color: #27ae60;
+        .char-limit {
+            color: #e53e3e;
         }
 
-        .status-badge.wrong {
-            background-color: rgba(231, 76, 60, 0.15);
-            color: #e74c3c;
-        }
-
-        .status-icon {
-            margin-right: 5px;
-        }
-
-        .modal-actions {
+        .form-actions {
             display: flex;
+            gap: 15px;
             justify-content: flex-end;
-            padding: 20px;
-            border-top: 1px solid #e1e8ed;
-            gap: 10px;
+            margin-top: 30px;
         }
 
-        .modal-btn {
-            padding: 10px 20px;
-            border-radius: 6px;
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 10px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: #3498db;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            outline: none;
         }
 
         .btn-secondary {
-            background-color: #ecf0f1;
-            color: #2c3e50;
+            background: #e2e8f0;
+            color: #4a5568;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary:hover {
-            background-color: #dde4e6;
+            background: #cbd5e0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* Responsive Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: #cbd5e0;
+            color: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .success-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
-            .custom-modal {
-                padding: 10px;
-            }
-
-            .custom-modal-content {
-                max-height: 95vh;
-            }
-
-            .custom-modal-header {
-                padding: 15px 20px;
-            }
-
-            .score-circle {
-                width: 60px;
-                height: 60px;
-            }
-
-            .score-circle span {
-                font-size: 1rem;
-            }
-
-            .score-circle small {
-                font-size: 0.7rem;
-            }
-
-            .modal-title {
-                font-size: 1.2rem;
-                margin-left: 10px;
-            }
-
-            .modal-close {
-                width: 35px;
-                height: 35px;
-                font-size: 24px;
-            }
-
-            .custom-modal-body {
+            body {
                 padding: 15px;
             }
 
-            .result-table {
-                font-size: 0.9rem;
+            .form-container {
+                max-width: 100%;
+                border-radius: 15px;
             }
 
-            .result-table th,
-            .result-table td {
-                padding: 10px 8px;
+            .form-header {
+                padding: 20px 25px;
             }
 
-            .modal-actions {
+            .form-title {
+                font-size: 20px;
+            }
+
+            .form-subtitle {
+                font-size: 13px;
+            }
+
+            .form-body {
+                padding: 25px 20px;
+            }
+
+            .form-textarea {
+                min-height: 180px;
+                padding: 15px;
+                font-size: 16px;
+                /* Prevents zoom on iOS */
+            }
+
+            .form-actions {
                 flex-direction: column;
+                gap: 12px;
             }
 
-            .modal-btn {
+            .btn {
                 width: 100%;
+                padding: 16px 24px;
+                font-size: 10px;
+            }
+
+            .char-counter {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
             }
         }
 
         @media (max-width: 480px) {
-            .custom-modal {
-                padding: 5px;
+            body {
+                padding: 10px;
             }
 
-            .result-table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
+            .form-header {
+                padding: 15px 20px;
             }
 
-            .score-circle {
-                width: 50px;
-                height: 50px;
+            .form-title {
+                font-size: 18px;
             }
 
-            .score-circle span {
-                font-size: 0.9rem;
+            .form-body {
+                padding: 20px 15px;
             }
 
-            .score-circle small {
-                font-size: 0.6rem;
+            .form-textarea {
+                min-height: 150px;
+                padding: 12px;
             }
 
-            .status-badge {
-                font-size: 0.8rem;
-                padding: 4px 8px;
+            .btn {
+                padding: 14px 20px;
+                font-size: 10px;
             }
         }
 
-        @media (max-width: 900px) {
-
-            .q-options {
-                grid-template-columns: 1fr;
-            }
+        /* Focus visible for accessibility */
+        .btn:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
         }
 
-        /* #panel-tfng .q-options,
-                #panel-two_choice .q-options,
-        #panel-tfng2 .q-options,
-        #panel-ynng .q-options,
-        #panel-mse .q-options,
-        #panel-tc .q-options {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        } */
-    </style>
-
-    {{-- other --}}
-    <style>
-        .unanswered-highlight {
-            border: 2px solid red;
-            background: #ffe6e6;
+        .form-textarea:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
         }
     </style>
 </head>
+
 
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 70px;margin-left: 50px"
-                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <div class="logo" aria-hidden="true">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -1584,11 +1351,6 @@
                 <button id="infoBtn" class="btn btn-ghost icon-btn" aria-label="Informasi">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
-
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
-                    <i class="fa-regular fa-clock"></i>
-                    <span id="timeText">00:00</span>
-                </div>
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
@@ -1612,72 +1374,125 @@
     </section>
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
-        @php
-            $tabs = [
-                [
-                    'id' => 'tfng',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng',
-                ],
-                [
-                    'id' => 'nc',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.nc',
-                ],
-                [
-                    'id' => 'matching_information',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching Information',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.matching_information',
-                ],
-                [
-                    'id' => 'summary_completion',
-                    'tipe' => 'summary_completion',
-                    'title' => 'Summary Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.summary_completion',
-                ],
-                [
-                    'id' => 'mh',
-                    'tipe' => 'mh',
-                    'title' => 'Matching Headings',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.mh',
-                ],
-                [
-                    'id' => 'sentence_completion',
-                    'tipe' => 'sentence_completion',
-                    'title' => 'Sentence Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.sentence_completion',
-                ],
-                [
-                    'id' => 'tfng2',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given 2',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng2',
-                ],
-            ];
-        @endphp
-
-        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="matching_information" />
-    </section>
-
-    <!-- Floating Question List -->
-    <div class="floating-questions collapsed" id="floatingQuestions">
-        <!-- Tombol Icon -->
-        <button class="fq-fab" id="fqToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-
-        <!-- Panel Soal -->
-        <div class="fq-body" id="fqBody">
-            <div class="fq-list" id="fqList"></div>
+    <section class="parts-section" aria-label="Pilihan Part Soal">
+        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">Task 1</button>
+            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
+                data-id="tfng2">Task 2</button>
         </div>
-    </div>
+
+        <div class="x-panels">
+            <!-- ✅ TASK 1 -->
+            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
+                <div class="x-panel-inner">
+                    Content: <strong>Task 1</strong> <br><br>
+                    You should spend about 20 minutes on this task. Write at least 150 words.
+                </div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>The first chart below shows how energy is used in an average Australian household.
+                                    The second chart shows the greenhouse gas emissions which result from this energy
+                                    use.</p>
+                                <p>Summarise the information by selecting and reporting the main features, and make
+                                    comparisons where relevant.</p>
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
+                                    alt="" width="100%">
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside aria-label="Questions">
+                            <form class="response-form" data-task="task1">
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
+                                    <div class="form-container">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 1 Answer" required spellcheck="false"></textarea>
+                                                <div class="char-counter">
+                                                    <span class="char-info"><span class="char-count">0</span>
+                                                        Words</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button type="button"
+                                                    class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit"
+                                                    class="btn btn-primary js-submit">Submit</button>
+                                            </div>
+
+                                            <div class="success-message js-success" style="display:none;">
+                                                ✅ Your response has been submitted successfully!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✅ TASK 2 -->
+            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                <div class="x-panel-inner">
+                    Content: <strong>Task 2</strong> <br><br>
+                    You should spend about 40 minutes on this task. Write at least 250 words.
+                </div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>It is important for children to learn the difference between right and wrong at an
+                                    early age.
+                                    Punishment is necessary to help them learn this distinction.</p>
+                                <p>To what extent do you agree or disagree with this opinion?</p>
+                                <p>What sort of punishment should parents and teachers be allowed to use to teach good
+                                    behaviour to children?</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside aria-label="Questions">
+                            <form class="response-form" data-task="task2">
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
+                                    <div class="form-container">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 2 Answer" required spellcheck="false"></textarea>
+                                                <div class="char-counter">
+                                                    <span class="char-info"><span class="char-count">0</span>
+                                                        Words</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button type="button"
+                                                    class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit"
+                                                    class="btn btn-primary js-submit">Submit</button>
+                                            </div>
+
+                                            <div class="success-message js-success" style="display:none;">
+                                                ✅ Your response has been submitted successfully!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -1697,185 +1512,14 @@
         </div>
     </div>
 
-    <!-- Modal Wrapper -->
-    <div id="resultModal" class="custom-modal">
-        <div class="custom-modal-content">
-            <div class="custom-modal-header">
-                <div class="score-summary-header">
-                    <div class="score-circle" id="scoreCircle">
-                        <span id="scoreDisplay">0/0</span>
-                        {{-- <small id="scorePercentage">0</small> --}}
-                    </div>
-                    <div class="modal-title">Your Results</div>
-                </div>
-                <button class="modal-close" onclick="closeModal()">×</button>
-            </div>
-
-            <div class="custom-modal-body">
-                <!-- Results Table -->
-                <table class="result-table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Your Answer</th>
-                            <th>Correct Answer</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="resultsTableBody">
-                        <!-- Results will be populated by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="modal-actions">
-                <button class="modal-btn btn-secondary" onclick="closeModal()">Close</button>
-                <button class="modal-btn btn-primary" onclick="retryQuiz()">Try Again</button>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        let scoreMap = [{
-                min: 39,
-                max: 40,
-                score: 9.0
-            },
-            {
-                min: 37,
-                max: 38,
-                score: 8.5
-            },
-            {
-                min: 35,
-                max: 36,
-                score: 8.0
-            },
-            {
-                min: 33,
-                max: 34,
-                score: 7.5
-            },
-            {
-                min: 30,
-                max: 32,
-                score: 7.0
-            },
-            {
-                min: 27,
-                max: 29,
-                score: 6.5
-            },
-            {
-                min: 23,
-                max: 26,
-                score: 6.0
-            },
-            {
-                min: 19,
-                max: 22,
-                score: 5.5
-            },
-            {
-                min: 15,
-                max: 18,
-                score: 5.0
-            },
-            {
-                min: 13,
-                max: 14,
-                score: 4.5
-            },
-            {
-                min: 10,
-                max: 12,
-                score: 4.0
-            },
-            {
-                min: 8,
-                max: 9,
-                score: 3.5
-            },
-            {
-                min: 6,
-                max: 7,
-                score: 3.0
-            },
-            {
-                min: 4,
-                max: 5,
-                score: 2.5
-            }
-        ];
-
-        function convertScore(correctCount) {
-            for (let row of scoreMap) {
-                if (correctCount >= row.min && correctCount <= row.max) {
-                    return row.score;
-                }
-            }
-            return 0; // jika kurang dari 4 benar
-        }
-    </script>
-
     <script>
         (function() {
-            let remaining = 0;
-            let t = null;
-            const el = document.getElementById('timeText');
-            const wrap = document.getElementById('timer');
-
-            function format(mmss) {
-                const m = Math.floor(mmss / 60);
-                const s = mmss % 60;
-                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-            }
-
-            function tick() {
-                if (remaining <= 0) {
-                    clearInterval(t);
-                    t = null;
-                    el.textContent = '00:00';
-                    wrap.classList.add('danger');
-                    document.getElementById('doneBtn').disabled = true;
-                    document.getElementById('doneBtn').style.opacity = 0.7;
-                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
-                    return;
-                }
-                remaining -= 1;
-                el.textContent = format(remaining);
-                // Kedipkan danger saat < 60 detik
-                if (remaining <= 60) {
-                    wrap.classList.add('danger');
-                }
-            }
-
-            function startCountdown(seconds) {
-                if (t) clearInterval(t);
-                remaining = Math.max(0, Math.floor(seconds));
-                el.textContent = format(remaining);
-                wrap.classList.toggle('danger', remaining <= 60);
-                document.getElementById('doneBtn').disabled = false;
-                document.getElementById('doneBtn').style.opacity = 1;
-                document.getElementById('doneBtn').style.cursor = 'pointer';
-                t = setInterval(tick, 1000);
-            }
-
-            // Public API (opsional)
-            window.CATHeader = {
-                startCountdown
-            };
-
             // Events
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
                 );
-
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
@@ -1884,9 +1528,6 @@
                     window.history.back();
                 }
             });
-
-            // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
         })();
     </script>
 
@@ -2012,8 +1653,7 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-
-            setActive(@json($tabs)[0]['id']);
+            setActive('tfng');
         });
     </script>
 
@@ -2173,7 +1813,7 @@
 
             // === Init highlight di semua panel ===
             document.querySelectorAll('.x-panel').forEach(panel => {
-                const passageBody = panel.querySelector('.highlighted-content');
+                const passageBody = panel.querySelector('.passage-body');
 
                 passageBody.addEventListener('mouseup', (e) => {
                     const selection = window.getSelection();
@@ -2200,8 +1840,7 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest(
-                        '.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest('.passage-body')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -2254,412 +1893,110 @@
         });
     </script>
 
-    <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingQ = document.getElementById('floatingQuestions');
-            const fqBody = document.getElementById('fqBody');
-            const fqList = document.getElementById('fqList');
-            const fqToggle = document.getElementById('fqToggle');
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.response-form').forEach(form => {
+                const textarea = form.querySelector('.js-response');
+                const charCount = form.querySelector('.char-count');
+                const submitBtn = form.querySelector('.js-submit');
+                const clearBtn = form.querySelector('.js-clear');
+                const successMessage = form.querySelector('.js-success');
+                const taskType = form.dataset.task;
 
-            if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
-
-            let isCollapsed = false;
-            let currentPart = 'tfng';
-            let questionCount = 0;
-
-            fqToggle.addEventListener('click', () => {
-                isCollapsed = !isCollapsed;
-                floatingQ.classList.toggle('collapsed', isCollapsed);
-                floatingQ.classList.toggle('expanded', !isCollapsed);
-            });
-
-            // Generate question numbers
-            function generateQuestionList(partId, count) {
-                fqList.innerHTML = '';
-                questionCount = count;
-
-                for (let i = 1; i <= count; i++) {
-                    const item = document.createElement('a');
-                    item.href = '#';
-                    item.className = 'fq-item';
-                    item.textContent = i;
-                    item.dataset.q = i;
-                    item.dataset.part = partId;
-
-                    // Scroll ke soal saat diklik
-                    item.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        scrollToQuestion(i, partId);
-                    });
-
-                    fqList.appendChild(item);
+                // 🔹 Update word count
+                function updateCharCount() {
+                    const text = textarea.value.trim();
+                    const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+                    charCount.textContent = words;
+                    submitBtn.disabled = words === 0;
                 }
-            }
 
-            // Scroll ke soal tertentu
-            function scrollToQuestion(qNum, partId) {
-                const panel = document.getElementById(`panel-${partId}`);
-                if (!panel) return;
-
-                const question = panel.querySelector(`[data-q="${qNum}"]`);
-                if (question) {
-                    question.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                    question.focus();
+                // 🔹 Auto resize textarea
+                function autoResize() {
+                    textarea.style.height = 'auto';
+                    textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
                 }
-            }
 
-            // Update status soal (radio, dropdown, text)
-            function updateQuestionStatus(partId) {
-                const panel = document.getElementById(`panel-${partId}`);
-                if (!panel) return;
-
-                fqList.querySelectorAll('.fq-item').forEach(item => {
-                    item.classList.remove('answered', 'current');
-                });
-
-                for (let i = 1; i <= questionCount; i++) {
-                    const item = fqList.querySelector(`[data-q="${i}"][data-part="${partId}"]`);
-                    if (!item) continue;
-
-                    const question = panel.querySelector(`[data-q="${i}"]`);
-                    if (!question) continue;
-
-                    let answered = false;
-
-                    // Radio
-                    const radioChecked = question.querySelector('input[type="radio"]:checked');
-                    if (radioChecked) answered = true;
-
-                    // Dropdown
-                    const dropdown = question.querySelector('select.q-dropdown');
-                    if (dropdown && dropdown.value !== '') answered = true;
-
-                    // Text input
-                    const textInput = question.querySelector('input[type="text"], textarea');
-                    if (textInput && textInput.value.trim() !== '') answered = true;
-
-                    if (answered) item.classList.add('answered');
-                }
-            }
-
-            // Deteksi jawaban berubah
-            function watchAnswerChanges() {
-                document.addEventListener('change', (e) => {
-                    const input = e.target;
-                    const question = input.closest('[data-q]');
-                    const group = input.closest('.q-options');
-                    const label = input.closest('.q-option');
-
-                    if (!question) return;
-
-                    // 🔹 Batasi jumlah checkbox
-                    if (input.type === 'checkbox') {
-                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
-                        if (maxAllowed > 0) {
-                            const checkedBoxes = question.querySelectorAll(
-                                'input[type="checkbox"]:checked');
-                            if (checkedBoxes.length > maxAllowed) {
-                                input.checked = false;
-                                alert(`You can only select ${maxAllowed} answers for this question.`);
-                                return;
-                            }
-                        }
-                    }
-
-                    // 🔹 Update warna label pilihan
-                    if (group && label) {
-                        if (input.type === 'checkbox') {
-                            if (input.checked) label.classList.add('is-selected');
-                            else label.classList.remove('is-selected');
-                        } else {
-                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
-                                'is-selected'));
-                            if (input.checked) label.classList.add('is-selected');
-                        }
-                    }
-
-                    // 🔄 Update status di floating panel
-                    updateQuestionStatus(currentPart);
-                });
-
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
-                });
-
-                document.addEventListener('change', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
-                });
-
-                document.addEventListener('click', (e) => {
-                    const option = e.target.closest('.q-option');
-                    if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
-                });
-            }
-
-            // Deteksi perubahan part
-            function watchPartChanges() {
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                        if (mutation.type === 'attributes' && mutation.attributeName ===
-                            'data-active') {
-                            const newPart = mutation.target.dataset.active;
-                            if (newPart && newPart !== currentPart) {
-                                currentPart = newPart;
-                                updateQuestionListForPart(newPart);
-                            }
-                        }
-                    });
-                });
-
-                const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
-            }
-
-            // Update question list untuk part aktif
-            function updateQuestionListForPart(partId) {
-                const dataJson = @json($tabs);
-                const questionCounts = {}
-                dataJson.forEach(tab => {
-                    const panel = document.querySelector(`#panel-${tab.id}`);
-                    if (panel) {
-                        const count = panel.querySelectorAll('[data-q]').length;
-                        questionCounts[tab.id] = count;
-                    }
-                });
-                const count = questionCounts[partId] || 5;
-                generateQuestionList(partId, count);
-                updateQuestionStatus(partId);
-            }
-
-            // Init
-            updateQuestionListForPart(@json($tabs)[0]['id']);
-            watchPartChanges();
-            watchAnswerChanges();
-            setInterval(() => updateQuestionStatus(currentPart), 2000);
-        });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
-
-
-    <script>
-        // Pastikan modal tersembunyi saat halaman dimuat
-        $("#resultModal").removeClass("show").hide();
-
-        // Modal functions
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
-        }
-
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            // closeModal();
-
-            // $(".qa-body input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // // $("#scorePercentage").text("0");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($(".qa-body").offset().top);
-            // }, 350);
-            location.reload();
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        function submitHelper(form, setId, tipe, button, againBtn) {
-            let allAnswered = true;
-
-            $(`#${form} fieldset[data-q]`).each(function() {
-                let isAnswered = false;
-                const inputs = $(this).find("input, select, textarea");
-
-                inputs.each(function() {
-                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
-                        isAnswered = true;
-                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
-                        isAnswered = true;
-                    } else if ($(this).is("select") && $(this).val() !== "") {
-                        isAnswered = true;
+                // 🔹 Clear button
+                clearBtn.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to clear all text?')) {
+                        textarea.value = '';
+                        updateCharCount();
+                        autoResize();
+                        textarea.focus();
                     }
                 });
 
-                if (!isAnswered) {
-                    allAnswered = false;
-                    $(this).addClass("unanswered-highlight");
-                } else {
-                    $(this).removeClass("unanswered-highlight");
-                }
-            });
+                // 🔹 Submit AJAX
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
 
-            if (!allAnswered) {
-                alert("Please answer all questions before submitting!");
-                return;
-            }
+                    const text = textarea.value.trim();
+                    if (!text) {
+                        alert('Please enter your response before submitting.');
+                        textarea.focus();
+                        return;
+                    }
 
-            // ✅ KIRIM FORM DATA
-            let formData = new FormData($(`#${form}`)[0]);
-            formData.append("tipe", tipe);
-            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-            formData.append("set_id", setId);
-            formData.append("kategori", 'reading');
-            formData.append("tipe_test", 'practice');
+                    submitBtn.textContent = 'Submitting...';
+                    submitBtn.disabled = true;
 
-            $.ajax({
-                url: "/ielts/practice/check",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    if (response.status === "ok") {
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
+                    fetch('/writing/submit', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector(
+                                    'meta[name="csrf-token"]').content
+                            },
+                            body: JSON.stringify({
+                                task: taskType,
+                                response: text
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
 
-                        $(".q-option").removeClass("correct wrong");
-                        $(".text-answer, .select-answer").removeClass("correct wrong");
-
-                        let correctCount = response.score;
-                        let total = Object.keys(response.results).length;
-                        let tableRows = "";
-                        let questionNumber = 1;
-
-                        $.each(response.results, function(qid, data) {
-                            let isCorrect = data.status === "correct";
-
-                            // ✅ 2. Ambil CORRECT ANSWER dengan fallback
-                            let correctAnswer = data.correct || '';
-                            let userAnswer = data.user || '';
-                            if (!correctAnswer && isCorrect) {
-                                correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                            if (data.status === 'ok') {
+                                successMessage.style.display = 'block';
+                                setTimeout(() => successMessage.style.display = 'none', 3000);
+                                textarea.value = '';
+                                updateCharCount();
+                                autoResize();
+                            } else {
+                                alert('Error: ' + (data.message || 'Something went wrong.'));
                             }
-                            if (!correctAnswer) {
-                                correctAnswer = "NOT GIVEN";
-                            }
-
-                            // ✅ 3. Highlight input aslinya
-                            let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                            questionElement.find("input, select, textarea").each(function() {
-                                if ($(this).is("input[type=radio], input[type=checkbox]")) {
-                                    if ($(this).is(":checked")) {
-                                        if (isCorrect) {
-                                            $(this).parent().addClass("correct");
-                                        } else {
-                                            $(this).parent().addClass("wrong");
-                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
-                                                .parent().addClass("correct");
-                                        }
-                                    }
-                                } else {
-                                    if (isCorrect) {
-                                        $(this).addClass("correct");
-                                    } else {
-                                        $(this).addClass("wrong");
-                                    }
-                                }
-                            });
-
-                            // ✅ 4. Bangun tabel baris
-                            tableRows += `
-                            <tr>
-                                <td><strong>${questionNumber++}</strong></td>
-                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                <td>
-                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                        ${isCorrect ? 'Correct' : 'Wrong'}
-                                    </span>
-                                </td>
-                            </tr>
-                        `;
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
+                            alert('Request failed.');
                         });
+                });
 
+                // 🔹 Input event
+                textarea.addEventListener('input', () => {
+                    updateCharCount();
+                    autoResize();
+                });
 
-                        $("#scoreDisplay").text(`${correctCount}/${total}`);
-                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-                        let percentage = (correctCount / total) * 100;
-                        let scoreCircle = $(".score-circle");
-                        if (percentage >= 80) {
-                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                        } else if (percentage >= 60) {
-                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                        } else {
-                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                        }
-
-                        $("#resultsTableBody").html(tableRows);
-                        showModal(`Score: ${correctCount} / ${total}`);
-                    }
-                },
-                error: function(xhr) {
-                    alert("Terjadi kesalahan: " + xhr.status);
-                    console.log(xhr.responseText);
+                // 🔹 Scroll center in mobile
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    textarea.addEventListener('focus', () => {
+                        setTimeout(() => textarea.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        }), 300);
+                    });
                 }
-            });
-        }
 
-        $(".try-again").on("click", function() {
-            location.reload();
-        });
-
-        const tabs = @json($tabs);
-        tabs.forEach(tab => {
-            const id = tab.id;
-            const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
-
-            $(`#submit-${id}`).on("click", function(e) {
-                e.preventDefault();
-                submitHelper(
-                    `form-${id}`, // form
-                    "nHmZBcocwalVytdH", // folder
-                    tipe, // tipe
-                    $(this),
-                    `again-${id}` // again
-                );
+                updateCharCount();
+                autoResize();
             });
         });
     </script>
-
-
 </body>
 
 </html>

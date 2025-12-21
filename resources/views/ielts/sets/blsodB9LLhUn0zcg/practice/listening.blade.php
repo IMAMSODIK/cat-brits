@@ -34,7 +34,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: #4274BA;
+            background: #4274ba;
             box-shadow: var(--shadow);
             padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
@@ -435,6 +435,7 @@
 
     <!-- style bagian reading + questions -->
     <style>
+        /* Layout container dengan jarak kiri-kanan seimbang */
         .reading-section {
             padding: 10px 12px 12px 12px;
             box-sizing: border-box;
@@ -689,16 +690,13 @@
             }
         }
 
-        #panel-tc .q-options {
+        [id^="panel-"] .q-options {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        #panel-tc .q-number-box,
-        #panel-two_choice .q-number-box,
-        #panel-two_choice2 .q-number-box,
-        #panel-summary_completion .q-number-box {
+        [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -710,7 +708,7 @@
             margin-left: 5px;
         }
 
-        #panel-summary_completion .q-text {
+        [id^="panel-"] .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -719,15 +717,11 @@
             box-sizing: border-box;
         }
 
-        #panel-tc .q-text {
-            flex: 1;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
 
+        /* #panel-tfng input,
+        #panel-tfng2 input,
+        #panel-ynng input,
+        #panel-mse input,
         #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -735,30 +729,15 @@
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
-        }
+        } */
 
-        #panel-sa input,
-        #panel-sentence_completion input {
+        #panel-sa input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
-        }
-
-        .q-option.correct {
-            background-color: #c8f7c5;
-            /* hijau muda */
-            border: 2px solid #27ae60;
-            border-radius: 6px;
-        }
-
-        .q-option.wrong {
-            background-color: #f9c0c0;
-            /* merah muda */
-            border: 2px solid #e74c3c;
-            border-radius: 6px;
         }
     </style>
 
@@ -1033,140 +1012,188 @@
 
     {{-- style unutk audio player --}}
     <style>
-        .audio-player {
-            display: grid;
-            grid-template-columns: auto 1fr auto auto;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-            padding: 10px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        .audio-player:hover {
+            transform: translateY(-3px);
         }
 
-        .ap-btn {
-            display: inline-flex;
+        .player-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .player-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .player-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .controls-container {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #e5e7eb;
-            background: #f8fafc;
-            border-radius: 12px;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== PLAY BUTTON ===== */
+        .play-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
             cursor: pointer;
-            font-size: 16px;
-            transition: background .12s ease, border-color .12s ease, transform .06s ease;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
         }
 
-        .ap-btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
+        .seek-container {
+            flex: 1;
         }
 
-        .ap-btn:active {
-            transform: translateY(1px);
-        }
-
-        .ap-play {
-            width: 44px;
-            height: 44px;
-            font-weight: 800;
-        }
-
-        .ap-icon {
-            line-height: 1;
-        }
-
-        .ap-track {
-            position: relative;
-            height: 19px;
-            background: #f1f5f9;
-            border: 1px solid #e5e7eb;
-            border-radius: 999px;
+        .seekBar,
+        #seekBar,
+        .seekBar {
+            width: 100%;
+            height: 7px;
+            appearance: none;
+            background: #e0e0e0;
+            border-radius: 10px;
+            outline: none;
             overflow: hidden;
         }
 
-        .ap-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            background: linear-gradient(90deg, #60a5fa, #2563eb);
-            border-right: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .ap-seek {
-            -webkit-appearance: none;
-            appearance: none;
-            position: relative;
-            width: 100%;
-            height: 8px;
-            background: transparent;
-            outline: none;
-        }
-
-        .ap-seek::-webkit-slider-thumb {
-            -webkit-appearance: none;
+        .seekBar::-webkit-slider-thumb {
             appearance: none;
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
-            margin-top: -4px;
+            background: #2575fc;
+            box-shadow: -400px 0 0 390px #2575fc;
         }
 
-        .ap-seek::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .25);
+        .timeText {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #444;
         }
 
-        .ap-time {
-            font-variant-numeric: tabular-nums;
-            font-size: 12px;
-            font-weight: 700;
-            color: #0f172a;
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
+        .start-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .start-btn {
+            padding: 9px 15px;
+            font-size: 0.9rem;
+            background: rgba(37, 117, 252, 0.08);
+            border: 1px solid rgba(37, 117, 252, 0.25);
+            color: #2575fc;
             border-radius: 8px;
-            padding: 6px 8px;
+            cursor: pointer;
+            transition: 0.15s;
+            white-space: nowrap;
         }
 
-        .ap-time .ap-sep {
-            opacity: .7;
-            margin: 0 4px;
+        .start-btn:hover {
+            background: rgba(37, 117, 252, 0.15);
+            transform: translateY(-2px);
         }
 
-        /* Mobile */
-        @media (max-width: 520px) {
+        .audio-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            padding: 12px;
+            background: #f4f7ff;
+            border-radius: 10px;
+        }
+
+        .audio-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .audio-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .audio-source {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* =========================== */
+        /*        RESPONSIVE CSS       */
+        /* =========================== */
+
+        /* Mobile (max 480px) */
+        @media (max-width: 480px) {
+
             .audio-player {
-                grid-template-columns: auto 1fr auto;
-                grid-template-areas: "play track time" "vol track time";
-                gap: 8px;
+                padding: 20px;
+                border-radius: 16px;
             }
 
-            .ap-play {
-                grid-area: play;
+            .player-title {
+                font-size: 1.15rem;
             }
 
-            .ap-track {
-                grid-area: track;
+            .play-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.85rem;
             }
 
-            .ap-time {
-                grid-area: time;
+            .start-btn {
+                flex: 1;
+                text-align: center;
             }
 
-            .ap-vol {
-                grid-area: vol;
+            .timeText {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tablet (480px – 768px) */
+        @media (max-width: 768px) {
+            .audio-player {
+                max-width: 100%;
+            }
+
+            .play-btn {
+                width: 46px;
+                height: 46px;
+            }
+
+            .start-btn {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Desktop Wide */
+        @media (min-width: 1200px) {
+            .audio-player {
+                max-width: 100%;
             }
         }
     </style>
@@ -1174,60 +1201,6 @@
     {{-- style modal --}}
     <style>
         /* Modal Styles */
-
-
-        /* options */
-        .q-options {
-            display: grid;
-            gap: 8px;
-        }
-
-        .q-option {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 10px 12px;
-            cursor: pointer;
-            user-select: none;
-            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
-        }
-
-        .q-option:hover {
-            border-color: #cbd5e1;
-            background: #f8fafc;
-        }
-
-        .q-option input {
-            display: none;
-        }
-
-        .q-option .opt-code {
-            font-weight: 800;
-            color: #334155;
-        }
-
-        .q-option .opt-label {
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        /* State terpilih */
-        .q-option.is-selected {
-            border-color: #2563eb;
-            background: #eef2ff;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
-        }
-
-        .q-option.is-selected .opt-code {
-            color: #1d4ed8;
-        }
-
-        .q-option.is-selected .opt-label {
-            color: #1d4ed8;
-        }
-
         .custom-modal {
             display: none !important;
             /* Pastikan modal tersembunyi secara default */
@@ -1541,24 +1514,6 @@
                 padding: 4px 8px;
             }
         }
-
-        @media (max-width: 900px) {
-
-            .q-options {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* #panel-tfng .q-options,
-                #panel-two_choice .q-options,
-        #panel-tfng2 .q-options,
-        #panel-ynng .q-options,
-        #panel-mse .q-options,
-        #panel-tc .q-options {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        } */
     </style>
 
     {{-- other --}}
@@ -1575,8 +1530,10 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 70px;margin-left: 50px"
-                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <div class="logo" aria-hidden="true">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -1584,11 +1541,6 @@
                 <button id="infoBtn" class="btn btn-ghost icon-btn" aria-label="Informasi">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
-
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
-                    <i class="fa-regular fa-clock"></i>
-                    <span id="timeText">00:00</span>
-                </div>
 
                 <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
@@ -1616,51 +1568,65 @@
         @php
             $tabs = [
                 [
-                    'id' => 'tfng',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng',
-                ],
-                [
-                    'id' => 'nc',
+                    'id' => 'note_completion',
                     'tipe' => 'nc',
                     'title' => 'Note Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.nc',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-1.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.note_completion',
+                ],
+                [
+                    'id' => 'one_choice',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-2.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.one_choice',
+                ],
+                [
+                    'id' => 'map_labeling',
+                    'tipe' => 'map_labeling',
+                    'title' => 'Map Labeling',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-2.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.map_labeling',
+                ],
+                [
+                    'id' => 'two_choice',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choice',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-3.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.two_choice',
+                ],
+                [
+                    'id' => 'two_choice2',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choice 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-3.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.two_choice2',
                 ],
                 [
                     'id' => 'matching_information',
                     'tipe' => 'matching_information',
-                    'title' => 'Matching Information',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.matching_information',
+                    'title' => 'Matching',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-3.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.matching_information',
                 ],
                 [
-                    'id' => 'summary_completion',
-                    'tipe' => 'summary_completion',
-                    'title' => 'Summary Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.summary_completion',
-                ],
-                [
-                    'id' => 'mh',
-                    'tipe' => 'mh',
-                    'title' => 'Matching Headings',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.mh',
-                ],
-                [
-                    'id' => 'sentence_completion',
-                    'tipe' => 'sentence_completion',
-                    'title' => 'Sentence Completion',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.sentence_completion',
-                ],
-                [
-                    'id' => 'tfng2',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given 2',
-                    'content' => 'partials.nHmZBcocwalVytdH.practice.reading.tfng2',
+                    'id' => 'note_completion2',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion 2',
+                    'audioUri' =>
+                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-16-academic-listening-1-audio-4.mp3',
+                    'content' => 'partials.blsodB9LLhUn0zcg.practice.listening.note_completion2',
                 ],
             ];
         @endphp
 
-        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="matching_information" />
+        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="note_completion" />
     </section>
 
     <!-- Floating Question List -->
@@ -1736,7 +1702,7 @@
         </div>
     </div>
 
-
+    <!-- script bagian audio player -->
     <script>
         let scoreMap = [{
                 min: 39,
@@ -1820,62 +1786,111 @@
         }
     </script>
 
+
+    {{--
+    <script>
+        (function setupAudioPlayers() {
+            const players = document.querySelectorAll('.audio-player');
+
+            players.forEach(player => {
+                const audio = player.querySelector('audio');
+                const playBtn = player.querySelector('.ap-play');
+                const muteBtn = player.querySelector('.ap-vol');
+                const seek = player.querySelector('.ap-seek');
+                const progress = player.querySelector('.ap-progress');
+                const cur = player.querySelector('.ap-current');
+                const dur = player.querySelector('.ap-duration');
+                const iconPlay = player.querySelector('.ap-icon-play');
+                const iconPause = player.querySelector('.ap-icon-pause');
+                const track = player.querySelector('.ap-track');
+
+                function fmt(t) {
+                    if (!isFinite(t)) return '0:00';
+                    const m = Math.floor(t / 60);
+                    const s = Math.floor(t % 60);
+                    return m + ':' + String(s).padStart(2, '0');
+                }
+
+                // durasi
+                audio.addEventListener('loadedmetadata', () => {
+                    dur.textContent = fmt(audio.duration);
+                });
+
+                // update progress
+                audio.addEventListener('timeupdate', () => {
+                    cur.textContent = fmt(audio.currentTime);
+                    const pct = (audio.currentTime / (audio.duration || 1)) * 100;
+                    progress.style.width = pct + '%';
+                    seek.value = pct;
+                });
+
+                // play/pause toggle
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (audio.paused) audio.play();
+                    else audio.pause();
+                });
+
+                audio.addEventListener('play', () => {
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'inline';
+                    playBtn.setAttribute('aria-label', 'Pause audio');
+                });
+
+                audio.addEventListener('pause', () => {
+                    iconPlay.style.display = 'inline';
+                    iconPause.style.display = 'none';
+                    playBtn.setAttribute('aria-label', 'Play audio');
+                });
+
+                // seek slider
+                seek.addEventListener('input', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const t = (parseFloat(seek.value) / 100) * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Seek input →", t);
+                });
+
+                seek.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const t = (parseFloat(seek.value) / 100) * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Seek change →", t);
+                });
+
+                // klik progress bar
+                track.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (!audio.duration) return;
+                    const rect = track.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const pct = x / rect.width;
+                    const t = pct * audio.duration;
+                    audio.currentTime = t;
+                    console.log("Track click →", t);
+                });
+
+                // mute toggle
+                muteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    audio.muted = !audio.muted;
+                    muteBtn.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
+                    muteBtn.setAttribute('aria-label', audio.muted ? 'Unmute audio' : 'Mute audio');
+                });
+            });
+        })();
+    </script> --}}
+
     <script>
         (function() {
-            let remaining = 0;
-            let t = null;
-            const el = document.getElementById('timeText');
-            const wrap = document.getElementById('timer');
-
-            function format(mmss) {
-                const m = Math.floor(mmss / 60);
-                const s = mmss % 60;
-                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-            }
-
-            function tick() {
-                if (remaining <= 0) {
-                    clearInterval(t);
-                    t = null;
-                    el.textContent = '00:00';
-                    wrap.classList.add('danger');
-                    document.getElementById('doneBtn').disabled = true;
-                    document.getElementById('doneBtn').style.opacity = 0.7;
-                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
-                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
-                    return;
-                }
-                remaining -= 1;
-                el.textContent = format(remaining);
-                // Kedipkan danger saat < 60 detik
-                if (remaining <= 60) {
-                    wrap.classList.add('danger');
-                }
-            }
-
-            function startCountdown(seconds) {
-                if (t) clearInterval(t);
-                remaining = Math.max(0, Math.floor(seconds));
-                el.textContent = format(remaining);
-                wrap.classList.toggle('danger', remaining <= 60);
-                document.getElementById('doneBtn').disabled = false;
-                document.getElementById('doneBtn').style.opacity = 1;
-                document.getElementById('doneBtn').style.cursor = 'pointer';
-                t = setInterval(tick, 1000);
-            }
-
-            // Public API (opsional)
-            window.CATHeader = {
-                startCountdown
-            };
-
             // Events
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit test'
                 );
-
             });
 
             document.getElementById('doneBtn').addEventListener('click', function() {
@@ -1884,9 +1899,6 @@
                     window.history.back();
                 }
             });
-
-            // Mulai countdown (contoh: 15 menit)
-            startCountdown(15 * 60);
         })();
     </script>
 
@@ -2012,7 +2024,6 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-
             setActive(@json($tabs)[0]['id']);
         });
     </script>
@@ -2265,16 +2276,17 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'tfng';
+            let currentPart = @json($tabs)[0]['id'];
             let questionCount = 0;
 
+            // 🧩 Toggle collapse floating panel
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // Generate question numbers
+            // 🧩 Generate list nomor soal
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -2287,7 +2299,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -2297,7 +2308,7 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // 🧭 Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -2312,7 +2323,7 @@
                 }
             }
 
-            // Update status soal (radio, dropdown, text)
+            // ✅ Update status soal
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -2334,6 +2345,10 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
+                    // Checkbox
+                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkboxChecked.length > 0) answered = true;
+
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -2342,11 +2357,28 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    if (answered) item.classList.add('answered');
+                    // Soal multi-nomor (contoh: data-q-multi="1,2")
+                    const multi = question.dataset.qMulti;
+                    if (multi) {
+                        const numbers = multi.split(',').map(n => n.trim());
+                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                        numbers.forEach(num => {
+                            const multiItem = fqList.querySelector(
+                                `[data-q="${num}"][data-part="${partId}"]`);
+                            if (!multiItem) return;
+
+                            if (checkedCount > 0) multiItem.classList.add('answered');
+                            else multiItem.classList.remove('answered');
+                        });
+                    } else {
+                        if (answered) item.classList.add('answered');
+                        else item.classList.remove('answered');
+                    }
                 }
             }
 
-            // Deteksi jawaban berubah
+            // 🧠 Perubahan jawaban
             function watchAnswerChanges() {
                 document.addEventListener('change', (e) => {
                     const input = e.target;
@@ -2391,18 +2423,13 @@
                     if (question) updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('change', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
-                });
-
                 document.addEventListener('click', (e) => {
                     const option = e.target.closest('.q-option');
                     if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
                 });
             }
 
-            // Deteksi perubahan part
+            // 🔁 Ganti part soal
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
@@ -2418,13 +2445,14 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
+                if (tabsContainer)
+                    observer.observe(tabsContainer, {
+                        attributes: true,
+                        attributeFilter: ['data-active']
+                    });
             }
 
-            // Update question list untuk part aktif
+            // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
                 const dataJson = @json($tabs);
                 const questionCounts = {}
@@ -2435,12 +2463,13 @@
                         questionCounts[tab.id] = count;
                     }
                 });
+
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
-            // Init
+            // 🚀 Init
             updateQuestionListForPart(@json($tabs)[0]['id']);
             watchPartChanges();
             watchAnswerChanges();
@@ -2450,8 +2479,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
-
-
     <script>
         // Pastikan modal tersembunyi saat halaman dimuat
         $("#resultModal").removeClass("show").hide();
@@ -2474,17 +2501,6 @@
         }
 
         function retryQuiz() {
-            // closeModal();
-
-            // $(".qa-body input[type=radio]").prop("checked", false);
-            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
-            // $("#resultsTableBody").empty();
-            // $("#scoreDisplay").text("0/0");
-            // // $("#scorePercentage").text("0");
-
-            // setTimeout(function () {
-            //     $('html, body').scrollTop($(".qa-body").offset().top);
-            // }, 350);
             location.reload();
         }
 
@@ -2504,10 +2520,14 @@
             }
         });
 
+        $(".try-again").on("click", function() {
+            location.reload();
+        })
+
         function submitHelper(form, setId, tipe, button, againBtn) {
             let allAnswered = true;
 
-            $(`#${form} fieldset[data-q]`).each(function() {
+            $(`#${form}`).each(function() {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
@@ -2539,7 +2559,7 @@
             formData.append("tipe", tipe);
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
             formData.append("set_id", setId);
-            formData.append("kategori", 'reading');
+            formData.append("kategori", 'listening');
             formData.append("tipe_test", 'practice');
 
             $.ajax({
@@ -2550,11 +2570,11 @@
                 contentType: false,
                 success: function(response) {
                     if (response.status === "ok") {
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
-
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
 
                         let correctCount = response.score;
                         let total = Object.keys(response.results).length;
@@ -2637,10 +2657,6 @@
             });
         }
 
-        $(".try-again").on("click", function() {
-            location.reload();
-        });
-
         const tabs = @json($tabs);
         tabs.forEach(tab => {
             const id = tab.id;
@@ -2650,7 +2666,7 @@
                 e.preventDefault();
                 submitHelper(
                     `form-${id}`, // form
-                    "nHmZBcocwalVytdH", // folder
+                    "blsodB9LLhUn0zcg", // folder
                     tipe, // tipe
                     $(this),
                     `again-${id}` // again
@@ -2659,7 +2675,103 @@
         });
     </script>
 
+    <script>
+        let currentPlaying = null;
 
+        document.querySelectorAll("[data-player]").forEach(player => {
+
+            const audio = player.querySelector("audio");
+            const btnPlay = player.querySelector(".play-btn");
+            const icon = btnPlay.querySelector("i");
+            const seekBar = player.querySelector(".seekBar");
+            const curT = player.querySelector(".current");
+            const durT = player.querySelector(".duration");
+
+            let isSeeking = false;
+
+            // =============== STOP AUDIO LAIN ===============
+            function stopOtherPlayers() {
+                if (currentPlaying && currentPlaying !== audio) {
+                    currentPlaying.pause();
+                    const otherBtn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                    otherBtn.className = "fas fa-play";
+                }
+                currentPlaying = audio;
+            }
+
+            // =============== PLAY / PAUSE ===============
+            btnPlay.addEventListener("click", () => {
+                stopOtherPlayers();
+
+                if (audio.paused) {
+                    audio.play();
+                    icon.className = "fas fa-pause";
+                } else {
+                    audio.pause();
+                    icon.className = "fas fa-play";
+                }
+            });
+
+            // =============== START FROM X ===============
+            player.querySelectorAll(".start-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const offset = parseFloat(btn.dataset.start);
+
+                    stopOtherPlayers();
+                    audio.currentTime = offset;
+                    audio.play();
+                    icon.className = "fas fa-pause";
+                });
+            });
+
+            // =============== SEEK BAR ===============
+            seekBar.addEventListener("input", () => {
+                // Jangan izinkan seek sebelum metadata siap
+                if (!audio.duration || isNaN(audio.duration)) return;
+
+                isSeeking = true;
+                audio.currentTime = (seekBar.value / 100) * audio.duration;
+            });
+
+            seekBar.addEventListener("change", () => {
+                isSeeking = false;
+            });
+
+
+            setInterval(() => {
+                if (!audio.duration) return;
+
+                if (!isSeeking) {
+                    seekBar.value = (audio.currentTime / audio.duration) * 100;
+                }
+
+                curT.textContent = format(audio.currentTime);
+                durT.textContent = format(audio.duration);
+
+            }, 200);
+
+            audio.addEventListener("loadedmetadata", () => {
+                durT.textContent = format(audio.duration);
+            });
+
+            function format(t) {
+                if (!t) return "0:00";
+                const m = Math.floor(t / 60);
+                const s = Math.floor(t % 60).toString().padStart(2, "0");
+                return `${m}:${s}`;
+            }
+        });
+
+        $(".x-tab").on("click", function() {
+            if (currentPlaying) {
+                currentPlaying.pause();
+
+                // Kembalikan icon play pada player tersebut
+                const btn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
+                btn.className = "fas fa-play";
+            }
+        });
+    </script>
 </body>
 
 </html>
