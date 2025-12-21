@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -106,7 +107,7 @@
             color: var(--text);
             border-radius: 10px;
             padding: 8px 12px;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
@@ -1132,21 +1133,6 @@
             margin-top: 30px;
         }
 
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            outline: none;
-        }
-
         .btn-secondary {
             background: #e2e8f0;
             color: #4a5568;
@@ -1334,7 +1320,6 @@
     </style>
 </head>
 
-
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
@@ -1376,8 +1361,8 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Task 1</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">Task 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
                 data-id="tfng2">Task 2</button>
         </div>
@@ -1393,12 +1378,11 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The first chart below shows how energy is used in an average Australian household.
-                                    The second chart shows the greenhouse gas emissions which result from this energy
-                                    use.</p>
+                                <p>The graph below shows the average monthly change in the prices of three metals during
+                                    2014.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make
                                     comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-10-academic-writing-test-1-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-18-academic-writing-test-4-1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1406,13 +1390,15 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task1">
+                            <form class="response-form" data-task="Task 1">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 1 Answer" required spellcheck="false"></textarea>
+                                                <textarea class="form-textarea js-response"
+                                                    placeholder="Enter your Task 1 Answer" required
+                                                    spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
@@ -1420,10 +1406,8 @@
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="button"
-                                                    class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit"
-                                                    class="btn btn-primary js-submit">Submit</button>
+                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
                                             </div>
 
                                             <div class="success-message js-success" style="display:none;">
@@ -1448,25 +1432,28 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>It is important for children to learn the difference between right and wrong at an
-                                    early age.
-                                    Punishment is necessary to help them learn this distinction.</p>
+                                <p>In many countries, people are now living longer than ever before. Some people say an
+                                    ageing population creates problems for governments. Other people think there are
+                                    benefits if society has more elderly people.</p>
                                 <p>To what extent do you agree or disagree with this opinion?</p>
-                                <p>What sort of punishment should parents and teachers be allowed to use to teach good
-                                    behaviour to children?</p>
+                                <p>To what extent do the advantages of having an ageing population outweigh the
+                                    disadvantages?</p>
                             </div>
                         </article>
 
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="task2">
-                                <fieldset class="q-item" data-q="1">
+                            <form class="response-form" data-task="Task 2">
+                                <fieldset class="q-item" data-q="1
+                                ">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 2 Answer" required spellcheck="false"></textarea>
+                                                <textarea class="form-textarea js-response"
+                                                    placeholder="Enter your Task 2 Answer" required
+                                                    spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
@@ -1474,10 +1461,8 @@
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="button"
-                                                    class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit"
-                                                    class="btn btn-primary js-submit">Submit</button>
+                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
+                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
                                             </div>
 
                                             <div class="success-message js-success" style="display:none;">
@@ -1513,16 +1498,16 @@
     </div>
 
     <script>
-        (function() {
+        (function () {
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function() {
+            document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function() {
+            document.getElementById('doneBtn').addEventListener('click', function () {
                 const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
                     window.history.back();
@@ -1533,7 +1518,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1612,7 +1597,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch {}
+                    } catch { }
                 }
                 pid = null;
                 down = false;
@@ -1659,7 +1644,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -1668,7 +1653,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function(e) {
+                section.addEventListener('click', function (e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -1684,7 +1669,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function(e) {
+                section.addEventListener('change', function (e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -1732,7 +1717,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function(panelEl) {
+            window.getPanelAnswers = function (panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -1893,110 +1878,153 @@
         });
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.response-form').forEach(form => {
-                const textarea = form.querySelector('.js-response');
-                const charCount = form.querySelector('.char-count');
-                const submitBtn = form.querySelector('.js-submit');
-                const clearBtn = form.querySelector('.js-clear');
-                const successMessage = form.querySelector('.js-success');
-                const taskType = form.dataset.task;
+        $(document).ready(function () {
+            $(".response-form").each(function () {
 
-                // 🔹 Update word count
+                const form = $(this);
+                const textarea = form.find(".js-response");
+                const charCount = form.find(".char-count");
+                const submitBtn = form.find(".js-submit");
+                const clearBtn = form.find(".js-clear");
+                const successMessage = form.find(".js-success");
+
+                const taskType = form.data("task");
+                const noSoal = form.find(".q-item").data("q");
+
+                /* ------------------------------
+                WORD COUNTER
+                --------------------------------*/
                 function updateCharCount() {
-                    const text = textarea.value.trim();
-                    const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
-                    charCount.textContent = words;
-                    submitBtn.disabled = words === 0;
+                    const words = textarea.val().trim() === "" ?
+                        0 :
+                        textarea.val().trim().split(/\s+/).length;
+
+                    charCount.text(words);
+                    submitBtn.prop("disabled", words === 0);
                 }
 
-                // 🔹 Auto resize textarea
+                /* ------------------------------
+                AUTO RESIZE TEXTAREA
+                --------------------------------*/
                 function autoResize() {
-                    textarea.style.height = 'auto';
-                    textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
+                    textarea.css("height", "auto");
+                    textarea.css("height", Math.max(200, textarea[0].scrollHeight) + "px");
                 }
 
-                // 🔹 Clear button
-                clearBtn.addEventListener('click', () => {
-                    if (confirm('Are you sure you want to clear all text?')) {
-                        textarea.value = '';
+                /* ------------------------------
+                CLEAR BUTTON
+                --------------------------------*/
+                clearBtn.on("click", function () {
+                    if (confirm("Are you sure you want to clear all text?")) {
+                        textarea.val("");
                         updateCharCount();
                         autoResize();
                         textarea.focus();
                     }
                 });
 
-                // 🔹 Submit AJAX
-                form.addEventListener('submit', e => {
+                /* ------------------------------
+                FORM SUBMISSION
+                --------------------------------*/
+                form.on("submit", function (e) {
                     e.preventDefault();
 
-                    const text = textarea.value.trim();
+                    const text = textarea.val().trim();
+
                     if (!text) {
-                        alert('Please enter your response before submitting.');
-                        textarea.focus();
+                        alert("Please enter your response before submitting.");
                         return;
                     }
 
-                    submitBtn.textContent = 'Submitting...';
-                    submitBtn.disabled = true;
+                    submitBtn.text("Submitting...");
+                    submitBtn.prop("disabled", true);
 
-                    fetch('/writing/submit', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector(
-                                    'meta[name="csrf-token"]').content
-                            },
-                            body: JSON.stringify({
-                                task: taskType,
-                                response: text
-                            })
-                        })
-                        .then(res => res.json())
-                        .then(data => {
-                            submitBtn.textContent = 'Submit';
-                            submitBtn.disabled = false;
+                    $.ajax({
+                        url: "/ielts/practice/check",
+                        type: "POST",
+                        data: {
+                            task: taskType,
+                            answer: text,
+                            tipe: "practice",
+                            no_soal: noSoal,
+                            set_id: 'yPLnQeqINAxbrnva',
+                            kategori: "writing",
+                            _token: $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function (res) {
+                            submitBtn.text("Submit");
+                            submitBtn.prop("disabled", false);
 
-                            if (data.status === 'ok') {
-                                successMessage.style.display = 'block';
-                                setTimeout(() => successMessage.style.display = 'none', 3000);
-                                textarea.value = '';
+                            if (res.status) {
+                                setTimeout(() => {
+                                    alert(res.message)
+                                }, 1000);
+
+                                textarea.val("");
                                 updateCharCount();
                                 autoResize();
                             } else {
-                                alert('Error: ' + (data.message || 'Something went wrong.'));
+                                alert((res.message || "Unexpected error."));
                             }
-                        })
-                        .catch(err => {
-                            console.error(err);
-                            submitBtn.textContent = 'Submit';
-                            submitBtn.disabled = false;
-                            alert('Request failed.');
-                        });
+                        },
+                        error: function (xhr) {
+                            submitBtn.text("Submit");
+                            submitBtn.prop("disabled", false);
+
+                            console.log("=== AJAX ERROR DEBUG ===");
+                            console.log("STATUS:", xhr.status);
+
+                            // tampilkan response Laravel yg sebenarnya
+                            console.log("RESPONSE:", xhr.responseText);
+
+                            // kalau JSON
+                            try {
+                                console.log("PARSED JSON:", JSON.parse(xhr
+                                    .responseText));
+                            } catch (e) {
+                                console.log("NOT JSON");
+                            }
+
+                            alert("Server Error: " + xhr.status);
+                        }
+
+
+                    });
                 });
 
-                // 🔹 Input event
-                textarea.addEventListener('input', () => {
+                /* ------------------------------
+                INPUT EVENT
+                --------------------------------*/
+                textarea.on("input", function () {
                     updateCharCount();
                     autoResize();
                 });
 
-                // 🔹 Scroll center in mobile
+                /* ------------------------------
+                MOBILE SCROLL FIX
+                --------------------------------*/
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.addEventListener('focus', () => {
-                        setTimeout(() => textarea.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        }), 300);
+                    textarea.on("focus", function () {
+                        setTimeout(() => {
+                            textarea[0].scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+                        }, 300);
                     });
                 }
 
+                // INIT
                 updateCharCount();
                 autoResize();
             });
         });
     </script>
+
+
 </body>
 
 </html>
