@@ -178,14 +178,14 @@ class IeltsController extends Controller
                         $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
-                        // 18 END
+                    // 18 END
 
                     // 19 START
-                    // case 'kNyuF8ZeAt9Trm90':
-                    //     $data['set_id'] = 'kNyuF8ZeAt9Trm90';
-                    //     $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 1';
-                    //     return view('ielts.categories', $data);
-                    //     break;
+                    case 'rbsuXiTcqh8ewr9Q':
+                        $data['set_id'] = 'rbsuXiTcqh8ewr9Q';
+                        $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 1';
+                        return view('ielts.categories', $data);
+                        break;
 
                     // case 'kVklZiFhgKeBhovY':
                     //     $data['set_id'] = 'kVklZiFhgKeBhovY';
@@ -714,13 +714,23 @@ class IeltsController extends Controller
             $q = 1;
 
 
-            $filledAnswers = collect($data)->pluck('answer')->filter(function ($answer) {
-                return !empty($answer);
-            });
+            $filledAnswers = collect($data)
+                ->pluck('answer')
+                ->filter(function ($answer) {
+                    return !(
+                        is_null($answer) ||
+                        $answer === '' ||
+                        (is_string($answer) && json_decode($answer, true) === [null])
+                    );
+                });
+
+
 
             if ($filledAnswers->isEmpty()) {
                 throw new \Exception('Tidak ada jawaban yang dikirim.', 400);
             }
+
+
 
             foreach ($data as $item) {
                 $parts = explode('-', $item['name']);
@@ -756,7 +766,7 @@ class IeltsController extends Controller
                             $results[$type . '-' . $q] = [
                                 'status' => $jawaban ? 'correct' : 'wrong',
                                 'user' => $currentAnswer,
-                                'correct' => $ps,
+                                'correct' => $parsedSoal,
                             ];
 
                             $q++;

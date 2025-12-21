@@ -178,20 +178,5 @@ class SetSoalSeeder extends Seeder
             'thumbnail' => 'Bedroom Furniture for Sale',
             'kode' => 'cwwPbLf22UsNEqIp',
         ]);
-
-
-        // // 19 START
-        // SetSoal::create([
-        //     'name' => 'Cambridge 19 Test 1',
-        //     'kode' => 'kNyuF8ZeAt9Trm90',
-        // ]);
-        // SetSoal::create([
-        //     'name' => 'Cambridge 19 Test 2',
-        //     'kode' => 'kVklZiFhgKeBhovY',
-        // ]);
-        // SetSoal::create([
-        //     'name' => 'Cambridge 19 Test 3',
-        //     'kode' => 'kqQSrG7Rs5yw1AuD',
-        // ]);
     }
 }

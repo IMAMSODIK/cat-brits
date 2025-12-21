@@ -696,7 +696,7 @@
             gap: 10px;
         }
 
-        #panel-tc .q-number-box {
+        [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -708,7 +708,7 @@
             margin-left: 5px;
         }
 
-        #panel-tc .q-text {
+        [id^="panel-"] .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -1545,30 +1545,30 @@
         @php
             $tabs = [
                 'kategori' => 'reading',
-                "id" => "yPLnQeqINAxbrnva",
+                "id" => "rbsuXiTcqh8ewr9Q",
                 "data" => [
                     "part1" => [
                         "label" => "Part 1",
-                        "tipe" => ["matching_information", "summary_completion", "two_choices", "two_choices"],
+                        "tipe" => ["tfng", "nc"],
                         "contents" => [
-                            "answer" => "partials.yPLnQeqINAxbrnva.mock.reading.part1.answer",
-                            "question" => "partials.yPLnQeqINAxbrnva.mock.reading.part1.question"
+                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.answer",
+                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.question"
                         ],
                     ],
                     "part2" => [
                         "label" => "Part 2",
-                        "tipe" => ["oc", "matching_features", "ynng"],
+                        "tipe" => ["matching_information", "two_choices", "two_choices", "summary_completion"],
                         "contents" => [
-                            "answer" => "partials.yPLnQeqINAxbrnva.mock.reading.part2.answer",
-                            "question" => "partials.yPLnQeqINAxbrnva.mock.reading.part2.question"
+                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.answer",
+                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.question"
                         ]
                     ],
                     "part3" => [
                         "label" => "Part 3",
-                        "tipe" => ["ynng", "summary_completion", "oc"],
+                        "tipe" => ["oc", "summary_completion", "ynng"],
                         "contents" => [
-                            "answer" => "partials.yPLnQeqINAxbrnva.mock.reading.part3.answer",
-                            "question" => "partials.yPLnQeqINAxbrnva.mock.reading.part3.question",
+                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.answer",
+                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.question",
                         ]
                     ]
                 ]
@@ -1770,7 +1770,7 @@
 
 
                         if (prevData.name === name) {
-                            if (value != null) {
+                            if (value !== null) {
                                 if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
                                     data[prevData.index - 1].answer = `[${prevData.answer}, ${value}]`;
                                 } else {
@@ -2101,7 +2101,7 @@
                 //             type: 'POST',
                 //             data: {
                 //                 _token: $('meta[name="csrf-token"]').attr('content'),
-                //                 set_id: 'yPLnQeqINAxbrnva',
+                //                 set_id: 'rbsuXiTcqh8ewr9Q',
                 //                 kategori: 'reading',
                 //                 answers: results,
                 //                 tipe_test: 'practice'

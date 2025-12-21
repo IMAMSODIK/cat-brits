@@ -25,6 +25,7 @@ use Database\Seeders\Sets\CambridgeIELTS17AcademicTest3;
 use Database\Seeders\Sets\CambridgeIELTS17AcademicTest4;
 use Database\Seeders\Sets\CambridgeIELTS18AcademicTest2;
 use Database\Seeders\Sets\CambridgeIELTS18AcademicTest3;
+use Database\Seeders\Sets\CambridgeIELTS19AcademicTest1;
 use Database\Seeders\Sets\CambridgeIELTS19AcademicTest4;
 use Illuminate\Database\Seeder;
 
@@ -55,7 +56,8 @@ class SoalSeeder extends Seeder
             CambridgeIELTS17AcademicTest4::class,
             CambridgeIELTS18AcademicTest2::class,
             CambridgeIELTS18AcademicTest3::class,
-            CambridgeIELTS19AcademicTest4::class   
+            CambridgeIELTS19AcademicTest4::class,
+            CambridgeIELTS19AcademicTest1::class
         ]);
     }
 }
