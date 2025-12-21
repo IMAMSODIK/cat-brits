@@ -690,12 +690,11 @@
             }
         }
 
-        /* #panel-tfng .q-options,
-        #panel-tfng2 .q-options {
+        #panel-tc .q-options {
             display: flex;
             align-items: center;
             gap: 10px;
-        } */
+        }
 
         #panel-tfng .q-number-box,
         #panel-tfng2 .q-number-box,
@@ -722,9 +721,7 @@
             box-sizing: border-box;
         }
 
-        #panel-tfng input,
-        #panel-tfng2 input,
-        #panel-ynng input {
+        #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -1558,20 +1555,26 @@
                 <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">The kéképé</h3>
+                            <h3 class="passage-title">Materials to take us beyond concrete</h3>
                             <div class="passage-body">
-                                <p>The kakapo is a nocturnal, flightless parrot that is critically endangered and one of New Zealand ‘s unique treasures.</p>
-                                <p>The kakapo, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers, forward-facing eyes, a large grey beak, large blue feet, and relatively short wings and tail. It is the world’s only flightless parrot, and is also possibly one of the world’s longest-living birds, with a reported lifespan of up to 100 years.</p>
-                                <p>Kakapo are solitary birds and tend to occupy the same home range for many years. They forage on the ground and climb high into trees. They often leap from trees and flap their wings, but at best manage a controlled descent to the ground. They are entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.</p>
-                                <p>Kakapo breed in summer and autumn, but only in years when food is plentiful. Males play no part in incubation or chick-rearing – females alone incubate eggs and feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before and during incubation. The female kakapo has to spend long periods away from the nest searching for food, which leaves the unattended eggs and chicks particularly vulnerable to predators.</p>
-                                <p>Before humans arrived, kakapo were common throughout New Zealand’s forests. However, this all changed with the arrival of the first Polynesian settlers about 700 years ago. For the early settlers, the flightless kakapo was easy prey. They ate its meat and used its feathers to make soft cloaks. With them came the Polynesian dog and rat, which also preyed on kakapo. By the time European colonisers arrived in the early 1800s, kakapo had become confined to the central North Island and forested parts of the South Island. The fall in kakapo numbers was accelerated by European colonisation. A great deal of habitat was lost through forest clearance, and introduced species such as deer depleted the remaining forests of food. Other predators such as cats, stoats and two more species of rat were also introduced. The kakapo were in serious trouble.</p>
-                                <p>In 1894, the New Zealand government launched its first attempt to save the kakapo. Conservationist Richard Henry led an effort to relocate several hundred of the birds to predator-free Resolution Island in Fiordland. Unfortunately, the island didn’t remain predator free – stoats arrived within six years, eventually destroying the kakapo population. By the mid-1900s, the kakapo was practically a lost species. Only a few clung to life in the most isolated parts of New Zealand.</p>
-                                <p>From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60 expeditions to find kakapo, focusing mainly on Fiordland. Six were caught, but there were no females amongst them and all but one died within a few months of captivity.</p>
-                                <p>In 1974, a new initiative was launched, and by 1977, 18 more kakapo were found in Fiordland. However, there were still no females. In 1977, a large population of males was spotted in Rakiura – a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present. These birds have been the foundation of all subsequent work in managing the species.</p>
-                                <p>Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in kakapo numbers. As a result, during 1980-97, the surviving population was evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier Island. However, breeding success was hard to achieve. Rats were found to be a major predator of kakapo chicks, and an insufficient number of chicks survived to offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. <br>The kakapo population had dropped to 51 birds.</p>
-                                <p>The critical situation prompted an urgent review of kakapo management in New Zealand. In 1996, a new Recovery Plan was launched, together with a specialist advisory group called the Kakapo Scientific and Technical Advisory Committee and a higher amount of funding. Renewed steps were taken to control predators on the three islands. Cats were eradicated from Little Barrier Island in 1980, and possums were eradicated from Codfish Island by 1986. However, the population did not start to increase until rats were removed from all three islands, and the birds were more intensively managed. This involved moving the birds between islands, supplementary feeding of adults, and rescuing and hand-raising any failing chicks.</p>
-                                <p>After the first five years of the Recovery Plan, the population was on target. By 2000, five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the filture of kakapo, and by June 2020, a total of 210 birds was recorded.</p>
-                                <p>Today, kakapo management continues to be guided by the kakapo Recovery Plan. Its key goals are: minimise the loss of genetic diversity in the kakapo population, restore or maintain sufficient habitat to accommodate the expected increase in the kakapo population, and ensure stakeholders continue to be fully engaged in the preservation of the species.</p>
+                                <p><i>Concrete is everywhere, but it’s bad for the planet, generating large amounts of carbon dioxide – alternatives are being developed</i></p>
+                                <h3>A</h3>
+                                <p>Concrete is the second most used substance in the global economy, after water – and one of the world’s biggest single sources of greenhouse gas emissions. The chemical process by which cement, the key ingredient of concrete, is created results in large quantities of carbon dioxide. The UN estimates that there will be 9.8 billion people living on the planet by mid-century. They will need somewhere to live. If concrete is the only answer to the construction of new cities, then carbon emissions will soar, aggravating global warming. And so scientists have started innovating with other materials, in a scramble for alternatives to a universal commodity that has underpinned our modem life for many years.</p>
+                                <h3>B</h3>
+                                <p>The problem with replacing concrete is that it is so very good at what it does. Chris Cheeseman, an engineering professor at Imperial College London, says the key thing to consider is the extent to which concrete is used around the world, and is likely to continue to be used. ‘Concrete is not a high-carbon product. Cement is high carbon, but concrete is not. But it is the scale on which it is used that makes it high carbon. The sheer scale of manufacture is so huge, that is the issue.’</p>
+                                <h3>C</h3>
+                                <p>Not only are the ingredients of concrete relatively cheap and found in abundance in most places around the globe, the stuff itself has marvellous properties: Portland cement, the vital component of concrete, is mouldable and pourable, but quickly sets hard. Cheeseman also notes another advantage: concrete and steel have similar thermal expansion properties, so steel can be used to reinforce concrete, making it far stronger and more flexible as a building material than it could be on its own. According to Cheeseman, all these factors together make concrete hard to beat. ‘Concrete is amazing stuff. Making anything with similar properties is going to be very difficult.’</p>
+                                <h3>D</h3>
+                                <p>A possible alternative to concrete is wood. Making buildings from wood may seem like a rather medieval idea, but climate change is driving architects to turn to treated timber as a possible resource. Recent years have seen the emergence of tall buildings constructed almost entirely from timber. Vancouver, Vienna and Brumunddal in Norway are all home to constructed tall, wooden buildings.</p>
+                                <h3>E</h3>
+                                <p>Using wood to construct buildings, however, is not straightforward. Wood expands as it absorbs moisture from the air and is susceptible to pests, not to mention fire. But treating wood and combining it with other materials can improve its properties. Cross-laminated timber is engineered wood. An adhesive is used to stick layers of solid-sawn timber together, crosswise, to form building blocks. This material is light but has the strength of concrete and steel. Construction experts say that wooden buildings can be constructed at a greater speed than ones of concrete and steel and the process, it seems, is quieter.</p>
+                                <h3>F</h3>
+                                <p>Stora Enso is Europe’s biggest supplier of cross-laminated timber, and its vice-president Markus Mannstrom reports that the company is seeing increasing demand globally for building in wood, with climate change concerns the key driver. Finland, with its large forests, where Stora Enso is based, has been leading the way, but the company is seeing a rise in demand for its timber products across the world, including in Asia. Of course, using timber in a building also locks away the carbon that it absorbed as it grew. But even treated wood has its limitations and only when a wider range of construction projects has been proven in practice will it be possible to see wood as a real alternative to concrete in constructing tall buildings.</p>
+                                <h3>G</h3>
+                                <p>Fly ash and slag from iron ore are possible alternatives to cement in a concrete mix. Fly ash, a byproduct of coal-burning power plants, can be incorporated into concrete mixes to make up as much as 15 to 30% of the cement, without harming the strength or durability of the resulting mix. Iron-ore slag, a byproduct of the iron-ore smelting process, can be used in a similar way. Their incorporation into concrete mixes has the potential to reduce greenhouse gas emissions.</p>
+                                <p>But Anna Surgenor, of the UK’s Green Building Council, notes that although these waste products can save carbon in the concrete mix, their use is not always straightforward. ‘It’s possible to replace the cement content in concrete with waste products to lower the overall carbon impact. But there are several calculations that need to be considered across the entire life cycle of the building- these include factoring in where these materials are being shipped from. If they are transported over long distances, using fossil fuels, the use of alternative materials might not make sense from an overall carbon reduction perspective.’</p>
+                                <h3>H</h3>
+                                <p>While these technologies are all promising ideas, they are either unproven or based on materials that are not abundant. In their overview of innovation in the concrete industry, Felix Preston and Johanna Lehne of the UK’s Royal Institute of International Affairs reached the conclusion that, ‘Some novel cements have been discussed for more than a decade within the research community, without breaking through. At present, these alternatives are rarely as cost-effective as conventional cement, and they face raw-material shortages and resistance from customers.’</p>
                             </div>
                         </article>
 
@@ -1579,246 +1582,250 @@
 
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body">
-                                {{-- tfng --}}
+                                {{-- matching_information --}}
                                 <fieldset class="q-item">
-                                    <p class="lead">Do the following statements agree with the information given in
-                                        the
-                                        Reading Passage?
-                                    </p>
-                                    <p>In boxes on your answer sheet, write</p>
-                                    <ul class="legend">
-                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-                                    </ul>
+                                    <p class="lead"><b>Questions 1-4</b></p>
+                                    <p class="lead">The Reading Passage has eight sections, <b>A-H</b>.</p>
+                                    <p>Which section contains the following information?</p>
+                                    <p class="lead">Write the correct letter, <b>A-H</b>, in boxes on your answer sheet.</p>
                                 </fieldset>
+
                                 <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">1</span>
-                                        There are other parrots that share the kakapos inability to fly.
+                                        <span style="flex: 1;">
+                                            an explanation of the industrial processes that create potential raw materials for concrete
+                                            <span class="q-question">
+                                                <select name="matching_information-8uQvKzYbHuROu9RJ-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-1" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-1" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-1" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">2</span>
-                                        Adult kakapo produce chicks every year.
+                                        <span style="flex: 1;">
+                                            a reference to the various locations where high-rise wooden buildings can be found
+                                            <span class="q-question">
+                                                <select name="matching_information-8uQvKzYbHuROu9RJ-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-2" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-2" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-2" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">3</span>
-                                        Adult male kakapo bring food back to nesting females.
+                                        <span style="flex: 1;">
+                                            an indication of how widely available the raw materials of concrete are
+                                            <span class="q-question">
+                                                <select name="matching_information-8uQvKzYbHuROu9RJ-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-3" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-3" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-3" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">4</span>
-                                        The Polynesian rat was a greater threat to the kakapo than Polynesian settlers.
+                                        <span style="flex: 1;">
+                                            the belief that more high-rise wooden buildings are needed before wood can be regarded as a viable construction material
+                                            <span class="q-question">
+                                                <select name="matching_information-8uQvKzYbHuROu9RJ-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                    <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                     </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-4" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-4" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-4" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        Kakapo were transferred from Rakiura Island to other locations because they were at risk from feral cats.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-5" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-5" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-5" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text">
-                                        <span class="q-number">6</span>
-                                        One Recovery Plan initiative that helped increase the kakapo population size was caring for struggling young birds.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-6" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-6" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="tfng-xQKeqKYrkqfdgotg-6" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                {{-- nc   --}}
+                                {{-- summary_completion --}}
                                 <fieldset class="q-item">
-                                    <h3>Questions 7-13</h3>
+                                    <h3>Questions 5-8</h3>
                                     <p class="lead">Complete the summary below.</p>
-                                    <p>Choose <b>ONE WORD AND/OR NUMBER ONLY</b> from the passage for each answer.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
                                     <p><i>Write your answers in boxes on your answer sheet.</i></p>
 
-                                    <h3>New Zealand’s kakapo</h3>
+                                    <h3>Making buildings with wood</h3>
 
-                                    <p><b>A Type of parrot:</b></p>
                                     <p>
-                                        Diet consists of fern fronds, various parts of a tree and
-                                        <span class="q-number-box">7</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-1" class="q-text" placeholder="">
+                                        <div>
+                                            Wood is a traditional building material, but current environmental concerns are encouraging
+                                            <span class="q-number-box">5</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-1" class="q-text" placeholder="">
+                                                </span>
                                             </span>
-                                        </span>
-                                    </p>
-                                    <p>
-                                        Nests are created in
-                                        <span class="q-number-box">8</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-2" class="q-text" placeholder="">
+                                            to use wood in modern construction projects. Using wood, however, has its challenges. For example, as
+                                            <span class="q-number-box">6</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-2" class="q-text" placeholder="">
+                                                </span>
                                             </span>
-                                        </span>
-                                        . where eggs are laid.
+                                            in the atmosphere enters wood, it increases in size. In addition, wood is prone to pests and the risk of fire is greater. However, wood can be turned into a better construction material if it is treated and combined with other materials. In one process,
+                                            <span class="q-number-box">7</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-3" class="q-text" placeholder="">
+                                                </span>
+                                            </span>
+                                            of solid wood are glued together to create building blocks. These blocks are lighter than concrete and steel but equal them in strength. Experts say that wooden buildings are an improvement on those made of concrete and steel in terms of the
+                                            <span class="q-number-box">8</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-4" class="q-text" placeholder="">
+                                                </span>
+                                            </span>
+                                             with which they can be constructed and how much noise is generated by the process.
+                                        </div>
                                     </p>
+                                </fieldset>
 
-                                    <p><b>Arrival of Polynesian settlers</b></p>
-                                    <p>
-                                        The 
-                                        <span class="q-number-box">9</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-3" class="q-text" placeholder="">
-                                            </span>
-                                        </span>
-                                        of the kakapo were used to make clothes.
-                                    </p>
+                                {{-- matching_features --}}
+                                <fieldset class="q-item">
+                                    <h3>Questions 9-13</h3>
+                                    <p class="lead">Look at the following statements and the list of people below.</p>
+                                    <p>Match each statement with the correct person, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.</p>
+                                    <p>Write the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>, in boxes on your answer sheet.</p>
+                                    <p><b>NB</b>   You may use any letter more than once.</p>
+                                    <b>List of People</b>
+                                    <ul class="legend">
+                                        <li><strong>A</strong> Chris Cheeseman</li>
+                                        <li><strong>B</strong> Markus Mannstrom</li>
+                                        <li><strong>C</strong> Anna Surgenor</li>
+                                        <li><strong>D</strong> Felix Preston and Johanna Lehne</li>
+                                    </ul>
+                                </fieldset>
 
-                                    <p><b>Arrival of European colonisers</b></p>
-                                    <p>
-                                        <span class="q-number-box">10</span>
+                                <fieldset class="q-item" data-q="9">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">9</span>
                                         <span style="flex: 1;">
+                                            The environmental advantage of cement alternatives may not be as great as initially assumed.
                                             <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-4" class="q-text" placeholder="">
+                                                <select name="matching_features-8uQvKzYbHuROu9RJ-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                </select>
                                             </span>
                                         </span>
-                                        were an animal which they introduced that ate the kakapo’s food sources.
-                                    </p>
+                                    </legend>
+                                </fieldset>
 
-                                    <p><b>Protecting kakapo</b></p>
-                                    <p>Richard Henry, a conservationist, tried to protect the kakapo.</p>
-                                    <p>
-                                        A definite sighting of female kakapo on Rakiura Island was reported in the year
-                                        <span class="q-number-box">11</span>
+                                <fieldset class="q-item" data-q="10">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">10</span>
                                         <span style="flex: 1;">
+                                            It would be hard to create a construction alternative to concrete that offers so many comparable benefits.
                                             <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-5" class="q-text" placeholder="">
+                                                <select name="matching_features-8uQvKzYbHuROu9RJ-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                </select>
                                             </span>
                                         </span>
-                                    </p>
-                                    <p>
-                                        The Recovery Plan included an increase in 
-                                        <span class="q-number-box">12</span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="11">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">11</span>
                                         <span style="flex: 1;">
+                                            Worries about the environment have led to increased interest in wood as a construction material.
                                             <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-6" class="q-text" placeholder="">
+                                                <select name="matching_features-8uQvKzYbHuROu9RJ-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                </select>
                                             </span>
                                         </span>
-                                    </p>
-                                    <p>
-                                        A current goal of the Recovery Plan is to maintain the involvement of 
-                                        <span class="q-number-box">13</span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="12">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">12</span>
                                         <span style="flex: 1;">
+                                            Expense has been a factor in the negative response to the development of new cements.
                                             <span class="q-question">
-                                                <input type="text" name="nc-xQKeqKYrkqfdgotg-7" class="q-text" placeholder="">
+                                                <select name="matching_features-8uQvKzYbHuROu9RJ-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                </select>
                                             </span>
                                         </span>
-                                        in kakapo protection.
-                                    </p>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="13">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">13</span>
+                                        <span style="flex: 1;">
+                                            The environmental damage caused by concrete is due to it being produced in large quantities.
+                                            <span class="q-question">
+                                                <select name="matching_features-8uQvKzYbHuROu9RJ-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
                                 </fieldset>
                             </form>
                         </aside>
@@ -1830,25 +1837,23 @@
                 <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">To Britain</h3>
+                            <h3 class="passage-title">The steam car</h3>
                             <div class="passage-body">
-                                <p>Mark Rowe investigates attempts to reintroduce elms to Britain</p>
+                                <p>The successes and failures of the Doble brothers and their steam cars</p>
                                 <h3>A</h3>
-                                <p>Around 25 million elms, accounting for 90% of all elm trees in the UK, died during the 1960s and ’70s of Dutch elm disease. In the aftermath, the elm, once so dominant in the British landscape, was largely forgotten. However, there’s now hope the elm may be reintroduced to the countryside of central and southern England. Any reintroduction will start from a very low base. ‘The impact of the disease is difficult to picture if you hadn’t seen what was there before,’ says Matt Elliot of the Woodland Trust. ‘You look at old photographs from the 1960s and it’s only then that you realise the impact [elms had]. They were significant, large trees then they were gone.’</p>
+                                <p>When primitive automobiles first began to appear in the 1800s, their engines were based on steam power. Steam had already enjoyed a long and successful career in the railways, so it was only natural that the technology evolved into a miniaturized version which was separate from the trains. But these early cars inherited steam’s weaknesses along with its strengths. The boilers had to be lit by hand, and they required about twenty minutes to build up pressure before they could be driven. Furthermore, their water reservoirs only lasted for about thirty miles before needing replenishment. Despite such shortcomings, these newly designed self-propelled carriages offered quick transportation, and by the early 1900s it was not uncommon to see such machines shuttling wealthy citizens around town.</p>
                                 <h3>B</h3>
-                                <p>The disease is caused by a fungus that blocks the elms’ vascular (water, nutrient and food transport) system, causing branches to wilt and die. A first epidemic, which occurred in the 1920s, gradually died down, but in the ’70s a second epidemic was triggered by shipments of elm from Canada. The wood came in the form of logs destined for boat building and its intact bark was perfect for the elm bark beetles that spread the deadly fungus. This time, the beetles carried a much more virulent strain that destroyed the vast majority of British elms.</p>
+                                <p>But the glory days of steam cars were few. A new technology called the Internal Combustion Engine soon appeared, which offered the ability to drive down the road just moments after starting up. At first, these noisy gasoline cars were unpopular because they were more complicated to operate and they had difficult hand-crank starters, which were known to break arms when the engines backfired. But in 1912 General Motors introduced the electric starter, and over the following few years steam power was gradually phased out.</p>
                                 <h3>C</h3>
-                                <p>Today, elms still exist in the southern English countryside but mostly only in low hedgerows between fields. ‘We have millions of small elms in hedgerows but they get targeted by the beetle as soon as they reach a certain size,’ says Karen Russell, co-author of the report Where we are with elm. Once the trunk of the elm reaches 10-15 centimetres or so in diameter, it becomes a perfect size for beetles to lay eggs and for the fungus to take hold. Yet mature specimens have been identified, in counties such as Cambridgeshire, that are hundreds of years old, and have mysteriously escaped the epidemic.</p>
-                                <p>The key, Russell says, is to identify and study those trees that have survived and work out why they stood tall when millions of others succumbed. Nevertheless, opportunities are limited as the number of these mature survivors is relatively small. ‘What are the reasons for their survival?’ asks Russell. ‘Avoidance, tolerance, resistance? We don’t know where the balance lies between the three. I don’t see how it can be entirely down to luck.’</p>
+                                <p>Even as the market was declining, four brothers made one last effort to rekindle the technology. Between 1906 and 1909, while still attending high school, Abner Doble and his three brothers built their first steam car in their parents’ basement. It comprised parts taken from a wrecked early steam car but reconfigured to drive an engine of their own design. Though it did not run well, the Doble brothers went on to build a second and third prototype in the following years. Though the Doble boys’ third prototype, nicknamed the Model B, still lacked the convenience of an internal combustion engine, it drew the attention of automobile trade magazines due to its numerous improvements over previous steam cars. The Model B proved to be superior to gasoline automobiles in many ways. Its high-pressure steam drove the engine pistons in virtual silence, in contrast to clattering gas engines which emitted the aroma of burned hydrocarbons. Perhaps most impressively, the Model B was amazingly swift. It could accelerate from zero to sixty miles per hour in just fifteen seconds, a feat described as ‘remarkable acceleration’ by Automobile magazine in 1914.</p>
                                 <h3>D</h3>
-                                <p>For centuries, elm ran a close second to oak as the hardwood tree of choice in Britain and was in many instances the most prominent tree in the landscape. Not only was elm common in European forests, it became a key component of birch, ash and hazel woodlands. The use of elm is thought to go back to the Bronze Age, when it was widely used for tools. Elm was also the preferred material for shields and early swords. In the 18th century, it was planted more widely and its wood was used for items such as storage crates and flooring. It was also suitable for items that experienced high levels of impact and was used to build the keel of the l9th-century sailing ship Cutty Sark as well as mining equipment.</p>
+                                <p>The following year Abner Doble drove the Model B from Massachusetts to Detroit in order to seek investment in his automobile design, which he used to open the General Engineering Company. He and his brothers immediately began working on the Model C, which was intended to expand upon the innovations of the Model B. The brothers added features such as a key-based ignition in the cabin, eliminating the need for the operator to manually ignite the boiler. With these enhancements, the Dobles’ new car company promised a steam vehicle which would provide all of the convenience of a gasoline car, but with much greater speed, much simpler driving controls, and a virtually silent powerplant. By the following April, the General Engineering Company had received 5,390 deposits for Doble Detroits, which were scheduled for delivery in early 1918.</p>
                                 <h3>E</h3>
-                                <p>Given how ingrained elm is in British culture, it’s unsurprising the tree has many advocates. Amongst them is Peter Bourne of the National Elm Collection in Brighton. ‘I saw Dutch elm disease unfold as a small boy,’ he says. ‘The elm seemed to be part of rural England, but I remember watching trees just lose their leaves and that really stayed with me.’ Today, the city of Brighton’s elms total about 17,000. Local factors appear to have contributed to their survival. Strong winds from the sea make it difficult for the determined elm bark beetle to attack this coastal city’s elm population. However, the situation is precarious. ‘The beetles can just march in if we’re not careful, as the threat is right on our doorstep,’ says Bourne.</p>
+                                <p>Later that year Abner Doble delivered unhappy news to those eagerly awaiting the delivery of their modem new cars. Those buyers who received the handful of completed cars complained that the vehicles were sluggish and erratic, sometimes going in reverse when they should go forward. The new engine design, though innovative, was still plagued with serious glitches.</p>
                                 <h3>F</h3>
-                                <p>Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease. This means a widespread reintroduction would involve existing or new hybrid strains derived from resistant, generally non-native elm species. A new generation of seedlings have been bred and tested to see if they can withstand the fungus by cutting a small slit on the bark and in ecting a tiny amount of the pathogen. ‘The effects are very quick,’ says Russell. ‘You return in four to six weeks and trees that are resistant show no symptoms, whereas those that are susceptible show leaf loss and may even have died completely.’</p>
+                                <p>The brothers made one final attempt to produce a viable steam automobile. In early 1924, the Doble brothers shipped a Model E to New York City to be road-tested by the Automobile Club of America. After sitting overnight in freezing temperatures, the car was pushed out into the road and left to sit for over an hour in the frosty morning air. At the turn of the key, the boiler lit and reached its operating pressure inside of forty seconds. As they drove the test vehicle further, they found that its evenly distributed weight lent it surprisingly good handling, even though it was so heavy. As the new Doble steamer was further developed and tested, its maximum speed was pushed to over a hundred miles per hour, and it achieved about fifteen miles per gallon of kerosene with negligible emissions.</p>
                                 <h3>G</h3>
-                                <p>All of this raises questions of social acceptance, acknowledges Russell. ‘If we’re putting elm back into the landscape, a small element of it is not native – are we bothered about that?’ For her, the environmental case for reintroducing elm is strong. ‘They will host wildlife, which is a good thing.’ Others are more wary. ‘On the face of it, it seems like a good idea,’ says Elliot. The problem, he suggests, is that, ‘You’re replacing a native species with a horticultural analogue. You’re effectively cloning.’ There’s also the risk of introducing new diseases. Rather than plant new elms, the Woodland Trust emphasises providing space to those elms that have survived independently. ‘Sometimes the best thing you can do is just give nature time to recover over time, you might get resistance,’ says Elliot.</p>
-                                <p>*horticultural analogue: a cultivated plant species that is genetically similar to an existing species.</p>
+                                <p>Sadly, the Dobles’ brilliant steam car never was a financial success. Priced at around $18,000 in 1924, it was popular only among the very wealthy. Plus, it is said that no two Model Es were quite the same, because Abner Doble tinkered endlessly with the design. By the time the company folded in 1931, fewer than fifty of the amazing Model E steam cars had been produced. For his whole career, until his death in 1961, Abner Doble remained adamant that steam-powered automobiles were at least equal to gasoline cars, if not superior. Given the evidence, he may have been right. Many of the Model E Dobles which have survived are still in good working condition, some having been driven over half a million miles with only normal maintenance. Astonishingly, an unmodified Doble Model E runs clean enough to pass the emissions laws in California today, and they are pretty strict. It is true that the technology poses some difficult problems, but you cannot help but wonder how efficient a steam car might be with the benefit of modem materials and computers. Under the current pressure to improve automotive performance and reduce emissions, it is not unthinkable that the steam car may rise again.</p>
                             </div>
                         </article>
 
@@ -1856,30 +1861,41 @@
 
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body">
-                                {{-- matching_information --}}
+                                {{-- mh --}}
                                 <fieldset class="q-item">
-                                    <p class="lead"><b>Questions 14-18</b></p>
-                                    <p class="lead">Reading Passage has seven paragraphs, <b>A–G</b>.</p>
-                                    <p>Which section contains the following information?</p>
-                                    <p class="lead">Write the correct letter, <b>A-G</b>, in boxes on your answer sheet.</p>
-                                    <p><b>NB</b> You may use any letter more than once.</p>
+                                    <h3>Question 14-20</h3>
+                                    <p class="lead">The Reading Passage has seven paragraphs, <b>A-G</b>.</p>
+                                    <p><i>Choose the correct heading for each paragraph from the list of headings below.</i></p>
+                                    <p>Write the correct number, <b>i-viii</b>, in boxes on your answer sheet.</p>
+                                    <p><b>List of Headings</b></p>
+                                    <ul class="legend">
+                                        <li><strong>i</strong> A period in cold conditions before the technology is assessed</li>
+                                        <li><strong>ii</strong> Marketing issues lead to failure</li>
+                                        <li><strong>iii</strong> Good and bad aspects of steam technology are passed on</li>
+                                        <li><strong>iv</strong> A possible solution to the issues of today</li>
+                                        <li><strong>v</strong> Further improvements lead to commercial orders</li>
+                                        <li><strong>vi</strong> Positive publicity at last for this quiet, clean, fast vehicle</li>
+                                        <li><strong>vii</strong> A disappointing outcome for customers</li>
+                                        <li><strong>viii</strong> A better option than the steam car arises</li>
+                                    </ul>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="14">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">14</span>
                                         <span style="flex: 1;">
-                                            Reference to the research problems that arise from there being only a few surviving large elms
+                                            Paragraph <b>A</b>
                                             <span class="q-question">
-                                                <select name="matching_information-xQKeqKYrkqfdgotg-1" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-1" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1890,17 +1906,18 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">15</span>
                                         <span style="flex: 1;">
-                                            Details of a difference of opinion about the value of reintroducing elms to Britain
+                                            Paragraph <b>B</b>
                                             <span class="q-question">
-                                                <select name="matching_information-xQKeqKYrkqfdgotg-2" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-2" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1911,17 +1928,18 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">16</span>
                                         <span style="flex: 1;">
-                                            Reference to how Dutch elm disease was brought into Britain
+                                            Paragraph <b>C</b>
                                             <span class="q-question">
-                                                <select name="matching_information-xQKeqKYrkqfdgotg-3" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-3" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1932,17 +1950,18 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">17</span>
                                         <span style="flex: 1;">
-                                            A description of the conditions that have enabled a location in Britain to escape Dutch elm disease
+                                            Paragraph <b>D</b>
                                             <span class="q-question">
-                                                <select name="matching_information-xQKeqKYrkqfdgotg-4" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-4" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -1953,48 +1972,40 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">18</span>
                                         <span style="flex: 1;">
-                                            Reference to the stage at which young elms become vulnerable to Dutch elm disease
+                                            Paragraph <b>E</b>
                                             <span class="q-question">
-                                                <select name="matching_information-xQKeqKYrkqfdgotg-5" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-5" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
-                                {{-- matching_features --}}
-                                <fieldset class="q-item">
-                                    <h3>Questions 19-23</h3>
-                                    <p class="lead">Look at the following statements and the list of people below.</p>
-                                    <p>Match each statement with the correct person, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.</p>
-                                    <p><b>NB</b>   You may use any letter more than once.</p>
-                                    <b>List of People</b>
-                                    <ul class="legend">
-                                        <li><strong>A</strong> Matt Elliot</li>
-                                        <li><strong>B</strong> Karen Russell</li>
-                                        <li><strong>C</strong> Peter Bourne</li>
-                                    </ul>
-                                </fieldset>
-
                                 <fieldset class="q-item" data-q="19">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">19</span>
                                         <span style="flex: 1;">
-                                            If a tree gets infected with Dutch elm disease, the damage rapidly becomes visible 
+                                            Paragraph <b>G</b>
                                             <span class="q-question">
-                                                <select name="matching_features-xQKeqKYrkqfdgotg-1" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-6" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
@@ -2005,102 +2016,157 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">20</span>
                                         <span style="flex: 1;">
-                                            It may be better to wait and see if the mature elms that have survived continue to flourish 
+                                            Paragraph <b>H</b>
                                             <span class="q-question">
-                                                <select name="matching_features-xQKeqKYrkqfdgotg-2" class="q-dropdown">
+                                                <select name="mh-8uQvKzYbHuROu9RJ-7" class="q-dropdown">
                                                     <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
+                                                    <option value="i">i</option>
+                                                    <option value="ii">ii</option>
+                                                    <option value="iii">iii</option>
+                                                    <option value="iv">iv</option>
+                                                    <option value="v">v</option>
+                                                    <option value="vi">vi</option>
+                                                    <option value="vii">vii</option>
+                                                    <option value="viii">viii</option>
                                                 </select>
                                             </span>
                                         </span>
                                     </legend>
                                 </fieldset>
 
+                                {{-- oc --}}
+                                <fieldset class="q-item">
+                                    <h3>Question 21-23</h3>
+                                    <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
+                                        <b>D</b>.
+                                    </p>
+                                    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
+                                </fieldset>
                                 <fieldset class="q-item" data-q="21">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <legend class="q-text">
                                         <span class="q-number">21</span>
-                                        <span style="flex: 1;">
-                                            There must be an explanation for the survival of some mature elms
-                                            <span class="q-question">
-                                                <select name="matching_features-xQKeqKYrkqfdgotg-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                </select>
-                                            </span>
-                                        </span>
+                                        What point does the writer make about the steam car in Paragraph B?
                                     </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 21 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-1" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">Its success was short-lived.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-1" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">Not enough cars were made.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-1" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">Car companies found them hard to sell.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-1" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">People found them hard to drive.</span>
+                                        </label>
+                                    </div>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="22">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <legend class="q-text">
                                         <span class="q-number">22</span>
-                                        <span style="flex: 1;">
-                                            We need to be aware that insects carrying Dutch elm disease are not very far away 
-                                            <span class="q-question">
-                                                <select name="matching_features-xQKeqKYrkqfdgotg-4" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                </select>
-                                            </span>
-                                        </span>
+                                        When building their first steam car, the Doble brothers
                                     </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 22 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-2" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">constructed all the parts themselves.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-2" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">made written notes at each stage of the construction.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-2" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">needed several attempts to achieve a competitive model.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-2" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">sought the advice of experienced people in the car industry.</span>
+                                        </label>
+                                    </div>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-q="23">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                    <legend class="q-text">
                                         <span class="q-number">23</span>
-                                        <span style="flex: 1;">
-                                            You understand the effect Dutch elm disease has had when you see evidence of how prominent the tree once was
-                                            <span class="q-question">
-                                                <select name="matching_features-xQKeqKYrkqfdgotg-5" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                </select>
-                                            </span>
-                                        </span>
+                                        In order to produce the Model C, the Doble brothers
                                     </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 23 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-3" value="A" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">moved production to a different city.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-3" value="B" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">raised financial capital.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-3" value="C" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">employed an additional worker.</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-3" value="D" />
+                                            <span class="opt-code">D</span>
+                                            <span class="opt-label">abandoned their earlier designs.</span>
+                                        </label>
+                                    </div>
                                 </fieldset>
 
                                 {{-- summary_completion --}}
                                 <fieldset class="q-item">
                                     <h3>Questions 24-26</h3>
                                     <p class="lead">Complete the summary below.</p>
-                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p>Choose <b>ONE WORD AND/OR A NUMBER</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
 
-                                    <h3>Uses of a Popular Tree</h3>
+                                    <h3>The Model E</h3>
 
                                     <p>
                                         <div>
-                                            For hundreds of years, the only tree that was more popular in Britain than elm was
+                                            The Model E was road-tested in 1924 by the Automobile Club of America. They found it easy to drive, despite its weight, and it impressed the spectators. A later version of the Model E raised its
                                             <span class="q-number-box">24</span>
                                             <span style="flex: 1;">
                                                 <span class="q-question">
-                                                    <input type="text" name="summary_completion-xQKeqKYrkqfdgotg-1" class="q-text" placeholder="">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-5" class="q-text" placeholder="">
                                                 </span>
                                             </span>
-                                            . Starting in the Bronze Age, many tools were made from elm, and people also used it to make weapons. In the 18th century, it was grown to provide wood for boxes and
+                                            , while keeping its emissions extremely low.
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div>
+                                            The steam car was too expensive for many people and its design was constantly being altered. Under
                                             <span class="q-number-box">25</span>
                                             <span style="flex: 1;">
                                                 <span class="q-question">
-                                                    <input type="text" name="summary_completion-xQKeqKYrkqfdgotg-2" class="q-text" placeholder="">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-6" class="q-text" placeholder="">
                                                 </span>
                                             </span>
-                                            . Due to its strength, elm was often used for mining equipment, and the Cutty Sark’s
+                                            cars were produced before the company went out of business. However, even today, there are Model Es on the road in the US. They are straightforward to maintain, and they satisfy California’s
                                             <span class="q-number-box">26</span>
                                             <span style="flex: 1;">
                                                 <span class="q-question">
-                                                    <input type="text" name="summary_completion-xQKeqKYrkqfdgotg-3" class="q-text" placeholder="">
+                                                    <input type="text" name="summary_completion-8uQvKzYbHuROu9RJ-7" class="q-text" placeholder="">
                                                 </span>
                                             </span>
-                                            was also constructed from elm.
+                                            emissions laws. Perhaps today’s technology and materials would help us revive the steam car.
                                         </div>
                                     </p>
                                 </fieldset>
@@ -2114,20 +2180,19 @@
                 <div class="reading-section highlighted-content" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">How Stress Affects Our Judgement</h3>
+                            <h3 class="passage-title">The case for mixed-ability classes</h3>
                             <div class="passage-body">
-                                <p>Some of the most important decisions of our lives occur while we’re feeling stressed and anxious. From medical decisions to financial and professional ones, we are all sometimes required to weigh up information under stressful conditions. But do we become better or worse at processing and using information under such circumstances?</p>
-                                <p>My colleague and I, both neuroscientists, wanted to investigate how the mind operates under stress, so we visited some local fire stations. Firefighters’ workdays vary quite a bit. Some are pretty relaxed, they’ll spend their time washing the truck, cleaning equipment, cooking meals and reading. Other days can be hectic, with numerous life-threatening incidents to attend to, they’ll enter burning homes to rescue trapped residents, and assist with medical emergencies. These ups and downs presented the perfect setting for an experiment on how people’s ability to use information changes when they feel under pressure.</p>
-                                <p>We found that perceived threat acted as a trigger for a stress reaction that made the task of processing information easier for the firefighters – but only as long as it conveyed bad news.</p>
-                                <p>This is how we arrived at these results. We asked the firefighters to estimate their likelihood of experiencing 40 different adverse events in their life, such as being involved in an accident or becoming a victim of card fraud. We then gave them either good news (that their likelihood of experiencing these events was lower than they’d thought) or bad news (that it was higher) and asked them to provide new estimates.</p>
-                                <p>People are normally quite optimistic -they will ignore bad news and embrace the good. This is what happened when the firefighters were relaxed, but when they were under stress, a different pattern emerged. Under these conditions, they became hyper-vigilant to bad news, even when it had nothing to do with their job (such as learning that the likelihood of card fraud was higher than they’d thought), and altered their beliefs in response. In contrast, stress didn’t change how they responded to good news (such as learning that the likelihood of card fraud was lower than they’d thought).</p>
-                                <p>Back in our lab, we observed the same pattern in students who were told they had to give a surprise public speech, which would be judged by a panel, recorded and posted online. Sure enough, their cortisol levels spiked, their heart rates went up and they suddenly became better at processing unrelated, yet alarming, information about rates of disease and violence.</p>
-                                <p>When we experience stressful events, a physiological change is triggered that causes us to take in warnings and focus on what might go wrong. Brain imaging reveals that this ‘switch’ is related to a sudden boost in a neural signal important for learning, specifically in response to unexpected warning signs, such as faces expressing fear.</p>
-                                <p>Such neural engineering could have helped prehistoric humans to survive. When our ancestors found themselves surrounded by hungry animals, they would have benefited from an increased ability to team about hazards. In a safe environment, however, it would have been wasteful to be on high alert constantly. So, a neural switch that automatically increases or decreases our ability to process warnings in response to changes in our environment could have been useful. In fact, people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages around them.</p>
-                                <p>It is also important to realise that stress travels rapidly from one person to the next. If a co-worker is stressed, we are more likely to tense up and feel stressed ourselves. We don’t even need to be in the same room with someone for their emotions to influence our behaviour. Studies show that if we observe positive feeds on social media, such as images of a pink sunset, we are more likely to post uplifting messages ourselves. If we observe negative posts, such as complaints about a long queue at the coffee shop, we will in turn create more negative posts.</p>
-                                <p>In some ways, many of us now live as if we are in danger, constantly ready to tackle demanding emails and text messages, and respond to news alerts and comments on social media. Repeatedly checking your phone, according to a survey conducted by the American Psychological Association, is related to stress. In other words, a pre-programmed physiological reaction, which evolution has equipped us with to help us avoid famished predators, is now being triggered by an online post. Social media posting, according to one study, raises your pulse, makes you sweat, and enlarges your pupils more than most daily activities.</p>
-                                <p>The fact that stress increases the likelihood that we will focus more on alarming messages, together with the fact that it spreads extremely rapidly, can create collective fear that is not always justified. After a stressful public event, such as a natural disaster or major financial crash, there is often a wave of alarming information in traditional and social media, which individuals become very aware of. But that has the effect of exaggerating existing danger. And so, a reliable pattern emerges – stress is triggered, spreading from one person to the next, which temporarily enhances the likelihood that people will take in negative reports, which increases stress further. As a result, trips are cancelled, even if the disaster took place across the globe, stocks are sold, even when holding on is the best thing to do.</p>
-                                <p>The good news, however, is that positive emotions, such as hope, are contagious too, and are powerful in inducing people to act to find solutions. Being aware of the close relationship between people’s emotional state and how they process information can help us frame our messages more effectively and become conscientious agents of change.</p>
+                                <p>Picture this scene. It’s an English literature lesson in a UK school, and the teacher has just read an extract from Shakespeare’s Romeo and Juliet with a class of 15-year-olds. He’s given some of the students copies of No Fear Shakespeare, a kid-friendly translation of the original. For three students, even these literacy demands are beyond them. Another girl simply can’t focus and he gives her pens and paper to draw with. The teacher can ask the No Fear group to identify the key characters and maybe provide a tentative plot summary. He can ask most of the class about character development, and five of them might be able to support their statements with textual evidence. Now two curious students are wondering whether Shakespeare advocates living a life of moderation or one of passionate engagement.</p>
+                                <p>As a teacher myself, I’d think my lesson would be going rather well if the discussion went as described above. But wouldn’t this kind of class work better if there weren’t such a huge gap between the top and the bottom? If we put all the kids who needed literacy support into one class, and all the students who want to discuss the virtue of moderation into another?</p>
+                                <p>The practice of ‘streaming’, or ‘tracking’, involves separating students into classes depending on their diagnosed levels of attainment. At a macro level, it requires the establishment of academically selective schools for the brightest students, and comprehensive schools for the rest. Within schools, it means selecting students into a ‘stream’ of general ability, or ‘sets’ of subject-specific ability. The practice is intuitively appealing to almost every stakeholder.</p>
+                                <p>I have heard the mixed-ability model attacked by way of analogy: a group hike. The fittest in the group take the lead and set a brisk pace, only to have to stop and wait every 20 minutes. This is frustrating, and their enthusiasm wanes. Meanwhile, the slowest ones are not only embarrassed but physically struggling to keep up. What’s worse, they never get a long enough break. They honestly just want to quit. Hiking, they feel, is not for them.</p>
+                                <p>Mixed-ability classes bore students, frustrate parents and bum out teachers. The brightest ones will never summit Mount Qomolangma, and the stragglers won’t enjoy the lovely stroll in the park they are perhaps more suited to. Individuals suffer at the demands of the collective, mediocrity prevails. So: is learning like hiking?</p>
+                                <p>The current pedagogical paradigm is arguably that of constructivism, which emerged out of the work of psychologist Lev Vygotsky. In the 1930s, Vygotsky emphasised the importance of targeting a student’s specific ‘zone of proximal development’ (ZPD). This is the gap between what they can achieve only with support – teachers, textbooks, worked examples, parents and so on – and what they can achieve independently. The purpose of teaching is to provide and then gradually remove this ‘scaffolding’ until they are autonomous. If we accept this model, it follows that streaming students with similar ZPDs would be an efficient and effective solution. And that forcing everyone on the same hike – regardless of aptitude – would be madness.</p>
+                                <p>Despite all this, there is limited empirical evidence to suggest that streaming results in better outcomes for students. Professor John Hattie, director of the Melbourne Education Research Institute, notes that ‘tracking has minimal effects on learning outcomes’. What is more, streaming appears to significantly – and negatively – affect those students assigned to the lowest sets. These students tend to have much higher representation of low socioeconomic class. Less significant is the small benefit for those lucky clever students in the higher sets. The overall result is that the smart stay smart and the dumb get dumber, further entrenching the social divide.</p>
+                                <p>In the latest update of Hattie’s influential meta-analysis of factors influencing student achievement, one of the most significant factors is the teachers’ estimate of achievement. Streaming students by diagnosed achievement automatically limits what the teacher feels the student is capable of. Meanwhile, in a mixed environment, teachers’ estimates need to be more diverse and flexible.</p>
+                                <p>While streaming might seem to help teachers effectively target a student’s ZPD, it can underestimate the importance of peer-to-peer learning. A crucial aspect of constructivist theory is the role of the MKO – ‘more knowledgeable other’ – in knowledge construction. While teachers are traditionally the MKOs in classrooms, the value of knowledgeable student peers must not go unrecognised either.</p>
+                                <p>I find it amazing to watch students get over an idea to their peers in ways that I would never think of. They operate with different language tools and different social tools from teachers and, having just learnt it themselves, they possess similar cognitive structures to their struggling classmates. There is also something exciting about passing on skills and knowledge that you yourself have just mastered – a certain pride and zeal, a certain freshness to the interaction between ‘teacher’ and ‘learner’ that is often lost by the expert for whom the steps are obvious and the joy of discovery forgotten.</p>
+                                <p>Having a variety of different abilities in a collaborative learning environment provides valuable resources for helping students meet their learning needs, not to mention improving their communication and social skills. And today, more than ever, we need the many to flourish – not suffer at the expense of a few bright stars. Once a year, I go on a hike with my class, a mixed bunch of students. It is challenging. The fittest students realise they need to encourage the reluctant. There are lookouts who report back, and extra items to carry for others. We make it – together.</p>
                             </div>
                         </article>
 
@@ -2146,28 +2211,28 @@
                                 <fieldset class="q-item" data-q="27">
                                     <legend class="q-text">
                                         <span class="q-number">27</span>
-                                        In the first paragraph, the writer introduces the topic of the text by
+                                        The writer describes the Romeo and Juliet lesson in order to demonstrate
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 27 options">
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="A" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-4" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">defining some commonly used terms.</span>
+                                            <span class="opt-label">how few students are interested in literature.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="B" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-4" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">questioning a widely held assumption.</span>
+                                            <span class="opt-label">how a teacher handles a range of learning needs.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="C" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-4" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">mentioning a challenge faced by everyone.</span>
+                                            <span class="opt-label">how unsuitable Shakespeare is for most teenagers.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-1" value="D" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-4" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">specifying a situation which makes us most anxious.</span>
+                                            <span class="opt-label">how weaker students can disrupt their classmates’ learning.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2175,28 +2240,28 @@
                                 <fieldset class="q-item" data-q="28">
                                     <legend class="q-text">
                                         <span class="q-number">28</span>
-                                        What point does the writer make about firefighters in the second paragraph?
+                                        What does the writer say about streaming in the third paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 28 options">
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="A" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-5" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">The regular changes of stress levels in their working lives make them ideal study subjects.</span>
+                                            <span class="opt-label">It has a very broad appeal.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="B" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-5" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">The strategies they use to handle stress are of particular interest to researchers.</span>
+                                            <span class="opt-label">It favours cleverer students.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="C" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-5" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">The stressful nature of their job is typical of many public service professions.</span>
+                                            <span class="opt-label">It is relatively simple to implement.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-2" value="D" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-5" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">Their personalities make them especially well-suited to working under stress.</span>
+                                            <span class="opt-label">It works better in some schools than others.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2204,28 +2269,28 @@
                                 <fieldset class="q-item" data-q="29">
                                     <legend class="q-text">
                                         <span class="q-number">29</span>
-                                        What is the writer doing in the fourth paragraph?
+                                        What idea is suggested by the reference to Mount Qomolangma in the fifth paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 29 options">
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="A" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-6" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">Explaining their findings</span>
+                                            <span class="opt-label">students following unsuitable paths</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="B" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-6" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">Justifying their approach</span>
+                                            <span class="opt-label">students attempting interesting tasks</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="C" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-6" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">Setting out their objectives</span>
+                                            <span class="opt-label">students not achieving their full potential</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-3" value="D" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-6" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">Describing their methodology</span>
+                                            <span class="opt-label">students not being aware of their limitations</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2233,150 +2298,156 @@
                                 <fieldset class="q-item" data-q="30">
                                     <legend class="q-text">
                                         <span class="q-number">30</span>
-                                        In the seventh paragraph, the writer describes a mechanism in the brain which
+                                        What does the word ‘scaffolding’ in the sixth paragraph refer to?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 30 options">
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="A" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-7" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">Enables people to respond more quickly to stressful situations.</span>
+                                            <span class="opt-label">the factors which prevent a student from learning effectively</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="B" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-7" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">Results in increased ability to control our levels of anxiety.</span>
+                                            <span class="opt-label">the environment where most of a student’s learning takes place</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="C" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-7" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">Produces heightened sensitivity to indications of external threats.</span>
+                                            <span class="opt-label">the assistance given to a student in their initial stages of learning</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="oc-xQKeqKYrkqfdgotg-4" value="D" />
+                                            <input type="radio" name="oc-8uQvKzYbHuROu9RJ-7" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">Is activated when there is a need to communicate a sense of danger.</span>
+                                            <span class="opt-label">the setting of appropriate learning targets for a student’s aptitude</span>
                                         </label>
                                     </div>
                                 </fieldset>
 
-                                {{-- mse --}}
+                                {{-- summary_completion --}}
                                 <fieldset class="q-item">
-                                    <h3>Question 31-35</h3>
-                                    <p class="lead">Complete each sentence with the correct ending, A-G, below.</p>
-                                    <ul class="legend">
-                                        <li><strong>A</strong> made them feel optimistic</li>
-                                        <li><strong>B</strong> took relatively little notice of bad news.</li>
-                                        <li><strong>C</strong> responded to negative and positive information in the same way.</li>
-                                        <li><strong>D</strong> were feeling under stress.</li>
-                                        <li><strong>E</strong> put them in a stressful situation.</li>
-                                        <li><strong>F</strong> behaved in a similar manner, regardless of the circumstances.</li>
-                                        <li><strong>G</strong> thought it more likely that they would experience something bad.</li>
-                                    </ul>
-                                </fieldset>
+                                    <h3>Questions 31-35</h3>
+                                    <p class="lead">Complete the summary using the list of words, <b>A-L</b>, below.</p>
+                                    <p><i>Write the correct letter, <b>A-L</b>, in boxes on your answer sheet.</i></p>
+                                    <table cellpadding="10">
+                                        <tr>
+                                            <td><b>A</b> wrong classes</td>
+                                            <td><b>B</b> lower expectations</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>C</b> average learners</td>
+                                            <td><b>D</b> bottom sets</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>E</b> brightest pupils</td>
+                                            <td><b>F</b> disadvantaged backgrounds</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>G</b> weaker students</td>
+                                            <td><b>H</b> higher achievements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>I</b> positive impressions</td>
+                                        </tr>
+                                    </table>
 
-                                <fieldset class="q-item" data-q="31">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">31</span>
-                                        <span style="flex: 1;">
-                                            At times when they were relaxed, the firefighters usually
-                                            <span class="q-question">
-                                                <select name="mse-xQKeqKYrkqfdgotg-1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
+                                    <h3>Is streaming effective?</h3>
 
-                                <fieldset class="q-item" data-q="32">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">32</span>
-                                        <span style="flex: 1;">
-                                            The researchers noted that when the firefighters were stressed, they
-                                            <span class="q-question">
-                                                <select name="mse-xQKeqKYrkqfdgotg-2" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                </select>
+                                    <p>
+                                        <div>
+                                            According to Professor John Hattie of the Melbourne Education Research Institute there is very little indication that streaming leads to
+                                            <span class="q-number-box">32</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="summary_completion-8uQvKzYbHuROu9RJ-8" data-q="31" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                    </select>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="33">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">33</span>
-                                        <span style="flex: 1;">
-                                            When the firefighters were told good news, they always
-                                            <span class="q-question">
-                                                <select name="mse-xQKeqKYrkqfdgotg-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                </select>
+                                            . He points out that, in schools which use streaming, the most significant impact is on those students placed in the
+                                            <span class="q-number-box">32</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="summary_completion-8uQvKzYbHuROu9RJ-9" data-q="32" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                    </select>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="34">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">34</span>
-                                        <span style="flex: 1;">
-                                            The students’ cortisol levels and heart rates were affected when the researchers
-                                            <span class="q-question">
-                                                <select name="mse-xQKeqKYrkqfdgotg-4" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                </select>
+                                            , especially where a large proportion of them have
+                                            <span class="q-number-box">33</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="summary_completion-8uQvKzYbHuROu9RJ-10" data-q="33" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                    </select>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </legend>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="35">
-                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                        <span class="q-number">35</span>
-                                        <span style="flex: 1;">
-                                            In both experiments, negative information was processed better when the subjects
-                                            <span class="q-question">
-                                                <select name="mse-xQKeqKYrkqfdgotg-5" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                    <option value="G">G</option>
-                                                </select>
+                                            . Meanwhile, for the 
+                                            <span class="q-number-box">34</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="summary_completion-8uQvKzYbHuROu9RJ-11" data-q="34" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                    </select>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </legend>
+                                            , there appears to be only minimal advantage. A further issue is that teachers tend to have 
+                                            <span class="q-number-box">35</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <select name="summary_completion-8uQvKzYbHuROu9RJ-12" data-q="35" class="q-dropdown">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                            of students in streamed groups.
+                                        </div>
+                                    </p>
                                 </fieldset>
 
                                 {{-- ynng --}}
@@ -2397,21 +2468,21 @@
                                 <fieldset class="q-item" data-q="36">
                                     <legend class="q-text">
                                         <span class="q-number">36</span>
-                                        The tone of the content we post on social media tends to reflect the nature of the posts in our feeds.
+                                        The Vygotsky model of education supports the concept of a mixed-ability class.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 36 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-1" value="YES" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-1" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-1" value="NO" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-1" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-1" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2421,21 +2492,21 @@
                                 <fieldset class="q-item" data-q="37">
                                     <legend class="q-text">
                                         <span class="q-number">37</span>
-                                        Phones have a greater impact on our stress levels than other electronic media devices.
+                                        Some teachers are uncertain about allowing students to take on MKO roles in the classroom.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 37 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-2" value="YES" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-2" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-2" value="NO" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-2" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-2" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2445,21 +2516,21 @@
                                 <fieldset class="q-item" data-q="38">
                                     <legend class="q-text">
                                         <span class="q-number">38</span>
-                                        The more we read about a stressful public event on social media, the less able we are to take the information in.
+                                        It can be rewarding to teach knowledge which you have only recently acquired.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 38 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-3" value="YES" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-3" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-3" value="NO" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-3" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-3" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2469,21 +2540,21 @@
                                 <fieldset class="q-item" data-q="39">
                                     <legend class="q-text">
                                         <span class="q-number">39</span>
-                                        Stress created by social media posts can lead us to take unnecessary precautions.
+                                        The priority should be to ensure that the highest-achieving students attain their goals.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 39 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-4" value="YES" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-4" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-4" value="NO" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-4" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-4" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2493,21 +2564,21 @@
                                 <fieldset class="q-item" data-q="40">
                                     <legend class="q-text">
                                         <span class="q-number">40</span>
-                                        Our tendency to be affected by other people’s moods can be used in a positive way.
+                                        Taking part in collaborative outdoor activities with teachers and classmates can improve student outcomes in the classroom.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 40 options">
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-5" value="YES" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-5" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-5" value="NO" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-5" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="ynng-xQKeqKYrkqfdgotg-5" value="NOT GIVEN" />
+                                            <input type="radio" name="ynng-8uQvKzYbHuROu9RJ-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2766,7 +2837,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'JSRJ0oDlxC0yFMgt',
+                            set_id: '8uQvKzYbHuROu9RJ',
                             kategori: 'reading',
                             answers: results,
                             tipe_test: 'practice'
@@ -2930,7 +3001,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: 'JSRJ0oDlxC0yFMgt',
+                            set_id: '8uQvKzYbHuROu9RJ',
                             kategori: 'reading',
                             answers: results,
                             tipe_test: 'practice'

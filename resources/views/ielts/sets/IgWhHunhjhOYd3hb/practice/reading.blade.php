@@ -696,7 +696,6 @@
         }
 
         #panel-nc .q-number-box,
-        #panel-tc .q-number-box,
         #panel-summary_completion .q-number-box,
         #panel-summary_completion2 .q-number-box,
         #panel-summary_completion3 .q-number-box {
@@ -712,8 +711,9 @@
         }
 
         #panel-nc .q-text,
-        #panel-tc .q-text,
-        #panel-summary_completion .q-text {
+        #panel-summary_completion .q-text,
+        #panel-summary_completion2 .q-text,
+        #panel-summary_completion3 .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -722,12 +722,7 @@
             box-sizing: border-box;
         }
 
-        #panel-nc input,
-        #panel-tc input,
-        #panel-summary_completion input,
-        #panel-summary_completion2 input,
-        #panel-matching_information2 input,
-        #panel-sentence_completion input {
+        #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -1533,185 +1528,37 @@
 
 
     <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
-        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="nc">
-            <button class="x-tab is-active" role="tab" id="tab-nc" aria-controls="panel-nc"
-                aria-selected="true" data-id="nc">Note Completion</button>
-            <button class="x-tab" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="false"
-                data-id="tfng">True/False/Not Given</button>
-            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
-                data-id="one">One Choice</button>
-            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Yes/No/Not Given</button>
+        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="matching_information">
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab" role="tab" id="tab-nc" aria-controls="panel-nc" aria-selected="false"
+                data-id="nc">Note Completion</button>
+            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
+                data-id="matching_information">Matching Information</button>
+            <button class="x-tab" role="tab" id="tab-matching_features" aria-controls="panel-matching_features" aria-selected="false"
+                data-id="matching_features">Matching Features</button>
             <button class="x-tab" role="tab" id="tab-summary_completion" aria-controls="panel-summary_completion" aria-selected="false"
                 data-id="summary_completion">Summary Completion</button>
-            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
-                data-id="tfng2">True/False/Not Given 2</button>
+            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
+                data-id="one">One Choice</button>
             <button class="x-tab" role="tab" id="tab-summary_completion2" aria-controls="panel-summary_completion2" aria-selected="false"
                 data-id="summary_completion2">Summary Completion 2</button>
+            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
+                data-id="ynng">Yes/No/Not Given</button>
         </div>
 
         <div class="x-panels">
-            <div id="panel-nc" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-nc">
-                <div class="x-panel-inner">Content: Note Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <article class="passage" aria-label="Reading Passage" tabindex="0">
-                                <h3 class="passage-title">Stonehenge</h3>
-                                <div class="passage-body">
-                                    <p>For centuries, historians and archaeologists have puzzled over the many mysteries of Stonehenge, a prehistoric monument that took an estimated 1,500 years to erect. Located on Salisbury Plain in southern England, it is comprised of roughly 100 massive upright stones placed in a circular layout.</p>
-                                    <p>Archaeologists believe England’s most iconic prehistoric ruin was built in several stages with the earliest constructed 5,000 or more years ago. First, Neolithic* Britons used primitive tools, which may have been fashioned out of deer antlers, to dig a massive circular ditch and bank, or henge. Deep pits dating back to that era and located within the circle may have once held a ring of timber posts, according to some scholars.</p>
-                                    <p>Several hundred years later, it is thought, Stonehenge’s builders hoisted an estimated 80 bluestones, 43 of which remain today, into standing positions and placed them in either a horseshoe or circular formation. These stones have been traced all the way to the Preseli Hills in Wales, some 300 kilometres from Stonehenge. How, then, did prehistoric builders without sophisticated tools or engineering haul these boulders, which weigh up to four tons, over such a great distance?</p>
-                                    <p>According to one long-standing theory among archaeologists, Stonehenge’s builders fashioned sledges and rollers out of tree trunks to lug the bluestones from the Preseli Hills. They then transferred the boulders onto rafts and floated them first along the Welsh coast and then up the River Avon toward Salisbury Plain; alternatively, they may have towed each stone with a fleet of vessels. More recent archaeological hypotheses have them transporting the bluestones with supersized wicker baskets on a combination of ball bearings and long grooved planks, hauled by oxen.</p>
-                                    <p>As early as the 1970s, geologists have been adding their voices to the debate over how Stonehenge came into being. Challenging the classic image of industrious builders pushing, carting, rolling or hauling giant stones from faraway Wales, some scientists have suggested that it was glaciers, not humans, that carried the bluestones to Salisbury Plain. Most archaeologists have remained sceptical about this theory, however, wondering how the forces of nature could possibly have delivered the exact number of stones needed to complete the circle.</p>
-                                    <p>The third phase of construction took place around 2000 BCE. At this point, sandstone slabs – known as ‘sarsens’ – were arranged into an outer crescent or ring; some were assembled into the iconic three-pieced structures called trilithons that stand tall in the centre of Stonehenge. Some 50 of these stones are now visible on the site, which may once have contained many more. Radiocarbon dating has revealed that work continued at Stonehenge until roughly 1600 BCE, with the bluestones in particular being repositioned multiple times.</p>
-                                    <p>But who were the builders of Stonehenge? In the 17th century, archaeologist John Aubrey made the claim that Stonehenge was the work of druids, who had important religious, judicial and political roles in Celtic** society. This theory was widely popularized by the antiquarian William Stukeley, who had unearthed primitive graves at the site. Even today, people who identify as modern druids continue to gather at Stonehenge for the summer solstice. However, in the mid-20th century, radiocarbon dating demonstrated that Stonehenge stood more than 1,000 years before the Celts inhabited the region.</p>
-                                    <p>Many modern historians and archaeologists now agree that several distinct tribes of people contributed to Stonehenge, each undertaking a different phase of its construction. Bones, tools and other artefacts found on the site seem to support this hypothesis. The first stage was achieved by Neolithic agrarians who were likely to have been indigenous to the British Isles. Later, it is believed, groups with advanced tools and a more communal way of life left their mark on the site. Some believe that they were immigrants from the European continent, while others maintain that they were probably native Britons, descended from the original builders.</p>
-                                    <p>If the facts surrounding the architects and construction of Stonehenge remain shadowy at best, the purpose of the striking monument is even more of a mystery. While there is consensus among the majority of modern scholars that Stonehenge once served the function of burial ground, they have yet to determine what other purposes it had.</p>
-                                    <p>In the 1960s, the astronomer Gerald Hawkins suggested that the cluster of megalithic stones operated as a form of calendar, with different points corresponding to astrological phenomena such as solstices, equinoxes and eclipses occurring at different times of the year. While his theory has received a considerable amount of attention over the decades, critics maintain that Stonehenge’s builders probably lacked the knowledge necessary to predict such events or that England’s dense cloud cover would have obscured their view of the skies.</p>
-                                    <p>More recently, signs of illness and injury in the human remains unearthed at Stonehenge led a group of British archaeologists to speculate that it was considered a place of healing, perhaps because bluestones were thought to have curative powers.</p>
-                                    <hr>
-                                    <p>* Neolithic – The era, also known as the New Stone Age, which began around 12,000 years ago and ended around 3500 BCE</p>
-                                    <p>** Celtic – The Celts were people who lived in Britain and northwest Europe during the Iron Age from 600 BCE to 43 CE</p>
-                                </div>
-                            </article>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-nc">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-8</h3>
-                                    <p class="lead">Complete the notes below.</p>
-                                    <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
-                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
-                                </fieldset>
-
-                                <fieldset class="q-item">
-                                    <h3>Stonehenge</h3>
-                                    <p><b>Construction</b></p>
-
-                                    <p>Stage 1:</p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="1">
-                                                the ditch and henge were dug, possibly using tools made from
-                                                <span class="q-number-box">1</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-1" class="q-text" placeholder="">
-                                                diet
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="2">
-                                                <span class="q-number-box">2</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-2" class="q-text" placeholder="">
-                                                may have been arranged in deep pits inside the circle
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <p>Stage 2:</p>
-                                    <ul>
-                                        <li>bluestones from the Preseli Hills were placed in standing position</li>
-                                        <li>theories about the transportation of the bluestones:</li>
-                                        <ul>
-                                            <li>archaeological:</li>
-                                            <ul>
-                                                <li>
-                                                    <div class="q-list" data-q="3">
-                                                        builders used
-                                                        <span class="q-number-box">3</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-3" class="q-text" placeholder="">
-                                                        to make sledges and rollers
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="q-list" data-q="4">
-                                                        <span class="q-number-box">4</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-4" class="q-text" placeholder="">
-                                                        pulled them on giant baskets
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <li>geological:</li>
-                                            <ul>
-                                                <li>
-                                                    <div class="q-list" data-q="5">
-                                                        they were brought from Wales by
-                                                        <span class="q-number-box">5</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-5" class="q-text" placeholder="">
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </ul>
-                                    </ul>
-
-                                    <p>Stage 3:</p>
-                                    <ul>
-                                        <li>sandstone slabs were arranged into an outer crescent or ring</li>
-                                    </ul>
-
-                                    <p><b>Builders</b></p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="6">
-                                                a theory arose in the 17th century that its builders were Celtic
-                                                <span class="q-number-box">6</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-6" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <p><b>Purpose</b></p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="7">
-                                                many experts agree it has been used as a
-                                                <span class="q-number-box">7</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-7" class="q-text" placeholder="">
-                                                site
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="8">
-                                                in the 1960s, it was suggested that it worked as a kind of
-                                                <span class="q-number-box">8</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-8" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-nc">
-                                        Submit
-                                    </button>
-                                </div>
-
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-tfng" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng" hidden>
+            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">Content: True/False/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">The impact of climate change on butterflies in Britain</h3>
                             <div class="passage-body">
-                                <p>The third phase of construction took place around 2000 BCE. At this point, sandstone slabs – known as ‘sarsens’ – were arranged into an outer crescent or ring; some were assembled into the iconic three-pieced structures called trilithons that stand tall in the centre of Stonehenge. Some 50 of these stones are now visible on the site, which may once have contained many more. Radiocarbon dating has revealed that work continued at Stonehenge until roughly 1600 BCE, with the bluestones in particular being repositioned multiple times.</p>
-                                <p>But who were the builders of Stonehenge? In the 17th century, archaeologist John Aubrey made the claim that Stonehenge was the work of druids, who had important religious, judicial and political roles in Celtic** society. This theory was widely popularized by the antiquarian William Stukeley, who had unearthed primitive graves at the site. Even today, people who identify as modern druids continue to gather at Stonehenge for the summer solstice. However, in the mid-20th century, radiocarbon dating demonstrated that Stonehenge stood more than 1,000 years before the Celts inhabited the region.</p>
-                                <p>Many modern historians and archaeologists now agree that several distinct tribes of people contributed to Stonehenge, each undertaking a different phase of its construction. Bones, tools and other artefacts found on the site seem to support this hypothesis. The first stage was achieved by Neolithic agrarians who were likely to have been indigenous to the British Isles. Later, it is believed, groups with advanced tools and a more communal way of life left their mark on the site. Some believe that they were immigrants from the European continent, while others maintain that they were probably native Britons, descended from the original builders.</p>
-                                <p>If the facts surrounding the architects and construction of Stonehenge remain shadowy at best, the purpose of the striking monument is even more of a mystery. While there is consensus among the majority of modern scholars that Stonehenge once served the function of burial ground, they have yet to determine what other purposes it had.</p>
-                                <p>In the 1960s, the astronomer Gerald Hawkins suggested that the cluster of megalithic stones operated as a form of calendar, with different points corresponding to astrological phenomena such as solstices, equinoxes and eclipses occurring at different times of the year. While his theory has received a considerable amount of attention over the decades, critics maintain that Stonehenge’s builders probably lacked the knowledge necessary to predict such events or that England’s dense cloud cover would have obscured their view of the skies.</p>
-                                <p>More recently, signs of illness and injury in the human remains unearthed at Stonehenge led a group of British archaeologists to speculate that it was considered a place of healing, perhaps because bluestones were thought to have curative powers.</p>
-                                <hr>
-                                <p>* Neolithic – The era, also known as the New Stone Age, which began around 12,000 years ago and ended around 3500 BCE</p>
-                                <p>** Celtic – The Celts were people who lived in Britain and northwest Europe during the Iron Age from 600 BCE to 43 CE</p>
+                                <p>According to conservationists, populations of around two thirds of butterfly species have declined in Britain over the past 40 years. If this trend continues, it might have unpredictable knock-on effects for other species in the ecosystem. Butterfly eggs develop into caterpillars and these insects, which are the second stage in a new butterfly’s lifecycle, consume vast quantities of plant material, and in turn act as prey for birds as well as bats and other small mammals. Only by arming themselves with an understanding of why butterfly numbers are down can conservationists hope to halt or reverse the decline.</p>
+                                <p>Butterflies prefer outdoor conditions to be ‘just right’, which means neither too hot nor too cold. Under the conditions of climate change, the temperature at any given time in summer is generally getting warmer, leaving butterflies with the challenge of how to deal with this. One of the main ways in which species are ensuring conditions suit them is by changing the time of year at which they are active and reproduce. Scientists refer to the timing of such lifecycle events as ‘phenology’, so when an animal or plant starts to do something earlier in the year than it usually does, it is said to be ‘advancing its phenology’.</p>
+                                <p>These advances have been observed already in a wide range of butterflies – indeed, most species are advancing their phenology to some extent. In Britain, as the average spring temperature has increased by roughly 0.5°C over the past 20 years, species have advanced by between three days and a week on average, to keep in line with cooler temperatures. Is this a sign that butterflies are well equipped to cope with climate change, and readily adjust to new temperatures? Or are these populations under stress, being dragged along unwillingly by unnaturally fast changes? The answer is still unknown, but a new study is seeking to answer these questions.</p>
+                                <p>First, the researchers pulled together data from millions of records that had been submitted by butterfly enthusiasts-people who spend their free time observing the activities of different species. This provided information on 130 species of butterflies in Great Britain every year for a 20-year period. They then estimated the abundance and distribution of each species across this time, along with how far north in the country they had moved. The data also, crucially, allowed researchers to estimate subtle changes in what time of the year each species was changing into an adult butterfly.</p>
                             </div>
                         </article>
 
@@ -1720,7 +1567,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tfng">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-5</b></p>
+                                    <h3>Question 1-6</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -1735,21 +1582,21 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        During the third phase of construction, sandstone slabs were placed in both the outer areas and the middle of the Stonehenge site.
+                                        Forty years ago, there were fewer butterflies in Britain than at present.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="TRUE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="FALSE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1759,21 +1606,21 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        There is scientific proof that the bluestones stood in the same spot until approximately 1600 BCE.
+                                        Caterpillars are eaten by a number of different predators.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="TRUE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="FALSE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1783,21 +1630,21 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        John Aubrey’s claim about Stonehenge was supported by 20th-century findings.
+                                        ‘Phenology’ is a term used to describe a creature’s ability to alter the location of a lifecycle event.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="TRUE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="FALSE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1807,21 +1654,21 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        Objects discovered at Stonehenge seem to indicate that it was constructed by a number of different groups of people.
+                                        Some species of butterfly have a reduced lifespan due to spring temperature increases.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="TRUE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="FALSE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1831,21 +1678,45 @@
                                 <fieldset class="q-item" data-q="5">
                                     <legend class="q-text">
                                         <span class="q-number">5</span>
-                                        Criticism of Gerald Hawkins’ theory about Stonehenge has come mainly from other astronomers.
+                                        There is a clear reason for the adaptations that butterflies are making to climate change.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="TRUE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="FALSE" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="6">
+                                    <legend class="q-text">
+                                        <span class="q-number">6</span>
+                                        The data used in the study was taken from the work of amateur butterfly watchers.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-6" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-6" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-6" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1860,6 +1731,484 @@
                                         Submit
                                     </button>
                                 </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-nc" class="x-panel" role="tabpanel" aria-labelledby="tab-nc" hidden>
+                <div class="x-panel-inner">Content: Note Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">The impact of climate change on butterflies in Britain</h3>
+                            <div class="passage-body">
+                                <p>Among these species, researchers observed that those which have been advancing their phenology the most over the 20-year study period also had the most positive trends in abundance, distribution and northwards extent. For these species, such as Britain’s tiniest butterfly, the dainty Small Blue, whose colonies are up to a hundred strong, some develop into butterflies early in spring, allowing their summer generations to complete another reproductive cycle by autumn so that more population growth occurs.</p>
+                                <p>Other species, however, are less flexible and restricted to a single reproductive cycle per year. For these species, there was no evidence of any benefit to emerging earlier. Indeed, worryingly, it was found that the species in this group that specialize in very specific habitat types, often related to the caterpillar’s preferred diet, actually tended to be most at harm from advancing phenology. The beautiful High Brown Fritillary, often described as Britain’s most endangered butterfly, is in this group. It is found only in coppiced woodland and limestone pavement habitats. It is also a single-generation butterfly that has advanced its phenology. This suggests that climate change, while undoubtedly not the sole cause, might have played a part in the downfall of this species.</p>
+                                <p>All is not lost, however. Many of Britain’s single-generation species show the capacity, in continental Europe, to add a second generation in years that are sufficiently warm. Therefore, as the climate continues to warm, species like the Silver-studded Blue might be able to switch to multiple generations in the UK as well, and so begin to extract benefits from the additional warmth, potentially leading to population increases.</p>
+                                <p>More immediately, conservationists can arm themselves with all this knowledge to spot the warning signs of species that may be at risk. The White Admiral of southern England, a much sought-after butterfly, experienced a significant increase in numbers from the 1920s but has shown a considerable decline in the past 20 years. This may be because the caterpillar exists solely on a diet of a plant called honeysuckle. But it is also likely to be due to climate change.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-nc">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-7</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p>Write your answers in boxes on your answer sheet.</p>
+
+                                    <p>The Small Blue</p>
+                                    <p>
+                                        * lives in large
+                                        <span class="q-number-box">1</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        * first appears at the start of
+                                        <span class="q-number-box">2</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-2" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>* completes more than one reproductive cycle per year</p>
+
+                                    <p>The High Brown Fritillary</p>
+                                    <p>* has one reproductive cycle</p>
+                                    <p>
+                                        * is considered to be more
+                                        <span class="q-number-box">3</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-3" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        than other species
+                                    </p>
+                                    <p>
+                                        * its caterpillars occupy a limited range of
+                                        <span class="q-number-box">4</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-4" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+
+                                    <p>The Silver-studded Blue</p>
+                                    <p>
+                                        * is already able to reproduce twice a year in warm areas of
+                                        <span class="q-number-box">5</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-5" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+
+                                    <p>The White Admiral</p>
+                                    <p>
+                                        * is found in
+                                        <span class="q-number-box">6</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-6" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        areas of England
+                                    </p>
+                                    <p>
+                                        * both climate change and the
+                                        <span class="q-number-box">7</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-7" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        of the caterpillar are possible reasons for decline
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-nc">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-matching_information" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching Information</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">Deep-sea Mining</h3>
+                            <div class="passage-body">
+                                <p><i>Bacteria from the ocean floor can beat superbugs and cancer. But habitats are at risk from the hunger for marine minerals</i></p>
+                                <h3>C</h3>
+                                <p>The deep sea contains more nickel, cobalt and rare earth metals than all land reserves combined, according to the US Geological Survey. Mining corporations argue that deep-sea exploration could help diversify the supply of metals and point to the fact that demand for resources such as copper, aluminum, cobalt for electric car batteries and other metals to power technology and smartphones, is soaring. They say that deep-sea mining could yield far superior ore to land mining with little, if any, waste. Different methods of extraction exist, but most involve employing some form of converted machinery previously used in terrestrial mining to excavate materials from the sea floor, at depths of up to 6,000 meters, then drawing a seawater slurry, containing rock and other solid particles, from the sea floor to ships on the surface. The slurry is then ‘de-watered ’ and transferred to another vessel for shipping. Extracted seawater is pumped back down and discharged close to the sea floor.</p>
+                                <h3>D</h3>
+                                <p>But environmental and legal groups have urged caution, arguing there are potentially massive and unknown ramifications for the environment and for nearby communities, and that the global regulatory framework is not yet drafted. ‘Despite arising in the last half century, the “new global gold rush” of deep-sea mining shares many features with past resource scrambles -including a general disregard for environmental and social impacts, and the marginalisation of indigenous peoples and their rights,a paper, written by Julie Hunter and Julian Aguon, from Blue Ocean Law,and Pradeep Singh, from the Center for Marine Environmental Sciences, Bremen, argues, ‘flic authors say that knowledge of the deep seabed remains extremely limited.‘The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail, leading marine scientists to commonly remark that, with respect to the deep sea, “We don’t yet know what we need to know”.</p>
+                                <h3>E</h3>
+                                <p>Scientific research-including a recent paper in Marine Policy journal has suggested the deep seabed, and hydrothermal vents, which are created when seawater meets volcanic magma, have crucial impacts upon biodiversity and the global climate. The mineral-rich vents and their surrounds are also home to many well-known animals including crustaceans, tubeworms, clams, slugs, anemones and fish. ‘It is becoming increasingly clear that deep- sea mining poses a grave threat to these vital seabed functions,’ the paper says. ‘Extraction methods would produce large sediment plumes and involve the discharge of waste back into the ocean, significantly disturbing seafloor environments,’ the paper continues.‘On deep sea vents, scientists are clear,’ says Dr Jon Copley of the National Oceanography Centre, Southampton: ‘We don’t want mining on them.’</p>
+                                <h3>F</h3>
+                                <p>The oceans occupy around 70% of the planet and arc relatively unexplored, says Mike Johnston, chief executive of Nautilus, a Canadian underwater exploration company: ‘It makes sense to explore this untapped potential in an environmentally sustainable way, instead of continually looking at the fast depleting land resources of the planet to meet society’s rising needs.’Those leading the global rush to place giant mining machines thousands of metres below the sea surface say the environmental impacts will be far lower than on land. But critics say exotic and little-known ecosystems in the deep oceans could be destroyed and must be protected. ‘Mining will be the greatest assault on deep-sea ecosystems ever inflicted by humans,’ according to hydrothermal vent expert Vcrena TunniclifTe, at the University of Victoria in Canada. She argues that active vents must be off-limits for mining to protect the new knowledge and biotechnology spin-offs they can deliver, and that strict controls must be in place elsewhere.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-matching_information">
+                                <fieldset class="q-item">
+                                    <p class="lead"><b>Questions 1-4</b></p>
+                                    <p class="lead">Reading Passage has six paragraphs, <b>A-F</b>.</p>
+                                    <p><i>Which paragraph contains the following information?</i></p>
+                                    <p class="lead"><i>Write the correct letter, <b>A-F</b>, in boxes on your answer sheet.</i></p>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            reference to the rapidly increasing need for one raw material in the transport industry
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            a rough estimate of the area of the Earth covered by the oceans
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            how a particular underwater habitat, where minerals and organisms co-exist, is formed
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            reference to the fact that the countries of the world have yet to agree on rules for the exploration of the seabed
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-matching_information" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-matching_features" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_features" hidden>
+                <div class="x-panel-inner">Content: Matching Features</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">Deep-sea Mining</h3>
+                            <div class="passage-body">
+                                <p><i>Bacteria from the ocean floor can beat superbugs and cancer. But habitats are at risk from the hunger for marine minerals</i></p>
+                                <h3>A</h3>
+                                <p>When Professor Mat IJpton found that a microbe from a deep-sea sponge was killing pathogenic bugs in his laboratory, he realised it could be a breakthrough in the fight against antibiotic-resistant superbugs, which are responsible for thousands of deaths a year in the UK alone. Further tests confirmed that an antibiotic from the sponge bacteria, found living more than 700 metres under the sea at the Rockall trough in the north-east Atlantic, was previously unknown to science, boosting its potential as a life-saving medicine. But Upton, and other scientists who view the deep ocean and its wealth of unique and undocumented species as a prospecting ground for new medicines, fear such potential will be lost in the rush to exploit the deep sea’s equally rich metal and mineral resources.</p>
+                                <h3>B</h3>
+                                <p>‘We’re looking at the bioactive potential of marine resources, to see if there are any more medicines or drugs down there before we destroy it for ever,’ says Upton, a medical microbiologist at the University of Plymouth. Ile is among many scientists urging a halt to deep-sea mining, asking for time to weigh up the pros and cons. ‘In sustainability terms, this could be a better way of exploiting the economic potential of the deep sea,’ he argues. Oceanographers using remotely operated vehicles have spotted many new species. Among them have been sea cucumbers with tails allowing them to sail along the ocean floor, and a rare ‘Dumbo’octopus, found 3,000 metres under the Pacific Ocean, off the coast of California. Any one of these could offer lifesaving potential. Upton estimates it could take up to a decade for a newly discovered antibiotic to become a medicine but the race towards commercial mining in the ocean abyss has already begun.</p>
+                                <h3>C</h3>
+                                <p>The deep sea contains more nickel, cobalt and rare earth metals than all land reserves combined, according to the US Geological Survey. Mining corporations argue that deep-sea exploration could help diversify the supply of metals and point to the fact that demand for resources such as copper, aluminum, cobalt for electric car batteries and other metals to power technology and smartphones, is soaring. They say that deep-sea mining could yield far superior ore to land mining with little, if any, waste. Different methods of extraction exist, but most involve employing some form of converted machinery previously used in terrestrial mining to excavate materials from the sea floor, at depths of up to 6,000 meters, then drawing a seawater slurry, containing rock and other solid particles, from the sea floor to ships on the surface. The slurry is then ‘de-watered ’ and transferred to another vessel for shipping. Extracted seawater is pumped back down and discharged close to the sea floor.</p>
+                                <h3>D</h3>
+                                <p>But environmental and legal groups have urged caution, arguing there are potentially massive and unknown ramifications for the environment and for nearby communities, and that the global regulatory framework is not yet drafted. ‘Despite arising in the last half century, the “new global gold rush” of deep-sea mining shares many features with past resource scrambles -including a general disregard for environmental and social impacts, and the marginalisation of indigenous peoples and their rights,a paper, written by Julie Hunter and Julian Aguon, from Blue Ocean Law,and Pradeep Singh, from the Center for Marine Environmental Sciences, Bremen, argues, ‘flic authors say that knowledge of the deep seabed remains extremely limited.‘The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail, leading marine scientists to commonly remark that, with respect to the deep sea, “We don’t yet know what we need to know”.</p>
+                                <h3>E</h3>
+                                <p>Scientific research-including a recent paper in Marine Policy journal has suggested the deep seabed, and hydrothermal vents, which are created when seawater meets volcanic magma, have crucial impacts upon biodiversity and the global climate. The mineral-rich vents and their surrounds are also home to many well-known animals including crustaceans, tubeworms, clams, slugs, anemones and fish. ‘It is becoming increasingly clear that deep- sea mining poses a grave threat to these vital seabed functions,’ the paper says. ‘Extraction methods would produce large sediment plumes and involve the discharge of waste back into the ocean, significantly disturbing seafloor environments,’ the paper continues.‘On deep sea vents, scientists are clear,’ says Dr Jon Copley of the National Oceanography Centre, Southampton: ‘We don’t want mining on them.</p>
+                                <h3>F</h3>
+                                <p>The oceans occupy around 70% of the planet and arc relatively unexplored, says Mike Johnston, chief executive of Nautilus, a Canadian underwater exploration company: ‘It makes sense to explore this untapped potential in an environmentally sustainable way, instead of continually looking at the fast depleting land resources of the planet to meet society’s rising needs.’Those leading the global rush to place giant mining machines thousands of metres below the sea surface say the environmental impacts will be far lower than on land. But critics say exotic and little-known ecosystems in the deep oceans could be destroyed and must be protected. ‘Mining will be the greatest assault on deep-sea ecosystems ever inflicted by humans,’ according to hydrothermal vent expert Vcrena TunniclifTe, at the University of Victoria in Canada. She argues that active vents must be off-limits for mining to protect the new knowledge and biotechnology spin-offs they can deliver, and that strict controls must be in place elsewhere.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-matching_features">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-6</h3>
+                                    <p class="lead"><i>Look at the following statements and the list of people below.</i></p>
+                                    <p><i>Match each statement with the correct person or people, <b>A-E</b>.</i></p>
+                                    <p><i>Write the correct letter, <b>A-E</b>, in boxes on your answer sheet.</i></p>
+                                    <p><b>NB</b>   You may use any letter more than once.</p>
+                                    <b>List of People</b>
+                                    <ul class="legend">
+                                        <li><strong>A</strong> Professor Mat Upton</li>
+                                        <li><strong>B</strong> Julie Hunter, Julian Aguon and Pradeep Singh</li>
+                                        <li><strong>C</strong> Dr Jon Copley</li>
+                                        <li><strong>D</strong> Mike Johnston</li>
+                                        <li><strong>E</strong> Verena Tunnicliffe</li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                             A move away from the exploration of heavily mined reserves on land is a good idea.
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            The negative effects of undersea exploration on local areas and their inhabitants are being ignored. 
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            There are more worthwhile things to extract from the sea than minerals. 
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            No other form of human exploration will have such a destructive impact on marine life as deep-sea mining. 
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            More is known about outer space than about what lies beneath the oceans.
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="6">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">6</span>
+                                        <span style="flex: 1;">
+                                            There is one marine life habitat where experts agree mining should not take place.
+                                            <span class="q-question">
+                                                <select name="IgWhHunhjhOYd3hb-6" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-matching_features" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-matching_features">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
+                <div class="x-panel-inner">Content: Summary Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">Deep-sea Mining</h3>
+                            <div class="passage-body">
+                                <p><i>Bacteria from the ocean floor can beat superbugs and cancer. But habitats are at risk from the hunger for marine minerals</i></p>
+                                <h3>C</h3>
+                                <p>The deep sea contains more nickel, cobalt and rare earth metals than all land reserves combined, according to the US Geological Survey. Mining corporations argue that deep-sea exploration could help diversify the supply of metals and point to the fact that demand for resources such as copper, aluminum, cobalt for electric car batteries and other metals to power technology and smartphones, is soaring. They say that deep-sea mining could yield far superior ore to land mining with little, if any, waste. Different methods of extraction exist, but most involve employing some form of converted machinery previously used in terrestrial mining to excavate materials from the sea floor, at depths of up to 6,000 meters, then drawing a seawater slurry, containing rock and other solid particles, from the sea floor to ships on the surface. The slurry is then ‘de-watered ’ and transferred to another vessel for shipping. Extracted seawater is pumped back down and discharged close to the sea floor.</p>
+                                <h3>D</h3>
+                                <p>But environmental and legal groups have urged caution, arguing there are potentially massive and unknown ramifications for the environment and for nearby communities, and that the global regulatory framework is not yet drafted. ‘Despite arising in the last half century, the “new global gold rush” of deep-sea mining shares many features with past resource scrambles -including a general disregard for environmental and social impacts, and the marginalisation of indigenous peoples and their rights,a paper, written by Julie Hunter and Julian Aguon, from Blue Ocean Law,and Pradeep Singh, from the Center for Marine Environmental Sciences, Bremen, argues, ‘flic authors say that knowledge of the deep seabed remains extremely limited.‘The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail, leading marine scientists to commonly remark that, with respect to the deep sea, “We don’t yet know what we need to know”.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-summary_completion">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-3</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+
+                                    <h3 style="text-align: center">Mining the sea floor</h3>
+
+                                    <p>
+                                        Mining corporations believe that the mineral resources lying under the sea may be superior to those found in the earth. They also say that these can be removed without producing much
+                                        <span class="q-number-box">1</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        .
+                                    </p>
+
+                                    <p>
+                                        The extraction is often done by adapting the
+                                        <span class="q-number-box">2</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-2" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that
+                                        <span class="q-number-box">3</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-3" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        is necessary due to the possible number of unidentified consequences.
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
+                                        Submit
+                                    </button>
+                                </div>
                             </form>
                         </aside>
                     </div>
@@ -1870,15 +2219,14 @@
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">Living with artificial intelligence</h3>
+                            <h3 class="passage-title">The Unselfish Gene</h3>
                             <div class="passage-body">
-                                <p><i>Powerful artificial intelligence (AI) needs to be reliably aligned with human values, but does this mean AI will eventually have to police those values?</i></p>
-                                <p>This has been the decade of AI, with one astonishing feat after another. A chess-playing AI that can defeat not only all human chess players, but also all previous human-programmed chess machines, after learning the game in just four hours? That’s yesterday’s news, what’s next? True, these prodigious accomplishments are all in so-called narrow AI, where machines perform highly specialised tasks. But many experts believe this restriction is very temporary. By mid-century, we may have artificial general intelligence (AGI) – machines that can achieve human-level performance on the full range of tasks that we ourselves can tackle.</p>
-                                <p>If so, there’s little reason to think it will stop there. Machines will be free of many of the physical constraints on human intelligence. Our brains run at slow biochemical processing speeds on the power of a light bulb, and their size is restricted by the dimensions of the human birth canal. It is remarkable what they accomplish, given these handicaps. But they may be as far from the physical limits of thought as our eyes are from the incredibly powerful Webb Space Telescope.</p>
-                                <p>Once machines are better than us at designing even smarter machines, progress towards these limits could accelerate. What would this mean for us? Could we ensure a safe and worthwhile coexistence with such machines? On the plus side, AI is already useful and profitable for many things, and super AI might be expected to be super useful and super profitable. But the more powerful AI becomes, the more important it will be to specify its goals with great care. Folklore is full of tales of people who ask for the wrong thing, with disastrous consequences- King Midas, for example, might have wished that everything he touched turned to gold, but didn’t really intend this to apply to his breakfast.</p>
-                                <p>So we need to create powerful AI machines that are ‘human-friendly’- that have goals reliably aligned with our own values. One thing that makes this task difficult is that we are far from reliably human-friendly ourselves. We do many terrible things to each other and to many other creatures with whom we share the planet. If superintendent machines don’t do a lot better than us, we’ll be in deep trouble. We’ll have powerful new intelligence amplifying the dark sides of our own fallible natures.</p>
-                                <p>For safety’s sake, then, we want the machines to be ethically as well as cognitively superhuman. We want them to aim for the moral high ground, not for the troughs in which many of us spend some of our time. Luckily they’ll be smart enough for the job. If there are routes to the moral high ground, they’ll be better than us at finding them, and steering us in the right direction.</p>
-                                <p>However, there are two big problems with this utopian vision. One is how we get the machines started on the journey, the other is what it would mean to reach this destination. The ‘getting started’ problem is that we need to tell the machines what they’re looking for with sufficient clarity that we can be confident they will find it – whatever ‘it’ actually turns out to be. This won’t be easy, given that we are tribal creatures and conflicted about the ideals ourselves. We often ignore the suffering of strangers, and even contribute to it, at least indirectly. How then, do we point machines in the direction of something better?</p>
+                                <p><i>A psychologist gives his view on how humans became self-centred</i></p>
+                                <p>There has long been a general assumption that human beings are essentially selfish. We’re apparently ruthless, with strong impulses to compete against each other for resources and to accumulate power and possessions. If we are kind to one another, it’s usually because we have ulterior motives. If we are good, it’s only because we have managed to control and transcend our innate selfishness and brutality.</p>
+                                <p>This bleak view of human nature is closely associated with the science writer Richard Dawkins, whose 1976 book The Selfish Gene became popular because it fitted so well with-and helped to justify-the competitive and individualistic ethos that was so prevalent in late 20th-century societies. Like many others, Dawkins justifies his views with reference to the field of evolutionary psychology. Evolutionary psychology theorises that present-day human traits developed in prehistoric times, during what is termed the ‘environment of evolutionary adaptedness’.</p>
+                                <p>Prehistory is usually seen as a period of intense competition, when life was such a brutal battle that only those with traits such as selfishness, aggression and ruthlessness survived. And because survival depended on access to resources – such as rivers, forests and animals – there was bound to be conflict between rival groups, which led to the development of traits such as racism and warfare. This seems logical. But, in fact, the assumption on which this all rests – that prehistoric life was a desperate struggle for survival – is false.</p>
+                                <p>It’s important to remember that in the prehistoric era, the world was very sparsely populated. According to some estimates, around 15,000 years ago, the population of Europe was only 29,000, and the population of the whole world was less than half a million. Humans at that time were hunter-gatherers: people who lived by hunting wild animals and collecting wild plants. With such small population densities, it seems unlikely that prehistoric hunter-gatherer groups had to compete against each other for resources or had any need to develop ruthlessness and competitiveness, or to go to war.</p>
+                                <p>There is significant evidence to back this notion from contemporary hunter-gatherer groups, who live in the same way as prehistoric humans did. As the anthropologist Bruce Knauft has remarked, hunter-gatherers are characterized by ‘extreme political and sexual egalitarianism’. Knauft has observed that individuals in such groups don’t accumulate property or possessions and have an ethical obligation to share everything. They also have methods of preserving egalitarianism by ensuring that disparities of status don’t arise.</p>
                             </div>
                         </article>
 
@@ -1887,7 +2235,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-one">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-6</b></p>
+                                    <h3>Question 1-4</h3>
                                     <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
                                         <b>D</b>.
                                     </p>
@@ -1896,28 +2244,28 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        What point does the writer make about AI in the first paragraph?
+                                        What is the writer doing in the first paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="A" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">It is difficult to predict how quickly AI will progress.</span>
+                                            <span class="opt-label">setting out two opposing views about human nature</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="B" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">Much can be learned about the use of AI in chess machines.</span>
+                                            <span class="opt-label">justifying his opinion about our tendency to be greedy</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="C" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">The future is unlikely to see limitations on the capabilities of AI.</span>
+                                            <span class="opt-label">describing a commonly held belief about people’s behaviour</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="D" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">Experts disagree on which specialised tasks AI will be able to perform.</span>
+                                            <span class="opt-label">explaining why he thinks that humans act in a selfish manner</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1925,28 +2273,28 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        What is the writer doing in the second paragraph?
+                                        What point is made about Richard Dawkins’ book The Selfish Gene?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="A" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">explaining why machines will be able to outperform humans</span>
+                                            <span class="opt-label">Its appeal lay in the radical nature of its ideas.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="B" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">describing the characteristics that humans and machines share</span>
+                                            <span class="opt-label">Its success was due to the scientific support it offered.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="C" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">giving information about the development of machine intelligence</span>
+                                            <span class="opt-label">It presented a view that was in line with the attitudes of its time.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="D" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">indicating which aspects of humans are the most advanced</span>
+                                            <span class="opt-label">It took an innovative approach to the analysis of human psychology.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1954,28 +2302,28 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Why does the writer mention the story of King Midas?
+                                        What does the writer suggest about the prehistoric era in the fourth paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="A" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">to compare different visions of progress</span>
+                                            <span class="opt-label">Societies were more complex than many people believe.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="B" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">to illustrate that poorly defined objectives can go wrong</span>
+                                            <span class="opt-label">Supplies of natural resources were probably relatively plentiful.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="C" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">to emphasise the need for cooperation</span>
+                                            <span class="opt-label">Most estimates about population sizes are likely to be inaccurate.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="D" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">to point out the financial advantages of a course of action</span>
+                                            <span class="opt-label">Humans moved across continents more than was previously thought.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1983,86 +2331,28 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        What challenge does the writer refer to in the fourth paragraph?
+                                        The writer refers to Bruce Knauft’s work as support for the idea that
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="A" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">encouraging humans to behave in a more principled way</span>
+                                            <span class="opt-label">selfishness is a relatively recent development in human societies.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="B" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">deciding which values we want AI to share with us</span>
+                                            <span class="opt-label">only people in isolated communities can live in an unselfish manner.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="C" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">creating a better world for all creatures on the planet</span>
+                                            <span class="opt-label">very few lifestyles have survived unchanged since prehistoric times.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="D" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">ensuring AI is more human-friendly than we are ourselves</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        What does the writer suggest about the future of AI in the fifth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">The safety of machines will become a key issue.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">It is hard to know what impact machines will have on the world.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">Machines will be superior to humans in certain respects.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">Many humans will oppose machines having a wider role.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text">
-                                        <span class="q-number">6</span>
-                                        Which of the following best summarises the writer’s argument in the sixth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">More intelligent machines will result in greater abuses of power.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">Machine learning will share very few features with human learning.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">There are a limited number of people with the knowledge to program machines.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">Human shortcomings will make creating the machines we need more difficult.</span>
+                                            <span class="opt-label">hunter-gatherer cultures worldwide are declining in number.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2080,16 +2370,95 @@
                     </div>
                 </div>
             </div>
+            <div id="panel-summary_completion2" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion2" hidden>
+                <div class="x-panel-inner">Content: Summary Completion 2</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">The Unselfish Gene</h3>
+                            <div class="passage-body">
+                                <p><i>A psychologist gives his view on how humans became self-centred</i></p>
+                                <p>There is significant evidence to back this notion from contemporary hunter-gatherer groups, who live in the same way as prehistoric humans did. As the anthropologist Bruce Knauft has remarked, hunter-gatherers are characterized by ‘extreme political and sexual egalitarianism’. Knauft has observed that individuals in such groups don’t accumulate property or possessions and have an ethical obligation to share everything. They also have methods of preserving egalitarianism by ensuring that disparities of status don’t arise.</p>
+                                <p>The !Kung people of southern Africa, for example, swap arrows before going hunting and when an animal is killed, the acclaim does not go to the person who fired the arrow, but to the person the arrow belongs to. And if a person becomes too domineering, the other members of the group ostracise them, exiling the offender from society. Typically in such groups, men do not dictate what women do. Women in hunter-gatherer groups worldwide often benefit from a high level of autonomy, being able to select their own marriage partners, decide what work they do and work whenever they choose to. And if a marriage breaks down, they have custody rights over their children.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-summary_completion2">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-5</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+
+                                    <h3 style="text-align: center">Contemporary hunter-gatherer societies</h3>
+
+                                    <p>
+                                        Bruce Knauft’s research shows that contemporary hunter-gatherer societies tend to exhibit a high level of
+                                        <span class="q-number-box">1</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-4" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        in all areas of life. In these cultures, distributing resources fairly among all members is a moral obligation. These societies also employ strategies to prevent differences in
+                                        <span class="q-number-box">2</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-5" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        occurring: for example, the !Kung follow a custom whereby the credit for one person’s success at
+                                        <span class="q-number-box">3</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-6" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        is given to another member of the group. Individuals who behave in a
+                                        <span class="q-number-box">4</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-7" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        manner are punished by being excluded from the group, and women have a considerable amount of
+                                        <span class="q-number-box">5</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="IgWhHunhjhOYd3hb-8" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        in choices regarding work and marriage.
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion2" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion2">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Yes/No/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">The Unselfish Gene</h3>
                             <div class="passage-body">
-                                <p>As for the ‘destination’ problem, we might, by putting ourselves in the hands of these moral guides and gatekeepers, be sacrificing our own autonomy – an important part of what makes us human. Machines who are better than us at sticking to the moral high ground may be expected to discourage some of the lapses we presently take for granted. We might lose our freedom to discriminate in favour of our own communities, for example.</p>
-                                <p>Loss of freedom to behave badly isn’t always a bad thing, of course: denying ourselves the freedom to put children to work in factories, or to smoke in restaurants are signs of progress. But are we ready for ethical silicon police limiting our options? They might be so good at doing it that we won’t notice them; but few of us are likely to welcome such a future.</p>
-                                <p>These issues might seem far-fetched, but they are to some extent already here. AI already has some input into how resources are used in our National Health Service (NHS) here in the UK, for example. If it was given a greater role, it might do so much more efficiently than humans can manage, and act in the interests of taxpayers and those who use the health system. However, we’d be depriving some humans (e.g. senior doctors) of the control they presently enjoy. Since we’d want to ensure that people are treated equally and that policies are fair, the goals of AI would need to be specified correctly.</p>
-                                <p>We have a new powerful technology to deal with- itself, literally, a new way of thinking. For our own safety, we need to point these new thinkers in the right direction, and get them to act well for us. It is not yet clear whether this is possible, but if it is, it will require a cooperative spirit, and a willingness to set aside self-interest.</p>
+                                <p><i>A psychologist gives his view on how humans became self-centred</i></p>
+                                <p>Many anthropologists believe that societies such as the !Kung were normal until a few thousand years ago, when population growth led to the development of agriculture and a settled lifestyle. In view of the above, there seems little reason to assume that traits such as racism, warfare and male domination should have been selected by evolution-as they would have been of little benefit in the prehistoric era. Individuals who behaved selfishly and ruthlessly would be less likely to survive, since they would have been ostracised from their groups.</p>
+                                <p>It makes more sense, then, to see traits such as cooperation, egalitarianism, altruism and peacefulness as innate characteristics of human beings. These were the traits that were prevalent in human life for tens of thousands of years. So presumably these traits are still strong in us now.</p>
+                                <p>But if prehistoric life wasn’t really as brutal as has often been assumed, why do modern humans behave so selfishly and ruthlessly? Perhaps these negative traits should be seen as a later development, the result of environmental and psychological factors. Research has shown repeatedly that when the natural habitats of primates such as apes and gorillas are disrupted, they tend to become more violent and hierarchical.</p>
                             </div>
                         </article>
 
@@ -2098,7 +2467,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-ynng">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-4</b></p>
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -2114,21 +2483,21 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        Machines with the ability to make moral decisions may prevent us from promoting the interests of our communities.
+                                        Some anthropologists are mistaken about the point when the number of societies such as the !Kung began to decline.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="YES" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NO" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2138,21 +2507,21 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        Silicon police would need to exist in large numbers in order to be effective.
+                                        Humans who developed warlike traits in prehistory would have had an advantage over those who did not.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="YES" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NO" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2162,21 +2531,21 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Many people are comfortable with the prospect of their independence being restricted by machines.
+                                        Being peaceful and cooperative is a natural way for people to behave.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="YES" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NO" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2186,21 +2555,45 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        If we want to ensure that machines act in our best interests, we all need to work together.
+                                        Negative traits are more apparent in some modern cultures than in others.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="YES" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NO" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NOT GIVEN" />
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-4" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        Animal research has failed to reveal a link between changes in the environment and the emergence of aggressive tendencies.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="IgWhHunhjhOYd3hb-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2215,428 +2608,6 @@
                                         Submit
                                     </button>
                                 </div>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
-                <div class="x-panel-inner">Content: Summary Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>These issues might seem far-fetched, but they are to some extent already here. AI already has some input into how resources are used in our National Health Service (NHS) here in the UK, for example. If it was given a greater role, it might do so much more efficiently than humans can manage, and act in the interests of taxpayers and those who use the health system. However, we’d be depriving some humans (e.g. senior doctors) of the control they presently enjoy. Since we’d want to ensure that people are treated equally and that policies are fair, the goals of AI would need to be specified correctly.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-summary_completion">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-3</h3>
-                                    <p><i>Complete the summary using the list of phrases, <b>A-F</b>, below.</i></p>
-                                    <p><i>Write the correct letter, <b>A-F</b>, in boxes on your answer sheet.</i></p>
-
-                                    <table cellspacing="20" class="q-table q-table-letters">
-                                        <tr>
-                                            <td><b>A</b></td><td>medical practitioners</td>
-                                            <td><b>B</b></td><td>specialised tasks</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>C</b></td><td>available resources</td>
-                                            <td><b>D</b></td><td>reduced illness</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>E</b></td><td>professional authority</td>
-                                            <td><b>F</b></td><td>technology experts</td>
-                                        </tr>
-                                    </table>
-
-                                    <h3>Using AI in the UK health system</h3>
-
-                                    <p>
-                                        AI currently has a limited role in the way
-                                        <span class="q-number-box">1</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        are allocated in the health service. The positive aspect of AI having a bigger role is that it would be more efficient and lead to patient benefits. However, such a change would result, for example, in certain 
-                                        <span class="q-number-box">2</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-2" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        not having their current level of
-                                        <span class="q-number-box">3</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        . It is therefore important that AI goals are appropriate so that discriminatory practices could be avoided.
-                                    </p>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
-                                        Submit
-                                    </button>
-                                </div>
-
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2" hidden>
-                <div class="x-panel-inner">Content: True/False/Not Given 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">An ideal city</h3>
-                            <div class="passage-body">
-                                <p><i>Leonardo da Vinci’s ideal city was centuries ahead of its time</i></p>
-                                <p>The word ‘genius’ is universally associated with the name of Leonardo da Vinci. A true Renaissance man, he embodied scientific spirit, artistic talent and humanist sensibilities. Five hundred years have passed since Leonardo died in his home at Chateau du Clos Luce, outside Tours, France. Yet far from fading into insignificance, his thinking has carried down the centuries and still surprises today.</p>
-                                <p>The Renaissance marked the transition from the 15th century to modernity and took place after the spread of the plague in the 14th century, which caused a global crisis resulting in some 200 million deaths across Europe and Asia. Today, the world is on the cusp of a climate crisis, which is predicted to cause widespread displacement, extinctions and death, if left unaddressed. Then, as now, radical solutions were called for to revolutionise the way people lived and safeguard humanity against catastrophe.</p>
-                                <p>Around 1486 – after a pestilence that killed half the population in Milan, Italy – Leonardo turned his thoughts to urban planning problems. Following a typical Renaissance trend, he began to work on an ‘ideal city’ project, which – due to its excessive costs – would remain unfulfilled. Yet given that unsustainable urban models are a key cause of global climate change today, it’s only natural to wonder how Leonardo might have changed the shape of modem cities.</p>
-                                <p>Although the Renaissance is renowned as an era of incredible progress in art and architecture, it is rarely noted that the 15th century also marked the birth of urbanism as a true academic discipline. The rigour and method behind the conscious conception of a city had been largely missing in Western thought until the moment when prominent Renaissance men pushed forward large-scale urban projects in Italy, such as the reconfiguration of the town of Pienza and the expansion of the city of Ferrara. These works surely inspired Leonardo’s decision to rethink the design of medieval cities, with their winding and overcrowded streets and with houses piled against one another.</p>
-                                <p>It is not easy to identify a coordinated vision of Leonardo’s ideal city because of his disordered way of working with notes and sketches. But from the largest collection of Leonardo’s papers ever assembled, a series of innovative thoughts can be reconstructed regarding the foundation of a new city along the Ticino River, which runs from Switzerland into Italy and is 248 kilometres long. He designed the city for the easy transport of goods and clean urban spaces, and he wanted a comfortable and spacious city, with well-ordered streets and architecture. He recommended ‘high, strong walls’, with ‘towers and battlements of all necessary and pleasant beauty’.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-tfng">
-                                <fieldset class="q-item">
-                                    <p><b>Questions 1-7</b></p>
-                                    <p class="lead">Do the following statements agree with the information given in
-                                        the
-                                        Reading Passage?
-                                    </p>
-                                    <p>In boxes on your answer sheet, write</p>
-                                    <ul class="legend">
-                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-                                    </ul>
-                                </fieldset>
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        People first referred to Leonardo da Vinci as a genius 500 years ago.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">2</span>
-                                        The current climate crisis is predicted to cause more deaths than the plague.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text">
-                                        <span class="q-number">3</span>
-                                        Some of the challenges we face today can be compared to those of earlier times.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text">
-                                        <span class="q-number">4</span>
-                                        Leonardo da Vinci’s ‘ideal city’ was constructed in the 15th century.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        Poor town planning is a major contributor to climate change.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text">
-                                        <span class="q-number">6</span>
-                                        In Renaissance times, local people fought against the changes to Pienza and Ferrara.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="7">
-                                    <legend class="q-text">
-                                        <span class="q-number">7</span>
-                                        Leonardo da Vinci kept a neat, organised record of his designs.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-tfng" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-tfng">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-summary_completion2" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion2" hidden>
-                <div class="x-panel-inner">Content: Summary Completion 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>It is not easy to identify a coordinated vision of Leonardo’s ideal city because of his disordered way of working with notes and sketches. But from the largest collection of Leonardo’s papers ever assembled, a series of innovative thoughts can be reconstructed regarding the foundation of a new city along the Ticino River, which runs from Switzerland into Italy and is 248 kilometres long. He designed the city for the easy transport of goods and clean urban spaces, and he wanted a comfortable and spacious city, with well-ordered streets and architecture. He recommended ‘high, strong walls’, with ‘towers and battlements of all necessary and pleasant beauty’.</p>
-                                <p>His plans for a modem and ‘rational’ city were consistent with Renaissance ideals. But, in keeping with his personality, Leonardo included several innovations in his urban design. Leonardo wanted the city to be built on several levels, linked with vertical outdoor staircases. This design can be seen in some of today’s high-rise buildings but was unconventional at the time. Indeed, this idea of taking full advantage of the interior spaces wasn’t implemented until the 1920s and 1930s, with the birth of the Modernist movement.</p>
-                                <p>While in the upper layers of the city, people could walk undisturbed between elegant palaces and streets, the lower layer was the place for services, trade, transport and industry. But the true originality of Leonardo’s vision was its fusion of architecture and engineering. Leonardo designed extensive hydraulic plants to create artificial canals throughout the city. The canals, regulated by clocks and basins, were supposed to make it easier for boats to navigate inland. Leonardo also thought that the width of the streets ought to match the average height of the adjacent houses: a rule still followed in many contemporary cities across Italy, to allow access to sun and reduce the risk of damage from earthquakes.</p>
-                                <p>Although some of these features existed in Roman cities, before Leonardo’s drawings there had never been a multi-level, compact modem city which was thoroughly technically conceived. Indeed, it wasn’t until the 19th century that some of his ideas were applied. For example, the subdivision of the city by function- with services and infrastructures located in the lower levels and wide and well-ventilated boulevards and walkways above for residents – is an idea that can be found in Georges-Eugene Haussmann’s renovation of Paris under Emperor Napoleon III between 1853 and 1870.</p>
-                                <p>Today, Leonardo’s ideas are not simply valid, they actually suggest a way forward for urban planning. Many scholars think that the compact city, built upwards instead of outwards, integrated with nature (especially water systems), with efficient transport infrastructure, could help modem cities become more efficient and sustainable. This is yet another reason why Leonardo was aligned so closely with modem urban planning and centuries ahead of his time.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-summary_completion2">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-7</h3>
-                                    <p class="lead">Complete the summary below.</p>
-                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
-                                    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
-
-                                    <h3>Leonardo da Vinci’s ideal city</h3>
-
-                                    <p>
-                                        A collection of Leonardo da Vinci’s paperwork reveals his design of a new city beside the Ticino River. This was to provide better
-                                        <span class="q-number-box">1</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-4" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        for trade and a less polluted environment. Although Leonardo da Vinci’s city shared many of the ideals of his time, some of his innovations were considered unconventional in their design. They included features that can be seen in some tower blocks today, such as
-                                        <span class="q-number-box">2</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-5" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        on the exterior of a building.
-                                    </p>
-
-                                    <p>
-                                        Leonardo da Vinci wasn’t only an architect. His expertise in
-                                        <span class="q-number-box">3</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-6" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        was evident in his plans for artificial canals within his ideal city. He also believed that the height of houses should relate to the width of streets in case earthquakes occurred. The design of many cities in Italy today follows this
-                                        <span class="q-number-box">4</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-7" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                    </p>
-
-                                    <p>
-                                        While some cities from
-                                        <span class="q-number-box">5</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-8" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        times have aspects that can also be found in Leonardo’s designs, his ideas weren’t put into practice until long after his  death.
-                                        <span class="q-number-box">6</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-9" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        is one example of a city that was redesigned in the 19th century in the way that Leonardo had envisaged. His ideas are also relevant to today’s world, where building
-                                        <span class="q-number-box">7</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-10" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        no longer seems to be the best approach.
-                                    </p>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion2" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-summary_completion2">
-                                        Submit
-                                    </button>
-                                </div>
-
                             </form>
                         </aside>
                     </div>
@@ -2938,7 +2909,7 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive('nc');
+            setActive('tfng');
         });
     </script>
 
@@ -3189,7 +3160,7 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'nc';
+            let currentPart = 'tfng';
             let questionCount = 0;
 
             fqToggle.addEventListener('click', () => {
@@ -3313,7 +3284,7 @@
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
-                    'nc': 5,
+                    'tfng': 5,
                     'tfng2': 5,
                     'ynng': 5,
                     'mse': 5,
@@ -3328,7 +3299,7 @@
             }
 
             // Init
-            updateQuestionListForPart('nc');
+            updateQuestionListForPart('tfng');
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
@@ -3527,42 +3498,42 @@
 
         $("#submit-tfng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng", "JSRJ0oDlxC0yFMgt", "tfng", $(this), "again-tfng");
+            submitHelper("form-tfng", "IgWhHunhjhOYd3hb", "tfng", $(this), "again-tfng");
         });
 
         $("#submit-tfng2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng2", "JSRJ0oDlxC0yFMgt", "tfng", $(this), "again-tfng2");
+            submitHelper("form-tfng2", "IgWhHunhjhOYd3hb", "tfng", $(this), "again-tfng2");
         });
 
         $("#submit-ynng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-ynng", "JSRJ0oDlxC0yFMgt", "ynng", $(this), "again-ynng");
+            submitHelper("form-ynng", "IgWhHunhjhOYd3hb", "ynng", $(this), "again-ynng");
         });
 
         $("#submit-mse").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mse", "JSRJ0oDlxC0yFMgt", "mse", $(this), "again-mse");
+            submitHelper("form-mse", "IgWhHunhjhOYd3hb", "mse", $(this), "again-mse");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-one", "JSRJ0oDlxC0yFMgt", "oc", $(this), "again-oc");
+            submitHelper("form-one", "IgWhHunhjhOYd3hb", "oc", $(this), "again-oc");
         });
 
         $("#submit-mh").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mh", "JSRJ0oDlxC0yFMgt", "mh", $(this), "again-mh");
+            submitHelper("form-mh", "IgWhHunhjhOYd3hb", "mh", $(this), "again-mh");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "JSRJ0oDlxC0yFMgt", "tc", $(this), "again-tc");
+            submitHelper("form-tc", "IgWhHunhjhOYd3hb", "tc", $(this), "again-tc");
         });
 
         $("#submit-sa").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-sa", "JSRJ0oDlxC0yFMgt", "sa", $(this), "again-sa");
+            submitHelper("form-sa", "IgWhHunhjhOYd3hb", "sa", $(this), "again-sa");
         });
     </script>
 

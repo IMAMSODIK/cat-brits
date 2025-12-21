@@ -696,7 +696,6 @@
         }
 
         #panel-nc .q-number-box,
-        #panel-tc .q-number-box,
         #panel-summary_completion .q-number-box,
         #panel-summary_completion2 .q-number-box,
         #panel-summary_completion3 .q-number-box {
@@ -712,8 +711,9 @@
         }
 
         #panel-nc .q-text,
-        #panel-tc .q-text,
-        #panel-summary_completion .q-text {
+        #panel-summary_completion .q-text,
+        #panel-summary_completion2 .q-text,
+        #panel-summary_completion3 .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -722,12 +722,7 @@
             box-sizing: border-box;
         }
 
-        #panel-nc input,
-        #panel-tc input,
-        #panel-summary_completion input,
-        #panel-summary_completion2 input,
-        #panel-matching_information2 input,
-        #panel-sentence_completion input {
+        #panel-tc input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -1533,185 +1528,43 @@
 
 
     <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
-        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="nc">
-            <button class="x-tab is-active" role="tab" id="tab-nc" aria-controls="panel-nc"
-                aria-selected="true" data-id="nc">Note Completion</button>
-            <button class="x-tab" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="false"
-                data-id="tfng">True/False/Not Given</button>
-            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
-                data-id="one">One Choice</button>
-            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Yes/No/Not Given</button>
+        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="matching_information">
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">True/False/Not Given</button>
+            <button class="x-tab" role="tab" id="tab-nc" aria-controls="panel-nc" aria-selected="false"
+                data-id="nc">Note Completion</button>
+            <button class="x-tab" role="tab" id="tab-matching_information" aria-controls="panel-matching_information" aria-selected="false"
+                data-id="matching_information">Matching Information</button>
+            <button class="x-tab" role="tab" id="tab-matching_features" aria-controls="panel-matching_features" aria-selected="false"
+                data-id="matching_features">Matching Features</button>
             <button class="x-tab" role="tab" id="tab-summary_completion" aria-controls="panel-summary_completion" aria-selected="false"
                 data-id="summary_completion">Summary Completion</button>
-            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
-                data-id="tfng2">True/False/Not Given 2</button>
-            <button class="x-tab" role="tab" id="tab-summary_completion2" aria-controls="panel-summary_completion2" aria-selected="false"
-                data-id="summary_completion2">Summary Completion 2</button>
+            <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
+                data-id="one">One Choice</button>
+            <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
+                data-id="mse">Matching Sentence ending</button>
+            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
+                data-id="ynng">Yes/No/Not Given</button>
         </div>
 
         <div class="x-panels">
-            <div id="panel-nc" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-nc">
-                <div class="x-panel-inner">Content: Note Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <article class="passage" aria-label="Reading Passage" tabindex="0">
-                                <h3 class="passage-title">Stonehenge</h3>
-                                <div class="passage-body">
-                                    <p>For centuries, historians and archaeologists have puzzled over the many mysteries of Stonehenge, a prehistoric monument that took an estimated 1,500 years to erect. Located on Salisbury Plain in southern England, it is comprised of roughly 100 massive upright stones placed in a circular layout.</p>
-                                    <p>Archaeologists believe England’s most iconic prehistoric ruin was built in several stages with the earliest constructed 5,000 or more years ago. First, Neolithic* Britons used primitive tools, which may have been fashioned out of deer antlers, to dig a massive circular ditch and bank, or henge. Deep pits dating back to that era and located within the circle may have once held a ring of timber posts, according to some scholars.</p>
-                                    <p>Several hundred years later, it is thought, Stonehenge’s builders hoisted an estimated 80 bluestones, 43 of which remain today, into standing positions and placed them in either a horseshoe or circular formation. These stones have been traced all the way to the Preseli Hills in Wales, some 300 kilometres from Stonehenge. How, then, did prehistoric builders without sophisticated tools or engineering haul these boulders, which weigh up to four tons, over such a great distance?</p>
-                                    <p>According to one long-standing theory among archaeologists, Stonehenge’s builders fashioned sledges and rollers out of tree trunks to lug the bluestones from the Preseli Hills. They then transferred the boulders onto rafts and floated them first along the Welsh coast and then up the River Avon toward Salisbury Plain; alternatively, they may have towed each stone with a fleet of vessels. More recent archaeological hypotheses have them transporting the bluestones with supersized wicker baskets on a combination of ball bearings and long grooved planks, hauled by oxen.</p>
-                                    <p>As early as the 1970s, geologists have been adding their voices to the debate over how Stonehenge came into being. Challenging the classic image of industrious builders pushing, carting, rolling or hauling giant stones from faraway Wales, some scientists have suggested that it was glaciers, not humans, that carried the bluestones to Salisbury Plain. Most archaeologists have remained sceptical about this theory, however, wondering how the forces of nature could possibly have delivered the exact number of stones needed to complete the circle.</p>
-                                    <p>The third phase of construction took place around 2000 BCE. At this point, sandstone slabs – known as ‘sarsens’ – were arranged into an outer crescent or ring; some were assembled into the iconic three-pieced structures called trilithons that stand tall in the centre of Stonehenge. Some 50 of these stones are now visible on the site, which may once have contained many more. Radiocarbon dating has revealed that work continued at Stonehenge until roughly 1600 BCE, with the bluestones in particular being repositioned multiple times.</p>
-                                    <p>But who were the builders of Stonehenge? In the 17th century, archaeologist John Aubrey made the claim that Stonehenge was the work of druids, who had important religious, judicial and political roles in Celtic** society. This theory was widely popularized by the antiquarian William Stukeley, who had unearthed primitive graves at the site. Even today, people who identify as modern druids continue to gather at Stonehenge for the summer solstice. However, in the mid-20th century, radiocarbon dating demonstrated that Stonehenge stood more than 1,000 years before the Celts inhabited the region.</p>
-                                    <p>Many modern historians and archaeologists now agree that several distinct tribes of people contributed to Stonehenge, each undertaking a different phase of its construction. Bones, tools and other artefacts found on the site seem to support this hypothesis. The first stage was achieved by Neolithic agrarians who were likely to have been indigenous to the British Isles. Later, it is believed, groups with advanced tools and a more communal way of life left their mark on the site. Some believe that they were immigrants from the European continent, while others maintain that they were probably native Britons, descended from the original builders.</p>
-                                    <p>If the facts surrounding the architects and construction of Stonehenge remain shadowy at best, the purpose of the striking monument is even more of a mystery. While there is consensus among the majority of modern scholars that Stonehenge once served the function of burial ground, they have yet to determine what other purposes it had.</p>
-                                    <p>In the 1960s, the astronomer Gerald Hawkins suggested that the cluster of megalithic stones operated as a form of calendar, with different points corresponding to astrological phenomena such as solstices, equinoxes and eclipses occurring at different times of the year. While his theory has received a considerable amount of attention over the decades, critics maintain that Stonehenge’s builders probably lacked the knowledge necessary to predict such events or that England’s dense cloud cover would have obscured their view of the skies.</p>
-                                    <p>More recently, signs of illness and injury in the human remains unearthed at Stonehenge led a group of British archaeologists to speculate that it was considered a place of healing, perhaps because bluestones were thought to have curative powers.</p>
-                                    <hr>
-                                    <p>* Neolithic – The era, also known as the New Stone Age, which began around 12,000 years ago and ended around 3500 BCE</p>
-                                    <p>** Celtic – The Celts were people who lived in Britain and northwest Europe during the Iron Age from 600 BCE to 43 CE</p>
-                                </div>
-                            </article>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-nc">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-8</h3>
-                                    <p class="lead">Complete the notes below.</p>
-                                    <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
-                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
-                                </fieldset>
-
-                                <fieldset class="q-item">
-                                    <h3>Stonehenge</h3>
-                                    <p><b>Construction</b></p>
-
-                                    <p>Stage 1:</p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="1">
-                                                the ditch and henge were dug, possibly using tools made from
-                                                <span class="q-number-box">1</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-1" class="q-text" placeholder="">
-                                                diet
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="2">
-                                                <span class="q-number-box">2</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-2" class="q-text" placeholder="">
-                                                may have been arranged in deep pits inside the circle
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <p>Stage 2:</p>
-                                    <ul>
-                                        <li>bluestones from the Preseli Hills were placed in standing position</li>
-                                        <li>theories about the transportation of the bluestones:</li>
-                                        <ul>
-                                            <li>archaeological:</li>
-                                            <ul>
-                                                <li>
-                                                    <div class="q-list" data-q="3">
-                                                        builders used
-                                                        <span class="q-number-box">3</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-3" class="q-text" placeholder="">
-                                                        to make sledges and rollers
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="q-list" data-q="4">
-                                                        <span class="q-number-box">4</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-4" class="q-text" placeholder="">
-                                                        pulled them on giant baskets
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <li>geological:</li>
-                                            <ul>
-                                                <li>
-                                                    <div class="q-list" data-q="5">
-                                                        they were brought from Wales by
-                                                        <span class="q-number-box">5</span>
-                                                        <input type="text" name="JSRJ0oDlxC0yFMgt-5" class="q-text" placeholder="">
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </ul>
-                                    </ul>
-
-                                    <p>Stage 3:</p>
-                                    <ul>
-                                        <li>sandstone slabs were arranged into an outer crescent or ring</li>
-                                    </ul>
-
-                                    <p><b>Builders</b></p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="6">
-                                                a theory arose in the 17th century that its builders were Celtic
-                                                <span class="q-number-box">6</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-6" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <p><b>Purpose</b></p>
-                                    <ul>
-                                        <li>
-                                            <div class="q-list" data-q="7">
-                                                many experts agree it has been used as a
-                                                <span class="q-number-box">7</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-7" class="q-text" placeholder="">
-                                                site
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="q-list" data-q="8">
-                                                in the 1960s, it was suggested that it worked as a kind of
-                                                <span class="q-number-box">8</span>
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-8" class="q-text" placeholder="">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-nc">
-                                        Submit
-                                    </button>
-                                </div>
-
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-tfng" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng" hidden>
+            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">Content: True/False/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">The kéképé</h3>
                             <div class="passage-body">
-                                <p>The third phase of construction took place around 2000 BCE. At this point, sandstone slabs – known as ‘sarsens’ – were arranged into an outer crescent or ring; some were assembled into the iconic three-pieced structures called trilithons that stand tall in the centre of Stonehenge. Some 50 of these stones are now visible on the site, which may once have contained many more. Radiocarbon dating has revealed that work continued at Stonehenge until roughly 1600 BCE, with the bluestones in particular being repositioned multiple times.</p>
-                                <p>But who were the builders of Stonehenge? In the 17th century, archaeologist John Aubrey made the claim that Stonehenge was the work of druids, who had important religious, judicial and political roles in Celtic** society. This theory was widely popularized by the antiquarian William Stukeley, who had unearthed primitive graves at the site. Even today, people who identify as modern druids continue to gather at Stonehenge for the summer solstice. However, in the mid-20th century, radiocarbon dating demonstrated that Stonehenge stood more than 1,000 years before the Celts inhabited the region.</p>
-                                <p>Many modern historians and archaeologists now agree that several distinct tribes of people contributed to Stonehenge, each undertaking a different phase of its construction. Bones, tools and other artefacts found on the site seem to support this hypothesis. The first stage was achieved by Neolithic agrarians who were likely to have been indigenous to the British Isles. Later, it is believed, groups with advanced tools and a more communal way of life left their mark on the site. Some believe that they were immigrants from the European continent, while others maintain that they were probably native Britons, descended from the original builders.</p>
-                                <p>If the facts surrounding the architects and construction of Stonehenge remain shadowy at best, the purpose of the striking monument is even more of a mystery. While there is consensus among the majority of modern scholars that Stonehenge once served the function of burial ground, they have yet to determine what other purposes it had.</p>
-                                <p>In the 1960s, the astronomer Gerald Hawkins suggested that the cluster of megalithic stones operated as a form of calendar, with different points corresponding to astrological phenomena such as solstices, equinoxes and eclipses occurring at different times of the year. While his theory has received a considerable amount of attention over the decades, critics maintain that Stonehenge’s builders probably lacked the knowledge necessary to predict such events or that England’s dense cloud cover would have obscured their view of the skies.</p>
-                                <p>More recently, signs of illness and injury in the human remains unearthed at Stonehenge led a group of British archaeologists to speculate that it was considered a place of healing, perhaps because bluestones were thought to have curative powers.</p>
-                                <hr>
-                                <p>* Neolithic – The era, also known as the New Stone Age, which began around 12,000 years ago and ended around 3500 BCE</p>
-                                <p>** Celtic – The Celts were people who lived in Britain and northwest Europe during the Iron Age from 600 BCE to 43 CE</p>
+                                <p>The kakapo is a nocturnal, flightless parrot that is critically endangered and one of New Zealand ‘s unique treasures.</p>
+                                <p>The kakapo, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers, forward-facing eyes, a large grey beak, large blue feet, and relatively short wings and tail. It is the world’s only flightless parrot, and is also possibly one of the world’s longest-living birds, with a reported lifespan of up to 100 years.</p>
+                                <p>Kakapo are solitary birds and tend to occupy the same home range for many years. They forage on the ground and climb high into trees. They often leap from trees and flap their wings, but at best manage a controlled descent to the ground. They are entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.</p>
+                                <p>Kakapo breed in summer and autumn, but only in years when food is plentiful. Males play no part in incubation or chick-rearing – females alone incubate eggs and feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before and during incubation. The female kakapo has to spend long periods away from the nest searching for food, which leaves the unattended eggs and chicks particularly vulnerable to predators.</p>
+                                <p>Before humans arrived, kakapo were common throughout New Zealand’s forests. However, this all changed with the arrival of the first Polynesian settlers about 700 years ago. For the early settlers, the flightless kakapo was easy prey. They ate its meat and used its feathers to make soft cloaks. With them came the Polynesian dog and rat, which also preyed on kakapo. By the time European colonisers arrived in the early 1800s, kakapo had become confined to the central North Island and forested parts of the South Island. The fall in kakapo numbers was accelerated by European colonisation. A great deal of habitat was lost through forest clearance, and introduced species such as deer depleted the remaining forests of food. Other predators such as cats, stoats and two more species of rat were also introduced. The kakapo were in serious trouble.</p>
+                                <p>In 1894, the New Zealand government launched its first attempt to save the kakapo. Conservationist Richard Henry led an effort to relocate several hundred of the birds to predator-free Resolution Island in Fiordland. Unfortunately, the island didn’t remain predator free – stoats arrived within six years, eventually destroying the kakapo population. By the mid-1900s, the kakapo was practically a lost species. Only a few clung to life in the most isolated parts of New Zealand.</p>
+                                <p>From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60 expeditions to find kakapo, focusing mainly on Fiordland. Six were caught, but there were no females amongst them and all but one died within a few months of captivity.</p>
+                                <p>In 1974, a new initiative was launched, and by 1977, 18 more kakapo were found in Fiordland. However, there were still no females. In 1977, a large population of males was spotted in Rakiura – a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present. These birds have been the foundation of all subsequent work in managing the species.</p>
+                                <p>Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in kakapo numbers. As a result, during 1980-97, the surviving population was evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier Island. However, breeding success was hard to achieve. Rats were found to be a major predator of kakapo chicks, and an insufficient number of chicks survived to offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. <br>The kakapo population had dropped to 51 birds.</p>
+                                <p>The critical situation prompted an urgent review of kakapo management in New Zealand. In 1996, a new Recovery Plan was launched, together with a specialist advisory group called the Kakapo Scientific and Technical Advisory Committee and a higher amount of funding. Renewed steps were taken to control predators on the three islands. Cats were eradicated from Little Barrier Island in 1980, and possums were eradicated from Codfish Island by 1986. However, the population did not start to increase until rats were removed from all three islands, and the birds were more intensively managed. This involved moving the birds between islands, supplementary feeding of adults, and rescuing and hand-raising any failing chicks.</p>
                             </div>
                         </article>
 
@@ -1720,7 +1573,6 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tfng">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-5</b></p>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -1735,21 +1587,21 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        During the third phase of construction, sandstone slabs were placed in both the outer areas and the middle of the Stonehenge site.
+                                        There are other parrots that share the kakapos inability to fly.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="TRUE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="FALSE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1759,21 +1611,21 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        There is scientific proof that the bluestones stood in the same spot until approximately 1600 BCE.
+                                        Adult kakapo produce chicks every year.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="TRUE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="FALSE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1783,21 +1635,21 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        John Aubrey’s claim about Stonehenge was supported by 20th-century findings.
+                                        Adult male kakapo bring food back to nesting females.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="TRUE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="FALSE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1807,21 +1659,21 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        Objects discovered at Stonehenge seem to indicate that it was constructed by a number of different groups of people.
+                                        The Polynesian rat was a greater threat to the kakapo than Polynesian settlers.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="TRUE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="FALSE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1831,21 +1683,45 @@
                                 <fieldset class="q-item" data-q="5">
                                     <legend class="q-text">
                                         <span class="q-number">5</span>
-                                        Criticism of Gerald Hawkins’ theory about Stonehenge has come mainly from other astronomers.
+                                        Kakapo were transferred from Rakiura Island to other locations because they were at risk from feral cats.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 5 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="TRUE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="TRUE" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">TRUE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="FALSE" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="FALSE" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">FALSE</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="6">
+                                    <legend class="q-text">
+                                        <span class="q-number">6</span>
+                                        One Recovery Plan initiative that helped increase the kakapo population size was caring for struggling young birds.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-6" value="TRUE" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">TRUE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-6" value="FALSE" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">FALSE</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-6" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -1860,6 +1736,485 @@
                                         Submit
                                     </button>
                                 </div>
+
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-nc" class="x-panel" role="tabpanel" aria-labelledby="tab-nc" hidden>
+                <div class="x-panel-inner">Content: Note Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>Kakapo are solitary birds and tend to occupy the same home range for many years. They forage on the ground and climb high into trees. They often leap from trees and flap their wings, but at best manage a controlled descent to the ground. They are entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.</p>
+                                <p>Kakapo breed in summer and autumn, but only in years when food is plentiful. Males play no part in incubation or chick-rearing – females alone incubate eggs and feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before and during incubation. The female kakapo has to spend long periods away from the nest searching for food, which leaves the unattended eggs and chicks particularly vulnerable to predators.</p>
+                                <p>Before humans arrived, kakapo were common throughout New Zealand’s forests. However, this all changed with the arrival of the first Polynesian settlers about 700 years ago. For the early settlers, the flightless kakapo was easy prey. They ate its meat and used its feathers to make soft cloaks. With them came the Polynesian dog and rat, which also preyed on kakapo. By the time European colonisers arrived in the early 1800s, kakapo had become confined to the central North Island and forested parts of the South Island. The fall in kakapo numbers was accelerated by European colonisation. A great deal of habitat was lost through forest clearance, and introduced species such as deer depleted the remaining forests of food. Other predators such as cats, stoats and two more species of rat were also introduced. The kakapo were in serious trouble.</p>
+                                <p>In 1894, the New Zealand government launched its first attempt to save the kakapo. Conservationist Richard Henry led an effort to relocate several hundred of the birds to predator-free Resolution Island in Fiordland. Unfortunately, the island didn’t remain predator free – stoats arrived within six years, eventually destroying the kakapo population. By the mid-1900s, the kakapo was practically a lost species. Only a few clung to life in the most isolated parts of New Zealand.</p>
+                                <p>From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60 expeditions to find kakapo, focusing mainly on Fiordland. Six were caught, but there were no females amongst them and all but one died within a few months of captivity.</p>
+                                <p>In 1974, a new initiative was launched, and by 1977, 18 more kakapo were found in Fiordland. However, there were still no females. In 1977, a large population of males was spotted in Rakiura – a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present. These birds have been the foundation of all subsequent work in managing the species.</p>
+                                <p>Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in kakapo numbers. As a result, during 1980-97, the surviving population was evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier Island. However, breeding success was hard to achieve. Rats were found to be a major predator of kakapo chicks, and an insufficient number of chicks survived to offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. <br>The kakapo population had dropped to 51 birds.</p>
+                                <p>The critical situation prompted an urgent review of kakapo management in New Zealand. In 1996, a new Recovery Plan was launched, together with a specialist advisory group called the Kakapo Scientific and Technical Advisory Committee and a higher amount of funding. Renewed steps were taken to control predators on the three islands. Cats were eradicated from Little Barrier Island in 1980, and possums were eradicated from Codfish Island by 1986. However, the population did not start to increase until rats were removed from all three islands, and the birds were more intensively managed. This involved moving the birds between islands, supplementary feeding of adults, and rescuing and hand-raising any failing chicks.</p>
+                                <p>After the first five years of the Recovery Plan, the population was on target. By 2000, five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the filture of kakapo, and by June 2020, a total of 210 birds was recorded.</p>
+                                <p>Today, kakapo management continues to be guided by the kakapo Recovery Plan. Its key goals are: minimise the loss of genetic diversity in the kakapo population, restore or maintain sufficient habitat to accommodate the expected increase in the kakapo population, and ensure stakeholders continue to be fully engaged in the preservation of the species.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-nc">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-7</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD AND/OR NUMBER ONLY</b> from the passage for each answer.</p>
+                                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+
+                                    <h3>New Zealand’s kakapo</h3>
+
+                                    <p><b>A Type of parrot:</b></p>
+                                    <p>
+                                        Diet consists of fern fronds, various parts of a tree and
+                                        <span class="q-number-box">1</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-1" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        Nests are created in
+                                        <span class="q-number-box">2</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-2" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        . where eggs are laid.
+                                    </p>
+
+                                    <p><b>Arrival of Polynesian settlers</b></p>
+                                    <p>
+                                        The 
+                                        <span class="q-number-box">3</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-3" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        of the kakapo were used to make clothes.
+                                    </p>
+
+                                    <p><b>Arrival of European colonisers</b></p>
+                                    <p>
+                                        <span class="q-number-box">4</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-4" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        were an animal which they introduced that ate the kakapo’s food sources.
+                                    </p>
+
+                                    <p><b>Protecting kakapo</b></p>
+                                    <p>Richard Henry, a conservationist, tried to protect the kakapo.</p>
+                                    <p>
+                                        A definite sighting of female kakapo on Rakiura Island was reported in the year
+                                        <span class="q-number-box">5</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-5" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        The Recovery Plan included an increase in 
+                                        <span class="q-number-box">6</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-6" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        A current goal of the Recovery Plan is to maintain the involvement of 
+                                        <span class="q-number-box">7</span>
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <input type="text" name="xQKeqKYrkqfdgotg-7" class="q-text" placeholder="">
+                                            </span>
+                                        </span>
+                                        in kakapo protection.
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-nc">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-matching_information" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+                <div class="x-panel-inner">Content: Matching Information</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>B</h3>
+                                <p>The disease is caused by a fungus that blocks the elms’ vascular (water, nutrient and food transport) system, causing branches to wilt and die. A first epidemic, which occurred in the 1920s, gradually died down, but in the ’70s a second epidemic was triggered by shipments of elm from Canada. The wood came in the form of logs destined for boat building and its intact bark was perfect for the elm bark beetles that spread the deadly fungus. This time, the beetles carried a much more virulent strain that destroyed the vast majority of British elms.</p>
+                                <h3>C</h3>
+                                <p>Today, elms still exist in the southern English countryside but mostly only in low hedgerows between fields. ‘We have millions of small elms in hedgerows but they get targeted by the beetle as soon as they reach a certain size,’ says Karen Russell, co-author of the report Where we are with elm. Once the trunk of the elm reaches 10-15 centimetres or so in diameter, it becomes a perfect size for beetles to lay eggs and for the fungus to take hold. Yet mature specimens have been identified, in counties such as Cambridgeshire, that are hundreds of years old, and have mysteriously escaped the epidemic.</p>
+                                <p>The key, Russell says, is to identify and study those trees that have survived and work out why they stood tall when millions of others succumbed. Nevertheless, opportunities are limited as the number of these mature survivors is relatively small. ‘What are the reasons for their survival?’ asks Russell. ‘Avoidance, tolerance, resistance? We don’t know where the balance lies between the three. I don’t see how it can be entirely down to luck.’</p>
+                                <h3>D</h3>
+                                <p>For centuries, elm ran a close second to oak as the hardwood tree of choice in Britain and was in many instances the most prominent tree in the landscape. Not only was elm common in European forests, it became a key component of birch, ash and hazel woodlands. The use of elm is thought to go back to the Bronze Age, when it was widely used for tools. Elm was also the preferred material for shields and early swords. In the 18th century, it was planted more widely and its wood was used for items such as storage crates and flooring. It was also suitable for items that experienced high levels of impact and was used to build the keel of the l9th-century sailing ship Cutty Sark as well as mining equipment.</p>
+                                <h3>E</h3>
+                                <p>Given how ingrained elm is in British culture, it’s unsurprising the tree has many advocates. Amongst them is Peter Bourne of the National Elm Collection in Brighton. ‘I saw Dutch elm disease unfold as a small boy,’ he says. ‘The elm seemed to be part of rural England, but I remember watching trees just lose their leaves and that really stayed with me.’ Today, the city of Brighton’s elms total about 17,000. Local factors appear to have contributed to their survival. Strong winds from the sea make it difficult for the determined elm bark beetle to attack this coastal city’s elm population. However, the situation is precarious. ‘The beetles can just march in if we’re not careful, as the threat is right on our doorstep,’ says Bourne.</p>
+                                <h3>F</h3>
+                                <p>Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease. This means a widespread reintroduction would involve existing or new hybrid strains derived from resistant, generally non-native elm species. A new generation of seedlings have been bred and tested to see if they can withstand the fungus by cutting a small slit on the bark and in ecting a tiny amount of the pathogen. ‘The effects are very quick,’ says Russell. ‘You return in four to six weeks and trees that are resistant show no symptoms, whereas those that are susceptible show leaf loss and may even have died completely.’</p>
+                                <h3>G</h3>
+                                <p>All of this raises questions of social acceptance, acknowledges Russell. ‘If we’re putting elm back into the landscape, a small element of it is not native – are we bothered about that?’ For her, the environmental case for reintroducing elm is strong. ‘They will host wildlife, which is a good thing.’ Others are more wary. ‘On the face of it, it seems like a good idea,’ says Elliot. The problem, he suggests, is that, ‘You’re replacing a native species with a horticultural analogue. You’re effectively cloning.’ There’s also the risk of introducing new diseases. Rather than plant new elms, the Woodland Trust emphasises providing space to those elms that have survived independently. ‘Sometimes the best thing you can do is just give nature time to recover over time, you might get resistance,’ says Elliot.</p>
+                                <p>*horticultural analogue: a cultivated plant species that is genetically similar to an existing species.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-matching_information">
+                                <fieldset class="q-item">
+                                    <p class="lead"><b>Questions 1-5</b></p>
+                                    <p class="lead">Reading Passage has seven paragraphs, <b>A–G</b>.</p>
+                                    <p>Which section contains the following information?</p>
+                                    <p class="lead">Write the correct letter, <b>A-G</b>, in boxes on your answer sheet.</p>
+                                    <p><b>NB</b> You may use any letter more than once.</p>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            Reference to the research problems that arise from there being only a few surviving large elms
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            Details of a difference of opinion about the value of reintroducing elms to Britain
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            Reference to how Dutch elm disease was brought into Britain
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            A description of the conditions that have enabled a location in Britain to escape Dutch elm disease
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            Reference to the stage at which young elms become vulnerable to Dutch elm disease
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-matching_information" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-matching_information">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-matching_features" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_features" hidden>
+                <div class="x-panel-inner">Content: Matching Features</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <h3 class="passage-title">To Britain</h3>
+                            <div class="passage-body">
+                                <p>Mark Rowe investigates attempts to reintroduce elms to Britain</p>
+                                <h3>A</h3>
+                                <p>Around 25 million elms, accounting for 90% of all elm trees in the UK, died during the 1960s and ’70s of Dutch elm disease. In the aftermath, the elm, once so dominant in the British landscape, was largely forgotten. However, there’s now hope the elm may be reintroduced to the countryside of central and southern England. Any reintroduction will start from a very low base. ‘The impact of the disease is difficult to picture if you hadn’t seen what was there before,’ says Matt Elliot of the Woodland Trust. ‘You look at old photographs from the 1960s and it’s only then that you realise the impact [elms had]. They were significant, large trees then they were gone.’</p>
+                                <h3>B</h3>
+                                <p>The disease is caused by a fungus that blocks the elms’ vascular (water, nutrient and food transport) system, causing branches to wilt and die. A first epidemic, which occurred in the 1920s, gradually died down, but in the ’70s a second epidemic was triggered by shipments of elm from Canada. The wood came in the form of logs destined for boat building and its intact bark was perfect for the elm bark beetles that spread the deadly fungus. This time, the beetles carried a much more virulent strain that destroyed the vast majority of British elms.</p>
+                                <h3>C</h3>
+                                <p>Today, elms still exist in the southern English countryside but mostly only in low hedgerows between fields. ‘We have millions of small elms in hedgerows but they get targeted by the beetle as soon as they reach a certain size,’ says Karen Russell, co-author of the report Where we are with elm. Once the trunk of the elm reaches 10-15 centimetres or so in diameter, it becomes a perfect size for beetles to lay eggs and for the fungus to take hold. Yet mature specimens have been identified, in counties such as Cambridgeshire, that are hundreds of years old, and have mysteriously escaped the epidemic.</p>
+                                <p>The key, Russell says, is to identify and study those trees that have survived and work out why they stood tall when millions of others succumbed. Nevertheless, opportunities are limited as the number of these mature survivors is relatively small. ‘What are the reasons for their survival?’ asks Russell. ‘Avoidance, tolerance, resistance? We don’t know where the balance lies between the three. I don’t see how it can be entirely down to luck.’</p>
+                                <h3>D</h3>
+                                <p>For centuries, elm ran a close second to oak as the hardwood tree of choice in Britain and was in many instances the most prominent tree in the landscape. Not only was elm common in European forests, it became a key component of birch, ash and hazel woodlands. The use of elm is thought to go back to the Bronze Age, when it was widely used for tools. Elm was also the preferred material for shields and early swords. In the 18th century, it was planted more widely and its wood was used for items such as storage crates and flooring. It was also suitable for items that experienced high levels of impact and was used to build the keel of the l9th-century sailing ship Cutty Sark as well as mining equipment.</p>
+                                <h3>E</h3>
+                                <p>Given how ingrained elm is in British culture, it’s unsurprising the tree has many advocates. Amongst them is Peter Bourne of the National Elm Collection in Brighton. ‘I saw Dutch elm disease unfold as a small boy,’ he says. ‘The elm seemed to be part of rural England, but I remember watching trees just lose their leaves and that really stayed with me.’ Today, the city of Brighton’s elms total about 17,000. Local factors appear to have contributed to their survival. Strong winds from the sea make it difficult for the determined elm bark beetle to attack this coastal city’s elm population. However, the situation is precarious. ‘The beetles can just march in if we’re not careful, as the threat is right on our doorstep,’ says Bourne.</p>
+                                <h3>F</h3>
+                                <p>Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease. This means a widespread reintroduction would involve existing or new hybrid strains derived from resistant, generally non-native elm species. A new generation of seedlings have been bred and tested to see if they can withstand the fungus by cutting a small slit on the bark and in ecting a tiny amount of the pathogen. ‘The effects are very quick,’ says Russell. ‘You return in four to six weeks and trees that are resistant show no symptoms, whereas those that are susceptible show leaf loss and may even have died completely.’</p>
+                                <h3>G</h3>
+                                <p>All of this raises questions of social acceptance, acknowledges Russell. ‘If we’re putting elm back into the landscape, a small element of it is not native – are we bothered about that?’ For her, the environmental case for reintroducing elm is strong. ‘They will host wildlife, which is a good thing.’ Others are more wary. ‘On the face of it, it seems like a good idea,’ says Elliot. The problem, he suggests, is that, ‘You’re replacing a native species with a horticultural analogue. You’re effectively cloning.’ There’s also the risk of introducing new diseases. Rather than plant new elms, the Woodland Trust emphasises providing space to those elms that have survived independently. ‘Sometimes the best thing you can do is just give nature time to recover over time, you might get resistance,’ says Elliot.</p>
+                                <p>*horticultural analogue: a cultivated plant species that is genetically similar to an existing species.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-matching_features">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-5</h3>
+                                    <p class="lead">Look at the following statements and the list of people below.</p>
+                                    <p>Match each statement with the correct person, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.</p>
+                                    <p><b>NB</b>   You may use any letter more than once.</p>
+                                    <b>List of People</b>
+                                    <ul class="legend">
+                                        <li><strong>A</strong> Matt Elliot</li>
+                                        <li><strong>B</strong> Karen Russell</li>
+                                        <li><strong>C</strong> Peter Bourne</li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            If a tree gets infected with Dutch elm disease, the damage rapidly becomes visible 
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            It may be better to wait and see if the mature elms that have survived continue to flourish 
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            There must be an explanation for the survival of some mature elms
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            We need to be aware that insects carrying Dutch elm disease are not very far away 
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            You understand the effect Dutch elm disease has had when you see evidence of how prominent the tree once was
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-matching_features" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-matching_features">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
+                <div class="x-panel-inner">Content: Summary Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <h3>D</h3>
+                                <p>For centuries, elm ran a close second to oak as the hardwood tree of choice in Britain and was in many instances the most prominent tree in the landscape. Not only was elm common in European forests, it became a key component of birch, ash and hazel woodlands. The use of elm is thought to go back to the Bronze Age, when it was widely used for tools. Elm was also the preferred material for shields and early swords. In the 18th century, it was planted more widely and its wood was used for items such as storage crates and flooring. It was also suitable for items that experienced high levels of impact and was used to build the keel of the l9th-century sailing ship Cutty Sark as well as mining equipment.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-summary_completion">
+                                <fieldset class="q-item">
+                                    <h3>Questions 1-3</h3>
+                                    <p class="lead">Complete the summary below.</p>
+                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+                                    <h3>Uses of a Popular Tree</h3>
+
+                                    <p>
+                                        <div>
+                                            For hundreds of years, the only tree that was more popular in Britain than elm was
+                                            <span class="q-number-box">1</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="xQKeqKYrkqfdgotg-1" class="q-text" placeholder="">
+                                                </span>
+                                            </span>
+                                            . Starting in the Bronze Age, many tools were made from elm, and people also used it to make weapons. In the 18th century, it was grown to provide wood for boxes and
+                                            <span class="q-number-box">2</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="xQKeqKYrkqfdgotg-2" class="q-text" placeholder="">
+                                                </span>
+                                            </span>
+                                            . Due to its strength, elm was often used for mining equipment, and the Cutty Sark’s
+                                            <span class="q-number-box">3</span>
+                                            <span style="flex: 1;">
+                                                <span class="q-question">
+                                                    <input type="text" name="xQKeqKYrkqfdgotg-3" class="q-text" placeholder="">
+                                                </span>
+                                            </span>
+                                            was also constructed from elm.
+                                        </div>
+                                    </p>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
+                                        Submit
+                                    </button>
+                                </div>
                             </form>
                         </aside>
                     </div>
@@ -1870,15 +2225,15 @@
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">Living with artificial intelligence</h3>
+                            <h3 class="passage-title">How Stress Affects Our Judgement</h3>
                             <div class="passage-body">
-                                <p><i>Powerful artificial intelligence (AI) needs to be reliably aligned with human values, but does this mean AI will eventually have to police those values?</i></p>
-                                <p>This has been the decade of AI, with one astonishing feat after another. A chess-playing AI that can defeat not only all human chess players, but also all previous human-programmed chess machines, after learning the game in just four hours? That’s yesterday’s news, what’s next? True, these prodigious accomplishments are all in so-called narrow AI, where machines perform highly specialised tasks. But many experts believe this restriction is very temporary. By mid-century, we may have artificial general intelligence (AGI) – machines that can achieve human-level performance on the full range of tasks that we ourselves can tackle.</p>
-                                <p>If so, there’s little reason to think it will stop there. Machines will be free of many of the physical constraints on human intelligence. Our brains run at slow biochemical processing speeds on the power of a light bulb, and their size is restricted by the dimensions of the human birth canal. It is remarkable what they accomplish, given these handicaps. But they may be as far from the physical limits of thought as our eyes are from the incredibly powerful Webb Space Telescope.</p>
-                                <p>Once machines are better than us at designing even smarter machines, progress towards these limits could accelerate. What would this mean for us? Could we ensure a safe and worthwhile coexistence with such machines? On the plus side, AI is already useful and profitable for many things, and super AI might be expected to be super useful and super profitable. But the more powerful AI becomes, the more important it will be to specify its goals with great care. Folklore is full of tales of people who ask for the wrong thing, with disastrous consequences- King Midas, for example, might have wished that everything he touched turned to gold, but didn’t really intend this to apply to his breakfast.</p>
-                                <p>So we need to create powerful AI machines that are ‘human-friendly’- that have goals reliably aligned with our own values. One thing that makes this task difficult is that we are far from reliably human-friendly ourselves. We do many terrible things to each other and to many other creatures with whom we share the planet. If superintendent machines don’t do a lot better than us, we’ll be in deep trouble. We’ll have powerful new intelligence amplifying the dark sides of our own fallible natures.</p>
-                                <p>For safety’s sake, then, we want the machines to be ethically as well as cognitively superhuman. We want them to aim for the moral high ground, not for the troughs in which many of us spend some of our time. Luckily they’ll be smart enough for the job. If there are routes to the moral high ground, they’ll be better than us at finding them, and steering us in the right direction.</p>
-                                <p>However, there are two big problems with this utopian vision. One is how we get the machines started on the journey, the other is what it would mean to reach this destination. The ‘getting started’ problem is that we need to tell the machines what they’re looking for with sufficient clarity that we can be confident they will find it – whatever ‘it’ actually turns out to be. This won’t be easy, given that we are tribal creatures and conflicted about the ideals ourselves. We often ignore the suffering of strangers, and even contribute to it, at least indirectly. How then, do we point machines in the direction of something better?</p>
+                                <p>Some of the most important decisions of our lives occur while we’re feeling stressed and anxious. From medical decisions to financial and professional ones, we are all sometimes required to weigh up information under stressful conditions. But do we become better or worse at processing and using information under such circumstances?</p>
+                                <p>My colleague and I, both neuroscientists, wanted to investigate how the mind operates under stress, so we visited some local fire stations. Firefighters’ workdays vary quite a bit. Some are pretty relaxed, they’ll spend their time washing the truck, cleaning equipment, cooking meals and reading. Other days can be hectic, with numerous life-threatening incidents to attend to, they’ll enter burning homes to rescue trapped residents, and assist with medical emergencies. These ups and downs presented the perfect setting for an experiment on how people’s ability to use information changes when they feel under pressure.</p>
+                                <p>We found that perceived threat acted as a trigger for a stress reaction that made the task of processing information easier for the firefighters – but only as long as it conveyed bad news.</p>
+                                <p>This is how we arrived at these results. We asked the firefighters to estimate their likelihood of experiencing 40 different adverse events in their life, such as being involved in an accident or becoming a victim of card fraud. We then gave them either good news (that their likelihood of experiencing these events was lower than they’d thought) or bad news (that it was higher) and asked them to provide new estimates.</p>
+                                <p>People are normally quite optimistic -they will ignore bad news and embrace the good. This is what happened when the firefighters were relaxed, but when they were under stress, a different pattern emerged. Under these conditions, they became hyper-vigilant to bad news, even when it had nothing to do with their job (such as learning that the likelihood of card fraud was higher than they’d thought), and altered their beliefs in response. In contrast, stress didn’t change how they responded to good news (such as learning that the likelihood of card fraud was lower than they’d thought).</p>
+                                <p>Back in our lab, we observed the same pattern in students who were told they had to give a surprise public speech, which would be judged by a panel, recorded and posted online. Sure enough, their cortisol levels spiked, their heart rates went up and they suddenly became better at processing unrelated, yet alarming, information about rates of disease and violence.</p>
+                                <p>When we experience stressful events, a physiological change is triggered that causes us to take in warnings and focus on what might go wrong. Brain imaging reveals that this ‘switch’ is related to a sudden boost in a neural signal important for learning, specifically in response to unexpected warning signs, such as faces expressing fear.</p>
                             </div>
                         </article>
 
@@ -1887,7 +2242,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-one">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-6</b></p>
+                                    <h3>Question 1-3</h3>
                                     <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
                                         <b>D</b>.
                                     </p>
@@ -1896,28 +2251,28 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        What point does the writer make about AI in the first paragraph?
+                                        In the first paragraph, the writer introduces the topic of the text by
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="A" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">It is difficult to predict how quickly AI will progress.</span>
+                                            <span class="opt-label">defining some commonly used terms.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="B" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">Much can be learned about the use of AI in chess machines.</span>
+                                            <span class="opt-label">questioning a widely held assumption.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="C" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">The future is unlikely to see limitations on the capabilities of AI.</span>
+                                            <span class="opt-label">mentioning a challenge faced by everyone.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="D" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">Experts disagree on which specialised tasks AI will be able to perform.</span>
+                                            <span class="opt-label">specifying a situation which makes us most anxious.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1925,28 +2280,28 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        What is the writer doing in the second paragraph?
+                                        What point does the writer make about firefighters in the second paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="A" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">explaining why machines will be able to outperform humans</span>
+                                            <span class="opt-label">The regular changes of stress levels in their working lives make them ideal study subjects.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="B" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">describing the characteristics that humans and machines share</span>
+                                            <span class="opt-label">The strategies they use to handle stress are of particular interest to researchers.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="C" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">giving information about the development of machine intelligence</span>
+                                            <span class="opt-label">The stressful nature of their job is typical of many public service professions.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="D" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">indicating which aspects of humans are the most advanced</span>
+                                            <span class="opt-label">Their personalities make them especially well-suited to working under stress.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1954,28 +2309,28 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Why does the writer mention the story of King Midas?
+                                        What is the writer doing in the fourth paragraph?
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="A" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">to compare different visions of progress</span>
+                                            <span class="opt-label">Explaining their findings</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="B" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">to illustrate that poorly defined objectives can go wrong</span>
+                                            <span class="opt-label">Justifying their approach</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="C" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">to emphasise the need for cooperation</span>
+                                            <span class="opt-label">Setting out their objectives</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="D" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">to point out the financial advantages of a course of action</span>
+                                            <span class="opt-label">Describing their methodology</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -1983,86 +2338,28 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        What challenge does the writer refer to in the fourth paragraph?
+                                        In the seventh paragraph, the writer describes a mechanism in the brain which
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="A" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="A" />
                                             <span class="opt-code">A</span>
-                                            <span class="opt-label">encouraging humans to behave in a more principled way</span>
+                                            <span class="opt-label">Enables people to respond more quickly to stressful situations.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="B" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="B" />
                                             <span class="opt-code">B</span>
-                                            <span class="opt-label">deciding which values we want AI to share with us</span>
+                                            <span class="opt-label">Results in increased ability to control our levels of anxiety.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="C" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="C" />
                                             <span class="opt-code">C</span>
-                                            <span class="opt-label">creating a better world for all creatures on the planet</span>
+                                            <span class="opt-label">Produces heightened sensitivity to indications of external threats.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="D" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">ensuring AI is more human-friendly than we are ourselves</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        What does the writer suggest about the future of AI in the fifth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">The safety of machines will become a key issue.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">It is hard to know what impact machines will have on the world.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">Machines will be superior to humans in certain respects.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-5" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">Many humans will oppose machines having a wider role.</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text">
-                                        <span class="q-number">6</span>
-                                        Which of the following best summarises the writer’s argument in the sixth paragraph?
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="A" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">More intelligent machines will result in greater abuses of power.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="B" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">Machine learning will share very few features with human learning.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="C" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">There are a limited number of people with the knowledge to program machines.</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="D" />
-                                            <span class="opt-code">D</span>
-                                            <span class="opt-label">Human shortcomings will make creating the machines we need more difficult.</span>
+                                            <span class="opt-label">Is activated when there is a need to communicate a sense of danger.</span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2080,16 +2377,162 @@
                     </div>
                 </div>
             </div>
+            <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
+                <div class="x-panel-inner">Content: Matching Sentence Ending</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="reading-grid resizable-grid highlighted-content">
+                        <article class="passage" aria-label="Reading Passage" tabindex="0">
+                            <div class="passage-body">
+                                <p>People are normally quite optimistic -they will ignore bad news and embrace the good. This is what happened when the firefighters were relaxed, but when they were under stress, a different pattern emerged. Under these conditions, they became hyper-vigilant to bad news, even when it had nothing to do with their job (such as learning that the likelihood of card fraud was higher than they’d thought), and altered their beliefs in response. In contrast, stress didn’t change how they responded to good news (such as learning that the likelihood of card fraud was lower than they’d thought).</p>
+                                <p>Back in our lab, we observed the same pattern in students who were told they had to give a surprise public speech, which would be judged by a panel, recorded and posted online. Sure enough, their cortisol levels spiked, their heart rates went up and they suddenly became better at processing unrelated, yet alarming, information about rates of disease and violence.</p>
+                            </div>
+                        </article>
+
+                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                        <aside class="qa" aria-label="Questions">
+                            <form class="qa-body" id="form-mse">
+                                <fieldset class="q-item">
+                                    <p class="lead">Complete each sentence with the correct ending, A-G, below.</p>
+                                    <ul class="legend">
+                                        <li><strong>A</strong> made them feel optimistic</li>
+                                        <li><strong>B</strong> took relatively little notice of bad news.</li>
+                                        <li><strong>C</strong> responded to negative and positive information in the same way.</li>
+                                        <li><strong>D</strong> were feeling under stress.</li>
+                                        <li><strong>E</strong> put them in a stressful situation.</li>
+                                        <li><strong>F</strong> behaved in a similar manner, regardless of the circumstances.</li>
+                                        <li><strong>G</strong> thought it more likely that they would experience something bad.</li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="1">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">1</span>
+                                        <span style="flex: 1;">
+                                            At times when they were relaxed, the firefighters usually
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-1" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="2">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">2</span>
+                                        <span style="flex: 1;">
+                                            The researchers noted that when the firefighters were stressed, they
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-2" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="3">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">3</span>
+                                        <span style="flex: 1;">
+                                            When the firefighters were told good news, they always
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-3" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="4">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">4</span>
+                                        <span style="flex: 1;">
+                                            The students’ cortisol levels and heart rates were affected when the researchers
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-4" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                        <span class="q-number">5</span>
+                                        <span style="flex: 1;">
+                                            In both experiments, negative information was processed better when the subjects
+                                            <span class="q-question">
+                                                <select name="xQKeqKYrkqfdgotg-5" class="q-dropdown">
+                                                    <option value=""></option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
+                                                    <option value="C">C</option>
+                                                    <option value="D">D</option>
+                                                    <option value="E">E</option>
+                                                    <option value="F">F</option>
+                                                    <option value="G">G</option>
+                                                </select>
+                                            </span>
+                                        </span>
+                                    </legend>
+                                </fieldset>
+
+                                <div style="text-align: center;">
+                                    <button  type="button" class="btn btn-primary try-again" id="again-mse" style="display: none">
+                                        Try Again
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="submit-mse">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
                 <div class="x-panel-inner">Content: Yes/No/Not Given</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid highlighted-content">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>As for the ‘destination’ problem, we might, by putting ourselves in the hands of these moral guides and gatekeepers, be sacrificing our own autonomy – an important part of what makes us human. Machines who are better than us at sticking to the moral high ground may be expected to discourage some of the lapses we presently take for granted. We might lose our freedom to discriminate in favour of our own communities, for example.</p>
-                                <p>Loss of freedom to behave badly isn’t always a bad thing, of course: denying ourselves the freedom to put children to work in factories, or to smoke in restaurants are signs of progress. But are we ready for ethical silicon police limiting our options? They might be so good at doing it that we won’t notice them; but few of us are likely to welcome such a future.</p>
-                                <p>These issues might seem far-fetched, but they are to some extent already here. AI already has some input into how resources are used in our National Health Service (NHS) here in the UK, for example. If it was given a greater role, it might do so much more efficiently than humans can manage, and act in the interests of taxpayers and those who use the health system. However, we’d be depriving some humans (e.g. senior doctors) of the control they presently enjoy. Since we’d want to ensure that people are treated equally and that policies are fair, the goals of AI would need to be specified correctly.</p>
-                                <p>We have a new powerful technology to deal with- itself, literally, a new way of thinking. For our own safety, we need to point these new thinkers in the right direction, and get them to act well for us. It is not yet clear whether this is possible, but if it is, it will require a cooperative spirit, and a willingness to set aside self-interest.</p>
+                                <p>It is also important to realise that stress travels rapidly from one person to the next. If a co-worker is stressed, we are more likely to tense up and feel stressed ourselves. We don’t even need to be in the same room with someone for their emotions to influence our behaviour. Studies show that if we observe positive feeds on social media, such as images of a pink sunset, we are more likely to post uplifting messages ourselves. If we observe negative posts, such as complaints about a long queue at the coffee shop, we will in turn create more negative posts.</p>
+                                <p>In some ways, many of us now live as if we are in danger, constantly ready to tackle demanding emails and text messages, and respond to news alerts and comments on social media. Repeatedly checking your phone, according to a survey conducted by the American Psychological Association, is related to stress. In other words, a pre-programmed physiological reaction, which evolution has equipped us with to help us avoid famished predators, is now being triggered by an online post. Social media posting, according to one study, raises your pulse, makes you sweat, and enlarges your pupils more than most daily activities.</p>
+                                <p>The fact that stress increases the likelihood that we will focus more on alarming messages, together with the fact that it spreads extremely rapidly, can create collective fear that is not always justified. After a stressful public event, such as a natural disaster or major financial crash, there is often a wave of alarming information in traditional and social media, which individuals become very aware of. But that has the effect of exaggerating existing danger. And so, a reliable pattern emerges – stress is triggered, spreading from one person to the next, which temporarily enhances the likelihood that people will take in negative reports, which increases stress further. As a result, trips are cancelled, even if the disaster took place across the globe, stocks are sold, even when holding on is the best thing to do.</p>
+                                <p>The good news, however, is that positive emotions, such as hope, are contagious too, and are powerful in inducing people to act to find solutions. Being aware of the close relationship between people’s emotional state and how they process information can help us frame our messages more effectively and become conscientious agents of change.</p>
                             </div>
                         </article>
 
@@ -2098,7 +2541,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-ynng">
                                 <fieldset class="q-item">
-                                    <p><b>Questions 1-4</b></p>
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -2114,21 +2557,21 @@
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text">
                                         <span class="q-number">1</span>
-                                        Machines with the ability to make moral decisions may prevent us from promoting the interests of our communities.
+                                        The tone of the content we post on social media tends to reflect the nature of the posts in our feeds.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="YES" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NO" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-1" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-1" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2138,21 +2581,21 @@
                                 <fieldset class="q-item" data-q="2">
                                     <legend class="q-text">
                                         <span class="q-number">2</span>
-                                        Silicon police would need to exist in large numbers in order to be effective.
+                                        Phones have a greater impact on our stress levels than other electronic media devices.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="YES" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NO" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-2" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-2" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2162,21 +2605,21 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Many people are comfortable with the prospect of their independence being restricted by machines.
+                                        The more we read about a stressful public event on social media, the less able we are to take the information in.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="YES" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NO" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-3" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-3" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2186,21 +2629,45 @@
                                 <fieldset class="q-item" data-q="4">
                                     <legend class="q-text">
                                         <span class="q-number">4</span>
-                                        If we want to ensure that machines act in our best interests, we all need to work together.
+                                        Stress created by social media posts can lead us to take unnecessary precautions.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="YES" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="YES" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">YES</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NO" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="NO" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">NO</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-4" value="NOT GIVEN" />
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-4" value="NOT GIVEN" />
+                                            <span class="opt-code">C</span>
+                                            <span class="opt-label">NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="q-item" data-q="5">
+                                    <legend class="q-text">
+                                        <span class="q-number">5</span>
+                                        Our tendency to be affected by other people’s moods can be used in a positive way.
+                                    </legend>
+                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="YES" />
+                                            <span class="opt-code">A</span>
+                                            <span class="opt-label">YES</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="NO" />
+                                            <span class="opt-code">B</span>
+                                            <span class="opt-label">NO</span>
+                                        </label>
+                                        <label class="q-option">
+                                            <input type="radio" name="xQKeqKYrkqfdgotg-5" value="NOT GIVEN" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">NOT GIVEN</span>
                                         </label>
@@ -2215,428 +2682,6 @@
                                         Submit
                                     </button>
                                 </div>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-summary_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion" hidden>
-                <div class="x-panel-inner">Content: Summary Completion</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>These issues might seem far-fetched, but they are to some extent already here. AI already has some input into how resources are used in our National Health Service (NHS) here in the UK, for example. If it was given a greater role, it might do so much more efficiently than humans can manage, and act in the interests of taxpayers and those who use the health system. However, we’d be depriving some humans (e.g. senior doctors) of the control they presently enjoy. Since we’d want to ensure that people are treated equally and that policies are fair, the goals of AI would need to be specified correctly.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-summary_completion">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-3</h3>
-                                    <p><i>Complete the summary using the list of phrases, <b>A-F</b>, below.</i></p>
-                                    <p><i>Write the correct letter, <b>A-F</b>, in boxes on your answer sheet.</i></p>
-
-                                    <table cellspacing="20" class="q-table q-table-letters">
-                                        <tr>
-                                            <td><b>A</b></td><td>medical practitioners</td>
-                                            <td><b>B</b></td><td>specialised tasks</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>C</b></td><td>available resources</td>
-                                            <td><b>D</b></td><td>reduced illness</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>E</b></td><td>professional authority</td>
-                                            <td><b>F</b></td><td>technology experts</td>
-                                        </tr>
-                                    </table>
-
-                                    <h3>Using AI in the UK health system</h3>
-
-                                    <p>
-                                        AI currently has a limited role in the way
-                                        <span class="q-number-box">1</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-1" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        are allocated in the health service. The positive aspect of AI having a bigger role is that it would be more efficient and lead to patient benefits. However, such a change would result, for example, in certain 
-                                        <span class="q-number-box">2</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-2" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        not having their current level of
-                                        <span class="q-number-box">3</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-3" class="q-dropdown">
-                                                    <option value=""></option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                    <option value="C">C</option>
-                                                    <option value="D">D</option>
-                                                    <option value="E">E</option>
-                                                    <option value="F">F</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        . It is therefore important that AI goals are appropriate so that discriminatory practices could be avoided.
-                                    </p>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-summary_completion">
-                                        Submit
-                                    </button>
-                                </div>
-
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2" hidden>
-                <div class="x-panel-inner">Content: True/False/Not Given 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <h3 class="passage-title">An ideal city</h3>
-                            <div class="passage-body">
-                                <p><i>Leonardo da Vinci’s ideal city was centuries ahead of its time</i></p>
-                                <p>The word ‘genius’ is universally associated with the name of Leonardo da Vinci. A true Renaissance man, he embodied scientific spirit, artistic talent and humanist sensibilities. Five hundred years have passed since Leonardo died in his home at Chateau du Clos Luce, outside Tours, France. Yet far from fading into insignificance, his thinking has carried down the centuries and still surprises today.</p>
-                                <p>The Renaissance marked the transition from the 15th century to modernity and took place after the spread of the plague in the 14th century, which caused a global crisis resulting in some 200 million deaths across Europe and Asia. Today, the world is on the cusp of a climate crisis, which is predicted to cause widespread displacement, extinctions and death, if left unaddressed. Then, as now, radical solutions were called for to revolutionise the way people lived and safeguard humanity against catastrophe.</p>
-                                <p>Around 1486 – after a pestilence that killed half the population in Milan, Italy – Leonardo turned his thoughts to urban planning problems. Following a typical Renaissance trend, he began to work on an ‘ideal city’ project, which – due to its excessive costs – would remain unfulfilled. Yet given that unsustainable urban models are a key cause of global climate change today, it’s only natural to wonder how Leonardo might have changed the shape of modem cities.</p>
-                                <p>Although the Renaissance is renowned as an era of incredible progress in art and architecture, it is rarely noted that the 15th century also marked the birth of urbanism as a true academic discipline. The rigour and method behind the conscious conception of a city had been largely missing in Western thought until the moment when prominent Renaissance men pushed forward large-scale urban projects in Italy, such as the reconfiguration of the town of Pienza and the expansion of the city of Ferrara. These works surely inspired Leonardo’s decision to rethink the design of medieval cities, with their winding and overcrowded streets and with houses piled against one another.</p>
-                                <p>It is not easy to identify a coordinated vision of Leonardo’s ideal city because of his disordered way of working with notes and sketches. But from the largest collection of Leonardo’s papers ever assembled, a series of innovative thoughts can be reconstructed regarding the foundation of a new city along the Ticino River, which runs from Switzerland into Italy and is 248 kilometres long. He designed the city for the easy transport of goods and clean urban spaces, and he wanted a comfortable and spacious city, with well-ordered streets and architecture. He recommended ‘high, strong walls’, with ‘towers and battlements of all necessary and pleasant beauty’.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-tfng">
-                                <fieldset class="q-item">
-                                    <p><b>Questions 1-7</b></p>
-                                    <p class="lead">Do the following statements agree with the information given in
-                                        the
-                                        Reading Passage?
-                                    </p>
-                                    <p>In boxes on your answer sheet, write</p>
-                                    <ul class="legend">
-                                        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-                                        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-                                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-                                    </ul>
-                                </fieldset>
-                                <fieldset class="q-item" data-q="1">
-                                    <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        People first referred to Leonardo da Vinci as a genius 500 years ago.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-6" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="2">
-                                    <legend class="q-text">
-                                        <span class="q-number">2</span>
-                                        The current climate crisis is predicted to cause more deaths than the plague.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-7" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="3">
-                                    <legend class="q-text">
-                                        <span class="q-number">3</span>
-                                        Some of the challenges we face today can be compared to those of earlier times.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-8" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="4">
-                                    <legend class="q-text">
-                                        <span class="q-number">4</span>
-                                        Leonardo da Vinci’s ‘ideal city’ was constructed in the 15th century.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-9" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="5">
-                                    <legend class="q-text">
-                                        <span class="q-number">5</span>
-                                        Poor town planning is a major contributor to climate change.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-10" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="6">
-                                    <legend class="q-text">
-                                        <span class="q-number">6</span>
-                                        In Renaissance times, local people fought against the changes to Pienza and Ferrara.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-11" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="q-item" data-q="7">
-                                    <legend class="q-text">
-                                        <span class="q-number">7</span>
-                                        Leonardo da Vinci kept a neat, organised record of his designs.
-                                    </legend>
-                                    <div class="q-options" role="radiogroup" aria-label="Question 7 options">
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="TRUE" />
-                                            <span class="opt-code">A</span>
-                                            <span class="opt-label">TRUE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="FALSE" />
-                                            <span class="opt-code">B</span>
-                                            <span class="opt-label">FALSE</span>
-                                        </label>
-                                        <label class="q-option">
-                                            <input type="radio" name="JSRJ0oDlxC0yFMgt-12" value="NOT GIVEN" />
-                                            <span class="opt-code">C</span>
-                                            <span class="opt-label">NOT GIVEN</span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-tfng" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-tfng">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-            <div id="panel-summary_completion2" class="x-panel" role="tabpanel" aria-labelledby="tab-summary_completion2" hidden>
-                <div class="x-panel-inner">Content: Summary Completion 2</div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid highlighted-content">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>It is not easy to identify a coordinated vision of Leonardo’s ideal city because of his disordered way of working with notes and sketches. But from the largest collection of Leonardo’s papers ever assembled, a series of innovative thoughts can be reconstructed regarding the foundation of a new city along the Ticino River, which runs from Switzerland into Italy and is 248 kilometres long. He designed the city for the easy transport of goods and clean urban spaces, and he wanted a comfortable and spacious city, with well-ordered streets and architecture. He recommended ‘high, strong walls’, with ‘towers and battlements of all necessary and pleasant beauty’.</p>
-                                <p>His plans for a modem and ‘rational’ city were consistent with Renaissance ideals. But, in keeping with his personality, Leonardo included several innovations in his urban design. Leonardo wanted the city to be built on several levels, linked with vertical outdoor staircases. This design can be seen in some of today’s high-rise buildings but was unconventional at the time. Indeed, this idea of taking full advantage of the interior spaces wasn’t implemented until the 1920s and 1930s, with the birth of the Modernist movement.</p>
-                                <p>While in the upper layers of the city, people could walk undisturbed between elegant palaces and streets, the lower layer was the place for services, trade, transport and industry. But the true originality of Leonardo’s vision was its fusion of architecture and engineering. Leonardo designed extensive hydraulic plants to create artificial canals throughout the city. The canals, regulated by clocks and basins, were supposed to make it easier for boats to navigate inland. Leonardo also thought that the width of the streets ought to match the average height of the adjacent houses: a rule still followed in many contemporary cities across Italy, to allow access to sun and reduce the risk of damage from earthquakes.</p>
-                                <p>Although some of these features existed in Roman cities, before Leonardo’s drawings there had never been a multi-level, compact modem city which was thoroughly technically conceived. Indeed, it wasn’t until the 19th century that some of his ideas were applied. For example, the subdivision of the city by function- with services and infrastructures located in the lower levels and wide and well-ventilated boulevards and walkways above for residents – is an idea that can be found in Georges-Eugene Haussmann’s renovation of Paris under Emperor Napoleon III between 1853 and 1870.</p>
-                                <p>Today, Leonardo’s ideas are not simply valid, they actually suggest a way forward for urban planning. Many scholars think that the compact city, built upwards instead of outwards, integrated with nature (especially water systems), with efficient transport infrastructure, could help modem cities become more efficient and sustainable. This is yet another reason why Leonardo was aligned so closely with modem urban planning and centuries ahead of his time.</p>
-                            </div>
-                        </article>
-
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-                        <aside class="qa" aria-label="Questions">
-                            <form class="qa-body" id="form-summary_completion2">
-                                <fieldset class="q-item">
-                                    <h3>Questions 1-7</h3>
-                                    <p class="lead">Complete the summary below.</p>
-                                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
-                                    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
-
-                                    <h3>Leonardo da Vinci’s ideal city</h3>
-
-                                    <p>
-                                        A collection of Leonardo da Vinci’s paperwork reveals his design of a new city beside the Ticino River. This was to provide better
-                                        <span class="q-number-box">1</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-4" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        for trade and a less polluted environment. Although Leonardo da Vinci’s city shared many of the ideals of his time, some of his innovations were considered unconventional in their design. They included features that can be seen in some tower blocks today, such as
-                                        <span class="q-number-box">2</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-5" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        on the exterior of a building.
-                                    </p>
-
-                                    <p>
-                                        Leonardo da Vinci wasn’t only an architect. His expertise in
-                                        <span class="q-number-box">3</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-6" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        was evident in his plans for artificial canals within his ideal city. He also believed that the height of houses should relate to the width of streets in case earthquakes occurred. The design of many cities in Italy today follows this
-                                        <span class="q-number-box">4</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-7" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                    </p>
-
-                                    <p>
-                                        While some cities from
-                                        <span class="q-number-box">5</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-8" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        times have aspects that can also be found in Leonardo’s designs, his ideas weren’t put into practice until long after his  death.
-                                        <span class="q-number-box">6</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-9" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        is one example of a city that was redesigned in the 19th century in the way that Leonardo had envisaged. His ideas are also relevant to today’s world, where building
-                                        <span class="q-number-box">7</span>
-                                        <span style="flex: 1;">
-                                            <span class="q-question">
-                                                <input type="text" name="JSRJ0oDlxC0yFMgt-10" class="q-text"
-                                                    placeholder="">
-                                            </span>
-                                        </span>
-                                        no longer seems to be the best approach.
-                                    </p>
-                                </fieldset>
-
-                                <div style="text-align: center;">
-                                    <button  type="button" class="btn btn-primary try-again" id="again-summary_completion2" style="display: none">
-                                        Try Again
-                                    </button>
-                                    <button type="button" class="btn btn-primary" id="submit-summary_completion2">
-                                        Submit
-                                    </button>
-                                </div>
-
                             </form>
                         </aside>
                     </div>
@@ -2938,7 +2983,7 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive('nc');
+            setActive('tfng');
         });
     </script>
 
@@ -3189,7 +3234,7 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'nc';
+            let currentPart = 'tfng';
             let questionCount = 0;
 
             fqToggle.addEventListener('click', () => {
@@ -3313,7 +3358,7 @@
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
-                    'nc': 5,
+                    'tfng': 5,
                     'tfng2': 5,
                     'ynng': 5,
                     'mse': 5,
@@ -3328,7 +3373,7 @@
             }
 
             // Init
-            updateQuestionListForPart('nc');
+            updateQuestionListForPart('tfng');
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
@@ -3527,42 +3572,42 @@
 
         $("#submit-tfng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng", "JSRJ0oDlxC0yFMgt", "tfng", $(this), "again-tfng");
+            submitHelper("form-tfng", "xQKeqKYrkqfdgotg", "tfng", $(this), "again-tfng");
         });
 
         $("#submit-tfng2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng2", "JSRJ0oDlxC0yFMgt", "tfng", $(this), "again-tfng2");
+            submitHelper("form-tfng2", "xQKeqKYrkqfdgotg", "tfng", $(this), "again-tfng2");
         });
 
         $("#submit-ynng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-ynng", "JSRJ0oDlxC0yFMgt", "ynng", $(this), "again-ynng");
+            submitHelper("form-ynng", "xQKeqKYrkqfdgotg", "ynng", $(this), "again-ynng");
         });
 
         $("#submit-mse").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mse", "JSRJ0oDlxC0yFMgt", "mse", $(this), "again-mse");
+            submitHelper("form-mse", "xQKeqKYrkqfdgotg", "mse", $(this), "again-mse");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-one", "JSRJ0oDlxC0yFMgt", "oc", $(this), "again-oc");
+            submitHelper("form-one", "xQKeqKYrkqfdgotg", "oc", $(this), "again-oc");
         });
 
         $("#submit-mh").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mh", "JSRJ0oDlxC0yFMgt", "mh", $(this), "again-mh");
+            submitHelper("form-mh", "xQKeqKYrkqfdgotg", "mh", $(this), "again-mh");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "JSRJ0oDlxC0yFMgt", "tc", $(this), "again-tc");
+            submitHelper("form-tc", "xQKeqKYrkqfdgotg", "tc", $(this), "again-tc");
         });
 
         $("#submit-sa").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-sa", "JSRJ0oDlxC0yFMgt", "sa", $(this), "again-sa");
+            submitHelper("form-sa", "xQKeqKYrkqfdgotg", "sa", $(this), "again-sa");
         });
     </script>
 
