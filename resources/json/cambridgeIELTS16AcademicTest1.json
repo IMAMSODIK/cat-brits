@@ -33,8 +33,8 @@
       "location"
     ],
     "two_choices": [
-      "[B, D]",
-      "[B, D]"
+      "['B', 'D']",
+      "['B', 'D']"
     ],
     "oc": [
       "B",
@@ -95,10 +95,8 @@
       "A"
     ],
     "two_choices": [
-      "[C, E]",
-      "[C, E]",
-      "[B, E]",
-      "[B, E]"
+      "['C', 'E']",
+      "['B', 'E']"
     ],
     "matching_information": [
       "D",
