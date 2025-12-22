@@ -1,346 +1,237 @@
 @props(['part', 'id'])
 <fieldset class="q-item">
-    <p class="lead"><b>Questions 1-3</b></p>
-    <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
-        <b>D</b>.
-    </p>
-    <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
-</fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="1">
-    <legend class="q-text">
-        <span class="q-number">1</span>
-        What can we learn from the first paragraph?
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="A" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">where the notion of innate intelligence first
-                began</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="B" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">when ideas about the nature of intelligence began
-                to shift</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="C" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">how scientists have responded to changing views of
-                intelligence</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="D" />
-            <span class="opt-code">D</span>
-            <span class="opt-label">why thinkers turned away from the idea of
-                intelligence being fixed</span>
-        </label>
-    </div>
-</fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="2">
-    <legend class="q-text">
-        <span class="q-number">2</span>
-        The second paragraph describes how schools encourage students to
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="A" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">identify their personal ambitions.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="B" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">help each other to realise their goals.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="C" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">have confidence in their potential to
-                succeed.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="D" />
-            <span class="opt-code">D</span>
-            <span class="opt-label">concentrate on where their particular strengths
-                lie.</span>
-        </label>
-    </div>
-</fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="3">
-    <legend class="q-text">
-        <span class="q-number">3</span>
-        In the third paragraph, the writer suggests that students with a fixed mindset
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="A" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">tend to be less competitive.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="B" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">generally have a low sense of self-esteem.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="C" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">will only work hard if they are given constant
-                encouragement.</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="D" />
-            <span class="opt-code">D</span>
-            <span class="opt-label">are afraid to push themselves beyond what they see
-                as their limitations.</span>
-        </label>
-    </div>
-</fieldset>
-
-<fieldset class="q-item">
-    <h3>Questions 1-6</h3>
-    <p class="lead"><i>Look at the following statements and the list of people
-            below.</i></p>
-    <p>Match each statement with the correct person or people, <b>A-E</b>.</p>
-    <p><i><b>NB</b> You may use any letter more than once.</i></p>
-    <p><b>List of People</b></p>
+    <h3 class="lead">Question 14-20</h3>
+    <p class="lead">The Reading Passage has seven paragraphs, <b>A-G</b>.</p>
+    <p>Choose the correct heading for paragraphs from the list of headings below.</p>
+    <p>Write the correct number, <b>i-ix</b>, in boxes on your answer sheet.</p>
+    <p><b>List of Headings</b></p>
     <ul class="legend">
-        <li><strong>A</strong> Alfred Binet</li>
-        <li><strong>B</strong> Carol Dweck</li>
-        <li><strong>C</strong> Andrew Gelman</li>
-        <li><strong>D</strong> Timothy Bates</li>
-        <li><strong>E</strong> David Yeager and Gregory Walton</li>
+        <li><strong>i</strong> The areas and artefacts within the pyramid itself</li>
+        <li><strong>ii</strong> A difficult task for those involved</li>
+        <li><strong>iii</strong> A king who saved his people</li>
+        <li><strong>iv</strong> A single certainty among other less definite facts</li>
+        <li><strong>v</strong> An overview of the external buildings and areas</li>
+        <li><strong>vi</strong> A pyramid design that others copied</li>
+        <li><strong>vii</strong> An idea for changing the design of burial structures</li>
+        <li><strong>viii</strong> An incredible experience despite the few remains</li>
+        <li><strong>ix</strong> The answers to some unexpected questions</li>
     </ul>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="1">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">1</span>
-        <span style="flex: 1;">
-            The methodology behind the growth mindset studies was not strict enough
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="1">
+    <legend class="q-text">
+        <span class="q-number">14</span>
+        Paragraph <b>A</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="2">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">2</span>
-        <span style="flex: 1;">
-            The idea of the growth mindset has been incorrectly interpreted.
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="2">
+    <legend class="q-text">
+        <span class="q-number">15</span>
+        Paragraph <b>B</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="3">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">3</span>
-        <span style="flex: 1;">
-            Intellectual ability is an unchangeable feature of each individual.
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="3">
+    <legend class="q-text">
+        <span class="q-number">16</span>
+        Paragraph <b>C</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="4">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">4</span>
-        <span style="flex: 1;">
-            The growth mindset should be promoted without students being aware of it.
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="4">
+    <legend class="q-text">
+        <span class="q-number">17</span>
+        Paragraph <b>D</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="5">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">5</span>
-        <span style="flex: 1;">
-            The growth mindset is not simply about boosting students’ morale.
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-5" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="5">
+    <legend class="q-text">
+        <span class="q-number">18</span>
+        Paragraph <b>E</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="6">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">6</span>
-        <span style="flex: 1;">
-            Research shows that the growth mindset has no effect on academic
-            achievement.
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-6" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select>
-            </span>
-        </span>
+<fieldset class="q-item" data-q="6">
+    <legend class="q-text">
+        <span class="q-number">19</span>
+        Paragraph <b>F</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
     </legend>
 </fieldset>
-
+<fieldset class="q-item" data-q="7">
+    <legend class="q-text">
+        <span class="q-number">20</span>
+        Paragraph <b>G</b>
+        <select name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-dropdown">
+            <option value=""></option>
+            <option value="i">i</option>
+            <option value="ii">ii</option>
+            <option value="iii">iii</option>
+            <option value="iv">iv</option>
+            <option value="v">v</option>
+            <option value="vi">vi</option>
+            <option value="vii">vii</option>
+            <option value="viii">viii</option>
+            <option value="ix">ix</option>
+        </select>
+    </legend>
+</fieldset>
+{{-- 1 --}}
 <fieldset class="q-item">
-    <h3>Questions 1-4</h3>
-    <p class="lead">Do the following statements agree with the views of the writer in
-        The Reading Passage?
-    </p>
-    <p><i>In boxes on your answer sheet, write</i></p>
-    <ul class="legend">
-        <li><strong>YES</strong> if the statement agrees with the views of the writer
+    <h3>Questions 21-24</h3>
+    <p class="lead">Complete the notes below.</p>
+    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+    <p><i>Write your answers in boxes on your answer sheet</i></p>
+</fieldset>
+<fieldset class="q-item">
+    <p><b>The Step Pyramid of Djoser</b></p>
+    <ul>
+        <li>
+            <div class="q-list" data-q="1">
+                The complex that includes the Step Pyramid and its surroundings is considered to be as
+                big as an Egyptian
+                <span class="q-number-box">21</span>
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
+                    placeholder="">
+            </div>
         </li>
-        <li><strong>NO</strong> if the statement contradicts the views of the writer
+        <li>
+            <div class="q-list" data-q="2">
+                of the past. The area outside the pyramid included accommodation that was occupied by
+                <span class="q-number-box">22</span>
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
+                    placeholder="">
+                along with many other buildings and features.
+            </div>
         </li>
-        <li><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks
-            about this</li>
+        <li>
+            <div class="q-list" data-q="3">
+                A wall ran around the outside of the complex and a number of false entrances were built
+                into this. In addition, a long
+                <span class="q-number-box">23</span>
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
+                    placeholder="">
+            </div>
+        </li>
+        <li>
+            <div class="q-list" data-q="4">
+                encircled the wall. As a result, any visitors who had not been invited were cleverly
+                prevented from entering the pyramid grounds unless they knew the
+                <span class="q-number-box">24</span>
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
+                    placeholder="">
+                of the real entrance.
+            </div>
+        </li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="1">
-    <legend class="q-text">
-        <span class="q-number">1</span>
-        Dweck has handled criticisms of her work in an admirable way.
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-1" value="YES" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">YES</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-1" value="NO" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">NO</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-1" value="NOT GIVEN" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
+<fieldset class="q-item">
+    <p class="lead"><b>Questions 25-26</b></p>
+    <p class="lead"><i>Choose TWO letters, <b>A-E</b>.</i></p>
+    <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
+    <p>
+        <span class="q-number-box">25</span>
+        <span class="q-number-box">26</span>
+        Which <b>TWO</b> of the following points does the writer make about King Djoser?
+    </p>
 </fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="2">
-    <legend class="q-text">
-        <span class="q-number">2</span>
-        Students’ self-perception is a more effective driver of self-confidence than
-        actual achievement is.
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
+<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+    <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-2" value="YES" />
+            <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">YES</span>
+            <span class="opt-label">Initially he had to be persuaded to build in stone rather than
+                clay.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-2" value="NO" />
+            <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">NO</span>
+            <span class="opt-label">There is disagreement concerning the length of his reign.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-2" value="NOT GIVEN" />
+            <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="3">
-    <legend class="q-text">
-        <span class="q-number">3</span>
-        Recent evidence about growth mindset interventions has attracted unfair coverage
-        in the media.
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-3" value="YES" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">YES</span>
+            <span class="opt-label">He failed to appreciate Imhotep’s part in the design of the Step
+                Pyramid.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-3" value="NO" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">NO</span>
+            <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="D" />
+            <span class="opt-code">D</span>
+            <span class="opt-label">A few of his possessions were still in his tomb when archaeologists
+                found it.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-3" value="NOT GIVEN" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
-
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="4">
-    <legend class="q-text">
-        <span class="q-number">4</span>
-        Deliberate attempts to encourage students to strive for high achievement may
-        have a negative effect.
-    </legend>
-    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-4" value="YES" />
-            <span class="opt-code">A</span>
-            <span class="opt-label">YES</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-4" value="NO" />
-            <span class="opt-code">B</span>
-            <span class="opt-label">NO</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][2]}}-{{ $id }}-4" value="NOT GIVEN" />
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
+            <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="E" />
+            <span class="opt-code">E</span>
+            <span class="opt-label">He criticised the design and construction of other pyramids in
+                Egypt.</span>
         </label>
     </div>
 </fieldset>

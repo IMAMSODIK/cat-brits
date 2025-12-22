@@ -4,7 +4,7 @@
     <div class="qa">
         <form class="qa-body" id="form-{{ $tab['id'] }}">
             <fieldset class="q-item">
-                <p class="lead">Listen and answer questions 1-6 the Reading Passage?</p>
+                <p class="lead">Listen and answer questions 1-10 the Reading Passage?</p>
                 <div class="audio-player" data-player role="group" aria-label="Audio controls">
                     <audio preload="auto" src="{{ $tab['audioUri'] }}">
                     </audio>

@@ -1,117 +1,83 @@
-<h3 class="passage-title">The growth mindset</h3>
+<h3 class="passage-title">The Step Pyramid of Djoser</h3>
 <div class="passage-body">
+
+    <p><strong>A</strong></p>
     <p>
-        Over the past century, a powerful idea has taken root in the educational landscape. The concept of intelligence
-        as
-        something innate has been supplanted by the idea that intelligence is not fixed, and that, with the right
-        training,
-        we can be the authors of our own cognitive capabilities. Psychologist Alfred Binet, the developer of the first
-        intelligence tests, was one of many 19th-century scientists who held that earlier view and sought to quantify
-        cognitive ability. Then, in the early 20th century, progressive thinkers revolted against the notion that
-        inherent
-        ability is destiny. Instead, educators such as John Dewey argued that every child’s intelligence could be
-        developed,
-        given the right environment.
+        The pyramids are the most famous monuments of ancient Egypt and still hold enormous interest for people in the
+        present day. These grand, impressive tributes to the memory of the Egyptian kings have become linked with the
+        country even though other cultures, such as the Chinese and Mayan, also built pyramids. The evolution of the
+        pyramid form has been written and argued about for centuries. However, there is no question that, as far as
+        Egypt is concerned, it began with one monument to one king designed by one brilliant architect: the Step Pyramid
+        of Djoser at Saqqara.
     </p>
 
+    <p><strong>B</strong></p>
     <p>
-        ‘Growth mindset theory’ is a relatively new – and extremely popular – version of this idea. In many schools
-        today
-        you will see hallways covered in motivational posters and hear speeches on the mindset of great sporting heroes
-        who
-        simply believed their way to the top. A major focus of the growth mindset in schools is coaxing students away
-        from
-        seeing failure as an indication of their ability, and towards seeing it as a chance to improve that ability. As
-        educationalist Jeff Howard noted several decades ago: ‘Smart is not something that you just are, smart is
-        something
-        that you can get.’
+        Djoser was the first king of the Third Dynasty of Egypt and the first to build in stone. Prior to Djoser’s
+        reign,
+        tombs were rectangular monuments made of dried clay brick, which covered underground passages where the deceased
+        person was buried. For reasons which remain unclear, Djoser’s main official, whose name was Imhotep, conceived
+        of
+        building a taller, more impressive tomb for his king by stacking stone slabs on top of one another,
+        progressively making them smaller, to form the shape now known as the Step Pyramid. Djoser is thought to have
+        reigned for 19 years, but some historians and scholars attribute a much longer time for his rule, owing to the
+        number and size of the monuments he built.
     </p>
 
+    <p><strong>C</strong></p>
     <p>
-        The idea of the growth mindset is based on the work of psychologist Carol Dweck in California in the 1990s. In
-        one
-        key experiment, Dweck divided a group of 10- to 12-year-olds into two groups. All were told that they had
-        achieved a
-        high score on a test but the first group were praised for their intelligence in achieving this, while the others
-        were praised for their effort. The second group – those who had been instilled with a ‘growth mindset’ – were
-        subsequently far more likely to put effort into future tasks. Meanwhile, the former took on only those tasks
-        that
-        would not risk their sense of worth. This group had inferred that success or failure is due to innate ability,
+        The Step Pyramid has been thoroughly examined and investigated over the last century, and it is now known that
+        the building process went through many different stages. Historian Marc Van de Mieroop comments on this, writing
+        ‘Much experimentation was involved, which is especially clear in the construction of the pyramid in the center
+        of the complex. It had several plans … before it became the first Step Pyramid in history, piling six levels on
+        top of one another … The weight of the enormous mass was a challenge for the builders, who placed the stones at
+        an inward incline in order to prevent the monument breaking up.’
+    </p>
+
+    <p><strong>D</strong></p>
+    <p>
+        When finally completed, the Step Pyramid rose 62 meters high and was the tallest structure of its time. The
+        complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards,
+        shrines, and living quarters for the priests. It covered a region of 16 hectares and was surrounded by a wall
+        10.5 meters high. The wall had 13 false doors cut into it with only one true entrance cut into the south-east
+        corner; the entire wall was then ringed by a trench 750 meters long and 40 meters wide. The false doors and the
+        trench were incorporated into the complex to discourage unwanted visitors. If someone wished to enter, he or
+        she would have needed to know in advance how to find the location of the true opening in the wall. Djoser was so
+        proud of his accomplishment that he broke the tradition of having only his own name on the monument and had
+        Imhotep’s name carved on it as well.
+    </p>
+
+    <p><strong>E</strong></p>
+    <p>
+        The burial chamber of the tomb, where the king’s body was laid to rest, was dug beneath the base of the pyramid,
+        surrounded by a vast maze of long tunnels that had rooms off them to discourage robbers. One of the most
+        mysterious discoveries found inside the pyramid was a large number of stone vessels. Over 40,000 of these
+        vessels, of various forms and shapes, were discovered in storerooms of the pyramid’s underground passages. They
+        are inscribed with the names of rulers from the First and Second Dynasties of Egypt and made from different
+        kinds
+        of stone. There is no agreement among scholars and archaeologists on why the vessels were placed in the tomb of
+        Djoser or what they were supposed to represent. The archaeologist Jean-Philippe Lauer, who excavated most of the
+        pyramid and complex, believes they were originally stored and then given a ‘proper burial’ by Djoser in his
+        pyramid to honor his predecessors. There are other historians, however, who claim the vessels were dumped into
+        the shafts as yet another attempt to prevent grave robbers from getting to the king’s burial chamber.
+    </p>
+
+    <p><strong>F</strong></p>
+    <p>
+        Unfortunately, all of the precautions and intricate design of the underground network did not prevent ancient
+        robbers from finding a way in. Djoser’s grave goods, and even his body, were stolen at some point in the past
         and
-        this ‘fixed mindset’ had led them to fear of failure and lack of effort. Praising ability actually made the
-        students
-        perform worse, while praising effort emphasised that change was possible.
+        all archaeologists found were a small number of his valuables overlooked by the thieves. There was enough left
+        throughout the pyramid and its complex, however, to astonish and amaze the archaeologists who excavated it.
     </p>
 
+    <p><strong>G</strong></p>
     <p>
-        One of the greatest impediments to successfully implementing a growth mindset, however, is the education system
-        itself: in many parts of the world, the school climate is obsessed with performance in the form of constant
-        testing,
-        analysing and ranking of students – a key characteristic of the fixed mindset. Nor is it unusual for schools to
-        create a certain cognitive dissonance, when they applaud the benefits of a growth mindset but then hand out
-        fixed
-        target grades in lessons based on performance.
-    </p>
-
-    <p>
-        Aside from the implementation problem, the original growth mindset research has also received harsh criticism.
-        The
-        statistician Andrew Gelman claims that ‘their research designs have enough degrees of freedom that they could
-        take
-        their data to support just about any theory at all’. Professor of Psychology Timothy Bates, who has been trying
-        to
-        replicate Dweck’s work, is finding that the results are repeatedly null. He notes that: ‘People with a growth
-        mindset don’t cope any better with failure … Kids with the growth mindset aren’t getting better grades, either
-        before or after our intervention study.’
-    </p>
-
-    <p>
-        Much of this criticism is not lost on Dweck, and she deserves great credit for responding to it and adapting her
-        work accordingly. In fact, she argues that her work has been misunderstood and misapplied in a range of ways.
-        She
-        has also expressed concerns that her theories are being misappropriated in schools by being conflated with the
-        self-esteem movement: ‘For me the growth mindset is a tool for learning and improvement. It’s not just a vehicle
-        for
-        making children feel good.’
-    </p>
-
-    <p>
-        But there is another factor at work here. The failure to translate the growth mindset into the classroom might
-        reflect a misunderstanding of the nature of teaching and learning itself. Growth mindset supporters David Yeager
-        and
-        Gregory Walton claim that interventions should be delivered in a subtle way to maximise their effectiveness.
-        They
-        say that if adolescents perceive a teacher’s intervention as conveying that they are in need of help, this could
-        undo its intended effects.
-    </p>
-
-    <p>
-        A lot of what drives students is their innate beliefs and how they perceive themselves. There is a strong
-        correlation between self-perception and achievement, but there is evidence to suggest that the actual effect of
-        achievement on self-perception is stronger than the other way round. To stand up in a classroom and successfully
-        deliver a good speech is a genuine achievement, and that is likely to be more powerfully motivating than vague
-        notions of ‘motivation’ itself.
-    </p>
-
-    <p>
-        Recent evidence would suggest that growth mindset interventions are not the elixir of student learning that its
-        proponents claim it to be. The growth mindset appears to be a viable construct in the lab, which, when
-        administered
-        in the classroom via targeted interventions, doesn’t seem to work. It is hard to dispute that having faith in
-        the
-        capacity to change is a good attribute for students. Paradoxically, however, that aspiration is not well served
-        by
-        direct interventions that try to instil it.
-    </p>
-
-    <p>
-        Motivational posters and talks are often a waste of time, and might well give students a deluded notion of what
-        success actually means. Teaching concrete skills such as how to write an effective introduction to an essay then
-        praising students’ effort in getting there is probably a far better way of improving confidence than telling
-        them
-        how unique they are, or indeed how capable they are of changing their own brains. Perhaps growth mindset works
-        best
-        as a philosophy and not an intervention.
+        Egyptologist Miroslav Verner writes, ‘Few monuments hold a place in human history as significant as that of the
+        Step Pyramid in Saqqara … It can be said without exaggeration that this pyramid complex constitutes a milestone
+        in the evolution of monumental stone architecture in Egypt and in the world as a whole.’ The Step Pyramid was a
+        revolutionary advance in architecture and became the archetype which all the other great pyramid builders of
+        Egypt would follow.
     </p>
 
 </div>

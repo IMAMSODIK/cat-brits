@@ -1,143 +1,108 @@
-<div class="passage-title">
-    <h3>Alfred Wegener: science, exploration and the theory of continental drift</h3>
-    <p>by Mott T Greene</p>
-
-    <h3>Introduction</h3>
-
-</div>
+<h3 class="passage-title">The future of work</h3>
 <div class="passage-body">
+
     <p>
-        This is a book about the life and scientific work of Alfred Wegener, whose reputation today rests with his
-        theory of
-        continental displacements, better known as ‘continental drift’. Wegener proposed this theory in 1912 and
-        developed
-        it extensively for nearly 20 years. His book on the subject, <em>The Origin of Continents and Oceans</em>, went
-        through four editions and was the focus of an international controversy in his lifetime and for some years after
-        his
-        death.
+        According to a leading business consultancy, 3—14% of the global workforce will need to switch to a different
+        occupation within the next 10—15 years, and all workers will need to adapt as their occupations evolve alongside
+        increasingly capable machines. Automation — or ‘embodied artificial intelligence (AI)’ — is one aspect of the
+        disruptive effects of technology on the labour market. ‘Disembodied AI’, like the algorithms running in our
+        smartphones, is another.
     </p>
 
     <p>
-        Wegener’s basic idea was that many mysteries about the Earth’s history could be solved if one supposed that the
-        continents moved laterally, rather than supposing that they remained fixed in place. Wegener showed in great
-        detail
-        how such continental movements were plausible and how they worked, using evidence from a large number of
-        sciences
-        including geology, geophysics, paleontology, and climatology.
+        Dr Stella Pachidi from Cambridge Judge Business School believes that some of the most fundamental changes are
+        happening as a result of the ‘algorithmication’ of jobs that are dependent on data rather than on production —
+        the so-called knowledge economy. Algorithms are capable of learning from data to undertake tasks that previously
+        needed human judgement, such as reading legal contracts, analysing medical scans and gathering market
+        intelligence.
     </p>
 
     <p>
-        Wegener’s idea – that the continents move – is at the heart of the theory that guides Earth sciences today:
-        namely
-        plate tectonics. Plate tectonics is in many respects quite different from Wegener’s proposal, in the same way
-        that
-        modern evolutionary theory is very different from the ideas Charles Darwin proposed in the 1850s about
-        biological
-        evolution. Yet plate tectonics is a descendant of Alfred Wegener’s theory of continental drift, in quite the
-        same
-        way that modern evolutionary theory is a descendant of Darwin’s theory of natural selection.
+        ‘In many cases, they can outperform humans,’ says Pachidi. ‘Organisations are attracted to using algorithms
+        because they want to make choices based on what they consider is “perfect information”, as well as to reduce
+        costs and enhance productivity.’
     </p>
 
     <p>
-        When I started writing about Wegener’s life and work, one of the most intriguing things about him for me was
-        that,
-        although he came up with a theory on continental drift, he was not a geologist. He trained as an astronomer and
-        pursued a career in atmospheric physics. When he proposed the theory of continental displacements in 1912, he
-        was a
-        lecturer in physics and astronomy at the University of Marburg, in southern Germany.
+        ‘But these enhancements are not without consequences,’ says Pachidi. ‘If routine cognitive tasks are taken over
+        by AI, how do professions develop their future experts?’ she asks. ‘One way of learning about a job is
+        “legitimate peripheral participation” — a novice stands next to experts and learns by observation. If this isn’t
+        happening, then you need to find new ways to learn.’
     </p>
 
     <p>
-        However, he was not an ‘unknown’. In 1906 he had set a world record (with his brother Kurt) for time aloft in a
-        hot-air balloon: 52 hours. Between 1906 and 1908 he had taken part in a highly publicized and extremely
-        dangerous
-        expedition to the coast of northeast Greenland. He had also made a name for himself amongst a small circle of
-        meteorologists and atmospheric physicists in Germany as the author of a textbook, <em>Thermodynamics of the
-            Atmosphere</em> (1911), and of a number of interesting scientific papers.
+        Another issue is the extent to which the technology influences or even controls the workforce. For over two
+        years, Pachidi monitored a telecommunications company. ‘The way telecoms salespeople work is through personal
+        and frequent contact with clients, using the benefit of experience to assess a situation and reach a decision.
+        However, the company had started using an algorithm that defined when account managers should contact certain
+        customers about which kinds of campaigns and what to offer them.’
     </p>
 
     <p>
-        As important as Wegener’s work on continental drift has turned out to be, it was largely a sideline to his
-        interest
-        in atmospheric physics, geophysics, and paleoclimatology, and thus I have been at great pains to put Wegener’s
-        work
-        on continental drift in the larger context of his other scientific work, and in the even larger context of
-        atmospheric sciences in his lifetime.
+        The algorithm — usually built by external designers — often becomes the keeper of knowledge, she explains. In
+        cases like this, Pachidi believes, a short-sighted view begins to creep into working practices whereby workers
+        learn through the ‘algorithm’s eyes’ and become dependent on its instructions. Alternative explorations — where
+        experimentation and human instinct lead to progress and new ideas — are effectively discouraged.
     </p>
 
     <p>
-        This is a ‘continental drift book’ only to the extent that Wegener was interested in that topic and later became
-        famous for it. My treatment of his other scientific work is no less detailed, though I certainly have devoted
-        more
-        attention to the reception of his ideas on continental displacement, as they were much more controversial than
-        his
-        other work.
+        Pachidi and colleagues even observed people developing strategies to make the algorithm work to their own
+        advantage. ‘We are seeing cases where workers feed the algorithm with false data to reach their targets,’ she
+        reports.
     </p>
 
     <p>
-        Readers interested in the specific detail of Wegener’s career will see that he often stopped pursuing a given
-        line
-        of investigation (sometimes for years on end), only to pick it up later. I have tried to provide guideposts to
-        his
-        rapidly shifting interests by characterizing different phases of his life as careers in different sciences,
-        which is
-        reflected in the titles of the chapters.
+        It’s scenarios like these that many researchers are working to avoid. Their objective is to make AI technologies
+        more trustworthy and transparent, so that organisations and individuals understand how AI decisions are made. In
+        the meantime, says Pachidi, ‘We need to make sure we fully understand the dilemmas that this new world raises
+        regarding expertise, occupational boundaries and control.’
     </p>
 
     <p>
-        Thus, the index should be a sufficient guide for those interested in a particular aspect of Wegener’s life but
-        perhaps not all of it. My own feeling, however, is that the parts do not make as much sense on their own as do
-        all
-        of his activities taken together. In this respect I urge readers to try to experience Wegener’s life as he lived
-        it,
-        with all the interruptions, changes of mind, and renewed efforts this entailed.
+        Economist Professor Hamish Low believes that the future of work will involve major transitions across the whole
+        life course for everyone: ‘The traditional trajectory of full-time education followed by full-time work
+        followed by a pensioned retirement is a thing of the past,’ says Low. Instead, he envisages a multistage
+        employment life: one where retraining happens across the life course, and where multiple jobs and no job happen
+        by choice at different stages.
     </p>
 
     <p>
-        Wegener left behind a few published works but, as was standard practice, these reported the results of his work
-        –
-        not the journey he took to reach that point. Only a few hundred of the many thousands of letters he wrote and
-        received in his lifetime have survived and he didn’t keep notebooks or diaries that recorded his life and
-        activities.
+        On the subject of job losses, Low believes the predictions are founded on a fallacy: ‘It assumes that the number
+        of jobs is fixed. If in 30 years, half of 100 jobs are being carried out by robots, that doesn’t mean we are
+        left
+        with just 50 jobs for humans. The number of jobs will increase: we would expect there to be 150 jobs.’
     </p>
 
     <p>
-        He was not active (with a few exceptions) in scientific societies, and did not seek to find influence or advance
-        his
-        ideas through professional contacts and politics, spending most of his time at home in his study reading and
-        writing, or in the field collecting observations.
+        Dr Ewan McGaughey, at Cambridge’s Centre for Business Research and King’s College London, agrees that
+        ‘apocalyptic’
+        views about the future of work are misguided. ‘It’s the laws that restrict the supply of capital to the job
+        market, not the advent of new technologies that causes unemployment.’
     </p>
 
     <p>
-        Some famous scientists, such as Newton, Darwin, and Einstein, left mountains of written material behind,
-        hundreds of
-        notebooks and letters numbering in the tens of thousands. Others, like Michael Faraday, left extensive journals
-        of
-        their thoughts and speculations, parallel to their scientific notebooks.
+        His recently published research answers the question of whether automation, AI and robotics will mean a
+        ‘jobless future’ by looking at the causes of unemployment. ‘History is clear that change can mean redundancies.
+        But social policies can tackle this through retraining and redeployment.’
     </p>
 
     <p>
-        The more such material a scientist leaves behind, the better chance a biographer has of forming an accurate
-        picture
-        of how a scientist’s ideas took shape and evolved.
+        He adds: ‘If there is going to be change to jobs as a result of AI and robotics then I’d like to see governments
+        seizing the opportunity to improve policy to enforce good job security. We can “reprogramme” the law to prepare
+        for a fairer future of work and leisure.’
     </p>
 
     <p>
-        I am firmly of the opinion that most of us, Wegener included, are not in any real sense the authors of our own
-        lives. We plan, think, and act, often with apparent freedom, but most of the time our lives ‘happen to us’, and
-        we
-        only retrospectively turn this happenstance into a coherent narrative of fulfilled intentions.
+        McGaughey’s findings are a call to arms to leaders of organisations, governments and banks to pre-empt the
+        coming
+        changes with bold new policies that guarantee full employment, fair incomes and a thriving economic democracy.
     </p>
 
     <p>
-        This book, therefore, is a story both of the life and scientific work that Alfred Wegener planned and intended
-        and
-        of the life and scientific work that actually ‘happened to him’. These are, as I think you will soon see, not
-        always
-        the same thing.
+        ‘The promises of these new technologies are astounding. They deliver humankind the capacity to live in a way
+        that nobody could have once imagined,’ he adds. ‘Just as the industrial revolution brought people past
+        subsistence agriculture, and the corporate revolution enabled mass production, a third revolution has been
+        pronounced. But it will not only be one of technology. The next revolution will be social.’
     </p>
 
-    <p>
-        <em>* Paleoclimatology – The study of past climates</em>
-    </p>
 </div>

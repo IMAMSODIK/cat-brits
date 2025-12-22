@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -30,11 +30,26 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         }
 
+        button {
+            align-items: center;
+            /* sejajarkan ikon dan teks di tengah vertikal */
+            justify-content: center;
+            /* pusatkan isi tombol */
+            gap: 8px;
+            /* jarak antara ikon dan teks */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
         .app-header {
             position: sticky;
             top: 0;
             z-index: 50;
-            background: #4274ba;
+            background: #4274BA;
             box-shadow: var(--shadow);
             padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
@@ -130,7 +145,6 @@
         }
 
         .btn-primary {
-
             background: var(--primary);
             border-color: var(--primary);
             color: #fff;
@@ -272,663 +286,556 @@
         }
     </style>
 
-    {{-- panel video call --}}
+    <!-- style bagian part soal -->
     <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .parts-section {
+            padding: 10px 12px 0 12px !important;
+            box-sizing: border-box;
         }
 
-        /* Card Styling */
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+        /* Opsional: pastikan konten panel tidak menempel ke tepi */
+        .parts-section .x-panels {
+            margin-top: 10px;
+            margin-right: 0;
+            /* biarkan ikut padding parent */
         }
 
-        /* Card Header */
-        .card-header {
-            background: #4274ba;
-            color: white;
-            padding: 20px 25px;
-            border-radius: 12px 12px 0 0;
-            border-bottom: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .page-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        .user-info i {
-            font-size: 18px;
-        }
-
-        .btn-primary:hover {
-            background: #4274ba;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Card Body */
-        .card-body {
-            padding: 25px;
-        }
-
-        /* Alert */
-        .alert-success {
-            background: #f0fdf4;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-        }
-
-        /* Desktop Table */
-        .desktop-view {
-            display: block;
-        }
-
-        .table-responsive {
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-        }
-
-        .table {
-            margin: 0;
+        /* Scroll container = x-tabs */
+        .x-tabs {
+            display: inline-flex;
+            /* baris horizontal */
+            flex-wrap: nowrap;
+            /* jangan pindah baris */
+            gap: 8px;
             width: 100%;
-            border-collapse: collapse;
+            padding: 8px 12px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+
+            overflow-x: auto;
+            /* inti scroll horizontal */
+            overflow-y: hidden;
+            white-space: nowrap;
+            /* cegah wrap */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            -ms-overflow-style: none;
+            scrollbar-width: thin;
+
+            position: relative;
+            /* untuk edge hint */
         }
 
-        .table thead {
+        .x-tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .x-tabs::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 999px;
+        }
+
+        .x-tabs::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Tab pill */
+        .x-tab {
+            flex: 0 0 auto;
+            /* tiap tab lebar kontennya, tidak menyusut */
+            scroll-snap-align: start;
+            border: 1px solid #e5e7eb;
+            background: #f8fafc;
+            color: #0f172a;
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            cursor: pointer;
+            transition: background .15s ease, color .15s ease, border-color .15s ease, transform .06s ease;
+            user-select: none;
+        }
+
+        .x-tab:hover {
+            border-color: #cbd5e1;
             background: #f1f5f9;
         }
 
-        .table thead th {
-            padding: 16px 20px;
-            text-align: left;
-            font-weight: 600;
-            color: #475569;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid #e2e8f0;
+        .x-tab:active {
+            transform: translateY(1px);
         }
 
-        .table thead th i {
-            color: #4274ba;
-            margin-right: 8px;
+        .x-tab.is-active {
+            color: #0b5dd7;
+            background: #e8f0ff;
+            border-color: #c7ddff;
         }
 
-        .table tbody tr {
-            border-bottom: 1px solid #f1f5f9;
-            transition: background 0.2s ease;
+        /* Edge shadow hint (kiri/kanan) langsung di x-tabs */
+        .x-tabs::before,
+        .x-tabs::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .15s ease;
         }
 
-        .table tbody tr:hover {
-            background: #f8fafc;
+        .x-tabs::before {
+            left: 0;
+            background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
         }
 
-        .table tbody tr:last-child {
-            border-bottom: none;
+        .x-tabs::after {
+            right: 0;
+            background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
         }
 
-        .table tbody td {
-            padding: 18px 20px;
-            color: #475569;
-            font-size: 14px;
+        .x-tabs.has-left::before {
+            opacity: 1;
         }
 
-        .table tbody .fw-semibold {
-            font-weight: 600;
-            color: #1e293b;
+        .x-tabs.has-right::after {
+            opacity: 1;
         }
 
-        /* Status Badges */
-        .status-badge {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+        /* Panels */
+        .x-panels {
+            margin-top: 10px;
         }
 
-        .badge-pending {
-            background: #fef3c7;
-            color: #92400e;
-            border: 1px solid #fbbf24;
+        .x-panel {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
         }
 
-        .badge-accepted {
-            background: #d1fae5;
-            color: #065f46;
-            border: 1px solid #10b981;
-        }
-
-        .badge-rejected {
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #ef4444;
-        }
-
-        .badge-completed {
-            background: #dbeafe;
-            color: #1e40af;
-            border: 1px solid #3b82f6;
-        }
-
-        .badge-cancelled {
-            background: #f3f4f6;
-            color: #374151;
-            border: 1px solid #9ca3af;
-        }
-
-        .status-badge i {
-            font-size: 8px;
-        }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-sm {
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .btn-info {
-            background: #f0f9ff;
-            color: #0369a1;
-            border-color: #bae6fd;
-        }
-
-        .btn-info:hover {
-            background: #e0f2fe;
-            transform: translateY(-1px);
-        }
-
-        .btn-success {
-            background: #f0fdf4;
-            color: #15803d;
-            border-color: #bbf7d0;
-        }
-
-        .btn-success:hover {
-            background: #dcfce7;
-            transform: translateY(-1px);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 50px 20px;
-            color: #64748b;
-        }
-
-        .empty-state i {
-            font-size: 48px;
-            color: #cbd5e1;
-        }
-
-        .empty-state h4 {
-            font-size: 18px;
-            color: #475569;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .empty-state p {
-            font-size: 14px;
-            max-width: 400px;
-            margin: 0 auto 20px;
-            line-height: 1.5;
-        }
-
-        /* Mobile View */
-        .mobile-view {
+        .x-panel[hidden] {
             display: none;
         }
 
-        .session-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        .x-panel.is-open {
+            display: block;
         }
 
-        .session-card h5 {
-            font-size: 16px;
-            color: #1e293b;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .session-card .mb-2,
-        .session-card .mb-3 {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #475569;
+        .x-panel-inner {
+            padding: 12px;
             font-size: 14px;
+            color: #0f172a;
         }
 
-        .session-card i {
-            color: #4274ba;
-            width: 16px;
-            text-align: center;
-        }
-
-        .session-card .text-muted {
-            color: #94a3b8;
-        }
-
-        /* Responsive */
+        /* Mobile tuning */
         @media (max-width: 768px) {
-            .desktop-view {
-                display: none;
-            }
-
-            .mobile-view {
-                display: block;
-            }
-
-            .card-header {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .user-info {
-                justify-content: center;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn-sm {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .card-body {
-                padding: 20px;
+            .x-tab {
+                padding: 10px 12px;
+                font-size: 14px;
             }
         }
 
-        @media (max-width: 576px) {
-            body {
-                padding: 12px;
+        @media (max-width: 420px) {
+            .x-tab {
+                padding: 10px 10px;
+                font-size: 13px;
             }
-
-            .container {
-                padding: 0;
-            }
-
-            .card {
-                border-radius: 8px;
-            }
-
-            .session-card {
-                padding: 16px;
-            }
-        }
-
-        /* Simple Animations */
-        .table tbody tr {
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Time Icons */
-        .table tbody td .d-flex i {
-            color: #94a3b8;
-            margin-right: 8px;
-        }
-
-        .text-success {
-            color: #10b981;
-        }
-
-        .text-muted {
-            color: #94a3b8;
         }
     </style>
 
     <style>
-        /* Modal Custom Styles */
-        #requestSessionModal .modal-dialog {
-            max-width: 700px;
+        /* Panel Styling */
+        .x-panel {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
-        #requestSessionModal .modal-content {
-            border-radius: 16px;
-            border: none;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-        }
-
-        #requestSessionModal .modal-header {
-            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
-            color: white;
-            padding: 25px 30px;
-            border-bottom: none;
-            position: relative;
-        }
-
-        #requestSessionModal .modal-header::before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #4facfe, #00f2fe, #4facfe);
-        }
-
-        #requestSessionModal .modal-title {
-            font-weight: 700;
-            font-size: 22px;
+        /* Progress Dots */
+        .progress-dots {
             display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        #requestSessionModal .modal-title::before {
-            content: '🎯';
-            font-size: 20px;
-        }
-
-        #requestSessionModal .btn-close {
-            border-radius: 50%;
-            padding: 10px;
-            background-size: 12px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-
-        #requestSessionModal .btn-close:hover {
-            opacity: 1;
-            transform: rotate(90deg);
-        }
-
-        #requestSessionModal .modal-body {
-            padding: 30px;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-
-        /* Info Box */
-        #requestSessionModal .info-box {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 18px 20px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        #requestSessionModal .info-box i {
-            color: #4274ba;
-            font-size: 20px;
-            margin-top: 2px;
-        }
-
-        #requestSessionModal .info-box p {
-            margin: 0;
-            color: #1e40af;
-            font-size: 14.5px;
-            line-height: 1.5;
-        }
-
-        /* Form Styles */
-        #requestSessionModal .form-group {
-            margin-bottom: 25px;
-        }
-
-        #requestSessionModal .form-label {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 15px;
-        }
-
-        #requestSessionModal .form-label i {
-            color: #4274ba;
-            font-size: 16px;
-            width: 20px;
-        }
-
-        #requestSessionModal .form-control,
-        .form-select {
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 14px 16px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background: #f9fafb;
-        }
-
-        #requestSessionModal .form-control:focus,
-        .form-select:focus {
-            border-color: #4274ba;
-            box-shadow: 0 0 0 4px rgba(66, 116, 186, 0.1);
-            outline: none;
-            background: white;
-        }
-
-        #requestSessionModal .form-control::placeholder {
-            color: #9ca3af;
-        }
-
-        #requestSessionModal textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Form Actions */
-        #requestSessionModal .form-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        #requestSessionModal .btn {
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
+            gap: 8px;
             justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ccc;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #007bff;
+            /* biru utk soal aktif */
+        }
+
+        .dot.completed {
+            background: #28a745;
+            /* hijau kalau sudah record/upload */
+        }
+
+
+        /* Navigation */
+        .sq-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .sq-navigation button {
+            flex: 1;
+            padding: 0.8rem 1rem;
             border: none;
-        }
-
-        #requestSessionModal .btn-primary {
-            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
+            border-radius: 8px;
+            background: #007bff;
             color: white;
-            flex: 1;
-            box-shadow: 0 4px 15px rgba(66, 116, 186, 0.2);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        #requestSessionModal .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(66, 116, 186, 0.3);
-            background: linear-gradient(135deg, #3a68a8 0%, #254d87 100%);
+        .sq-navigation button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
-        #requestSessionModal .btn-secondary {
-            background: #f3f4f6;
-            color: #374151;
-            border: 1px solid #d1d5db;
-            flex: 1;
+        .sq-navigation button:hover:not(:disabled) {
+            background: #0056b3;
         }
 
-        #requestSessionModal .btn-secondary:hover {
-            background: #e5e7eb;
-            transform: translateY(-2px);
-            color: #1f2937;
+        .sq-text {
+            text-align: center;
+            font-size: 1.1rem;
         }
 
-        /* Floating Icon */
-        #requestSessionModal .floating-icon {
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 80px;
-            opacity: 0.1;
+        /* Actions */
+        .sq-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
-        /* Scrollbar Styling */
-        #requestSessionModal .modal-body::-webkit-scrollbar {
-            width: 8px;
+        .sq-record {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        #requestSessionModal .modal-body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
+        .sq-record:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
         }
 
-        #requestSessionModal .modal-body::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #4274ba 0%, #2c5a9a 100%);
-            border-radius: 4px;
+        .sq-record.recorded {
+            background: #28a745;
         }
 
-        #requestSessionModal .modal-body::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #3a68a8 0%, #254d87 100%);
+        /* Submit */
+        .sq-submit {
+            text-align: center !important;
         }
 
-        /* Animation */
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px) scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .sq-submit-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: #28a745;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        #requestSessionModal .modal-content {
-            animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .sq-submit-btn:hover {
+            background: #218838;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            #requestSessionModal .modal-dialog {
-                margin: 15px;
+        @media (max-width: 600px) {
+            .sq-navigation .nav-buttons {
+                flex-direction: row;
             }
 
-            #requestSessionModal .modal-body {
-                padding: 20px;
+            .sq-text {
+                font-size: 1rem;
             }
 
-            #requestSessionModal .form-actions {
+            .sq-actions {
                 flex-direction: column;
             }
 
-            #requestSessionModal .btn {
+            .sq-record {
                 width: 100%;
             }
-
-            #requestSessionModal .floating-icon {
-                display: none;
-            }
         }
 
-        /* Teacher Selection Highlight */
-        #requestSessionModal .form-select option {
-            padding: 12px;
+        .sq-upload-label {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Required Field Indicator */
-        #requestSessionModal .form-label::after {
-            content: '*';
-            color: #ef4444;
-            margin-left: 4px;
+        .sq-upload-label:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
         }
 
-        /* Loading State */
-        #requestSessionModal .btn-primary.loading {
+        .sq-upload-label.uploaded {
+            background: #28a745;
+        }
+
+        .q-item {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 0 0 0 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <style>
+        .video-container {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .video-player,
+        .recorder-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .video-wrapper,
+        .recorder-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            color: transparent;
         }
 
-        #requestSessionModal .btn-primary.loading::after {
-            content: '';
+        /* .video-placeholder,
+        .recorder-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+        }
+
+        .video-placeholder i,
+        .recorder-placeholder i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #4274BA;
+        } */
+
+        .recorder-placeholder,
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .preview-video,
+        .video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: contain !important;
+            background: black;
+        }
+
+        .placeholder-text {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #555;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+
+        .video-controls,
+        .recorder-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        .video-controls button,
+        .recorder-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4274BA;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-controls button:hover,
+        .recorder-controls button:hover {
+            background: #2c5282;
+            transform: translateY(-2px);
+        }
+
+        .recorder-controls .record-btn {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .recorder-controls .record-btn:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        }
+
+        .recorder-controls .stop-btn {
+            background: #dc3545;
+        }
+
+        .recorder-controls .stop-btn:hover {
+            background: #c82333;
+        }
+
+        .recording-indicator {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            color: #dc3545;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .recording-indicator.active {
+            display: flex;
+        }
+
+        .recording-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #dc3545;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
             }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .timer {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+            }
+
+            .video-player,
+            .recorder-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .video-controls button,
+            .recorder-controls button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .sq-submit-btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .recorded-video {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px dashed #4274BA;
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+        .recorded-video h4 {
+            color: #4274BA;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .recorded-video video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -939,8 +846,10 @@
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
-                    <img class="" style="width: 70px;margin-left: 50px"
-                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    <div class="logo" aria-hidden="true">
+                        <img class="" style="width: 70px;margin-left: 50px"
+                            src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -954,10 +863,10 @@
                     <span id="timeText">00:00</span>
                 </div> --}}
 
-                {{-- <button id="doneBtn" class="btn btn-danger">
+                <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Finish</span>
-                </button> --}}
+                    <span class="label">Close</span>
+                </button>
             </div>
         </div>
     </header>
@@ -975,492 +884,1656 @@
         </div>
     </section>
 
-    <div class="container" style="margin-top: 20px">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <h4 class="page-title mb-0">Mock Test Speaking Sessions</h4>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <button class="btn btn-primary request-session">
-                                <i class="fas fa-plus me-2"></i>Request New Session
-                            </button>
-                        </div>
-                    </div>
 
-                    <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+    <section class="parts-section" aria-label="Pilihan Part Soal">
+        <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">Part 1</button>
+            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
+                data-id="tfng2">Part 2</button>
+            <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
+                data-id="ynng">Part 3</button>
+        </div>
+
+        <div class="x-panels">
+            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
+                <div class="x-panel-inner">
+
+                    <div class="x-panel-inner">Content: Part 1</div>
+
+                    <fieldset class="q-item">
+                        <p><b>Questions 1-4</b></p>
+                    </fieldset>
+
+                    <div class="progress-dots"></div>
+
+                    <div class="speaking-question" data-q="1" data-part="1">
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev" disabled>Previous</button>
+                                <button class="sq-next">Next</button>
                             </div>
-                        @endif
-
-                        <!-- Desktop View -->
-                        <div class="desktop-view">
-                            @if ($sessions->count() > 0)
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th><i class="fas fa-heading me-2"></i>Title</th>
-                                                <th><i class="fas fa-chalkboard-teacher me-2"></i>Teacher</th>
-                                                <th><i class="fas fa-clock me-2"></i>Proposed Time</th>
-                                                <th><i class="fas fa-calendar-alt me-2"></i>Scheduled Time</th>
-                                                <th><i class="fas fa-info-circle me-2"></i>Status</th>
-                                                <th><i class="fas fa-cogs me-2"></i>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($sessions as $session)
-                                                <tr>
-                                                    <td class="fw-semibold">{{ $session->title }}</td>
-                                                    <td>{{ $session->teacher->name }}</td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <i class="fas fa-clock text-muted me-2"></i>
-                                                            {{ $session->proposed_time->format('M d, Y H:i') }}
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        @if ($session->scheduled_time)
-                                                            <div class="d-flex align-items-center">
-                                                                <i class="fas fa-calendar-check text-success me-2"></i>
-                                                                {{ $session->scheduled_time->format('M d, Y H:i') }}
-                                                            </div>
-                                                        @else
-                                                            <span class="text-muted">-</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @php
-                                                            $badgeClass = 'badge-pending';
-                                                            if ($session->status === 'accepted') {
-                                                                $badgeClass = 'badge-accepted';
-                                                            } elseif ($session->status === 'rejected') {
-                                                                $badgeClass = 'badge-rejected';
-                                                            } elseif ($session->status === 'completed') {
-                                                                $badgeClass = 'badge-completed';
-                                                            } elseif ($session->status === 'cancelled') {
-                                                                $badgeClass = 'badge-cancelled';
-                                                            }
-                                                        @endphp
-                                                        <span class="status-badge {{ $badgeClass }}">
-                                                            <i class="fas fa-circle me-1"
-                                                                style="font-size: 0.5rem;"></i>
-                                                            {{ ucfirst($session->status) }}
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="action-buttons">
-                                                            <a href="{{ route('mock-test.show', $session) }}"
-                                                                class="btn btn-sm btn-info">
-                                                                <i class="fas fa-eye me-1"></i>View
-                                                            </a>
-                                                            @if ($session->status === 'accepted' && $session->canStart())
-                                                                <a href="{{ route('mock-test.start', $session) }}"
-                                                                    class="btn btn-sm btn-success">
-                                                                    <i class="fas fa-video me-1"></i>Join Session
-                                                                </a>
-                                                            @endif
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            @else
-                                <div class="empty-state">
-                                    <i class="fas fa-calendar-times mb-4"></i>
-                                    <h4>No Mock Test Speaking Sessions Yet</h4>
-                                    <p>You haven't requested any Mock Test Speaking sessions yet. Start by requesting
-                                        your first
-                                        session!</p>
-                                    <button class="btn btn-primary request-session">
-                                        <i class="fas fa-plus"></i>Request New Session
-                                    </button>
-                                </div>
-                            @endif
-                        </div>
-
-                        <!-- Mobile View -->
-                        <div class="mobile-view">
-                            @if ($sessions->count() > 0)
-                                @foreach ($sessions as $session)
-                                    <div class="session-card">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <h5 class="fw-bold">{{ $session->title }}</h5>
-                                            @php
-                                                $badgeClass = 'badge-pending';
-                                                if ($session->status === 'accepted') {
-                                                    $badgeClass = 'badge-accepted';
-                                                } elseif ($session->status === 'rejected') {
-                                                    $badgeClass = 'badge-rejected';
-                                                } elseif ($session->status === 'completed') {
-                                                    $badgeClass = 'badge-completed';
-                                                } elseif ($session->status === 'cancelled') {
-                                                    $badgeClass = 'badge-cancelled';
-                                                }
-                                            @endphp
-                                            <span class="status-badge {{ $badgeClass }}">
-                                                {{ ucfirst($session->status) }}
-                                            </span>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 1.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
                                         </div>
-
-                                        <div class="mb-2">
-                                            <i class="fas fa-chalkboard-teacher text-primary me-2"></i>
-                                            <strong>Teacher:</strong> {{ $session->teacher->name }}
-                                        </div>
-
-                                        <div class="mb-2">
-                                            <i class="fas fa-clock text-primary me-2"></i>
-                                            <strong>Proposed:</strong>
-                                            {{ $session->proposed_time->format('M d, Y H:i') }}
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <i class="fas fa-calendar-alt text-primary me-2"></i>
-                                            <strong>Scheduled:</strong>
-                                            @if ($session->scheduled_time)
-                                                {{ $session->scheduled_time->format('M d, Y H:i') }}
-                                            @else
-                                                <span class="text-muted">Not scheduled</span>
-                                            @endif
-                                        </div>
-
-                                        <div class="action-buttons">
-                                            <a href="{{ route('mock-test.show', $session) }}"
-                                                class="btn btn-sm btn-info">
-                                                <i class="fas fa-eye me-1"></i>Details
-                                            </a>
-                                            @if ($session->status === 'accepted' && $session->canStart())
-                                                <a href="{{ route('mock-test.start', $session) }}"
-                                                    class="btn btn-sm btn-success">
-                                                    <i class="fas fa-video me-1"></i>Join
-                                                </a>
-                                            @endif
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
                                         </div>
                                     </div>
-                                @endforeach
-                            @else
-                                <div class="empty-state">
-                                    <i class="fas fa-calendar-times mb-4"></i>
-                                    <h4>No Sessions Yet</h4>
-                                    <p>Start by requesting your first Mock Test Speaking Session!</p>
-                                    <button class="btn btn-primary mt-3 request-session">
-                                        <i class="fas fa-plus me-2"></i>Request Session
-                                    </button>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
                                 </div>
-                            @endif
+                            </div>
                         </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="2" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 2.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="3" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 3.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="4" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 4.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="5" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 5.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="6" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 6.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="7" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next">Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 7.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="speaking-question" data-q="8" data-part="1" hidden>
+                        <div class="sq-navigation">
+                            <div class="nav-buttons">
+                                <button class="sq-prev">Previous</button>
+                                <button class="sq-next" disabled>Next</button>
+                            </div>
+                            <div class="sq-text">
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <h3>Instruction Video</h3>
+                                        <div class="video-wrapper">
+                                            <div class="video-placeholder">
+                                                <video class="video-element" data-role="instruction-video">
+                                                    <source
+                                                        src="{{ asset('own_assets/videos/C16-t1/Part 1 - Question 8.mp4') }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support HTML video.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="video-controls">
+                                            <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                            <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                                Pause</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="recorder-container">
+                                        <h3>Answer Recorder</h3>
+                                        <div class="recorder-wrapper">
+                                            <div class="recorder-placeholder">
+                                                <video class="preview-video" autoplay muted playsinline></video>
+                                                <div class="recorder-placeholder">
+                                                    <i class="fas fa-video"></i>
+                                                    <p>Camera Preview</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recorder-controls">
+                                            <button class="record-btn"><i class="fas fa-video"></i> Start
+                                                Recording</button>
+                                            <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                                Stop</button>
+                                        </div>
+                                        <div class="recording-indicator">
+                                            <div class="recording-dot"></div>
+                                            <span>Recording in progress...</span>
+                                        </div>
+                                        <div class="timer" data-timer>00:00</div>
+
+
+                                        <div class="recorded-video" style="display:none; margin-top:15px;">
+                                            <h4>Recorded Video:</h4>
+                                            <video class="recorded-video-element" controls></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sq-submit">
+                            <button class="sq-submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                <div class="x-panel-inner">Content: Part 2</div>
+
+                <fieldset class="q-item">
+                    <p><b>Questions 1-1</b></p>
+                </fieldset>
+
+                <div class="progress-dots" style="display: none"></div>
+
+                <div class="speaking-question" data-q="1" data-part="2">
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev" disabled>Previous</button>
+                            <button class="sq-next" disabled>Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source src="{{ asset('own_assets/videos/C16-t1/PART 2.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
+                <div class="x-panel-inner">Content: Part 3</div>
+
+                <fieldset class="q-item">
+                    <p><b>Questions 1-6</b></p>
+                </fieldset>
+
+                <div class="progress-dots"></div>
+
+                <div class="speaking-question" data-q="1" data-part="3">
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev" disabled>Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 1.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="2" data-part="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 2.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="3" data-part="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 3.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="4" data-part="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 4.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="5" data-part="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next">Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 5.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="speaking-question" data-q="6" data-part="3" hidden>
+                    <div class="sq-navigation">
+                        <div class="nav-buttons">
+                            <button class="sq-prev">Previous</button>
+                            <button class="sq-next" disabled>Next</button>
+                        </div>
+                        <div class="sq-text">
+                            <div class="video-container">
+                                <div class="video-player">
+                                    <h3>Instruction Video</h3>
+                                    <div class="video-wrapper">
+                                        <div class="video-placeholder">
+                                            <video class="video-element" data-role="instruction-video">
+                                                <source
+                                                    src="{{ asset('own_assets/videos/C16-t1/Part 3 - Question 6.mp4') }}"
+                                                    type="video/mp4">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <button class="play-btn"><i class="fas fa-play"></i> Play Video</button>
+                                        <button class="pause-btn" disabled><i class="fas fa-pause"></i>
+                                            Pause</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="recorder-container">
+                                    <h3>Answer Recorder</h3>
+                                    <div class="recorder-wrapper">
+                                        <div class="recorder-placeholder">
+                                            <video class="preview-video" autoplay muted playsinline></video>
+                                            <div class="recorder-placeholder">
+                                                <i class="fas fa-video"></i>
+                                                <p>Camera Preview</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recorder-controls">
+                                        <button class="record-btn"><i class="fas fa-video"></i> Start
+                                            Recording</button>
+                                        <button class="stop-btn" disabled><i class="fas fa-stop"></i>
+                                            Stop</button>
+                                    </div>
+                                    <div class="recording-indicator">
+                                        <div class="recording-dot"></div>
+                                        <span>Recording in progress...</span>
+                                    </div>
+                                    <div class="timer" data-timer>00:00</div>
+
+
+                                    <div class="recorded-video" style="display:none; margin-top:15px;">
+                                        <h4>Recorded Video:</h4>
+                                        <video class="recorded-video-element" controls></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sq-submit">
+                        <button class="sq-submit-btn">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="modal fade" id="requestSessionModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Request Mock Test Speaking Session</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="info-box">
-                        <i class="fas fa-info-circle"></i>
-                        <p>Please fill out all the required information to request a mock test speaking session. Your
-                            teacher
-                            will review and respond to your request.</p>
-                    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
-                    <form id="mockTestForm">
-                        <div class="form-group">
-                            <label for="teacher_id" class="form-label">
-                                <i class="fas fa-chalkboard-teacher"></i> Select Teacher
-                            </label>
-                            <select name="teacher_id" id="teacher_id" class="form-select" required>
-                                <option value="">Choose a teacher...</option>
-                                @foreach ($teachers as $teacher)
-                                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback">Please select a teacher.</div>
-                        </div>
+    <script>
+        (function() {
+            // let remaining = 0;
+            // let t = null;
+            // const el = document.getElementById('timeText');
+            // const wrap = document.getElementById('timer');
 
-                        <div class="form-group">
-                            <label for="title" class="form-label">
-                                <i class="fas fa-heading"></i> Session Title
-                            </label>
-                            <input type="text" name="title" id="title" class="form-control"
-                                placeholder="e.g., IELTS Speaking Practice Test" required>
-                            <div class="invalid-feedback">Please enter a session title.</div>
-                        </div>
+            // function format(mmss) {
+            //     const m = Math.floor(mmss / 60);
+            //     const s = mmss % 60;
+            //     return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            // }
 
-                        <div class="form-group">
-                            <label for="description" class="form-label">
-                                <i class="fas fa-align-left"></i> Description
-                            </label>
-                            <textarea name="description" id="description" class="form-control" rows="4"
-                                placeholder="Briefly describe what you'd like to focus on during this session..."></textarea>
-                        </div>
+            // function tick() {
+            //     if (remaining <= 0) {
+            //         clearInterval(t);
+            //         t = null;
+            //         el.textContent = '00:00';
+            //         wrap.classList.add('danger');
+            //         document.getElementById('doneBtn').disabled = true;
+            //         document.getElementById('doneBtn').style.opacity = 0.7;
+            //         document.getElementById('doneBtn').style.cursor = 'not-allowed';
+            //         // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
+            //         return;
+            //     }
+            //     remaining -= 1;
+            //     el.textContent = format(remaining);
+            //     // Kedipkan danger saat < 60 detik
+            //     if (remaining <= 60) {
+            //         wrap.classList.add('danger');
+            //     }
+            // }
 
-                        <div class="form-group">
-                            <label for="proposed_time" class="form-label">
-                                <i class="fas fa-calendar-alt"></i> Proposed Time
-                            </label>
-                            <input type="datetime-local" name="proposed_time" id="proposed_time"
-                                class="form-control" required min="{{ date('Y-m-d\TH:i') }}">
-                            <div class="invalid-feedback">Please select a future date and time.</div>
-                        </div>
+            // function startCountdown(seconds) {
+            //     if (t) clearInterval(t);
+            //     remaining = Math.max(0, Math.floor(seconds));
+            //     el.textContent = format(remaining);
+            //     wrap.classList.toggle('danger', remaining <= 60);
+            //     document.getElementById('doneBtn').disabled = false;
+            //     document.getElementById('doneBtn').style.opacity = 1;
+            //     document.getElementById('doneBtn').style.cursor = 'pointer';
+            //     t = setInterval(tick, 1000);
+            // }
 
-                        <div class="form-group">
-                            <label for="duration_minutes" class="form-label">
-                                <i class="fas fa-clock"></i> Duration
-                            </label>
-                            <select name="duration_minutes" id="duration_minutes" class="form-select" required>
-                                <option value="30">30 minutes</option>
-                                <option value="45">45 minutes</option>
-                                <option value="60" selected>60 minutes</option>
-                                <option value="90">90 minutes</option>
-                                <option value="120">120 minutes</option>
-                            </select>
-                        </div>
+            // // Public API (opsional)
+            // window.CATHeader = {
+            //     startCountdown
+            // };
 
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-primary" id="submitRequestBtn">
-                                <i class="fas fa-paper-plane me-2"></i> Submit Request
-                            </button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                <i class="fas fa-arrow-left me-2"></i> Cancel
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+            // Events
+            document.getElementById('infoBtn').addEventListener('click', function() {
+                // Ganti dengan modal/informasi instruksi Anda
+                alert(
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                );
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            });
+
+            document.getElementById('doneBtn').addEventListener('click', function() {
+                const confirmFinish = confirm('Do you want to end the test now?');
+                if (confirmFinish) {
+                    window.history.back();
+                }
+            });
+
+            // Mulai countdown (contoh: 15 menit)
+            startCountdown(15 * 60);
+        })();
+    </script>
+
+    <!-- script bagian part soal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.querySelector('.parts-section');
+            if (!section) return;
+
+            const xTabs = section.querySelector('.x-tabs');
+            const tabs = Array.from(xTabs.querySelectorAll('.x-tab'));
+            const panels = Array.from(section.querySelectorAll('.x-panel'));
+
+            function updateEdgeHints() {
+                const max = xTabs.scrollWidth - xTabs.clientWidth;
+                const x = Math.round(xTabs.scrollLeft);
+                xTabs.classList.toggle('has-left', x > 0);
+                xTabs.classList.toggle('has-right', x < max - 1);
+            }
+
+            function setActive(id) {
+                tabs.forEach(btn => {
+                    const active = btn.dataset.id === id;
+                    btn.classList.toggle('is-active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                    btn.tabIndex = active ? 0 : -1;
+                    if (active) {
+                        btn.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
+                    }
+                });
+                panels.forEach(p => {
+                    const open = p.id === `panel-${id}`;
+                    if (open) {
+                        p.removeAttribute('hidden');
+                        p.classList.add('is-open');
+                    } else {
+                        p.setAttribute('hidden', '');
+                        p.classList.remove('is-open');
+                    }
+                });
+                xTabs.dataset.active = id;
+            }
+
+            /* Event delegation untuk klik tab (lebih andal) */
+            xTabs.addEventListener('click', (e) => {
+                const btn = e.target.closest('.x-tab');
+                if (!btn || !xTabs.contains(btn)) return;
+                setActive(btn.dataset.id);
+            });
+
+            /* Drag/Swipe pada .x-tabs */
+            let down = false,
+                moved = false,
+                startX = 0,
+                startLeft = 0,
+                pid = null;
+            xTabs.addEventListener('pointerdown', (e) => {
+                // Hanya izinkan drag jika bukan klik pada tab
+                if (e.target.closest('.x-tab')) {
+                    down = false;
+                    return;
+                }
+                down = true;
+                moved = false;
+                pid = e.pointerId;
+                xTabs.setPointerCapture(pid);
+                startX = e.clientX;
+                startLeft = xTabs.scrollLeft;
+            });
+            xTabs.addEventListener('pointermove', (e) => {
+                if (!down) return;
+                const dx = e.clientX - startX;
+                if (Math.abs(dx) > 3) moved = true;
+                xTabs.scrollLeft = startLeft - dx;
+            });
+
+            function endDrag(e) {
+                if (pid) {
+                    try {
+                        xTabs.releasePointerCapture(pid);
+                    } catch {}
+                }
+                pid = null;
+                down = false;
+                if (moved && e && e.target.closest('.x-tab')) e.preventDefault(); /* cegah klik nyangkut */
+                moved = false;
+            }
+            xTabs.addEventListener('pointerup', endDrag);
+            xTabs.addEventListener('pointercancel', endDrag);
+            xTabs.addEventListener('pointerleave', endDrag);
+
+            /* Wheel vertikal -> horizontal (trackpad/mouse) */
+            xTabs.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && xTabs.scrollWidth > xTabs.clientWidth) {
+                    xTabs.scrollBy({
+                        left: e.deltaY,
+                        behavior: 'auto'
+                    });
+                    e.preventDefault();
+                }
+            }, {
+                passive: false
+            });
+
+            /* Keyboard navigation */
+            tabs.forEach(btn => {
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    const idx = tabs.indexOf(btn);
+                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 +
+                        tabs.length) % tabs.length;
+                    tabs[nextIdx].focus();
+                    tabs[nextIdx].click();
+                });
+            });
+
+            /* Init */
+            updateEdgeHints();
+            xTabs.addEventListener('scroll', updateEdgeHints);
+            window.addEventListener('resize', updateEdgeHints);
+            setActive('tfng');
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Add animation to table rows
-            const tableRows = document.querySelectorAll('tbody tr');
-            tableRows.forEach((row, index) => {
-                row.style.animationDelay = `${index * 0.1}s`;
-            });
 
-            // Add hover effects to session cards
-            const sessionCards = document.querySelectorAll('.session-card');
-            sessionCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
+            function initSpeakingPanel(panelId) {
+                const panel = document.querySelector(panelId);
+                if (!panel) return;
+
+                const questions = panel.querySelectorAll('.speaking-question');
+                const totalQuestions = questions.length;
+                console.log(totalQuestions);
+                const progressDots = panel.querySelector('.progress-dots');
+
+                // Clear dots sebelum generate ulang
+                progressDots.innerHTML = "";
+
+                // Generate dots sesuai jumlah soal di panel ini
+                for (let i = 0; i < totalQuestions; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    progressDots.appendChild(dot);
+                }
+
+                function updateProgress(currentIdx) {
+                    const dots = progressDots.querySelectorAll('.dot');
+                    dots.forEach((dot, idx) => {
+                        dot.classList.remove('active');
+                        if (idx === currentIdx) dot.classList.add('active');
+                    });
+                }
+
+                function markCompleted(idx) {
+                    const dots = progressDots.querySelectorAll('.dot');
+                    if (dots[idx]) dots[idx].classList.add('completed');
+                }
+
+                // Navigation (previous/next)
+                questions.forEach((q, idx) => {
+                    const prevBtn = q.querySelector('.sq-prev');
+                    const nextBtn = q.querySelector('.sq-next');
+
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            q.hidden = true;
+                            questions[idx - 1].hidden = false;
+                            updateProgress(idx - 1);
+                        });
+                    }
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            q.hidden = true;
+                            questions[idx + 1].hidden = false;
+                            updateProgress(idx + 1);
+                        });
+                    }
                 });
 
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                // Record button simulation
+                panel.querySelectorAll('.sq-record').forEach((btn, idx) => {
+                    btn.addEventListener('click', () => {
+                        btn.textContent = "✅ Recorded";
+                        btn.classList.add("recorded");
+                        markCompleted(idx);
+                    });
                 });
-            });
+
+                // Upload audio
+                panel.querySelectorAll('.sq-upload').forEach((input, idx) => {
+                    input.addEventListener('change', () => {
+                        if (input.files.length > 0) {
+                            const label = input.closest('.sq-actions').querySelector(
+                                '.sq-upload-label');
+                            if (label) {
+                                label.textContent = "✅ Audio Uploaded";
+                                label.classList.add("uploaded");
+                            }
+                            markCompleted(idx);
+                        }
+                    });
+                });
+            }
+
+            // ✅ Inisialisasi untuk masing-masing panel
+            initSpeakingPanel('#panel-tfng');
+            initSpeakingPanel('#panel-tfng2');
+            initSpeakingPanel('#panel-ynng');
         });
     </script>
 
     <script>
-        $(document).ready(function() {
-            let modal = null;
+        (function() {
 
-            function initModal() {
-                modal = new bootstrap.Modal(document.getElementById('requestSessionModal'));
+            const hasMediaDevices = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+            const hasMediaRecorder = typeof MediaRecorder !== "undefined";
+
+            // simple beep
+            function playBeep() {
+                const audioCtx = new AudioContext();
+                const oscillator = audioCtx.createOscillator();
+                oscillator.type = "sine";
+                oscillator.frequency.value = 900;
+                oscillator.connect(audioCtx.destination);
+                oscillator.start();
+                setTimeout(() => oscillator.stop(), 200);
             }
 
-            $(document).on('click', '.request-session', function(e) {
-                e.preventDefault();
-                setDefaultDateTime();
-                initModal();
-                modal.show();
-            });
+            document.querySelectorAll(".speaking-question").forEach(container => {
 
-            function setDefaultDateTime() {
-                const now = new Date();
-                const tomorrow = new Date(now);
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                tomorrow.setHours(10, 0, 0, 0);
+                /* ------------------------------
+                   VIDEO PLAYER
+                ------------------------------ */
+                const instructionVideo = container.querySelector('.video-player video');
+                const playBtn = container.querySelector(".play-btn");
+                const pauseBtn = container.querySelector(".pause-btn");
 
-                const formattedDateTime = tomorrow.toISOString().slice(0, 16);
-                $('#proposed_time').val(formattedDateTime);
-            }
+                if (playBtn && pauseBtn && instructionVideo) {
+                    playBtn.addEventListener("click", () => {
+                        instructionVideo.play();
+                        playBtn.disabled = true;
+                        pauseBtn.disabled = false;
+                    });
 
-            function validateForm() {
-                let isValid = true;
-                $('.form-control, .form-select').removeClass('is-invalid');
-                $('.invalid-feedback').hide();
+                    pauseBtn.addEventListener("click", () => {
+                        instructionVideo.pause();
+                        playBtn.disabled = false;
+                        pauseBtn.disabled = true;
+                    });
 
-                if (!$('#teacher_id').val()) {
-                    $('#teacher_id').addClass('is-invalid').next('.invalid-feedback').show();
-                    isValid = false;
+                    instructionVideo.addEventListener("ended", () => {
+                        playBtn.disabled = false;
+                        pauseBtn.disabled = true;
+                    });
                 }
 
-                if (!$('#title').val().trim()) {
-                    $('#title').addClass('is-invalid').next('.invalid-feedback').show();
-                    isValid = false;
+
+                /* ------------------------------
+                   RECORDER ELEMENTS
+                ------------------------------ */
+                const preview = container.querySelector(".preview-video");
+                const recordBtn = container.querySelector(".record-btn");
+                const stopBtn = container.querySelector(".stop-btn");
+                const indicator = container.querySelector(".recording-indicator");
+                const timerDisplay = container.querySelector(".timer");
+                const recordedVideo = container.querySelector(".recorded-video-element");
+                const recordedContainer = container.querySelector(".recorded-video");
+
+                const warningBox = document.createElement("div");
+                warningBox.style.color = "red";
+                warningBox.style.fontWeight = "bold";
+                warningBox.style.marginTop = "5px";
+                warningBox.style.display = "none";
+                warningBox.textContent = "";
+                container.querySelector(".recorder-container").appendChild(warningBox);
+
+
+                /* ------------------------------
+                   STATE
+                ------------------------------ */
+                let mediaRecorder = null;
+                let currentStream = null;
+                let recordedChunks = [];
+                let timerInterval = null;
+                let seconds = 0;
+                let isRecording = false;
+
+                const MAX_RECORD_SECONDS = 180; // change freely
+
+
+                /* ------------------------------
+                   TIMER
+                ------------------------------ */
+                function resetTimer() {
+                    seconds = 0;
+                    timerDisplay.textContent = "00:00";
+                    timerDisplay.style.color = "#000";
+                    warningBox.style.display = "none";
                 }
 
-                const proposedTime = new Date($('#proposed_time').val());
-                const now = new Date();
-                if (!proposedTime || proposedTime <= now) {
-                    $('#proposed_time').addClass('is-invalid').next('.invalid-feedback').show();
-                    isValid = false;
-                }
+                function startTimer() {
+                    resetTimer();
 
-                return isValid;
-            }
+                    timerInterval = setInterval(() => {
+                        seconds++;
 
-            function showSuccessMessage() {
-                const form = $('#sessionRequestForm');
-                const successHTML = `
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <strong>Success!</strong> Your session request has been submitted. The teacher will review it soon.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>
-                `;
+                        const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+                        const s = String(seconds % 60).padStart(2, "0");
+                        timerDisplay.textContent = `${m}:${s}`;
 
-                form.before(successHTML);
+                        const remaining = MAX_RECORD_SECONDS - seconds;
 
-                setTimeout(() => {
-                    $('.alert-success').alert('close');
-                }, 5000);
-            }
-
-            function resetForm() {
-                $('#sessionRequestForm')[0].reset();
-                setDefaultDateTime();
-                $('.form-control, .form-select').removeClass('is-invalid');
-                $('.invalid-feedback').hide();
-                $('.alert-success').alert('close');
-            }
-
-            $('.form-control, .form-select').on('blur', function() {
-                if (this.checkValidity()) {
-                    $(this).removeClass('is-invalid').addClass('is-valid');
-                } else {
-                    $(this).removeClass('is-valid').addClass('is-invalid');
-                }
-            });
-
-            $('#description').on('input', function() {
-                const charCount = $(this).val().length;
-                const counter = $(this).parent().find('.char-counter') ||
-                    $(
-                        '<small class="char-counter text-muted" style="display:block; margin-top:5px;"></small>'
-                        )
-                    .insertAfter($(this));
-
-                counter.text(`${charCount}/500 characters`);
-
-                if (charCount > 400) {
-                    counter.css('color', '#ef4444');
-                } else if (charCount > 300) {
-                    counter.css('color', '#f59e0b');
-                } else {
-                    counter.css('color', '#6b7280');
-                }
-            });
-
-            $(document).on('keydown', function(e) {
-                if (e.key === 'Escape' && modal) {
-                    modal.hide();
-                    resetForm();
-                }
-            });
-
-            $("#submitRequestBtn").on("click", function() {
-                let form = $("#mockTestForm");
-
-                let formData = {
-                    teacher_id: $("#teacher_id").val(),
-                    title: $("#title").val(),
-                    description: $("#description").val(),
-                    proposed_time: $("#proposed_time").val(),
-                    duration_minutes: $("#duration_minutes").val(),
-                    _token: "{{ csrf_token() }}"
-                };
-
-                $.ajax({
-                    url: "{{ route('mock-test.post') }}",
-                    method: "POST",
-                    data: formData,
-                    beforeSend: function() {
-                        $("#submitRequestBtn").prop("disabled", true).html(`
-                        <i class="fas fa-spinner fa-spin"></i> Processing...
-                    `);
-                    },
-                    success: function(response) {
-                        Swal.fire({
-                            toast: true,
-                            position: "top-end",
-                            icon: "success",
-                            title: "Mock test request submitted!",
-                            showConfirmButton: false,
-                            timer: 2500
-                        });
-
-                        setTimeout(() => {
-                            location.reload();
-                        }, 1200);
-                    },
-                    error: function(xhr) {
-                        try {
-                            if (xhr.status === 422) {
-                                let errors = xhr.responseJSON.errors;
-                                $(".is-invalid").removeClass("is-invalid");
-
-                                for (let field in errors) {
-                                    $(`#${field}`).addClass("is-invalid");
-                                }
-
-                                Swal.fire({
-                                    toast: true,
-                                    position: "top-end",
-                                    icon: "error",
-                                    title: "Please check your input.",
-                                    showConfirmButton: false,
-                                    timer: 2500
-                                });
-
-                            } else {
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Error!",
-                                    text: "Something went wrong. Please try again.",
-                                });
-                            }
-
-                        } catch (e) {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Unexpected Error",
-                                text: e.message,
-                            });
+                        // last 10 seconds → turn red + show warning text
+                        if (remaining <= 10) {
+                            timerDisplay.style.color = "red";
+                            warningBox.style.display = "block";
+                            warningBox.textContent =
+                                `Recording will auto-stop in ${remaining} seconds…`;
                         }
 
-                    },
-                    complete: function() {
-                        $("#submitRequestBtn").prop("disabled", false).html(`
-                        <i class="fas fa-paper-plane me-2"></i> Submit Request
-                    `);
+                        // last 3 seconds → beep
+                        if (remaining <= 3 && remaining > 0) {
+                            playBeep();
+                        }
+
+                        // auto-stop
+                        if (seconds >= MAX_RECORD_SECONDS) {
+                            stopRecordingFlow();
+                        }
+
+                    }, 1000);
+                }
+
+                function stopTimer() {
+                    if (timerInterval) clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+
+
+                /* ------------------------------
+                   CAMERA
+                ------------------------------ */
+                async function initCamera() {
+                    if (!hasMediaDevices) throw new Error("Media devices not supported.");
+
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: true,
+                        audio: true
+                    });
+                    preview.srcObject = stream;
+                    currentStream = stream;
+                    return stream;
+                }
+
+                function stopCamera() {
+                    if (!currentStream) return;
+                    currentStream.getTracks().forEach(t => t.stop());
+                    currentStream = null;
+                    preview.srcObject = null;
+                }
+
+
+                /* ------------------------------
+                   START RECORDING
+                ------------------------------ */
+                async function startRecordingFlow() {
+                    if (isRecording) return;
+
+                    try {
+                        const stream = await initCamera();
+                        recordedChunks = [];
+
+                        let options = {};
+                        if (MediaRecorder.isTypeSupported("video/webm;codecs=vp8,opus")) {
+                            options.mimeType = "video/webm;codecs=vp8,opus";
+                        }
+
+                        mediaRecorder = new MediaRecorder(stream, options);
+
+                        mediaRecorder.ondataavailable = e => {
+                            if (e.data.size > 0) recordedChunks.push(e.data);
+                        };
+
+                        mediaRecorder.onstop = () => {
+                            const blob = new Blob(recordedChunks, {
+                                type: "video/webm"
+                            });
+                            const url = URL.createObjectURL(blob);
+                            recordedVideo.src = url;
+                            recordedContainer.style.display = "block";
+
+                            stopCamera();
+                            isRecording = false;
+                        };
+
+                        mediaRecorder.start();
+                        isRecording = true;
+
+                        recordBtn.disabled = true;
+                        stopBtn.disabled = false;
+                        indicator.classList.add("active");
+
+                        startTimer();
+                    } catch (err) {
+                        console.error("Start recording failed:", err);
+                        alert("Failed to start recording.");
                     }
+                }
+
+
+                /* ------------------------------
+                   STOP RECORDING
+                ------------------------------ */
+                function stopRecordingFlow() {
+                    if (!isRecording) return;
+
+                    try {
+                        if (mediaRecorder && mediaRecorder.state !== "inactive") {
+                            mediaRecorder.stop();
+                        }
+                    } catch (e) {
+                        console.error("Stopping error:", e);
+                    }
+
+                    recordBtn.disabled = false;
+                    stopBtn.disabled = true;
+                    indicator.classList.remove("active");
+
+                    stopTimer();
+                    resetTimer();
+                }
+
+
+                /* ------------------------------
+                   EVENTS
+                ------------------------------ */
+                recordBtn.addEventListener("click", () => startRecordingFlow());
+                stopBtn.addEventListener("click", () => stopRecordingFlow());
+                stopBtn.disabled = true;
+
+            });
+
+        })();
+    </script>
+
+    <script>
+        $(function() {
+
+            $(".speaking-question").each(function() {
+
+                const block = $(this);
+                const submitBtn = block.find(".sq-submit-btn");
+                const recordedVideoElement = block.find(".recorded-video-element");
+
+                submitBtn.on("click", function() {
+
+                    // cek apakah video pernah direkam
+                    const videoEl = recordedVideoElement.get(0);
+
+                    if (!videoEl || !videoEl.src) {
+                        alert("Please record a video first before submitting.");
+                        return;
+                    }
+
+                    const videoURL = videoEl.src;
+
+                    // ambil blob dari objectURL browser
+                    fetch(videoURL)
+                        .then(r => r.blob())
+                        .then(blob => {
+
+                            const formData = new FormData();
+
+                            // filename unik
+                            const filename =
+                                `recording_q${block.data("q") || ""}_${Date.now()}.webm`;
+
+                            formData.append("video", blob, filename);
+                            formData.append("question_id", block.data("q") || "");
+                            formData.append("part", block.data("part") || "");
+                            formData.append("timestamp", Date.now());
+                            formData.append("set_id", "blsodB9LLhUn0zcg");
+                            formData.append("tipe", "speaking");
+                            formData.append("kategori", "speaking");
+                            formData.append("_token", $("meta[name='csrf-token']").attr(
+                                "content"));
+
+                            console.log("Submitting video:", filename, blob);
+
+                            $.ajax({
+                                url: "/ielts/practice/check",
+                                method: "POST",
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function(res) {
+                                    alert("Video submitted successfully!");
+                                    setInterval(function() {
+                                        location.reload();
+                                    }, 1000)
+                                },
+                                error: function(xhr) {
+                                    console.error("Upload error:", xhr);
+                                    alert("Failed to submit the video.");
+                                }
+                            });
+
+                        })
+                        .catch(err => {
+                            console.error("Blob convert error:", err);
+                            alert("Unable to process the recorded video.");
+                        });
+
                 });
 
             });
 
-            setDefaultDateTime();
         });
     </script>
+
+
 
 </body>
 

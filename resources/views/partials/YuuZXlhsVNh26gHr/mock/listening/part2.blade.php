@@ -1,112 +1,116 @@
 @props(['part', 'id'])
 
+
 <fieldset class="q-item">
-    <p>Questions 21-22</p>
+    <p>Questions 11-12</p>
     <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
 </fieldset>
 
 <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
-        <span class="q-number">21</span>
-        <span class="q-number">22</span>
-        Which TWO parts of the introductory stage to their art projects do Jess and Tom agree were useful?
+        <span class="q-number">11</span>
+        <span class="q-number">12</span>
+        Which TWO activities that volunteers do are mentioned?
     </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][0] }}-{{ $id }}-1[]" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">the Bird Park visit</span>
+            <span class="opt-label">decorating</span>
         </label>
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][0] }}-{{ $id }}-1[]" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">the workshop sessions</span>
+            <span class="opt-label">cleaning</span>
         </label>
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][0] }}-{{ $id }}-1[]" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">the Natural History Museum visit</span>
+            <span class="opt-label">delivering meals</span>
         </label>
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][0] }}-{{ $id }}-1[]" value="D" />
             <span class="opt-code">D</span>
-            <span class="opt-label">the projects done in previous years</span>
+            <span class="opt-label">shopping</span>
         </label>
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][0] }}-{{ $id }}-1[]" value="E" />
             <span class="opt-code">E</span>
-            <span class="opt-label"> the handouts with research sources</span>
+            <span class="opt-label">childcare</span>
         </label>
     </div>
 </fieldset>
 
+
 <fieldset class="q-item">
-    <p>Questions 23-24</p>
+    <p>Questions 13-14</p>
     <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="2" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
-        <span class="q-number">23</span>
-        <span class="q-number">24</span>
-        In which <b>TWO</b> ways do both Jess and Tom decide to change their proposals?
+        <span class="q-number">13</span>
+        <span class="q-number">14</span>
+        Which TWO ways that volunteers can benefit from volunteering are mentioned?
     </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
-            <input type="checkbox"name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="A" />
+            <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">by giving a rationale for their action plans</span>
+            <span class="opt-label">learning how to be part of a team</span>
         </label>
         <label class="q-option">
-            <input type="checkbox"name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="B" />
+            <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">by being less specific about the outcome</span>
+            <span class="opt-label">having a sense of purpose</span>
         </label>
         <label class="q-option">
-            <input type="checkbox"name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="C" />
+            <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">by adding a video diary presentation</span>
+            <span class="opt-label">realising how lucky they are</span>
         </label>
         <label class="q-option">
-            <input type="checkbox"name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="D" />
+            <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="D" />
             <span class="opt-code">D</span>
-            <span class="opt-label">by providing a timeline and a mind map</span>
+            <span class="opt-label">improved ability at time management</span>
         </label>
         <label class="q-option">
-            <input type="checkbox"name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="E" />
+            <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-2[]" value="E" />
             <span class="opt-code">E</span>
-            <span class="opt-label">by making their notes more evaluative</span>
+            <span class="opt-label">boosting their employment prospects</span>
         </label>
     </div>
 </fieldset>
+
 <fieldset class="q-item">
-    <p>Questions 25-30</p>
-    <p>What information does the speaker give about each of the following areas of the museum?</p>
-    <p><i>Choose SIX answers from the box and write the correct letter, <b>A–H</b>, next to questions.</i>
+    <p>Questions 15-20</p>
+    <p>What has each of the following volunteers helped someone to do?</p>
+    <p>
+        <i>Choose <b>SIX</b> answers from the box and write the correct letter, <b>A-G</b>, next to
+            Questions</i>
     </p>
-    <p><b>Personal Meanings</b></p>
+    <p><b>What volunteers have helped people to do</b></p>
 
     <ul style="list-style: none; padding-left: 0; margin-left: 0;">
-        <li><b>A</b> a childhood memory</li>
-        <li><b>B</b> hope for the future</li>
-        <li><b>C</b> fast movement</li>
-        <li><b>D</b> a potential threat</li>
-        <li><b>E</b> the power of colour</li>
-        <li><b>F</b> the continuity of life</li>
-        <li><b>G</b> protection of nature</li>
-        <li><b>H</b> a confused attitude to nature</li>
+        <li><b>A</b> overcome physical difficulties</li>
+        <li><b>B</b> rediscover skills not used for a long time</li>
+        <li><b>C</b> improve their communication skills</li>
+        <li><b>D</b> solve problems independently</li>
+        <li><b>E</b> escape isolation</li>
+        <li><b>F</b> remember past times</li>
+        <li><b>G</b> start a new hobby</li>
     </ul>
 </fieldset>
 
 <fieldset class="q-item">
-    <h3><b>Pictures</b></h3>
+    <h3><b>Volunteers</b></h3>
 </fieldset>
 
 <fieldset class="q-item" data-q="1">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">25</span>
+        <span class="q-number">15</span>
         <span style="flex: 1;">
-            Falcon (Landseer)
+            Habib
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-dropdown">
                     <option value=""></option>
@@ -117,7 +121,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
@@ -126,9 +129,9 @@
 
 <fieldset class="q-item" data-q="2">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">26</span>
+        <span class="q-number">16</span>
         <span style="flex: 1;">
-            Fish hawk (Audubon)
+            Consuela
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-dropdown">
                     <option value=""></option>
@@ -139,7 +142,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
@@ -148,9 +150,9 @@
 
 <fieldset class="q-item" data-q="3">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">27</span>
+        <span class="q-number">17</span>
         <span style="flex: 1;">
-            Kingfisher (van Gogh)
+            Minh
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-dropdown">
                     <option value=""></option>
@@ -161,7 +163,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
@@ -170,9 +171,9 @@
 
 <fieldset class="q-item" data-q="4">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">28</span>
+        <span class="q-number">18</span>
         <span style="flex: 1;">
-            Portrait of William Wells
+            Tanya
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-dropdown">
                     <option value=""></option>
@@ -183,7 +184,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
@@ -192,9 +192,9 @@
 
 <fieldset class="q-item" data-q="5">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">29</span>
+        <span class="q-number">19</span>
         <span style="flex: 1;">
-            Vairumati (Gauguin)
+            Alexei
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-5" class="q-dropdown">
                     <option value=""></option>
@@ -205,7 +205,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
@@ -214,9 +213,9 @@
 
 <fieldset class="q-item" data-q="6">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">30</span>
+        <span class="q-number">20</span>
         <span style="flex: 1;">
-            Portrait of Giovanni de Medici
+            Juba
             <span class="q-question">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-6" class="q-dropdown">
                     <option value=""></option>
@@ -227,7 +226,6 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                     <option value="G">G</option>
-                    <option value="H">H</option>
                 </select>
             </span>
         </span>
