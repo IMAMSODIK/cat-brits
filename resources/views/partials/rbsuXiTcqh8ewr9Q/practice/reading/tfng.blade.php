@@ -37,7 +37,7 @@
                     important part of performance maximisation.’ Consequently, the specific
                     rackets used by the world’s elite are not actually readily available to the
                     public; rather, each racket is individually made to suit the player who uses
-                    it. Take the US professional tennis players Mike and Bob Bryan, for rbsuXiTcqh8ewr9Q:
+                    it. Take the US professional tennis players Mike and Bob Bryan, for example:
                     ‘We’re very particular with our racket specifications,’ they say. ‘All our
                     rackets are sent from our manufacturer to Tampa, Florida, where our frames go
                     through a … thorough customisation process.’ They explain how they have
@@ -98,7 +98,7 @@
 
                 <p>
                     However, many players go beyond these basic adjustments to the strings and
-                    make changes to the racket frame itself. For rbsuXiTcqh8ewr9Q, much of the serving
+                    make changes to the racket frame itself. For example, much of the serving
                     power of US professional player Pete Sampras was attributed to the addition
                     of four to five lead weights onto his rackets, and today many professionals
                     have the weight adjusted during the manufacturing process.<span class="q-number">7</span>

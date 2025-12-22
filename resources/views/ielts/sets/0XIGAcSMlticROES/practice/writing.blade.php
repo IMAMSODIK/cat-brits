@@ -1378,12 +1378,10 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The graph below gives information on the numbers of participants for different
-                                    activities at one social centre in Melbourne, Australia for the period 2000 to 2020.
-                                </p>
+                                <p>The plans below show a harbour in 2000 and how it looks today.</p>
                                 <p>Summarise the information by selecting and reporting the main features, and make
                                     comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-19-academic-writing-test-4-1.png') }}"
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-19-academic-writing-test-2–1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1433,10 +1431,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Some people think that competition at work, at school and in daily life is a good
-                                    thing. Others believe that we should try to cooperate more, rather than competing
-                                    against each other.</p>
-                                <p>Discuss both these views and give your own opinion.</p>
+                                <p>The working week should be shorter and workers should have a longer weekend.</p>
+                                <p>Do you agree or disagree?</p>
                             </div>
                         </article>
 
@@ -1949,7 +1945,7 @@
                             answer: text,
                             tipe: "practice",
                             no_soal: noSoal,
-                            set_id: 'rbsuXiTcqh8ewr9Q',
+                            set_id: 'yPLnQeqINAxbrnva',
                             kategori: "writing",
                             _token: $('meta[name="csrf-token"]').attr('content')
                         },

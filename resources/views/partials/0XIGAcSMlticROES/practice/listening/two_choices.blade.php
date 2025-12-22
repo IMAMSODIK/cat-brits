@@ -20,16 +20,14 @@
                     </div>
 
                     <div class="start-buttons">
-                        <button class="start-btn" data-start="131" type="button">Start from
+                        <button class="start-btn" data-start="264" type="button">Start from
                             here</button>
                     </div>
                 </div>
             </fieldset>
 
             <fieldset class="q-item">
-                <p>
-                <h3>Questions 1–2</h3>
-                </p>
+                <p>Questions 1-2</p>
                 <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
             </fieldset>
 
@@ -37,38 +35,38 @@
                 <legend class="q-text">
                     <span class="q-number">1</span>
                     <span class="q-number">2</span>
-                    Which TWO ways do the students agree that touch-sensitive sensors for food labels could be developed
-                    in future?
+                    Which TWO things does David say about the lifeboat volunteer training?
                 </legend>
                 <div class="q-options" role="group" aria-label="Question 1 options">
                     <label class="q-option">
-                        <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="A" />
+                        <input type="checkbox" name="0XIGAcSMlticROES-1[]" value="A" />
                         <span class="opt-code">A</span>
-                        <span class="opt-label">for use on medical products</span>
+                        <span class="opt-label">The residential course developed his leadership skills.</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="B" />
+                        <input type="checkbox" name="0XIGAcSMlticROES-1[]" value="B" />
                         <span class="opt-code">B</span>
-                        <span class="opt-label">to show that food is no longer fit to eat</span>
+                        <span class="opt-label">The training in use of ropes and knots was quite brief.</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="C" />
+                        <input type="checkbox" name="0XIGAcSMlticROES-1[]" value="C" />
                         <span class="opt-code">C</span>
-                        <span class="opt-label">for use with drinks as well as foods</span>
+                        <span class="opt-label">The training exercises have built up his mental strength.</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="D" />
+                        <input type="checkbox" name="0XIGAcSMlticROES-1[]" value="D" />
                         <span class="opt-code">D</span>
-                        <span class="opt-label">to provide applications for blind people</span>
+                        <span class="opt-label">The casualty care activities were particularly challenging for
+                            him.</span>
                     </label>
                     <label class="q-option">
-                        <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="E" />
+                        <input type="checkbox" name="0XIGAcSMlticROES-1[]" value="E" />
                         <span class="opt-code">E</span>
-                        <span class="opt-label">to indicate the weight of certain foods</span>
+                        <span class="opt-label">The wave tank activities provided practice in survival
+                            techniques.</span>
                     </label>
                 </div>
             </fieldset>
-
 
 
 

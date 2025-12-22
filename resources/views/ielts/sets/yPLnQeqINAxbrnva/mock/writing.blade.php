@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -107,7 +106,7 @@
             color: var(--text);
             border-radius: 10px;
             padding: 8px 12px;
-            font-size: 14px;
+            font-size: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
@@ -1133,6 +1132,21 @@
             margin-top: 30px;
         }
 
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            outline: none;
+        }
+
         .btn-secondary {
             background: #e2e8f0;
             color: #4a5568;
@@ -1320,6 +1334,7 @@
     </style>
 </head>
 
+
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
@@ -1390,7 +1405,7 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 1">
+                            <form class="response-form" data-task="task1">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
@@ -1435,7 +1450,6 @@
                                 <p>In many countries, people are now living longer than ever before. Some people say an
                                     ageing population creates problems for governments. Other people think there are
                                     benefits if society has more elderly people.</p>
-                                <p>To what extent do you agree or disagree with this opinion?</p>
                                 <p>To what extent do the advantages of having an ageing population outweigh the
                                     disadvantages?</p>
                             </div>
@@ -1444,9 +1458,8 @@
                         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
                         <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 2">
-                                <fieldset class="q-item" data-q="1
-                                ">
+                            <form class="response-form" data-task="task2">
+                                <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
@@ -1503,7 +1516,7 @@
             document.getElementById('infoBtn').addEventListener('click', function () {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Close" to quit the test'
                 );
             });
 
@@ -1878,153 +1891,110 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function () {
-            $(".response-form").each(function () {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.response-form').forEach(form => {
+                const textarea = form.querySelector('.js-response');
+                const charCount = form.querySelector('.char-count');
+                const submitBtn = form.querySelector('.js-submit');
+                const clearBtn = form.querySelector('.js-clear');
+                const successMessage = form.querySelector('.js-success');
+                const taskType = form.dataset.task;
 
-                const form = $(this);
-                const textarea = form.find(".js-response");
-                const charCount = form.find(".char-count");
-                const submitBtn = form.find(".js-submit");
-                const clearBtn = form.find(".js-clear");
-                const successMessage = form.find(".js-success");
-
-                const taskType = form.data("task");
-                const noSoal = form.find(".q-item").data("q");
-
-                /* ------------------------------
-                WORD COUNTER
-                --------------------------------*/
+                // 🔹 Update word count
                 function updateCharCount() {
-                    const words = textarea.val().trim() === "" ?
-                        0 :
-                        textarea.val().trim().split(/\s+/).length;
-
-                    charCount.text(words);
-                    submitBtn.prop("disabled", words === 0);
+                    const text = textarea.value.trim();
+                    const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+                    charCount.textContent = words;
+                    submitBtn.disabled = words === 0;
                 }
 
-                /* ------------------------------
-                AUTO RESIZE TEXTAREA
-                --------------------------------*/
+                // 🔹 Auto resize textarea
                 function autoResize() {
-                    textarea.css("height", "auto");
-                    textarea.css("height", Math.max(200, textarea[0].scrollHeight) + "px");
+                    textarea.style.height = 'auto';
+                    textarea.style.height = Math.max(200, textarea.scrollHeight) + 'px';
                 }
 
-                /* ------------------------------
-                CLEAR BUTTON
-                --------------------------------*/
-                clearBtn.on("click", function () {
-                    if (confirm("Are you sure you want to clear all text?")) {
-                        textarea.val("");
+                // 🔹 Clear button
+                clearBtn.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to clear all text?')) {
+                        textarea.value = '';
                         updateCharCount();
                         autoResize();
                         textarea.focus();
                     }
                 });
 
-                /* ------------------------------
-                FORM SUBMISSION
-                --------------------------------*/
-                form.on("submit", function (e) {
+                // 🔹 Submit AJAX
+                form.addEventListener('submit', e => {
                     e.preventDefault();
 
-                    const text = textarea.val().trim();
-
+                    const text = textarea.value.trim();
                     if (!text) {
-                        alert("Please enter your response before submitting.");
+                        alert('Please enter your response before submitting.');
+                        textarea.focus();
                         return;
                     }
 
-                    submitBtn.text("Submitting...");
-                    submitBtn.prop("disabled", true);
+                    submitBtn.textContent = 'Submitting...';
+                    submitBtn.disabled = true;
 
-                    $.ajax({
-                        url: "/ielts/practice/check",
-                        type: "POST",
-                        data: {
-                            task: taskType,
-                            answer: text,
-                            tipe: "practice",
-                            no_soal: noSoal,
-                            set_id: 'yPLnQeqINAxbrnva',
-                            kategori: "writing",
-                            _token: $('meta[name="csrf-token"]').attr('content')
+                    fetch('/writing/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector(
+                                'meta[name="csrf-token"]').content
                         },
-                        success: function (res) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
+                        body: JSON.stringify({
+                            task: taskType,
+                            response: text
+                        })
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
 
-                            if (res.status) {
-                                setTimeout(() => {
-                                    alert(res.message)
-                                }, 1000);
-
-                                textarea.val("");
+                            if (data.status === 'ok') {
+                                successMessage.style.display = 'block';
+                                setTimeout(() => successMessage.style.display = 'none', 3000);
+                                textarea.value = '';
                                 updateCharCount();
                                 autoResize();
                             } else {
-                                alert((res.message || "Unexpected error."));
+                                alert('Error: ' + (data.message || 'Something went wrong.'));
                             }
-                        },
-                        error: function (xhr) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
-
-                            console.log("=== AJAX ERROR DEBUG ===");
-                            console.log("STATUS:", xhr.status);
-
-                            // tampilkan response Laravel yg sebenarnya
-                            console.log("RESPONSE:", xhr.responseText);
-
-                            // kalau JSON
-                            try {
-                                console.log("PARSED JSON:", JSON.parse(xhr
-                                    .responseText));
-                            } catch (e) {
-                                console.log("NOT JSON");
-                            }
-
-                            alert("Server Error: " + xhr.status);
-                        }
-
-
-                    });
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            submitBtn.textContent = 'Submit';
+                            submitBtn.disabled = false;
+                            alert('Request failed.');
+                        });
                 });
 
-                /* ------------------------------
-                INPUT EVENT
-                --------------------------------*/
-                textarea.on("input", function () {
+                // 🔹 Input event
+                textarea.addEventListener('input', () => {
                     updateCharCount();
                     autoResize();
                 });
 
-                /* ------------------------------
-                MOBILE SCROLL FIX
-                --------------------------------*/
+                // 🔹 Scroll center in mobile
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.on("focus", function () {
-                        setTimeout(() => {
-                            textarea[0].scrollIntoView({
-                                behavior: "smooth",
-                                block: "center"
-                            });
-                        }, 300);
+                    textarea.addEventListener('focus', () => {
+                        setTimeout(() => textarea.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        }), 300);
                     });
                 }
 
-                // INIT
                 updateCharCount();
                 autoResize();
             });
         });
     </script>
-
-
 </body>
 
 </html>

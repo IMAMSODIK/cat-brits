@@ -40,31 +40,31 @@
                 <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                     <div class="q-options" role="group" aria-label="Question 1 options">
                         <label class="q-option">
-                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-3[]" value="A" />
+                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="A" />
                             <span class="opt-code">A</span>
                             <span class="opt-label">
                                 The state estimated that very few people were involved in piracy.</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-3[]" value="B" />
+                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="B" />
                             <span class="opt-code">B</span>
                             <span class="opt-label">Attitudes towards piracy changed shortly after the Iliad and the
                                 Odyssey were written.</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-3[]" value="C" />
+                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="C" />
                             <span class="opt-code">C</span>
                             <span class="opt-label">
                                 Important officials were known to occasionally take part in piracy.</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-3[]" value="D" />
+                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="D" />
                             <span class="opt-code">D</span>
                             <span class="opt-label">Every citizen regarded pirate attacks on cities as
                                 unacceptable.</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-3[]" value="E" />
+                            <input type="checkbox" name="rbsuXiTcqh8ewr9Q-2[]" value="E" />
                             <span class="opt-code">E</span>
                             <span class="opt-label">A favourable view of piracy is evident in certain ancient Greek
                                 texts.</span>

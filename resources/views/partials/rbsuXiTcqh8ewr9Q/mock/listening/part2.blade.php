@@ -1,7 +1,7 @@
 @props(['part', 'id'])
 
 <fieldset class="q-item">
-    <p>Questions 11-14</p>
+    <p>Questions 11–15</p>
     <p>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
 </fieldset>
 
@@ -9,23 +9,23 @@
 <fieldset class="q-item" data-q="1">
     <legend class="q-text">
         <span class="q-number">11</span>
-        The museum building was originally
+        During the visit to Malatte, in France, members especially enjoyed
     </legend>
     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-1" value="A" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">a factory.</span>
+            <span class="opt-label">going to a theme park.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-1" value="B" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">a private home.</span>
+            <span class="opt-label">experiencing a river trip.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-1" value="C" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-1" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">a hall of residence.</span>
+            <span class="opt-label">visiting a cheese factory.</span>
         </label>
     </div>
 </fieldset>
@@ -34,23 +34,23 @@
 <fieldset class="q-item" data-q="2">
     <legend class="q-text">
         <span class="q-number">12</span>
-        The university uses part of the museum building as
+        What will happen in Stanthorpe to mark the 25th anniversary of the Twinning Association?
     </legend>
     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-2" value="A" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">teaching rooms.</span>
+            <span class="opt-label">A tree will be planted.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-2" value="B" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">a research library.</span>
+            <span class="opt-label">A garden seat will be bought.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-2" value="C" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-2" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">administration offices.</span>
+            <span class="opt-label">A footbridge will be built.</span>
         </label>
     </div>
 </fieldset>
@@ -59,23 +59,23 @@
 <fieldset class="q-item" data-q="3">
     <legend class="q-text">
         <span class="q-number">13</span>
-        What does the guide say about the entrance fee?
+        Which event raised most funds this year?
     </legend>
     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-3" value="A" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">Visitors decide whether or not they wish to pay.</span>
+            <span class="opt-label">the film show</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-3" value="B" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">Only children and students receive a discount.</span>
+            <span class="opt-label">the pancake evening</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-3" value="C" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-3" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">The museum charges extra for special exhibitions.</span>
+            <span class="opt-label">the cookery demonstration</span>
         </label>
     </div>
 </fieldset>
@@ -84,57 +84,74 @@
 <fieldset class="q-item" data-q="4">
     <legend class="q-text">
         <span class="q-number">14</span>
-        What are visitors advised to leave in the cloakroom?
+        For the first evening with the French visitors host families are advised to
     </legend>
     <div class="q-options" role="radiogroup" aria-label="Question 4 options">
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-4" value="A" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-4" value="A" />
             <span class="opt-code">A</span>
-            <span class="opt-label">cameras</span>
+            <span class="opt-label">take them for a walk round the town.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-4" value="B" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-4" value="B" />
             <span class="opt-code">B</span>
-            <span class="opt-label">coats</span>
+            <span class="opt-label">go to a local restaurant.</span>
         </label>
         <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][0] }}-{{ $id }}-4" value="C" />
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-4" value="C" />
             <span class="opt-code">C</span>
-            <span class="opt-label">bags</span>
+            <span class="opt-label">have a meal at home.</span>
+        </label>
+    </div>
+</fieldset>
+
+<!-- Question 5 -->
+<fieldset class="q-item" data-q="5">
+    <legend class="q-text">
+        <span class="q-number">15</span>
+        On Saturday evening there will be the chance to
+    </legend>
+    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+        <label class="q-option">
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-5" value="A" />
+            <span class="opt-code">A</span>
+            <span class="opt-label">listen to a concert.</span>
+        </label>
+        <label class="q-option">
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-5" value="B" />
+            <span class="opt-code">B</span>
+            <span class="opt-label">watch a match.</span>
+        </label>
+        <label class="q-option">
+            <input type="radio" name="{{ $part['tipe'][0]}}-{{ $id }}-5" value="C" />
+            <span class="opt-code">C</span>
+            <span class="opt-label">take part in a competition.</span>
         </label>
     </div>
 </fieldset>
 
 <fieldset class="q-item">
-    <p>Questions 15-20</p>
-    <p>What information does the speaker give about each of the following areas of the museum?</p>
-    <p><i>Choose SIX answers from the box and write the correct letter, <b>A–H</b>, next to questions.</i>
+    <p>
+    <h3>Questions 16-20</h3>
     </p>
-    <p><b>Information</b></p>
+    <p>Label the map below.</p>
+    <p>Write the correct letter,<b>A–H</b>, next to
+        questions.</i></p>
+    <p><b>Farley House</b></p>
+    <div class="d-flex">
+        <img src="{{ asset('own_assets/images/cambridge-ielts-19-academic-listening-test-1-16-20.png') }}"
+            alt="Farley House Map" style="max-width: 100%; height: auto;" />
+    </div>
 
-    <ul style="list-style: none; padding-left: 0; margin-left: 0;">
-        <li><b>A</b> Parents must supervise their children.</li>
-        <li><b>B</b> There are new things to see.</li>
-        <li><b>C</b> It is closed today.</li>
-        <li><b>D</b> This is only for school groups.</li>
-        <li><b>E</b> There is a quiz for visitors.</li>
-        <li><b>F</b> It features something created by students.</li>
-        <li><b>G</b> An expert is here today.</li>
-        <li><b>H</b> There is a one-way system.</li>
-    </ul>
-</fieldset>
-
-<fieldset class="q-item">
-    <h3><b>Areas of the Museum</b></h3>
 </fieldset>
 
 <fieldset class="q-item" data-q="1">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">15</span>
+        <span class="q-number">16</span>
         <span style="flex: 1;">
-            Four Seasons
+            Farm shop
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -152,11 +169,11 @@
 
 <fieldset class="q-item" data-q="2">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">16</span>
+        <span class="q-number">17</span>
         <span style="flex: 1;">
-            Farmhouse Kitchen
+            Disabled entry
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -174,11 +191,11 @@
 
 <fieldset class="q-item" data-q="3">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">17</span>
+        <span class="q-number">18</span>
         <span style="flex: 1;">
-            A Year on the Farm
+            Adventure playground
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -196,11 +213,11 @@
 
 <fieldset class="q-item" data-q="4">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">18</span>
+        <span class="q-number">19</span>
         <span style="flex: 1;">
-            Wagon Walk
+            Kitchen gardens
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -218,33 +235,11 @@
 
 <fieldset class="q-item" data-q="5">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-number">19</span>
-        <span style="flex: 1;">
-            Bees are Magic
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-dropdown">
-                    <option value=""></option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                    <option value="F">F</option>
-                    <option value="G">G</option>
-                    <option value="H">H</option>
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
-
-<fieldset class="q-item" data-q="6">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">20</span>
         <span style="flex: 1;">
-            The Pond
+            The Temple of the Four Winds
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-6" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-5" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>

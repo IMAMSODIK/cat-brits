@@ -39,30 +39,30 @@
                 <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
                     <div class="q-options" role="group" aria-label="Question 1 options">
                         <label class="q-option">
-                            <input type="checkbox" name="yPLnQeqINAxbrnva-3[]" value="A" />
+                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="A" />
                             <span class="opt-code">A</span>
                             <span class="opt-label">to provide habitats for a wide range of
                                 species</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="yPLnQeqINAxbrnva-3[]" value="B" />
+                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="B" />
                             <span class="opt-code">B</span>
                             <span class="opt-label">to grow plants successfully even in the wettest
                                 climates</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="yPLnQeqINAxbrnva-3[]" value="C" />
+                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="C" />
                             <span class="opt-code">C</span>
                             <span class="opt-label">to regulate the temperature of the immediate
                                 environment</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="yPLnQeqINAxbrnva-3[]" value="D" />
+                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="D" />
                             <span class="opt-code">D</span>
                             <span class="opt-label">to generate power from a sustainable source</span>
                         </label>
                         <label class="q-option">
-                            <input type="checkbox" name="yPLnQeqINAxbrnva-3[]" value="E" />
+                            <input type="checkbox" name="yPLnQeqINAxbrnva-2[]" value="E" />
                             <span class="opt-code">E</span>
                             <span class="opt-label">to collect water to supply other buildings</span>
                         </label>
