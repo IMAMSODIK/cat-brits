@@ -90,17 +90,16 @@
         }
 
         .card-text {
-            color: #555;
+            color: #ffffff;
             line-height: 1.5;
-            font-size: 0.9rem;
-            /* Font lebih kecil */
+            font-size: 1.0rem;
             margin-bottom: 0;
             display: -webkit-box;
             -webkit-line-clamp: 3;
-            /* Jumlah baris dikurangi */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-weight: bold;
         }
 
         /* Card footer yang lebih kecil */
@@ -132,7 +131,7 @@
         }
 
         .access-btn {
-            color: #4a90e2;
+            color: #ffffff;
             font-size: 0.8rem;
             /* Font lebih kecil */
             font-weight: 600;
@@ -168,7 +167,7 @@
             }
 
             .card-text {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
                 -webkit-line-clamp: 3;
             }
 
@@ -205,7 +204,7 @@
             }
 
             .card-text {
-                font-size: 0.82rem;
+                font-size: 0.9rem;
                 -webkit-line-clamp: 2;
                 /* Lebih sedikit baris di mobile */
             }
@@ -236,6 +235,72 @@
             padding-right: 8px;
         }
     </style>
+
+    <style>
+        .custom-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Background image */
+        .custom-card .card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Overlay transparan */
+        .custom-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
+        }
+
+        /* Konten di atas overlay */
+        .custom-card .card-header,
+        .custom-card .card-body,
+        .custom-card .card-footer {
+            position: relative;
+            z-index: 3;
+            background: transparent;
+            border: none;
+        }
+
+        .custom-card .card-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .custom-card .card-footer {
+            text-align: right;
+        }
+
+        .access-btn {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .custom-card:hover::before {
+            background: linear-gradient(
+                rgba(0,60,120,0.6),
+                rgba(0,0,0,0.6)
+            );
+        }
+
+        .custom-card:hover {
+            transform: translateY(-4px);
+            transition: 0.3s ease;
+        }
+
+
+    </style>
 @endsection
 
 @section('content')
@@ -261,15 +326,21 @@
                         <div class="col-6 col-md-4">
                             <div class="card custom-card"
                                 onclick="location.href='/ielts/categories?set-id={{ $set->kode }}'">
+                                <div class="card-bg" style="background-image: url('{{ asset($set->thumbnail_reading) }}');">
+                                </div>
+
                                 <div class="card-header">
                                     <h5 class="card-title">{{ $set->name }}</h5>
                                 </div>
+
                                 <div class="card-body">
                                     <p class="card-text">{{ $set->thumbnail }}</p>
                                 </div>
+
                                 <div class="card-footer">
                                     <span class="access-btn">View <i class="fas fa-arrow-right"></i></span>
                                 </div>
+
                             </div>
                         </div>
                     @endforeach

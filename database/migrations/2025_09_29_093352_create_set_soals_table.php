@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('thumbnail');
+            $table->string('thumbnail_reading')->nullable();
+            $table->string('thumbnail_listening')->nullable();
+            $table->string('thumbnail_speaking')->nullable();
+            $table->string('thumbnail_writing')->nullable();
             $table->string('kode')->unique();
             $table->timestamps();
         });

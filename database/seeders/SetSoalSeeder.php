@@ -18,21 +18,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 10 Test 1',
             'thumbnail' => 'Self-drive tours in the USA',
             'kode' => 'XJ3XOcvqPbgdZwyl',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-1/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-1/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-1/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-1/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 2',
             'thumbnail' => 'Transport survey',
             'kode' => 'QmN0FYAE2DCXRPdC',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-2/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-2/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-2/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-2/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 3',
             'thumbnail' => 'Early Learning Childcare Centre Enrolment Form',
             'kode' => 's4gzzYRpwLnhLRFf',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-3/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-3/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-3/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-3/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 4',
             'thumbnail' => 'THORNDYKE’S BUILDERS',
             'kode' => '11qYaGWPJUTxUVdq',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-4/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-4/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-4/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-4/4.png'
         ]);
 
         //14
@@ -40,21 +56,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 14 Test 1',
             'thumbnail' => 'Crime Report Form',
             'kode' => '1kxpl5g3zFLGtmEY',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-5/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-5/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-5/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-5/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 2',
             'thumbnail' => 'Total Health Clinic Patients’ Details',
             'kode' => 'nHmZBcocwalVytdH',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-6/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-6/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-6/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-6/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 3',
             'thumbnail' => 'Flanders Conference Hotel',
             'kode' => 'YuuZXlhsVNh26gHr',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-7/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-7/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-7/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-7/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 4',
             'thumbnail' => 'Enquiry about booking hotel for an event',
             'kode' => '5k29sSZyLQgQjLWX',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-8/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-8/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-8/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-8/4.png'
         ]);
 
         //16
@@ -62,21 +94,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 16 Test 1',
             'thumbnail' => 'Children’s Engineering Workshops',
             'kode' => 'blsodB9LLhUn0zcg',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-9/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-9/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-9/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-9/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 2',
             'thumbnail' => 'Copying photos to digital format',
             'kode' => 'XW16JROLKCFE4BMH',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-10/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-10/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-10/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-10/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 3',
             'thumbnail' => 'Junior Cycle Camp',
             'kode' => 'NmeBcwURSR2ZPfdX',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-11/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-11/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-11/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-11/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 4',
             'thumbnail' => 'Holiday Rental',
             'kode' => 'TqMfMy8BLvZp0JDm',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-12/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-12/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-12/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-12/4.png'
         ]);
 
         //17
@@ -84,11 +132,19 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 17 Test 1',
             'thumbnail' => 'Buckworth Conservation Group',
             'kode' => 'QUApDKzp0Wn1GCiA',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-13/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-13/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-13/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-13/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 2',
             'thumbnail' => 'Opportunities for voluntary work in Southoe village',
             'kode' => 'DPCLyNHpDTqSciXd',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-14/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-14/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-14/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-14/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 3',

@@ -1,624 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mock Test Sessions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>Card Transparan</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 40px;
+    }
 
-        body {
-            background: #f8fafc;
-            padding: 20px;
-        }
+    .card {
+        position: relative;
+        width: 350px;
+        height: 200px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+        background-size: cover;
+        background-position: center;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* Overlay transparan */
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45); /* transparan */
+    }
 
-        /* Card Styling */
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-        }
+    .card-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
 
-        /* Card Header */
-        .card-header {
-            background: #4274ba;
-            color: white;
-            padding: 20px 25px;
-            border-radius: 12px 12px 0 0;
-            border-bottom: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .card-title {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
-        .page-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        .user-info i {
-            font-size: 18px;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #4274ba;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary:hover {
-            background: #f8fafc;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Card Body */
-        .card-body {
-            padding: 25px;
-        }
-
-        /* Alert */
-        .alert-success {
-            background: #f0fdf4;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-        }
-
-        /* Desktop Table */
-        .desktop-view {
-            display: block;
-        }
-
-        .table-responsive {
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-        }
-
-        .table {
-            margin: 0;
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .table thead {
-            background: #f1f5f9;
-        }
-
-        .table thead th {
-            padding: 16px 20px;
-            text-align: left;
-            font-weight: 600;
-            color: #475569;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .table thead th i {
-            color: #4274ba;
-            margin-right: 8px;
-        }
-
-        .table tbody tr {
-            border-bottom: 1px solid #f1f5f9;
-            transition: background 0.2s ease;
-        }
-
-        .table tbody tr:hover {
-            background: #f8fafc;
-        }
-
-        .table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .table tbody td {
-            padding: 18px 20px;
-            color: #475569;
-            font-size: 14px;
-        }
-
-        .table tbody .fw-semibold {
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        /* Status Badges */
-        .status-badge {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .badge-pending {
-            background: #fef3c7;
-            color: #92400e;
-            border: 1px solid #fbbf24;
-        }
-
-        .badge-accepted {
-            background: #d1fae5;
-            color: #065f46;
-            border: 1px solid #10b981;
-        }
-
-        .badge-rejected {
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #ef4444;
-        }
-
-        .badge-completed {
-            background: #dbeafe;
-            color: #1e40af;
-            border: 1px solid #3b82f6;
-        }
-
-        .badge-cancelled {
-            background: #f3f4f6;
-            color: #374151;
-            border: 1px solid #9ca3af;
-        }
-
-        .status-badge i {
-            font-size: 8px;
-        }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-sm {
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .btn-info {
-            background: #f0f9ff;
-            color: #0369a1;
-            border-color: #bae6fd;
-        }
-
-        .btn-info:hover {
-            background: #e0f2fe;
-            transform: translateY(-1px);
-        }
-
-        .btn-success {
-            background: #f0fdf4;
-            color: #15803d;
-            border-color: #bbf7d0;
-        }
-
-        .btn-success:hover {
-            background: #dcfce7;
-            transform: translateY(-1px);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 50px 20px;
-            color: #64748b;
-        }
-
-        .empty-state i {
-            font-size: 48px;
-            color: #cbd5e1;
-            margin-bottom: 16px;
-        }
-
-        .empty-state h4 {
-            font-size: 18px;
-            color: #475569;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .empty-state p {
-            font-size: 14px;
-            max-width: 400px;
-            margin: 0 auto 20px;
-            line-height: 1.5;
-        }
-
-        /* Mobile View */
-        .mobile-view {
-            display: none;
-        }
-
-        .session-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        .session-card h5 {
-            font-size: 16px;
-            color: #1e293b;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .session-card .mb-2, .session-card .mb-3 {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #475569;
-            font-size: 14px;
-        }
-
-        .session-card i {
-            color: #4274ba;
-            width: 16px;
-            text-align: center;
-        }
-
-        .session-card .text-muted {
-            color: #94a3b8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .desktop-view {
-                display: none;
-            }
-            
-            .mobile-view {
-                display: block;
-            }
-            
-            .card-header {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-                padding: 20px;
-            }
-            
-            .user-info {
-                justify-content: center;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-            
-            .btn-sm {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .card-body {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            body {
-                padding: 12px;
-            }
-            
-            .container {
-                padding: 0;
-            }
-            
-            .card {
-                border-radius: 8px;
-            }
-            
-            .session-card {
-                padding: 16px;
-            }
-        }
-
-        /* Simple Animations */
-        .table tbody tr {
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Time Icons */
-        .table tbody td .d-flex i {
-            color: #94a3b8;
-            margin-right: 8px;
-        }
-
-        .text-success {
-            color: #10b981;
-        }
-
-        .text-muted {
-            color: #94a3b8;
-        }
-    </style>
+    .card-subtitle {
+        margin-top: 8px;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="page-title">My Mock Test Sessions</h4>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="user-info">
-                        <i class="fas fa-user-circle"></i>
-                        <span>John Doe</span>
-                    </div>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-plus me-2"></i>Request New Session
-                    </a>
-                </div>
-            </div>
 
-            <div class="card-body">
-                <!-- Success Alert (Conditional) -->
-                <!-- <div class="alert-success">
-                    <i class="fas fa-check-circle"></i>
-                    Your session request has been submitted successfully!
-                </div> -->
-
-                <!-- Desktop View -->
-                <div class="desktop-view">
-                    <!-- Sample Data -->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th><i class="fas fa-heading"></i>Title</th>
-                                    <th><i class="fas fa-chalkboard-teacher"></i>Teacher</th>
-                                    <th><i class="fas fa-clock"></i>Proposed Time</th>
-                                    <th><i class="fas fa-calendar-alt"></i>Scheduled Time</th>
-                                    <th><i class="fas fa-info-circle"></i>Status</th>
-                                    <th><i class="fas fa-cogs"></i>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Session 1 -->
-                                <tr>
-                                    <td class="fw-semibold">IELTS Speaking Part 2 Practice</td>
-                                    <td>Sarah Johnson</td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-clock"></i>
-                                            Dec 15, 2023 14:30
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-calendar-check text-success"></i>
-                                            Dec 16, 2023 10:00
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="status-badge badge-accepted">
-                                            <i class="fas fa-circle"></i>
-                                            Accepted
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <a href="#" class="btn-sm btn-info">
-                                                <i class="fas fa-eye"></i>View
-                                            </a>
-                                            <a href="#" class="btn-sm btn-success">
-                                                <i class="fas fa-video"></i>Join
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- Session 2 -->
-                                <tr>
-                                    <td class="fw-semibold">Business English Mock Interview</td>
-                                    <td>Michael Chen</td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-clock"></i>
-                                            Dec 18, 2023 11:00
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="text-muted">-</span>
-                                    </td>
-                                    <td>
-                                        <span class="status-badge badge-pending">
-                                            <i class="fas fa-circle"></i>
-                                            Pending
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <a href="#" class="btn-sm btn-info">
-                                                <i class="fas fa-eye"></i>View
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- Session 3 -->
-                                <tr>
-                                    <td class="fw-semibold">TOEFL Speaking Practice</td>
-                                    <td>Robert Wilson</td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-clock"></i>
-                                            Dec 10, 2023 09:00
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-calendar-check text-success"></i>
-                                            Dec 10, 2023 09:00
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="status-badge badge-completed">
-                                            <i class="fas fa-circle"></i>
-                                            Completed
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <a href="#" class="btn-sm btn-info">
-                                                <i class="fas fa-eye"></i>View
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Mobile View -->
-                <div class="mobile-view">
-                    <!-- Mobile Session Card 1 -->
-                    <div class="session-card">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
-                            <h5 class="fw-bold">IELTS Speaking Part 2 Practice</h5>
-                            <span class="status-badge badge-accepted">
-                                Accepted
-                            </span>
-                        </div>
-                        
-                        <div class="mb-2">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                            <strong>Teacher:</strong> Sarah Johnson
-                        </div>
-                        
-                        <div class="mb-2">
-                            <i class="fas fa-clock"></i>
-                            <strong>Proposed:</strong> Dec 15, 2023 14:30
-                        </div>
-                        
-                        <div class="mb-3">
-                            <i class="fas fa-calendar-alt"></i>
-                            <strong>Scheduled:</strong> Dec 16, 2023 10:00
-                        </div>
-                        
-                        <div class="action-buttons">
-                            <a href="#" class="btn-sm btn-info">
-                                <i class="fas fa-eye"></i>Details
-                            </a>
-                            <a href="#" class="btn-sm btn-success">
-                                <i class="fas fa-video"></i>Join
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Mobile Session Card 2 -->
-                    <div class="session-card">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
-                            <h5 class="fw-bold">Business English Mock Interview</h5>
-                            <span class="status-badge badge-pending">
-                                Pending
-                            </span>
-                        </div>
-                        
-                        <div class="mb-2">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                            <strong>Teacher:</strong> Michael Chen
-                        </div>
-                        
-                        <div class="mb-2">
-                            <i class="fas fa-clock"></i>
-                            <strong>Proposed:</strong> Dec 18, 2023 11:00
-                        </div>
-                        
-                        <div class="mb-3">
-                            <i class="fas fa-calendar-alt"></i>
-                            <strong>Scheduled:</strong> 
-                            <span class="text-muted">Not scheduled</span>
-                        </div>
-                        
-                        <div class="action-buttons">
-                            <a href="#" class="btn-sm btn-info">
-                                <i class="fas fa-eye"></i>Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">SELF DRIVE TOUR USA</div>
+        <div class="card-subtitle">Listening & Reading Test</div>
     </div>
+</div>
 
-    <script>
-        // Simple hover effect for table rows
-        document.querySelectorAll('.table tbody tr, .session-card').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f8fafc';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '';
-            });
-        });
-    </script>
 </body>
 </html>
