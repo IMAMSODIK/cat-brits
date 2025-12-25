@@ -6,6 +6,7 @@ use Database\Seeders\Sets\CambridgeIELTS10AcademicTest1;
 use Database\Seeders\Sets\CambridgeIELTS10AcademicTest2;
 use Database\Seeders\Sets\CambridgeIELTS10AcademicTest3;
 use Database\Seeders\Sets\CambridgeIELTS10AcademicTest4;
+use Database\Seeders\Sets\CambridgeIELTS14AcademicTest1;
 use Database\Seeders\Sets\CambridgeIELTS15AcademicTest1;
 use Database\Seeders\Sets\CambridgeIELTS15AcademicTest2;
 use Database\Seeders\Sets\CambridgeIELTS15AcademicTest3;
@@ -27,6 +28,7 @@ use Database\Seeders\Sets\CambridgeIELTS18AcademicTest2;
 use Database\Seeders\Sets\CambridgeIELTS18AcademicTest3;
 use Database\Seeders\Sets\CambridgeIELTS19AcademicTest1;
 use Database\Seeders\Sets\CambridgeIELTS19AcademicTest2;
+use Database\Seeders\Sets\CambridgeIELTS19AcademicTest3;
 use Database\Seeders\Sets\CambridgeIELTS19AcademicTest4;
 use Illuminate\Database\Seeder;
 
@@ -42,24 +44,32 @@ class SoalSeeder extends Seeder
             CambridgeIELTS10AcademicTest2::class,
             CambridgeIELTS10AcademicTest3::class,
             CambridgeIELTS10AcademicTest4::class,
+
+            CambridgeIELTS14AcademicTest1::class,
+            CambridgeIELTS14AcademicTest2::class,
+            CambridgeIELTS14AcademicTest3::class,
+
+            CambridgeIELTS16AcademicTest1::class,
+            CambridgeIELTS16AcademicTest2::class,
+            CambridgeIELTS16AcademicTest4::class,
+
+            CambridgeIELTS17AcademicTest1::class,
+            CambridgeIELTS17AcademicTest3::class,
+            CambridgeIELTS17AcademicTest4::class,
+
+            CambridgeIELTS18AcademicTest2::class,
+            CambridgeIELTS18AcademicTest3::class,
+            CambridgeIELTS18AcademicTest4::class,
+            
+            CambridgeIELTS19AcademicTest1::class,
+            CambridgeIELTS19AcademicTest2::class,
+            CambridgeIELTS19AcademicTest3::class,
+            CambridgeIELTS19AcademicTest4::class,
+            
             CambridgeIELTS20AcademicTest1::class,
             CambridgeIELTS20AcademicTest2::class,
             CambridgeIELTS20AcademicTest3::class,
             CambridgeIELTS20AcademicTest4::class,
-            CambridgeIELTS14AcademicTest2::class,
-            CambridgeIELTS18AcademicTest4::class,
-            CambridgeIELTS14AcademicTest3::class,
-            CambridgeIELTS16AcademicTest1::class,
-            CambridgeIELTS16AcademicTest2::class,
-            CambridgeIELTS16AcademicTest4::class,
-            CambridgeIELTS17AcademicTest1::class,
-            CambridgeIELTS17AcademicTest3::class,
-            CambridgeIELTS17AcademicTest4::class,
-            CambridgeIELTS18AcademicTest2::class,
-            CambridgeIELTS18AcademicTest3::class,
-            CambridgeIELTS19AcademicTest4::class,
-            CambridgeIELTS19AcademicTest1::class,
-            CambridgeIELTS19AcademicTest2::class,
         ]);
     }
 }
