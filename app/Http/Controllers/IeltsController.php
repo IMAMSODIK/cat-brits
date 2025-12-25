@@ -47,165 +47,108 @@ class IeltsController extends Controller
             ];
 
             if ($r->has('set-id')) {
+                $set = SetSoal::where('kode', $r->input('set-id'))->first();
+                $data['set'] = $set;
+                $data['pageTitle'] = "Test Subjects";
                 switch ($r->input('set-id')) {
                     case 'XJ3XOcvqPbgdZwyl':
-                        $data['set_id'] = 'XJ3XOcvqPbgdZwyl';
-                        $data['title'] = 'Cambridge IELTS 10 Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case 'QmN0FYAE2DCXRPdC':
-                        $data['set_id'] = 'QmN0FYAE2DCXRPdC';
-                        $data['title'] = 'Cambridge IELTS 10 Test 2';
                         return view('ielts.categories', $data);
                         break;
                     case 's4gzzYRpwLnhLRFf':
-                        $data['set_id'] = 's4gzzYRpwLnhLRFf';
-                        $data['title'] = 'Cambridge IELTS 10 Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case '11qYaGWPJUTxUVdq':
-                        $data['set_id'] = '11qYaGWPJUTxUVdq';
-                        $data['title'] = 'Cambridge IELTS 10 Test 4';
                         return view('ielts.categories', $data);
                         break;
                     case 'EKX6hyJgeV3x0pxB':
-                        $data['set_id'] = 'EKX6hyJgeV3x0pxB';
-                        $data['title'] = 'Cambridge IELTS 20 Test 2';
                         return view('ielts.categories', $data);
                         break;
                     case 'bBhJMdwYSokWGAc9':
-                        $data['set_id'] = 'bBhJMdwYSokWGAc9';
-                        $data['title'] = 'Cambridge IELTS 20 Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case '4JIjUOPpLAJ2FYdl':
-                        $data['set_id'] = '4JIjUOPpLAJ2FYdl';
-                        $data['title'] = 'Cambridge IELTS 20 Test 4';
                         return view('ielts.categories', $data);
                         break;
                     case 'Avfd93r1YAojm5Pb':
-                        $data['set_id'] = 'Avfd93r1YAojm5Pb';
-                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case '1kxpl5g3zFLGtmEY':
-                        $data['set_id'] = '1kxpl5g3zFLGtmEY';
-                        $data['title'] = 'Cambridge IELTS 14 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case 'nHmZBcocwalVytdH':
-                        $data['set_id'] = 'nHmZBcocwalVytdH';
-                        $data['title'] = 'Cambridge IELTS 14 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
                     case 'YuuZXlhsVNh26gHr':
-                        $data['set_id'] = 'YuuZXlhsVNh26gHr';
-                        $data['title'] = 'Cambridge IELTS 14 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
 
                     case 'BHByU4OTwRblfc5c':
-                        $data['set_id'] = 'BHByU4OTwRblfc5c';
-                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
 
                     case '9uAizxgIsFCinyrq':
-                        $data['set_id'] = '9uAizxgIsFCinyrq';
-                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
 
                     case 'GTZbRoMFOA5DZLNK':
-                        $data['set_id'] = 'GTZbRoMFOA5DZLNK';
-                        $data['title'] = 'Cambridge IELTS 15 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
 
                     case 'blsodB9LLhUn0zcg':
-                        $data['set_id'] = 'blsodB9LLhUn0zcg';
-                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case 'XW16JROLKCFE4BMH':
-                        $data['set_id'] = 'XW16JROLKCFE4BMH';
-                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
                     case 'NmeBcwURSR2ZPfdX':
-                        $data['set_id'] = 'NmeBcwURSR2ZPfdX';
-                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case 'TqMfMy8BLvZp0JDm':
-                        $data['set_id'] = 'TqMfMy8BLvZp0JDm';
-                        $data['title'] = 'Cambridge IELTS 16 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
                     case 'QUApDKzp0Wn1GCiA':
-                        $data['set_id'] = 'QUApDKzp0Wn1GCiA';
-                        $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case 'wq6xHskL3uTj5VSU':
-                        $data['set_id'] = 'wq6xHskL3uTj5VSU';
-                        $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case '15gOXcE7omDCL1uE':
-                        $data['set_id'] = '15gOXcE7omDCL1uE';
-                        $data['title'] = 'Cambridge IELTS 17 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
 
                     case 'JSRJ0oDlxC0yFMgt':
-                        $data['set_id'] = 'JSRJ0oDlxC0yFMgt';
-                        $data['title'] = 'Cambridge IELTS 18 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
                     case '8uQvKzYbHuROu9RJ':
-                        $data['set_id'] = '8uQvKzYbHuROu9RJ';
-                        $data['title'] = 'Cambridge IELTS 18 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case 'yPLnQeqINAxbrnva':
-                        $data['set_id'] = 'yPLnQeqINAxbrnva';
-                        $data['title'] = 'Cambridge IELTS 18 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
                     case 'xQKeqKYrkqfdgotg':
-                        $data['set_id'] = 'xQKeqKYrkqfdgotg';
-                        $data['title'] = 'Cambridge IELTS 20 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
                     case 'GEf4EtQ1AZxTFhTw':
-                        $data['set_id'] = 'GEf4EtQ1AZxTFhTw';
-                        $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 3';
                         return view('ielts.categories', $data);
                         break;
                     case 'IgWhHunhjhOYd3hb':
-                        $data['set_id'] = 'IgWhHunhjhOYd3hb';
-                        $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 4';
                         return view('ielts.categories', $data);
                         break;
                     // 18 END
 
                     // 19 START
                     case 'rbsuXiTcqh8ewr9Q':
-                        $data['set_id'] = 'rbsuXiTcqh8ewr9Q';
-                        $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 1';
                         return view('ielts.categories', $data);
                         break;
 
                     case '0XIGAcSMlticROES':
-                        $data['set_id'] = '0XIGAcSMlticROES';
-                        $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 2';
                         return view('ielts.categories', $data);
                         break;
 
                     // case 'kqQSrG7Rs5yw1AuD':
-                    //     $data['set_id'] = 'kqQSrG7Rs5yw1AuD';
-                    //     $data['title'] = 'Cambridge IELTS 19 Academic Reading Test 3';
                     //     return view('ielts.categories', $data);
                     //     break;
                 }

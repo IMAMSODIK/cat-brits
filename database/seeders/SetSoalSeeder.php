@@ -150,11 +150,19 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 17 Test 3',
             'thumbnail' => 'Advice on surfing holidays',
             'kode' => 'wq6xHskL3uTj5VSU',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-15/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-15/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-15/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-15/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 4',
             'thumbnail' => 'Easy Life Cleaning Services',
             'kode' => '15gOXcE7omDCL1uE',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-16/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-16/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-16/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-16/4.png'
         ]);
 
         //18
@@ -162,21 +170,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 18 Test 1',
             'thumbnail' => 'Transport survey',
             'kode' => 'KeCD0au8jSaBuT3A',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-17/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-17/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-17/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-17/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 2',
             'thumbnail' => 'Working at Milo’s Restaurants',
             'kode' => 'JSRJ0oDlxC0yFMgt',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-18/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-18/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-18/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-18/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 3',
             'thumbnail' => 'Wayside Camera Club',
             'kode' => '8uQvKzYbHuROu9RJ',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-19/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-19/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-19/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-19/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 4',
             'thumbnail' => 'Job details from employment agency',
             'kode' => 'yPLnQeqINAxbrnva',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-20/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-20/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-20/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-20/4.png'
         ]);
 
         //19
@@ -184,21 +208,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 19 Test 1',
             'thumbnail' => 'Hinchingbrooke Country Park',
             'kode' => 'rbsuXiTcqh8ewr9Q',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-21/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-21/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-21/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-21/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 2',
             'thumbnail' => 'Guitar Group',
             'kode' => '0XIGAcSMlticROES',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-22/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-22/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-22/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-22/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 3',
             'thumbnail' => 'Local food shops',
             'kode' => 'GEf4EtQ1AZxTFhTw',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-23/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-23/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-23/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-23/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 4',
             'thumbnail' => 'First day at work',
             'kode' => 'IgWhHunhjhOYd3hb',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-24/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-24/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-24/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-24/4.png'
         ]);
 
         //20
@@ -206,21 +246,37 @@ class SetSoalSeeder extends Seeder
             'name' => 'Cambridge 20 Test 1',
             'thumbnail' => 'Restaurant Recommendations',
             'kode' => 'xQKeqKYrkqfdgotg',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-25/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-25/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-25/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-25/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 2',
             'thumbnail' => 'Local Councils',
             'kode' => 'EKX6hyJgeV3x0pxB',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-26/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-26/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-26/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-26/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 3',
             'thumbnail' => 'Furniture Rental Companies',
             'kode' => 'bBhJMdwYSokWGAc9',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-27/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-27/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-27/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-27/4.png'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 4',
             'thumbnail' => 'Advice on Family Visit',
             'kode' => '4JIjUOPpLAJ2FYdl',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-28/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-28/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-28/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-28/4.png'
         ]);
 
         //PT-01
@@ -228,11 +284,19 @@ class SetSoalSeeder extends Seeder
             'name' => 'PT-01',
             'thumbnail' => 'Hiring Company',
             'kode' => '2uSKN2WwOj6EYc1X',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-29/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-29/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-29/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-29/4.png'
         ]);
         SetSoal::create([
             'name' => 'PT-02',
             'thumbnail' => 'Bedroom Furniture for Sale',
             'kode' => 'cwwPbLf22UsNEqIp',
+            'thumbnail_reading' => 'own_assets/images/thumbnails/set-30/1.png',
+            'thumbnail_listening' => 'own_assets/images/thumbnails/set-30/2.png',
+            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-30/3.png',
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-30/4.png'
         ]);
     }
 }
