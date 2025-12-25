@@ -1393,9 +1393,9 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>The chart below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much.</p>
-                                <p>Summarise the information by selecting and reporting the main features and make comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-14-academic-writing-test-1-1.jpg') }}"
+                                <p>The diagram below shows how a biofuel called ethanol is produced.</p>
+                                <p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                                <img src="{{ asset('own_assets/images/cambridge-ielts-19-academic-writing-test-3–1.png') }}"
                                     alt="" width="100%">
                             </div>
                         </article>
@@ -1445,8 +1445,8 @@
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p>Some people believe that it is best to accept a bad situation, such as an unsatisfactory job or shortage of money. Others argue that it is better to try and improve such situations.</p>
-                                <p>Discuss both these views and give your own opinion.</p>
+                                <p>It is important for everyone, including young people, to save money for their future.</p>
+                                <p>To what extent do you agree or disagree with this statement?</p>
                             </div>
                         </article>
 

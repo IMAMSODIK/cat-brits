@@ -707,6 +707,7 @@
         }
 
         #panel-tfng .q-number-box,
+        #panel-ynng .q-number-box,
         #panel-tfng2 .q-number-box,
         #panel-mse .q-number-box,
         #panel-tc .q-number-box,
@@ -1587,7 +1588,7 @@
                                 <p class="lead">Listen and answer questions 1-10 the Reading Passage!</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-1-audio-1.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2024/08/cambridge-ielts-19-academic-listening-3-audio-1.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
@@ -1595,148 +1596,123 @@
 
                             {{-- nc --}}
                             <fieldset class="q-item">
-                                <p>Questions 1-10</p>
+                                <p>Questions 1-6</p>
                                 <p>Complete the form below.</p>
                                 <p>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.</p>
                             </fieldset>
 
-                            <table cellpadding="8" cellspacing="0"
-                                style="border-collapse: collapse; margin-bottom: 20px;">
+                            <fieldset class="q-item">
+                                <p><b>Local food shops</b></p>
+                                <p><b>Where to go</b></p>
+
+                                <p>– Kite Place</p>
+                                <p>
+                                    – near the
+                                    <span class="q-number-box">1</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-1" class="q-text"
+                                        placeholder="">
+                                </p>
+
+                                <p><b>Fish market</b></p>
+                                <p>
+                                    – cross the
+                                    <span class="q-number-box">2</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-2" class="q-text"
+                                        placeholder="">
+                                    and turn right
+                                </p>
+                                <p>
+                                    – best to go before
+                                    <span class="q-number-box">3</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-3" class="q-text"
+                                        placeholder="">
+                                    pm, earlier than closing time
+                                </p>
+
+                                <p><b>Organic shop</b></p>
+                                <p>
+                                    – called 
+                                    <span class="q-number-box">4</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-4" class="q-text"
+                                        placeholder="">
+                                </p>
+                                <p>– below a restaurant in the large, grey building</p>
+                                <p>
+                                    – look for the large
+                                    <span class="q-number-box">5</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-5" class="q-text"
+                                        placeholder="">
+                                    outside
+                                </p>
+
+                                <p><b>Supermarket</b></p>
+                                <p>
+                                    – take a
+                                    <span class="q-number-box">6</span>
+                                    <input type="text" name="nc-GEf4EtQ1AZxTFhTw-6" class="q-text"
+                                        placeholder="">
+                                    minibus, number 289
+                                </p>
+                            </fieldset>
+
+                            {{-- tc --}}
+                            <fieldset class="q-item">
+                                <p>Questions 7-10</p>
+                                <p>Complete the table below.</p>
+                                <p><i>Write <b>ONE WORD ONLY</b> for each answer.</i></p>
+                            </fieldset>
+
+                            <table border="1" cellpadding="8" cellspacing="0"
+                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr colspan="3"><h3 style="text-align: center">Shopping</h3></tr>
                                 <tr>
-                                    <th colspan="2"><h3>CRIME REPORT FORM</h3></th>
+                                    <th></th>
+                                    <th><b>To buy</b></th>
+                                    <th><b>Other ideas</b></th>
                                 </tr>
                                 <tr>
-                                    <td><b>Type of crime:</b></td>
-                                    <td>theft</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><i>Example</i></td>
-                                </tr>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Louise <i>…Taylor…</i></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Nationality</b></td>
-                                    <td>
-                                        <div class="q-item" data-q="1">
-                                            <span class="q-number-box">1</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-1" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Date of birth</td>
-                                    <td>14 December 1977</td>
-                                </tr>
-                                <tr>
-                                    <td>Occupation</td>
-                                    <td>interior designer</td>
-                                </tr>
-                                <tr>
-                                    <td>Reason for visit</td>
-                                    <td>
-                                        <div class="q-item" data-q="2">
-                                            business (to buy antique
-                                            <span class="q-number-box">2</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-2" class="q-text"
-                                                placeholder="">
-                                            )
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Length of stay</td>
-                                    <td>two months</td>
-                                </tr>
-                                <tr>
-                                    <td>Current address</td>
-                                    <td>
-                                        <div class="q-item" data-q="3">
-                                            <span class="q-number-box">3</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-3" class="q-text"
-                                                placeholder="">
-                                            Apartments (No 15)
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><b>Details of theft</b></td>
-                                </tr>
-                                <tr>
-                                    <td>Items stolen</td>
-                                    <td>
-                                        <div class="q-item" data-q="4">
-                                            – a wallet containing approximately £
-                                            <span class="q-number-box">4</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-4" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                        <div class="q-item" data-q="5">
-                                            – a
-                                            <span class="q-number-box">5</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-5" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Date of theft</td>
-                                    <td>
-                                        <div class="q-item" data-q="6">
-                                            <span class="q-number-box">6</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-6" class="q-text"
-                                                placeholder="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><b>Possible time and place of theft</b></td>
-                                </tr>
-                                <tr>
-                                    <td>Location </td>
+                                    <th><b>Fish market</b></th>
+                                    <td>a dozen prawns</td>
                                     <td>
                                         <div class="q-item" data-q="7">
-                                            outside the
+                                            a handful of
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-7" class="q-text"
+                                            <input type="text" name="tc-GEf4EtQ1AZxTFhTw-1" class="q-text"
                                                 placeholder="">
-                                            at about 4 pm
+                                            (type of seaweed)
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Details of suspect</td>
+                                    <th><b>Organic shop</b></th>
                                     <td>
                                         <div class="q-item" data-q="8">
-                                            – some boys asked for the
+                                            beans and a
                                             <span class="q-number-box">8</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-8" class="q-text"
+                                            <input type="text" name="tc-GEf4EtQ1AZxTFhTw-2" class="q-text"
                                                 placeholder="">
-                                            then ran off
+                                            for dessert
                                         </div>
-                                        <br>
-                                        – one had a T-shirt with a picture of a tiger
-                                        <br>
+                                    </td>
+                                    <td>
                                         <div class="q-item" data-q="9">
-                                            – he was about 12, slim build with
+                                            spices and
                                             <span class="q-number-box">9</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-9" class="q-text"
+                                            <input type="text" name="tc-GEf4EtQ1AZxTFhTw-3" class="q-text"
                                                 placeholder="">
-                                            hair
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>Crime reference number allocated</b></td>
-                                </tr>
-                                <tr>
+                                    <th><b>Bakery</b></th>
+                                    <td>a brown loaf</td>
                                     <td>
                                         <div class="q-item" data-q="10">
+                                            a
                                             <span class="q-number-box">10</span>
-                                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-10" class="q-text"
+                                            <input type="text" name="tc-GEf4EtQ1AZxTFhTw-4" class="q-text"
                                                 placeholder="">
+                                            tart
                                         </div>
                                     </td>
                                 </tr>
@@ -1753,119 +1729,132 @@
                             <p class="lead">Listen and answer questions 11-20</p>
                             <div class="audio-player">
                                 <audio
-                                    src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-1-audio-2.mp3"></audio>
+                                    src="https://engnovate.com/wp-content/uploads/2024/08/cambridge-ielts-19-academic-listening-3-audio-2.mp3"></audio>
                                 <input type="range" class="timeline" value="0" disabled>
                                 <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                             </div>
                         </fieldset>
 
-                        {{-- two_choices --}}
-                        <fieldset class="q-item">
-                            <p>Questions 11-12</p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                            <legend class="q-text">
-                                <span class="q-number">11</span>
-                                <span class="q-number">12</span>
-                                Which <b>TWO</b> pieces of advice for the first week of an apprenticeship does the manager give?
-                            </legend>
-                            <div class="q-options" role="group" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-1[]" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">get to know colleagues</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-1[]" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">learn from any mistakes</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-1[]" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">ask lots of questions</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-1[]" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">react positively to feedback</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-1[]" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">enjoy new challenges</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="q-item">
-                            <p>Questions 13-14</p>
-                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
-                            <legend class="q-text">
-                                <span class="q-number">13</span>
-                                <span class="q-number">14</span>
-                                Which <b>TWO</b> things does the manager say mentors can help with?
-                            </legend>
-                            <div class="q-options" role="group" aria-label="Question 1 options">
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-3[]" value="A" />
-                                    <span class="opt-code">A</span>
-                                    <span class="opt-label">confidence-building</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-3[]" value="B" />
-                                    <span class="opt-code">B</span>
-                                    <span class="opt-label">making career plans</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-3[]" value="C" />
-                                    <span class="opt-code">C</span>
-                                    <span class="opt-label">completing difficult tasks</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-3[]" value="D" />
-                                    <span class="opt-code">D</span>
-                                    <span class="opt-label">making a weekly timetable</span>
-                                </label>
-                                <label class="q-option">
-                                    <input type="checkbox" name="two_choices-1kxpl5g3zFLGtmEY-3[]" value="E" />
-                                    <span class="opt-code">E</span>
-                                    <span class="opt-label">reviewing progress</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
                         {{-- matching_information --}}
                         <fieldset class="q-item">
-                            <p>Questions 15-20</p>
-                            <p>What does the manager say about each of the following aspects of the company policy for apprentices?</p>
-                            <p>Write the correct letter, <b>A</b>, <b>B</b> or <b>C</b>, next to Questions.</p>
+                            <p>Questions 11-16</p>
+                            <p>What information is given about each of the following festival workshops?</p>
+                            <p>Choose <b>SIX</b> answers from the box and write the correct letter, <b>A-H</b>.</p>
 
-                            <strong>A</strong>&nbsp;&nbsp; It is encouraged. <br>
-                            <strong>B</strong>&nbsp;&nbsp; There are some restrictions.<br>
-                            <strong>C</strong>&nbsp;&nbsp; It is against the rules.
+                            <strong>A</strong>&nbsp;&nbsp; involves painting and drawing <br>
+                            <strong>B</strong>&nbsp;&nbsp; will be led by a prize-winning author <br>
+                            <strong>C</strong>&nbsp;&nbsp; is aimed at children with a disability <br>
+                            <strong>D</strong>&nbsp;&nbsp; involves a drama activity <br>
+                            <strong>E</strong>&nbsp;&nbsp; focuses on new relationships<br>
+                            <strong>F</strong>&nbsp;&nbsp; is aimed at a specific age group<br>
+                            <strong>G</strong>&nbsp;&nbsp; explores an unhappy feeling<br>
+                            <strong>H</strong>&nbsp;&nbsp; raises awareness of a particular culture<br>
                         </fieldset>
 
-                        <fieldset class="q-item">
-                            <h3>Company policy for apprentices</h3>
+                        <fieldset class="q-item" data-q="11">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-number">11</span>
+                                <span style="flex: 1;">
+                                    Superheroes 
+                                    <span class="q-question">
+                                        <select name="matching_information-GEf4EtQ1AZxTFhTw-1" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </legend>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="12">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-number">12</span>
+                                <span style="flex: 1;">
+                                    Just do it
+                                    <span class="q-question">
+                                        <select name="matching_information-GEf4EtQ1AZxTFhTw-2" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </legend>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="13">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-number">13</span>
+                                <span style="flex: 1;">
+                                    Count on me
+                                    <span class="q-question">
+                                        <select name="matching_information-GEf4EtQ1AZxTFhTw-13" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </legend>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="14">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-number">14</span>
+                                <span style="flex: 1;">
+                                    Speak up
+                                    <span class="q-question">
+                                        <select name="matching_information-GEf4EtQ1AZxTFhTw-4" class="q-dropdown">
+                                            <option value=""></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </legend>
                         </fieldset>
 
                         <fieldset class="q-item" data-q="15">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">15</span>
                                 <span style="flex: 1;">
-                                    Using the internet
+                                    Jump for joy
                                     <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-1" class="q-dropdown">
+                                        <select name="matching_information-GEf4EtQ1AZxTFhTw-5" class="q-dropdown">
                                             <option value=""></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
                                         </select>
                                     </span>
                                 </span>
@@ -1876,85 +1865,103 @@
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">16</span>
                                 <span style="flex: 1;">
-                                    Flexible working
+                                    Sticks and stones
                                     <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-2" class="q-dropdown">
+                                        <select name="GEf4EtQ1AZxTFhTw-6" class="q-dropdown">
                                             <option value=""></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
                                         </select>
                                     </span>
                                 </span>
                             </legend>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="17">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        {{-- two_choices --}}
+                        <fieldset class="q-item">
+                            <p>Questions 17-18</p>
+                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                            <legend class="q-text">
                                 <span class="q-number">17</span>
-                                <span style="flex: 1;">
-                                    Booking holidays
-                                    <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-3" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="18">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">18</span>
-                                <span style="flex: 1;">
-                                    Working overtime
-                                    <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-4" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Which <b>TWO</b> reasons does the speaker give for recommending Alive and Kicking
                             </legend>
+                            <div class="q-options" role="group" aria-label="Question 1 options">
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-1[]" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">It will appeal to both boys and girls.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-1[]" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">The author is well known.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-1[]" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">It has colourful illustrations.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-1[]" value="D" />
+                                    <span class="opt-code">D</span>
+                                    <span class="opt-label">It is funny.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-1[]" value="E" />
+                                    <span class="opt-code">E</span>
+                                    <span class="opt-label">It deals with an important topic.</span>
+                                </label>
+                            </div>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="19">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        <fieldset class="q-item">
+                            <p>Questions 19-02</p>
+                            <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
+                        </fieldset>
+
+                        <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                            <legend class="q-text">
                                 <span class="q-number">19</span>
-                                <span style="flex: 1;">
-                                    Wearing trainers
-                                    <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-5" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                        </select>
-                                    </span>
-                                </span>
-                            </legend>
-                        </fieldset>
-
-                        <fieldset class="q-item" data-q="20">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">20</span>
-                                <span style="flex: 1;">
-                                    Bringing food to work
-                                    <span class="q-question">
-                                        <select name="matching_information-1kxpl5g3zFLGtmEY-6" class="q-dropdown">
-                                            <option value=""></option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                        </select>
-                                    </span>
-                                </span>
+                                Which <b>TWO</b> pieces of advice does the speaker give to parents about reading?
                             </legend>
+                            <div class="q-options" role="group" aria-label="Question 1 options">
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-3[]" value="A" />
+                                    <span class="opt-code">A</span>
+                                    <span class="opt-label">Encourage children to write down new vocabulary.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-3[]" value="B" />
+                                    <span class="opt-code">B</span>
+                                    <span class="opt-label">Allow children to listen to audio books.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-3[]" value="C" />
+                                    <span class="opt-code">C</span>
+                                    <span class="opt-label">Get recommendations from librarians.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-3[]" value="D" />
+                                    <span class="opt-code">D</span>
+                                    <span class="opt-label">Give children a choice about what they read.</span>
+                                </label>
+                                <label class="q-option">
+                                    <input type="checkbox" name="two_choices-GEf4EtQ1AZxTFhTw-3[]" value="E" />
+                                    <span class="opt-code">E</span>
+                                    <span class="opt-label">Only read aloud to children until they can read independently.</span>
+                                </label>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -1968,7 +1975,7 @@
                                 <p class="lead">Listen and answer questions 21-30</p>
                                 <div class="audio-player">
                                     <audio
-                                        src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-1-audio-3.mp3"></audio>
+                                        src="https://engnovate.com/wp-content/uploads/2024/08/cambridge-ielts-19-academic-listening-3-audio-3.mp3"></audio>
                                     <input type="range" class="timeline" value="0" disabled>
                                     <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                                 </div>
@@ -1981,29 +1988,29 @@
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <h3>Cities built by the sea</h3>
+                                <p><b>Science experiment for Year 12 students</b></p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="21">
+                            <fieldset class="q-item" data-q="1">
                                 <legend class="q-text">
                                     <span class="q-number">21</span>
-                                    Carla and Rob were surprised to learn that coastal cities
+                                    Science experiment for Year 12 students
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 21 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-1" value="A" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-1" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">contain nearly half the world’s population.</span>
+                                        <span class="opt-label">worried that they are not making progress</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-1" value="B" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-1" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">include most of the world’s largest cities.</span>
+                                        <span class="opt-label">challenged by their poor behaviour in class</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-1" value="C" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-1" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">are growing twice as fast as other cities.</span>
+                                        <span class="opt-label">frustrated at their lack of interest in the subject</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2011,23 +2018,23 @@
                             <fieldset class="q-item" data-q="22">
                                 <legend class="q-text">
                                     <span class="q-number">22</span>
-                                    According to Rob, building coastal cities near to rivers
+                                    How does Jake react to Clare’s suggestion about an experiment based on children’s diet?
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 22 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-2" value="A" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-2" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">may bring pollution to the cities.</span>
+                                        <span class="opt-label">He is concerned that the results might not be meaningful.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-2" value="B" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-2" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">may reduce the land available for agriculture.</span>
+                                        <span class="opt-label">He feels some of the data might be difficult to obtain.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-2" value="C" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-2" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">may mean the countryside is spoiled by industry.</span>
+                                        <span class="opt-label">He suspects that the conclusions might be upsetting.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2035,23 +2042,23 @@
                             <fieldset class="q-item" data-q="23">
                                 <legend class="q-text">
                                     <span class="q-number">23</span>
-                                    What mistake was made when building water drainage channels in Miami in the 1950s?
+                                    What problem do they agree may be involved in an experiment involving animals?
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 23 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-3" value="A" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-3" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">There were not enough for them.</span>
+                                        <span class="opt-label">Any results may not apply to humans.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-3" value="B" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-3" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">They were made of unsuitable materials.</span>
+                                        <span class="opt-label">It may be complicated to get permission.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-3" value="C" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-3" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">They did not allow for the effects of climate change.</span>
+                                        <span class="opt-label">Students may not be happy about animal experiments.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2059,23 +2066,23 @@
                             <fieldset class="q-item" data-q="24">
                                 <legend class="q-text">
                                     <span class="q-number">24</span>
-                                    What do Rob and Carla think that the authorities in Miami should do immediately?
+                                    What question do they decide the experiment should address?
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 24 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-4" value="A" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-4" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">take measures to restore ecosystems</span>
+                                        <span class="opt-label">Are mice capable of controlling their food intake?</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-4" value="B" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-4" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">pay for a new flood prevention system</span>
+                                        <span class="opt-label">Does an increase in sugar lead to health problems?</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-4" value="C" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-4" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">stop disposing of waste materials into the ocean</span>
+                                        <span class="opt-label">How much do supplements of different kinds affect health?</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -2083,150 +2090,188 @@
                             <fieldset class="q-item" data-q="25">
                                 <legend class="q-text">
                                     <span class="q-number">25</span>
-                                    What do they agree should be the priority for international action?
+                                    Clare might also consider doing another experiment involving
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 25 options">
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-5" value="A" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-5" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">greater coordination of activities</span>
+                                        <span class="opt-label">other types of food supplement.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-5" value="B" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-5" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">more sharing of information</span>
+                                        <span class="opt-label">different genetic strains of mice.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="oc-1kxpl5g3zFLGtmEY-5" value="C" />
+                                        <input type="radio" name="oc-GEf4EtQ1AZxTFhTw-5" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">agreement on shared policies</span>
+                                        <span class="opt-label">varying amounts of exercise.</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            {{-- matching_information --}}
+                            {{-- fc_completion --}}
                             <fieldset class="q-item">
                                 <p>Questions 26-30</p>
-                                <p>What decision do the students make about each of the following parts of their presentation?</p>
-                                <p>Choose <b>FIVE</b> answers from the box and write the correct letter, <b>A-G</b>, next to Questions.</p>
-                                <p><b>Decisions</b></p>
+                                <p>Complete the flow chart below.</p>
+                                <p><i>Choose <b>FIVE</b> answers from the box and write the correct letter, <b>A-H</b>.</i></p>
 
-                                <strong>A</strong>&nbsp;&nbsp; use visuals<br>
-                                <strong>B</strong>&nbsp;&nbsp; keep it short<br>
-                                <strong>C</strong>&nbsp;&nbsp; involve other students<br>
-                                <strong>D</strong>&nbsp;&nbsp; check the information is accurate<br>
-                                <strong>E</strong>&nbsp;&nbsp; provide a handout<br>
-                                <strong>F</strong>&nbsp;&nbsp; focus on one example<br>
-                                <strong>G</strong>&nbsp;&nbsp; do online research<br>
+                                <strong>A</strong>&nbsp;&nbsp; size<br>
+                                <strong>B</strong>&nbsp;&nbsp; escape<br>
+                                <strong>C</strong>&nbsp;&nbsp; age<br>
+                                <strong>D</strong>&nbsp;&nbsp; water<br>
+                                <strong>E</strong>&nbsp;&nbsp; cereal<br>
+                                <strong>F</strong>&nbsp;&nbsp; calculations<br>
+                                <strong>G</strong>&nbsp;&nbsp; changes<br>
+                                <strong>H</strong>&nbsp;&nbsp; colour<br>
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <h3>Parts of the presentation</h3>
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="26">
+                                                        Choose mice which are all the same
+                                                        <span class="q-number-box">26</span>
+                                                        <select name="fc_completion-GEf4EtQ1AZxTFhTw-1" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
+                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item" data-q="26">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">26</span>
-                                    <span style="flex: 1;">
-                                        Historical background
-                                        <span class="q-question">
-                                            <select name="matching_information-1kxpl5g3zFLGtmEY-7" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="27">
+                                                        Divide the mice into two groups, each with a different
+                                                        <span class="q-number-box">27</span>
+                                                        <select name="fc_completion-GEf4EtQ1AZxTFhTw-2" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
+                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item" data-q="27">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">27</span>
-                                    <span style="flex: 1;">
-                                        Geographical factors
-                                        <span class="q-question">
-                                            <select name="matching_information-1kxpl5g3zFLGtmEY-8" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Put each group in a separate cage.</p>
+                                                <p>Feed group A commercial mouse food.</p>
+                                                <p>
+                                                    <div class="q-list" data-q="28">
+                                                        Feed group B the same, but also sugar contained in
+                                                        <span class="q-number-box">28</span>
+                                                        <select name="fc_completion-GEf4EtQ1AZxTFhTw-3" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
+                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item" data-q="28">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">28</span>
-                                    <span style="flex: 1;">
-                                        Past mistakes
-                                        <span class="q-question">
-                                            <select name="matching_information-1kxpl5g3zFLGtmEY-9" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Take measurements using an electronic scale.</p>
+                                                <p>
+                                                    <div class="q-list" data-q="29">
+                                                        Place them in a weighing chamber to prevent
+                                                        <span class="q-number-box">29</span>
+                                                        <select name="fc_completion-GEf4EtQ1AZxTFhTw-4" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
+                            <p style="text-align: center">↓</p>
 
-                            <fieldset class="q-item" data-q="29">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">29</span>
-                                    <span style="flex: 1;">
-                                        Future risks
-                                        <span class="q-question">
-                                            <select name="matching_information-1kxpl5g3zFLGtmEY-10" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
-                            <fieldset class="q-item" data-q="30">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">30</span>
-                                    <span style="flex: 1;">
-                                        International implications
-                                        <span class="q-question">
-                                            <select name="matching_information-1kxpl5g3zFLGtmEY-11" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="30">
+                                                        Do all necessary
+                                                        <span class="q-number-box">30</span>
+                                                        <select name="fc_completion-GEf4EtQ1AZxTFhTw-5" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
                         </form>
                     </div>
@@ -2241,7 +2286,7 @@
                         <p class="lead">Listen and answer questions 31-40</p>
                         <div class="audio-player">
                             <audio
-                                src="https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-14-academic-listening-1-audio-4.mp3"></audio>
+                                src="https://engnovate.com/wp-content/uploads/2024/08/cambridge-ielts-19-academic-listening-3-audio-4.mp3"></audio>
                             <input type="range" class="timeline" value="0" disabled>
                             <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
                         </div>
@@ -2254,127 +2299,94 @@
                     </fieldset>
 
                     <fieldset class="q-item">
-                        <p><b>Marine renewable energy (ocean energy)</b></p>
-                        <p><i>Introduction</i></p>
+                        <h3 style="text-align: center">Microplastics</h3>
                         <p>
-                            More energy required because of growth in population and
+                            fibres from some
                             <span class="q-number-box">31</span>
-                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-11" class="q-text"
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-7" class="q-text"
                                 placeholder="">
+                            during washing
                         </p>
 
-                        <p>What’s needed:</p>
-                        <ul>
-                            <li>renewable energy sources</li>
-                            <li>methods that won’t create pollution</li>
-                        </ul>
+                        <p>the breakdown of large pieces of plastic</p>
+                        <p>waste from industry</p>
+                        <p>the action of vehicle tyres on roads</p>
 
-                        <p><b>Wave energy</b></p>
+                        <p><b>Effects of microplastics</b></p>
                         <p>
-                            Advantage: waves provide a 
+                            They cause injuries to the
                             <span class="q-number-box">32</span>
-                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-12" class="q-text"
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-8" class="q-text"
                                 placeholder="">
-                            source of renewable energy
+                            of wildlife and affect their digestive systems.
                         </p>
-                        <p>Electricity can be generated using offshore or onshore systems</p>
-                        <p>Onshore systems may use a reservoir</p>
-                        
-                        <p><b>Problems:</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="33">
-                                    waves can move in any
-                                    <span class="q-number-box">33</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-13" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="34">
-                                    movement of sand, etc. on the
-                                    <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-14" class="q-text"
-                                        placeholder="">
-                                    of the ocean may be affected
-                                </div>
-                            </li>
-                        </ul>
 
-                        <p><b>Tidal energy</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="35">
-                                    Tides are more
-                                    <span class="q-number-box">35</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-15" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
+                        <p>
+                            They enter the food chain, e.g., in bottled and tap water,
+                            <span class="q-number-box">33</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-9" class="q-text"
+                                placeholder="">
+                            and seafood.
+                        </p>
 
-                        <p>Planned tidal lagoon in Wales:</p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="36">
-                                    will be created in a
-                                    <span class="q-number-box">36</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-16" class="q-text"
-                                        placeholder="">
-                                    at Swansea
-                                </div>
-                            </li>
-                            <li>breakwater (dam) containing 16 turbines</li>
-                            <li>rising tide forces water through turbines, generating electricity</li>
-                            <li>
-                                <div class="q-list" data-q="37">
-                                    stored water is released through
-                                    <span class="q-number-box">37</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-17" class="q-text"
-                                        placeholder="">
-                                    , driving the turbines in the reverse direction
-                                </div>
-                            </li>
-                        </ul>
+                        <p>
+                            They may not affect human health, but they are already banned in skin cleaning products and
+                            <span class="q-number-box">34</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-10" class="q-text"
+                                placeholder="">
+                            in some countries.
+                        </p>
 
-                        <p><b>Advantages:</b></p>
-                        <ul>
-                            <li>not dependent on weather</li>
-                            <li>
-                                <div class="q-list" data-q="38">
-                                    no
-                                    <span class="q-number-box">38</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-18" class="q-text"
-                                        placeholder="">
-                                    is required to make it work
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="39">
-                                    likely to create a number of
-                                    <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-19" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
+                        <p>
+                            Microplastics enter the soil through the air, rain and
+                            <span class="q-number-box">35</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-11" class="q-text"
+                                placeholder="">
+                        </p>
 
-                        <p><b>Problem:</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="40">
-                                    may ham fish and birds, e.g. by affecting
-                                    <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-1kxpl5g3zFLGtmEY-20" class="q-text"
-                                        placeholder="">
-                                    and building up silt
-                                </div>
-                            </li>
-                        </ul>
+                        <p><b>Microplastics in the soil – a study by Anglia Ruskin University</b></p>
+                        <p>
+                            Earthworms are important because they add
+                            <span class="q-number-box">36</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-12" class="q-text"
+                                placeholder="">
+                            to the soil.
+                        </p>
 
-                        <p><b>Ocean thermal energy conversion</b></p>
-                        <p>Uses a difference in temperature between the surface and lower levels</p>
-                        <p>Water brought to the surface in a pipe</p>
+                        <p>
+                            The study aimed to find whether microplastics in earthworms affect the
+                            <span class="q-number-box">37</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-14" class="q-text"
+                                placeholder="">
+                            of plants.
+                        </p>
+
+                        <p>The study found that microplastics caused:</p>
+                        <p>
+                            <span class="q-number-box">38</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-15" class="q-text"
+                                placeholder="">
+                            loss in earthworms
+                        </p>
+
+                        <p>fewer seeds to germinate</p>
+                        <p>
+                            a rise in the level of
+                            <span class="q-number-box">39</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-16" class="q-text"
+                                placeholder="">
+                            in the soil.
+                        </p>
+
+                        <p>The study concluded:</p>
+                        <p>soil should be seen as an important natural process.</p>
+                        <p>
+                            changes to soil damage both ecosystems and
+                            <span class="q-number-box">40</span>
+                            <input type="text" name="nc-GEf4EtQ1AZxTFhTw-17" class="q-text"
+                                placeholder="">
+                        </p>
+
                     </fieldset>
                 </form>
             </div>
@@ -2788,7 +2800,7 @@
                         type: 'POST',
                         data: {
                             _token: $('meta[name="csrf-token"]').attr('content'),
-                            set_id: '1kxpl5g3zFLGtmEY',
+                            set_id: 'GEf4EtQ1AZxTFhTw',
                             kategori: 'listening',
                             answers: results,
                             tipe_test: 'mock'
@@ -3755,7 +3767,7 @@
                 type: 'POST',
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                    set_id: '1kxpl5g3zFLGtmEY',
+                    set_id: 'GEf4EtQ1AZxTFhTw',
                     kategori: 'listening',
                     answers: results,
                     tipe_test: 'mock'

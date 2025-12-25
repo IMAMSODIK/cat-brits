@@ -1869,28 +1869,6 @@
                                 </legend>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1">
-                                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                                    <span class="q-number">1</span>
-                                    <span style="flex: 1;">
-                                        Superheroes 
-                                        <span class="q-question">
-                                            <select name="GEf4EtQ1AZxTFhTw-1" class="q-dropdown">
-                                                <option value=""></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                                <option value="C">C</option>
-                                                <option value="D">D</option>
-                                                <option value="E">E</option>
-                                                <option value="F">F</option>
-                                                <option value="G">G</option>
-                                                <option value="H">H</option>
-                                            </select>
-                                        </span>
-                                    </span>
-                                </legend>
-                            </fieldset>
-
                             <fieldset class="q-item" data-q="2">
                                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                     <span class="q-number">2</span>
@@ -2341,6 +2319,210 @@
                                     Try Again
                                 </button>
                                 <button type="button" class="btn btn-primary" id="submit-oc">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-fc_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-fc_completion" hidden>
+                <div class="x-panel-inner">Content: Flow Chart Completion</div>
+                <div class="reading-section" aria-label="Reading and Questions">
+                    <div class="qa highlighted-content" aria-label="Questions">
+                        <form class="qa-body" id="form-fc_completion">
+                            <fieldset class="q-item">
+                                <p class="lead">Listen and answer questions 1-5</p>
+                                <div class="audio-player" data-player role="group" aria-label="Audio controls">
+                                    <audio preload="auto"
+                                        src="https://engnovate.com/wp-content/uploads/2024/08/cambridge-ielts-19-academic-listening-3-audio-3.mp3">
+                                    </audio>
+
+                                    <div class="controls-container">
+                                        <button class="play-btn" type="button"><i class="fas fa-play"></i></button>
+                                        <div class="seek-container">
+                                            <input type="range" min="0" max="100" value="0"
+                                                class="seekBar">
+                                            <div class="timeText"><span class="current">0:00</span>
+                                                <span class="duration">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="start-buttons">
+                                        <button class="start-btn" data-start="303" type="button">Start from
+                                            here</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <p>Questions 1-5</p>
+                                <p>Complete the flow chart below.</p>
+                                <p><i>Choose <b>FIVE</b> answers from the box and write the correct letter, <b>A-H</b>.</i></p>
+
+                                <strong>A</strong>&nbsp;&nbsp; size<br>
+                                <strong>B</strong>&nbsp;&nbsp; escape<br>
+                                <strong>C</strong>&nbsp;&nbsp; age<br>
+                                <strong>D</strong>&nbsp;&nbsp; water<br>
+                                <strong>E</strong>&nbsp;&nbsp; cereal<br>
+                                <strong>F</strong>&nbsp;&nbsp; calculations<br>
+                                <strong>G</strong>&nbsp;&nbsp; changes<br>
+                                <strong>H</strong>&nbsp;&nbsp; colour<br>
+                            </fieldset>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="1">
+                                                        Choose mice which are all the same
+                                                        <span class="q-number-box">1</span>
+                                                        <select name="GEf4EtQ1AZxTFhTw-1" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="2">
+                                                        Divide the mice into two groups, each with a different
+                                                        <span class="q-number-box">2</span>
+                                                        <select name="GEf4EtQ1AZxTFhTw-2" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Put each group in a separate cage.</p>
+                                                <p>Feed group A commercial mouse food.</p>
+                                                <p>
+                                                    <div class="q-list" data-q="3">
+                                                        Feed group B the same, but also sugar contained in
+                                                        <span class="q-number-box">3</span>
+                                                        <select name="GEf4EtQ1AZxTFhTw-3" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>Take measurements using an electronic scale.</p>
+                                                <p>
+                                                    <div class="q-list" data-q="4">
+                                                        Place them in a weighing chamber to prevent
+                                                        <span class="q-number-box">4</span>
+                                                        <select name="GEf4EtQ1AZxTFhTw-4" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <p style="text-align: center">↓</p>
+
+                            <fieldset class="q-item">
+                                <table class=" aligncenter">
+                                    <tbody>
+                                        <tr>
+                                            <td width="528">
+                                                <p>
+                                                    <div class="q-list" data-q="5">
+                                                        Do all necessary
+                                                        <span class="q-number-box">5</span>
+                                                        <select name="GEf4EtQ1AZxTFhTw-5" class="q-dropdown">
+                                                            <option value=""></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="H">H</option>
+                                                        </select>
+                                                    </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary try-again" id="again-fc_completion" style="display: none">
+                                    Try Again
+                                </button>
+                                <button type="button" class="btn btn-primary" id="submit-fc_completion">
                                     Submit
                                 </button>
                             </div>
