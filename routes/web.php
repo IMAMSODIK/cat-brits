@@ -118,9 +118,15 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/profile', [ProfileController::class, 'index']);
+    // Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 
+    Route::redirect('/toefl', '/coming-soon');
+    Route::redirect('/ge', '/coming-soon');
+    Route::redirect('/sat', '/coming-soon');
 
-    Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
+    Route::get('/coming-soon', function(){
+        return view('pages.coming_soon');
+    });
 });
 
 Route::get('/test', function () {

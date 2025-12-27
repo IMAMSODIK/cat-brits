@@ -1,312 +1,42 @@
-semua
------
-Login & Registrasi (Siswa & Admin)
-Lupa Password (Reset via email/token)
-Manajemen akun pengguna
-Profile
-
-Siswa
------
-Hasil Ujian
-
-Guru
-----
-Jumlah peserta
-Histori
-
-Admin
------
-
-
-
-
-Tambah/Edit/Hapus Soal
-📂 Soal berdasarkan:
-        Listening
-        Reading
-        Grammar
-        Vocabulary
-        Speaking (optional, jika terintegrasi audio recording)
-
-✅ Dukungan:
-        Pilihan Ganda
-        Isian Singkat
-        Benar/Salah
-        Upload Audio untuk Listening Section
-
-🧠 Randomisasi soal
-⏳ Timer otomatis
-🚫 Anti-cheat dasar (1 tab aktif, tidak bisa back)
-📶 Auto-simpan jawaban tiap soal
-📊 Progress bar
-
-📈 Laporan Nilai Otomatis
-🧾 Rekap Jawaban
-🧮 Bobot nilai per jenis soal
-🖨️ Cetak Sertifikat / Hasil Ujian PDF
-
-🏷️ Kategori & Level (Beginner, Intermediate, Advanced)
-🗃️ Import/Export soal (Excel/CSV)
-📅 Penjadwalan ujian per kelas
-👥 Manajemen kelas & peserta
-⏰ Batas waktu pengerjaan per sesi
-
-📧 Email pengingat ujian
-📲 Push Notif (opsional, jika berbentuk mobile app)
-
-🔒 Hak akses multi-level (Admin, Guru, Superadmin)
-🧾 Log aktivitas user
-
-🧪 Tryout atau Latihan Mandiri
-🗣️ Rekaman jawaban Speaking (untuk evaluasi manual)
-🌐 Multi-bahasa antarmuka
-📊 Statistik soal: tingkat kesulitan & akurasi
-
-
-
-
-
-dashboard
-sidebar
-Admin
-change password
-
-daftar student
-verifikasi student
-student score
-        - Reading
-        - Writing
-        - Listening
-        - Speaking
-teacher management
-
-
-teacher
--------
-schedule video session
-start session
-daftar penilaian
-        - Reading
-        - Writing
-        - Listening
-        - Speaking
-
-
-student
--------
-ielts menu
-
-
-simpan riwayat practice
-        - buat table test_history
-                -> id
-                -> user_id (test taker)
-                -> user_id (teacher corector) nullable
-                -> Kategori
-                -> tipe
-                -> set_id
-                -> score
-
-        - test_detail_history
-                -> id
-                -> test_history_id
-                -> soal_id
-                -> jawaban
-                -> status
-
-
-buat menu test hostori di sidebar (ilts, toefl, sat, ge)
-        - klik salah satu menu
-        - tampilkan semua data (dengan filter)
-tambahkan tombol hostori test di menu student
-buatkan halaman baru untuk detail table history user
-
-penilaian Speaking
-penilaian Writing
-selesaikan semua penilaian practice dan mock test
-
-test Speaking (video call)
-
-perbaiki semua error
-
-
-
-
-
-urutan tab ikutin dari card di ielts (done)
-tombol lompat video sesuai soal (dipotong) (tinggal implementasi) (done)
-mock test audio langsung play dan sekali aja (done)
-untuk speaking upload audio di hapus (done)
-auto correct dihilangkan (done)
-count caracter di ganti jadi count word (done)
-Part diganti jadi task di writing (done)
-ganti thumbnail di card kategori (reading, listening, speaking, writing)
-qustion bisa di higligth (listening dan reading) (done)
-nomor soal di bagian mock test per part harus lanjut terus (listening dan reading) (done)
-mock test wajib pakai instruksi sebelum melakukan test (done)
-practice tidak pakai wakti (done)
-mock test pakai waktu  (done)
-setelah selesaiu mock test, tamabahkan popup hasil (done)
-
-note : 
-speaking dan writing sistem koreksinya oleh satu tutor dan begitu seleai tutor lain tdak bisa koreksi lagi
-speaking setelah video call, video otomatis tersimpan
-usahakan sharescreen
-kalo bisa di speaking ada video auto play lalu auto record
-layout exam history diganti jadi pernama, setelah diklik akan muncul detail apa saja yuang sudah dia kerjakan
-
-gampang
-
-
-
-
-
-
-tekan tombol start from here => jalan dari menit yang ditentukan
-kalai tekan tombol play, start from here pause
-kalau tekan tab, start from here dan play di pause
-
-
-
-
-
-
-Description: [P:]USB Mass Storage Device(ChipsBnk Flash Disk)
-Device Type:        Mass Storage Device
-
-Protocal Version: USB 2.00
-Current Speed: High Speed
-Max Current: 100mA
-
-USB Device ID: VID = 1E3D PID = 198A
-
-Device Revision: 0100
-
-Manufacturer: ChipsBnk
-Product Model: Flash Disk
-Product Revision: 5.00
-
-Controller Vendor: ChipsBank
-Controller Part-Number: CBM2199E - [2021-05-12]
-
-Tools on web:       http://dl.mydigit.net/special/up/chipsbank.html
-
-
-
-
-Timer di all sections (yang mock tests) cuma 13 menit, jadi pas masih kerjakan soal2 nya tiba2 lsg closed dan keluar hasil.. (done)
-untuk pop-up text nya, tlg di ganti ke English saja: Do you want to end the test now? (done)
-Penomoran di Mock Test IELTS Reading Cambridge 10 Test 1 ada yang belum sesuai.. (done)
-Di mock Test IELTS Listening Cambridge 10 Test 1, tombol nya tertumpuk.. (done)
-Untuk di Writing Section (mock test), tombol submit nya dihilangkan saja, karena di pojok kanan juga sudah ada.. (done)
-ini kemarin request dari sir Dave, untuk logo nya apakah possible di gedein lagi? (done)
-
-Untuk result nya, bagaian percentage nya diganti dengan band score saja (dari nilai 0.0 - 9.0).. (done)
-
-untuk pengecekan jawaban, beberapa jawaban yang benar, disalahkan oleh system nya..
-jadi untuk kunci jawaban yang ada pilihan nya seperti ini, kalau students menjawab:
-- verandas = benar
-- verandahs = benar (done)
-
-Di Mock Test IELTS Cambridge Listening 10 Test 1, nomor 11 dan 12 tidak bisa di klik..
-
-
-
-
-
-
-
-
-todo
-- save video practice speaking (done)
-- penilaian untuk writing
-- speaking mock test 
-- writing mock test
-
-video
-- teacher_id
-- user_id
-- set_soal_id
-- no_soal
-- tipe (mock/practice)
-- video
-
-nilaiVideo
-Fluency and Coherence
-        - Did the candidate speak and use:
-                - Repetition or self correction?
-                - Hesitation and pause?
-                - Speech rate features?
-        - Did the candidate use:
-                - Connectives?
-                - Discourse Markers?
-        - Did the candidate give:
-                - Relevant answers?
-        band
-
-Lexical Resource
-        - Did the candidate use:
-                - A range of vocabulary?
-        - Did the candidate use:
-                - Idiomatic vocabulary?
-                - Less-common vocabulary?
-                - Collacation?
-        - Did the candidate use:
-                - Parapharase?
-        band
-
-Grammatical Range and Accuracy
-        - Did the candidate use:
-                - A range of Structures?
-        - Did the candidate Produce:
-                - Error-free senteneces?
-        - Did the candidate use:
-                - Gramatical Features?
-        band
-
-Pronaunciation
-        - Did the candidate use:
-                - A range of pronaounciation features?
-        - Did the candidate be:
-                - Understood?
-        band
-
-remark
-
-
-
-
-modular
-
-
-
-
-
-
-
-
-reza
-Cambridge IELTS 11 Academic Reading Test 2 (34)
-Cambridge IELTS 12 Academic Reading Test 2 (30)
-
-rajes
-Cambridge IELTS 12 Academic Reading Test 3 (29)
-Cambridge IELTS 13 Academic Reading Test 3 (26)
-
-hans
-Cambridge IELTS 13 Academic Reading Test 4 (25)
-Cambridge IELTS 14 Academic Reading Test 4 (22)
-
-alex
-Cambridge IELTS 15 Academic Reading Test 1 (21)
-Cambridge IELTS 16 Academic Reading Test 1 (17)
-
-lowis
-Cambridge IELTS 16 Academic Reading Test 2 (16)
-Cambridge IELTS 17 Academic Reading Test 2 (13)
-
-
-todo
-ielts 10 test 4
-fixing ielts 10 test 1
-done video call
+DASHBOARD
+        ADMIN
+                TOTAL AKTIF USERS
+                        -> count all USERS
+                        -> count all Admin
+                        -> count all teacher
+                        -> count all student
+                TOTAL SET
+                        -> count all ielts
+                        -> count all toefl
+                        -> count all ge
+                        -> count all sat
+                RECENT AKTIFITAS
+                        -> student NEED VERIFICATION
+                        -> RECENT TEST taker (PAKAI GRAFIK)
+                        -> VIDEO NEED TO correction
+                        -> WRITING NEED TO correction
+                        -> VIDEO CALL REQIEST
+                Monitoring Test & Score
+                        -> SKOR MOCK TEST TERTINGGI 5 SISWA
+                        -> SKOR MOCK TERENDAH 5 SISWA
+        TEACHER
+                -> video call (pending, scheduled, today's call)
+                -> video speaking menunggu penilaian
+                -> writing menunggu penilaian
+                -> student yang pernah ditangani
+        STUDENT
+                -> TOTAL TEST DIKERJAKAN (MOCK DAN PRACTICE)
+                -> rata-rata skor reading dan listening
+                -> count speaking video
+                -> count writing submission
+                -> grafik kanaikan skor dari waktu ke waktu
+                -> grafik perbandingan practice dengan mock test
+                
+
+STATITISTIK REQUEST correction
+        Video assessment:
+                Belum dinilai
+                Sudah dinilai
+        Writing:
+                Belum diperiksa
+                Sudah diperiksa

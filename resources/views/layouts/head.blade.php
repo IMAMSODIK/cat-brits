@@ -59,4 +59,3 @@
 
 
 @yield('own_style')
-    

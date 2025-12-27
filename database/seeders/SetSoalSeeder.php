@@ -21,7 +21,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-1/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-1/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-1/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-1/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-1/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 2',
@@ -30,7 +31,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-2/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-2/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-2/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-2/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-2/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 3',
@@ -39,7 +41,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-3/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-3/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-3/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-3/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-3/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 10 Test 4',
@@ -48,7 +51,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-4/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-4/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-4/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-4/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-4/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //14
@@ -59,7 +63,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-5/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-5/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-5/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-5/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-5/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 2',
@@ -68,7 +73,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-6/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-6/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-6/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-6/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-6/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 3',
@@ -77,7 +83,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-7/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-7/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-7/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-7/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-7/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 14 Test 4',
@@ -86,7 +93,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-8/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-8/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-8/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-8/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-8/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //16
@@ -97,7 +105,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-9/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-9/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-9/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-9/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-9/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 2',
@@ -106,7 +115,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-10/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-10/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-10/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-10/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-10/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 3',
@@ -115,7 +125,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-11/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-11/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-11/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-11/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-11/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 16 Test 4',
@@ -124,7 +135,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-12/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-12/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-12/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-12/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-12/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //17
@@ -135,7 +147,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-13/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-13/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-13/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-13/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-13/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 2',
@@ -144,7 +157,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-14/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-14/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-14/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-14/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-14/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 3',
@@ -153,7 +167,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-15/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-15/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-15/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-15/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-15/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 17 Test 4',
@@ -162,7 +177,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-16/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-16/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-16/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-16/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-16/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //18
@@ -173,7 +189,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-17/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-17/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-17/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-17/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-17/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 2',
@@ -182,7 +199,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-18/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-18/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-18/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-18/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-18/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 3',
@@ -191,7 +209,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-19/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-19/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-19/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-19/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-19/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 18 Test 4',
@@ -200,7 +219,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-20/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-20/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-20/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-20/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-20/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //19
@@ -211,7 +231,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-21/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-21/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-21/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-21/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-21/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 2',
@@ -220,7 +241,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-22/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-22/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-22/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-22/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-22/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 3',
@@ -229,7 +251,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-23/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-23/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-23/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-23/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-23/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 19 Test 4',
@@ -238,7 +261,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-24/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-24/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-24/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-24/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-24/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //20
@@ -249,7 +273,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-25/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-25/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-25/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-25/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-25/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 2',
@@ -258,7 +283,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-26/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-26/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-26/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-26/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-26/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 3',
@@ -267,7 +293,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-27/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-27/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-27/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-27/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-27/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'Cambridge 20 Test 4',
@@ -276,7 +303,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-28/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-28/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-28/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-28/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-28/4.png',
+            'kategori' => 'ielts'
         ]);
 
         //PT-01
@@ -287,7 +315,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-29/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-29/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-29/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-29/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-29/4.png',
+            'kategori' => 'ielts'
         ]);
         SetSoal::create([
             'name' => 'PT-02',
@@ -296,7 +325,8 @@ class SetSoalSeeder extends Seeder
             'thumbnail_reading' => 'own_assets/images/thumbnails/set-30/1.png',
             'thumbnail_listening' => 'own_assets/images/thumbnails/set-30/2.png',
             'thumbnail_speaking' => 'own_assets/images/thumbnails/set-30/3.png',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-30/4.png'
+            'thumbnail_writing' => 'own_assets/images/thumbnails/set-30/4.png',
+            'kategori' => 'ielts'
         ]);
     }
 }
