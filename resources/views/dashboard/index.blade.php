@@ -34,7 +34,7 @@
             <div class="container-fluid">
                 <div class="row size-column">
                     <div class="row">
-                        <div class="col-xl-3 col-6">
+                        <div class="col-xl-3 col-4">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-project border-b-primary border-2"><span
                                         class="f-light f-w-500 f-14">Total Users</span>
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6">
+                        <div class="col-xl-3 col-4">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-Progress border-b-warning border-2"> <span
                                         class="f-light f-w-500 f-14">Total Admin</span>
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/teacher'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/teacher'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-Complete border-b-secondary border-2"><span
                                         class="f-light f-w-500 f-14">Total Teachers</span>
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/students'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/students'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-upcoming"><span class="f-light f-w-500 f-14">Total Students</span>
                                     <div class="project-details">
@@ -154,7 +154,7 @@
             <div class="container-fluid">
                 <div class="row size-column">
                     <div class="row">
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ielts'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/ielts'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-project border-b-primary border-2"><span
                                         class="f-light f-w-500 f-14">Total IELTS</span>
@@ -181,7 +181,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/toefl'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/toefl'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-Progress border-b-primary border-2"> <span
                                         class="f-light f-w-500 f-14">Total TOEFL</span>
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ge'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/ge'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-Complete border-b-primary border-2"><span
                                         class="f-light f-w-500 f-14">Total GE</span>
@@ -235,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/sat'">
+                        <div class="col-xl-3 col-4" style="cursor: pointer" onclick="location.href = '/sat'">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-Complete border-b-primary border-2">
                                     <span class="f-light f-w-500 f-14">Total SAT</span>
