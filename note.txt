@@ -1,19 +1,27 @@
+donekan 1 set
+
+di model test hisotry, tambahkan kolom
+        - total soal
+        - tipe soal lengkap (bukan oc, tfng dll)
+        - masukkan juga speaking dan reading, baik practice maupun mock Test
+
+
 DASHBOARD
         ADMIN
-                TOTAL AKTIF USERS
+                TOTAL AKTIF USERS (done)
                         -> count all USERS
                         -> count all Admin
                         -> count all teacher
                         -> count all student
-                TOTAL SET
+                TOTAL SET (done)
                         -> count all ielts
                         -> count all toefl
                         -> count all ge
                         -> count all sat
                 RECENT AKTIFITAS
-                        -> student NEED VERIFICATION
-                        -> RECENT TEST taker (PAKAI GRAFIK)
-                        -> VIDEO NEED TO correction
+                        -> student NEED VERIFICATION (done)
+                        -> RECENT TEST taker (PAKAI GRAFIK) (done)
+                        -> VIDEO NEED TO correction 
                         -> WRITING NEED TO correction
                         -> VIDEO CALL REQIEST
                 Monitoring Test & Score

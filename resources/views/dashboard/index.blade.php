@@ -268,6 +268,113 @@
         </div>
     </div>
 
+    <div class="card">
+        <div class="card-header">
+            <h5>Recent Activities</h5>
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <div class="row size-column">
+                    <div class="row">
+                        <div class="col-xxl-3 col-sm-5 box-col-6">
+                            <div class="card height-equal">
+                                <div class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0">New User</h4>
+                                    <span class="text-primary cursor-pointer">
+                                        <button class="btn btn-primary">View All</button>
+                                    </span>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="new-user">
+                                        <ul>
+                                            @foreach ($unverifStudent as $unverif)
+                                                <li>
+                                                    <div class="space-common d-flex user-name"><img
+                                                            class="img-40 rounded-circle img-fluid me-2"
+                                                            src="{{ asset('own_assets/images/avatar.png') }}"
+                                                            alt="user" />
+                                                        <div class="common-space w-100">
+                                                            <div>
+                                                                <h6> <a class="f-w-500 f-14 " href="/students-verification">{{$unverif->name}}</a>
+                                                                </h6>
+                                                                <span class="f-light f-w-500 f-12">{{$unverif->email}}</span>
+                                                            </div>
+                                                            <div class="product-sub">
+                                                                <div class="dropdown">
+                                                                    <div id="dropdownMenuButtonicon31" data-bs-toggle="dropdown"
+                                                                        aria-expanded="false" role="menu">
+                                                                        <svg class="invoice-icon">
+                                                                            <use
+                                                                                href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#more-vertical') }}">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon31">
+                                                                        <a href="/students-verification"><span class="dropdown-item" style="color: black">Details </span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-md-7 box-col-6">
+                            <div class="card height-equal">
+                                <div class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0">Student Activity</h4>
+                                    <span class="text-primary cursor-pointer">
+                                        <button class="btn btn-primary">View All</button>
+                                    </span>
+                                </div>
+
+                                <div class="card-body pt-0">
+                                    <div class="top-product-card">
+                                        <ul>
+                                            @foreach ($studentActivities as $activities)
+                                                <li class="d-flex top-product gap-2">
+                                                    <div>
+                                                        <img class="img-fluid product-img" src="{{ ($activities->student->foto) ? asset('storage') . '/' : asset('own_assets/images/avatar.png') }}" alt="User Profile" />
+                                                    </div>
+                                                    <div class="w-100 d-flex justify-content-between align-items-center">
+                                                        <div class="product-details">
+                                                            <div>
+                                                                @if ($activities->tipe_test == 'practice')
+                                                                    <span class="badge rounded-pill badge-primary text-white">Practice</span>
+                                                                @else
+                                                                    <span class="badge rounded-pill badge-warning text-white">Mock Test</span>
+                                                                @endif
+                                                            </div>
+                                                            <a class="f-10 f-w-500" href="">{{$activities->student->name}}</a>
+                                                            <span class="f-10 f-w-500 txt-primary">{{$activities->tipe}}</span>
+                                                        </div>
+                                                        <div class="product-items">
+                                                            <div class="common-space gap-1">
+                                                                <span class="f-10 f-w-500 f-light">Category :</span>
+                                                                <span class="f-10 f-w-500 ">{{ucfirst($activities->kategori)}}</span>
+                                                            </div>
+                                                            <div class="common-space gap-1">
+                                                                <span class="f-10 f-w-500 f-light">Score :</span>
+                                                                <span class="f-10 f-w-500 ">{{$activities->score}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row size-column">
             <div class="col-xl-8 col-md-12 box-col-12">
