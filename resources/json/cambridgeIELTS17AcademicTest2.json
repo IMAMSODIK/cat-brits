@@ -1,0 +1,111 @@
+{
+  "reading": {
+    "nc": [
+      "rock",
+      "cave",
+      "clay",
+      "Essenes",
+      "Hebrew"
+    ],
+    "tfng": [
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "FALSE",
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN"
+    ],
+    "matching_information": [
+      "C",
+      "B",
+      "E",
+      "A",
+      "C"
+    ],
+    "matching_features": [
+      "B",
+      "D",
+      "A",
+      "C",
+      "A"
+    ],
+    "sentence_completion": [
+      "[flavour, flavor]",
+      "size",
+      "salt"
+    ],
+    "oc": [
+      "D",
+      "A",
+      "A",
+      "C",
+      "A"
+    ],
+    "ynng": [
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "NOT GIVEN"
+    ],
+    "summary_completion": [
+      "F",
+      "D",
+      "E",
+      "B"
+    ]
+  },
+  "listening": {
+    "nc": [
+      "collecting",
+      "records",
+      "West",
+      "transport",
+      "art",
+      "hospital",
+      "garden",
+      "321,000",
+      "vocabulary",
+      "podcast",
+      "smartphones",
+      "bilingual",
+      "playground",
+      "picture",
+      "grammar",
+      "identity",
+      "fluent"
+    ],
+    "tc": [
+      "quiz",
+      "tickets",
+      "poster"
+    ],
+    "oc": [
+      "B",
+      "C",
+      "C",
+      "B",
+      "B",
+      "C",
+      "C"
+    ],
+    "matching_information": [
+      "D",
+      "C",
+      "G",
+      "A",
+      "E",
+      "F",
+      "D",
+      "C",
+      "A",
+      "E",
+      "F"
+    ],
+    "two_choices": [
+      "['D', 'E']"
+    ]
+  }
+}
