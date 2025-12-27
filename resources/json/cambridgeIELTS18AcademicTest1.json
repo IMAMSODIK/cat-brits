@@ -1,0 +1,103 @@
+{
+  "reading": {
+    "sentence_completion": [
+      "lettuce",
+      "[1000 kg, 1000kg]",
+      "[consumption, food consumption]",
+      "fire",
+      "nutrients",
+      "cavities",
+      "hawthorn",
+      "rare"
+    ],
+    "tc": [
+      "pesticides",
+      "journeys",
+      "producers",
+      "[flavour, flavor]"
+    ],
+    "tfng": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "FALSE",
+      "NOT GIVEN"
+    ],
+    "matching_information": [
+      "B",
+      "A",
+      "C",
+      "E",
+      "B",
+      "C",
+      "F",
+      "A",
+      "E",
+      "B"
+    ],
+    "summary_completion": [
+      "sustainability",
+      "fuel",
+      "explosions",
+      "bankrupt"
+    ],
+    "matching_features": [
+      "B",
+      "C",
+      "C",
+      "C",
+      "D",
+      "B",
+      "D",
+      "A"
+    ]
+  },
+  "listening": {
+    "nc": [
+      "[DW30 7YZ, DW307YZ]",
+      "[24 April, April 24, 24th April, April 24th, 24/04, 04/24]",
+      "dentist",
+      "parking",
+      "Claxby",
+      "late",
+      "evening",
+      "supermarket",
+      "pollution",
+      "storage",
+      "fences",
+      "family",
+      "helicopters",
+      "stress",
+      "sides",
+      "breathing",
+      "feet",
+      "employment",
+      "weapons",
+      "tourism"
+    ],
+    "oc": [
+      "C",
+      "A",
+      "A",
+      "A",
+      "B",
+      "A",
+      "C",
+      "B",
+      "A"
+    ],
+    "two_choices": [
+      "['B', 'E']",
+      "['B', 'E']",
+      "['A', 'C']"
+    ],
+    "matching_information": [
+      "B",
+      "G",
+      "D",
+      "A",
+      "F"
+    ]
+  }
+}
