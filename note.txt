@@ -6,6 +6,20 @@ di model test hisotry, tambahkan kolom (done)
         - masukkan juga speaking dan reading, baik practice maupun mock Test
 
 
+mock test
+tombol info belum bisa (done)
+session title saat tambah sesi sudah diisi otomatis dengan nama set (editable) (done)
+proposed time default harus sekarang (done)
+proposed time masih belum valid dengan time indo (done)
+
+view belum bisa di role student  (done)
+detial belum bisa jika sudah accepted (done)
+panel video masih terlalu besar
+simpan video record
+tambahkan input link jika tidak ingin pakai video live
+
+
+
 DASHBOARD
         ADMIN
                 TOTAL AKTIF USERS (done)

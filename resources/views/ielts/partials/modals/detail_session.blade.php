@@ -336,7 +336,7 @@
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">Description:</span>
-                                    <span class="info-value">{{ $mockTest->description ?: 'No description provided' }}</span>
+                                    <span class="info-value">{{ $mockTest->description ?? 'No description provided' }}</span>
                                 </div>
                                 <div class="info-item">
                                     <span class="info-label">Status:</span>
@@ -555,7 +555,7 @@
     </div>
 
     <!-- Accept Modal for Teachers -->
-    @if(auth()->user()->isTeacher() && $mockTest->status === 'pending')
+    {{-- @if(auth()->user()->isTeacher() && $mockTest->status === 'pending')
         <div class="modal fade" id="acceptModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -630,7 +630,7 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

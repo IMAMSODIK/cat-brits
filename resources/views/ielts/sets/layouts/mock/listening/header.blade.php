@@ -2,8 +2,10 @@
     <div class="header-row" aria-label="Header CAT Bahasa Inggris">
         <div class="brand">
             <div class="logo" aria-hidden="true">
-                <img class="img-fluid" style="width: 85px; margin-top: -20px"
-                src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                <div class="logo" aria-hidden="true">
+                    <img class="" style="width: 70px;margin-left: 50px"
+                        src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
+                </div>
             </div>
         </div>
 
@@ -17,9 +19,14 @@
                 <span id="timeText">00:00</span>
             </div>
 
-            <button id="doneBtn" class="btn btn-danger">
+            <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span class="label">Try Again</span>
+            </button>
+
+            <button onclick="confirmExit()" class="btn btn-danger">
                 <i class="fa-solid fa-flag-checkered"></i>
-                <span class="label">Selesai</span>
+                <span class="label">Close</span>
             </button>
         </div>
     </div>

@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
     // mock test video call
     Route::post('/mock-test/store', [VideoCallController::class, 'store'])->name('mock-test.post');
     Route::get('/mock-test/{mockTest}', [VideoCallController::class, 'show'])->name('mock-test.show');
+    Route::delete('/mock-test/{mockTest}/destroy', [VideoCallController::class, 'destroy'])->name('mock-test.destroy');
 
     Route::post('/mock-test/{mockTest}/accept', [VideoCallController::class, 'accept'])->name('mock-test.accept');
     Route::post('/mock-test/{mockTest}/reject', [VideoCallController::class, 'reject'])->name('mock-test.reject');

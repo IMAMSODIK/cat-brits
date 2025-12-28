@@ -1299,10 +1299,10 @@
                                                         <i class="fa fa-times"></i> Reject
                                                     </button>
 
-                                                    <a href="{{ route('mock-test.show', $session) }}"
-                                                        class="btn btn-info btn-sm">
+                                                    <button class="btn btn-info btn-sm btn-detail"
+                                                        data-id="{{ $session->id }}">
                                                         <i class="fa fa-eye"></i> Details
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1355,10 +1355,10 @@
                                                             </button>
                                                         @endif
 
-                                                        <a href="{{ route('mock-test.show', $session) }}"
-                                                            class="btn btn-info btn-sm">
+                                                        <button class="btn btn-info btn-sm btn-detail"
+                                                            data-id="{{ $session->id }}">
                                                             <i class="fa fa-eye"></i> Details
-                                                        </a>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -1390,10 +1390,10 @@
                                                         </button>
                                                     @endif
 
-                                                    <a href="{{ route('mock-test.show', $session) }}"
-                                                        class="btn btn-info btn-sm">
+                                                    <button class="btn btn-info btn-sm btn-detail"
+                                                        data-id="{{ $session->id }}">
                                                         <i class="fa fa-eye"></i> Details
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1684,8 +1684,6 @@
             </div>
         </div>
     </div>
-
-
 
 @endsection
 

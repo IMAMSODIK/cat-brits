@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -30,9 +31,9 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: var(--bg);
+            background: #4274ba;
             box-shadow: var(--shadow);
-            padding: max(8px, env(safe-area-inset-top)) 12px 8px 12px;
+            padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
 
         .header-row {
@@ -56,7 +57,6 @@
             width: 36px;
             height: 36px;
             border-radius: 8px;
-            background: #eef2ff;
             color: #4f46e5;
             font-weight: 700;
             letter-spacing: 0.5px;
@@ -883,125 +883,6 @@
         }
     </style>
 
-    <!-- style untuk floating informasi nomor soal -->
-    <style>
-        .floating-questions {
-            position: fixed;
-            bottom: 16px;
-            right: 16px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        /* Floating Action Button (FAB) */
-        .fq-fab {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: none;
-            background: #2563eb;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .fq-fab:hover {
-            background: #1d4ed8;
-            transform: scale(1.05);
-        }
-
-        /* Panel soal */
-        .fq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 10px;
-        }
-
-        .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
-        }
-
-        .fq-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-            gap: 6px;
-        }
-
-        .fq-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #f8fafc;
-            color: #0f172a;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .fq-item:hover {
-            background: #f1f5f9;
-        }
-
-        /* Status */
-        .fq-item.answered {
-            background: #dcfce7;
-            border-color: #16a34a;
-            color: #15803d;
-        }
-
-        .fq-item.current {
-            background: #dbeafe;
-            border-color: #2563eb;
-            color: #1d4ed8;
-        }
-
-        /* Mobile full width panel */
-        @media (max-width: 768px) {
-            .floating-questions {
-                bottom: 12px;
-                right: 12px;
-                left: auto;
-                width: auto;
-                max-width: 100%;
-            }
-
-            .floating-questions.expanded {
-                width: calc(100% - 24px);
-                right: 12px;
-                left: 12px;
-                border-radius: 16px;
-            }
-
-            .fq-list {
-                grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-            }
-
-            .fq-item {
-                width: 44px;
-                height: 44px;
-                font-size: 14px;
-            }
-        }
-    </style>
-
     {{-- style unutk audio player --}}
     <style>
         .audio-player {
@@ -1139,6 +1020,299 @@
             .ap-vol {
                 grid-area: vol;
             }
+        }
+    </style>
+
+    <style>
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .form-body {
+            padding: 35px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-textarea {
+            width: 91%;
+            min-height: 200px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 16px;
+            font-family: inherit;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f8fafc;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            resize: vertical;
+            outline: none;
+        }
+
+        .form-textarea:focus {
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-textarea::placeholder {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .char-counter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .char-count {
+            font-weight: 600;
+        }
+
+        .char-limit {
+            color: #e53e3e;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: #cbd5e0;
+            color: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .success-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .form-container {
+                max-width: 100%;
+                border-radius: 15px;
+            }
+
+            .form-header {
+                padding: 20px 25px;
+            }
+
+            .form-title {
+                font-size: 20px;
+            }
+
+            .form-subtitle {
+                font-size: 13px;
+            }
+
+            .form-body {
+                padding: 25px 20px;
+            }
+
+            .form-textarea {
+                min-height: 180px;
+                padding: 15px;
+                font-size: 16px;
+                /* Prevents zoom on iOS */
+            }
+
+            .form-actions {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 16px 24px;
+                font-size: 10px;
+            }
+
+            .char-counter {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-header {
+                padding: 15px 20px;
+            }
+
+            .form-title {
+                font-size: 18px;
+            }
+
+            .form-body {
+                padding: 20px 15px;
+            }
+
+            .form-textarea {
+                min-height: 150px;
+                padding: 12px;
+            }
+
+            .btn {
+                padding: 14px 20px;
+                font-size: 10px;
+            }
+        }
+
+        /* Focus visible for accessibility */
+        .btn:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .form-textarea:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
         }
     </style>
 </head>
