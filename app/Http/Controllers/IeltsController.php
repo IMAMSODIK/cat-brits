@@ -580,6 +580,8 @@ class IeltsController extends Controller
                 'tipe' => 'mixed',
                 'set_soal_id' => $setSoal?->id,
                 'score' => $score,
+                'jumlah_soal' => 40,
+                'nama_tipe' => "Mock Test",
             ]);
 
             foreach ($results as $key => $res) {

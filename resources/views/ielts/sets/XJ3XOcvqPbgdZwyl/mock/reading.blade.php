@@ -932,9 +932,10 @@
         }
 
         .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
+            max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
         }
 
         .fq-list {
@@ -1002,6 +1003,17 @@
                 height: 44px;
                 font-size: 14px;
             }
+        }
+
+        .fq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+
+        .fq-body {
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 
@@ -3321,7 +3333,7 @@
             });
 
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(13 * 60);
+            startCountdown(0.1 * 60);
         })();
     </script>
 
