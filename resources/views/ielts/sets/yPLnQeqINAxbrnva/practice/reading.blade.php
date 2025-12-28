@@ -1619,69 +1619,61 @@
                     'id' => 'matching_information',
                     'tipe' => 'matching_information',
                     'title' => 'Matching Information',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.reading.matching_information',
-
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.matching_information',
                 ],
                 [
                     'id' => 'summary_completion',
                     'tipe' => 'summary_completion',
                     'title' => 'Summary Completion',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion',
-
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion',
                 ],
                 [
                     'id' => 'two_choice',
                     'tipe' => 'two_choice',
                     'title' => 'Two Choice',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice',
                 ],
                 [
                     'id' => 'two_choice2',
                     'tipe' => 'two_choice',
                     'title' => 'Two Choice 2',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice2'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.two_choice2',
                 ],
                 [
                     'id' => 'one',
                     'tipe' => 'oc',
                     'title' => 'One Choice',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one_choice'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one_choice',
                 ],
                 [
                     'id' => 'matching_features',
                     'tipe' => 'matching_features',
                     'title' => 'Matching Features',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.reading.matching_features',
-
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.matching_features',
                 ],
                 [
                     'id' => 'ynng',
                     'tipe' => 'ynng',
                     'title' => 'Yes/No/Not Given',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng',
                 ],
                 [
                     'id' => 'ynng2',
                     'tipe' => 'ynng',
                     'title' => 'Yes/No/Not Given 2',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng2'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.ynng2',
                 ],
                 [
                     'id' => 'summary_completion2',
                     'tipe' => 'summary_completion',
                     'title' => 'Summary Completion 2',
-                    'content' =>
-                        'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion2',
-
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.summary_completion2',
                 ],
                 [
                     'id' => 'one2',
                     'tipe' => 'oc',
                     'title' => 'One Choice 2',
-                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one2'
+                    'content' => 'partials.yPLnQeqINAxbrnva.practice.reading.one2',
                 ],
             ];
         @endphp
@@ -1764,21 +1756,76 @@
 
 
     <script>
-        let scoreMap = [
-            { min: 39, max: 40, score: 9.0 },
-            { min: 37, max: 38, score: 8.5 },
-            { min: 35, max: 36, score: 8.0 },
-            { min: 33, max: 34, score: 7.5 },
-            { min: 30, max: 32, score: 7.0 },
-            { min: 27, max: 29, score: 6.5 },
-            { min: 23, max: 26, score: 6.0 },
-            { min: 19, max: 22, score: 5.5 },
-            { min: 15, max: 18, score: 5.0 },
-            { min: 13, max: 14, score: 4.5 },
-            { min: 10, max: 12, score: 4.0 },
-            { min: 8, max: 9, score: 3.5 },
-            { min: 6, max: 7, score: 3.0 },
-            { min: 4, max: 5, score: 2.5 }
+        let scoreMap = [{
+                min: 39,
+                max: 40,
+                score: 9.0
+            },
+            {
+                min: 37,
+                max: 38,
+                score: 8.5
+            },
+            {
+                min: 35,
+                max: 36,
+                score: 8.0
+            },
+            {
+                min: 33,
+                max: 34,
+                score: 7.5
+            },
+            {
+                min: 30,
+                max: 32,
+                score: 7.0
+            },
+            {
+                min: 27,
+                max: 29,
+                score: 6.5
+            },
+            {
+                min: 23,
+                max: 26,
+                score: 6.0
+            },
+            {
+                min: 19,
+                max: 22,
+                score: 5.5
+            },
+            {
+                min: 15,
+                max: 18,
+                score: 5.0
+            },
+            {
+                min: 13,
+                max: 14,
+                score: 4.5
+            },
+            {
+                min: 10,
+                max: 12,
+                score: 4.0
+            },
+            {
+                min: 8,
+                max: 9,
+                score: 3.5
+            },
+            {
+                min: 6,
+                max: 7,
+                score: 3.0
+            },
+            {
+                min: 4,
+                max: 5,
+                score: 2.5
+            }
         ];
 
         function convertScore(correctCount) {
@@ -1792,7 +1839,42 @@
     </script>
 
     <script>
-        (function () {
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = @json($tabs);
+            const dataKategori = "reading";
+            let prevName;
+            tabs.forEach(tab => {
+                const form = document.querySelector(`#form-${tab.id}`);
+                if (!form) return;
+
+                let count = 0;
+
+                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
+
+                inputs.forEach(input => {
+                    if (prevName === input.name) {
+                        if (input.type === "checkbox") {
+                            count = 2;
+                        }
+                        return;
+                    }
+                    prevName = input.name;
+                    count++
+
+                })
+
+                const btn = document.querySelector(`#submit-${tab.id}`);
+                if (!btn) return;
+
+                btn.setAttribute("data-count", count);
+                btn.setAttribute("data-kategori", dataKategori);
+            });
+        });
+    </script>
+
+
+    <script>
+        (function() {
             let remaining = 0;
             let t = null;
             const el = document.getElementById('timeText');
@@ -1841,7 +1923,7 @@
             };
 
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function () {
+            document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
                     'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
@@ -1849,7 +1931,7 @@
 
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function () {
+            document.getElementById('doneBtn').addEventListener('click', function() {
                 const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
                     window.history.back();
@@ -1863,7 +1945,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1942,7 +2024,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -1990,7 +2072,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -1999,7 +2081,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function (e) {
+                section.addEventListener('click', function(e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2015,7 +2097,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function (e) {
+                section.addEventListener('change', function(e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2063,7 +2145,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function (panelEl) {
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -2171,7 +2253,8 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest(
+                        '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -2226,7 +2309,7 @@
 
     <!-- script bagian floating question list -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
@@ -2418,8 +2501,8 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
 
     <script>
@@ -2438,7 +2521,7 @@
             $("body").css("overflow", "auto");
 
             // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function () {
+            setTimeout(function() {
                 $("#resultModal").hide();
             }, 300);
         }
@@ -2458,30 +2541,30 @@
             location.reload();
         }
 
-        $(document).on("click", ".modal-close, .btn-secondary", function () {
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
             closeModal();
         });
 
-        $(document).on("click", function (e) {
+        $(document).on("click", function(e) {
             if (e.target.id === "resultModal") {
                 closeModal();
             }
         });
 
-        $(document).on("keydown", function (e) {
+        $(document).on("keydown", function(e) {
             if (e.key === "Escape") {
                 closeModal();
             }
         });
 
-        function submitHelper(form, setId, tipe, button, againBtn) {
+        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
             let allAnswered = true;
 
-            $(`#${form} fieldset[data-q]`).each(function () {
+            $(`#${form} [data-q]`).each(function() {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
-                inputs.each(function () {
+                inputs.each(function() {
                     if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
                         isAnswered = true;
                     } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
@@ -2504,13 +2587,14 @@
                 return;
             }
 
-            // ✅ KIRIM FORM DATA
             let formData = new FormData($(`#${form}`)[0]);
             formData.append("tipe", tipe);
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
             formData.append("set_id", setId);
-            formData.append("kategori", 'reading');
+            formData.append("kategori", button.data('kategori'));
             formData.append("tipe_test", 'practice');
+            formData.append("jumlah_soal", button.data('count'));
+            formData.append("nama_tipe", namaTipe);
 
             $.ajax({
                 url: "/ielts/practice/check",
@@ -2518,20 +2602,20 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function (response) {
+                success: function(response) {
                     if (response.status === "ok") {
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
-
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
 
                         let correctCount = response.score;
                         let total = Object.keys(response.results).length;
                         let tableRows = "";
                         let questionNumber = 1;
 
-                        $.each(response.results, function (qid, data) {
+                        $.each(response.results, function(qid, data) {
                             let isCorrect = data.status === "correct";
 
                             // ✅ 2. Ambil CORRECT ANSWER dengan fallback
@@ -2546,14 +2630,15 @@
 
                             // ✅ 3. Highlight input aslinya
                             let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                            questionElement.find("input, select, textarea").each(function () {
+                            questionElement.find("input, select, textarea").each(function() {
                                 if ($(this).is("input[type=radio], input[type=checkbox]")) {
                                     if ($(this).is(":checked")) {
                                         if (isCorrect) {
                                             $(this).parent().addClass("correct");
                                         } else {
                                             $(this).parent().addClass("wrong");
-                                            $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
+                                                .parent().addClass("correct");
                                         }
                                     }
                                 } else {
@@ -2599,14 +2684,14 @@
                         showModal(`Score: ${correctCount} / ${total}`);
                     }
                 },
-                error: function (xhr) {
+                error: function(xhr) {
                     alert("Terjadi kesalahan: " + xhr.status);
                     console.log(xhr.responseText);
                 }
             });
         }
 
-        $(".try-again").on("click", function () {
+        $(".try-again").on("click", function() {
             location.reload();
         });
 
@@ -2615,18 +2700,18 @@
             const id = tab.id;
             const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
 
-            $(`#submit-${id}`).on("click", function (e) {
+            $(`#submit-${id}`).on("click", function(e) {
                 e.preventDefault();
                 submitHelper(
-                    `form-${id}`,            // form
-                    "yPLnQeqINAxbrnva",     // folder
-                    tipe,                   // tipe
+                    `form-${id}`, // form
+                    "yPLnQeqINAxbrnva", // folder
+                    tipe, // tipe
                     $(this),
-                    `again-${id}`           // again
+                    `again-${id}`,
+                    tab.title
                 );
             });
         });
-
     </script>
 
 

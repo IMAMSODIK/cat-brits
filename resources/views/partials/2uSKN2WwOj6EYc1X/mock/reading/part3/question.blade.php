@@ -1,121 +1,87 @@
                 <div class="passage-title">
-                    <h3>Plant ‘thermometer’ triggers springtime growth by measuring night-time heat</h3>
+                    <h3>HELIUM'S FUTURE UP IN THE AIR</h3>
                 </div>
                 <div class="passage-body">
-                    <h4><b>A photoreceptor molecule in plant cells has been found to have a second job as a thermometer
-                            after
-                            dark – allowing plants to read seasonal temperature changes. Scientists say the discovery
-                            could
-                            help
-                            breed crops that are more resilient to the temperatures expected to result from climate
-                            change.
-                        </b>
-                    </h4>
                     <h3>A</h3>
                     <p>
-                        An international team of scientists led by the University of Cambridge has discovered that the
-                        ‘thermometer’ molecule in plants enables them to develop according to seasonal temperature
-                        changes.
-                        Researchers have revealed that molecules called phytochromes — used by plants to detect light
-                        during
-                        the day actually change their function in darkness to become cellular temperature gauges that
-                        measure the heat of the night. The new findings, published in the journal Science, show that
-                        phytochromes control genetic switches in response to temperature as well as light to dictate
-                        plant
-                        development.
+                        In recent years we have all been exposed to dire media reports concerning the impending demise
+                        of global coal and oil reserves, but the depletion of another key non-renewable resource
+                        continues without receiving much press at all. Helium - an inert, odourless, monatomic element
+                        known to lay people as the substance that makes balloons float and voices squeak when inhaled -
+                        could be gone from this planet within a generation.
                     </p>
 
                     <h3>B</h3>
                     <p>
-                        At night, these molecules change states, and the pace at which they change is ‘directly
-                        proportional
-                        to temperature’, say scientists, who compare phytochromes to mercury in a thermometer. The
-                        warmer it
-                        is, the faster the molecular change — stimulating plant growth.
+                        Helium itself is not rare; there is actually a plentiful supply of it in the cosmos. In fact, 24
+                        per cent of our galaxy's elemental mass consists of helium, which makes it the second most
+                        abundant element in our universe. Because of its lightness, however, most helium vanished from
+                        our own planet many years ago. Consequently, only a minuscule proportion – 0.00052%, to be exact
+                        – remains in earth's atmosphere. Helium is the by-product of millennia of radioactive decay from
+                        the elements thorium and uranium. The helium is mostly trapped in subterranean natural gas
+                        bunkers and commercially extracted through a method known as fractional distillation.
                     </p>
 
                     <h3>C</h3>
                     <p>
-                        Farmers and gardeners have known for hundreds of years how responsive plants are to temperature:
-                        warm winters cause many trees and flowers to bud early, something humans have long used to
-                        predict
-                        weather and harvest times for the coming year. The latest research pinpoints for the first time
-                        a
-                        molecular mechanism in plants that reacts to temperature — often triggering the buds of spring
-                        we
-                        long to see at the end of winter.
+                        The loss of helium on Earth would affect society greatly. Defying the perception of it as a
+                        novelty substance for parties and gimmicks, the element actually has many vital applications in
+                        society. Probably the most well known commercial usage is in airships and blimps (non-flammable
+                        helium replaced hydrogen as the lifting gas du jour after the Hindenburg catastrophe in 1932,
+                        during which an airship burst into flames and crashed to the ground killing some passengers and
+                        crew). But helium is also instrumental in deep-sea diving, where it is blended with nitrogen to
+                        mitigate the dangers of inhaling ordinary air under high pressure; as a cleaning agent for
+                        rocket engines; and, in its most prevalent use, as a coolant for superconducting magnets in
+                        hospital MRI (magnetic resonance imaging) scanners.
                     </p>
 
                     <h3>D</h3>
                     <p>
-                        With weather and temperatures set to become ever more unpredictable due to climate change,
-                        researchers say the discovery that this light-sensing molecule also functions as the internal
-                        thermometer in plant cells could help us breed tougher crops. ‘It is estimated that agricultural
-                        yields will need to double by 2050, but climate change is a major threat to achieving this. Key
-                        crops such as wheat and rice are sensitive to high temperatures. Thermal stress reduces crop
-                        yields
-                        by around 10% for every one degree increase in temperature,’ says lead researcher Dr Philip
-                        Wigge
-                        from Cambridge’s Sainsbury Laboratory. ‘Discovering the molecules that allow plants to sense
-                        temperature has the potential to accelerate the breeding of crops resilient to thermal stress
-                        and
-                        climate change.’
+                        The possibility of losing helium forever poses the threat of a real crisis because its
+                        unique qualities are extraordinarily difficult, if not impossible to duplicate (certainly, no
+                        biosynthetic ersatz product is close to approaching the point of feasibility for helium, even
+                        as similar developments continue apace for oil and coal). Helium is even cheerfully
+                        derided as a "loner" element since it does not adhere to other molecules like its cousin,
+                        hydrogen. According to Dr. Lee Sobotka, helium is the "most noble of gases, meaning it's
+                        very stable and non-reactive for the most part (...) it has a closed electronic configuration,
+                        a very tightly bound atom. It is this coveting of its own electrons that prevents
+                        combination with other elements". Another important attribute is helium's unique boiling
+                        point, which is lower than that for any other element. The worsening global shortage
+                        could render millions of dollars of high-value, life-saving equipment totally useless. The
+                        dwindling supplies have already resulted in the postponement of research and
+                        development projects in physics laboratories and manufacturing plants around the world.
+                        There is an enormous supply and demand imbalance partly brought about by the
+                        expansion of high-tech manufacturing in Asia.
                     </p>
 
                     <h3>E</h3>
                     <p>
-                        In their active state, phytochrome molecules bind themselves to DNA to restrict plant growth.
-                        During
-                        the day, sunlight activates the molecules, slowing down growth. If a plant finds itself in
-                        shade,
-                        phytochromes are quickly inactivated — enabling it to grow faster to find sunlight again. This
-                        is
-                        how plants compete to escape each other’s shade. ‘Light-driven changes to phytochrome activity
-                        occur
-                        very fast, in less than a second,’ says Wigge. </p>
-                    <p>At night, however, it’s a different story. Instead of
-                        a rapid deactivation following sundown, the molecules gradually change from their active to
-                        inactive
-                        state. This is called ‘dark reversion’. ‘Just as mercury rises in a thermometer, the rate at
-                        which
-                        phytochromes revert to their inactive state during the night is a direct measure of
-                        temperature,’
-                        says Wigge.
+                        The source of the problem is the Helium Privatisation Act (HPA), an American law
+                        passed in 1996 that requires the U.S. National Helium Reserve to liquidate its helium
+                        assets by 2015 regardless of the market price. Although intended to settle the original
+                        cost of the reserve by a U.S. Congress ignorant of its ramifications, the result of this fire
+                        sale is that global helium prices are so artificially deflated that few can be bothered
+                        recycling the substance or using it judiciously. Deflated values also mean that natural
+                        gas extractors see no reason to capture helium. Much is lost in the process of extraction.
+                        As Sobotka notes: "[t]he government had the good vision to store helium, and the
+                        question now is: Will the corporations have the vision to capture it when extracting
+                        natural gas, and consumers the wisdom to recycle? This takes long-term vision because
+                        present market forces are not sufficient to compel prudent practice". For Nobel-prize
+                        laureate Robert Richardson, the U.S. government must be prevailed upon to repeal its
+                        privatisation policy as the country supplies over 80 per cent of global helium, mostly from
+                        the National Helium Reserve. For Richardson, a twenty- to fifty-fold increase in prices
+                        would provide incentives to recycle.
                     </p>
 
                     <h3>F</h3>
-                    <p>‘The lower the temperature, the slower the rate at which phytochromes revert to inactivity, so
-                        the molecules spend more time in their active, growth-suppressing state. This is why plants are
-                        slower to grow in winter. Warm temperatures accelerate dark reversion, so that phytochromes
-                        rapidly reach an inactive state and detach themselves from the plant’s DNA — allowing genes to
-                        be expressed and plant growth to resume.’ Wigge believes phytochrome thermo-sensing evolved at a
-                        later stage, and co-opted the biological network already used for light-based growth during the
-                        downtime of night.
+                    <p>
+                        A number of steps need to be taken in order to avert a costly predicament in the coming
+                        decades. Firstly, all existing supplies of helium ought to be conserved and released only
+                        by permit, with medical uses receiving precedence over other commercial or recreational
+                        demands. Secondly, conservation should be obligatory and enforced by a regulatory
+                        agency. At the moment some users, such as hospitals, tend to recycle diligently while
+                        others, such as NASA, squander massive amounts of helium. Lastly, research into
+                        alternatives to helium must begin in earnest.
+                    </p>
 
-                    </p>
-                    <h3>G</h3>
-                    <p>Some plants mainly use day length as an indicator of the season. Other species, such as
-                        daffodils, have considerable temperature sensitivity, and can flower months in advance during a
-                        warm winter. In fact, the discovery of the dual role of phytochromes provides the science behind
-                        a well-known rhyme long used to predict the coming season: oak before ash we’ll have a splash,
-                        ash before oak we’re in for a soak.</p>
-                    <p>
-                        Wigge explains: ‘Oak trees rely much more on temperature, likely using phytochromes as
-                        thermometers to dictate development, whereas ash trees rely on measuring day length to determine
-                        their seasonal timing. A warmer spring, and consequently a higher likeliness of a hot summer,
-                        will result in oak leafing before ash. A cold spring will see the opposite. As the British know
-                        only too well, a colder summer is likely to be a rain-soaked one.’
-                    </p>
-                    <h3>H</h3>
-                    <p>
-                        The new findings are the culmination of twelve years of research involving scientists from
-                        Germany, Argentina and the US, as well as the Cambridge team. The work was done in a model
-                        system, using a mustard plant called Arabidopsis, but Wigge says the phytochrome genes necessary
-                        for temperature sensing are found in crop plants as well. ‘Recent advances in plant genetics now
-                        mean that scientists are able to rapidly identify the genes controlling these processes in crop
-                        plants, and even alter their activity using precise molecular “scalpels”,’ adds Wigge.
-                        ‘Cambridge is uniquely well-positioned to do this kind of research as we have outstanding
-                        collaborators nearby who work on more applied aspects of plant biology, and can help us transfer
-                        this new knowledge into the field.’
-                    </p>
                 </div>

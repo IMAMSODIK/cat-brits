@@ -54,7 +54,7 @@
                     <td>
                         <span class="q-item" data-q="1">
                             <span class="q-number-box">1</span>
-                            <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text" />
+                            <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text " />
                         </span>
                         November
                     </td>

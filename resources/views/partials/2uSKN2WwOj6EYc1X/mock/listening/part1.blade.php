@@ -2,113 +2,161 @@
 <fieldset class="q-item">
     <h3>Questions 1-10</h3>
     <p class="lead"><i>Complete the notes below.</i></p>
-    <p>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</p>
+    <p>Write <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> for each answer.</p>
 </fieldset>
-<fieldset class="q-item">
-    <p><b>JUNIOR CYCLE CAMP</b></p>
-    <p>The course focuses on skills and safety</p>
-    <ul>
-        <li>Charlie would be placed in Level 5.</li>
-        <li>
-            <div class="q-list" data-q="1">
-                First of all, children at this level are taken to practise in a
+
+<table cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px; width: 100%;">
+    <tr>
+        <th colspan="2">Harry's Hire Company</th>
+    </tr>
+
+    <tr>
+        <td><b>Hire for:</b></td>
+        <td><i><b>Birthday party</b></i></td>
+    </tr>
+
+
+    <tr>
+        <td><u><b>Equipment Hire:</b></u></td>
+        <td></td>
+    </tr>
+
+
+    <tr>
+        <td><b>Day and date of event:</b></td>
+        <td>
+            <span class="q-item" data-q="1">
                 <span class="q-number-box">1</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" placeholder="">
-            </div>
-        </li>
-    </ul>
-    <b>Instructors</b>
-    <ul>
-        <li>
-            <div class="q-list" data-q="2">
-                Instructors wear
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" />
+            </span>
+            November
+        </td>
+    </tr>
+
+    <tr>
+        <td><b>Number attending event:</b></td>
+        <td>
+            <div class="q-item" data-q="2">
                 <span class="q-number-box">2</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" placeholder="">
-                shirts.
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" />
             </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="3">
-                A
+        </td>
+    </tr>
+    <tr>
+        <td><b>Rental:</b></td>
+        <td>5 dozen dinner plates, bowls</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>5 dozen sets of: <span class="q-item" data-q="3">
                 <span class="q-number-box">3</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" placeholder="">
-                is required and training is given.
-            </div>
-        </li>
-    </ul>
-    <b>Classes</b>
-    <ul>
-        <li>The size of the classes is limited.</li>
-        <li>
-            <div class="q-list" data-q="4">
-                There are quiet times during the morning for a
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" />
+            </span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>40 plastic: <span class="q-item" data-q="4">
                 <span class="q-number-box">4</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" placeholder="">
-                or a game.
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="5">
-                Classes are held even if there is
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" />
+            </span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>4 dozen each small / medium glasses</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Six: <span class="q-item" data-q="5">
                 <span class="q-number-box">5</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" placeholder="">
-                .
-            </div>
-        </li>
-    </ul>
-    <b>What to bring</b>
-    <ul>
-        <li>a change of clothing</li>
-        <li>
-            <div class="q-list" data-q="6">
-                a
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" />
+            </span></td>
+    </tr>
+    <tr>
+        <td><b>Costings:</b></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td><b>Weekend Package:</b></td>
+        <td>5 p.m Fri - 10 a.m Mon: $1600 + tax</td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="q-item" data-q="6">
                 <span class="q-number-box">6</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text"
-                    placeholder="">
-                shoes (not sandals)
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="7">
-                Charlie’s
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text" />
+            </span>
+            <b>Package:</b>
+        </td>
+        <td>
+            5 p.m Sat - 10 a.m Mon: $1350 + tax
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="q-item" data-q="7">
                 <span class="q-number-box">7</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text"
-                    placeholder="">
-            </div>
-        </li>
-    </ul>
-    <b>Day 1</b>
-    <ul>
-        <li>Charlie should arrive at 9.20 am on the first day.</li>
-        <li>
-            <div class="q-list" data-q="8">
-                Before the class, his
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text" />
+            </span>
+            <b>Package:</b>
+        </td>
+        <td>
+            $50 (within 10 km)
+        </td>
+    </tr>
+    <tr>
+        <td><b>Breakage Insurance:</b></td>
+        <td>$60</td>
+    </tr>
+
+    <tr>
+        <td> <b>replacement cost:</b></td>
+        <td>plates, bowls - $3.55 per item</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>small glasses
+            <span class="q-item" data-q="8">
                 <span class="q-number-box">8</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text"
-                    placeholder="">
-                will be checked.
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="9">
-                He should then go to the
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text" />
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>medium glasses - $4.40 per item</td>
+    </tr>
+    <tr>
+        <td><b>Costumer Detail:</b></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Full name:</td>
+        <td>
+            <div class="q-item" data-q="9">
                 <span class="q-number-box">9</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text"
-                    placeholder="">
-                to meet his class instructor.
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text" />
             </div>
-        </li>
-    </ul>
-    <b>Costs</b>
-    <ul>
-        <li>
-            <div class="q-list" data-q="10">
-                The course costs $
+        </td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td>
+            28B Sandstone Close, Martinsborough
+        </td>
+    </tr>
+
+    <tr>
+        <td>Contact number:</td>
+        <td>
+            084
+            <span class="q-item" data-q="10">
                 <span class="q-number-box">10</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text"
-                    placeholder="">
-                per week.
-            </div>
-        </li>
-    </ul>
-</fieldset>
+                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text" />
+            </span>
+        </td>
+    </tr>
+</table>

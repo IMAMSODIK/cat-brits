@@ -15,10 +15,10 @@ class CambridgeIELTS16AcademicTest3 extends Seeder
             "kategori" => "reading",
             "questions" => [
                 "tfng" => ["FALSE", "NOT GIVEN", "FALSE", "TRUE", "TRUE", "NOT GIVEN", "TRUE", "TRUE", "NOT GIVEN", "FALSE", "FALSE"],
-                "summary_completion" => ["lightweight", "bronze", "levels", "hull", "triangular", "music", "grain", "towboats", "['microorganisms', 'micro-organisms']", "reindeer", "insects"],
+                "summary_completion" => ["lightweight", "bronze", "levels", "hull", "triangular", "music", "grain", "towboats", "[microorganisms, micro-organisms]", "reindeer", "insects"],
                 "matching_information" => ["D", "C", "F", "H", "G", "B", "H", "D", "G", "C", "A"],
-                "two_choices" => ["['b','c']", "['a','c']"],
-                "sc" => ["['warm', 'warm winter']", "summer", "['mustard plant', 'mustard plants', 'mustard']"]
+                "two_choices" => ["[b,c]", "[a,c]"],
+                "sc" => ["[warm, warm winter]", "summer", "[mustard plant, mustard plants, mustard]"]
             ]
         ];
 
@@ -43,7 +43,7 @@ class CambridgeIELTS16AcademicTest3 extends Seeder
             "kategori" => "listening",
             "questions" => [
                 "nc" => ["park", "blue", "reference", "story", "rain", "snack", "medication", "helmet", "tent", "199", "grandmother", "decade", "equipment", "economic", "basic", "round", "bone", "rough", "style", "sheep"],
-                "two_choices" => ["['a','c']", "['b','c']", "['c','d']", "['c','e']"],
+                "two_choices" => ["[a,c]", "[b,c]", "[c,d]", "[c,e]"],
                 "oc" => ["C", "A", "B", "A", "A", "C"],
                 "matching_information" => ["d", "f", "a", "h", "c", "g"]
             ]
