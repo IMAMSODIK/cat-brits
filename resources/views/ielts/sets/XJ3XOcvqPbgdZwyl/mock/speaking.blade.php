@@ -130,7 +130,6 @@
         }
 
         .btn-primary {
-
             background: var(--primary);
             border-color: var(--primary);
             color: #fff;
@@ -933,7 +932,6 @@
     </style>
 </head>
 
-
 <body>
     <header class="app-header" role="banner">
         <div class="header-row" aria-label="Header CAT Bahasa Inggris">
@@ -954,10 +952,10 @@
                     <span id="timeText">00:00</span>
                 </div> --}}
 
-                {{-- <button id="doneBtn" class="btn btn-danger">
+                <button onclick="confirmExit()" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
-                    <span class="label">Finish</span>
-                </button> --}}
+                    <span class="label">Close</span>
+                </button>
             </div>
         </div>
     </header>
@@ -1054,10 +1052,14 @@
                                                     </td>
                                                     <td>
                                                         <div class="action-buttons">
-                                                            <a href="{{ route('mock-test.show', $session) }}"
+                                                            {{-- <a href="{{ route('mock-test.show', $session) }}"
                                                                 class="btn btn-sm btn-info">
                                                                 <i class="fas fa-eye me-1"></i>View
-                                                            </a>
+                                                            </a> --}}
+                                                            <button class="btn btn-info btn-sm btn-detail"
+                                                                data-id="{{ $session->id }}">
+                                                                <i class="fa fa-eye"></i> Details
+                                                            </button>
                                                             @if ($session->status === 'accepted' && $session->canStart())
                                                                 <a href="{{ route('mock-test.start', $session) }}"
                                                                     class="btn btn-sm btn-success">
@@ -1131,10 +1133,14 @@
                                         </div>
 
                                         <div class="action-buttons">
-                                            <a href="{{ route('mock-test.show', $session) }}"
+                                            {{-- <button href="{{ route('mock-test.show', $session) }}"
                                                 class="btn btn-sm btn-info">
                                                 <i class="fas fa-eye me-1"></i>Details
-                                            </a>
+                                            </a> --}}
+                                            <button class="btn btn-info btn-sm btn-detail"
+                                                data-id="{{ $session->id }}">
+                                                <i class="fa fa-eye"></i> Details
+                                            </button>
                                             @if ($session->status === 'accepted' && $session->canStart())
                                                 <a href="{{ route('mock-test.start', $session) }}"
                                                     class="btn btn-sm btn-success">
@@ -1161,6 +1167,7 @@
         </div>
     </div>
 
+    {{-- modal request session --}}
     <div class="modal fade" id="requestSessionModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -1195,6 +1202,7 @@
                                 <i class="fas fa-heading"></i> Session Title
                             </label>
                             <input type="text" name="title" id="title" class="form-control"
+                                value="Mock Test Speaking {{ $set->name }}"
                                 placeholder="e.g., IELTS Speaking Practice Test" required>
                             <div class="invalid-feedback">Please enter a session title.</div>
                         </div>
@@ -1212,7 +1220,7 @@
                                 <i class="fas fa-calendar-alt"></i> Proposed Time
                             </label>
                             <input type="datetime-local" name="proposed_time" id="proposed_time"
-                                class="form-control" required min="{{ date('Y-m-d\TH:i') }}">
+                                class="form-control" required step="60">
                             <div class="invalid-feedback">Please select a future date and time.</div>
                         </div>
 
@@ -1220,13 +1228,14 @@
                             <label for="duration_minutes" class="form-label">
                                 <i class="fas fa-clock"></i> Duration
                             </label>
-                            <select name="duration_minutes" id="duration_minutes" class="form-select" required>
+                            <input name="duration_minutes" id="duration_minutes" class="form-control" type="text" readonly value="30 Minutes">
+                            {{-- <select name="duration_minutes" id="duration_minutes" class="form-select" required>
                                 <option value="30">30 minutes</option>
                                 <option value="45">45 minutes</option>
                                 <option value="60" selected>60 minutes</option>
                                 <option value="90">90 minutes</option>
                                 <option value="120">120 minutes</option>
-                            </select>
+                            </select> --}}
                         </div>
 
                         <div class="form-actions">
@@ -1239,6 +1248,30 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- modal detial session --}}
+    <div class="modal fade" id="detailModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Session Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body" id="detailModalContent">
+                    <div class="p-5 text-center">
+                        <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -1267,6 +1300,23 @@
                 });
             });
         });
+
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
+            }
+        }
+
+        document.getElementById('infoBtn').addEventListener('click', function() {
+            alert(
+                'Instructions:\n' +
+                '- This is a mock Speaking Test conducted via video call\n' +
+                '- You will speak directly with a teacher/examiner\n' +
+                '- Make sure your microphone and camera are working properly\n' +
+                '- Answer clearly and confidently\n' +
+                '- The test will end when the teacher finishes the session'
+            );
+        });
     </script>
 
     <script>
@@ -1286,13 +1336,19 @@
 
             function setDefaultDateTime() {
                 const now = new Date();
+
                 const tomorrow = new Date(now);
                 tomorrow.setDate(tomorrow.getDate() + 1);
-                tomorrow.setHours(10, 0, 0, 0);
 
-                const formattedDateTime = tomorrow.toISOString().slice(0, 16);
-                $('#proposed_time').val(formattedDateTime);
+                // KONVERSI KE LOCAL DATETIME (BUKAN UTC)
+                const localDateTime = new Date(
+                    tomorrow.getTime() - tomorrow.getTimezoneOffset() * 60000
+                ).toISOString().slice(0, 16);
+
+                $('#proposed_time').val(localDateTime);
+                $('#proposed_time').attr('min', localDateTime);
             }
+
 
             function validateForm() {
                 let isValid = true;
@@ -1357,7 +1413,7 @@
                 const counter = $(this).parent().find('.char-counter') ||
                     $(
                         '<small class="char-counter text-muted" style="display:block; margin-top:5px;"></small>'
-                        )
+                    )
                     .insertAfter($(this));
 
                 counter.text(`${charCount}/500 characters`);
@@ -1462,6 +1518,37 @@
         });
     </script>
 
+    <script>
+        // aksi detial
+        $(document).on("click", ".btn-detail", function() {
+            let id = $(this).data("id");
+            console.log(id);
+
+            $("#detailModalContent").html(`
+                <div class="p-5 text-center">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </div>
+            `);
+
+            $("#detailModal").modal("show");
+
+            $.ajax({
+                url: "/mock-test/" + id + "/show",
+                method: "GET",
+                success: function(res) {
+                    $("#detailModalContent").html(res.html);
+                },
+                error: function() {
+                    $("#detailModalContent").html(`
+                        <div class="alert alert-danger m-3">
+                            <i class="fa fa-exclamation-circle me-2"></i>
+                            Failed to load session details.
+                        </div>
+                    `);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

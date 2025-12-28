@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
     // mock test video call
     Route::post('/mock-test/store', [VideoCallController::class, 'store'])->name('mock-test.post');
     Route::get('/mock-test/{mockTest}', [VideoCallController::class, 'show'])->name('mock-test.show');
+    Route::delete('/mock-test/{mockTest}/destroy', [VideoCallController::class, 'destroy'])->name('mock-test.destroy');
 
     Route::post('/mock-test/{mockTest}/accept', [VideoCallController::class, 'accept'])->name('mock-test.accept');
     Route::post('/mock-test/{mockTest}/reject', [VideoCallController::class, 'reject'])->name('mock-test.reject');
@@ -118,9 +119,15 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/profile', [ProfileController::class, 'index']);
+    // Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 
+    Route::redirect('/toefl', '/coming-soon');
+    Route::redirect('/ge', '/coming-soon');
+    Route::redirect('/sat', '/coming-soon');
 
-    Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
+    Route::get('/coming-soon', function(){
+        return view('pages.coming_soon');
+    });
 });
 
 Route::get('/test', function () {

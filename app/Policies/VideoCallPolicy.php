@@ -56,7 +56,7 @@ class VideoCallPolicy
      */
     public function delete(User $user, VideoCall $videoCall): bool
     {
-        return false;
+        return true;
     }
 
     /**

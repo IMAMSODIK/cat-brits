@@ -36,20 +36,13 @@
                     </div>
                 </li>
 
-                <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
-                        href="#">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#fill-home') }}"></use>
-                        </svg><span class="lan-3">Dashboard </span></a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="index.html">Default</a></li>
-                        <li><a href="dashboard-02.html">Ecommerce</a></li>
-                        <li><a href="dashboard-03.html">Project</a></li>
-                    </ul>
+                <li class="sidebar-list">
+                    <a class="sidebar-link sidebar-title link-nav" href="/dashboard">
+                        <i class="fa fa-home text-white" aria-hidden="true"></i>
+                        <span>Dashboard</span>
+                    </a>
                 </li>
+                
                 <li class="sidebar-main-title">
                     <div>
                         <h6 class="">Data</h6>
@@ -63,7 +56,7 @@
                             <i class="fa fa-users text-white"></i>
                             <span>Teachers</span>
                         </a>
-                    </li>                    
+                    </li>
                 @endif
 
                 @if (in_array(auth()->user()->role, ['admin', 'teacher']))

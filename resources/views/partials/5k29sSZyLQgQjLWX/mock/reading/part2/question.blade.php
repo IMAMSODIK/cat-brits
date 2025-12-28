@@ -1,0 +1,71 @@
+            <div class="passage-title">
+                <h3>Why zoos are good</h3>
+                <h4>Scientist David Hone makes the case for zoos</h4>
+            </div>
+            <div class="passage-body">
+                <h3>A</h3>
+                <p>
+                    In my view, it is perfectly possible for many species of animals living in zoos or wildlife
+                    parks to have a quality of life as high as, or higher than, in the wild. Animals in good zoos
+                    get a varied and high-quality diet with all the supplements required, and any illnesses they
+                    might have will be treated. Their movement might be somewhat restricted, but they have a safe
+                    environment in which to live, and they are spared bullying and social ostracism by others of
+                    their kind. They do not suffer from the threat or stress of predators, or the irritation and
+                    pain of parasites or injuries. The average captive animal will have a greater life expectancy
+                    compared with its wild counterpart, and will not die of drought, of starvation or in the jaws of
+                    a predator. A lot of very nasty things happen to truly ‘wild’ animals that simply don’t happen
+                    in good zoos, and to view a life that is ‘free’ as one that is automatically ‘good’ is, I think,
+                    an error. Furthermore, zoos serve several key purposes.
+                </p>
+
+                <h3>B</h3>
+                <p>
+                    Firstly, zoos aid conservation. Colossal numbers of species are becoming extinct across the
+                    world, and many more are increasingly threatened and therefore risk extinction. Moreover, some
+                    of these collapses have been sudden, dramatic and unexpected, or were simply discovered very
+                    late in the day. A species protected in captivity can be bred up to provide a reservoir
+                    population against a population crash or extinction in the wild. A good number of species only
+                    exist in captivity, with many of these living in zoos. Still more only exist in the wild because
+                    they have been reintroduced from zoos, or have wild populations that have been boosted by
+                    captive bred animals. Without these efforts there would be fewer species alive today. Although
+                    reintroduction successes are few and far between, the numbers are increasing, and the very fact
+                    that species have been saved or reintroduced as a result of captive breeding proves the value of
+                    such initiatives.
+                </p>
+
+                <h3>C</h3>
+                <p>
+                    Zoos also provide education. Many children and adults, especially those in cities, will never
+                    see a wild animal beyond a fox or pigeon. While it is true that television documentaries are
+                    becoming ever more detailed and impressive, and many natural history specimens are on display in
+                    museums, there really is nothing to compare with seeing a living creature in the flesh, hearing
+                    it, smelling it, watching what it does and having the time to absorb details. That alone will
+                    bring a greater understanding and perspective to many, and hopefully give them a greater
+                    appreciation for wildlife, conservation efforts and how they can contribute.
+                </p>
+
+                <h3>D</h3>
+                <p>
+                    In addition to this, there is also the education that can take place in zoos through signs,
+                    talks and presentations which directly communicate information to visitors about the animals
+                    they are seeing and their place in the world. This was an area where zoos used to be lacking,
+                    but they are now increasingly sophisticated in their communication and outreach work. Many zoos
+                    also work directly to educate conservation workers in other countries, or send their animal
+                    keepers abroad to contribute their knowledge and skills to those working in zoos and reserves,
+                    thereby helping to improve conditions and reintroductions all over the world.
+                </p>
+                <h3>E</h3>
+                <p>
+                    Zoos also play a key role in research. If we are to save wild species and restore and repair
+                    ecosystems we need to know about how key species live, act and react. Being able to undertake
+                    research on animals in zoos where there is less risk and fewer variables means real changes can
+                    be effected on wild populations. Finding out about, for example, the oestrus cycle of an animal
+                    of its breeding rate helps us manage wild populations. Procedures such as capturing and moving
+                    at-risk or dangerous individuals are bolstered by knowledge gained in zoos about doses for
+                    anaesthetics, and by experience in handling and transporting animals. This can make a real
+                    difference to conservation efforts and to the reduction of human-animal conflicts, and can
+                    provide a knowledge base for helping with the increasing threats of habitat destruction and
+                    other problems.
+                </p>
+
+            </div>

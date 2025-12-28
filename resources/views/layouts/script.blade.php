@@ -18,6 +18,8 @@
 <script src="{{ asset('dashboard_assets/assets/js/header-slick.js') }}"></script>
 {{-- <script src="{{ asset('dashboard_assets/assets/js/chart/apex-chart/apex-chart.js') }}"></script> --}}
 <script src="{{ asset('dashboard_assets/assets/js/chart/apex-chart/stock-prices.js') }}"></script>
+<script src="{{ asset('dashboard_assets/assets/js/chart/apex-chart/apex-chart.js') }}"></script>
+<script src="{{ asset('dashboard_assets/assets/js/chart/apex-chart/moment.min.js') }}"></script>
 <!-- Range Slider js-->
 <script src="{{ asset('dashboard_assets/assets/js/range-slider/rSlider.min.js') }}"></script>
 <script src="{{ asset('dashboard_assets/assets/js/rangeslider/rangeslider.js') }}"></script>

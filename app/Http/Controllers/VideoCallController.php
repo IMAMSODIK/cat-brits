@@ -19,7 +19,6 @@ class VideoCallController extends Controller
                 'title' => 'required|string|max:255',
                 'description' => 'nullable|string',
                 'proposed_time' => 'required|date|after:now',
-                'duration_minutes' => 'required|integer|min:15|max:180',
             ]);
 
             $proposedTime = \Carbon\Carbon::parse($request->proposed_time)
@@ -31,7 +30,7 @@ class VideoCallController extends Controller
                 'title' => $request->title,
                 'description' => $request->description,
                 'proposed_time' => $proposedTime,
-                'duration_minutes' => $request->duration_minutes,
+                'duration_minutes' => 30,
                 'status' => 'pending',
             ]);
 
@@ -47,6 +46,15 @@ class VideoCallController extends Controller
                 'message' => 'Server error: ' . $e->getMessage()
             ], 500);
         }
+    }
+
+    public function destroy(VideoCall $mockTest)
+    {
+        $this->authorize('delete', $mockTest);
+
+        $mockTest->delete();
+
+        return back()->with('success', 'Mock test session deleted successfully!');
     }
 
     public function accept(Request $request, VideoCall $mockTest)

@@ -71,6 +71,30 @@ class DatabaseSeeder extends Seeder
             'email' => 'lamine@gmail.com',
         ]);
 
+        User::create([
+            'name' => 'Jaka Permana',
+            'password' => bcrypt('12345'),
+            'role' => 'student',
+            'verification_status' => 0,
+            'email' => 'jaka@gmail.com',
+        ]);
+
+        User::create([
+            'name' => 'Ilham Sayuti',
+            'password' => bcrypt('12345'),
+            'role' => 'student',
+            'verification_status' => 0,
+            'email' => 'ilham@gmail.com',
+        ]);
+
+        User::create([
+            'name' => 'Ridho Ilahi',
+            'password' => bcrypt('12345'),
+            'role' => 'student',
+            'verification_status' => 0,
+            'email' => 'ridhjo@gmail.com',
+        ]);
+
         $this->call([
             SetSoalSeeder::class,
             SoalSeeder::class,
