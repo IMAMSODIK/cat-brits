@@ -153,9 +153,9 @@ class IeltsController extends Controller
                         return view('ielts.categories', $data);
                         break;
 
-                    // case 'kqQSrG7Rs5yw1AuD':
-                    //     return view('ielts.categories', $data);
-                    //     break;
+                        // case 'kqQSrG7Rs5yw1AuD':
+                        //     return view('ielts.categories', $data);
+                        //     break;
                 }
             }
 
@@ -289,9 +289,9 @@ class IeltsController extends Controller
                 $results = [];
                 $score = 0;
                 $payloadKeys = collect($r->all())
-                        ->keys()
-                        ->filter(fn($k) => str_starts_with($k, $setId . '-'))
-                        ->values();
+                    ->keys()
+                    ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+                    ->values();
 
                 if ($tipe === "two_choices") {
                     $answers = (array) $r->input($payloadKeys[0], []);
@@ -313,8 +313,7 @@ class IeltsController extends Controller
                         ->where('tipe_soal', $tipe)
                         ->whereIn('id_soal', array_keys($soalIds))
                         ->get();
-                }
-                else{
+                } else {
                     $soalIds = $payloadKeys->toArray();
                     $soals = Soal::where('set_id', $setId)
                         ->where('kategori', $kategori)
@@ -327,11 +326,11 @@ class IeltsController extends Controller
                 $score = 0;
 
                 foreach ($soalIds as $qid) {
-                    if($tipe == "two_choices"){
+                    if ($tipe == "two_choices") {
                         $key = array_search($qid, $soalIds, true);
                         $rawUser = $qid;
                         $soal = $soals->firstWhere('id_soal', $key);
-                    }else{
+                    } else {
                         $rawUser = $r->input($qid, '');
                         $soal = $soals->firstWhere('id_soal', $qid);
                     }
@@ -735,7 +734,6 @@ class IeltsController extends Controller
                         ];
 
                         $q++;
-
                     }
                 } else {
                     $jawaban = strtolower(trim((string) $answer)) === strtolower(trim((string) $soal->jawaban_benar));
@@ -752,8 +750,6 @@ class IeltsController extends Controller
 
                     $q++;
                 }
-
-
             }
             $setSoal = SetSoal::where('kode', $id)->first();
 
@@ -765,6 +761,8 @@ class IeltsController extends Controller
                 'tipe' => 'mixed',
                 'set_soal_id' => $setSoal?->id,
                 'score' => $score,
+                'jumlah_soal' => 40,
+                'nama_tipe' => "Mock Test",
             ]);
 
             foreach ($results as $key => $res) {
@@ -788,7 +786,6 @@ class IeltsController extends Controller
                 'score' => $score,
                 'results' => $results,
             ]);
-
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json([
@@ -796,7 +793,6 @@ class IeltsController extends Controller
                 'message' => $e->getMessage()
             ], $e->getCode() ?: 500);
         }
-
     }
 
 
