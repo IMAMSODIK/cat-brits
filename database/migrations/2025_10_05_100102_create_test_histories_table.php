@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kategori');
             $table->string('tipe');
             $table->unsignedBigInteger('set_soal_id');
+            $table->smallInteger('score_conversion')->default(0);
             $table->integer('score')->default(0);
             $table->integer('jumlah_soal')->default(0);
             $table->string('nama_tipe');

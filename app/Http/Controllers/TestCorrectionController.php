@@ -23,7 +23,8 @@ class TestCorrectionController extends Controller
                 'video_request' => Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get(),
                 'writing_request' => Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get(),
                 'pendingSessions' => VideoCall::pending()->with('student')->get(),
-                'upcomingSessions' => $user->teacherSessions()->accepted()->upcoming()->with('student')->get()
+                'upcomingSessions' => $user->teacherSessions()->accepted()->upcoming()->with('student')->get(),
+                'completedSessions' => VideoCall::where("teacher_id", $user->id)->where("status", "completed")->with('student')->get()
             ];
 
             return view('test_correction.index', $data);

@@ -25,6 +25,52 @@ class IeltsController extends Controller
 {
     use AuthorizesRequests;
 
+    private function getScore($kategori, $correctAnswers) {
+        $readingScoreMap = [
+            ['min' => 39, 'max' => 40, 'score' => 9.0],
+            ['min' => 37, 'max' => 38, 'score' => 8.5],
+            ['min' => 35, 'max' => 36, 'score' => 8.0],
+            ['min' => 33, 'max' => 34, 'score' => 7.5],
+            ['min' => 30, 'max' => 32, 'score' => 7.0],
+            ['min' => 27, 'max' => 29, 'score' => 6.5],
+            ['min' => 23, 'max' => 26, 'score' => 6.0],
+            ['min' => 19, 'max' => 22, 'score' => 5.5],
+            ['min' => 15, 'max' => 18, 'score' => 5.0],
+            ['min' => 13, 'max' => 14, 'score' => 4.5],
+            ['min' => 10, 'max' => 12, 'score' => 4.0],
+            ['min' => 8, 'max' => 9, 'score' => 3.5],
+            ['min' => 6, 'max' => 7, 'score' => 3.0],
+            ['min' => 4, 'max' => 5, 'score' => 2.5],
+        ];
+
+        $listeningScoreMap = [
+            ['min' => 39, 'max' => 40, 'score' => 9.0],
+            ['min' => 37, 'max' => 38, 'score' => 8.5],
+            ['min' => 35, 'max' => 36, 'score' => 8.0],
+            ['min' => 32, 'max' => 34, 'score' => 7.5],
+            ['min' => 30, 'max' => 31, 'score' => 7.0],
+            ['min' => 26, 'max' => 29, 'score' => 6.5],
+            ['min' => 23, 'max' => 25, 'score' => 6.0],
+            ['min' => 18, 'max' => 22, 'score' => 5.5],
+            ['min' => 16, 'max' => 17, 'score' => 5.0],
+            ['min' => 13, 'max' => 15, 'score' => 4.5],
+            ['min' => 11, 'max' => 12, 'score' => 4.0],
+            ['min' => 8, 'max' => 10, 'score' => 3.5],
+            ['min' => 6, 'max' => 7, 'score' => 3.0],
+            ['min' => 4, 'max' => 5, 'score' => 2.5],
+        ];
+
+        $map = $kategori === 'reading' ? $readingScoreMap : $listeningScoreMap;
+
+        foreach ($map as $item) {
+            if ($correctAnswers >= $item['min'] && $correctAnswers <= $item['max']) {
+                return $item['score'];
+            }
+        }
+
+        return 0;
+    }
+
     public function index(Request $r)
     {
         try {
@@ -152,7 +198,10 @@ class IeltsController extends Controller
                     case '0XIGAcSMlticROES':
                         return view('ielts.categories', $data);
                         break;
-
+                    
+                    case 'cwwPbLf22UsNEqIp':
+                        return view('ielts.categories', $data);
+                        break;
                         // case 'kqQSrG7Rs5yw1AuD':
                         //     return view('ielts.categories', $data);
                         //     break;
@@ -570,7 +619,7 @@ class IeltsController extends Controller
             }
 
             $setSoal = SetSoal::where('kode', $setId)->first();
-
+            $scoreConversion = $this->getScore($kategori, $score);
             $history = TestHistory::create([
                 'student_id' => Auth::id(),
                 'teacher_id' => null,
@@ -578,6 +627,7 @@ class IeltsController extends Controller
                 'kategori' => $kategori,
                 'tipe' => 'mixed',
                 'set_soal_id' => $setSoal?->id,
+                'score_conversion' => $scoreConversion,
                 'score' => $score,
                 'jumlah_soal' => 40,
                 'nama_tipe' => "Mock Test",
