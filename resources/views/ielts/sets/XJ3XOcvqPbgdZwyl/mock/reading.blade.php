@@ -933,9 +933,9 @@
 
         .floating-questions.expanded .fq-body {
             max-height: 70vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
 
         .fq-list {
@@ -1003,17 +1003,6 @@
                 height: 44px;
                 font-size: 14px;
             }
-        }
-
-        .fq-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
-}
-
-
-        .fq-body {
-            -webkit-overflow-scrolling: touch;
         }
     </style>
 
@@ -1159,28 +1148,34 @@
 
     <style>
         .floating-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 10px;
-            background-color: #fccb2a;
-            color: rgb(255, 255, 255);
-            border: none;
-            border-radius: 10%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 10px;
+    background-color: #fccb2a;
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 1000;
+    touch-action: none; /* penting untuk mobile */
+}
 
-        .floating-btn:hover {
-            background-color: #fff309;
-            transform: scale(1.1);
-        }
+.floating-btn:active {
+    cursor: grabbing;
+}
+
+.floating-btn:hover {
+    background-color: #fff309;
+    transform: scale(1.05);
+}
+
     </style>
 
     {{-- style modal --}}
@@ -3855,6 +3850,54 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
+
+    <script>
+document.querySelectorAll('.draggable').forEach(btn => {
+
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    const startDrag = (e) => {
+        isDragging = true;
+
+        const rect = btn.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        offsetX = clientX - rect.left;
+        offsetY = clientY - rect.top;
+    };
+
+    const drag = (e) => {
+        if (!isDragging) return;
+
+        e.preventDefault();
+
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        btn.style.left = (clientX - offsetX) + 'px';
+        btn.style.top  = (clientY - offsetY) + 'px';
+        btn.style.right = 'auto';
+        btn.style.bottom = 'auto';
+    };
+
+    const stopDrag = () => {
+        isDragging = false;
+    };
+
+    btn.addEventListener('mousedown', startDrag);
+    btn.addEventListener('touchstart', startDrag);
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('touchmove', drag, { passive: false });
+
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('touchend', stopDrag);
+});
+</script>
+
 
 </body>
 
