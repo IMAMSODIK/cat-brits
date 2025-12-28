@@ -932,7 +932,7 @@
         <div class="col-12 col-xl-6">
             <div class="card o-hidden small-widget">
                 <div class="card-body total-project border-b-primary border-2">
-                    <span class="f-light f-w-500 f-14">Video Speaking Menunggu Koreksi</span>
+                    <span class="f-light f-w-500 f-14">Speaking Video Awaiting Review</span>
 
                     <div class="project-details">
                         <div class="project-counter">
@@ -962,7 +962,7 @@
         <div class="col-12 col-xl-6">
             <div class="card o-hidden small-widget">
                 <div class="card-body total-project border-b-primary border-2">
-                    <span class="f-light f-w-500 f-14">Essai Menunggu Koreksi</span>
+                    <span class="f-light f-w-500 f-14">Essay Awaiting Review</span>
 
                     <div class="project-details">
                         <div class="project-counter">
@@ -1223,6 +1223,14 @@
                                 <span class="badge bg-success ms-1">{{ $upcomingSessions->count() }}</span>
                             </button>
                         </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#completedSessions"
+                                type="button">
+                                Completed
+                                <span class="badge bg-secondary ms-1">{{ $completedSessions->count() }}</span>
+                            </button>
+                        </li>
                     </ul>
 
                     <div class="tab-content mt-3">
@@ -1390,6 +1398,78 @@
                                                         </button>
                                                     @endif
 
+                                                    <button class="btn btn-info btn-sm btn-detail"
+                                                        data-id="{{ $session->id }}">
+                                                        <i class="fa fa-eye"></i> Details
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                        </div>
+
+                        {{-- COMPLETED SESSIONS TAB --}}
+                        <div class="tab-pane fade" id="completedSessions">
+
+                            @if ($completedSessions->isEmpty())
+                                <div class="text-center py-4 text-muted">
+                                    <i class="fa fa-calendar-times fa-2x mb-2"></i>
+                                    <p class="mb-0">No completed sessions</p>
+                                </div>
+                            @else
+                                {{-- DESKTOP TABLE --}}
+                                <div class="table-responsive d-none d-md-block">
+                                    <table class="table table-bordered align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Student</th>
+                                                <th>Title</th>
+                                                <th>Scheduled Time</th>
+                                                <th>Duration</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($completedSessions as $session)
+                                                <tr>
+                                                    <td>{{ $session->student->name }}</td>
+                                                    <td>{{ $session->title }}</td>
+                                                    <td>
+                                                        <i class="fa fa-clock text-success me-1"></i>
+                                                        {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
+                                                        <small style="color: green">Completed {{ $session->scheduled_time->diffForHumans() }}</small>
+                                                    </td>
+                                                    <td><span class="badge bg-success">{{ $session->duration_minutes }}
+                                                            min</span></td>
+                                                    <td class="text-center">
+
+                                                        <button class="btn btn-info btn-sm btn-detail"
+                                                            data-id="{{ $session->id }}">
+                                                            <i class="fa fa-eye"></i> Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                {{-- MOBILE CARDS --}}
+                                <div class="d-block d-md-none">
+                                    @foreach ($completedSessions as $session)
+                                        <div class="card mb-3 shadow-sm">
+                                            <div class="card-body">
+                                                <small style="color: green">Completed {{ $session->scheduled_time->diffForHumans() }}</small><br>
+                                                <strong>Student:</strong> {{ $session->student->name }} <br>
+                                                <strong>Title:</strong> {{ $session->title }} <br>
+                                                <strong>Scheduled:</strong>
+                                                {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
+                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min <br>
+
+                                                <div class="mt-3">
                                                     <button class="btn btn-info btn-sm btn-detail"
                                                         data-id="{{ $session->id }}">
                                                         <i class="fa fa-eye"></i> Details

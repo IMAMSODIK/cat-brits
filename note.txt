@@ -14,11 +14,9 @@ proposed time masih belum valid dengan time indo (done)
 
 view belum bisa di role student  (done)
 detial belum bisa jika sudah accepted (done)
-panel video masih terlalu besar
-simpan video record
-tambahkan input link jika tidak ingin pakai video live
-
-
+panel video masih terlalu besar (done)
+simpan video record (done)
+tambahkan input link jika tidak ingin pakai video live (optional)
 
 DASHBOARD
         ADMIN
@@ -35,9 +33,9 @@ DASHBOARD
                 RECENT AKTIFITAS
                         -> student NEED VERIFICATION (done)
                         -> RECENT TEST taker (PAKAI GRAFIK) (done)
-                        -> VIDEO NEED TO correction 
-                        -> WRITING NEED TO correction
-                        -> VIDEO CALL REQIEST
+                        -> VIDEO NEED TO correction (done)
+                        -> WRITING NEED TO correction (done)
+                        -> VIDEO CALL REQIEST (done)
                 Monitoring Test & Score
                         -> SKOR MOCK TEST TERTINGGI 5 SISWA
                         -> SKOR MOCK TERENDAH 5 SISWA

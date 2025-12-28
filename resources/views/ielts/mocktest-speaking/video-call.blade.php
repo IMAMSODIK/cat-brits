@@ -418,9 +418,12 @@
         }
 
         @keyframes pulse-recording {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
             }
+
             50% {
                 box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
             }
@@ -453,10 +456,49 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
     </style>
+
+    <style>
+        .header {
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            overflow: hidden;
+            max-height: 240px;
+            /* sesuaikan tinggi header normal */
+        }
+
+        .header.collapsed {
+            max-height: 72px;
+            /* hanya bar atas */
+            padding-bottom: 6px;
+        }
+
+        .header-toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #334155;
+        }
+
+        .header-toggle-btn:hover {
+            color: #0f172a;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -464,7 +506,7 @@
         <!-- Header -->
         <div class="header">
             <div class="session-info">
-                <div class="session-title">
+                <div class="session-title" style="margin-bottom: 40px">
                     <i class="fas fa-video"></i>
                     {{ $mockTest->title }}
                 </div>
@@ -500,6 +542,11 @@
                     <span>End</span>
                 </button>
             </div>
+
+            <button id="toggleHeader" class="header-toggle-btn">
+                <i class="fas fa-chevron-up" id="headerToggleIcon"></i>
+            </button>
+
         </div>
 
         <!-- Main Content -->
@@ -589,6 +636,24 @@
             });
         });
     </script>
+
+    <script>
+document.getElementById('toggleHeader').addEventListener('click', function () {
+    const header = document.querySelector('.header');
+    const icon = document.getElementById('headerToggleIcon');
+
+    header.classList.toggle('collapsed');
+
+    if (header.classList.contains('collapsed')) {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+    } else {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+    }
+});
+</script>
+
 </body>
 
 </html>

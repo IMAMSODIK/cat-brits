@@ -6,16 +6,62 @@ use App\Http\Controllers\Controller;
 use App\Models\SetSoal;
 use App\Models\TestHistory;
 use App\Models\User;
+use App\Models\VideoCall;
+use App\Models\Videos;
+use App\Models\Writing;
+use Carbon\Carbon;
 use Exception;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+    private function getTopBottomScores($kategori, $limit = 5) {
+        // Top 5
+        $top = DB::table('test_histories as th')
+            ->join('users as u', 'th.student_id', '=', 'u.id')
+            ->select('th.student_id', 'u.name', DB::raw('AVG(th.score_conversion) as avg_score'))
+            ->where('th.kategori', $kategori)
+            ->where('th.tipe_test', 'mock')
+            ->whereMonth('th.created_at', Carbon::now()->month)
+            ->whereYear('th.created_at', Carbon::now()->year)
+            ->groupBy('th.student_id', 'u.name')
+            ->orderByDesc('avg_score')
+            ->limit($limit)
+            ->get();
+
+        // Bottom 5
+        $bottom = DB::table('test_histories as th')
+            ->join('users as u', 'th.student_id', '=', 'u.id')
+            ->select('th.student_id', 'u.name', DB::raw('AVG(th.score_conversion) as avg_score'))
+            ->where('th.kategori', $kategori)
+            ->where('th.tipe_test', 'mock')
+            ->whereMonth('th.created_at', Carbon::now()->month)
+            ->whereYear('th.created_at', Carbon::now()->year)
+            ->groupBy('th.student_id', 'u.name')
+            ->orderBy('avg_score')
+            ->limit($limit)
+            ->get();
+
+        return [$top, $bottom];
+    }
+
     public function index()
     {
+        $score = [];
+        $categories = ['reading', 'listening'];
+
+        foreach ($categories as $kategori) {
+            $score[] = $this->getTopBottomScores($kategori);
+        }
+
+        $data['score'] = $score;
         $data['pageTitle'] = 'Dashboard';
 
         try{
+            $user = auth()->user();
+
             $countUsers = User::count();
             $countAdmin = User::where("role", "admin")->count();
             $countTeacher = User::where("role", "teacher")->count();
@@ -50,8 +96,25 @@ class DashboardController extends Controller
             $data['unverifStudent'] = $unverifStudent;
             $data['studentActivities'] = $studentActivities;
 
+            $videoRequest = Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get();
+            $writingRequest = Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get();
+            
+            if($user->role == 'admin'){
+                $upcomingSessions = VideoCall::where("status", "accepted")->with('student')->get();
+                $pendingSessions = VideoCall::where("status", "pending")->with('student')->get();
+            }elseif($user->role == 'teacher'){
+                $upcomingSessions = $user->teacherSessions()->accepted()->upcoming()->with('student')->get();
+                $pendingSessions = VideoCall::where("teacher_id", $user->id)->where("status", "pending")->with('student')->get();
+            }
+
+            $data['videoRequest'] = $videoRequest;
+            $data['writingRequest'] = $writingRequest;
+            $data['pendingSessions'] = $pendingSessions;
+            $data['upcomingSessions'] = $upcomingSessions;
+
             return view('dashboard.index', $data);
         }catch(Exception $e){
+            dd($e->getMessage());
             return redirect('/dashboard')->with('error', $e->getMessage());
         }
     }

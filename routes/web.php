@@ -95,6 +95,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mock-test/{mockTest}/end', [VideoCallController::class, 'endSession'])->name('mock-test.end');
 
     Route::get('/mock-test/{mockTest}/show', [VideoCallController::class, 'show'])->name('mock-test.show');
+    Route::get('/mock-test/{mockTest}/show-dashboard', [VideoCallController::class, 'showDashboard'])->name('mock-test.show');
     Route::get('/mock-test/{mockTest}/start', [VideoCallController::class, 'startSession'])->name('mock-test.start');
 
     Route::post('/mock-test/{mockTest}/recording', [VideoCallController::class, 'saveRecording'])->name('mock-test.save-recording');
@@ -116,7 +117,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
     Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
     Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
-
 
     Route::get('/profile', [ProfileController::class, 'index']);
     // Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
