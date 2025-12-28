@@ -322,49 +322,79 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-4 col-md-7 box-col-6">
+                        <div class="col-xxl-4 col-md-7 col-12">
                             <div class="card height-equal">
-                                <div class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
+                                <div class="card-header card-no-border d-flex justify-content-between align-items-center">
                                     <h4 class="mb-0">Student Activity</h4>
-                                    <span class="text-primary cursor-pointer">
-                                        <button class="btn btn-primary">View All</button>
-                                    </span>
+                                    <a href="#" class="btn btn-primary btn-sm">View All</a>
                                 </div>
 
                                 <div class="card-body pt-0">
-                                    <div class="top-product-card">
-                                        <ul>
-                                            @foreach ($studentActivities as $activities)
-                                                <li class="d-flex top-product gap-2">
-                                                    <div>
-                                                        <img class="img-fluid product-img" src="{{ ($activities->student->foto) ? asset('storage') . '/' : asset('own_assets/images/avatar.png') }}" alt="User Profile" />
+                                    <div class="activity-list d-flex flex-column gap-3">
+
+                                        @foreach ($studentActivities as $activities)
+                                            <div class="card shadow-sm border-0 w-100 mb-0">
+                                                <div class="card-body p-3">
+
+                                                    <!-- Header -->
+                                                    <div class="d-flex align-items-center gap-3 mb-2">
+                                                        <img
+                                                            src="{{ $activities->student->foto
+                                                                    ? asset('storage/'.$activities->student->foto)
+                                                                    : asset('own_assets/images/avatar.png') }}"
+                                                            class="rounded-circle"
+                                                            width="45"
+                                                            height="45"
+                                                            alt="User"
+                                                        >
+
+                                                        <div class="flex-grow-1">
+                                                            <div class="fw-semibold">{{ $activities->student->name }}</div>
+                                                            <small class="text-primary">{{ $activities->setSoal->name }} | {{ ucfirst($activities->kategori) }}</small>
+                                                        </div>
+
+                                                        @if ($activities->tipe_test == 'practice')
+                                                            <span class="badge bg-primary">Practice</span>
+                                                        @else
+                                                            <span class="badge bg-warning text-dark">Mock</span>
+                                                        @endif
                                                     </div>
-                                                    <div class="w-100 d-flex justify-content-between align-items-center">
-                                                        <div class="product-details">
+
+                                                    <div class="d-flex flex-column gap-1 small">
+                                                        <div>
+                                                            <span class="text-muted">Test Type:</span>
+                                                            <strong>{{ $activities->nama_tipe }}</strong>
+                                                        </div>
+
+                                                        @if (in_array($activities->kategori, ['speaking', 'writing']))
                                                             <div>
-                                                                @if ($activities->tipe_test == 'practice')
-                                                                    <span class="badge rounded-pill badge-primary text-white">Practice</span>
+                                                                <span class="text-muted">Assessor:</span>
+                                                                @if ($activities->teacher_id)
+                                                                    <strong>{{ $activities->teacher->name }}</strong>
                                                                 @else
-                                                                    <span class="badge rounded-pill badge-warning text-white">Mock Test</span>
+                                                                    <span class="text-warning">Not Yet Assessed</span>
                                                                 @endif
                                                             </div>
-                                                            <a class="f-10 f-w-500" href="">{{$activities->student->name}}</a>
-                                                            <span class="f-10 f-w-500 txt-primary">{{$activities->tipe}}</span>
-                                                        </div>
-                                                        <div class="product-items">
-                                                            <div class="common-space gap-1">
-                                                                <span class="f-10 f-w-500 f-light">Category :</span>
-                                                                <span class="f-10 f-w-500 ">{{ucfirst($activities->kategori)}}</span>
+                                                        @else
+                                                            <div>
+                                                                <span class="text-muted">Score:</span>
+                                                                <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
                                                             </div>
-                                                            <div class="common-space gap-1">
-                                                                <span class="f-10 f-w-500 f-light">Score :</span>
-                                                                <span class="f-10 f-w-500 ">{{$activities->score}}</span>
-                                                            </div>
-                                                        </div>
+                                                        @endif
                                                     </div>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+
+                                                    @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                        <div class="mt-3">
+                                                            <button class="btn btn-outline-primary btn-sm w-100">
+                                                                View Details
+                                                            </button>
+                                                        </div>
+                                                    @endif
+
+                                                </div>
+                                            </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>

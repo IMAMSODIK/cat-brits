@@ -1,6 +1,6 @@
 donekan 1 set
 
-di model test hisotry, tambahkan kolom
+di model test hisotry, tambahkan kolom (done)
         - total soal
         - tipe soal lengkap (bukan oc, tfng dll)
         - masukkan juga speaking dan reading, baik practice maupun mock Test

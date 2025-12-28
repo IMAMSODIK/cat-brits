@@ -1549,10 +1549,10 @@
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <h3 class="passage-title">Stepwells</h3>
                             <div class="passage-body">
-                                <p>A millennium ago, stepwells were fundamental to life in the driest parts of India.
+                                <p><i>A millennium ago, stepwells were fundamental to life in the driest parts of India.
                                     Although many have been neglected, recent restoration has returned them to their
                                     former glory. Richard Cox travelled to north-western India to document these
-                                    spectacular monuments from a bygone era.</p>
+                                    spectacular monuments from a bygone era.</i></p>
                                 <p>During the sixth and seventh centuries, the inhabitants of the modern-day states of
                                     Gujarat and Rajasthan in North-western India developed a method of gaining access to
                                     clean, fresh groundwater during the dry season for drinking, bathing, watering
@@ -1578,6 +1578,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tfng">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -1716,7 +1717,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-tfng" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-tfng">
+                                    <button type="button" class="btn btn-primary" data-count="5" id="submit-tfng">
                                         Submit
                                     </button>
                                 </div>
@@ -1794,6 +1795,8 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-sa">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-3</h3>
+
                                     <p class="lead">Answer the questions below.</p>
                                     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
                                     <p><i>Write your answers in boxes on your answer sheet.</i></p>
@@ -1843,7 +1846,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-sa" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-sa">
+                                    <button type="button" class="btn btn-primary" data-count="3" id="submit-sa">
                                         Submit
                                     </button>
                                 </div>
@@ -1899,6 +1902,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tc">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Complete the table below</p>
                                     <p>Choose <b>ONE WORD AND/OR A NUMBER</b> from the passage for each answer.</p>
                                     <p><i>Write your answers in boxes on your answer sheet.</i></p>
@@ -1990,7 +1994,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-tc" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-tc">
+                                    <button type="button" class="btn btn-primary" data-count="5" id="submit-tc">
                                         Submit
                                     </button>
                                 </div>
@@ -2094,6 +2098,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-mh">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-8</h3>
                                     <p class="lead">The Reading Passage has nine paragraphs, <b>A-I</b>.</p>
                                     <p>Choose the correct heading for paragraphs <b>A-E</b> and <b>G-I</b> from the list
                                         of headings below.</p>
@@ -2321,7 +2326,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-mh" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-mh">
+                                    <button type="button" class="btn btn-primary" data-count="8" id="submit-mh">
                                         Submit
                                     </button>
                                 </div>
@@ -2390,6 +2395,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-tfng2">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -2527,7 +2533,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-tfng2" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-tfng2">
+                                    <button type="button" class="btn btn-primary" data-count="5" id="submit-tfng2">
                                         Submit
                                     </button>
                                 </div>
@@ -2616,6 +2622,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-one">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-4</h3>
                                     <p class="lead">Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or
                                         <b>D</b>.
                                     </p>
@@ -2748,7 +2755,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-oc">
+                                    <button type="button" class="btn btn-primary" data-count="4" id="submit-oc">
                                         Submit
                                     </button>
                                 </div>
@@ -2836,6 +2843,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-mse">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Complete each sentence with the correct ending, A-G, below.
                                     </p>
                                     <p>Write the correct letter, <b>A-G</b>, in boxes on your answer sheet</p>
@@ -2960,7 +2968,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-mse" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-mse">
+                                    <button type="button" class="btn btn-primary" data-count="5" id="submit-mse">
                                         Submit
                                     </button>
                                 </div>
@@ -3037,6 +3045,7 @@
                         <aside class="qa" aria-label="Questions">
                             <form class="qa-body" id="form-ynng">
                                 <fieldset class="q-item">
+                                    <h3>Question 1-5</h3>
                                     <p class="lead">Do the following statements agree with the information given in
                                         the
                                         Reading Passage?
@@ -3174,7 +3183,7 @@
                                     <button  type="button" class="btn btn-primary try-again" id="again-ynng" style="display: none">
                                         Try Again
                                     </button>
-                                    <button type="button" class="btn btn-primary" id="submit-ynng">
+                                    <button type="button" class="btn btn-primary" data-count="5" id="submit-ynng">
                                         Submit
                                     </button>
                                 </div>
@@ -3930,7 +3939,7 @@
             }
         });
 
-        function submitHelper(form, setId, tipe, button, againBtn) {
+        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
             let allAnswered = true;
 
             $(`#${form} fieldset[data-q]`).each(function () {
@@ -3967,6 +3976,8 @@
             formData.append("set_id", setId);
             formData.append("kategori", 'reading');
             formData.append("tipe_test", 'practice');
+            formData.append("jumlah_soal", button.data('count'));
+            formData.append("nama_tipe", namaTipe);
 
             $.ajax({
                 url: "/ielts/practice/check",
@@ -4068,42 +4079,42 @@
 
         $("#submit-tfng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng");
+            submitHelper("form-tfng", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng", "True, False or Not Given");
         });
 
         $("#submit-tfng2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tfng2", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng2");
+            submitHelper("form-tfng2", "XJ3XOcvqPbgdZwyl", "tfng", $(this), "again-tfng2", "True, False or Not Given");
         });
 
         $("#submit-ynng").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-ynng", "XJ3XOcvqPbgdZwyl", "ynng", $(this), "again-ynng");
+            submitHelper("form-ynng", "XJ3XOcvqPbgdZwyl", "ynng", $(this), "again-ynng", "Yes, No or Not Given");
         });
 
         $("#submit-mse").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mse", "XJ3XOcvqPbgdZwyl", "mse", $(this), "again-mse");
+            submitHelper("form-mse", "XJ3XOcvqPbgdZwyl", "mse", $(this), "again-mse", "Matching Setnce Ending");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-one", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc");
+            submitHelper("form-one", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc", "One Choice");
         });
 
         $("#submit-mh").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-mh", "XJ3XOcvqPbgdZwyl", "mh", $(this), "again-mh");
+            submitHelper("form-mh", "XJ3XOcvqPbgdZwyl", "mh", $(this), "again-mh", "Matching Heading");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc");
+            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc", "Table Completion");
         });
 
         $("#submit-sa").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-sa", "XJ3XOcvqPbgdZwyl", "sa", $(this), "again-sa");
+            submitHelper("form-sa", "XJ3XOcvqPbgdZwyl", "sa", $(this), "again-sa", "Short Answer");
         });
     </script>
 

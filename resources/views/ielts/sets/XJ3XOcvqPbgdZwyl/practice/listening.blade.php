@@ -1729,7 +1729,7 @@
                                 <button type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" id="submit-nc">
+                                <button type="button" class="btn btn-primary" data-count="6" id="submit-nc">
                                     Submit
                                 </button>
                             </div>
@@ -1843,7 +1843,7 @@
                             <button type="button" class="btn btn-primary try-again" id="again-tc" style="display: none">
                                 Try Again
                             </button>
-                            <button type="button" class="btn btn-primary" id="submit-tc">
+                            <button type="button" class="btn btn-primary" data-count="4" id="submit-tc">
                                 Submit
                             </button>
                         </div>
@@ -1924,7 +1924,7 @@
                                 <button type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" id="submit-two_choices">
+                                <button type="button" class="btn btn-primary" data-count="2" id="submit-two_choices">
                                     Submit
                                 </button>
                             </div>
@@ -2052,7 +2052,7 @@
                             <button type="button" class="btn btn-primary try-again" id="again-nc2" style="display: none">
                                 Try Again
                             </button>
-                            <button type="button" class="btn btn-primary" id="submit-nc2">
+                            <button type="button" class="btn btn-primary" data-count="8" id="submit-nc2">
                                 Submit
                             </button>
                         </div>
@@ -2222,7 +2222,7 @@
                                 <button type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" id="submit-oc">
+                                <button type="button" class="btn btn-primary" data-count="5" id="submit-oc">
                                     Submit
                                 </button>
                             </div>
@@ -2315,7 +2315,7 @@
                             <button type="button" class="btn btn-primary try-again" id="again-nc3" style="display: none">
                                 Try Again
                             </button>
-                            <button type="button" class="btn btn-primary" id="submit-nc3">
+                            <button type="button" class="btn btn-primary" data-count="5" id="submit-nc3">
                                 Submit
                             </button>
                         </div>
@@ -2468,7 +2468,7 @@
                             <button type="button" class="btn btn-primary try-again" id="again-nc4" style="display: none">
                                 Try Again
                             </button>
-                            <button type="button" class="btn btn-primary" id="submit-nc4">
+                            <button type="button" class="btn btn-primary" data-count="10" id="submit-nc4">
                                 Submit
                             </button>
                         </div>
@@ -3371,7 +3371,7 @@
             location.reload();
         })
 
-        function submitHelper(form, setId, tipe, button, againBtn) {
+        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
             let allAnswered = true;
 
             $(`#${form}`).each(function() {
@@ -3408,6 +3408,8 @@
             formData.append("set_id", setId);
             formData.append("kategori", 'listening');
             formData.append("tipe_test", 'practice');
+            formData.append("jumlah_soal", button.data('count'));
+            formData.append("nama_tipe", namaTipe);
 
             $.ajax({
                 url: "/ielts/practice/check",
@@ -3506,37 +3508,37 @@
 
         $("#submit-nc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc");
+            submitHelper("form-nc", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc", "Note Completion");
         });
 
         $("#submit-nc2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc2", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc2");
+            submitHelper("form-nc2", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc2", "Note Completion");
         });
 
         $("#submit-nc3").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc3", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc3");
+            submitHelper("form-nc3", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc3", "Note Completion");
         });
 
         $("#submit-nc4").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-nc4", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc4");
+            submitHelper("form-nc4", "XJ3XOcvqPbgdZwyl", "nc", $(this), "again-nc4", "Note Completion");
         });
 
         $("#submit-oc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-oc", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc");
+            submitHelper("form-oc", "XJ3XOcvqPbgdZwyl", "oc", $(this), "again-oc", "One Choice");
         });
 
         $("#submit-tc").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc");
+            submitHelper("form-tc", "XJ3XOcvqPbgdZwyl", "tc", $(this), "again-tc", "Table Completion");
         });
 
         $("#submit-two_choices").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices", $(this), "again-two_choices");
+            submitHelper("form-two_choices", "XJ3XOcvqPbgdZwyl", "two_choices", $(this), "again-two_choices", "Two Choices");
         });
     </script>
 
