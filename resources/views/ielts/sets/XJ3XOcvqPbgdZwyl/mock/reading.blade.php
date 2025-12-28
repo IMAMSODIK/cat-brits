@@ -1148,34 +1148,32 @@
 
     <style>
         .floating-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 10px;
-    background-color: #fccb2a;
-    color: #fff;
-    border: none;
-    border-radius: 10%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: grab;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-    z-index: 1000;
-    touch-action: none; /* penting untuk mobile */
-}
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #fccb2a;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+            touch-action: none;
+        }
 
-.floating-btn:active {
-    cursor: grabbing;
-}
-
-.floating-btn:hover {
-    background-color: #fff309;
-    transform: scale(1.05);
-}
-
+        .floating-btn:active {
+            cursor: grabbing;
+        }
+        .floating-btn:hover {
+            background-color: #fff309;
+            transform: scale(1.1);
+        }
     </style>
 
     {{-- style modal --}}
@@ -3852,49 +3850,54 @@
     </script>
 
     <script>
-document.querySelectorAll('.draggable').forEach(btn => {
-
+function makeDraggable(el) {
     let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
+    let startX, startY, initialX, initialY;
 
     const startDrag = (e) => {
         isDragging = true;
+        const evt = e.touches ? e.touches[0] : e;
+        startX = evt.clientX;
+        startY = evt.clientY;
 
-        const rect = btn.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const rect = el.getBoundingClientRect();
+        initialX = rect.left;
+        initialY = rect.top;
 
-        offsetX = clientX - rect.left;
-        offsetY = clientY - rect.top;
+        document.addEventListener("mousemove", drag);
+        document.addEventListener("mouseup", stopDrag);
+        document.addEventListener("touchmove", drag);
+        document.addEventListener("touchend", stopDrag);
     };
 
     const drag = (e) => {
         if (!isDragging) return;
+        const evt = e.touches ? e.touches[0] : e;
 
-        e.preventDefault();
+        const dx = evt.clientX - startX;
+        const dy = evt.clientY - startY;
 
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-        btn.style.left = (clientX - offsetX) + 'px';
-        btn.style.top  = (clientY - offsetY) + 'px';
-        btn.style.right = 'auto';
-        btn.style.bottom = 'auto';
+        el.style.left = initialX + dx + "px";
+        el.style.top = initialY + dy + "px";
+        el.style.right = "auto";
+        el.style.bottom = "auto";
     };
 
     const stopDrag = () => {
         isDragging = false;
+        document.removeEventListener("mousemove", drag);
+        document.removeEventListener("mouseup", stopDrag);
+        document.removeEventListener("touchmove", drag);
+        document.removeEventListener("touchend", stopDrag);
     };
 
-    btn.addEventListener('mousedown', startDrag);
-    btn.addEventListener('touchstart', startDrag);
+    el.addEventListener("mousedown", startDrag);
+    el.addEventListener("touchstart", startDrag);
+}
 
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('touchmove', drag, { passive: false });
-
-    document.addEventListener('mouseup', stopDrag);
-    document.addEventListener('touchend', stopDrag);
+// aktifkan drag untuk semua floating button
+document.querySelectorAll(".floating-btn").forEach(btn => {
+    makeDraggable(btn);
 });
 </script>
 
