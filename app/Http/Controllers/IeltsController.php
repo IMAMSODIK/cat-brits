@@ -152,7 +152,10 @@ class IeltsController extends Controller
                     case '0XIGAcSMlticROES':
                         return view('ielts.categories', $data);
                         break;
-
+                    
+                    case 'cwwPbLf22UsNEqIp':
+                        return view('ielts.categories', $data);
+                        break;
                     // case 'kqQSrG7Rs5yw1AuD':
                     //     return view('ielts.categories', $data);
                     //     break;
