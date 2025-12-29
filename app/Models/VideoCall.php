@@ -13,6 +13,7 @@ class VideoCall extends Model
     protected $fillable = [
         'student_id',
         'teacher_id',
+        'set_soal_id',
         'title',
         'description',
         'proposed_time',

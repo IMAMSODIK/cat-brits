@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('student_id')->nullable();
             $table->uuid('teacher_id')->nullable();
+            $table->foreignId('set_soal_id');
             $table->string('title');
             $table->text('description')->nullable();
             $table->datetime('proposed_time');

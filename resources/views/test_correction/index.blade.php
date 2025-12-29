@@ -1105,12 +1105,11 @@
                                                 <p class="text-dark" style="font-size: 13px;">
                                                     <b>Topic: {{ $w->setSoal->name }}</b><br>
                                                     {{ $w->setSoal->thumbnail }} <br>
-                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number
-                                                        {{ $v->no_soal }}</small>
+                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number {{ $w->no_soal }} &nbsp; • &nbsp; {{ ($w->tipe == 'mock') ? "Mock Test" : "Practice" }}</small>
                                                 </p>
 
                                                 <!-- BUTTON -->
-                                                <button class="btn btn-sm btn-primary mt-2">
+                                                <button class="btn btn-sm btn-primary">
                                                     <i class="fas fa-edit"></i>
                                                     Review & Correct Writing
                                                 </button>

@@ -20,6 +20,7 @@ class VideoCallController extends Controller
                 'title' => 'required|string|max:255',
                 'description' => 'nullable|string',
                 'proposed_time' => 'required|date|after:now',
+                'setSoal' => 'required|exists:set_soals,id',
             ]);
 
             $proposedTime = \Carbon\Carbon::parse($request->proposed_time)
@@ -32,6 +33,7 @@ class VideoCallController extends Controller
                 'description' => $request->description,
                 'proposed_time' => $proposedTime,
                 'duration_minutes' => 30,
+                'set_soal_id' => $request->setSoal,
                 'status' => 'pending',
             ]);
 

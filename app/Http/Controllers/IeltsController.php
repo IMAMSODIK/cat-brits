@@ -312,7 +312,7 @@ class IeltsController extends Controller
                     'set_soal_id' => $setSoal->id,
                     'no_soal' => (int) $questionId,
                     'task' => $task,
-                    'tipe' => 'practice',
+                    'tipe' => $tipe,
                     'answer' => $answer
                 ]);
 
@@ -322,7 +322,7 @@ class IeltsController extends Controller
                     $history = TestHistory::create([
                         'student_id' => Auth::id(),
                         'teacher_id' => null,
-                        'tipe_test' => 'practice',
+                        'tipe_test' => $tipe,
                         'kategori' => $kategori,
                         'tipe' => $r->task,
                         'set_soal_id' => $setSoal->id,
