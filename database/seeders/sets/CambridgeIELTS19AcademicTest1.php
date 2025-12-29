@@ -17,7 +17,7 @@ class CambridgeIELTS19AcademicTest1 extends Seeder
                 "tfng" => ["FALSE", "FALSE", "NOT GIVEN", "FALSE", "NOT GIVEN", "TRUE", "TRUE"],
                 "nc" => ["paint", "topspin", "training", "intestines", "weights", "grips"],
                 "matching_information" => ["D", "G", "C", "A", "G", "B"],
-                "two_choices" => ["['B','D']", "['C','E']"],
+                "two_choices" => ["[B,D]", "[C,E]"],
                 "summary_completion" => ["grain", "punishment", "ransom", "G", "J", "H", "B", "E", "C"],
                 "oc" => ["D", "A", "C", "D"],
                 "ynng" => ["YES", "NOT GIVEN", "NO", "NOT GIVEN"]
@@ -37,7 +37,6 @@ class CambridgeIELTS19AcademicTest1 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
 
@@ -48,7 +47,7 @@ class CambridgeIELTS19AcademicTest1 extends Seeder
                 "nc" => ["69", "stream", "data", "map", "visitors", "sounds", "freedom", "skills", "4.95", "leaders", "walls", "son", "fuel", "oxygen", "rectangular", "lamps", "family", "winter", "soil", "rain"],
                 "oc" => ["B", "A", "B", "C", "A"],
                 "map_labeling" => ["G", "C", "B", "D", "A"],
-                "two_choices" => ["['B', 'D']", "['A', 'E']"],
+                "two_choices" => ["[B, D]", "[A, E]"],
                 "matching_information" => ["D", "G", "C", "B", "F", "H"],
 
             ]
@@ -67,9 +66,7 @@ class CambridgeIELTS19AcademicTest1 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
-
     }
 }

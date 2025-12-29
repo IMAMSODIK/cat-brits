@@ -15,7 +15,7 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
             "kategori" => "reading",
             "questions" => [
                 "matching_features" => ["c", "b", "a", "e", "b", "d"],
-                "two_choices" => ["['c','d']", "['a','d']"],
+                "two_choices" => ["[c,d]", "[a,d]"],
                 "matching_information" => ["D", "C", "E", "B", "D"],
                 "summary_completion" => ["energi", "food", "gardening", "obesity", "i", "f", "a", "c", "h", "e"],
                 "oc" => ["b", "c", "d", "b", "a", "d", "c"],
@@ -36,7 +36,6 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
 
@@ -62,13 +61,13 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
                     "drawings",
                     "furniture",
                     "lamps",
-                    "['harbour', 'harbor']",
+                    "[harbour, harbor]",
                     "children",
                     "relatives"
                 ],
                 "oc" => ["B", "A", "A", "C", "A", "B", "C"],
                 "matching_information" => ["F", "G", "E", "A", "C", "B", "D", "A", "C", "G", "F"],
-                "two_choices" => ["['B', 'D']"],
+                "two_choices" => ["[B, D]"],
             ]
         ];
 
@@ -85,9 +84,7 @@ class CambridgeIELTS18AcademicTest4 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
-
     }
 }

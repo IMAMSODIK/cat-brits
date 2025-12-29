@@ -14,10 +14,10 @@ class CambridgeIELTS14AcademicTest4 extends Seeder
             "id" => "5k29sSZyLQgQjLWX",
             "kategori" => "reading",
             "questions" => [
-                "nc" => ["['four', '4']", "young", "food", "light", "aggressively", "location", "neurons", "chemicals", "large", "microplastic", "populations", "concentrations", "predators", "disasters"],
+                "nc" => ["[four, 4]", "young", "food", "light", "aggressively", "location", "neurons", "chemicals", "large", "microplastic", "populations", "concentrations", "predators", "disasters"],
                 "tfng" => ["FALSE", "TRUE", "FALSE", "NOT GIVEN", "TRUE", "TRUE", "TRUE", "NOT GIVEN", "FALSE", "NOT GIVEN", "FALSE", "NOT GIVEN", "FALSE", "TRUE", "FALSE", "TRUE", "NOT GIVEN"],
                 "matching_information" => ["B", "E", "C", "A"],
-                "two_choices" => ["['b','d']", "['b','e']"],
+                "two_choices" => ["[b,d]", "[b,e]"],
                 "oc" => ["A"]
 
             ]
@@ -45,7 +45,7 @@ class CambridgeIELTS14AcademicTest4 extends Seeder
             "questions" => [
                 "nc" => ["85", "roses", "trees", "stage", "speech", "support", "cabins", "spring", "tools", "maps", "heavy", "marble", "light", "camera, cameras", "medical", "eyes", "wine"],
                 "matching_information" => ["C", "A", "B", "G", "D", "A", "E", "F", "B", "F", "E", "C", "B", "G"],
-                "two_choices" => ["['b','d']", "['a','d']"],
+                "two_choices" => ["[b,d]", "[a,d]"],
                 "oc" => ["A", "C", "A", "B", "B"],
             ]
         ];

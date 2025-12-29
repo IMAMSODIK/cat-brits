@@ -1,83 +1,87 @@
-            <h3 class="passage-title">Roman shipbuilding and navigation</h3>
+                <div class="passage-title">Procrastination</div>
+                <div class="passage-body">
+                    <b>A psychologist explains why we put off important tasks and how we can break this habit.</b>
+                    <h3>A</h3>
+                    <p>
+                        Procrastination is the habit of delaying a necessary task, usually by focusing on less
+                        urgent, more enjoyable, and easier activities instead.We all do it from time to time.We
+                        might be composing a message to a friend who we have to let down, or putting together
+                        an important report for college or work; we're doing our best to avoid doing the job at
+                        hand, but deep down we know that we should just be getting on with it.Unfortunately,
+                        berating ourselves won't stop us procrastinating again.In fact, it's one of the worst things
+                        we can do.This matters because, as my research shows, procrastination doesn't just
+                        waste time, but is actually linked to other problems, too.
+                    </p>
 
-            <div class="passage-body">
-                <p>
-                    Shipbuilding today is based on science and ships are built using computers and sophisticated
-                    tools. Shipbuilding in ancient Rome, however, was more of an art relying on estimation,
-                    inherited techniques and personal experience. The Romans were not traditionally sailors but
-                    mostly land-based people, who learned to build ships from the people that they conquered,
-                    namely the Greeks and the Egyptians.
-                </p>
+                    <h3>B</h3>
+                    <p>
+                        Contrary to popular belief, procrastination is not due to laziness or poor time
+                        management.Scientific studies suggest procrastination is, in fact, caused by poor mood
+                        management.This makes sense if we consider that people are more likely to put off
+                        starting or completing tasks that they are really not keen to do.If just thinking about the
+                        task threatens our sense of self-worth or makes us anxious, we will be more likely to put
+                        it off.Research involving brain imaging has found that areas of the brain linked to
+                        detection of threats and emotion regulation are actually different in people who
+                        chronically procrastinate compared to those who don't procrastinate frequently.
+                    </p>
 
-                <p>
-                    There are a few surviving written documents that give descriptions and representations of
-                    ancient Roman ships, including the sails and rigging. Excavated vessels also provide some
-                    clues about ancient shipbuilding techniques. Studies of these have taught us that ancient
-                    Roman shipbuilders built the outer hull first, then proceeded with the frame and the rest of
-                    the ship. Planks used to build the outer hull were initially sewn together. Starting from the
-                    6th century BCE, they were fixed using a method called mortise and tenon, whereby one plank
-                    locked into another without the need for stitching.
-                </p>
+                    <h3>C</h3>
+                    <p>
+                        Tasks that are emotionally loaded or difficult, such as preparing for exams, are prime
+                        candidates for procrastination.People with low self-esteem are more likely to
+                        procrastinate.Another group of people who tend to procrastinate are perfectionists, who
+                        worry their work will be judged harshly by others.We know that if we don't finish that
+                        report or complete those home repairs, then what we did can't be evaluated.When we
+                        avoid such tasks, we also avoid the negative emotions associated with them.This is
+                        rewarding, and it conditions us to use procrastination to repair our mood.If we engage in
+                        more enjoyable tasks instead, we get another mood boost.In the long run, however,
+                        procrastination isn't an effective way of managing emotions.The 'mood repair' we
+                        experience is temporary.Afterwards, people tend to be left with a sense of guilt that not
+                        only increases their negative mood, but also reinforces their tendency to procrastinate.
+                    </p>
 
-                <p>
-                    Then in the first centuries of the current era, Mediterranean shipbuilders shifted to another
-                    shipbuilding method, still in use today, which consisted of building the frame first and then
-                    proceeding with the hull and the other components of the ship. This method was more
-                    systematic and dramatically shortened ship construction times. The ancient Romans built
-                    large merchant ships and warships whose size and technology were unequalled until the 16th
-                    century CE.
-                </p>
+                    <h3>D</h3>
+                    <p>
+                        So why is this such a problem?When most people think of the costs of procrastination,
+                        they think of the toll on productivity.For example, studies have shown that procrastination
+                        negatively impacts on student performance.But putting off reading textbooks and writing
+                        essays may affect other areas of students' lives.In one study of over 3,000 German
+                        students over a six-month period, those who reported procrastinating over their
+                        university work were also more likely to engage in study-related misconduct, such as
+                        cheating and plagiarism.But the behaviour that procrastination was most closely linked
+                        with was using fraudulent excuses to get deadline extensions.Other research shows that
+                        employees on average spend almost a quarter of their workday procrastinating, and
+                        again this is linked with negative outcomes.In fact, in one US survey of over 22,000
+                        employees, participants who said they regularly procrastinated had less annual income
+                        and less employment stability.For every one-point increase on a measure of chronic
+                        procrastination, annual income decreased by US$15,000.
+                    </p>
 
-                <p>
-                    Warships were built to be lightweight and very speedy. They had to be able to sail near the
-                    coast, which is why they had no ballast or excess load and were built with a long, narrow
-                    hull. They did not sink when damaged and often would lie crippled on the sea’s surface
-                    following naval battles. They had a bronze battering ram, which was used to pierce the timber
-                    hulls or break the oars of enemy vessels.
-                </p>
+                    <h3>E</h3>
+                    <p>
+                        Procrastination also correlates with serious health and well-being problems.A tendency
+                        to procrastinate is linked to poor mental health, including higher levels of depression and
+                        anxiety.Across numerous studies, I've found people who regularly procrastinate report a
+                        greater number of health issues, such as headaches, flu and colds, and digestive
+                        issues.They also experience higher levels of stress and poor sleep quality.They are less
+                        likely to practise healthy behaviours, such as eating a healthy diet and regularly
+                        exercising, and use destructive coping strategies to manage their stress.In one study of
+                        over 700 people, I found people prone to procrastination had a 63% greater risk of poor
+                        heart health after accounting for other personality traits and demographics.
+                    </p>
 
-                <p>
-                    Warships used both wind (sails) and human power (oarsmen) and were therefore very fast.
-                    Eventually, Rome’s navy became the largest and most powerful in the Mediterranean, and the
-                    Romans had control over what they therefore called <b>Mare Nostrum</b> meaning ‘our sea’.
-                </p>
-
-                <p>
-                    There were many kinds of warship. The ‘trireme’ was the dominant warship from the 7th to 4th
-                    century BCE. It had rowers in the top, middle and lower levels, and approximately 50 rowers in
-                    each bank. The rowers at the bottom had the most uncomfortable position as they were under the
-                    other rowers and were exposed to the water entering through the oar-holes. It is worth noting that
-                    contrary to popular perception, rowers were not slaves but mostly
-                    Roman citizens enrolled in the military. The trireme was superseded by larger ships with even
-                    more rowers.
-                </p>
-                <p>
-                    Merchant ships were built to transport lots of cargo over long distances and at a reasonable cost.
-                    They had a wider hull, double planting and a solid interior for added stability. Unlike warships,
-                    their V-shaped hull was deep underwater, meaning that they could not sail too close to the coast.
-                    They usually had two huge side rudders located off the stern and controlled by a small tiller bar
-                    connected to a system of cables. They had from one to three masts with large square sails and a
-                    small triangular sail at the bow. Just like warships, merchant ships used oarsmen, but coordinating
-                    the hundreds of rowers in both types of ship was not an easy task. In order to assist them, music
-                    would be played on an instrument, and oars would then keep time with this.
-                </p>
-                <p>The cargo on merchant ships included raw materials (e.g. iron bars, copper, marble and granite), and
-                    agricultural products (e.g. grain from Egypt’s Nile valley). During the Empire, Rome was a huge city
-                    by ancient standards of about one million inhabitants. Goods from all over the world would come to
-                    the city through the port of Pozzuoli situated west of the bay of Naples in Italy and through the
-                    gigantic port of Ostia situated at the mouth of the Tiber River. Large merchant ships would approach
-                    the destination port and, just like today, be intercepted by a number of towboats that would drag
-                    them to the quay.</p>
-                <p>
-                    The time of travel along the many sailing routes could vary widely. Navigation in ancient Rome did
-                    not rely on sophisticated instruments such as compasses but on experience, local knowledge and
-                    observation of natural phenomena. In conditions of good visibility, seamen in the Mediterranean
-                    often had the mainland or islands in sight, which greatly facilitated navigation. They sailed by
-                    noting their position relative to a succession of recognisable landmarks. When weather conditions
-                    were not good or where land was no longer visible, Roman mariners estimated directions from the pole
-                    star or, with less accuracy, from the Sun at noon. They also estimated directions relative to the
-                    wind and swell. Overall, shipping in ancient Roman times resembled shipping today with large vessels
-                    regularly crossing the seas and bringing supplies from their Empire.
-                </p>
-
-            </div>
+                    <h3>F</h3>
+                    <p>
+                        Finding better ways of managing our emotions is one route out of the vicious cycle of
+                        procrastination.An important first step is to manage our environment and how we view
+                        the task.There are a number of evidence-based strategies that can help us fend off
+                        distractions that can occupy our minds when we should be focusing on the thing we
+                        should be getting on with.For example, reminding ourselves about why the task is
+                        important and valuable can increase positive feelings towards it.Forgiving ourselves and
+                        feeling compassion when we procrastinate can help break the procrastination cycle.We
+                        should admit that we feel bad, but not be overly critical of ourselves.We should remind
+                        ourselves that we're not the first person to procrastinate, nor the last.Doing this can take
+                        the edge off the negative feelings we have about ourselves when we procrastinate.This
+                        can all make it easier to get back on track.
+                    </p>
+                </div>

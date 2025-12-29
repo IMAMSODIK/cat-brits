@@ -17,8 +17,8 @@ class CambridgeIELTS19AcademicTest2 extends Seeder
                 "tfng" => ["NOT GIVEN", "FALSE", "NOT GIVEN", "TRUE", "TRUE", "NOT GIVEN"],
                 "nc" => ["piston", "coal", "workshops", "labour", "quality", "railways", "sanitation"],
                 "matching_information" => ["D", "F", "A", "C", "F"],
-                "sc" => ["injury", "serves", "excitement", "['visualisation', 'visualization']"],
-                "two_choices" => ["['B','D']", "['A','E']"],
+                "sc" => ["injury", "serves", "excitement", "[visualisation, visualization]"],
+                "two_choices" => ["[B,D]", "[A,E]"],
                 "summary_completion" => ["H", "A", "C", "B", "J", "I"],
                 "oc" => ["C", "B", "D"],
                 "ynng" => ["YES", "NOT GIVEN", "YES", "NOT GIVEN", "NO"]
@@ -39,7 +39,6 @@ class CambridgeIELTS19AcademicTest2 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
 
@@ -47,11 +46,11 @@ class CambridgeIELTS19AcademicTest2 extends Seeder
             "id" => "0XIGAcSMlticROES",
             "kategori" => "listening",
             "questions" => [
-                "form_completion" => ["MATHIESON", "beginners", "college", "New", "['11', 'eleven']", "instrument"],
+                "form_completion" => ["MATHIESON", "beginners", "college", "New", "[11, eleven]", "instrument"],
                 "table_completion" => ["ear", "Clapping", "recording", "alone"],
-                "nc" => ["move", "short", "['discs', 'disks']", "oxygen", "tube", "temperatures", "protein", "space", "seaweed", "endangered"],
+                "nc" => ["move", "short", "[discs, disks]", "oxygen", "tube", "temperatures", "protein", "space", "seaweed", "endangered"],
                 "oc" => ["A", "B", "A", "B", "C", "A", "A", "B", "B", "B", "C", "A"],
-                "two_choices" => ["['C', 'E']", "['A', 'B']"],
+                "two_choices" => ["[C, E]", "[A, B]"],
                 "matching_information" => ["E", "B", "A", "C"],
 
             ]
@@ -70,9 +69,7 @@ class CambridgeIELTS19AcademicTest2 extends Seeder
                     'kategori' => $kategori,
                     'jawaban_benar' => $jawaban
                 ]);
-
             }
         }
-
     }
 }
