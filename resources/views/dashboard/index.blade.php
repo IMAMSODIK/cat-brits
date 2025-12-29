@@ -26,119 +26,248 @@
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header">
-            <h5>Users Information</h5>
-        </div>
-        <div class="card-body">
-            <div class="container-fluid">
-                <div class="row size-column">
-                    <div class="row">
-                        <div class="col-xl-3 col-6">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-project border-b-primary border-2"><span
-                                        class="f-light f-w-500 f-14">Total Users</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countUsers }}</h2> <small
-                                                class="f-light f-w-500 f-14">(Users)</small>
+    {{-- user information --}}
+    @if (auth()->user()->role == 'admin')
+        <div class="card">
+            <div class="card-header">
+                <h5>Users Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row size-column">
+                        <div class="row">
+                            <div class="col-xl-3 col-6">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-project border-b-primary border-2"><span
+                                            class="f-light f-w-500 f-14">Total Users</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countUsers }}</h2> <small
+                                                    class="f-light f-w-500 f-14">(Users)</small>
+                                            </div>
+                                            <div class="product-sub bg-primary-light">
+                                                <i class="fa fa-users text-dark"></i>
+                                            </div>
                                         </div>
-                                        <div class="product-sub bg-primary-light">
-                                            <i class="fa fa-users text-dark"></i>
-                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
                                     </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-Progress border-b-warning border-2"> <span
+                                            class="f-light f-w-500 f-14">Total Admin</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countAdmin }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Admin)</small>
+                                            </div>
+                                            <div class="product-sub bg-warning-light">
+                                                <i class="fa fa-user-secret text-dark" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/teacher'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-Complete border-b-secondary border-2"><span
+                                            class="f-light f-w-500 f-14">Total Teachers</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countTeacher }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Teachers)</small>
+                                            </div>
+                                            <div class="product-sub bg-secondary-light">
+                                                <i class="fa fa-chalkboard-teacher text-dark" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/students'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-upcoming"><span class="f-light f-w-500 f-14">Total
+                                            Students</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countStudent }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Students)</small>
+                                            </div>
+                                            <div class="product-sub bg-light-light">
+                                                <i class="fa fa-user-graduate text-dark"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-6">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-Progress border-b-warning border-2"> <span
-                                        class="f-light f-w-500 f-14">Total Admin</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countAdmin }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Admin)</small>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    @endif
+    
+
+    {{-- sets information --}}
+    @if (auth()->user()->role == 'admin')
+        <div class="card">
+            <div class="card-header">
+                <h5>Sets Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row size-column">
+                        <div class="row">
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ielts'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-project border-b-primary border-2"><span
+                                            class="f-light f-w-500 f-14">Total IELTS</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countIelts }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Sets)</small>
+                                            </div>
+                                            <div class="product-sub bg-primary-light">
+                                                <i class="fa fa-language text-dark"></i>
+                                            </div>
                                         </div>
-                                        <div class="product-sub bg-warning-light">
-                                            <i class="fa fa-user-secret text-dark" aria-hidden="true"></i>
-                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
                                     </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/teacher'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-Complete border-b-secondary border-2"><span
-                                        class="f-light f-w-500 f-14">Total Teachers</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countTeacher }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Teachers)</small>
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/toefl'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-Progress border-b-primary border-2"> <span
+                                            class="f-light f-w-500 f-14">Total TOEFL</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countToefl }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Sets)</small>
+                                            </div>
+                                            <div class="product-sub bg-primary-light">
+                                                <i class="fa fa-graduation-cap text-dark" aria-hidden="true"></i>
+                                            </div>
                                         </div>
-                                        <div class="product-sub bg-secondary-light">
-                                            <i class="fa fa-chalkboard-teacher text-dark" aria-hidden="true"></i>
-                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
                                     </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/students'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-upcoming"><span class="f-light f-w-500 f-14">Total
-                                        Students</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countStudent }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Students)</small>
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ge'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-Complete border-b-primary border-2"><span
+                                            class="f-light f-w-500 f-14">Total GE</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countGe }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Sets)</small>
+                                            </div>
+                                            <div class="product-sub bg-primary-light">
+                                                <i class="fa fa-book text-dark" aria-hidden="true"></i>
+                                            </div>
                                         </div>
-                                        <div class="product-sub bg-light-light">
-                                            <i class="fa fa-user-graduate text-dark"></i>
-                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"> </li>
+                                        </ul>
                                     </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/sat'">
+                                <div class="card o-hidden small-widget">
+                                    <div class="card-body total-Complete border-b-primary border-2">
+                                        <span class="f-light f-w-500 f-14">Total SAT</span>
+                                        <div class="project-details">
+                                            <div class="project-counter">
+                                                <h2 class="f-w-600">{{ $countSat }}</h2>
+                                                <small class="f-light f-w-500 f-14">(Sets)</small>
+                                            </div>
+                                            <div class="product-sub bg-primary-light">
+                                                <i class="fa fa-pencil-alt text-dark"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="bubbles">
+                                            <li class="bubble"> </li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                            <li class="bubble"></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -146,130 +275,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 
-    <div class="card">
-        <div class="card-header">
-            <h5>Sets Information</h5>
-        </div>
-        <div class="card-body">
-            <div class="container-fluid">
-                <div class="row size-column">
-                    <div class="row">
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ielts'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-project border-b-primary border-2"><span
-                                        class="f-light f-w-500 f-14">Total IELTS</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countIelts }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Sets)</small>
-                                        </div>
-                                        <div class="product-sub bg-primary-light">
-                                            <i class="fa fa-language text-dark"></i>
-                                        </div>
-                                    </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/toefl'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-Progress border-b-primary border-2"> <span
-                                        class="f-light f-w-500 f-14">Total TOEFL</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countToefl }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Sets)</small>
-                                        </div>
-                                        <div class="product-sub bg-primary-light">
-                                            <i class="fa fa-graduation-cap text-dark" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/ge'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-Complete border-b-primary border-2"><span
-                                        class="f-light f-w-500 f-14">Total GE</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countGe }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Sets)</small>
-                                        </div>
-                                        <div class="product-sub bg-primary-light">
-                                            <i class="fa fa-book text-dark" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-6" style="cursor: pointer" onclick="location.href = '/sat'">
-                            <div class="card o-hidden small-widget">
-                                <div class="card-body total-Complete border-b-primary border-2">
-                                    <span class="f-light f-w-500 f-14">Total SAT</span>
-                                    <div class="project-details">
-                                        <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $countSat }}</h2>
-                                            <small class="f-light f-w-500 f-14">(Sets)</small>
-                                        </div>
-                                        <div class="product-sub bg-primary-light">
-                                            <i class="fa fa-pencil-alt text-dark"></i>
-                                        </div>
-                                    </div>
-                                    <ul class="bubbles">
-                                        <li class="bubble"> </li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                        <li class="bubble"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {{-- recent activity --}}
     <div class="card">
         <div class="card-header">
             <h5>Recent Activities</h5>
@@ -278,706 +286,719 @@
             <div class="container-fluid">
                 <div class="row size-column">
                     <div class="row">
-                        <div class="col-xxl-3 col-sm-5 box-col-6">
-                            <div class="card height-equal">
-                                <div
-                                    class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
-                                    <h4 class="mb-0">New User</h4>
-                                    <span class="text-primary cursor-pointer">
-                                        <button class="btn btn-primary">View All</button>
-                                    </span>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="new-user">
-                                        <ul>
-                                            @foreach ($unverifStudent as $unverif)
-                                                <li>
-                                                    <div class="space-common d-flex user-name"><img
-                                                            class="img-40 rounded-circle img-fluid me-2"
-                                                            src="{{ asset('own_assets/images/avatar.png') }}"
-                                                            alt="user" />
-                                                        <div class="common-space w-100">
-                                                            <div>
-                                                                <h6> <a class="f-w-500 f-14 "
-                                                                        href="/students-verification">{{ $unverif->name }}</a>
-                                                                </h6>
-                                                                <span
-                                                                    class="f-light f-w-500 f-12">{{ $unverif->email }}</span>
-                                                            </div>
-                                                            <div class="product-sub">
-                                                                <div class="dropdown">
-                                                                    <div id="dropdownMenuButtonicon31"
-                                                                        data-bs-toggle="dropdown" aria-expanded="false"
-                                                                        role="menu">
-                                                                        <svg class="invoice-icon">
-                                                                            <use
-                                                                                href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#more-vertical') }}">
-                                                                            </use>
-                                                                        </svg>
-                                                                    </div>
-                                                                    <div class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuButtonicon31">
-                                                                        <a href="/students-verification"><span
-                                                                                class="dropdown-item"
-                                                                                style="color: black">Details </span></a>
+                        {{-- new user --}}
+                        @if (auth()->user()->role == 'admin')
+                            <div class="col-xxl-3 col-sm-5 box-col-6">
+                                <div class="card height-equal">
+                                    <div
+                                        class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
+                                        <h4 class="mb-0">New User</h4>
+                                        <span class="text-primary cursor-pointer">
+                                            <button class="btn btn-primary">View All</button>
+                                        </span>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="new-user">
+                                            <ul>
+                                                @foreach ($unverifStudent as $unverif)
+                                                    <li>
+                                                        <div class="space-common d-flex user-name"><img
+                                                                class="img-40 rounded-circle img-fluid me-2"
+                                                                src="{{ asset('own_assets/images/avatar.png') }}"
+                                                                alt="user" />
+                                                            <div class="common-space w-100">
+                                                                <div>
+                                                                    <h6> <a class="f-w-500 f-14 "
+                                                                            href="/students-verification">{{ $unverif->name }}</a>
+                                                                    </h6>
+                                                                    <span
+                                                                        class="f-light f-w-500 f-12">{{ $unverif->email }}</span>
+                                                                </div>
+                                                                <div class="product-sub">
+                                                                    <div class="dropdown">
+                                                                        <div id="dropdownMenuButtonicon31"
+                                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                                            role="menu">
+                                                                            <svg class="invoice-icon">
+                                                                                <use
+                                                                                    href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#more-vertical') }}">
+                                                                                </use>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <div class="dropdown-menu dropdown-menu-end"
+                                                                            aria-labelledby="dropdownMenuButtonicon31">
+                                                                            <a href="/students-verification"><span
+                                                                                    class="dropdown-item"
+                                                                                    style="color: black">Details </span></a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xxl-4 col-md-7 col-12">
-                            <div class="card height-equal">
-                                <div class="card-header card-no-border d-flex justify-content-between align-items-center">
-                                    <h4 class="mb-0">Student Activity</h4>
-                                    <a href="#" class="btn btn-primary btn-sm">View All</a>
-                                </div>
+                        @endif
 
-                                <div class="card-body pt-0">
-                                    <div class="activity-list d-flex flex-column gap-3">
+                        {{-- student activity --}}
+                        @if (auth()->user()->role == 'admin')
+                            <div class="col-xxl-4 col-md-7 col-12">
+                                <div class="card height-equal">
+                                    <div class="card-header card-no-border d-flex justify-content-between align-items-center">
+                                        <h4 class="mb-0">Student Activity</h4>
+                                        <a href="#" class="btn btn-primary btn-sm">View All</a>
+                                    </div>
 
-                                        @foreach ($studentActivities as $activities)
-                                            <div class="card shadow-sm border-0 w-100 mb-0">
-                                                <div class="card-body p-3">
+                                    <div class="card-body pt-0">
+                                        <div class="activity-list d-flex flex-column gap-3">
 
-                                                    <!-- Header -->
-                                                    <div class="d-flex align-items-center gap-3 mb-2">
-                                                        <img src="{{ $activities->student->foto
-                                                            ? asset('storage/' . $activities->student->foto)
-                                                            : asset('own_assets/images/avatar.png') }}"
-                                                            class="rounded-circle" width="45" height="45"
-                                                            alt="User">
+                                            @foreach ($studentActivities as $activities)
+                                                <div class="card shadow-sm border-0 w-100 mb-0">
+                                                    <div class="card-body p-3">
 
-                                                        <div class="flex-grow-1">
-                                                            <div class="fw-semibold">{{ $activities->student->name }}
+                                                        <!-- Header -->
+                                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                                            <img src="{{ $activities->student->foto
+                                                                ? asset('storage/' . $activities->student->foto)
+                                                                : asset('own_assets/images/avatar.png') }}"
+                                                                class="rounded-circle" width="45" height="45"
+                                                                alt="User">
+
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-semibold">{{ $activities->student->name }}
+                                                                </div>
+                                                                <small class="text-primary">{{ $activities->setSoal->name }} |
+                                                                    {{ ucfirst($activities->kategori) }}</small>
                                                             </div>
-                                                            <small class="text-primary">{{ $activities->setSoal->name }} |
-                                                                {{ ucfirst($activities->kategori) }}</small>
+
+                                                            @if ($activities->tipe_test == 'practice')
+                                                                <span class="badge bg-primary">Practice</span>
+                                                            @else
+                                                                <span class="badge bg-warning text-dark">Mock</span>
+                                                            @endif
                                                         </div>
 
-                                                        @if ($activities->tipe_test == 'practice')
-                                                            <span class="badge bg-primary">Practice</span>
-                                                        @else
-                                                            <span class="badge bg-warning text-dark">Mock</span>
-                                                        @endif
-                                                    </div>
-
-                                                    <div class="d-flex flex-column gap-1 small">
-                                                        <div>
-                                                            <span class="text-muted">Test Type:</span>
-                                                            <strong>{{ $activities->nama_tipe }}</strong>
-                                                        </div>
-
-                                                        @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                        <div class="d-flex flex-column gap-1 small">
                                                             <div>
-                                                                <span class="text-muted">Assessor:</span>
-                                                                @if ($activities->teacher_id)
-                                                                    <strong>{{ $activities->teacher->name }}</strong>
-                                                                @else
-                                                                    <span class="text-warning">Not Yet Assessed</span>
-                                                                @endif
+                                                                <span class="text-muted">Test Type:</span>
+                                                                <strong>{{ $activities->nama_tipe }}</strong>
                                                             </div>
-                                                        @else
-                                                            <div>
-                                                                <span class="text-muted">Score:</span>
-                                                                <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+
+                                                            @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                                <div>
+                                                                    <span class="text-muted">Assessor:</span>
+                                                                    @if ($activities->teacher_id)
+                                                                        <strong>{{ $activities->teacher->name }}</strong>
+                                                                    @else
+                                                                        <span class="text-warning">Not Yet Assessed</span>
+                                                                    @endif
+                                                                </div>
+                                                            @else
+                                                                <div>
+                                                                    <span class="text-muted">Score:</span>
+                                                                    <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+                                                                </div>
+                                                            @endif
+                                                        </div>
+
+                                                        @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                            <div class="mt-3">
+                                                                <button class="btn btn-outline-primary btn-sm w-100">
+                                                                    View Details
+                                                                </button>
                                                             </div>
                                                         @endif
+
                                                     </div>
-
-                                                    @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
-                                                        <div class="mt-3">
-                                                            <button class="btn btn-outline-primary btn-sm w-100">
-                                                                View Details
-                                                            </button>
-                                                        </div>
-                                                    @endif
-
                                                 </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
 
-                <hr>
+                @if (auth()->user()->role == 'admin')
+                    <hr>
+                @endif
 
-                <div class="row">
-                    <div class="col-12 col-xl-6">
-                        <div class="card o-hidden small-widget">
-                            <div class="card-body total-project border-b-primary border-2">
-                                <span class="f-light f-w-500 f-14">Speaking Video Awaiting Review</span>
+                {{-- teacher and admin --}}
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+                    <div class="row">
+                        <div class="col-12 col-xl-6">
+                            <div class="card o-hidden small-widget">
+                                <div class="card-body total-project border-b-primary border-2">
+                                    <span class="f-light f-w-500 f-14">Speaking Video Awaiting Review</span>
 
-                                <div class="project-details">
-                                    <div class="project-counter">
-                                        <h2 class="f-w-600">{{ $videoRequest->count() }}</h2>
+                                    <div class="project-details">
+                                        <div class="project-counter">
+                                            <h2 class="f-w-600">{{ $videoRequest->count() }}</h2>
+                                        </div>
+
+                                        <div class="product-sub bg-primary-light">
+                                            <i class="fas fa-video text-primary"></i>
+                                        </div>
                                     </div>
 
-                                    <div class="product-sub bg-primary-light">
-                                        <i class="fas fa-video text-primary"></i>
-                                    </div>
+                                    <ul class="bubbles">
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
 
-                                <ul class="bubbles">
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                </ul>
+                        <div class="col-12 col-xl-6">
+                            <div class="card o-hidden small-widget">
+                                <div class="card-body total-project border-b-primary border-2">
+                                    <span class="f-light f-w-500 f-14">Essay Awaiting Review</span>
+
+                                    <div class="project-details">
+                                        <div class="project-counter">
+                                            <h2 class="f-w-600">{{ $writingRequest->count() }}</h2>
+                                        </div>
+
+                                        <div class="product-sub bg-primary-light">
+                                            <i class="fas fa-file-alt text-primary"></i>
+                                        </div>
+                                    </div>
+
+                                    <ul class="bubbles">
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 col-xl-6">
-                        <div class="card o-hidden small-widget">
-                            <div class="card-body total-project border-b-primary border-2">
-                                <span class="f-light f-w-500 f-14">Essay Awaiting Review</span>
-
-                                <div class="project-details">
-                                    <div class="project-counter">
-                                        <h2 class="f-w-600">{{ $writingRequest->count() }}</h2>
+                    <div class="row">
+                        <div class="col-12 col-xxl-4 col-md-6">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4>Speaking Test Requests</h4>
+                                        <p class="f-m-light mt-1">
+                                            A list of students who submitted speaking tests.
+                                        </p>
                                     </div>
-
-                                    <div class="product-sub bg-primary-light">
-                                        <i class="fas fa-file-alt text-primary"></i>
-                                    </div>
+                                    <span class="badge bg-danger text-white">
+                                        {{ $videoRequest->count() }}
+                                    </span>
                                 </div>
+                                <div class="card-body">
+                                    <div class="vertical-scroll scroll-demo scroll-b-none">
+                                        <div class="list-group main-lists-content">
 
-                                <ul class="bubbles">
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                            @forelse ($videoRequest as $v)
+                                                <div class="list-group-item list-group-item-action list-hover-primary btn-review-speaking"
+                                                    style="cursor: pointer" data-id="{{ $v->id }}"
+                                                    data-video="{{ asset('storage/recordings/' . $v->video) }}"
+                                                    data-student="{{ $v->student->name }}">
+                                                    <div class="row">
+                                                        <div class="col-5 d-flex align-items-center">
+                                                            <video width="100%" controls class="preview-video"
+                                                                data-duration-target="duration-{{ $v->id }}">
+                                                                <source src="{{ asset('storage/recordings/' . $v->video) }}"
+                                                                    type="video/webm">
+                                                            </video>
+                                                        </div>
 
-                <div class="row">
-                    <div class="col-12 col-xxl-4 col-md-6">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4>Speaking Test Requests</h4>
-                                    <p class="f-m-light mt-1">
-                                        A list of students who submitted speaking tests.
-                                    </p>
-                                </div>
-                                <span class="badge bg-danger text-white">
-                                    {{ $videoRequest->count() }}
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div class="vertical-scroll scroll-demo scroll-b-none">
-                                    <div class="list-group main-lists-content">
+                                                        <div class="col-7">
+                                                            <div class="list-content">
+                                                                <h6 class="mb-1">{{ $v->student->name }}</h6>
 
-                                        @forelse ($videoRequest as $v)
-                                            <div class="list-group-item list-group-item-action list-hover-primary btn-review-speaking"
-                                                style="cursor: pointer" data-id="{{ $v->id }}"
-                                                data-video="{{ asset('storage/recordings/' . $v->video) }}"
-                                                data-student="{{ $v->student->name }}">
-                                                <div class="row">
-                                                    <div class="col-5 d-flex align-items-center">
-                                                        <video width="100%" controls class="preview-video"
-                                                            data-duration-target="duration-{{ $v->id }}">
-                                                            <source src="{{ asset('storage/recordings/' . $v->video) }}"
-                                                                type="video/webm">
-                                                        </video>
-                                                    </div>
-
-                                                    <div class="col-7">
-                                                        <div class="list-content">
-                                                            <h6 class="mb-1">{{ $v->student->name }}</h6>
-
-                                                            <p class="mb-1 text-muted" style="font-size:13px;">
-                                                                <i class="fa fa-calendar"></i>
-                                                                {{ $v->created_at->format('Y-m-d') }}
-                                                                &nbsp; • &nbsp;
-                                                                <i class="fa fa-clock"></i>
-                                                                <span id="duration-{{ $v->id }}">Loading…</span>
-                                                            </p>
-                                                            <p class="text-dark" style="font-size: 13px;">
-                                                                <b>Topic: {{ $v->setSoal->name }}</b><br>
-                                                                {{ $v->setSoal->thumbnail }} <br>
-                                                                <small class="text-primary">Part {{ $v->part_soal }}
+                                                                <p class="mb-1 text-muted" style="font-size:13px;">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                    {{ $v->created_at->format('Y-m-d') }}
                                                                     &nbsp; • &nbsp;
-                                                                    Number {{ $v->no_soal }}</small>
-                                                            </p>
+                                                                    <i class="fa fa-clock"></i>
+                                                                    <span id="duration-{{ $v->id }}">Loading…</span>
+                                                                </p>
+                                                                <p class="text-dark" style="font-size: 13px;">
+                                                                    <b>Topic: {{ $v->setSoal->name }}</b><br>
+                                                                    {{ $v->setSoal->thumbnail }} <br>
+                                                                    <small class="text-primary">Part {{ $v->part_soal }}
+                                                                        &nbsp; • &nbsp;
+                                                                        Number {{ $v->no_soal }}</small>
+                                                                </p>
 
-                                                            <button class="btn btn-sm btn-primary mt-2">
-                                                                <i class="fas fa-play-circle"></i> Review and Correct
-                                                            </button>
+                                                                <button class="btn btn-sm btn-primary mt-2">
+                                                                    <i class="fas fa-play-circle"></i> Review and Correct
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                </div>
-                                            </div>
-                                        @empty
-                                            <div class="text-center text-muted py-3">
-                                                No writing submissions found.
-                                            </div>
-                                        @endforelse
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-xxl-4 col-md-6">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4>Writing Test Requests</h4>
-                                    <p class="f-m-light mt-1">
-                                        A list of students who submitted writing tests.
-                                    </p>
-                                </div>
-                                <span class="badge bg-danger text-white">
-                                    {{ $writingRequest->count() }}
-                                </span>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="vertical-scroll scroll-demo scroll-b-none">
-                                    <div class="list-group main-lists-content">
-
-                                        @forelse ($writingRequest as $w)
-                                            <div style="cursor: pointer" data-id="{{ $w->id }}"
-                                                class="list-group-item list-group-item-action list-hover-primary btn-review-writing">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="list-content">
-
-                                                            <!-- STUDENT NAME -->
-                                                            <h6 class="mb-1">
-                                                                {{ $w->student->name ?? 'Unknown Student' }}
-                                                            </h6>
-
-                                                            <!-- DATE + WORD COUNT -->
-                                                            <p class="mb-1 text-muted" style="font-size: 13px;">
-                                                                <i class="fa fa-calendar"></i>
-                                                                {{ $w->created_at->format('Y-m-d') }}
-
-                                                                &nbsp; • &nbsp;
-
-                                                                <i class="fa fa-clock"></i>
-                                                                {{ str_word_count($w->answer) }} words
-                                                            </p>
-
-                                                            <!-- TOPIC -->
-                                                            <p class="text-dark" style="font-size: 13px;">
-                                                                <b>Topic: {{ $w->setSoal->name }}</b><br>
-                                                                {{ $w->setSoal->thumbnail }} <br>
-                                                                <small class="text-primary">{{ $w->task }} &nbsp; •
-                                                                    &nbsp; Number
-                                                                    {{ $v->no_soal }}</small>
-                                                            </p>
-
-                                                            <!-- BUTTON -->
-                                                            <button class="btn btn-sm btn-primary mt-2">
-                                                                <i class="fas fa-edit"></i>
-                                                                Review & Correct Writing
-                                                            </button>
-
-                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        @empty
-                                            <div class="text-center text-muted py-3">
-                                                No writing submissions found.
-                                            </div>
-                                        @endforelse
+                                            @empty
+                                                <div class="text-center text-muted py-3">
+                                                    No writing submissions found.
+                                                </div>
+                                            @endforelse
 
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xxl-4 col-md-6">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4>Writing Test Requests</h4>
+                                        <p class="f-m-light mt-1">
+                                            A list of students who submitted writing tests.
+                                        </p>
+                                    </div>
+                                    <span class="badge bg-danger text-white">
+                                        {{ $writingRequest->count() }}
+                                    </span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="vertical-scroll scroll-demo scroll-b-none">
+                                        <div class="list-group main-lists-content">
+
+                                            @forelse ($writingRequest as $w)
+                                                <div style="cursor: pointer" data-id="{{ $w->id }}"
+                                                    class="list-group-item list-group-item-action list-hover-primary btn-review-writing">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="list-content">
+
+                                                                <!-- STUDENT NAME -->
+                                                                <h6 class="mb-1">
+                                                                    {{ $w->student->name ?? 'Unknown Student' }}
+                                                                </h6>
+
+                                                                <!-- DATE + WORD COUNT -->
+                                                                <p class="mb-1 text-muted" style="font-size: 13px;">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                    {{ $w->created_at->format('Y-m-d') }}
+
+                                                                    &nbsp; • &nbsp;
+
+                                                                    <i class="fa fa-clock"></i>
+                                                                    {{ str_word_count($w->answer) }} words
+                                                                </p>
+
+                                                                <!-- TOPIC -->
+                                                                <p class="text-dark" style="font-size: 13px;">
+                                                                    <b>Topic: {{ $w->setSoal->name }}</b><br>
+                                                                    {{ $w->setSoal->thumbnail }} <br>
+                                                                    <small class="text-primary">{{ $w->task }} &nbsp; •
+                                                                        &nbsp; Number
+                                                                        {{ $v->no_soal }}</small>
+                                                                </p>
+
+                                                                <!-- BUTTON -->
+                                                                <button class="btn btn-sm btn-primary mt-2">
+                                                                    <i class="fas fa-edit"></i>
+                                                                    Review & Correct Writing
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @empty
+                                                <div class="text-center text-muted py-3">
+                                                    No writing submissions found.
+                                                </div>
+                                            @endforelse
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <hr>
+                    <hr>
 
-                <div class="row">
-                    <div class="col-12 col-xl-6">
-                        <div class="card o-hidden small-widget">
-                            <div class="card-body total-project border-b-primary border-2">
-                                <span class="f-light f-w-500 f-14">Request Video Call Live Test</span>
+                    <div class="row">
+                        <div class="col-12 col-xl-6">
+                            <div class="card o-hidden small-widget">
+                                <div class="card-body total-project border-b-primary border-2">
+                                    <span class="f-light f-w-500 f-14">Request Video Call Live Test</span>
 
-                                <div class="project-details">
-                                    <div class="project-counter">
-                                        <h2 class="f-w-600">{{ $pendingSessions->count() }}</h2>
+                                    <div class="project-details">
+                                        <div class="project-counter">
+                                            <h2 class="f-w-600">{{ $pendingSessions->count() }}</h2>
+                                        </div>
+
+                                        <div class="product-sub bg-primary-light">
+                                            <i class="fas fa-phone-alt text-primary"></i>
+                                        </div>
                                     </div>
 
-                                    <div class="product-sub bg-primary-light">
-                                        <i class="fas fa-phone-alt text-primary"></i>
-                                    </div>
+                                    <ul class="bubbles">
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
 
-                                <ul class="bubbles">
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                </ul>
+                        <div class="col-12 col-xl-6">
+                            <div class="card o-hidden small-widget">
+                                <div class="card-body total-project border-b-primary border-2">
+                                    <span class="f-light f-w-500 f-14">Upcoming Sessions</span>
+
+                                    <div class="project-details">
+                                        <div class="project-counter">
+                                            <h2 class="f-w-600">{{ $upcomingSessions->count() }}</h2>
+                                        </div>
+
+                                        <div class="product-sub bg-primary-light">
+                                            <i class="fas fa-phone-alt text-primary"></i>
+                                        </div>
+                                    </div>
+
+                                    <ul class="bubbles">
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                        <li class="bubble"></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 col-xl-6">
-                        <div class="card o-hidden small-widget">
-                            <div class="card-body total-project border-b-primary border-2">
-                                <span class="f-light f-w-500 f-14">Upcoming Sessions</span>
-
-                                <div class="project-details">
-                                    <div class="project-counter">
-                                        <h2 class="f-w-600">{{ $upcomingSessions->count() }}</h2>
-                                    </div>
-
-                                    <div class="product-sub bg-primary-light">
-                                        <i class="fas fa-phone-alt text-primary"></i>
-                                    </div>
+                    <div class="row video-call-row">
+                        <div class="col-12 col-xxl-6 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Live Video Call Test</h4>
+                                    <p class="f-m-light mt-1">Manage student requests and accepted live test sessions.</p>
                                 </div>
 
-                                <ul class="bubbles">
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                    <li class="bubble"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <div class="card-body">
 
-                <div class="row video-call-row">
-                    <div class="col-12 col-xxl-6 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Live Video Call Test</h4>
-                                <p class="f-m-light mt-1">Manage student requests and accepted live test sessions.</p>
-                            </div>
+                                    <ul class="nav nav-tabs" id="videoCallTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#requests"
+                                                type="button">
+                                                Requests
+                                                <span class="badge bg-primary ms-1">{{ $pendingSessions->count() }}</span>
+                                            </button>
+                                        </li>
 
-                            <div class="card-body">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#acceptedSessions"
+                                                type="button">
+                                                Accepted
+                                                <span class="badge bg-success ms-1">{{ $upcomingSessions->count() }}</span>
+                                            </button>
+                                        </li>
+                                    </ul>
 
-                                <ul class="nav nav-tabs" id="videoCallTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#requests"
-                                            type="button">
-                                            Requests
-                                            <span class="badge bg-primary ms-1">{{ $pendingSessions->count() }}</span>
-                                        </button>
-                                    </li>
+                                    <div class="tab-content mt-3">
 
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#acceptedSessions"
-                                            type="button">
-                                            Accepted
-                                            <span class="badge bg-success ms-1">{{ $upcomingSessions->count() }}</span>
-                                        </button>
-                                    </li>
-                                </ul>
+                                        {{-- REQUESTS TAB --}}
+                                        <div class="tab-pane fade show active" id="requests">
 
-                                <div class="tab-content mt-3">
-
-                                    {{-- REQUESTS TAB --}}
-                                    <div class="tab-pane fade show active" id="requests">
-
-                                        @if ($pendingSessions->isEmpty())
-                                            <div class="text-center py-4 text-muted">
-                                                <i class="fa fa-inbox fa-2x mb-2"></i>
-                                                <p class="mb-0">No pending requests</p>
-                                            </div>
-                                        @else
-                                            {{-- DESKTOP TABLE --}}
-                                            <div class="table-responsive d-none d-md-block">
-                                                <table class="table table-bordered align-middle">
-                                                    <thead class="table-light">
-                                                        <tr>
-                                                            <th>Student</th>
-                                                            <th>Teacher</th>
-                                                            <th>Title</th>
-                                                            <th>Proposed Time</th>
-                                                            <th>Duration</th>
-                                                            <th class="text-center">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($pendingSessions as $session)
+                                            @if ($pendingSessions->isEmpty())
+                                                <div class="text-center py-4 text-muted">
+                                                    <i class="fa fa-inbox fa-2x mb-2"></i>
+                                                    <p class="mb-0">No pending requests</p>
+                                                </div>
+                                            @else
+                                                {{-- DESKTOP TABLE --}}
+                                                <div class="table-responsive d-none d-md-block">
+                                                    <table class="table table-bordered align-middle">
+                                                        <thead class="table-light">
                                                             <tr>
-                                                                <td>{{ $session->student->name }}</td>
-                                                                <td>{{ $session->teacher->name }}</td>
-                                                                <td>{{ $session->title }}</td>
-                                                                <td><i class="fa fa-calendar text-primary me-1"></i>
-                                                                    {{ $session->proposed_time->format('M d, Y H:i') }}
-                                                                </td>
-                                                                <td><span
-                                                                        class="badge bg-info">{{ $session->duration_minutes }}
-                                                                        min</span></td>
-                                                                <td class="text-center">
+                                                                <th>Student</th>
+                                                                <th>Teacher</th>
+                                                                <th>Title</th>
+                                                                <th>Proposed Time</th>
+                                                                <th>Duration</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($pendingSessions as $session)
+                                                                <tr>
+                                                                    <td>{{ $session->student->name }}</td>
+                                                                    <td>{{ $session->teacher->name }}</td>
+                                                                    <td>{{ $session->title }}</td>
+                                                                    <td><i class="fa fa-calendar text-primary me-1"></i>
+                                                                        {{ $session->proposed_time->format('M d, Y H:i') }}
+                                                                    </td>
+                                                                    <td><span
+                                                                            class="badge bg-info">{{ $session->duration_minutes }}
+                                                                            min</span></td>
+                                                                    <td class="text-center">
+                                                                        <button class="btn btn-info btn-sm btn-detail"
+                                                                            data-id="{{ $session->id }}">
+                                                                            <i class="fa fa-eye"></i> Details
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                {{-- MOBILE CARDS --}}
+                                                <div class="d-block d-md-none">
+                                                    @foreach ($pendingSessions as $session)
+                                                        <div class="card mb-3 shadow-sm">
+                                                            <div class="card-body">
+                                                                <strong>Student:</strong> {{ $session->student->name }} <br>
+                                                                <strong>Teacher:</strong> {{ $session->teacher->name }} <br>
+                                                                <strong>Title:</strong> {{ $session->title }} <br>
+                                                                <strong>Proposed:</strong>
+                                                                {{ $session->proposed_time->format('M d, Y H:i') }} <br>
+                                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min
+                                                                <br>
+
+                                                                <div class="mt-3">
                                                                     <button class="btn btn-info btn-sm btn-detail"
                                                                         data-id="{{ $session->id }}">
                                                                         <i class="fa fa-eye"></i> Details
                                                                     </button>
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            {{-- MOBILE CARDS --}}
-                                            <div class="d-block d-md-none">
-                                                @foreach ($pendingSessions as $session)
-                                                    <div class="card mb-3 shadow-sm">
-                                                        <div class="card-body">
-                                                            <strong>Student:</strong> {{ $session->student->name }} <br>
-                                                            <strong>Teacher:</strong> {{ $session->teacher->name }} <br>
-                                                            <strong>Title:</strong> {{ $session->title }} <br>
-                                                            <strong>Proposed:</strong>
-                                                            {{ $session->proposed_time->format('M d, Y H:i') }} <br>
-                                                            <strong>Duration:</strong> {{ $session->duration_minutes }} min
-                                                            <br>
-
-                                                            <div class="mt-3">
-                                                                <button class="btn btn-info btn-sm btn-detail"
-                                                                    data-id="{{ $session->id }}">
-                                                                    <i class="fa fa-eye"></i> Details
-                                                                </button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            @endif
 
-                                    </div>
+                                        </div>
 
-                                    {{-- ACCEPTED SESSIONS TAB --}}
-                                    <div class="tab-pane fade" id="acceptedSessions">
+                                        {{-- ACCEPTED SESSIONS TAB --}}
+                                        <div class="tab-pane fade" id="acceptedSessions">
 
-                                        @if ($upcomingSessions->isEmpty())
-                                            <div class="text-center py-4 text-muted">
-                                                <i class="fa fa-calendar-times fa-2x mb-2"></i>
-                                                <p class="mb-0">No upcoming accepted sessions</p>
-                                            </div>
-                                        @else
-                                            {{-- DESKTOP TABLE --}}
-                                            <div class="table-responsive d-none d-md-block">
-                                                <table class="table table-bordered align-middle">
-                                                    <thead class="table-light">
-                                                        <tr>
-                                                            <th>Student</th>
-                                                            <th>Teacher</th>
-                                                            <th>Title</th>
-                                                            <th>Scheduled Time</th>
-                                                            <th>Duration</th>
-                                                            <th class="text-center">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($upcomingSessions as $session)
+                                            @if ($upcomingSessions->isEmpty())
+                                                <div class="text-center py-4 text-muted">
+                                                    <i class="fa fa-calendar-times fa-2x mb-2"></i>
+                                                    <p class="mb-0">No upcoming accepted sessions</p>
+                                                </div>
+                                            @else
+                                                {{-- DESKTOP TABLE --}}
+                                                <div class="table-responsive d-none d-md-block">
+                                                    <table class="table table-bordered align-middle">
+                                                        <thead class="table-light">
                                                             <tr>
-                                                                <td>{{ $session->student->name }}</td>
-                                                                <td>{{ $session->teacher->name }}</td>
-                                                                <td>{{ $session->title }}</td>
-                                                                <td><i class="fa fa-clock text-success me-1"></i>
-                                                                    {{ $session->scheduled_time->format('M d, Y H:i') }}
-                                                                </td>
-                                                                <td><span
-                                                                        class="badge bg-success">{{ $session->duration_minutes }}
-                                                                        min</span></td>
-                                                                <td class="text-center">
+                                                                <th>Student</th>
+                                                                <th>Teacher</th>
+                                                                <th>Title</th>
+                                                                <th>Scheduled Time</th>
+                                                                <th>Duration</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($upcomingSessions as $session)
+                                                                <tr>
+                                                                    <td>{{ $session->student->name }}</td>
+                                                                    <td>{{ $session->teacher->name }}</td>
+                                                                    <td>{{ $session->title }}</td>
+                                                                    <td><i class="fa fa-clock text-success me-1"></i>
+                                                                        {{ $session->scheduled_time->format('M d, Y H:i') }}
+                                                                    </td>
+                                                                    <td><span
+                                                                            class="badge bg-success">{{ $session->duration_minutes }}
+                                                                            min</span></td>
+                                                                    <td class="text-center">
+                                                                        <button class="btn btn-info btn-sm btn-detail"
+                                                                            data-id="{{ $session->id }}">
+                                                                            <i class="fa fa-eye"></i> Details
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                {{-- MOBILE CARDS --}}
+                                                <div class="d-block d-md-none">
+                                                    @foreach ($upcomingSessions as $session)
+                                                        <div class="card mb-3 shadow-sm">
+                                                            <div class="card-body">
+                                                                <strong>Student:</strong> {{ $session->student->name }} <br>
+                                                                <strong>Teacher:</strong> {{ $session->teacher->name }} <br>
+                                                                <strong>Title:</strong> {{ $session->title }} <br>
+                                                                <strong>Scheduled:</strong>
+                                                                {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
+                                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min
+                                                                <br>
+
+                                                                <div class="mt-3">
                                                                     <button class="btn btn-info btn-sm btn-detail"
                                                                         data-id="{{ $session->id }}">
                                                                         <i class="fa fa-eye"></i> Details
                                                                     </button>
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            {{-- MOBILE CARDS --}}
-                                            <div class="d-block d-md-none">
-                                                @foreach ($upcomingSessions as $session)
-                                                    <div class="card mb-3 shadow-sm">
-                                                        <div class="card-body">
-                                                            <strong>Student:</strong> {{ $session->student->name }} <br>
-                                                            <strong>Teacher:</strong> {{ $session->teacher->name }} <br>
-                                                            <strong>Title:</strong> {{ $session->title }} <br>
-                                                            <strong>Scheduled:</strong>
-                                                            {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
-                                                            <strong>Duration:</strong> {{ $session->duration_minutes }} min
-                                                            <br>
-
-                                                            <div class="mt-3">
-                                                                <button class="btn btn-info btn-sm btn-detail"
-                                                                    data-id="{{ $session->id }}">
-                                                                    <i class="fa fa-eye"></i> Details
-                                                                </button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            @endif
 
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header card-no-border total-revenue pb-0">
+                                    <h5 class="mb-2">Top Reading</h5>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="table-responsive d-none d-md-block">
+                                        <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Score</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($score[0][0] as $item)
+                                                    <tr>
+                                                        <td>{{ $item->name }}</td>
+                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-6 col-lg-3">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Top Reading</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[0][0] as $item)
+                        <div class="col-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header card-no-border total-revenue pb-0">
+                                    <h5 class="mb-2">Bottom Reading</h5>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="table-responsive d-none d-md-block">
+                                        <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
+                                            <thead class="table-light">
                                                 <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
+                                                    <th>Name</th>
+                                                    <th>Score</th>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($score[0][1] as $item)
+                                                    <tr>
+                                                        <td>{{ $item->name }}</td>
+                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header card-no-border total-revenue pb-0">
+                                    <h5 class="mb-2">Top Listening</h5>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="table-responsive d-none d-md-block">
+                                        <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Score</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($score[1][0] as $item)
+                                                    <tr>
+                                                        <td>{{ $item->name }}</td>
+                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header card-no-border total-revenue pb-0">
+                                    <h5 class="mb-2">Bottom Listening</h5>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="table-responsive d-none d-md-block">
+                                        <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Score</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($score[1][1] as $item)
+                                                    <tr>
+                                                        <td>{{ $item->name }}</td>
+                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-6 col-lg-3">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Bottom Reading</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[0][1] as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Top Listening</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[1][0] as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Bottom Listening</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[1][1] as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
+                {{-- end teacher and admin --}}
             </div>
         </div>
     </div>
