@@ -1,7 +1,7 @@
 {
   "reading": {
     "two_choices": [
-      "['B', 'C']"
+      "[B, C]"
     ],
     "matching_features": [
       "B",
@@ -57,8 +57,8 @@
   },
   "listening": {
     "two_choices": [
-      "['A', 'E']",
-      "['B', 'E']"
+      "[A, E]",
+      "[B, E]"
     ],
     "matching_information": [
       "F",

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Sets;
 
-class PreTest02 extends CambridgeIELTSBaseSeeder
+class PT02 extends CambridgeIELTSBaseSeeder
 {
     protected function getSetId(): string
     {
@@ -10,6 +10,6 @@ class PreTest02 extends CambridgeIELTSBaseSeeder
     }
     protected function getJsonFileName(): string
     {
-        return 'preTest02.json';
+        return 'pt02.json';
     }
 }

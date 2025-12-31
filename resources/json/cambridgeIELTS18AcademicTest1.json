@@ -88,9 +88,9 @@
       "A"
     ],
     "two_choices": [
-      "['B', 'E']",
-      "['B', 'E']",
-      "['A', 'C']"
+      "[B, E]",
+      "[B, E]",
+      "[A, C]"
     ],
     "matching_information": [
       "B",
