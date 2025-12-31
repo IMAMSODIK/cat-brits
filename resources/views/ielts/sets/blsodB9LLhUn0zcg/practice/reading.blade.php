@@ -696,8 +696,8 @@
         }
 
         #panel-tc .q-number-box,
-        #panel-two_choice .q-number-box,
-        #panel-two_choice2 .q-number-box,
+        #panel-two_choices .q-number-box,
+        #panel-two_choices2 .q-number-box,
         #panel-summary_completion .q-number-box {
             display: inline-flex;
             justify-content: center;
@@ -719,7 +719,7 @@
             box-sizing: border-box;
         }
 
-        #panel-tc .q-text {
+        [id^="panel-"] .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -1666,6 +1666,8 @@
             ];
         @endphp
 
+
+
         <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="matching_information" />
     </section>
 
@@ -1825,6 +1827,43 @@
             return 0; // jika kurang dari 4 benar
         }
     </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = @json($tabs);
+            const dataKategori = "reading";
+            let prevName;
+            tabs.forEach(tab => {
+                const form = document.querySelector(`#form-${tab.id}`);
+                if (!form) return;
+
+                let count = 0;
+
+                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
+
+                inputs.forEach(input => {
+                    if (prevName === input.name) {
+                        if (input.type === "checkbox") {
+                            count = 2;
+                        }
+                        return;
+                    }
+                    prevName = input.name;
+                    count++
+
+                })
+
+                const btn = document.querySelector(`#submit-${tab.id}`);
+                if (!btn) return;
+
+                btn.setAttribute("data-count", count);
+                btn.setAttribute("data-kategori", dataKategori);
+            });
+        });
+    </script>
+
+
 
     <script>
         (function() {
@@ -2510,10 +2549,10 @@
             }
         });
 
-        function submitHelper(form, setId, tipe, button, againBtn) {
+        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
             let allAnswered = true;
 
-            $(`#${form} fieldset[data-q]`).each(function() {
+            $(`#${form} [data-q]`).each(function() {
                 let isAnswered = false;
                 const inputs = $(this).find("input, select, textarea");
 
@@ -2540,13 +2579,14 @@
                 return;
             }
 
-            // ✅ KIRIM FORM DATA
             let formData = new FormData($(`#${form}`)[0]);
             formData.append("tipe", tipe);
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
             formData.append("set_id", setId);
-            formData.append("kategori", 'reading');
+            formData.append("kategori", button.data('kategori'));
             formData.append("tipe_test", 'practice');
+            formData.append("jumlah_soal", button.data('count'));
+            formData.append("nama_tipe", namaTipe);
 
             $.ajax({
                 url: "/ielts/practice/check",
@@ -2556,11 +2596,11 @@
                 contentType: false,
                 success: function(response) {
                     if (response.status === "ok") {
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
-
                         $(".q-option").removeClass("correct wrong");
                         $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
 
                         let correctCount = response.score;
                         let total = Object.keys(response.results).length;
@@ -2659,7 +2699,8 @@
                     "blsodB9LLhUn0zcg", // folder
                     tipe, // tipe
                     $(this),
-                    `again-${id}` // again
+                    `again-${id}`,
+                    tab.title
                 );
             });
         });
