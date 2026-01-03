@@ -7,9 +7,9 @@
     <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -529,7 +529,8 @@
             margin-bottom: 30px;
         }
 
-        td .q-item {
+        td .q-item,
+        ul li .q-item {
             border: none !important;
             border-radius: 0 !important;
             padding: 0 !important;
@@ -584,6 +585,13 @@
         .q-option input {
             display: none;
         }
+
+        .two .q-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
 
         .q-option .opt-code {
             font-weight: 800;
@@ -690,7 +698,10 @@
             }
         }
 
-        [id^="panel-"]:not(:has(input[type="checkbox"], input[type="radio"])) .q-options {
+        #panel-tfng .q-options,
+        #panel-tfng2 .q-options,
+        #panel-mse .q-options,
+        #panel-tc .q-options {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -717,10 +728,8 @@
             box-sizing: border-box;
         }
 
-
         /* #panel-tfng input,
         #panel-tfng2 input,
-        #panel-ynng input,
         #panel-mse input,
         #panel-tc input {
             padding: 6px 10px;
@@ -896,7 +905,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            right: 16px;
+            left: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -985,15 +994,15 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                right: 12px;
-                left: auto;
+                left: 12px;
+                /* left: auto; */
                 width: auto;
                 max-width: 100%;
             }
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                right: 12px;
+                /* right: 12px; */
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1012,189 +1021,141 @@
 
     {{-- style unutk audio player --}}
     <style>
-        .audio-player:hover {
-            transform: translateY(-3px);
-        }
+        /* ===============================
+   AUDIO PLAYER CONTAINER
+   =============================== */
+        .audio-player {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
 
-        .player-header {
-            text-align: center;
-            margin-bottom: 15px;
-        }
+            padding: 18px 20px;
+            border-radius: 18px;
+            margin: 20px 0;
 
-        .player-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .player-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .controls-container {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            flex-direction: column;
+            gap: 14px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
-        /* ===== PLAY BUTTON ===== */
-        .play-btn {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
+        /* ===============================
+   PLAY BUTTON (Tapi disembunyikan)
+   =============================== */
+        .ap-btn.ap-play {
+            display: none !important;
+        }
+
+        /* ===============================
+   VOLUME BUTTON (Minimalis)
+   =============================== */
+        .ap-btn.ap-vol {
             border: none;
-            cursor: pointer;
-            color: white;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-        }
-
-        .seek-container {
-            flex: 1;
-        }
-
-        .seekBar,
-        #seekBar,
-        .seekBar {
-            width: 100%;
-            height: 7px;
-            appearance: none;
-            background: #e0e0e0;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 10px;
             border-radius: 10px;
-            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s ease;
+        }
+
+        .ap-btn.ap-vol:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===============================
+   TRACK WRAPPER
+   =============================== */
+        .ap-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            position: relative;
             overflow: hidden;
         }
 
-        .seekBar::-webkit-slider-thumb {
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #2575fc;
-            box-shadow: -400px 0 0 390px #2575fc;
+        /* Progress bar */
+        .ap-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: inherit;
+            transition: width 0.2s linear;
         }
 
-        .timeText {
+        /* ===============================
+   SEEK (DISABLED)
+   =============================== */
+        .ap-seek {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: not-allowed !important;
+            pointer-events: none !important;
+        }
+
+        /* ===============================
+   TIME DISPLAY
+   =============================== */
+        .ap-time {
             display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            font-size: 0.9rem;
-            color: #444;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
         }
 
-        .start-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
+        /* ===============================
+   REMOVE DEFAULT AUDIO ELEMENT
+   =============================== */
+        audio {
+            display: none !important;
         }
 
-        .start-btn {
-            padding: 9px 15px;
-            font-size: 0.9rem;
-            background: rgba(37, 117, 252, 0.08);
-            border: 1px solid rgba(37, 117, 252, 0.25);
-            color: #2575fc;
-            border-radius: 8px;
+        /* ===============================
+   RESPONSIVE
+   =============================== */
+        @media (max-width: 600px) {
+            .audio-player {
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+            .ap-time {
+                font-size: 13px;
+            }
+        }
+    </style>
+
+    <style>
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 10px;
+            background-color: #fccb2a;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: 0.15s;
-            white-space: nowrap;
-        }
-
-        .start-btn:hover {
-            background: rgba(37, 117, 252, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .audio-info {
+            font-size: 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-top: 18px;
-            padding: 12px;
-            background: #f4f7ff;
-            border-radius: 10px;
-        }
-
-        .audio-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
             justify-content: center;
-            align-items: center;
-            color: white;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
 
-        .audio-name {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .audio-source {
-            font-size: 0.8rem;
-            color: #555;
-        }
-
-        /* =========================== */
-        /*        RESPONSIVE CSS       */
-        /* =========================== */
-
-        /* Mobile (max 480px) */
-        @media (max-width: 480px) {
-
-            .audio-player {
-                padding: 20px;
-                border-radius: 16px;
-            }
-
-            .player-title {
-                font-size: 1.15rem;
-            }
-
-            .play-btn {
-                width: 44px;
-                height: 44px;
-                font-size: 0.85rem;
-            }
-
-            .start-btn {
-                flex: 1;
-                text-align: center;
-            }
-
-            .timeText {
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Tablet (480px – 768px) */
-        @media (max-width: 768px) {
-            .audio-player {
-                max-width: 100%;
-            }
-
-            .play-btn {
-                width: 46px;
-                height: 46px;
-            }
-
-            .start-btn {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Desktop Wide */
-        @media (min-width: 1200px) {
-            .audio-player {
-                max-width: 100%;
-            }
+        .floating-btn:hover {
+            background-color: #fff309;
+            transform: scale(1.1);
         }
     </style>
 
@@ -1522,6 +1483,31 @@
             border: 2px solid red;
             background: #ffe6e6;
         }
+
+        #confirmModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #confirmModal .box {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #confirmModal button {
+            margin-top: 15px;
+            padding: 8px 16px;
+        }
     </style>
 </head>
 
@@ -1542,7 +1528,17 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <button id="doneBtn" class="btn btn-danger">
+                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="timeText">00:00</span>
+                </div>
+
+                <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span class="label">Try Again</span>
+                </button>
+
+                <button onclick="confirmExit()" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
                     <span class="label">Close</span>
                 </button>
@@ -1564,79 +1560,45 @@
     </section>
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
+    <section class="parts-section" aria-label="Pilihan Part Soal">
         @php
             $tabs = [
-                [
-                    'id' => 'note_completion',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-1.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.note_completion',
-                ],
-                [
-                    'id' => 'tc',
-                    'tipe' => 'tc',
-                    'title' => 'Table Completion',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-1.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.tc',
-                ],
-                [
-                    'id' => 'one_choice',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-2.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.one_choice',
-                ],
-                [
-                    'id' => 'matching_information',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-2.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.matching_information',
-                ],
-                [
-                    'id' => 'two_choice',
-                    'tipe' => 'two_choices',
-                    'title' => 'Two Choice',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.two_choice',
-                ],
-                [
-                    'id' => 'matching_information2',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.matching_information2',
-                ],
-                [
-                    'id' => 'one_choice2',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.one_choice2',
-                ],
-                [
-                    'id' => 'note_completion2',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-4.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.note_completion2',
+                'kategori' => 'listening',
+                'id' => 'cwwPbLf22UsNEqIp',
+                'data' => [
+                    'part1' => [
+                        'label' => 'Part 1',
+                        'subtitle' => 'Listen and answer questions 1-10',
+                        'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 1.mp3'),
+                        'tipe' => ['tc'],
+                        'contents' => 'partials.cwwPbLf22UsNEqIp.mock.listening.part1',
+                    ],
+                    'part2' => [
+                        'label' => 'Part 2',
+                        'subtitle' => 'Listen and answer questions 11-20',
+                        'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 2.mp3'),
+                        'tipe' => ['map_labeling', 'oc', 'two_choices'],
+                        'contents' => 'partials.cwwPbLf22UsNEqIp.mock.listening.part2',
+                    ],
+                    'part3' => [
+                        'label' => 'Part 3',
+                        'subtitle' => 'Listen and answer questions 21-30',
+                        'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 3.mp3'),
+                        'tipe' => ['nc', 'map_labeling'],
+                        'contents' => 'partials.cwwPbLf22UsNEqIp.mock.listening.part3',
+                    ],
+                    'part4' => [
+                        'label' => 'Part 4',
+                        'subtitle' => 'Listen and answer questions 31-40',
+                        'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 4.mp3'),
+                        'tipe' => ['summary_completion', 'map_labeling', 'nc'],
+                        'contents' => 'partials.cwwPbLf22UsNEqIp.mock.listening.part4',
+                    ],
                 ],
             ];
         @endphp
 
-
-
-        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="note_completion" />
+        <x-tabs.listening-mock :tabs="$tabs" />
     </section>
 
     <!-- Floating Question List -->
@@ -1654,6 +1616,14 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
+
+    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
+    </button>
+
+    <button class="floating-btn" id="doneBtn">
+        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
+    </button>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -1673,14 +1643,13 @@
         </div>
     </div>
 
-    <!-- Modal Wrapper -->
     <div id="resultModal" class="custom-modal">
         <div class="custom-modal-content">
             <div class="custom-modal-header">
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        {{-- <small id="scorePercentage">0</small> --}}
+                        <small id="scorePercentage">0</small>
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -1712,78 +1681,94 @@
         </div>
     </div>
 
-    <!-- script bagian audio player -->
+    <!-- MODAL CONFIRMATION -->
+    <div id="confirmModal">
+        <div class="box">
+            <h3>Audio Notice</h3>
+            <p>The audio in this section can only be played once for each part.</p>
+            <button id="confirmYes">Yes, continue</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
     <script>
-        let scoreMap = [{
-                min: 39,
-                max: 40,
-                score: 9.0
-            },
-            {
-                min: 37,
-                max: 38,
-                score: 8.5
-            },
-            {
-                min: 35,
-                max: 36,
-                score: 8.0
-            },
-            {
-                min: 33,
-                max: 34,
-                score: 7.5
-            },
-            {
-                min: 30,
-                max: 32,
-                score: 7.0
-            },
-            {
-                min: 27,
-                max: 29,
-                score: 6.5
-            },
-            {
-                min: 23,
-                max: 26,
-                score: 6.0
-            },
-            {
-                min: 19,
-                max: 22,
-                score: 5.5
-            },
-            {
-                min: 15,
-                max: 18,
-                score: 5.0
-            },
-            {
-                min: 13,
-                max: 14,
-                score: 4.5
-            },
-            {
-                min: 10,
-                max: 12,
-                score: 4.0
-            },
-            {
-                min: 8,
-                max: 9,
-                score: 3.5
-            },
-            {
-                min: 6,
-                max: 7,
-                score: 3.0
-            },
-            {
-                min: 4,
-                max: 5,
-                score: 2.5
+        function confirmExit() {
+            if (confirm('Are you sure you want to end the test?')) {
+                location.href = '/ielts/categories?set-id={{ $set->kode }}';
             }
+        }
+        let scoreMap = [{
+                score: 9.0,
+                min: 39,
+                max: 40
+            },
+            {
+                score: 8.5,
+                min: 37,
+                max: 38
+            },
+            {
+                score: 8.0,
+                min: 35,
+                max: 36
+            },
+            {
+                score: 7.5,
+                min: 32,
+                max: 34
+            },
+            {
+                score: 7.0,
+                min: 30,
+                max: 31
+            },
+            {
+                score: 6.5,
+                min: 26,
+                max: 29
+            },
+            {
+                score: 6.0,
+                min: 23,
+                max: 25
+            },
+            {
+                score: 5.5,
+                min: 18,
+                max: 22
+            },
+            {
+                score: 5.0,
+                min: 16,
+                max: 17
+            },
+            {
+                score: 4.5,
+                min: 13,
+                max: 15
+            },
+            {
+                score: 4.0,
+                min: 11,
+                max: 12
+            },
+            {
+                score: 3.5,
+                min: 8,
+                max: 10
+            },
+            {
+                score: 3.0,
+                min: 6,
+                max: 7
+            },
+            {
+                score: 2.5,
+                min: 4,
+                max: 5
+            },
         ];
 
         function convertScore(correctCount) {
@@ -1796,43 +1781,51 @@
         }
     </script>
 
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tabs = @json($tabs);
-            const dataKategori = "listening";
-            let prevName;
-            tabs.forEach(tab => {
-                const form = document.querySelector(`#form-${tab.id}`);
-                if (!form) return;
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
 
-                let count = 0;
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
 
-                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
 
-                inputs.forEach(input => {
-                    if (prevName === input.name) {
-                        if (input.type === "checkbox") {
-                            count = 2;
-                        }
-                        return;
-                    }
-                    prevName = input.name;
-                    count++
+        function retryQuiz() {
+            closeModal();
 
-                })
+            location.reload()
+        }
 
-                const btn = document.querySelector(`#submit-${tab.id}`);
-                if (!btn) return;
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
 
-                btn.setAttribute("data-count", count);
-                btn.setAttribute("data-kategori", dataKategori);
-            });
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        $(document).ready(function() {
+            $("#resultModal").removeClass("show").hide();
         });
     </script>
 
-
-    {{--
+    <!-- script bagian audio player -->
     <script>
         (function setupAudioPlayers() {
             const players = document.querySelectorAll('.audio-player');
@@ -1926,24 +1919,197 @@
                 });
             });
         })();
-    </script> --}}
+    </script>
+
 
     <script>
         (function() {
+            let remaining = 0;
+            let t = null;
+            const el = document.getElementById('timeText');
+            const wrap = document.getElementById('timer');
+
+            function format(mmss) {
+                const m = Math.floor(mmss / 60);
+                const s = mmss % 60;
+                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            }
+
+            function tick() {
+                if (remaining <= 0) {
+                    clearInterval(t);
+                    t = null;
+                    el.textContent = '00:00';
+                    wrap.classList.add('danger');
+                    document.getElementById('doneBtn').disabled = true;
+                    document.getElementById('doneBtn').style.opacity = 0.7;
+                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
+
+                    $("#retake").css("display", "");
+
+                    const data = [];
+                    let prevData = {
+                        name: null,
+                        index: 0,
+                        answer: null
+                    };
+                    const element = $('.qa-body');
+
+                    element
+                        .find('input, textarea, select, checkbox, radio')
+                        .not(':disabled')
+                        .each(function(index, elem) {
+                            const name = $(this).attr('name');
+                            const type = $(this).attr('type');
+                            let value = null;
+
+                            if (type === 'radio') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
+                                }
+                            } else if (type === 'checkbox') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
+                                }
+                            } else {
+                                value = $(this).val();
+                            }
+
+
+                            if (prevData.name === name) {
+                                if (value != null) {
+                                    if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
+                                        data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                                    } else {
+                                        data[prevData.index - 1].answer = value;
+                                    }
+                                    prevData.answer = value;
+                                }
+                            } else {
+                                data.push({
+                                    name: name,
+                                    answer: type === 'checkbox' ? `[${value}]` : value
+                                });
+                                prevData = {
+                                    name: name,
+                                    index: prevData.index + 1,
+                                    answer: value
+                                }
+                            }
+                        });
+
+                    console.log(data)
+
+                    $.ajax({
+                        url: "/ielts/mock-test/check-v2",
+                        type: "POST",
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            data: data,
+                            kategori: @json($tabs['kategori']),
+                        },
+                        success: function(response) {
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
+                            if (response.status === "ok") {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
+
+                                $.each(response.results, function(key, data) {
+                                    const index = key.split('-')[1];
+                                    const status = data.status || '';
+                                    const user = data.user || 'NOT GIVEN';
+                                    const correct = data.correct || '';
+
+                                    let isCorrect = status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    tableRows += `
+                                        <tr>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
+
+                                })
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #f39c12, #e67e22)");
+                                } else {
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                }
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
+                            }
+
+                        },
+                        error: function(xhr) {
+                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                                .message : 'An error occurred while submitting answers.';
+                            alert(errorMsg);
+                            console.error(xhr.responseText);
+                        }
+                    })
+
+                    return;
+                }
+                remaining -= 1;
+                el.textContent = format(remaining);
+                // Kedipkan danger saat < 60 detik
+                if (remaining <= 60) {
+                    wrap.classList.add('danger');
+                }
+            }
+
+            function startCountdown(seconds) {
+                if (t) clearInterval(t);
+                remaining = Math.max(0, Math.floor(seconds));
+                el.textContent = format(remaining);
+                wrap.classList.toggle('danger', remaining <= 60);
+                document.getElementById('doneBtn').disabled = false;
+                document.getElementById('doneBtn').style.opacity = 1;
+                document.getElementById('doneBtn').style.cursor = 'pointer';
+                t = setInterval(tick, 1000);
+            }
+
+            // Public API (opsional)
+            window.CATHeader = {
+                startCountdown
+            };
+
             // Events
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit test'
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
                 );
-            });
 
-            document.getElementById('doneBtn').addEventListener('click', function() {
-                const confirmFinish = confirm('Do you want to end the test now?');
-                if (confirmFinish) {
-                    window.history.back();
-                }
             });
+            // Mulai countdown (contoh: 15 menit)
+            startCountdown(13 * 60);
         })();
     </script>
 
@@ -2069,12 +2235,26 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive(@json($tabs)[0]['id']);
+            setActive(Object.keys(@json($tabs).data)[0]);
         });
     </script>
 
     <!-- script bagian reading + questions  -->
     <script>
+        $(document).on('change', '.q-option input', function() {
+            let parent = $(this).closest('.q-item');
+            let option = $(this).closest('.q-option');
+
+            if (this.type === "radio") {
+                parent.find('.q-option').removeClass('is-selected');
+                option.addClass('is-selected');
+            }
+
+            if (this.type === "checkbox") {
+                option.toggleClass('is-selected', this.checked);
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
@@ -2321,17 +2501,17 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = @json($tabs)[0]['id'];
+            let currentPart = 'tfng';
             let questionCount = 0;
 
-            // 🧩 Toggle collapse floating panel
+            // Toggle collapse
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // 🧩 Generate list nomor soal
+            // Generate question numbers
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -2344,6 +2524,7 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
+                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -2353,7 +2534,7 @@
                 }
             }
 
-            // 🧭 Scroll ke soal
+            // Scroll ke soal tertentu
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -2368,7 +2549,7 @@
                 }
             }
 
-            // ✅ Update status soal
+            // Update status soal (radio, dropdown, text)
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -2390,10 +2571,6 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
-                    // Checkbox
-                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
-                    if (checkboxChecked.length > 0) answered = true;
-
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -2402,68 +2579,18 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    // Soal multi-nomor (contoh: data-q-multi="1,2")
-                    const multi = question.dataset.qMulti;
-                    if (multi) {
-                        const numbers = multi.split(',').map(n => n.trim());
-                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
-
-                        numbers.forEach(num => {
-                            const multiItem = fqList.querySelector(
-                                `[data-q="${num}"][data-part="${partId}"]`);
-                            if (!multiItem) return;
-
-                            if (checkedCount > 0) multiItem.classList.add('answered');
-                            else multiItem.classList.remove('answered');
-                        });
-                    } else {
-                        if (answered) item.classList.add('answered');
-                        else item.classList.remove('answered');
-                    }
+                    if (answered) item.classList.add('answered');
                 }
             }
 
-            // 🧠 Perubahan jawaban
+            // Deteksi jawaban berubah
             function watchAnswerChanges() {
-                document.addEventListener('change', (e) => {
-                    const input = e.target;
-                    const question = input.closest('[data-q]');
-                    const group = input.closest('.q-options');
-                    const label = input.closest('.q-option');
-
-                    if (!question) return;
-
-                    // 🔹 Batasi jumlah checkbox
-                    if (input.type === 'checkbox') {
-                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
-                        if (maxAllowed > 0) {
-                            const checkedBoxes = question.querySelectorAll(
-                                'input[type="checkbox"]:checked');
-                            if (checkedBoxes.length > maxAllowed) {
-                                input.checked = false;
-                                alert(`You can only select ${maxAllowed} answers for this question.`);
-                                return;
-                            }
-                        }
-                    }
-
-                    // 🔹 Update warna label pilihan
-                    if (group && label) {
-                        if (input.type === 'checkbox') {
-                            if (input.checked) label.classList.add('is-selected');
-                            else label.classList.remove('is-selected');
-                        } else {
-                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
-                                'is-selected'));
-                            if (input.checked) label.classList.add('is-selected');
-                        }
-                    }
-
-                    // 🔄 Update status di floating panel
-                    updateQuestionStatus(currentPart);
+                document.addEventListener('input', (e) => {
+                    const question = e.target.closest('[data-q]');
+                    if (question) updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('input', (e) => {
+                document.addEventListener('change', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
                 });
@@ -2474,7 +2601,7 @@
                 });
             }
 
-            // 🔁 Ganti part soal
+            // Deteksi perubahan part
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
@@ -2490,197 +2617,353 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer)
-                    observer.observe(tabsContainer, {
-                        attributes: true,
-                        attributeFilter: ['data-active']
-                    });
+                if (tabsContainer) observer.observe(tabsContainer, {
+                    attributes: true,
+                    attributeFilter: ['data-active']
+                });
             }
 
-            // 🔄 Update daftar soal tiap part
+            // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                const dataJson = @json($tabs);
-                const questionCounts = {}
-                dataJson.forEach(tab => {
-                    const panel = document.querySelector(`#panel-${tab.id}`);
+                const dataJson = @json($tabs).data;
+                const questionCounts = {};
+                Object.entries(dataJson).forEach(([key, tab]) => {
+                    const panel = document.querySelector(`#panel-${key}`);
+
                     if (panel) {
                         const count = panel.querySelectorAll('[data-q]').length;
-                        questionCounts[tab.id] = count;
+                        questionCounts[key] = count;
                     }
                 });
-
                 const count = questionCounts[partId] || 5;
                 generateQuestionList(partId, count);
                 updateQuestionStatus(partId);
             }
 
-            // 🚀 Init
-            updateQuestionListForPart(@json($tabs)[0]['id']);
+            // Init
+            updateQuestionListForPart(Object.keys(@json($tabs).data)[0]);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
     <script>
-        // Pastikan modal tersembunyi saat halaman dimuat
-        $("#resultModal").removeClass("show").hide();
+        /* ====== Audio tab controller (fixed stop-on-switch) ====== */
 
-        // Modal functions
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
+        let currentAudio = null;
+        let currentTimerId = null;
+
+        // format mm:ss
+        function formatTime(sec) {
+            sec = isNaN(sec) ? 0 : Math.floor(sec);
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
         }
 
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            location.reload();
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        $(".try-again").on("click", function() {
-            location.reload();
-        })
-
-        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
-            let allAnswered = true;
-
-            $(`#${form} [data-q]`).each(function() {
-                let isAnswered = false;
-                const inputs = $(this).find("input, select, textarea");
-
-                inputs.each(function() {
-                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
-                        isAnswered = true;
-                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
-                        isAnswered = true;
-                    } else if ($(this).is("select") && $(this).val() !== "") {
-                        isAnswered = true;
-                    }
-                });
-
-                if (!isAnswered) {
-                    allAnswered = false;
-                    $(this).addClass("unanswered-highlight");
-                } else {
-                    $(this).removeClass("unanswered-highlight");
+        // reset UI for a panel's audio (progress+time)
+        function resetPanelUI(panel) {
+            const prog = panel.querySelector(".timeline");
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            if (prog) prog.value = 0;
+            if (cur) cur.textContent = "0:00";
+            if (dur) {
+                // leave duration as-is (if already loaded) or show 0:00
+                if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
+                    dur.textContent = "0:00";
                 }
-            });
+            }
+            // if you used a visual progress element instead of range, reset its width:
+            const visualProg = panel.querySelector(".seekbar-progress");
+            if (visualProg) visualProg.style.width = "0%";
+        }
 
-            if (!allAnswered) {
-                alert("Please answer all questions before submitting!");
+        // stop & reset current audio (completely)
+        function stopCurrentAudio() {
+            if (!currentAudio) return;
+
+            // pause & reset time
+            try {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            } catch (e) {
+                /* ignore */
+            }
+
+            // clear interval timer if any
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
+            }
+
+            // reset UI for the panel that had currentAudio
+            const panel = currentAudio.closest(".x-panel");
+            if (panel) resetPanelUI(panel);
+
+            // unset currentAudio reference
+            currentAudio = null;
+        }
+
+        // start timer to update UI every 1 second
+        function startPanelTimer(audio, panel) {
+            // clear existing
+            if (currentTimerId) {
+                clearInterval(currentTimerId);
+                currentTimerId = null;
+            }
+
+            const prog = panel.querySelector(".timeline");
+            const cur = panel.querySelector(".current");
+            const dur = panel.querySelector(".duration");
+            const visualProg = panel.querySelector(".seekbar-progress");
+
+            currentTimerId = setInterval(() => {
+                if (!audio.duration || isNaN(audio.duration)) return;
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (prog) prog.value = pct;
+                if (visualProg) visualProg.style.width = pct + "%";
+                if (cur) cur.textContent = formatTime(audio.currentTime);
+                if (dur) dur.textContent = formatTime(audio.duration);
+            }, 1000);
+        }
+
+        // play audio for a panel (only if not already played)
+        function playPanelAudio(panel) {
+            const audio = panel.querySelector("audio");
+            if (!audio) return;
+
+            // already played once? skip
+            if (audio.dataset.played === "yes") {
                 return;
             }
 
-            let formData = new FormData($(`#${form}`)[0]);
-            formData.append("tipe", tipe);
-            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-            formData.append("set_id", setId);
-            formData.append("kategori", button.data('kategori'));
-            formData.append("tipe_test", 'practice');
-            formData.append("jumlah_soal", button.data('count'));
-            formData.append("nama_tipe", namaTipe);
+            // if another audio is playing -> stop it first
+            if (currentAudio && currentAudio !== audio) {
+                stopCurrentAudio();
+            }
+
+            // mark as current
+            currentAudio = audio;
+
+            // prepare UI duration if metadata already available
+            const durEl = panel.querySelector(".duration");
+            if (audio.duration && !isNaN(audio.duration) && durEl) {
+                durEl.textContent = formatTime(audio.duration);
+            }
+
+            // mute trick for autoplay compatibility
+            audio.muted = true;
+
+            // play
+            audio.play().then(() => {
+                // mark one-time-play
+                audio.dataset.played = "yes";
+
+                // unmute shortly after play to avoid autoplay block in some browsers
+                setTimeout(() => {
+                    try {
+                        audio.muted = false;
+                    } catch (e) {}
+                }, 150);
+
+                // update status UI by starting timer per-second
+                startPanelTimer(audio, panel);
+
+                // make sure ended handler resets UI/timer
+                audio.onended = () => {
+                    // clear timer
+                    if (currentTimerId) {
+                        clearInterval(currentTimerId);
+                        currentTimerId = null;
+                    }
+                    // finalize progress UI
+                    const visualProg = panel.querySelector(".seekbar-progress");
+                    if (visualProg) visualProg.style.width = "100%";
+                    const cur = panel.querySelector(".current");
+                    const dur = panel.querySelector(".duration");
+                    if (cur) cur.textContent = formatTime(audio.duration || 0);
+                    if (dur) dur.textContent = formatTime(audio.duration || 0);
+
+                    // mark played and unset currentAudio
+                    audio.dataset.played = "yes";
+                    currentAudio = null;
+                };
+
+            }).catch(err => {
+                // autoplay blocked — you may need user confirmation (modal)
+                console.warn("Autoplay blocked:", err);
+                // cleanup currentAudio reference if failed
+                currentAudio = null;
+            });
+
+            // prevent seeking by user (just in case)
+            audio.addEventListener("seeking", function() {
+                this.currentTime = this._lastTime || 0;
+            });
+            audio.addEventListener("timeupdate", function() {
+                this._lastTime = this.currentTime;
+            });
+        }
+
+        /* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
+        document.querySelectorAll(".x-tab").forEach(tab => {
+            tab.addEventListener("click", () => {
+                // activate tab classes
+                document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
+                tab.classList.add("is-active");
+
+                // show corresponding panel
+                const id = tab.dataset.id;
+                const panelId = `panel-${id}`;
+                document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
+                const targetPanel = document.getElementById(panelId);
+                if (!targetPanel) return;
+                targetPanel.classList.add("active", "is-open");
+
+                // STOP any currently playing audio when switching to a different panel
+                // (this ensures audio always stops)
+                if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
+                    stopCurrentAudio();
+                }
+
+                // play audio on the newly opened panel (if it has one and not played yet)
+                const audio = targetPanel.querySelector("audio");
+                if (audio && audio.dataset.played !== "yes") {
+                    playPanelAudio(targetPanel);
+                }
+            });
+        });
+
+        /* ========== Initial modal confirm & autoplay first panel ========== */
+        const modal = document.getElementById("confirmModal");
+        const confirmBtn = document.getElementById("confirmYes");
+
+        if (modal && confirmBtn) {
+            // show modal on load
+            window.addEventListener("load", () => {
+                modal.style.display = "flex";
+            });
+            confirmBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+                // play currently active panel
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        } else {
+            // if no modal, autoplay first panel immediately (with mute trick)
+            window.addEventListener("load", () => {
+                const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
+                if (firstPanel) playPanelAudio(firstPanel);
+            });
+        }
+    </script>
+
+    <script>
+        document.getElementById('doneBtn').addEventListener('click', function() {
+
+            const confirmFinish = confirm('Do you want to end the test now?');
+            if (!confirmFinish) return;
+
+            stopCurrentAudio();
+
+            const data = [];
+            let prevData = {
+                name: null,
+                index: 0,
+                answer: null
+            };
+            const element = $('.qa-body');
+
+            element
+                .find('input, textarea, select, checkbox, radio')
+                .not(':disabled')
+                .each(function(index, elem) {
+                    const name = $(this).attr('name');
+                    const type = $(this).attr('type');
+                    let value = null;
+
+                    if (type === 'radio') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else if (type === 'checkbox') {
+                        if ($(this).is(':checked')) {
+                            value = $(this).val();
+                        }
+                    } else {
+                        value = $(this).val();
+                    }
+
+
+                    if (prevData.name === name) {
+                        if (value != null) {
+                            if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
+                                data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                            } else {
+                                data[prevData.index - 1].answer = value;
+                            }
+                            prevData.answer = value;
+                        }
+                    } else {
+                        data.push({
+                            name: name,
+                            answer: type === 'checkbox' ? `[${value}]` : value
+                        });
+                        prevData = {
+                            name: name,
+                            index: prevData.index + 1,
+                            answer: value
+                        }
+                    }
+                });
+
+            console.log(data)
 
             $.ajax({
-                url: "/ielts/practice/check",
+                url: "/ielts/mock-test/check-v2",
                 type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    data: data,
+                    kategori: @json($tabs['kategori']),
+                },
                 success: function(response) {
+                    $("#try-again").css('display', '');
+                    $("#doneBtn").css('display', 'none');
                     if (response.status === "ok") {
-                        $(".q-option").removeClass("correct wrong");
-                        $(".text-answer, .select-answer").removeClass("correct wrong");
-
-                        button.css('display', 'none');
-                        $(`#${againBtn}`).css('display', '');
-
-                        let correctCount = response.score;
+                        let correctCount = 0;
                         let total = Object.keys(response.results).length;
-                        let tableRows = "";
-                        let questionNumber = 1;
+                        let tableRows = '';
 
-                        $.each(response.results, function(qid, data) {
-                            let isCorrect = data.status === "correct";
+                        $.each(response.results, function(key, data) {
+                            const index = key.split('-')[1];
+                            const status = data.status || '';
+                            const user = data.user || 'NOT GIVEN';
+                            const correct = data.correct || '';
 
-                            // ✅ 2. Ambil CORRECT ANSWER dengan fallback
-                            let correctAnswer = data.correct || '';
-                            let userAnswer = data.user || '';
-                            if (!correctAnswer && isCorrect) {
-                                correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
-                            }
-                            if (!correctAnswer) {
-                                correctAnswer = "NOT GIVEN";
-                            }
+                            let isCorrect = status === 'correct';
+                            if (isCorrect) correctCount++;
 
-                            // ✅ 3. Highlight input aslinya
-                            let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                            questionElement.find("input, select, textarea").each(function() {
-                                if ($(this).is("input[type=radio], input[type=checkbox]")) {
-                                    if ($(this).is(":checked")) {
-                                        if (isCorrect) {
-                                            $(this).parent().addClass("correct");
-                                        } else {
-                                            $(this).parent().addClass("wrong");
-                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
-                                                .parent().addClass("correct");
-                                        }
-                                    }
-                                } else {
-                                    if (isCorrect) {
-                                        $(this).addClass("correct");
-                                    } else {
-                                        $(this).addClass("wrong");
-                                    }
-                                }
-                            });
-
-                            // ✅ 4. Bangun tabel baris
                             tableRows += `
-                            <tr>
-                                <td><strong>${questionNumber++}</strong></td>
-                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                                <td>
-                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                        ${isCorrect ? 'Correct' : 'Wrong'}
-                                    </span>
-                                </td>
-                            </tr>
-                        `;
-                        });
+                                        <tr>
+                                            <td><strong>${index}</strong></td>
+                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
+                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
+                                            <td>
+                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                                    ${isCorrect ? 'Correct' : 'Wrong'}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    `;
 
-
+                        })
+                        // Update skor di UI
                         $("#scoreDisplay").text(`${correctCount}/${total}`);
-                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
+                        $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
                         let percentage = (correctCount / total) * 100;
                         let scoreCircle = $(".score-circle");
@@ -2693,130 +2976,22 @@
                         }
 
                         $("#resultsTableBody").html(tableRows);
+
+                        // tampilkan modal hasil
                         showModal(`Score: ${correctCount} / ${total}`);
+                    } else {
+                        alert('Terjadi kesalahan: ' + response.message);
                     }
+
                 },
                 error: function(xhr) {
-                    alert("Terjadi kesalahan: " + xhr.status);
-                    console.log(xhr.responseText);
+                    const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                        .message : 'An error occurred while submitting answers.';
+                    alert(errorMsg);
+                    console.error(xhr.responseText);
                 }
-            });
-        }
+            })
 
-        const tabs = @json($tabs);
-        tabs.forEach(tab => {
-            const id = tab.id;
-            const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
-
-            $(`#submit-${id}`).on("click", function(e) {
-                e.preventDefault();
-                submitHelper(
-                    `form-${id}`, // form
-                    "DPCLyNHpDTqSciXd", // folder
-                    tipe, // tipe
-                    $(this),
-                    `again-${id}`,
-                    tab.title
-                );
-            });
-        });
-    </script>
-
-    <script>
-        let currentPlaying = null;
-
-        document.querySelectorAll("[data-player]").forEach(player => {
-
-            const audio = player.querySelector("audio");
-            const btnPlay = player.querySelector(".play-btn");
-            const icon = btnPlay.querySelector("i");
-            const seekBar = player.querySelector(".seekBar");
-            const curT = player.querySelector(".current");
-            const durT = player.querySelector(".duration");
-
-            let isSeeking = false;
-
-            // =============== STOP AUDIO LAIN ===============
-            function stopOtherPlayers() {
-                if (currentPlaying && currentPlaying !== audio) {
-                    currentPlaying.pause();
-                    const otherBtn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
-                    otherBtn.className = "fas fa-play";
-                }
-                currentPlaying = audio;
-            }
-
-            // =============== PLAY / PAUSE ===============
-            btnPlay.addEventListener("click", () => {
-                stopOtherPlayers();
-
-                if (audio.paused) {
-                    audio.play();
-                    icon.className = "fas fa-pause";
-                } else {
-                    audio.pause();
-                    icon.className = "fas fa-play";
-                }
-            });
-
-            // =============== START FROM X ===============
-            player.querySelectorAll(".start-btn").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    const offset = parseFloat(btn.dataset.start);
-
-                    stopOtherPlayers();
-                    audio.currentTime = offset;
-                    audio.play();
-                    icon.className = "fas fa-pause";
-                });
-            });
-
-            // =============== SEEK BAR ===============
-            seekBar.addEventListener("input", () => {
-                // Jangan izinkan seek sebelum metadata siap
-                if (!audio.duration || isNaN(audio.duration)) return;
-
-                isSeeking = true;
-                audio.currentTime = (seekBar.value / 100) * audio.duration;
-            });
-
-            seekBar.addEventListener("change", () => {
-                isSeeking = false;
-            });
-
-
-            setInterval(() => {
-                if (!audio.duration) return;
-
-                if (!isSeeking) {
-                    seekBar.value = (audio.currentTime / audio.duration) * 100;
-                }
-
-                curT.textContent = format(audio.currentTime);
-                durT.textContent = format(audio.duration);
-
-            }, 200);
-
-            audio.addEventListener("loadedmetadata", () => {
-                durT.textContent = format(audio.duration);
-            });
-
-            function format(t) {
-                if (!t) return "0:00";
-                const m = Math.floor(t / 60);
-                const s = Math.floor(t % 60).toString().padStart(2, "0");
-                return `${m}:${s}`;
-            }
-        });
-
-        $(".x-tab").on("click", function() {
-            if (currentPlaying) {
-                currentPlaying.pause();
-
-                // Kembalikan icon play pada player tersebut
-                const btn = currentPlaying.closest("[data-player]").querySelector(".play-btn i");
-                btn.className = "fas fa-play";
-            }
         });
     </script>
 </body>

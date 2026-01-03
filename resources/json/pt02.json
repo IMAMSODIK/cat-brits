@@ -1,0 +1,111 @@
+{
+  "reading": {
+    "mh": [
+      "ii",
+      "vii",
+      "v",
+      "i",
+      "iii",
+      "ix"
+    ],
+    "picture_completion": [
+      "[New Zealand, NZ carrageen(s)]",
+      "agar",
+      "seameal",
+      "cough mixtures",
+      "crochet hook",
+      "[leaflets, leaves]",
+      "thorn",
+      "steps"
+    ],
+    "matching_information": [
+      "B",
+      "C",
+      "A",
+      
+      "A",
+      "D",
+      "C",
+      "B",
+      
+      "C",
+      "B",
+      "D",
+      "B",
+      "A",
+      "C"
+    ],
+    "tfng": [
+      "TRUE",
+      "TRUE",
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE"
+    ],
+    "oc": [
+      "C",
+      "D",
+      "F"
+    ],
+    "summary_completion": [
+      "H",
+      "L",
+      "A",
+      "I"
+    ]
+  },
+  "listening": {
+    "tc": [
+      "cream",
+      "brass",
+      "[65, sixty-five]",
+      "perfect",
+      "[£30, 30 pounds, thirty pounds]",
+      "deep",
+      "[1.25 metres, 1.25 m]",
+      "adjustable",
+      "[£50, 50 pounds, fifty pounds]",
+      "Domain"
+    ],
+    "map_labeling": [
+      "[Bike stands, Secured bike stands]",
+      "[Male locker rooms, Men locker rooms]",
+      "[Coffee shop, Cafe]",
+      "[Administrative office, Office]",
+      "Conference room",
+      "[Sports medicine clinic, clinic]",
+      "Pool shop",
+      "[manuscript, the manuscript]",
+      "confirmation",
+      "peer review",
+      "rejection",
+      "cover letter",
+      "bedrock",
+      "subsoil",
+      "topsoil"
+    ],
+    "oc": [
+      "A"
+    ],
+    "two_choices": [
+      "[A, E]"
+    ],
+    "nc": [
+      "abstract",
+      "[key words, keywords]",
+      "final draft",
+      "style guide",
+      "copyright form",
+      "pollution",
+      "pest control",
+      "production practices",
+      "predators"
+    ],
+    "summary_completion": [
+      "living entity",
+      "nutrients",
+      "minerals"
+    ]
+  }
+}

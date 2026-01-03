@@ -529,7 +529,8 @@
             margin-bottom: 30px;
         }
 
-        td .q-item {
+        td .q-item,
+        ul .q-item {
             border: none !important;
             border-radius: 0 !important;
             padding: 0 !important;
@@ -696,6 +697,7 @@
             gap: 10px;
         }
 
+
         [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
@@ -716,6 +718,7 @@
             font-size: 14px;
             box-sizing: border-box;
         }
+
 
 
         /* #panel-tfng input,
@@ -1568,72 +1571,70 @@
         @php
             $tabs = [
                 [
-                    'id' => 'note_completion',
-                    'tipe' => 'nc',
-                    'title' => 'Note Completion',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-1.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.note_completion',
-                ],
-                [
                     'id' => 'tc',
                     'tipe' => 'tc',
                     'title' => 'Table Completion',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-1.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.tc',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 1.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.tc',
                 ],
                 [
-                    'id' => 'one_choice',
+                    'id' => 'map_labeling',
+                    'tipe' => 'map_labeling',
+                    'title' => 'Map Labeling',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 2.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.map_labeling',
+                ],
+                [
+                    'id' => 'oc',
                     'tipe' => 'oc',
                     'title' => 'One Choice',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-2.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.one_choice',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 2.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.oc',
                 ],
                 [
-                    'id' => 'matching_information',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-2.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.matching_information',
-                ],
-                [
-                    'id' => 'two_choice',
+                    'id' => 'two_choices',
                     'tipe' => 'two_choices',
-                    'title' => 'Two Choice',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.two_choice',
+                    'title' => 'Two Choices',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 2.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.two_choices',
                 ],
                 [
-                    'id' => 'matching_information2',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.matching_information2',
+                    'id' => 'note_completion',
+                    'tipe' => 'nc',
+                    'title' => 'Note Completion',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 3.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.note_completion',
                 ],
                 [
-                    'id' => 'one_choice2',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-3.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.one_choice2',
+                    'id' => 'map_labeling2',
+                    'tipe' => 'map_labeling',
+                    'title' => 'Map Labeling 2',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 3.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.map_labeling2',
+                ],
+                [
+                    'id' => 'summary_completion',
+                    'tipe' => 'summary_completion',
+                    'title' => 'Summary Completion',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 4.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.summary_completion',
+                ],
+                [
+                    'id' => 'map_labeling3',
+                    'tipe' => 'map_labeling',
+                    'title' => 'Map Labeling 3',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 4.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.map_labeling3',
                 ],
                 [
                     'id' => 'note_completion2',
                     'tipe' => 'nc',
-                    'title' => 'Note Completion 2',
-                    'audioUri' =>
-                        'https://engnovate.com/wp-content/uploads/2023/07/cambridge-ielts-17-academic-listening-2-audio-4.mp3',
-                    'content' => 'partials.DPCLyNHpDTqSciXd.practice.listening.note_completion2',
+                    'title' => 'Note Completion',
+                    'audioUri' => asset('own_assets/audio/AUDIO-PT-02/SECTION 4.mp3'),
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.listening.note_completion2',
                 ],
             ];
         @endphp
-
 
 
         <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="note_completion" />
@@ -1797,41 +1798,6 @@
     </script>
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tabs = @json($tabs);
-            const dataKategori = "listening";
-            let prevName;
-            tabs.forEach(tab => {
-                const form = document.querySelector(`#form-${tab.id}`);
-                if (!form) return;
-
-                let count = 0;
-
-                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
-
-                inputs.forEach(input => {
-                    if (prevName === input.name) {
-                        if (input.type === "checkbox") {
-                            count = 2;
-                        }
-                        return;
-                    }
-                    prevName = input.name;
-                    count++
-
-                })
-
-                const btn = document.querySelector(`#submit-${tab.id}`);
-                if (!btn) return;
-
-                btn.setAttribute("data-count", count);
-                btn.setAttribute("data-kategori", dataKategori);
-            });
-        });
-    </script>
-
-
     {{--
     <script>
         (function setupAudioPlayers() {
@@ -1945,6 +1911,40 @@
                 }
             });
         })();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = @json($tabs);
+            const dataKategori = "listening";
+            let prevName;
+            tabs.forEach(tab => {
+                const form = document.querySelector(`#form-${tab.id}`);
+                if (!form) return;
+
+                let count = 0;
+
+                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
+
+                inputs.forEach(input => {
+                    if (prevName === input.name) {
+                        if (input.type === "checkbox") {
+                            count = 2;
+                        }
+                        return;
+                    }
+                    prevName = input.name;
+                    count++
+
+                })
+
+                const btn = document.querySelector(`#submit-${tab.id}`);
+                if (!btn) return;
+
+                btn.setAttribute("data-count", count);
+                btn.setAttribute("data-kategori", dataKategori);
+            });
+        });
     </script>
 
     <!-- script bagian part soal -->
@@ -2707,16 +2707,16 @@
         tabs.forEach(tab => {
             const id = tab.id;
             const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
-
+            const title = tab.title;
             $(`#submit-${id}`).on("click", function(e) {
                 e.preventDefault();
                 submitHelper(
                     `form-${id}`, // form
-                    "DPCLyNHpDTqSciXd", // folder
+                    "cwwPbLf22UsNEqIp", // folder
                     tipe, // tipe
                     $(this),
                     `again-${id}`,
-                    tab.title
+                    title
                 );
             });
         });
