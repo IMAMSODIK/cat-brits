@@ -1118,37 +1118,79 @@
             let answer = null;
 
             switch (type) {
+
+                // ========================== RADIO ==========================
                 case 'tfng':
                 case 'oc':
-                case 'ynng':
-                    const checked = $(this).find('input[type="radio"]:checked');
-                    if (checked.length > 0) {
-                        name = checked.attr('name');
-                        answer = checked.val();
-                    } else {
-                        const anyRadio = $(this).find('input[type="radio"]').first();
-                        if (anyRadio.length > 0) name = anyRadio.attr('name');
-                    }
-                    break;
+                case 'ynng': {
 
+                    const selected = $(this).find('input[type="radio"]:checked');
+
+                    if (selected.length > 0) {
+                        name = selected.attr('name');
+                        answer = selected.val();
+                    } else {
+                        const firstRadio = $(this).find('input[type="radio"]').first();
+                        name = firstRadio.attr('name') || ('q' + qnum);
+                        answer = null;
+                    }
+
+                    break;
+                }
+
+                // ========================== TEXT INPUT ==========================
                 case 'sa':
                 case 'tc':
-                case 'nc':
-                    const input = $(this).find('input[type="text"]');
-                    if (input.length > 0) {
-                        name = input.attr('name');
-                        answer = input.val();
-                    }
-                    break;
+                case 'fc_completion':
+                case 'nc': {
 
+                    if ($(this).is('input[type="text"]')) {
+                        // ✅ q-text langsung
+                        name = $(this).attr('name');
+                        answer = $(this).val();
+                    } else {
+                        // ✅ container
+                        const inp = $(this).find('input[type="text"]');
+                        if (inp.length > 0) {
+                            name = inp.attr('name');
+                            answer = inp.val();
+                        }
+                    }
+
+                    break;
+                }
+
+                // ========================== TWO CHECKBOX ==========================
+                case 'two_choices': {
+
+                    const first = $(this).find('input[type="checkbox"]').first();
+                    const selected = $(this).find('input[type="checkbox"]:checked');
+
+                    name = first.attr('name') || ('q' + qnum);
+
+                    answer = selected.map(function() {
+                        return $(this).val();
+                    }).get();
+
+                    // jika jawaban kosong → answer = []
+                    break;
+                }
+
+                // ========================== SELECT ==========================
                 case 'mh':
                 case 'mse':
-                    const select = $(this).find('select');
-                    if (select.length > 0) {
-                        name = select.attr('name');
-                        answer = select.val();
+                case 'map_labeling':
+                case 'matching_information': {
+
+                    const sel = $(this).find('select');
+
+                    if (sel.length > 0) {
+                        name = sel.attr('name');
+                        answer = sel.val();
                     }
+
                     break;
+                }
             }
 
             results.push({
@@ -1321,6 +1363,7 @@
                 // ========================== TEXT INPUT ==========================
                 case 'sa':
                 case 'tc':
+                case 'fc_completion':
                 case 'nc': {
 
                     if ($(this).is('input[type="text"]')) {
@@ -1358,6 +1401,7 @@
                 // ========================== SELECT ==========================
                 case 'mh':
                 case 'mse':
+                case 'map_labeling':
                 case 'matching_information': {
 
                     const sel = $(this).find('select');

@@ -159,68 +159,87 @@
 
                 let results = [];
 
-                $('.q-item, .q-list, .q-text').each(function() {
+                $('.q-item, .q-list, .q-text, .q-dropdown').each(function () {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
 
-                    if (typeof type === 'undefined') return;
+                    if (!type) return;
 
                     let name = null;
                     let answer = null;
 
                     switch (type) {
+
+                        case 'summary_completion': {
+                                let field;
+
+                                if ($(this).is('input[type="text"], select')) {
+                                    field = $(this);
+                                } else {
+                                    field = $(this).find('input[type="text"], select').first();
+                                }
+                                if (field && field.length) {
+                                    name = field.attr('name');
+                                    answer = field.val() || null;
+                                }
+                                break;
+                            }
                         case 'tfng':
                         case 'oc':
-                        case 'ynng':
+                        case 'ynng': {
                             const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
+                            if (checked.length) {
                                 name = checked.attr('name');
                                 answer = checked.val();
                             } else {
-                                // fallback jika belum dipilih
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) {
-                                    name = anyRadio.attr('name');
-                                }
+                                const first = $(this).find('input[type="radio"]').first();
+                                if (first.length) name = first.attr('name');
                             }
                             break;
+                        }
 
                         case 'sa':
                         case 'tc':
                         case 'nc':
                         case 'sentence_completion':
+                        case 'diagram_labeling': {
                             const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
+                            if (input.length) {
                                 name = input.attr('name');
-                                answer = input.val();
+                                answer = input.val() || null;
                             }
                             break;
-                        case 'summary_completion':
-                            let scInput = $(this);
-                            if (scInput.length > 0) {
-                                name = scInput.attr('name');
-                                answer = scInput.val();
-                            }
-                            break;
+                        }
+
                         case 'mh':
                         case 'mse':
                         case 'matching_information':
-                        case 'matching_features':
+                        case 'matching_features': {
                             const select = $(this).find('select');
-                            if (select.length > 0) {
+                            if (select.length) {
                                 name = select.attr('name');
-                                answer = select.val();
+                                answer = select.val() || null;
                             }
                             break;
-                        default:
-                            console.warn("Unknown question type:", type);
+                        }
+
+                        case 'two_choices': {
+                            const first = $(this).find('input[type="checkbox"]').first();
+                            const selected = $(this).find('input[type="checkbox"]:checked');
+
+                            name = first.attr('name') || ('q' + qnum);
+                            answer = selected.map(function () {
+                                return $(this).val();
+                            }).get();
+                            break;
+                        }
                     }
 
                     results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
+                        type,
+                        name,
+                        answer,
+                        question: qnum
                     });
                 });
 
@@ -338,68 +357,87 @@
             if (confirmFinish) {
                 let results = [];
 
-                $('.q-item, .q-list, .q-text').each(function() {
+                $('.q-item, .q-list, .q-text, .q-dropdown').each(function () {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
-                    
-                    if (typeof type === 'undefined') return;
+
+                    if (!type) return;
 
                     let name = null;
                     let answer = null;
 
                     switch (type) {
+
+                        case 'summary_completion': {
+                                let field;
+
+                                if ($(this).is('input[type="text"], select')) {
+                                    field = $(this);
+                                } else {
+                                    field = $(this).find('input[type="text"], select').first();
+                                }
+                                if (field && field.length) {
+                                    name = field.attr('name');
+                                    answer = field.val() || null;
+                                }
+                                break;
+                            }
                         case 'tfng':
                         case 'oc':
-                        case 'ynng':
+                        case 'ynng': {
                             const checked = $(this).find('input[type="radio"]:checked');
-                            if (checked.length > 0) {
+                            if (checked.length) {
                                 name = checked.attr('name');
                                 answer = checked.val();
                             } else {
-                                // fallback jika belum dipilih
-                                const anyRadio = $(this).find('input[type="radio"]').first();
-                                if (anyRadio.length > 0) {
-                                    name = anyRadio.attr('name');
-                                }
+                                const first = $(this).find('input[type="radio"]').first();
+                                if (first.length) name = first.attr('name');
                             }
                             break;
+                        }
 
                         case 'sa':
                         case 'tc':
                         case 'nc':
                         case 'sentence_completion':
+                        case 'diagram_labeling': {
                             const input = $(this).find('input[type="text"]');
-                            if (input.length > 0) {
+                            if (input.length) {
                                 name = input.attr('name');
-                                answer = input.val();
+                                answer = input.val() || null;
                             }
                             break;
-                        case 'summary_completion':
-                            let scInput = $(this);
-                            if (scInput.length > 0) {
-                                name = scInput.attr('name');
-                                answer = scInput.val();
-                            }
-                            break;
+                        }
+
                         case 'mh':
                         case 'mse':
                         case 'matching_information':
-                        case 'matching_features':
+                        case 'matching_features': {
                             const select = $(this).find('select');
-                            if (select.length > 0) {
+                            if (select.length) {
                                 name = select.attr('name');
-                                answer = select.val();
+                                answer = select.val() || null;
                             }
                             break;
-                        default:
-                            console.warn("Unknown question type:", type);
+                        }
+
+                        case 'two_choices': {
+                            const first = $(this).find('input[type="checkbox"]').first();
+                            const selected = $(this).find('input[type="checkbox"]:checked');
+
+                            name = first.attr('name') || ('q' + qnum);
+                            answer = selected.map(function () {
+                                return $(this).val();
+                            }).get();
+                            break;
+                        }
                     }
 
                     results.push({
-                        type: type,
-                        name: name,
-                        answer: answer || null,
-                        question: qnum || null
+                        type,
+                        name,
+                        answer,
+                        question: qnum
                     });
                 });
 
