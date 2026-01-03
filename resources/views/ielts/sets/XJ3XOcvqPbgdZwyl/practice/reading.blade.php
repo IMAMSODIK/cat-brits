@@ -2066,6 +2066,131 @@
         });
     </script>
 
+    <!-- script bagian part soal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.querySelector('.parts-section');
+            if (!section) return;
+
+            const xTabs = section.querySelector('.x-tabs');
+            const tabs = Array.from(xTabs.querySelectorAll('.x-tab'));
+            const panels = Array.from(section.querySelectorAll('.x-panel'));
+
+            function updateEdgeHints() {
+                const max = xTabs.scrollWidth - xTabs.clientWidth;
+                const x = Math.round(xTabs.scrollLeft);
+                xTabs.classList.toggle('has-left', x > 0);
+                xTabs.classList.toggle('has-right', x < max - 1);
+            }
+
+            function setActive(id) {
+                tabs.forEach(btn => {
+                    const active = btn.dataset.id === id;
+                    btn.classList.toggle('is-active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                    btn.tabIndex = active ? 0 : -1;
+                    if (active) {
+                        btn.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
+                    }
+                });
+                panels.forEach(p => {
+                    const open = p.id === `panel-${id}`;
+                    if (open) {
+                        p.removeAttribute('hidden');
+                        p.classList.add('is-open');
+                    } else {
+                        p.setAttribute('hidden', '');
+                        p.classList.remove('is-open');
+                    }
+                });
+                xTabs.dataset.active = id;
+            }
+
+            xTabs.addEventListener('click', (e) => {
+                const btn = e.target.closest('.x-tab');
+                if (!btn || !xTabs.contains(btn)) return;
+                setActive(btn.dataset.id);
+            });
+
+            /* Drag/Swipe pada .x-tabs */
+            let down = false,
+                moved = false,
+                startX = 0,
+                startLeft = 0,
+                pid = null;
+            xTabs.addEventListener('pointerdown', (e) => {
+                // Hanya izinkan drag jika bukan klik pada tab
+                if (e.target.closest('.x-tab')) {
+                    down = false;
+                    return;
+                }
+                down = true;
+                moved = false;
+                pid = e.pointerId;
+                xTabs.setPointerCapture(pid);
+                startX = e.clientX;
+                startLeft = xTabs.scrollLeft;
+            });
+            xTabs.addEventListener('pointermove', (e) => {
+                if (!down) return;
+                const dx = e.clientX - startX;
+                if (Math.abs(dx) > 3) moved = true;
+                xTabs.scrollLeft = startLeft - dx;
+            });
+
+            function endDrag(e) {
+                if (pid) {
+                    try {
+                        xTabs.releasePointerCapture(pid);
+                    } catch {}
+                }
+                pid = null;
+                down = false;
+                if (moved && e && e.target.closest('.x-tab')) e.preventDefault();
+                moved = false;
+            }
+            xTabs.addEventListener('pointerup', endDrag);
+            xTabs.addEventListener('pointercancel', endDrag);
+            xTabs.addEventListener('pointerleave', endDrag);
+
+            /* Wheel vertikal -> horizontal (trackpad/mouse) */
+            xTabs.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && xTabs.scrollWidth > xTabs.clientWidth) {
+                    xTabs.scrollBy({
+                        left: e.deltaY,
+                        behavior: 'auto'
+                    });
+                    e.preventDefault();
+                }
+            }, {
+                passive: false
+            });
+
+            /* Keyboard navigation */
+            tabs.forEach(btn => {
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    const idx = tabs.indexOf(btn);
+                    const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 +
+                        tabs.length) % tabs.length;
+                    tabs[nextIdx].focus();
+                    tabs[nextIdx].click();
+                });
+            });
+
+            /* Init */
+            updateEdgeHints();
+            xTabs.addEventListener('scroll', updateEdgeHints);
+            window.addEventListener('resize', updateEdgeHints);
+            setActive('tfng');
+        });
+    </script>
+
     <!-- script bagian floating question list -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {

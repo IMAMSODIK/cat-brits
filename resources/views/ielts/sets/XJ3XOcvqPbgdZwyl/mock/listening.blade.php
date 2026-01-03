@@ -9,17 +9,17 @@
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
             <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
-                data-id="tfng">Part 1</button>
+                data-id="tfng">Section 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
-                data-id="tfng2">Part 2</button>
+                data-id="tfng2">Section 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Part 3</button>
+                data-id="ynng">Section 3</button>
             <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
-                data-id="mse">Part 4</button>
+                data-id="mse">Section 4</button>
         </div>
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Content: Part 1</div>
+                <div class="x-panel-inner">Content: Section 1</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="qa highlighted-content">
                         <form class="qa-body">
@@ -211,7 +211,7 @@
                 </div>
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Content: Part 2</div>
+                <div class="x-panel-inner">Content: Section 2</div>
                 <div class="qa highlighted-content">
                     <form class="qa-body">
                         <fieldset class="q-item">
@@ -356,7 +356,7 @@
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Content: Part 3</div>
+                <div class="x-panel-inner">Content: Section 3</div>
                 <div class="reading-section">
                     <div class="qa highlighted-content">
                         <form class="qa-body">
@@ -555,135 +555,135 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-            <div class="x-panel-inner">Content: Part 4</div>
-            <div class="qa highlighted-content">
-                <form class="qa-body">
-                    <fieldset class="q-item">
-                        <p class="lead">Listen and answer questions 31-40</p>
-                        <div class="audio-player">
-                            <audio
-                                src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
-                            <input type="range" class="timeline" value="0" disabled>
-                            <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
-                        </div>
-                    </fieldset>
+            <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
+                <div class="x-panel-inner">Content: Section 4</div>
+                <div class="qa highlighted-content">
+                    <form class="qa-body">
+                        <fieldset class="q-item">
+                            <p class="lead">Listen and answer questions 31-40</p>
+                            <div class="audio-player">
+                                <audio
+                                    src="https://engnovate.com/wp-content/uploads/2023/07/ielts-listening-testscambridge-ielts-10-academic-listening-1-audio-4.mp3"></audio>
+                                <input type="range" class="timeline" value="0" disabled>
+                                <div><span class="current">0:00</span> / <span class="duration">0:00</span></div>
+                            </div>
+                        </fieldset>
 
-                    <fieldset class="q-item">
-                        <p>Questions 31-40</p>
-                        <p>Complete the notes below.</p>
-                        <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
-                    </fieldset>
+                        <fieldset class="q-item">
+                            <p>Questions 31-40</p>
+                            <p>Complete the notes below.</p>
+                            <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
+                        </fieldset>
 
-                    <fieldset class="q-item">
-                        <h3><b>THE SPIRIT BEAR</b></h3>
-                        <p><b>General facts</b></p>
-                        <ul>
-                            <li>It is a white bear belonging to the black bear family.</li>
-                            <li>
-                                <div class="q-list" data-q="1" data-type="nc">
-                                    Its colour comes from an uncommon
-                                    <span class="q-number-box">31</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="2" data-type="nc">
-                                    Local people believe that it has unusual
-                                    <span class="q-number-box">32</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="3" data-type="nc">
-                                    They protect the bear from
-                                    <span class="q-number-box">33</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
+                        <fieldset class="q-item">
+                            <h3><b>THE SPIRIT BEAR</b></h3>
+                            <p><b>General facts</b></p>
+                            <ul>
+                                <li>It is a white bear belonging to the black bear family.</li>
+                                <li>
+                                    <div class="q-list" data-q="1" data-type="nc">
+                                        Its colour comes from an uncommon
+                                        <span class="q-number-box">31</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-20" class="q-text"
+                                            placeholder="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="2" data-type="nc">
+                                        Local people believe that it has unusual
+                                        <span class="q-number-box">32</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-21" class="q-text"
+                                            placeholder="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="3" data-type="nc">
+                                        They protect the bear from
+                                        <span class="q-number-box">33</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-22" class="q-text"
+                                            placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
 
-                        <p><b>Habitat</b></p>
-                        <ul>
-                            <li>The bear’s relationship with the forest is complex.</li>
-                            <li>
-                                <div class="q-list" data-q="4" data-type="nc">
-                                    Tree roots stop
-                                    <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
-                                        placeholder="">
-                                    along salmon streams.
-                                </div>
-                            </li>
-                            <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
-                            <li>
-                                <div class="q-list" data-q="5" data-type="nc">
-                                    It is currently found on a small number of
-                                    <span class="q-number-box">35</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
+                            <p><b>Habitat</b></p>
+                            <ul>
+                                <li>The bear’s relationship with the forest is complex.</li>
+                                <li>
+                                    <div class="q-list" data-q="4" data-type="nc">
+                                        Tree roots stop
+                                        <span class="q-number-box">34</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-23" class="q-text"
+                                            placeholder="">
+                                        along salmon streams.
+                                    </div>
+                                </li>
+                                <li>The bears’ feeding habits provide nutrients for forest vegetation.</li>
+                                <li>
+                                    <div class="q-list" data-q="5" data-type="nc">
+                                        It is currently found on a small number of
+                                        <span class="q-number-box">35</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-24" class="q-text"
+                                            placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
 
-                        <p><b>Threats</b></p>
-                        <ul>
-                            <li>
-                                <div class="q-list" data-q="6" data-type="nc">
-                                    Habitat is being lost due to deforestation and construction of
-                                    <span class="q-number-box">36</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="7" data-type="nc">
-                                    Unrestricted
-                                    <span class="q-number-box">37</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
-                                        placeholder="">
-                                    is affecting the salmon supply.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="8" data-type="nc">
-                                    The bears’ existence is also threatened by their low rate of
-                                    <span class="q-number-box">38</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
-                                        placeholder="">
-                                </div>
-                            </li>
-                        </ul>
+                            <p><b>Threats</b></p>
+                            <ul>
+                                <li>
+                                    <div class="q-list" data-q="6" data-type="nc">
+                                        Habitat is being lost due to deforestation and construction of
+                                        <span class="q-number-box">36</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-25" class="q-text"
+                                            placeholder="">
+                                        by logging companies.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="7" data-type="nc">
+                                        Unrestricted
+                                        <span class="q-number-box">37</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-26" class="q-text"
+                                            placeholder="">
+                                        is affecting the salmon supply.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="8" data-type="nc">
+                                        The bears’ existence is also threatened by their low rate of
+                                        <span class="q-number-box">38</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-27" class="q-text"
+                                            placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
 
-                        <p><b>Going forward</b></p>
-                        <ul>
-                            <li>Interested parties are working together.</li>
-                            <li>
-                                <div class="q-list" data-q="9" data-type="nc">
-                                    Logging companies must improve their
-                                    <span class="q-number-box">39</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
-                                        placeholder="">
-                                    by logging companies.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="q-list" data-q="10" data-type="nc">
-                                    Maintenance and
-                                    <span class="q-number-box">40</span>
-                                    <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
-                                        placeholder="">
-                                    of the spirit bears’ territory is needed.
-                                </div>
-                            </li>
-                        </ul>
-                    </fieldset>
-                </form>
+                            <p><b>Going forward</b></p>
+                            <ul>
+                                <li>Interested parties are working together.</li>
+                                <li>
+                                    <div class="q-list" data-q="9" data-type="nc">
+                                        Logging companies must improve their
+                                        <span class="q-number-box">39</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-28" class="q-text"
+                                            placeholder="">
+                                        by logging companies.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q-list" data-q="10" data-type="nc">
+                                        Maintenance and
+                                        <span class="q-number-box">40</span>
+                                        <input type="text" name="nc-XJ3XOcvqPbgdZwyl-29" class="q-text"
+                                            placeholder="">
+                                        of the spirit bears’ territory is needed.
+                                    </div>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

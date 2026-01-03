@@ -693,7 +693,9 @@
             gap: 10px;
         }
 
-        #panel-tc .q-number-box {
+        #panel-tc .q-number-box,
+        #panel-ynng .q-number-box,
+        #panel-tfng2 .q-number-box{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -705,7 +707,9 @@
             margin-left: 5px;
         }
 
-        #panel-tc .q-text {
+        #panel-tc .q-text,
+        #panel-tfng2 .q-text,
+        #panel-tfng .q-text {
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -714,7 +718,8 @@
             box-sizing: border-box;
         }
 
-        #panel-tc input {
+        #panel-tc input,
+        {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;

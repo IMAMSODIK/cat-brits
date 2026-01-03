@@ -459,7 +459,7 @@
 
 
 {{-- script audio players --}}
-<script>
+{{-- <script>
     (function setupAudioPlayers() {
         const players = document.querySelectorAll('.audio-player');
 
@@ -552,7 +552,7 @@
             });
         });
     })();
-</script>
+</script> --}}
 
 <script>
     let currentPlaying = null;
@@ -706,7 +706,23 @@
     function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
         let allAnswered = true;
 
-        $(`#${form} [data-q]`).each(function () {
+        $(`#${form} select[data-q]`).each(function () {
+            if (!$(this).closest("fieldset").length) {
+                const q = $(this).data("q");
+                $(this).wrap(`<fieldset data-q="${q}" class="temp-fieldset"></fieldset>`);
+            }
+        });
+
+        $(`#${form} input[type="text"]`).each(function () {
+            if (!$(this).closest("fieldset[data-q]").length) {
+                const q = $(this).prevAll(".q-number-box").first().text();
+                if (q) {
+                    $(this).wrap(`<fieldset data-q="${q}" class="temp-fieldset q-item"></fieldset>`);
+                }
+            }
+        });
+
+        $(`#${form} fieldset[data-q]`).each(function () {
             let isAnswered = false;
             const inputs = $(this).find("input, select, textarea");
 

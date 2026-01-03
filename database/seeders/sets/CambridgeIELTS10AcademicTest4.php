@@ -101,17 +101,19 @@ class CambridgeIELTS10AcademicTest4 extends Seeder
 
 
         // Cambridge IELTS 10 Academic Listening Test 4 - Listening
-        $nc = ["Pargetter", "East", "library", "[morning, mornings]", "postbox", "prices"];
+        $nc = [
+            "Pargetter", "East", "library", "[morning, mornings]", "postbox", "prices",
+            "[metal, metals]", "space", "memory", "solar", "oil", "waste", "tests"
+        ];
         $tc = [
             "glass", "cooker", "week", "fence",
-            "trains", "dark", "games", "guided tour", "[ladder, ladders]",
-            "[metal, metals]", "space", "memory", "solar", "oil", "waste", "tests"
+            "trains", "dark", "games", "guided tour", "[ladder, ladders]"
         ];
         $oc = [
             "b", "b", "a", "a", "c",
             "c", "b", "c"
         ];
-        $two_choices = ["a", "e", "b", "c"];
+        $two_choices = ["[a, e]", "[a, e]", "[b, c]", "[b, c]"];
         $matching_information = ["d", "f", "g", "b", "e", "c"];
         
         for($i = 1; $i <= count($nc); $i++){

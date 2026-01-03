@@ -451,7 +451,7 @@
                         answer: text,
                         tipe: "practice",
                         no_soal: noSoal,
-                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        set_id: "{{$set->kode}}",
                         kategori: "writing",
                         _token: $('meta[name="csrf-token"]').attr('content')
                     },

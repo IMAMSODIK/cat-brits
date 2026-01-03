@@ -14,7 +14,10 @@ use App\Http\Controllers\VideoAsessmentController;
 use App\Http\Controllers\VideoCallController;
 use App\Http\Controllers\WritingAssessmentController;
 use App\Http\Controllers\WritingController;
+use Carbon\Carbon;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -131,5 +134,21 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    $studentId = auth()->user()->id;
+    $end = Carbon::today();
+    $start = $end->copy()->subYear()->startOfDay();
+
+    $rawActivities = DB::table('test_histories')
+        ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+        ->where('student_id', $studentId)
+        ->whereBetween('created_at', [$start, $end])
+        ->groupBy('date')
+        ->pluck('total', 'date')
+        ->toArray();
+
+    return view('test', [
+        'start' => $start,
+        'end' => $end,
+        'activities' => $rawActivities
+    ]);
 });

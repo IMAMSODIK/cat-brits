@@ -1018,8 +1018,8 @@
     {{-- style unutk audio player --}}
     <style>
         /* ===============================
-   AUDIO PLAYER CONTAINER
-   =============================== */
+        AUDIO PLAYER CONTAINER
+        =============================== */
         .audio-player {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(12px);
@@ -1503,6 +1503,12 @@
         #confirmModal button {
             margin-top: 15px;
             padding: 8px 16px;
+        }
+    </style>
+
+    <style>
+        .audio-player {
+            display: none;
         }
     </style>
 </head>

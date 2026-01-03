@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 <script>
     (function() {
         // Events
@@ -379,8 +381,100 @@
     });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
+<script>
+    (function() {
+
+        let remaining = 0;
+        let timer = null;
+        let alreadySubmitted = false;
+
+        const el = document.getElementById('timeText');
+        const wrap = document.getElementById('timer');
+        const doneBtn = document.getElementById('doneBtn');
+
+        function format(sec) {
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }
+
+        function forceSubmit() {
+            if (alreadySubmitted) return;
+            alreadySubmitted = true;
+
+            // Disable tombol
+            // doneBtn.disabled = true;
+            // doneBtn.style.opacity = 0.7;
+            // doneBtn.style.cursor = 'not-allowed';
+
+            // 🔥 Trigger submit form writing
+            $('.response-form').each(function() {
+                const form = $(this);
+                const textarea = form.find('.js-response');
+
+                if (textarea.val().trim() !== '') {
+                    form.trigger('submit');
+                }
+            });
+        }
+
+        function tick() {
+            if (remaining <= 0) {
+                clearInterval(timer);
+                timer = null;
+
+                el.textContent = '00:00';
+                wrap.classList.add('danger');
+
+                forceSubmit();
+                return;
+            }
+
+            remaining--;
+            el.textContent = format(remaining);
+
+            if (remaining <= 60) {
+                wrap.classList.add('danger');
+            }
+        }
+
+        function startCountdown(seconds) {
+            clearInterval(timer);
+            alreadySubmitted = false;
+
+            remaining = Math.max(0, Math.floor(seconds));
+            el.textContent = format(remaining);
+            wrap.classList.toggle('danger', remaining <= 60);
+
+            doneBtn.disabled = false;
+            doneBtn.style.opacity = 1;
+            doneBtn.style.cursor = 'pointer';
+
+            timer = setInterval(tick, 1000);
+        }
+
+        // Public API
+        window.CATHeader = {
+            startCountdown
+        };
+
+        // INFO BUTTON
+        document.getElementById('infoBtn')?.addEventListener('click', () => {
+            alert(
+                'Instructions:\n' +
+                '- Write your response carefully\n' +
+                '- Timer runs automatically\n' +
+                '- When time is up, your answer is submitted automatically'
+            );
+        });
+
+        // 🚀 START (contoh 15 menit)
+        startCountdown(13 * 60);
+
+    })();
+</script>
+
+
 <script>
     $(document).ready(function() {
         $(".response-form").each(function() {
@@ -435,10 +529,10 @@
 
                 const text = textarea.val().trim();
 
-                if (!text) {
-                    alert("Please enter your response before submitting.");
-                    return;
-                }
+                // if (!text) {
+                //     alert("Please enter your response before submitting.");
+                //     return;
+                // }
 
                 submitBtn.text("Submitting...");
                 submitBtn.prop("disabled", true);
@@ -451,7 +545,7 @@
                         answer: text,
                         tipe: "mock",
                         no_soal: noSoal,
-                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        set_id: '{{$set->kode}}',
                         kategori: "writing",
                         _token: $('meta[name="csrf-token"]').attr('content')
                     },
@@ -460,8 +554,9 @@
                         submitBtn.prop("disabled", false);
 
                         if (res.status) {
+                            alert(res.message)
                             setTimeout(() => {
-                                alert(res.message)
+                                location.reload()
                             }, 1000);
 
                             textarea.val("");
@@ -491,8 +586,6 @@
 
                         alert("Server Error: " + xhr.status);
                     }
-
-
                 });
             });
 

@@ -611,7 +611,7 @@
                                                                     {{ $w->setSoal->thumbnail }} <br>
                                                                     <small class="text-primary">{{ $w->task }} &nbsp; •
                                                                         &nbsp; Number
-                                                                        {{ $v->no_soal }}</small>
+                                                                        {{ $w->no_soal }}</small>
                                                                 </p>
 
                                                                 <!-- BUTTON -->

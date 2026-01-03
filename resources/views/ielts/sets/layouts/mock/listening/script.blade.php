@@ -133,104 +133,8 @@
     });
 </script>
 
-<!-- script bagian audio player -->
-<script>
-    (function setupAudioPlayers() {
-        const players = document.querySelectorAll('.audio-player');
-
-        players.forEach(player => {
-            const audio = player.querySelector('audio');
-            const playBtn = player.querySelector('.ap-play');
-            const muteBtn = player.querySelector('.ap-vol');
-            const seek = player.querySelector('.ap-seek');
-            const progress = player.querySelector('.ap-progress');
-            const cur = player.querySelector('.ap-current');
-            const dur = player.querySelector('.ap-duration');
-            const iconPlay = player.querySelector('.ap-icon-play');
-            const iconPause = player.querySelector('.ap-icon-pause');
-            const track = player.querySelector('.ap-track');
-
-            function fmt(t) {
-                if (!isFinite(t)) return '0:00';
-                const m = Math.floor(t / 60);
-                const s = Math.floor(t % 60);
-                return m + ':' + String(s).padStart(2, '0');
-            }
-
-            // durasi
-            audio.addEventListener('loadedmetadata', () => {
-                dur.textContent = fmt(audio.duration);
-            });
-
-            // update progress
-            audio.addEventListener('timeupdate', () => {
-                cur.textContent = fmt(audio.currentTime);
-                const pct = (audio.currentTime / (audio.duration || 1)) * 100;
-                progress.style.width = pct + '%';
-                seek.value = pct;
-            });
-
-            // play/pause toggle
-            playBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (audio.paused) audio.play();
-                else audio.pause();
-            });
-
-            audio.addEventListener('play', () => {
-                iconPlay.style.display = 'none';
-                iconPause.style.display = 'inline';
-                playBtn.setAttribute('aria-label', 'Pause audio');
-            });
-
-            audio.addEventListener('pause', () => {
-                iconPlay.style.display = 'inline';
-                iconPause.style.display = 'none';
-                playBtn.setAttribute('aria-label', 'Play audio');
-            });
-
-            // seek slider
-            seek.addEventListener('input', (e) => {
-                e.stopPropagation();
-                if (!audio.duration) return;
-                const t = (parseFloat(seek.value) / 100) * audio.duration;
-                audio.currentTime = t;
-                console.log("Seek input →", t);
-            });
-
-            seek.addEventListener('change', (e) => {
-                e.stopPropagation();
-                if (!audio.duration) return;
-                const t = (parseFloat(seek.value) / 100) * audio.duration;
-                audio.currentTime = t;
-                console.log("Seek change →", t);
-            });
-
-            // klik progress bar
-            track.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (!audio.duration) return;
-                const rect = track.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const pct = x / rect.width;
-                const t = pct * audio.duration;
-                audio.currentTime = t;
-                console.log("Track click →", t);
-            });
-
-            // mute toggle
-            muteBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                audio.muted = !audio.muted;
-                muteBtn.querySelector('.ap-icon').textContent = audio.muted ? '🔇' : '🔊';
-                muteBtn.setAttribute('aria-label', audio.muted ? 'Unmute audio' : 'Mute audio');
-            });
-        });
-    })();
-</script>
-
-
-<script>
+{{-- timer listening sebelumnya --}}
+{{-- <script>
     (function() {
         let remaining = 0;
         let t = null;
@@ -316,7 +220,7 @@
                     type: 'POST',
                     data: {
                         _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        set_id: '{{$set->kode}}',
                         kategori: 'listening',
                         answers: results,
                         tipe_test: 'mock'
@@ -423,7 +327,7 @@
         // Mulai countdown (contoh: 15 menit)
         startCountdown(13 * 60);
     })();
-</script>
+</script> --}}
 
 <!-- script bagian part soal -->
 <script>
@@ -956,13 +860,11 @@
     });
 </script>
 
-<script>
-    /* ====== Audio tab controller (fixed stop-on-switch) ====== */
-
+{{-- audio logic sebelumnya --}}
+{{-- <script>
     let currentAudio = null;
     let currentTimerId = null;
 
-    // format mm:ss
     function formatTime(sec) {
         sec = isNaN(sec) ? 0 : Math.floor(sec);
         const m = Math.floor(sec / 60);
@@ -970,7 +872,6 @@
         return `${m}:${s < 10 ? '0' : ''}${s}`;
     }
 
-    // reset UI for a panel's audio (progress+time)
     function resetPanelUI(panel) {
         const prog = panel.querySelector(".timeline");
         const cur = panel.querySelector(".current");
@@ -978,45 +879,34 @@
         if (prog) prog.value = 0;
         if (cur) cur.textContent = "0:00";
         if (dur) {
-            // leave duration as-is (if already loaded) or show 0:00
             if (!panel.querySelector("audio").duration || isNaN(panel.querySelector("audio").duration)) {
                 dur.textContent = "0:00";
             }
         }
-        // if you used a visual progress element instead of range, reset its width:
         const visualProg = panel.querySelector(".seekbar-progress");
         if (visualProg) visualProg.style.width = "0%";
     }
 
-    // stop & reset current audio (completely)
     function stopCurrentAudio() {
         if (!currentAudio) return;
-
-        // pause & reset time
         try {
             currentAudio.pause();
             currentAudio.currentTime = 0;
         } catch (e) {
-            /* ignore */
         }
 
-        // clear interval timer if any
         if (currentTimerId) {
             clearInterval(currentTimerId);
             currentTimerId = null;
         }
 
-        // reset UI for the panel that had currentAudio
         const panel = currentAudio.closest(".x-panel");
         if (panel) resetPanelUI(panel);
 
-        // unset currentAudio reference
         currentAudio = null;
     }
 
-    // start timer to update UI every 1 second
     function startPanelTimer(audio, panel) {
-        // clear existing
         if (currentTimerId) {
             clearInterval(currentTimerId);
             currentTimerId = null;
@@ -1037,56 +927,43 @@
         }, 1000);
     }
 
-    // play audio for a panel (only if not already played)
     function playPanelAudio(panel) {
         const audio = panel.querySelector("audio");
         if (!audio) return;
 
-        // already played once? skip
         if (audio.dataset.played === "yes") {
             return;
         }
 
-        // if another audio is playing -> stop it first
         if (currentAudio && currentAudio !== audio) {
             stopCurrentAudio();
         }
 
-        // mark as current
         currentAudio = audio;
 
-        // prepare UI duration if metadata already available
         const durEl = panel.querySelector(".duration");
         if (audio.duration && !isNaN(audio.duration) && durEl) {
             durEl.textContent = formatTime(audio.duration);
         }
 
-        // mute trick for autoplay compatibility
         audio.muted = true;
 
-        // play
         audio.play().then(() => {
-            // mark one-time-play
             audio.dataset.played = "yes";
 
-            // unmute shortly after play to avoid autoplay block in some browsers
             setTimeout(() => {
                 try {
                     audio.muted = false;
                 } catch (e) {}
             }, 150);
 
-            // update status UI by starting timer per-second
             startPanelTimer(audio, panel);
 
-            // make sure ended handler resets UI/timer
             audio.onended = () => {
-                // clear timer
                 if (currentTimerId) {
                     clearInterval(currentTimerId);
                     currentTimerId = null;
                 }
-                // finalize progress UI
                 const visualProg = panel.querySelector(".seekbar-progress");
                 if (visualProg) visualProg.style.width = "100%";
                 const cur = panel.querySelector(".current");
@@ -1094,19 +971,15 @@
                 if (cur) cur.textContent = formatTime(audio.duration || 0);
                 if (dur) dur.textContent = formatTime(audio.duration || 0);
 
-                // mark played and unset currentAudio
                 audio.dataset.played = "yes";
                 currentAudio = null;
             };
 
         }).catch(err => {
-            // autoplay blocked — you may need user confirmation (modal)
             console.warn("Autoplay blocked:", err);
-            // cleanup currentAudio reference if failed
             currentAudio = null;
         });
 
-        // prevent seeking by user (just in case)
         audio.addEventListener("seeking", function() {
             this.currentTime = this._lastTime || 0;
         });
@@ -1115,14 +988,11 @@
         });
     }
 
-    /* ========== Tab switching logic (compatible with your x-tab / x-panel) ========== */
     document.querySelectorAll(".x-tab").forEach(tab => {
         tab.addEventListener("click", () => {
-            // activate tab classes
             document.querySelectorAll(".x-tab").forEach(t => t.classList.remove("is-active"));
             tab.classList.add("is-active");
 
-            // show corresponding panel
             const id = tab.dataset.id;
             const panelId = `panel-${id}`;
             document.querySelectorAll(".x-panel").forEach(p => p.classList.remove("active", "is-open"));
@@ -1130,13 +1000,10 @@
             if (!targetPanel) return;
             targetPanel.classList.add("active", "is-open");
 
-            // STOP any currently playing audio when switching to a different panel
-            // (this ensures audio always stops)
             if (currentAudio && currentAudio.closest(".x-panel") !== targetPanel) {
                 stopCurrentAudio();
             }
 
-            // play audio on the newly opened panel (if it has one and not played yet)
             const audio = targetPanel.querySelector("audio");
             if (audio && audio.dataset.played !== "yes") {
                 playPanelAudio(targetPanel);
@@ -1144,41 +1011,275 @@
         });
     });
 
-    /* ========== Initial modal confirm & autoplay first panel ========== */
     const modal = document.getElementById("confirmModal");
     const confirmBtn = document.getElementById("confirmYes");
 
-    if (modal && confirmBtn) {
-        // show modal on load
+    if (modal && confirmBtn) {        
         window.addEventListener("load", () => {
             modal.style.display = "flex";
         });
         confirmBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-            // play currently active panel
+            modal.style.display = "none";            
             const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
             if (firstPanel) playPanelAudio(firstPanel);
         });
-    } else {
-        // if no modal, autoplay first panel immediately (with mute trick)
+    } else {        
         window.addEventListener("load", () => {
             const firstPanel = document.querySelector(".x-panel.active") || document.querySelector(".x-panel");
             if (firstPanel) playPanelAudio(firstPanel);
         });
     }
+</script> --}}
+
+<script>
+    let panels = [];
+    let audios = [];
+    let currentIndex = 0;
+    let timerId = null;
+    let allFinished = false;
+
+    /* ================= UTIL ================= */
+    function formatTime(sec) {
+        sec = Math.floor(sec || 0);
+        return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`;
+    }
+
+    function activatePanel(index) {
+        panels.forEach(p => p.classList.remove("active", "is-open"));
+        panels[index].classList.add("active", "is-open");
+
+        document.querySelectorAll(".x-tab").forEach(t => {
+            t.classList.toggle(
+                "is-active",
+                t.dataset.id === panels[index].id.replace("panel-", "")
+            );
+        });
+    }
+
+    function startTimer(audio, panel) {
+        clearInterval(timerId);
+
+        const prog = panel.querySelector(".timeline");
+        const cur = panel.querySelector(".current");
+        const dur = panel.querySelector(".duration");
+
+        timerId = setInterval(() => {
+            if (!audio.duration) return;
+            if (prog) prog.value = (audio.currentTime / audio.duration) * 100;
+            if (cur) cur.textContent = formatTime(audio.currentTime);
+            if (dur) dur.textContent = formatTime(audio.duration);
+        }, 500);
+    }
+
+    /* ================= CORE ================= */
+    function playIndex(index) {
+        if (index >= audios.length) {
+            allFinished = true;
+            onAllAudiosFinished();
+            return;
+        }
+
+        currentIndex = index;
+
+        const panel = panels[index];
+        const audio = audios[index];
+
+        activatePanel(index);
+
+        audio.currentTime = 0;
+        audio.play();
+        startTimer(audio, panel);
+
+        audio.onended = () => {
+            clearInterval(timerId);
+            playIndex(index + 1);
+        };
+    }
+
+    function onAllAudiosFinished() {
+        document.getElementById('doneBtn').disabled = true;
+        document.getElementById('doneBtn').style.opacity = 0.7;
+        document.getElementById('doneBtn').style.cursor = 'not-allowed';
+
+        $("#retake").css("display", "");
+
+        let results = [];
+
+        $('.q-item, .q-text, .q-list').each(function() {
+            // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
+            if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
+
+            const type = $(this).data('type');
+            const qnum = $(this).data('q');
+
+            if (typeof type === 'undefined') return;
+
+            let name = null;
+            let answer = null;
+
+            switch (type) {
+                case 'tfng':
+                case 'oc':
+                case 'ynng':
+                    const checked = $(this).find('input[type="radio"]:checked');
+                    if (checked.length > 0) {
+                        name = checked.attr('name');
+                        answer = checked.val();
+                    } else {
+                        const anyRadio = $(this).find('input[type="radio"]').first();
+                        if (anyRadio.length > 0) name = anyRadio.attr('name');
+                    }
+                    break;
+
+                case 'sa':
+                case 'tc':
+                case 'nc':
+                    const input = $(this).find('input[type="text"]');
+                    if (input.length > 0) {
+                        name = input.attr('name');
+                        answer = input.val();
+                    }
+                    break;
+
+                case 'mh':
+                case 'mse':
+                    const select = $(this).find('select');
+                    if (select.length > 0) {
+                        name = select.attr('name');
+                        answer = select.val();
+                    }
+                    break;
+            }
+
+            results.push({
+                type: type,
+                name: name,
+                answer: answer || null,
+                question: qnum || null
+            });
+        });
+
+        $.ajax({
+            url: '/ielts/mock-test/check',
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                set_id: '{{$set->kode}}',
+                kategori: 'listening',
+                answers: results,
+                tipe_test: 'mock'
+            },
+            success: function(response) {
+                $("#try-again").css('display', '');
+                $("#doneBtn").css('display', 'none');
+
+                if (response.status === 'ok') {
+                    let correctCount = 0;
+                    let total = Object.keys(response.results).length;
+                    let tableRows = '';
+                    let questionNumber = 1;
+
+                    $.each(response.results, function(key, data) {
+                        let isCorrect = data.status === 'correct';
+                        if (isCorrect) correctCount++;
+
+                        let correctAnswer = data.correct || '';
+                        let userAnswer = data.user || '';
+                        if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+                        if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+
+                        tableRows += `
+                                <tr>
+                                    <td><strong>${questionNumber++}</strong></td>
+                                    <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                    <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                    <td>
+                                        <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                            <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                            ${isCorrect ? 'Correct' : 'Wrong'}
+                                        </span>
+                                    </td>
+                                </tr>
+                            `;
+                    });
+
+                    // Update skor di UI
+                    $("#scoreDisplay").text(`${correctCount}/${total}`);
+                    $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                    let percentage = (correctCount / total) * 100;
+                    let scoreCircle = $(".score-circle");
+                    if (percentage >= 80) {
+                        scoreCircle.css("background",
+                            "linear-gradient(135deg, #27ae60, #2ecc71)");
+                    } else if (percentage >= 60) {
+                        scoreCircle.css("background",
+                            "linear-gradient(135deg, #f39c12, #e67e22)");
+                    } else {
+                        scoreCircle.css("background",
+                            "linear-gradient(135deg, #e74c3c, #c0392b)");
+                    }
+
+                    $("#resultsTableBody").html(tableRows);
+
+                    // tampilkan modal hasil
+                    showModal(`Score: ${correctCount} / ${total}`);
+                } else {
+                    alert('Terjadi kesalahan: ' + response.message);
+                }
+            },
+            error: function(xhr) {
+                console.error(xhr.responseText);
+                alert('Terjadi kesalahan: ' + xhr.status);
+            }
+        });
+    }
+
+    /* ================= INIT ================= */
+    document.addEventListener("DOMContentLoaded", () => {
+        panels = Array.from(document.querySelectorAll(".x-panel"));
+        audios = panels.map(p => p.querySelector("audio"));
+    });
+
+    /* ================= POPUP ANDA ================= */
+    const modal = document.getElementById("confirmModal");
+    const confirmBtn = document.getElementById("confirmYes");
+
+    if (modal && confirmBtn) {
+        window.addEventListener("load", () => {
+            modal.style.display = "flex";
+        });
+
+        confirmBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+            playIndex(0); // 🔥 START PLAYLIST DI SINI
+        });
+    }
 </script>
 
 <script>
+    function stopAllAudio() {
+        if (!audios || audios.length === 0) return;
+
+        audios.forEach(audio => {
+            try {
+                audio.pause();
+                audio.currentTime = 0;
+            } catch (e) {}
+        });
+
+        clearInterval(timerId);
+    }
+
     document.getElementById('doneBtn').addEventListener('click', function() {
 
         const confirmFinish = confirm('Do you want to end the test now?');
         if (!confirmFinish) return;
 
-        stopCurrentAudio();
-
+        stopAllAudio();
         let results = [];
 
-        $('.q-item, .q-list').each(function() {
+        $('.q-item, .q-text, .q-list').each(function() {
 
             // Abaikan item dalam q-list (anak)
             if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
@@ -1222,11 +1323,17 @@
                 case 'tc':
                 case 'nc': {
 
-                    const inp = $(this).find('input[type="text"]');
-
-                    if (inp.length > 0) {
-                        name = inp.attr('name');
-                        answer = inp.val();
+                    if ($(this).is('input[type="text"]')) {
+                        // ✅ q-text langsung
+                        name = $(this).attr('name');
+                        answer = $(this).val();
+                    } else {
+                        // ✅ container
+                        const inp = $(this).find('input[type="text"]');
+                        if (inp.length > 0) {
+                            name = inp.attr('name');
+                            answer = inp.val();
+                        }
                     }
 
                     break;
@@ -1250,7 +1357,8 @@
 
                 // ========================== SELECT ==========================
                 case 'mh':
-                case 'mse': {
+                case 'mse':
+                case 'matching_information': {
 
                     const sel = $(this).find('select');
 
@@ -1283,7 +1391,7 @@
             type: 'POST',
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content'),
-                set_id: 'XJ3XOcvqPbgdZwyl',
+                set_id: '{{$set->kode}}',
                 kategori: 'listening',
                 answers: results,
                 tipe_test: 'mock'

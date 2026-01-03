@@ -14,10 +14,10 @@
                 <i class="fa-solid fa-circle-info"></i>
             </button>
 
-            <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+            {{-- <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
                 <i class="fa-regular fa-clock"></i>
                 <span id="timeText">00:00</span>
-            </div>
+            </div> --}}
 
             <button id="retake" class="btn btn-danger" style="display: none" onclick="location.reload()">
                 <i class="fa-solid fa-rotate-right"></i>

@@ -128,7 +128,6 @@
     </section>
 
     @include('ielts.sets.layouts.practice.writing.component')
-
     @include('ielts.sets.layouts.practice.writing.script')
 
 </body>

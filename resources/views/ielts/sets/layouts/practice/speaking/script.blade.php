@@ -555,7 +555,7 @@
                         formData.append("question_id", block.data("q") || "");
                         formData.append("part", block.data("part") || "");
                         formData.append("timestamp", Date.now());
-                        formData.append("set_id", "XJ3XOcvqPbgdZwyl");
+                        formData.append("set_id", "{{$set->kode}}");
                         formData.append("tipe", "speaking");
                         formData.append("kategori", "speaking");
                         formData.append("_token", $("meta[name='csrf-token']").attr(

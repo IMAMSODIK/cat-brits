@@ -40,10 +40,10 @@ DASHBOARD
                         -> SKOR MOCK TEST TERTINGGI 5 SISWA
                         -> SKOR MOCK TERENDAH 5 SISWA
         TEACHER
-                -> video call (pending, scheduled, today's call)
-                -> video speaking menunggu penilaian
-                -> writing menunggu penilaian
-                -> student yang pernah ditangani
+                -> video call (pending, scheduled, today's call) (done)
+                -> video speaking menunggu penilaian (done)
+                -> writing menunggu penilaian (done)
+                -> student yang pernah ditangani 
         STUDENT
                 -> TOTAL TEST DIKERJAKAN (MOCK DAN PRACTICE)
                 -> rata-rata skor reading dan listening
@@ -60,3 +60,6 @@ STATITISTIK REQUEST correction
         Writing:
                 Belum diperiksa
                 Sudah diperiksa
+
+
+

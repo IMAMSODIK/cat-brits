@@ -159,7 +159,7 @@
 
                 let results = [];
 
-                $('.q-item').each(function() {
+                $('.q-item, .q-list, .q-text').each(function() {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
 
@@ -187,21 +187,33 @@
 
                         case 'sa':
                         case 'tc':
+                        case 'nc':
+                        case 'sentence_completion':
                             const input = $(this).find('input[type="text"]');
                             if (input.length > 0) {
                                 name = input.attr('name');
                                 answer = input.val();
                             }
                             break;
-
+                        case 'summary_completion':
+                            let scInput = $(this);
+                            if (scInput.length > 0) {
+                                name = scInput.attr('name');
+                                answer = scInput.val();
+                            }
+                            break;
                         case 'mh':
                         case 'mse':
+                        case 'matching_information':
+                        case 'matching_features':
                             const select = $(this).find('select');
                             if (select.length > 0) {
                                 name = select.attr('name');
                                 answer = select.val();
                             }
                             break;
+                        default:
+                            console.warn("Unknown question type:", type);
                     }
 
                     results.push({
@@ -217,7 +229,7 @@
                     type: 'POST',
                     data: {
                         _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        set_id: '{{$set->kode}}',
                         kategori: 'reading',
                         answers: results,
                         tipe_test: 'practice'
@@ -326,10 +338,10 @@
             if (confirmFinish) {
                 let results = [];
 
-                $('.q-item').each(function() {
+                $('.q-item, .q-list, .q-text').each(function() {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
-
+                    
                     if (typeof type === 'undefined') return;
 
                     let name = null;
@@ -354,21 +366,33 @@
 
                         case 'sa':
                         case 'tc':
+                        case 'nc':
+                        case 'sentence_completion':
                             const input = $(this).find('input[type="text"]');
                             if (input.length > 0) {
                                 name = input.attr('name');
                                 answer = input.val();
                             }
                             break;
-
+                        case 'summary_completion':
+                            let scInput = $(this);
+                            if (scInput.length > 0) {
+                                name = scInput.attr('name');
+                                answer = scInput.val();
+                            }
+                            break;
                         case 'mh':
                         case 'mse':
+                        case 'matching_information':
+                        case 'matching_features':
                             const select = $(this).find('select');
                             if (select.length > 0) {
                                 name = select.attr('name');
                                 answer = select.val();
                             }
                             break;
+                        default:
+                            console.warn("Unknown question type:", type);
                     }
 
                     results.push({
@@ -384,7 +408,7 @@
                     type: 'POST',
                     data: {
                         _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: 'XJ3XOcvqPbgdZwyl',
+                        set_id: '{{$set->kode}}',
                         kategori: 'reading',
                         answers: results,
                         tipe_test: 'practice'

@@ -128,7 +128,6 @@
     </section>
 
     @include('ielts.sets.layouts.mock.writing.component')
-
     @include('ielts.sets.layouts.mock.writing.script')
 
 </body>

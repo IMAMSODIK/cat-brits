@@ -14,6 +14,11 @@
                 <i class="fa-solid fa-circle-info"></i>
             </button>
 
+            <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                <i class="fa-regular fa-clock"></i>
+                <span id="timeText">00:00</span>
+            </div>
+
             <button id="doneBtn" class="btn btn-danger">
                 <i class="fa-solid fa-flag-checkered"></i>
                 <span class="label">Close</span>

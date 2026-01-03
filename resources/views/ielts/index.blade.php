@@ -11,7 +11,7 @@
         }
 
         .custom-card {
-            height: 260px;
+            height: 160px;
             /* Diperkecil dari 320px */
             cursor: pointer;
             transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -158,7 +158,7 @@
         /* Responsive adjustments untuk card kecil */
         @media (max-width: 768px) {
             .custom-card {
-                height: 240px;
+                height: 140px;
                 /* Lebih kecil di tablet */
             }
 
@@ -184,7 +184,7 @@
             }
 
             .custom-card {
-                height: 220px;
+                height: 120px;
                 /* Lebih kecil di mobile */
                 margin-bottom: 12px;
             }
@@ -256,10 +256,11 @@
 
         /* Overlay transparan */
         .custom-card::before {
+            color: black;
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: #4274BA;
             z-index: 2;
         }
 
@@ -289,8 +290,8 @@
 
         .custom-card:hover::before {
             background: linear-gradient(
-                rgba(0,60,120,0.6),
-                rgba(0,0,0,0.6)
+                rgba(0,60,120,0.7),
+                rgba(199, 199, 199, 0.5)
             );
         }
 
@@ -298,8 +299,6 @@
             transform: translateY(-4px);
             transition: 0.3s ease;
         }
-
-
     </style>
 @endsection
 
@@ -326,16 +325,16 @@
                         <div class="col-6 col-md-4">
                             <div class="card custom-card"
                                 onclick="location.href='/ielts/categories?set-id={{ $set->kode }}'">
-                                <div class="card-bg" style="background-image: url('{{ asset($set->thumbnail_reading) }}');">
+                                <div class="card-bg">
                                 </div>
 
                                 <div class="card-header">
                                     <h5 class="card-title">{{ $set->name }}</h5>
                                 </div>
 
-                                <div class="card-body">
+                                {{-- <div class="card-body">
                                     <p class="card-text">{{ $set->thumbnail }}</p>
-                                </div>
+                                </div> --}}
 
                                 <div class="card-footer">
                                     <span class="access-btn">View <i class="fas fa-arrow-right"></i></span>
