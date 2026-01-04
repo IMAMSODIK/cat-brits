@@ -132,7 +132,7 @@ class CambridgeIELTS16AcademicTest2 extends Seeder
             "a",
             "b"
         ];
-        $two_choices = ["b", "c"];
+        $two_choices = ["[B, C]", "[B, C]"];
         $fc_completion = ["history", "paper", "[humans, people]", "stress", "graph", "evaluate"];
 
         for ($i = 1; $i <= count($nc); $i++) {

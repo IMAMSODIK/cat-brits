@@ -15,7 +15,7 @@ class CambridgeIELTS14AcademicTest1 extends Seeder
         ];
         $tfng = ["true", "true", "not given", "false", "true"];
         $matching_information = ["E", "C", "F", "C", "A"];
-        $two_choices = ["B", "D", "D", "E"];
+        $two_choices = ["[B, D]", "[B, D]", "[E, D]", "[E, D]"];
         $summary_completion = [
             "activists", "consumerism", "leaflets", "police",
             "restaurants", "performance", "turnover", "goals", "characteristics"
@@ -92,7 +92,7 @@ class CambridgeIELTS14AcademicTest1 extends Seeder
             "Canadian", "furniture", "Park", "[250, 250 sterling]", "phone", "[10 September, 10th September]", "museum", "time", "[blond, blonde]", "[87954 82361, 8795482361]",
             "industry", "constant", "direction", "floor", "predictable", "bay", "gates", "fuel", "jobs", "migration"
         ];
-        $two_choices = ["A", "C", "B", "E"];
+        $two_choices = ["[A, C]", "[A, C]", "[B, E]", "[B, E]"];
         $matching_information = [
             "B", "B", "C", "A", "A", "C",
             "B", "A", "F", "G", "C"

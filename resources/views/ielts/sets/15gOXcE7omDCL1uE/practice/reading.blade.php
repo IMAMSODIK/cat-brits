@@ -929,7 +929,7 @@
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
                                 <h3>B</h3>
-                                <b>As Ogilvie explains, ‘Education helps us to work more productively, invent better technology, and earn more … surely it must be critical for economic growth? But, if you look back through history, there’s no evidence that having a high literacy rate made a country industrialise earlier.’ Between 1600 and 1900, England had only mediocre literacy rates by European standards, yet its economy grew fast and it was the first country to industrialise. During this period, Germany and Scandinavia had excellent literacy rates, but their economies grew slowly and they industrialised late. ‘Modern cross-country analyses have also struggled to find evidence that education causes economic growth, even though there is plenty of evidence that growth increases education,’ she adds.</b>
+                                <p>As Ogilvie explains, ‘Education helps us to work more productively, invent better technology, and earn more … surely it must be critical for economic growth? But, if you look back through history, there’s no evidence that having a high literacy rate made a country industrialise earlier.’ Between 1600 and 1900, England had only mediocre literacy rates by European standards, yet its economy grew fast and it was the first country to industrialise. During this period, Germany and Scandinavia had excellent literacy rates, but their economies grew slowly and they industrialised late. ‘Modern cross-country analyses have also struggled to find evidence that education causes economic growth, even though there is plenty of evidence that growth increases education,’ she adds.</p>
                             </div>
                         </article>
 
@@ -952,27 +952,27 @@
                                     </legend>
                                     <div class="q-options" role="group" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-1[]" value="A" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-1[]" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">Very little research has been done into the link between high literacy rates and improved earnings.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-1[]" value="B" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-1[]" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">Literacy rates in Germany between 1600 and 1900 were very good.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-1[]" value="C" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-1[]" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">There is strong evidence that high literacy rates in the modern world result in economic growth.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-1[]" value="D" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-1[]" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">England is a good example of how high literacy rates helped a country industrialise.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-1[]" value="E" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-1[]" value="E" />
                                             <span class="opt-code">E</span>
                                             <span class="opt-label">Economic growth can help to improve literacy rates.</span>
                                         </label>
@@ -1025,27 +1025,27 @@
                                     </legend>
                                     <div class="q-options" role="group" aria-label="Question 1 options">
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-3[]" value="A" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-3[]" value="A" />
                                             <span class="opt-code">A</span>
                                             <span class="opt-label">They helped young people to learn a skill.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-3[]" value="B" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-3[]" value="B" />
                                             <span class="opt-code">B</span>
                                             <span class="opt-label">They were opposed to people moving to an area for work.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-3[]" value="C" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-3[]" value="C" />
                                             <span class="opt-code">C</span>
                                             <span class="opt-label">They kept better records than guilds in other parts of the world.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-3[]" value="D" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-3[]" value="D" />
                                             <span class="opt-code">D</span>
                                             <span class="opt-label">They opposed practices that threatened their control over a trade.</span>
                                         </label>
                                         <label class="q-option">
-                                            <input type="checkbox" name="two_choices-15gOXcE7omDCL1uE-3[]" value="E" />
+                                            <input type="checkbox" name="15gOXcE7omDCL1uE-3[]" value="E" />
                                             <span class="opt-code">E</span>
                                             <span class="opt-label">They predominantly consisted of wealthy merchants.</span>
                                         </label>
@@ -1618,13 +1618,14 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
+            // 🧩 Toggle collapse floating panel
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // Generate question numbers
+            // 🧩 Generate list nomor soal
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -1637,7 +1638,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -1647,7 +1647,7 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // 🧭 Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -1662,7 +1662,7 @@
                 }
             }
 
-            // Update status soal (radio, dropdown, text)
+            // ✅ Update status soal
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -1684,6 +1684,10 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
+                    // Checkbox
+                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkboxChecked.length > 0) answered = true;
+
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -1692,18 +1696,68 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    if (answered) item.classList.add('answered');
+                    // Soal multi-nomor (contoh: data-q-multi="1,2")
+                    const multi = question.dataset.qMulti;
+                    if (multi) {
+                        const numbers = multi.split(',').map(n => n.trim());
+                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                        numbers.forEach(num => {
+                            const multiItem = fqList.querySelector(
+                                `[data-q="${num}"][data-part="${partId}"]`);
+                            if (!multiItem) return;
+
+                            if (checkedCount > 0) multiItem.classList.add('answered');
+                            else multiItem.classList.remove('answered');
+                        });
+                    } else {
+                        if (answered) item.classList.add('answered');
+                        else item.classList.remove('answered');
+                    }
                 }
             }
 
-            // Deteksi jawaban berubah
+            // 🧠 Perubahan jawaban
             function watchAnswerChanges() {
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
+                document.addEventListener('change', (e) => {
+                    const input = e.target;
+                    const question = input.closest('[data-q]');
+                    const group = input.closest('.q-options');
+                    const label = input.closest('.q-option');
+
+                    if (!question) return;
+
+                    // 🔹 Batasi jumlah checkbox
+                    if (input.type === 'checkbox') {
+                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
+                        if (maxAllowed > 0) {
+                            const checkedBoxes = question.querySelectorAll(
+                                'input[type="checkbox"]:checked');
+                            if (checkedBoxes.length > maxAllowed) {
+                                input.checked = false;
+                                alert(`You can only select ${maxAllowed} answers for this question.`);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 🔹 Update warna label pilihan
+                    if (group && label) {
+                        if (input.type === 'checkbox') {
+                            if (input.checked) label.classList.add('is-selected');
+                            else label.classList.remove('is-selected');
+                        } else {
+                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
+                                'is-selected'));
+                            if (input.checked) label.classList.add('is-selected');
+                        }
+                    }
+
+                    // 🔄 Update status di floating panel
+                    updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('change', (e) => {
+                document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
                 });
@@ -1714,7 +1768,7 @@
                 });
             }
 
-            // Deteksi perubahan part
+            // 🔁 Ganti part soal
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
@@ -1730,13 +1784,14 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
+                if (tabsContainer)
+                    observer.observe(tabsContainer, {
+                        attributes: true,
+                        attributeFilter: ['data-active']
+                    });
             }
 
-            // Update question list untuk part aktif
+            // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
                     'tfng': 6,

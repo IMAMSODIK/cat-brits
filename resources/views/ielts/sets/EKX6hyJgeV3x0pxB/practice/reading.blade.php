@@ -340,7 +340,7 @@
             <button class="x-tab" role="tab" id="tab-two_choices" aria-controls="panel-two_choices" aria-selected="false"
                 data-id="two_choices">Two Choices</button>
             <button class="x-tab" role="tab" id="tab-two_choices2" aria-controls="panel-two_choices2" aria-selected="false"
-                data-id="two_choices2">Two Choices</button>
+                data-id="two_choices2">Two Choices 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
                 data-id="ynng">Yes/No/Not Given</button>
             <button class="x-tab" role="tab" id="tab-summary_completion2" aria-controls="panel-summary_completion2" aria-selected="false"
@@ -1696,16 +1696,17 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = 'nc';
+            let currentPart = 'tfng';
             let questionCount = 0;
 
+            // 🧩 Toggle collapse floating panel
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
                 floatingQ.classList.toggle('expanded', !isCollapsed);
             });
 
-            // Generate question numbers
+            // 🧩 Generate list nomor soal
             function generateQuestionList(partId, count) {
                 fqList.innerHTML = '';
                 questionCount = count;
@@ -1718,7 +1719,6 @@
                     item.dataset.q = i;
                     item.dataset.part = partId;
 
-                    // Scroll ke soal saat diklik
                     item.addEventListener('click', (e) => {
                         e.preventDefault();
                         scrollToQuestion(i, partId);
@@ -1728,7 +1728,7 @@
                 }
             }
 
-            // Scroll ke soal tertentu
+            // 🧭 Scroll ke soal
             function scrollToQuestion(qNum, partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -1743,7 +1743,7 @@
                 }
             }
 
-            // Update status soal (radio, dropdown, text)
+            // ✅ Update status soal
             function updateQuestionStatus(partId) {
                 const panel = document.getElementById(`panel-${partId}`);
                 if (!panel) return;
@@ -1765,6 +1765,10 @@
                     const radioChecked = question.querySelector('input[type="radio"]:checked');
                     if (radioChecked) answered = true;
 
+                    // Checkbox
+                    const checkboxChecked = question.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkboxChecked.length > 0) answered = true;
+
                     // Dropdown
                     const dropdown = question.querySelector('select.q-dropdown');
                     if (dropdown && dropdown.value !== '') answered = true;
@@ -1773,18 +1777,68 @@
                     const textInput = question.querySelector('input[type="text"], textarea');
                     if (textInput && textInput.value.trim() !== '') answered = true;
 
-                    if (answered) item.classList.add('answered');
+                    // Soal multi-nomor (contoh: data-q-multi="1,2")
+                    const multi = question.dataset.qMulti;
+                    if (multi) {
+                        const numbers = multi.split(',').map(n => n.trim());
+                        const checkedCount = question.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                        numbers.forEach(num => {
+                            const multiItem = fqList.querySelector(
+                                `[data-q="${num}"][data-part="${partId}"]`);
+                            if (!multiItem) return;
+
+                            if (checkedCount > 0) multiItem.classList.add('answered');
+                            else multiItem.classList.remove('answered');
+                        });
+                    } else {
+                        if (answered) item.classList.add('answered');
+                        else item.classList.remove('answered');
+                    }
                 }
             }
 
-            // Deteksi jawaban berubah
+            // 🧠 Perubahan jawaban
             function watchAnswerChanges() {
-                document.addEventListener('input', (e) => {
-                    const question = e.target.closest('[data-q]');
-                    if (question) updateQuestionStatus(currentPart);
+                document.addEventListener('change', (e) => {
+                    const input = e.target;
+                    const question = input.closest('[data-q]');
+                    const group = input.closest('.q-options');
+                    const label = input.closest('.q-option');
+
+                    if (!question) return;
+
+                    // 🔹 Batasi jumlah checkbox
+                    if (input.type === 'checkbox') {
+                        const maxAllowed = parseInt(question.dataset.max || '0', 10);
+                        if (maxAllowed > 0) {
+                            const checkedBoxes = question.querySelectorAll(
+                                'input[type="checkbox"]:checked');
+                            if (checkedBoxes.length > maxAllowed) {
+                                input.checked = false;
+                                alert(`You can only select ${maxAllowed} answers for this question.`);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 🔹 Update warna label pilihan
+                    if (group && label) {
+                        if (input.type === 'checkbox') {
+                            if (input.checked) label.classList.add('is-selected');
+                            else label.classList.remove('is-selected');
+                        } else {
+                            group.querySelectorAll('.q-option').forEach(opt => opt.classList.remove(
+                                'is-selected'));
+                            if (input.checked) label.classList.add('is-selected');
+                        }
+                    }
+
+                    // 🔄 Update status di floating panel
+                    updateQuestionStatus(currentPart);
                 });
 
-                document.addEventListener('change', (e) => {
+                document.addEventListener('input', (e) => {
                     const question = e.target.closest('[data-q]');
                     if (question) updateQuestionStatus(currentPart);
                 });
@@ -1795,7 +1849,7 @@
                 });
             }
 
-            // Deteksi perubahan part
+            // 🔁 Ganti part soal
             function watchPartChanges() {
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((mutation) => {
@@ -1811,13 +1865,14 @@
                 });
 
                 const tabsContainer = document.querySelector('.x-tabs');
-                if (tabsContainer) observer.observe(tabsContainer, {
-                    attributes: true,
-                    attributeFilter: ['data-active']
-                });
+                if (tabsContainer)
+                    observer.observe(tabsContainer, {
+                        attributes: true,
+                        attributeFilter: ['data-active']
+                    });
             }
 
-            // Update question list untuk part aktif
+            // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
                 const questionCounts = {
                     'nc': 6,
@@ -1842,7 +1897,6 @@
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
-
 
 </body>
 

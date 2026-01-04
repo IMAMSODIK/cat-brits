@@ -83,7 +83,7 @@ class CambridgeIELTS18AcademicTest2 extends Seeder
         $tc = [
             "Wivenhoe", "equipment", "9.75", "deliveries", "Sunday"
         ];
-        $two_choices = ["b", "e", "b", "c", "a", "b"];
+        $two_choices = ["[B, E]", "[B, E]", "[B, C]", "[B, C]", "[A, B]", "[A, B]"];
         $map_labeling = ["g", "c", "d", "b", "h", "a"];
         $oc = [
             "c", "a", "b", "b"

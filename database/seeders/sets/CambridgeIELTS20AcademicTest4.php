@@ -88,7 +88,7 @@ class CambridgeIELTS20AcademicTest4 extends Seeder
             "[Kings, King's]", "125", "walking", "boat", "Tuesday", "space", "vegetarian", "[2.30, 2:30]", "75", "port",
             "rats", "snakes", "tourism", "traffic", "rain", "poison", "building", "dog", "noise", "combination",
         ];
-        $two_choices = ["b", "c", "a", "c", "c", "e", "a", "c"];
+        $two_choices = ["[B, C]", "[B, C]", "[A, C]", "[A, C]", "[C, E]", "[C, E]", "[A, C]", "[A, C]"];
         $matching_information = ["D", "F", "B", "H", "C", "G"];
         $oc = ["c", "a", "a", "b", "b", "c"];
         

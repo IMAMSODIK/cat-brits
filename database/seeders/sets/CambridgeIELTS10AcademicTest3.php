@@ -102,7 +102,7 @@ class CambridgeIELTS10AcademicTest3 extends Seeder
 
         // Cambridge IELTS 10 Academic Listening Test 3 - Listening
         $form_completion = ["4", "46 Wombat", "Thursday", "8.30", "red", "lunch", "glasses", "BALL", "aunt", "month"];
-        $two_choices = ["c", "e"];
+        $two_choices = ["[C, E]", "[C, E]"];
         $oc = [
             "b", "a", "c",
             "c", "a", "a", "b", "b",

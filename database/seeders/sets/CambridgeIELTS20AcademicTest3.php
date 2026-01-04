@@ -13,7 +13,7 @@ class CambridgeIELTS20AcademicTest3 extends Seeder
         $nc = ["potatoes", "butter", "meat", "crystals", "cellophane", "tin", "refrigerator"];
         $tfng = ["not given", "true", "false", "true", "false", "not given"];
         $mh = ["v", "ii", "iv", "vii", "iii", "vi"];
-        $two_choices = ["c", "e", "b", "d"];
+        $two_choices = ["[C, E]", "[C, E]", "[B, D]", "[B, D]"];
         $sentence_completion = ["tentacles", "protection", "[colour, color]"];
         $matching_features = ["A", "C", "B", "A", "B", "A", "C"];
         $mse = ["C", "B", "D"];

@@ -86,7 +86,7 @@ class CambridgeIELTS18AcademicTest3 extends Seeder
         $tc = [
             "Domestic Life", "clouds", "timing", "Animal Magic", "[movement, animal movement]", "dark"
         ];
-        $two_choices = ["b", "c", "b", "d", "a", "e", "b", "d"];
+        $two_choices = ["[B, C]", "[B, C]", "[B, D]", "[B, D]", "[A, E]", "[A, E]", "[B, D]", "[B, D]"];
         $oc = [
             "c", "b", "b", "c", "a", "a"
         ];

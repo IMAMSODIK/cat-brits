@@ -19,7 +19,7 @@ class CambridgeIELTS17AcademicTest1 extends Seeder
             "fortress", "bullfights", "opera", "salt", "shops",
             "H", "J", "F", "B", "D"
         ];
-        $two_choices = ["c", "d", "b", "e"];
+        $two_choices = ["[C, D]", "[C, D]", "[B, E]", "[B, E]"];
         $ynng = [
             "not given", "no", "no", "yes"
         ];
