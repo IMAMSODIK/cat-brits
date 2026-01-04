@@ -215,11 +215,18 @@
                         case 'mse':
                         case 'matching_information':
                         case 'matching_features': {
-                            const select = $(this).find('select');
-                            if (select.length) {
-                                name = select.attr('name');
-                                answer = select.val() || null;
+                            let field;
+                            if ($(this).is('input[type="text"], select')) {
+                                field = $(this);
+                            } else {
+                                field = $(this).find('input[type="text"], select').first();
                             }
+                            
+                            if (field && field.length) {
+                                name = field.attr('name');
+                                answer = field.val() || null;
+                            }
+
                             break;
                         }
 
@@ -413,11 +420,18 @@
                         case 'mse':
                         case 'matching_information':
                         case 'matching_features': {
-                            const select = $(this).find('select');
-                            if (select.length) {
-                                name = select.attr('name');
-                                answer = select.val() || null;
+                            let field;
+                            if ($(this).is('input[type="text"], select')) {
+                                field = $(this);
+                            } else {
+                                field = $(this).find('input[type="text"], select').first();
                             }
+
+                            if (field && field.length) {
+                                name = field.attr('name');
+                                answer = field.val() || null;
+                            }
+
                             break;
                         }
 
@@ -440,6 +454,8 @@
                         question: qnum
                     });
                 });
+
+                console.log(results);
 
                 $.ajax({
                     url: '/ielts/mock-test/check',
