@@ -1568,58 +1568,9 @@
 
 
     <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
-        @php
-            $tabs = [
-                'id' => '2uSKN2WwOj6EYc1X',
-                'kategori' => 'listening',
-                'contents' => [
-                    [
-                        'id' => 'note_completion',
-                        'tipe' => 'nc',
-                        'title' => 'Note Completion',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 1.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.note_completion',
-                    ],
-                    [
-                        'id' => 'map_labeling',
-                        'tipe' => 'map_labeling',
-                        'title' => 'Map Labeling',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 2.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.map_labeling',
-                    ],
-                    [
-                        'id' => 'note_completion2',
-                        'tipe' => 'nc',
-                        'title' => 'Note Completion 2',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 2.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.note_completion2',
-                    ],
-                    [
-                        'id' => 'note_completion3',
-                        'tipe' => 'nc',
-                        'title' => 'Note Completion 3',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 3.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.note_completion3',
-                    ],
-                    [
-                        'id' => 'map_labeling2',
-                        'tipe' => 'map_labeling',
-                        'title' => 'Map Labeling 2',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 4.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.map_labeling2',
-                    ],
-                    [
-                        'id' => 'summary_completion',
-                        'tipe' => 'summary_completion',
-                        'title' => 'Summary Completion',
-                        'audioUri' => asset('own_assets/audio/AUDIO-PT-01/SECTION 4.mp3'),
-                        'content' => 'partials.2uSKN2WwOj6EYc1X.practice.listening.summary_completion',
-                    ],
-                ],
-            ];
-        @endphp
+        @yield('content')
 
-        <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="note_completion" />
+        <x-tabs.reading :tabs="$tabs['contents']" label="Jenis Soal" active="note_completion" />
     </section>
 
     <!-- Floating Question List -->
@@ -1898,9 +1849,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const tabs = @json($tabs);
-            const dataKategori = "listening";
+            const dataKategori = tabs.kategori;
             let prevName;
-            tabs.forEach(tab => {
+            tabs.contents.forEach(tab => {
                 const form = document.querySelector(`#form-${tab.id}`);
                 if (!form) return;
 
@@ -2051,7 +2002,7 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive(@json($tabs)[0]['id']);
+            setActive(@json($tabs).contents[0]['id']);
         });
     </script>
 
@@ -2303,7 +2254,7 @@
             if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
 
             let isCollapsed = false;
-            let currentPart = @json($tabs)[0]['id'];
+            let currentPart = @json($tabs).contents[0]['id'];
             let questionCount = 0;
 
             // 🧩 Toggle collapse floating panel
@@ -2481,7 +2432,7 @@
 
             // 🔄 Update daftar soal tiap part
             function updateQuestionListForPart(partId) {
-                const dataJson = @json($tabs);
+                const dataJson = @json($tabs).contents;
                 const questionCounts = {}
                 dataJson.forEach(tab => {
                     const panel = document.querySelector(`#panel-${tab.id}`);
@@ -2497,7 +2448,7 @@
             }
 
             // 🚀 Init
-            updateQuestionListForPart(@json($tabs)[0]['id']);
+            updateQuestionListForPart(@json($tabs).contents[0]['id']);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
@@ -2551,6 +2502,7 @@
             location.reload();
         })
 
+
         function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
             let allAnswered = true;
 
@@ -2580,8 +2532,37 @@
                 alert("Please answer all questions before submitting!");
                 return;
             }
-
-            let formData = new FormData($(`#${form}`)[0]);
+            const data = []
+            const inputsData = new FormData($(`#${form}`)[0])
+            let prevData = {
+                name: '',
+                index: 0,
+                answer: ''
+            };
+            inputsData.forEach((value, key) => {
+                if (prevData.name === key) {
+                    if (value != null) {
+                        if (data[prevData.index - 1].answer != "") {
+                            data[prevData.index - 1].answer = `[${prevData.answer}, ${value}]`;
+                        } else {
+                            data[prevData.index - 1].answer = value;
+                        }
+                        prevData.answer = value;
+                    }
+                } else {
+                    data.push({
+                        name: key,
+                        answer: value
+                    });
+                    prevData = {
+                        name: key,
+                        index: prevData.index + 1,
+                        answer: value
+                    }
+                }
+            });
+            console.log(data);
+            let formData = new FormData();
             formData.append("tipe", tipe);
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
             formData.append("set_id", setId);
@@ -2589,9 +2570,10 @@
             formData.append("tipe_test", 'practice');
             formData.append("jumlah_soal", button.data('count'));
             formData.append("nama_tipe", namaTipe);
+            formData.append("data", JSON.stringify(data));
 
             $.ajax({
-                url: "/ielts/practice/check",
+                url: "/ielts/practice/check-v2",
                 type: "POST",
                 data: formData,
                 processData: false,
@@ -2686,7 +2668,7 @@
         }
 
         const tabs = @json($tabs);
-        tabs.forEach(tab => {
+        tabs.contents.forEach(tab => {
             const id = tab.id;
             const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
             const title = tab.title;
@@ -2694,7 +2676,7 @@
                 e.preventDefault();
                 submitHelper(
                     `form-${id}`, // form
-                    "2uSKN2WwOj6EYc1X", // folder
+                    tabs.id, // folder
                     tipe, // tipe
                     $(this),
                     `again-${id}`,
