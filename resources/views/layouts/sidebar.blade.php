@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper" data-layout="stroke-svg">
     <div class="logo-wrapper">
-        <a href="index.html">
+        <a href="/dashboard">
             <img class="img-fluid" style="width: 85px; margin-top: -10px"
                 src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
         </a>
@@ -11,8 +11,8 @@
     </div>
 
     <div class="logo-icon-wrapper">
-        <a href="index.html">
-            <img class="img-fluid" src="{{ asset('dashboard_assets/assets/images/logo/logo-icon.png') }}"
+        <a href="/dashboard">
+            <img class="img-fluid" width="10px" src="{{ asset('dashboard_assets/assets/images/logo/logo-icon.png') }}"
                 alt="">
         </a>
     </div>
@@ -20,7 +20,7 @@
         <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
         <div id="sidebar-menu">
             <ul class="sidebar-links" id="simple-bar">
-                <li class="back-btn"><a href="index.html"><img class="img-fluid"
+                <li class="back-btn"><a href="/dashboard"><img class="img-fluid"
                             src="{{ asset('dashboard_assets/assets/images/logo/logo-icon.png') }}" alt=""></a>
                     <div class="mobile-back text-end"> <span>Back </span><i class="fa fa-angle-right ps-2"
                             aria-hidden="true"></i></div>
