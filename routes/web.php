@@ -78,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/ielts/practice', [IeltsController::class, 'practice']);
     Route::post('/ielts/practice/check', [IeltsController::class, 'check']);
+    Route::post('/ielts/practice/check-v2', [IeltsController::class, 'checkV2']);
 
     Route::get('/ielts/mock-test/instructuion', function (Request $r) {
         return view('ielts.instruction', [
@@ -133,7 +134,11 @@ Route::middleware(['auth'])->group(function () {
     Route::redirect('/test-correction', '/coming-soon');
     Route::redirect('/history', '/coming-soon');
 
-    Route::get('/coming-soon', function(){
+    Route::redirect('/test-correction', '/coming-soon');
+    Route::redirect('/history', '/coming-soon');
+
+
+    Route::get('/coming-soon', function () {
         return view('pages.coming_soon');
     });
 });
@@ -144,16 +149,13 @@ Route::get('/test', function () {
     $start = $end->copy()->subYear()->startOfDay();
 
     $rawActivities = DB::table('test_histories')
-    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
-    ->whereBetween('created_at', [$start, $end])
-    ->groupBy(DB::raw('DATE(created_at)'))
-    ->orderBy('date')
-    ->pluck('total', 'date')
-    ->toArray();
-
+        ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+        ->whereBetween('created_at', [$start, $end])
+        ->groupBy(DB::raw('DATE(created_at)'))
+        ->orderBy('date')
+        ->pluck('total', 'date')
+        ->toArray();
     dd($rawActivities);
-
-
     return view('test', [
         'start' => $start,
         'end' => $end,

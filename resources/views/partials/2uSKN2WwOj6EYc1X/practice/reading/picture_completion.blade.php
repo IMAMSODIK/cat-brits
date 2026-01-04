@@ -1,11 +1,6 @@
-@props(['tab'])
-
-<div class="x-panel-inner">Content: Matching Information</div>
-
 <div class="reading-section" aria-label="Reading and Questions">
     <div class="reading-section" aria-label="Reading and Questions">
         <div class="reading-grid resizable-grid highlighted-content">
-
             <article class="passage" aria-label="Reading Passage" tabindex="0">
                 <div class="passage-title">New Zealand Seaweed</div>
                 <div class="passage-body">
@@ -96,67 +91,54 @@
                     </p>
                 </div>
             </article>
-
             <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
             <aside class="qa" aria-label="Questions">
                 <form class="qa-body" id="form-{{ $tab['id'] }}">
-
                     <fieldset class="q-item">
-                        <p class="lead"><b>Questions 1–3</b></p>
-                        <p class="lead">Classify the following description as relating to</p>
-                        <p><b>A.</b> Green seaweeds</p>
-                        <p><b>B.</b> Brown seaweeds</p>
-                        <p><b>C.</b> Red seaweed</p>
-                        <p>Which section contains the following information?</p>
-                        <p class="lead">
-                            Write the correct letter, <b>A, B, </b>or <b>C</b>, on your answer sheet.
+                        <p>
+                        <h3>Questions 1-4</h3>
                         </p>
-                    </fieldset>
+                        <p>Complete the flow chart below.</p>
+                        <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
+                        <p><b>Sports Super Centre</b></p>
+                        <p><i>Write your answers in boxes <b>4-10</b> on your answer sheet.</i></p>
+                        <div class="d-flex">
+                            <img src="{{ asset('own_assets/images/P02-4.png') }}" alt="Sports Super Centre"
+                                style="max-width: 100%; height: auto;" />
+                        </div>
+                        <fieldset class="q-item" data-q="1">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-item" data-q="1">
+                                    <span class="q-number-box">1</span>
+                                    <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text" />
+                                </span>
+                            </legend>
+                        </fieldset>
 
-                    <fieldset class="q-item" data-q="1">
-                        <legend class="q-text">
-                            <span class="q-number">1</span>
-                            Can resist exposure to sunlight at high-water mark
-                            <span class="q-question">
-                                <select name="2uSKN2WwOj6EYc1X-1" class="q-dropdown">
-                                    <option value=""></option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                </select>
-                            </span>
-                        </legend>
-                    </fieldset>
-
-                    <fieldset class="q-item" data-q="2">
-                        <legend class="q-text">
-                            <span class="q-number">2</span>
-                            Grow in far open sea water
-                            <span class="q-question">
-                                <select name="2uSKN2WwOj6EYc1X-2" class="q-dropdown">
-                                    <option value=""></option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                </select>
-                            </span>
-                        </legend>
-                    </fieldset>
-
-                    <fieldset class="q-item" data-q="3">
-                        <legend class="q-text">
-                            <span class="q-number">3</span>
-                            Share their habitat with karengo
-                            <span class="q-question">
-                                <select name="2uSKN2WwOj6EYc1X-3" class="q-dropdown">
-                                    <option value=""></option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                </select>
-                            </span>
-                        </legend>
+                        <fieldset class="q-item" data-q="2">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-item" data-q="2">
+                                    <span class="q-number-box">2</span>
+                                    <input type="text" name="2uSKN2WwOj6EYc1X-2" class="q-text" />
+                                </span>
+                            </legend>
+                        </fieldset>
+                        <fieldset class="q-item" data-q="3">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-item" data-q="3">
+                                    <span class="q-number-box">3</span>
+                                    <input type="text" name="2uSKN2WwOj6EYc1X-3" class="q-text" />
+                                </span>
+                            </legend>
+                        </fieldset>
+                        <fieldset class="q-item" data-q="4">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                                <span class="q-item" data-q="4">
+                                    <span class="q-number-box">4</span>
+                                    <input type="text" name="2uSKN2WwOj6EYc1X-4" class="q-text" />
+                                </span>
+                            </legend>
+                        </fieldset>
                     </fieldset>
 
                     <div style="text-align: center;">
@@ -164,11 +146,9 @@
                             Submit
                         </button>
                         <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}"
-                            style="display: none">
-                            Try Again
-                        </button>
+                            style="display: none">Try
+                            Again</button>
                     </div>
-
                 </form>
             </aside>
         </div>

@@ -7,9 +7,9 @@
     <title>{{ $set->name }} | {{ ucfirst($section) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #ffffff;
@@ -34,7 +34,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: #4274ba;
+            background: #4274BA;
             box-shadow: var(--shadow);
             padding: max(20px, env(safe-area-inset-top)) 12px 20px 12px;
         }
@@ -435,7 +435,6 @@
 
     <!-- style bagian reading + questions -->
     <style>
-        /* Layout container dengan jarak kiri-kanan seimbang */
         .reading-section {
             padding: 10px 12px 12px 12px;
             box-sizing: border-box;
@@ -696,6 +695,13 @@
             gap: 10px;
         }
 
+        [id^="panel-"]:not(:has(input[type="checkbox"], input[type="radio"])) .q-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
         [id^="panel-"] .q-number-box {
             display: inline-flex;
             justify-content: center;
@@ -726,13 +732,28 @@
             width: 120px;
         }
 
-        #panel-sa input {
+        #panel-sa input,
+        #panel-sentence_completion input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             margin-left: 5px;
             width: 120px;
+        }
+
+        .q-option.correct {
+            background-color: #c8f7c5;
+            /* hijau muda */
+            border: 2px solid #27ae60;
+            border-radius: 6px;
+        }
+
+        .q-option.wrong {
+            background-color: #f9c0c0;
+            /* merah muda */
+            border: 2px solid #e74c3c;
+            border-radius: 6px;
         }
     </style>
 
@@ -891,7 +912,7 @@
         .floating-questions {
             position: fixed;
             bottom: 16px;
-            left: 16px;
+            right: 16px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -980,7 +1001,7 @@
         @media (max-width: 768px) {
             .floating-questions {
                 bottom: 12px;
-                left: 12px;
+                right: 12px;
                 left: auto;
                 width: auto;
                 max-width: 100%;
@@ -988,7 +1009,7 @@
 
             .floating-questions.expanded {
                 width: calc(100% - 24px);
-                left: 12px;
+                right: 12px;
                 left: 12px;
                 border-radius: 16px;
             }
@@ -1145,35 +1166,63 @@
         }
     </style>
 
-    <style>
-        .floating-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 10px;
-            background-color: #fccb2a;
-            color: rgb(255, 255, 255);
-            border: none;
-            border-radius: 10%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .floating-btn:hover {
-            background-color: #fff309;
-            transform: scale(1.1);
-        }
-    </style>
-
     {{-- style modal --}}
     <style>
         /* Modal Styles */
+
+
+        /* options */
+        .q-options {
+            display: grid;
+            gap: 8px;
+        }
+
+        .q-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            user-select: none;
+            transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+        }
+
+        .q-option:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .q-option input {
+            display: none;
+        }
+
+        .q-option .opt-code {
+            font-weight: 800;
+            color: #334155;
+        }
+
+        .q-option .opt-label {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* State terpilih */
+        .q-option.is-selected {
+            border-color: #2563eb;
+            background: #eef2ff;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .20);
+        }
+
+        .q-option.is-selected .opt-code {
+            color: #1d4ed8;
+        }
+
+        .q-option.is-selected .opt-label {
+            color: #1d4ed8;
+        }
+
         .custom-modal {
             display: none !important;
             /* Pastikan modal tersembunyi secara default */
@@ -1487,6 +1536,24 @@
                 padding: 4px 8px;
             }
         }
+
+        @media (max-width: 900px) {
+
+            .q-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* #panel-tfng .q-options,
+                #panel-two_choice .q-options,
+        #panel-tfng2 .q-options,
+        #panel-ynng .q-options,
+        #panel-mse .q-options,
+        #panel-tc .q-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        } */
     </style>
 
     {{-- other --}}
@@ -1513,16 +1580,15 @@
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
-                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu">
+                <div id="timer" class="timer" aria-live="polite" aria-label="Sisa waktu" style="display: none">
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeText">00:00</span>
                 </div>
 
-                <button onclick="confirmExit()" class="btn btn-danger">
+                <button id="doneBtn" class="btn btn-danger">
                     <i class="fa-solid fa-flag-checkered"></i>
                     <span class="label">Close</span>
                 </button>
-
             </div>
         </div>
     </header>
@@ -1541,40 +1607,9 @@
     </section>
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal">
-        @php
-            $tabs = [
-                'kategori' => 'reading',
-                'id' => 'cwwPbLf22UsNEqIp',
-                'data' => [
-                    'part1' => [
-                        'label' => 'Part 1',
-                        'tipe' => ['mh', 'picture_completion', 'matching_information'],
-                        'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.question',
-                        ],
-                    ],
-                    'part2' => [
-                        'label' => 'Part 2',
-                        'tipe' => ['picture_completion', 'tfng', 'oc'],
-                        'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.question',
-                        ],
-                    ],
-                    'part3' => [
-                        'label' => 'Part 3',
-                        'tipe' => ['matching_information', 'matching_information', 'summary_completion'],
-                        'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.question',
-                        ],
-                    ],
-                ],
-            ];
-        @endphp
-        <x-tabs.mock :tabs="$tabs" />
+    <section class="parts-section" aria-label="Pilihan Part Soal" id="part-soal">
+        @yield('content')
+        <x-tabs.reading :tabs="$tabs['contents']" label="Jenis Soal" active="matching_information" />
     </section>
 
     <!-- Floating Question List -->
@@ -1592,14 +1627,6 @@
             <div class="fq-list" id="fqList"></div>
         </div>
     </div>
-
-    <button class="floating-btn" id="try-again" onclick="retryQuiz()" style="display: none">
-        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Try Again
-    </button>
-
-    <button class="floating-btn" id="doneBtn">
-        <i class="fas fa-paper-plane" style="margin-right: 10px"></i> Submit
-    </button>
 
     <div class="highlight-toolbar" id="highlightToolbar">
         <div class="color-option yellow" data-color="yellow"></div>
@@ -1619,13 +1646,14 @@
         </div>
     </div>
 
+    <!-- Modal Wrapper -->
     <div id="resultModal" class="custom-modal">
         <div class="custom-modal-content">
             <div class="custom-modal-header">
                 <div class="score-summary-header">
                     <div class="score-circle" id="scoreCircle">
                         <span id="scoreDisplay">0/0</span>
-                        <small id="scorePercentage">0</small>
+                        {{-- <small id="scorePercentage">0</small> --}}
                     </div>
                     <div class="modal-title">Your Results</div>
                 </div>
@@ -1657,16 +1685,44 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+
 
     <script>
-        function confirmExit() {
-            if (confirm('Are you sure you want to end the test?')) {
-                location.href = '/ielts/categories?set-id={{ $set->kode }}';
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = @json($tabs);
+            const dataKategori = tabs.kategori;
+            let prevName;
+            tabs.contents.forEach(tab => {
+                const form = document.querySelector(`#form-${tab.id}`);
+                if (!form) return;
 
+                let count = 0;
+
+                const inputs = form.querySelectorAll("input, select , textarea, checkbox");
+
+                inputs.forEach(input => {
+                    if (prevName === input.name) {
+                        if (input.type === "checkbox") {
+                            count = 2;
+                        }
+                        return;
+                    }
+                    prevName = input.name;
+                    count++
+
+                })
+
+                const btn = document.querySelector(`#submit-${tab.id}`);
+                if (!btn) return;
+
+                btn.setAttribute("data-count", count);
+                btn.setAttribute("data-kategori", dataKategori);
+            });
+        });
+    </script>
+
+
+    <script>
         let scoreMap = [{
                 min: 39,
                 max: 40,
@@ -1750,187 +1806,6 @@
     </script>
 
     <script>
-        function showModal(title = "Hasil Jawaban Anda") {
-            $("#modalScoreTitle").text(title);
-            $("#resultModal").addClass("show");
-            $("body").css("overflow", "hidden");
-        }
-
-        function closeModal() {
-            $("#resultModal").removeClass("show");
-            $("body").css("overflow", "auto");
-
-            // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function() {
-                $("#resultModal").hide();
-            }, 300);
-        }
-
-        function retryQuiz() {
-            closeModal();
-
-            location.reload()
-        }
-
-        $(document).on("click", ".modal-close, .btn-secondary", function() {
-            closeModal();
-        });
-
-        $(document).on("click", function(e) {
-            if (e.target.id === "resultModal") {
-                closeModal();
-            }
-        });
-
-        $(document).on("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-
-        $(document).ready(function() {
-            $("#resultModal").removeClass("show").hide();
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $(document).on('click', '#doneBtn', function(e) {
-                e.preventDefault();
-
-                const data = [];
-                let prevData = {
-                    name: null,
-                    index: 0,
-                    answer: null
-                };
-                const element = $('.qa-body');
-
-                element
-                    .find('input, textarea, select, checkbox, radio')
-                    .not(':disabled')
-                    .each(function(index, elem) {
-                        const name = $(this).attr('name');
-                        const type = $(this).attr('type');
-                        let value = null;
-
-                        if (type === 'radio') {
-                            if ($(this).is(':checked')) {
-                                value = $(this).val();
-                            }
-                        } else if (type === 'checkbox') {
-                            if ($(this).is(':checked')) {
-                                value = $(this).val();
-                            }
-                        } else {
-                            value = $(this).val();
-                        }
-
-
-                        if (prevData.name === name) {
-                            if (value !== null) {
-                                if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
-                                    data[prevData.index - 1].answer = `[${prevData.answer}, ${value}]`;
-                                } else {
-                                    data[prevData.index - 1].answer = value;
-                                }
-                                prevData.answer = value;
-                            }
-                        } else {
-                            data.push({
-                                name: name,
-                                answer: type === 'checkbox' ? `[${value}]` : value
-                            });
-                            prevData = {
-                                name: name,
-                                index: prevData.index + 1,
-                                answer: value
-                            }
-                        }
-                    });
-
-                console.log(data)
-
-                $.ajax({
-                    url: "/ielts/mock-test/check-v2",
-                    type: "POST",
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        data: data,
-                        kategori: @json($tabs['kategori']),
-                    },
-                    success: function(response) {
-                        $("#try-again").css('display', '');
-                        $("#doneBtn").css('display', 'none');
-                        if (response.status === "ok") {
-                            let correctCount = 0;
-                            let total = Object.keys(response.results).length;
-                            let tableRows = '';
-
-                            $.each(response.results, function(key, data) {
-                                const index = key.split('-')[1];
-                                const status = data.status || '';
-                                const user = data.user || 'NOT GIVEN';
-                                const correct = data.correct || '';
-
-                                let isCorrect = status === 'correct';
-                                if (isCorrect) correctCount++;
-
-                                tableRows += `
-                                        <tr>
-                                            <td><strong>${index}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-
-                            })
-                            // Update skor di UI
-                            $("#scoreDisplay").text(`${correctCount}/${total}`);
-                            $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-                            let percentage = (correctCount / total) * 100;
-                            let scoreCircle = $(".score-circle");
-                            if (percentage >= 80) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
-                            } else if (percentage >= 60) {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #f39c12, #e67e22)");
-                            } else {
-                                scoreCircle.css("background",
-                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
-                            }
-
-                            $("#resultsTableBody").html(tableRows);
-
-                            // tampilkan modal hasil
-                            showModal(`Score: ${correctCount} / ${total}`);
-                        } else {
-                            alert('Terjadi kesalahan: ' + response.message);
-                        }
-
-                    },
-                    error: function(xhr) {
-                        const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr
-                            .responseJSON.message :
-                            'An error occurred while submitting answers.';
-                        alert(errorMsg);
-                        console.error(xhr.responseText);
-                    }
-                })
-            });
-
-        })
-    </script>
-
-    <script>
         (function() {
             let remaining = 0;
             let t = null;
@@ -1952,131 +1827,7 @@
                     document.getElementById('doneBtn').disabled = true;
                     document.getElementById('doneBtn').style.opacity = 0.7;
                     document.getElementById('doneBtn').style.cursor = 'not-allowed';
-
-                    const data = [];
-                    let prevData = {
-                        name: null,
-                        index: 0,
-                        answer: null
-                    };
-                    const element = $('.qa-body');
-
-                    element
-                        .find('input, textarea, select, checkbox, radio')
-                        .not(':disabled')
-                        .each(function(index, elem) {
-                            const name = $(this).attr('name');
-                            const type = $(this).attr('type');
-                            let value = null;
-
-                            if (type === 'radio') {
-                                if ($(this).is(':checked')) {
-                                    value = $(this).val();
-                                }
-                            } else if (type === 'checkbox') {
-                                if ($(this).is(':checked')) {
-                                    value = $(this).val();
-                                }
-                            } else {
-                                value = $(this).val();
-                            }
-
-
-                            if (prevData.name === name) {
-                                if (value != null) {
-                                    if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
-                                        data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
-                                    } else {
-                                        data[prevData.index - 1].answer = value;
-                                    }
-                                    prevData.answer = value;
-                                }
-                            } else {
-                                data.push({
-                                    name: name,
-                                    answer: type === 'checkbox' ? `[${value}]` : value
-                                });
-                                prevData = {
-                                    name: name,
-                                    index: prevData.index + 1,
-                                    answer: value
-                                }
-                            }
-                        });
-
-                    $.ajax({
-                        url: "/ielts/mock-test/check-v2",
-                        type: "POST",
-                        data: {
-                            _token: $('meta[name="csrf-token"]').attr('content'),
-                            data: data,
-                            kategori: @json($tabs['kategori']),
-                        },
-                        success: function(response) {
-                            $("#try-again").css('display', '');
-                            $("#doneBtn").css('display', 'none');
-                            if (response.status === "ok") {
-                                let correctCount = 0;
-                                let total = Object.keys(response.results).length;
-                                let tableRows = '';
-
-                                $.each(response.results, function(key, data) {
-                                    const index = key.split('-')[1];
-                                    const status = data.status || '';
-                                    const user = data.user || 'NOT GIVEN';
-                                    const correct = data.correct || '';
-
-                                    let isCorrect = status === 'correct';
-                                    if (isCorrect) correctCount++;
-
-                                    tableRows += `
-                                        <tr>
-                                            <td><strong>${index}</strong></td>
-                                            <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
-                                            <td><span class="answer-display answer-correct-option">${correct}</span></td>
-                                            <td>
-                                                <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                                                    <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                                                    ${isCorrect ? 'Correct' : 'Wrong'}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    `;
-
-                                })
-                                // Update skor di UI
-                                $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-                                let percentage = (correctCount / total) * 100;
-                                let scoreCircle = $(".score-circle");
-                                if (percentage >= 80) {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
-                                } else if (percentage >= 60) {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #f39c12, #e67e22)");
-                                } else {
-                                    scoreCircle.css("background",
-                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
-                                }
-
-                                $("#resultsTableBody").html(tableRows);
-
-                                // tampilkan modal hasil
-                                showModal(`Score: ${correctCount} / ${total}`);
-                            } else {
-                                alert('Terjadi kesalahan: ' + response.message);
-                            }
-                        },
-                        error: function(xhr) {
-                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
-                                .message : 'An error occurred while submitting answers.';
-                            alert(errorMsg);
-                            console.error(xhr.responseText);
-                        }
-
-                    });
+                    // TODO: panggil handler waktu habis (auto-submit/alert) bila diperlukan
                     return;
                 }
                 remaining -= 1;
@@ -2107,149 +1858,20 @@
             document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
-                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
+                    'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
 
             });
 
-
-
-
-            // document.getElementById('doneBtn').addEventListener('click', function () {
-            //     const confirmFinish = confirm('Do you want to end the test now?');
-            //     const form = $('.qa-body')
-            //     if (confirmFinish) {
-            //         let results = [];
-
-            //         $('.q-item').each(function () {
-            //             const type = $(this).data('type');
-            //             const qnum = $(this).data('q');
-
-            //             if (typeof type === 'undefined') return;
-
-            //             let name = null;
-            //             let answer = null;
-
-            //             switch (type) {
-            //                 case 'tfng':
-            //                 case 'oc':
-            //                 case 'ynng':
-            //                     const checked = $(this).find('input[type="radio"]:checked');
-            //                     if (checked.length > 0) {
-            //                         name = checked.attr('name');
-            //                         answer = checked.val();
-            //                     } else {
-            //                         // fallback jika belum dipilih
-            //                         const anyRadio = $(this).find('input[type="radio"]').first();
-            //                         if (anyRadio.length > 0) {
-            //                             name = anyRadio.attr('name');
-            //                         }
-            //                     }
-            //                     break;
-
-            //                 case 'sa':
-            //                 case 'tc':
-            //                     const input = $(this).find('input[type="text"]');
-            //                     if (input.length > 0) {
-            //                         name = input.attr('name');
-            //                         answer = input.val();
-            //                     }
-            //                     break;
-
-            //                 case 'mh':
-            //                 case 'mse':
-            //                     const select = $(this).find('select');
-            //                     if (select.length > 0) {
-            //                         name = select.attr('name');
-            //                         answer = select.val();
-            //                     }
-            //                     break;
-            //             }
-
-            //             results.push({
-            //                 type: type,
-            //                 name: name,
-            //                 answer: answer || null,
-            //                 question: qnum || null
-            //             });
-            //         });
-
-            //         $.ajax({
-            //             url: '/ielts/mock-test/check',
-            //             type: 'POST',
-            //             data: {
-            //                 _token: $('meta[name="csrf-token"]').attr('content'),
-            //                 set_id: 'cwwPbLf22UsNEqIp',
-            //                 kategori: 'reading',
-            //                 answers: results,
-            //                 tipe_test: 'practice'
-            //             },
-            //             success: function (response) {
-            //                 $("#try-again").css('display', '');
-            //                 $("#doneBtn").css('display', 'none');
-
-            //                 if (response.status === 'ok') {
-            //                     let correctCount = 0;
-            //                     let total = Object.keys(response.results).length;
-            //                     let tableRows = '';
-            //                     let questionNumber = 1;
-
-            //                     $.each(response.results, function (key, data) {
-            //                         let isCorrect = data.status === 'correct';
-            //                         if (isCorrect) correctCount++;
-
-            //                         let correctAnswer = data.correct || '';
-            //                         let userAnswer = data.user || '';
-            //                         if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-            //                         if (!correctAnswer) correctAnswer = 'NOT GIVEN';
-
-            //                         tableRows += `
-        //                             <tr>
-        //                                 <td><strong>${questionNumber++}</strong></td>
-        //                                 <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-        //                                 <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-        //                                 <td>
-        //                                     <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-        //                                         <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-        //                                         ${isCorrect ? 'Correct' : 'Wrong'}
-        //                                     </span>
-        //                                 </td>
-        //                             </tr>
-        //                         `;
-            //                     });
-
-            //                     // Update skor di UI
-            //                     $("#scoreDisplay").text(`${correctCount}/${total}`);
-            //                     $("#scorePercentage").text(`${convertScore(correctCount)}`);
-
-            //                     let percentage = (correctCount / total) * 100;
-            //                     let scoreCircle = $(".score-circle");
-            //                     if (percentage >= 80) {
-            //                         scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-            //                     } else if (percentage >= 60) {
-            //                         scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-            //                     } else {
-            //                         scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-            //                     }
-
-            //                     $("#resultsTableBody").html(tableRows);
-
-            //                     // tampilkan modal hasil
-            //                     showModal(`Score: ${correctCount} / ${total}`);
-            //                 } else {
-            //                     alert('Terjadi kesalahan: ' + response.message);
-            //                 }
-            //             },
-            //             error: function (xhr) {
-            //                 console.error(xhr.responseText);
-            //                 alert('Terjadi kesalahan: ' + xhr.status);
-            //             }
-            //         });
-            //     }
-            // });
+            document.getElementById('doneBtn').addEventListener('click', function() {
+                const confirmFinish = confirm('Do you want to end the test now?');
+                if (confirmFinish) {
+                    window.history.back();
+                }
+            });
 
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(13 * 60);
+            startCountdown(15 * 60);
         })();
     </script>
 
@@ -2375,7 +1997,8 @@
             updateEdgeHints();
             xTabs.addEventListener('scroll', updateEdgeHints);
             window.addEventListener('resize', updateEdgeHints);
-            setActive('part1');
+
+            setActive(@json($tabs).contents[0]['id']);
         });
     </script>
 
@@ -2618,10 +2241,6 @@
 
     <!-- script bagian floating question list -->
     <script>
-        function retryQuiz() {
-            location.reload();
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
@@ -2634,7 +2253,6 @@
             let currentPart = 'tfng';
             let questionCount = 0;
 
-            // Toggle collapse
             fqToggle.addEventListener('click', () => {
                 isCollapsed = !isCollapsed;
                 floatingQ.classList.toggle('collapsed', isCollapsed);
@@ -2793,14 +2411,13 @@
 
             // Update question list untuk part aktif
             function updateQuestionListForPart(partId) {
-                const dataJson = @json($tabs).data;
-                const questionCounts = {};
-                Object.entries(dataJson).forEach(([key, tab]) => {
-                    const panel = document.querySelector(`#panel-${key}`);
-
+                const dataJson = @json($tabs).contents;
+                const questionCounts = {}
+                dataJson.forEach(tab => {
+                    const panel = document.querySelector(`#panel-${tab.id}`);
                     if (panel) {
                         const count = panel.querySelectorAll('[data-q]').length;
-                        questionCounts[key] = count;
+                        questionCounts[tab.id] = count;
                     }
                 });
                 const count = questionCounts[partId] || 5;
@@ -2809,12 +2426,255 @@
             }
 
             // Init
-            updateQuestionListForPart(Object.keys(@json($tabs).data)[0]);
+            updateQuestionListForPart(@json($tabs).contents[0]['id']);
             watchPartChanges();
             watchAnswerChanges();
             setInterval(() => updateQuestionStatus(currentPart), 2000);
         });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        // Pastikan modal tersembunyi saat halaman dimuat
+        $("#resultModal").removeClass("show").hide();
+
+        // Modal functions
+        function showModal(title = "Hasil Jawaban Anda") {
+            $("#modalScoreTitle").text(title);
+            $("#resultModal").addClass("show");
+            $("body").css("overflow", "hidden");
+        }
+
+        function closeModal() {
+            $("#resultModal").removeClass("show");
+            $("body").css("overflow", "auto");
+
+            // Pastikan modal benar-benar tersembunyi setelah animasi
+            setTimeout(function() {
+                $("#resultModal").hide();
+            }, 300);
+        }
+
+        function retryQuiz() {
+            // closeModal();
+
+            // $(".qa-body input[type=radio]").prop("checked", false);
+            // $(".q-option").removeClass("correct wrong is-selected unanswered-highlight");
+            // $("#resultsTableBody").empty();
+            // $("#scoreDisplay").text("0/0");
+            // // $("#scorePercentage").text("0");
+
+            // setTimeout(function () {
+            //     $('html, body').scrollTop($(".qa-body").offset().top);
+            // }, 350);
+            location.reload();
+        }
+
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
+            closeModal();
+        });
+
+        $(document).on("click", function(e) {
+            if (e.target.id === "resultModal") {
+                closeModal();
+            }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
+            let allAnswered = true;
+
+            $(`#${form} [data-q]`).each(function() {
+                let isAnswered = false;
+                const inputs = $(this).find("input, select, textarea");
+
+                inputs.each(function() {
+                    if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
+                        isAnswered = true;
+                    } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
+                        isAnswered = true;
+                    } else if ($(this).is("select") && $(this).val() !== "") {
+                        isAnswered = true;
+                    }
+                });
+
+                if (!isAnswered) {
+                    allAnswered = false;
+                    $(this).addClass("unanswered-highlight");
+                } else {
+                    $(this).removeClass("unanswered-highlight");
+                }
+            });
+
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
+                return;
+            }
+            const data = []
+            const inputsData = new FormData($(`#${form}`)[0])
+            let prevData = {
+                name: '',
+                index: 0,
+                answer: ''
+            };
+            inputsData.forEach((value, key) => {
+                if (prevData.name === key) {
+                    if (value != null) {
+                        if (data[prevData.index - 1].answer != "") {
+                            data[prevData.index - 1].answer = `[${prevData.answer}, ${value}]`;
+                        } else {
+                            data[prevData.index - 1].answer = value;
+                        }
+                        prevData.answer = value;
+                    }
+                } else {
+                    data.push({
+                        name: key,
+                        answer: value
+                    });
+                    prevData = {
+                        name: key,
+                        index: prevData.index + 1,
+                        answer: value
+                    }
+                }
+            });
+            console.log(data);
+            let formData = new FormData();
+            formData.append("tipe", tipe);
+            formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+            formData.append("set_id", setId);
+            formData.append("kategori", button.data('kategori'));
+            formData.append("tipe_test", 'practice');
+            formData.append("jumlah_soal", button.data('count'));
+            formData.append("nama_tipe", namaTipe);
+            formData.append("data", JSON.stringify(data));
+
+            $.ajax({
+                url: "/ielts/practice/check-v2",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status === "ok") {
+                        $(".q-option").removeClass("correct wrong");
+                        $(".text-answer, .select-answer").removeClass("correct wrong");
+
+                        button.css('display', 'none');
+                        $(`#${againBtn}`).css('display', '');
+
+                        let correctCount = response.score;
+                        let total = Object.keys(response.results).length;
+                        let tableRows = "";
+                        let questionNumber = 1;
+
+                        $.each(response.results, function(qid, data) {
+                            let isCorrect = data.status === "correct";
+
+                            // ✅ 2. Ambil CORRECT ANSWER dengan fallback
+                            let correctAnswer = data.correct || '';
+                            let userAnswer = data.user || '';
+                            if (!correctAnswer && isCorrect) {
+                                correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                            }
+                            if (!correctAnswer) {
+                                correctAnswer = "NOT GIVEN";
+                            }
+
+                            // ✅ 3. Highlight input aslinya
+                            let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                            questionElement.find("input, select, textarea").each(function() {
+                                if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                    if ($(this).is(":checked")) {
+                                        if (isCorrect) {
+                                            $(this).parent().addClass("correct");
+                                        } else {
+                                            $(this).parent().addClass("wrong");
+                                            $(`input[name="${qid}"][value="${correctAnswer}"]`)
+                                                .parent().addClass("correct");
+                                        }
+                                    }
+                                } else {
+                                    if (isCorrect) {
+                                        $(this).addClass("correct");
+                                    } else {
+                                        $(this).addClass("wrong");
+                                    }
+                                }
+                            });
+
+                            // ✅ 4. Bangun tabel baris
+                            tableRows += `
+                            <tr>
+                                <td><strong>${questionNumber++}</strong></td>
+                                <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+                                <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+                                <td>
+                                    <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+                                        <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+                                        ${isCorrect ? 'Correct' : 'Wrong'}
+                                    </span>
+                                </td>
+                            </tr>
+                        `;
+                        });
+
+
+                        $("#scoreDisplay").text(`${correctCount}/${total}`);
+                        // $("#scorePercentage").text(`${convertScore(correctCount)}`);
+
+                        let percentage = (correctCount / total) * 100;
+                        let scoreCircle = $(".score-circle");
+                        if (percentage >= 80) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                        } else if (percentage >= 60) {
+                            scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                        } else {
+                            scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                        }
+
+                        $("#resultsTableBody").html(tableRows);
+                        showModal(`Score: ${correctCount} / ${total}`);
+                    }
+                },
+                error: function(xhr) {
+                    alert("Terjadi kesalahan: " + xhr.status);
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+
+        $(".try-again").on("click", function() {
+            location.reload();
+        });
+
+        const tabs = @json($tabs);
+        tabs.contents.forEach(tab => {
+            const id = tab.id;
+            const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
+
+            $(`#submit-${id}`).on("click", function(e) {
+                e.preventDefault();
+                submitHelper(
+                    `form-${id}`, // form
+                    tabs.id, // folder
+                    tipe, // tipe
+                    $(this),
+                    `again-${id}` // again
+                );
+            });
+        });
+    </script>
+
 
 </body>
 

@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\VideoCall;
 use App\Models\Videos;
 use App\Models\Writing;
+use App\Services\CheckServices;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,8 @@ class IeltsController extends Controller
 {
     use AuthorizesRequests;
 
-    private function getScore($kategori, $correctAnswers) {
+    private function getScore($kategori, $correctAnswers)
+    {
         $readingScoreMap = [
             ['min' => 39, 'max' => 40, 'score' => 9.0],
             ['min' => 37, 'max' => 38, 'score' => 8.5],
@@ -198,7 +200,7 @@ class IeltsController extends Controller
                     case '0XIGAcSMlticROES':
                         return view('ielts.categories', $data);
                         break;
-                    
+
                     case 'cwwPbLf22UsNEqIp':
                         return view('ielts.categories', $data);
                         break;
@@ -235,6 +237,50 @@ class IeltsController extends Controller
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred while loading data.');
+        }
+    }
+
+    public function checkV2(Request $r)
+    {
+        $setId = $r->input('set_id');
+        $tipe = $r->input('tipe');
+        $kategori = $r->input('kategori');
+        $jumlahSoal = $r->input('jumlah_soal');
+        $namaTipe = $r->input('nama_tipe');
+        $questionId = $r->input('question_id', null);
+
+
+        switch ($kategori) {
+            case 'speaking':
+                $r->validate([
+                    'video' => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800',
+                    'question_id' => 'nullable|string',
+                    'timestamp' => 'nullable'
+                ]);
+                $part = $r->input('part', null);
+                $filename = 'recording_q-' . $setId . '-' . $questionId . '_' . time() . '.webm';
+                $path = $r->file('video')->storeAs('recordings', $filename, 'public');
+                $url = Storage::url($path);
+                return CheckServices::checkSpeaking($setId, $questionId, $part, $path, $filename, $kategori, Auth::id(), $url);
+
+            case 'writing':
+                $r->validate([
+                    'answer' => 'required',
+                    'task' => 'required',
+                    'tipe' => 'required',
+                    'no_soal' => 'required',
+                    'set_id' => 'required',
+                    'kategori' => 'required',
+                ]);
+
+                $task = $r->input('task', null);
+                $answer = $r->input('answer', null);
+                return CheckServices::checkWriting($setId, $task, $answer, $kategori, Auth::id(), $tipe, $namaTipe, $questionId);
+
+            default:
+                $dataJson = $r->input('data');
+                $data = json_decode($dataJson, true);
+                return CheckServices::checkOtherType($setId, $data, $kategori, $tipe, $namaTipe, Auth::id());
         }
     }
 
@@ -713,21 +759,21 @@ class IeltsController extends Controller
             $q = 1;
 
 
-            $filledAnswers = collect($data)
-                ->pluck('answer')
-                ->filter(function ($answer) {
-                    return !(
-                        is_null($answer) ||
-                        $answer === '' ||
-                        (is_string($answer) && json_decode($answer, true) === [null])
-                    );
-                });
+            // $filledAnswers = collect($data)
+            //     ->pluck('answer')
+            //     ->filter(function ($answer) {
+            //         return !(
+            //             is_null($answer) ||
+            //             $answer === '' ||
+            //             (is_string($answer) && json_decode($answer, true) === [null])
+            //         );
+            //     });
 
 
 
-            if ($filledAnswers->isEmpty()) {
-                throw new \Exception('Tidak ada jawaban yang dikirim.', 400);
-            }
+            // if ($filledAnswers->isEmpty()) {
+            //     throw new \Exception('Tidak ada jawaban yang dikirim.', 400);
+            // }
 
 
 
@@ -802,7 +848,7 @@ class IeltsController extends Controller
                 }
             }
             $setSoal = SetSoal::where('kode', $id)->first();
-
+            $scoreConversion = $this->getScore($kategori, $score);
             $history = TestHistory::create([
                 'student_id' => Auth::id(),
                 'teacher_id' => null,
@@ -810,6 +856,7 @@ class IeltsController extends Controller
                 'kategori' => $kategori,
                 'tipe' => 'mixed',
                 'set_soal_id' => $setSoal?->id,
+                'score_conversion' => $scoreConversion,
                 'score' => $score,
                 'jumlah_soal' => 40,
                 'nama_tipe' => "Mock Test",
