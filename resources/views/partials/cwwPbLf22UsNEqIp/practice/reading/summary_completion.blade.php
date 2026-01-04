@@ -3,171 +3,161 @@
 <div class="reading-section" aria-label="Reading and Questions">
     <div class="reading-grid resizable-grid highlighted-content">
         <article class="passage" aria-label="Reading Passage" tabindex="0">
-            <div class="passage-title">How did writing begin?</div>
+            <div class="passage-title">Procrastination</div>
             <div class="passage-body">
-                <b>Many theories, few answers</b>
+                <b>A psychologist explains why we put off important tasks and how we can break this habit.</b>
+                <h3>A</h3>
                 <p>
-                    The Sumerians, an ancient people of the Middle East, had a story explaining the
-                    invention of writing more than 5,000 years ago. It seems a messenger of the King of
-                    Uruk arrived at the court of a distant ruler so exhausted that he was unable to deliver
-                    the oral message. So the king set down the words of his next messages on a clay
-                    tablet. A charming story, whose retelling at a recent symposium at the University of
-                    Pennsylvania amused scholars. They smiled at the absurdity of a letter which the
-                    recipient would not have been able to read. They also doubted that the earliest writing
-                    was a direct rendering of speech. Writing more likely began as a separate, symbolic
-                    system of communication and only later merged with spoken language.
+                    Procrastination is the habit of delaying a necessary task, usually by focusing on less
+                    urgent, more enjoyable, and easier activities instead.We all do it from time to time.We
+                    might be composing a message to a friend who we have to let down, or putting together
+                    an important report for college or work; we're doing our best to avoid doing the job at
+                    hand, but deep down we know that we should just be getting on with it.Unfortunately,
+                    berating ourselves won't stop us procrastinating again.In fact, it's one of the worst things
+                    we can do.This matters because, as my research shows, procrastination doesn't just
+                    waste time, but is actually linked to other problems, too.
                 </p>
+
+                <h3>B</h3>
                 <p>
-                    Yet in the story the Sumerians, who lived in Mesopotamia, in what is now southern Iraq,
-                    seemed to understand writing’s transforming function. As Dr Holly Pittman, director of
-                    the University’s Center for Ancient Studies, observed, writing ‘arose out of the need to
-                    store and transmit information ... over time and space’.
+                    Contrary to popular belief, procrastination is not due to laziness or poor time
+                    management.Scientific studies suggest procrastination is, in fact, caused by poor mood
+                    management.This makes sense if we consider that people are more likely to put off
+                    starting or completing tasks that they are really not keen to do.If just thinking about the
+                    task threatens our sense of self-worth or makes us anxious, we will be more likely to put
+                    it off.Research involving brain imaging has found that areas of the brain linked to
+                    detection of threats and emotion regulation are actually different in people who
+                    chronically procrastinate compared to those who don't procrastinate frequently.
                 </p>
+
+                <h3>C</h3>
                 <p>
-                    In exchanging interpretations and information, the scholars acknowledged that they still
-                    had no fully satisfying answers to the questions of how and why writing developed.
-                    Many favoured an explanation of writing’s origins in the visual arts, pictures becoming
-                    increasingly abstract and eventually representing spoken words. Their views clashed
-                    with a widely held theory among archaeologists that writing developed from the pieces
-                    of clay that Sumerian accountants used as tokens to keep track of goods.
+                    Tasks that are emotionally loaded or difficult, such as preparing for exams, are prime
+                    candidates for procrastination.People with low self-esteem are more likely to
+                    procrastinate.Another group of people who tend to procrastinate are perfectionists, who
+                    worry their work will be judged harshly by others.We know that if we don't finish that
+                    report or complete those home repairs, then what we did can't be evaluated.When we
+                    avoid such tasks, we also avoid the negative emotions associated with them.This is
+                    rewarding, and it conditions us to use procrastination to repair our mood.If we engage in
+                    more enjoyable tasks instead, we get another mood boost.In the long run, however,
+                    procrastination isn't an effective way of managing emotions.The 'mood repair' we
+                    experience is temporary.Afterwards, people tend to be left with a sense of guilt that not
+                    only increases their negative mood, but also reinforces their tendency to procrastinate.
                 </p>
+
+                <h3>D</h3>
                 <p>
-                    Archaeologists generally concede that they have no definitive answer to the question of
-                    whether writing was invented only once, or arose independently in several places, such
-                    as Egypt, the Indus Valley, China, Mexico and Central America. The preponderance of
-                    archaeological data shows that the urbanizing Sumerians were the first to develop
-                    writing, in 3,200 or 3,300 BC. These are the dates for many clay tablets in an early form
-                    of cuneiform, a script written by pressing the end of a sharpened stick into wet clay,
-                    found at the site of the ancient city of Uruk. The baked clay tablets bore such images as
-                    pictorial symbols of the names of people, places and things connected with government
-                    and commerce. The Sumerian script gradually evolved from the pictorial to the abstract,
-                    but did not at first represent recorded spoken language.
+                    So why is this such a problem?When most people think of the costs of procrastination,
+                    they think of the toll on productivity.For example, studies have shown that procrastination
+                    negatively impacts on student performance.But putting off reading textbooks and writing
+                    essays may affect other areas of students' lives.In one study of over 3,000 German
+                    students over a six-month period, those who reported procrastinating over their
+                    university work were also more likely to engage in study-related misconduct, such as
+                    cheating and plagiarism.But the behaviour that procrastination was most closely linked
+                    with was using fraudulent excuses to get deadline extensions.Other research shows that
+                    employees on average spend almost a quarter of their workday procrastinating, and
+                    again this is linked with negative outcomes.In fact, in one US survey of over 22,000
+                    employees, participants who said they regularly procrastinated had less annual income
+                    and less employment stability.For every one-point increase on a measure of chronic
+                    procrastination, annual income decreased by US$15,000.
                 </p>
+
+                <h3>E</h3>
                 <p>
-                    Dr Peter Damerow, a specialist in Sumerian cuneiform at the Max Planck Institute for the History
-                    of Science in Berlin, said, ‘It is likely that there were mutual influences of writing systems
-                    around
-                    the world. However, their great variety now shows that the development of writing, once
-                    initiated, attains a considerable degree of independence and flexibility to adapt to specific
-                    characteristics of the sounds of the language to be represented.’ Not that he accepts the
-                    conventional view that writing started as a representation of words by pictures. New studies of
-                    early Sumerian writing, he said, challenge this interpretation. The structures of this earliest
-                    writing did not, for example, match the structure of spoken language, dealing mainly in lists
-                    and
-                    categories rather than in sentences and narrative.
+                    Procrastination also correlates with serious health and well-being problems.A tendency
+                    to procrastinate is linked to poor mental health, including higher levels of depression and
+                    anxiety.Across numerous studies, I've found people who regularly procrastinate report a
+                    greater number of health issues, such as headaches, flu and colds, and digestive
+                    issues.They also experience higher levels of stress and poor sleep quality.They are less
+                    likely to practise healthy behaviours, such as eating a healthy diet and regularly
+                    exercising, and use destructive coping strategies to manage their stress.In one study of
+                    over 700 people, I found people prone to procrastination had a 63% greater risk of poor
+                    heart health after accounting for other personality traits and demographics.
                 </p>
+
+                <h3>F</h3>
                 <p>
-                    For at least two decades, Dr Denise Schmandt-Besserat, a University of Texas archaeologist,
-                    has argued that the first writing grew directly out of a system practised by Sumerian
-                    accountants. They used clay tokens, each one shaped to represent a jar of oil, a container of
-                    grain or a particular kind of livestock. These tokens were sealed inside clay spheres, and then
-                    the number and type of tokens inside was recorded on the outside using impressions
-                    resembling the tokens. Eventually, the token impressions were replaced with inscribed signs,
-                    and writing had been invented.
-                </p>
-                <p>
-                    Though Dr Schmandt-Besserat has won much support, some linguists question her thesis, and
-                    others, like Dr Pittman, think it too narrow. They emphasise that pictorial representation and
-                    writing evolved together. ‘There’s no question that the token system is a forerunner of
-                    writing,’
-                    Dr Pittman said, ‘but I have an argument with her evidence for a link between tokens and signs,
-                    and she doesn’t open up the process to include picture making.’
-                </p>
-                <p>
-                    Dr Schmandt-Besserat vigorously defended her ideas. ‘My colleagues say that pictures were
-                    the beginning of writing/ she said, ‘but show me a single picture that becomes a sign in
-                    writing.
-                    They say that designs on pottery were the beginning of writing, but show me a single sign of
-                    writing you can trace back to a pot – it doesn’t exist.’ In its first 500 years, she asserted,
-                    cuneiform writing was used almost solely for recording economic information, and after that its
-                    uses multiplied and broadened.
-                </p>
-                <p>
-                    Yet other scholars have advanced different ideas. Dr Piotr Michalowski, Professor of Near East
-                    Civilizations at the University of Michigan, said that the proto-writing of Sumerian Uruk was
-                    ‘so
-                    radically different as to be a complete break with the past’. It no doubt served, he said, to
-                    store
-                    and communicate information, but also became a new instrument of power. Some scholars
-                    noted that the origins of writing may not always have been in economics. In Egypt, most early
-                    writing is high on monuments or deep in tombs. In this case, said Dr Pascal Vernus from a
-                    university in Paris, early writing was less administrative than sacred. It seems that the only
-                    certainty in this field is that many questions remain to be answered.
+                    Finding better ways of managing our emotions is one route out of the vicious cycle of
+                    procrastination.An important first step is to manage our environment and how we view
+                    the task.There are a number of evidence-based strategies that can help us fend off
+                    distractions that can occupy our minds when we should be focusing on the thing we
+                    should be getting on with.For example, reminding ourselves about why the task is
+                    important and valuable can increase positive feelings towards it.Forgiving ourselves and
+                    feeling compassion when we procrastinate can help break the procrastination cycle.We
+                    should admit that we feel bad, but not be overly critical of ourselves.We should remind
+                    ourselves that we're not the first person to procrastinate, nor the last.Doing this can take
+                    the edge off the negative feelings we have about ourselves when we procrastinate.This
+                    can all make it easier to get back on track.
                 </p>
             </div>
-        </article>
 
+        </article>
 
         <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
         <aside class="qa" aria-label="Questions">
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
-                    <h3>Questions 1–4</h3>
-                    <p class="lead"><i>Complete the summary using the list of words, <b>A-N, </b>below.</i></p>
-                    <p><i>Write the correct letter, <b>A-N, </b>in boxes 1-4 on your answer sheet.</i></p>
-                    <h3 style="text-align: center">The earliest form of writing</h3>
+                    <h3>Questions 1-6</h3>
+                    <p class="lead">Complete the summary below.</p>
+                    <p><i>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</i></p>
+                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+
+                    <b>What makes us procrastinate?</b>
                     <p>
-                    <table style="width:100%; text-align:left; border:1px solid #000; border-collapse:collapse;">
-                        <tr>
-                            <td><b>A.</b> cuneiform</td>
-                            <td><b>B.</b> pictorial</td>
-                            <td><b>C.</b> tomb walls</td>
-                        </tr>
-                        <tr>
-                            <td><b>D.</b> urban</td>
-                            <td><b>E.</b> legible</td>
-                            <td><b>F.</b> stone blocks</td>
-                        </tr>
-                        <tr>
-                            <td><b>G.</b> simple</td>
-                            <td><b>H.</b> Mesopotamia</td>
-                            <td><b>I.</b> abstract</td>
-                        </tr>
-                        <tr>
-                            <td><b>J.</b> papyrus sheets</td>
-                            <td><b>K.</b> decorative</td>
-                            <td><b>L.</b> clay tablets</td>
-                        </tr>
-                        <tr>
-                            <td><b>M.</b> Egypt</td>
-                            <td><b>N.</b> Uruk</td>
-                            <td></td>
-                        </tr>
-                    </table>
                     <div>
-                        Most archaeological evidence shows that the people of
+                        Many people think that procrastination is the result of
                         <span class="q-number-box">1</span>
-                        <span style="flex:1;">
+                        <span style="flex: 1;">
                             <span class="q-question">
-                                <input type="text" name="cwwPbLf22UsNEqIp-1" class="q-text">
+                                <input type="text" name="cwwPbLf22UsNEqIp-1" class="q-text" placeholder="">
                             </span>
                         </span>
-                        invented writing in
-                        around 3,300 BC. Their script was written on
+                        Others believe it to
+                        be the result of an inability to organise time efficiently.But scientific studies suggest that
+                        procrastination is actually due to poor mood management. The tasks we are most likely
+                        to put off are those that could damage our self-esteem or cause us to feel
                         <span class="q-number-box">2</span>
-                        <span style="flex:1;">
+                        <span style="flex: 1;">
                             <span class="q-question">
-                                <input type="text" name="cwwPbLf22UsNEqIp-2" class="q-text">
-                            </span>
-                        </span>.
-                    </div>
-                    <div>
-                        and was called
-                        <span class="q-number-box">3</span>
-                        <span style="flex:1;">
-                            <span class="q-question">
-                                <input type="text" name="cwwPbLf22UsNEqIp-3" class="q-text">
-                            </span>
-                        </span>.
-                        Their script originally showed images related to political power and business, and later
-                        developed to become more
-                        <span class="q-number-box">4</span>
-                        <span style="flex:1;">
-                            <span class="q-question">
-                                <input type="text" name="cwwPbLf22UsNEqIp-4" class="q-text">
+                                <input type="text" name="cwwPbLf22UsNEqIp-2" class="q-text" placeholder="">
                             </span>
                         </span>
+                        when we think about them. Research comparing chronic procrastinators with other
+                        people even found differences in the brain regions associated with regulating emotions
+                        and identifying
+                        <span class="q-number-box">3</span>
+                        <span style="flex: 1;">
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-3" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                        Emotionally loaded and difficult tasks often cause us to
+                        procrastinate. Getting ready to take
+                        <span class="q-number-box">4</span>
+                        <span style="flex: 1;">
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-4" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                        might be a typical example of one
+                        such task. People who are likely to procrastinate tend to be either
+                        <span class="q-number-box">5</span>
+                        <span style="flex: 1;">
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-5" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                        or those with low self-esteem. Procrastination is only a short-term measure for
+                        managing emotions. It’s often followed by a feeling of
+                        <span class="q-number-box">6</span>
+                        <span style="flex: 1;">
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-6" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                        which worsens our
+                        mood and leads to more procrastination.
                     </div>
                     </p>
                 </fieldset>
@@ -176,9 +166,8 @@
                     <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">
                         Submit
                     </button>
-                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display:none">
-                        Try Again
-                    </button>
+                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display: none">Try
+                        Again</button>
                 </div>
             </form>
         </aside>

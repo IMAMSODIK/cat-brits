@@ -7,6 +7,7 @@ use App\Models\TestHistory;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class TestHistoryController extends Controller
@@ -95,9 +96,38 @@ class TestHistoryController extends Controller
                 return back()->with('error', 'User not found');
             }
 
+            $summary = TestHistory::where('student_id', $r->id)
+                ->where('tipe_test', 'mock')
+                ->selectRaw("
+                    COALESCE(COUNT(CASE WHEN kategori = 'reading' THEN 1 END), 0) AS reading_attempt,
+                    COALESCE(COUNT(CASE WHEN kategori = 'listening' THEN 1 END), 0) AS listening_attempt,
+                    COALESCE(AVG(CASE WHEN kategori = 'reading' THEN score_conversion END), 0) AS reading_avg,
+                    COALESCE(AVG(CASE WHEN kategori = 'listening' THEN score_conversion END), 0) AS listening_avg
+                ")
+                ->first();
+
+            $end = Carbon::today();
+            $start = $end->copy()->subYear()->startOfDay();
+            $rawActivities = DB::table('test_histories')
+                ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                ->where('student_id', $r->id)
+                ->whereBetween('created_at', [$start, $end])
+                ->groupBy('date')
+                ->pluck('total', 'date')
+                ->toArray();
+            $studentActivities = TestHistory::with(['student', 'setSoal'])
+                                    ->latest()
+                                    ->where('student_id', $r->id)
+                                    ->get();
+
             $data = [
                 'pageTitle' => 'Detail Student',
-                'user' => $user
+                'user' => $user,
+                'summary' => $summary,
+                'start' => $start,
+                'end' => $end,
+                'activities' => $rawActivities,
+                'studentActivities' => $studentActivities
             ];
 
             return view('history.detail', $data);

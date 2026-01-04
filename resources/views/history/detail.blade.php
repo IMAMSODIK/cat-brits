@@ -1,5 +1,134 @@
 @extends('layouts.template')
 
+@section('own_style')
+    <style>
+        .activity-calendar {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .calendar-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .weekdays {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 28px;
+            min-width: 30px;
+        }
+
+        .weekday {
+            height: 14px;
+            line-height: 14px;
+            color: #666;
+            font-size: 11px;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .calendar-body {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .months {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: -2px;
+            height: 20px;
+            align-items: flex-end;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .month-label {
+            min-width: 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(53, 14px);
+            grid-auto-rows: 14px;
+            gap: 3px;
+        }
+
+        .day-box {
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            background: #ebedf0;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.1s ease;
+        }
+
+        .day-box:hover {
+            transform: scale(1.1);
+            z-index: 1;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .day-box:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .level-0 {
+            background: #ebedf0;
+        }
+
+        .level-1 {
+            background: #9be9a8;
+        }
+
+        .level-2 {
+            background: #40c463;
+        }
+
+        .level-3 {
+            background: #30a14e;
+        }
+
+        .level-4 {
+            background: #216e39;
+        }
+
+        .legend {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        h4 {
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="page-title">
@@ -22,147 +151,258 @@
     </div>
     <!-- Container-fluid starts-->
     <div class="container-fluid">
-        <div class="user-profile">
+        <div class="edit-profile">
             <div class="row">
-                <!-- user profile first-style start-->
-                <div class="col-sm-12">
-                    <div class="card hovercard text-center">
-                        <div class="cardheader"></div>
-                        <div class="user-image">
-                            @if ($user->foto)
-                                <div class="avatar">
-                                    <img src="{{ asset('storage') . '/' . $user->foto }}" alt="Profile Picture">
-                                </div>
-                            @else
-                                <div class="avatar">
-                                    <img src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
-                                </div>
-                            @endif
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4 order-sm-1 order-xl-0">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-envelope"></i>   Email</h6>
-                                                <span>{{ $user->email }}</span>
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-2">
+                                    <div class="profile-title">
+                                        <div class="media">
+                                            @if ($user->foto)
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
+                                            @else
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                            @endif
+
+                                            <div class="media-body">
+                                                <h5 class="mb-1">{{ $user->name }}</h5>
+                                                <p>{{ ucfirst($user->role) }}</p>
                                             </div>
                                         </div>
-                                        {{-- <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-calendar"></i>   BOD</h6><span>02 January 1988</span>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
-                                    <div class="user-designation">
-                                        <div class="title"><a target="_blank" href="">{{ $user->name }}</a></div>
-                                        <div class="desc">{{ $user->role }}</div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email-Address</label>
+                                    <input class="form-control" readonly value="{{ $user->email }}">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <form class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Mock Test Statistics</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card o-hidden small-widget">
+                                        <div class="card-body total-project border-b-primary border-2"><span
+                                                class="f-light f-w-500 f-14">Reading</span>
+                                            <div class="project-details">
+                                                <div class="project-counter">
+                                                    <h2 class="f-w-600">{{ number_format($summary->reading_avg, 2) }}</h2>
+                                                    <small> / {{ $summary->reading_attempt }} Attempts</small>
+                                                </div>
+                                            </div>
+                                            <ul class="bubbles">
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                            </ul>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card o-hidden small-widget">
+                                        <div class="card-body total-project border-b-primary border-2"><span
+                                                class="f-light f-w-500 f-14">Listening</span>
+                                            <div class="project-details">
+                                                <div class="project-counter">
+                                                    <h2 class="f-w-600">{{ number_format($summary->listening_avg, 2) }}</h2>
+                                                    <small> / {{ $summary->listening_attempt }} Attempts</small>
+                                                </div>
+                                            </div>
+                                            <ul class="bubbles">
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <div class="card p-2">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">{{$user->name}}'s Activities</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="vertical-scroll scroll-demo scroll-b-none">
+                                <div class="activity-list d-flex flex-column gap-3">
+
+                                    @forelse ($studentActivities as $activities)
+                                        <div class="card shadow-sm border-0 w-100 mb-0">
+                                            <div class="card-body p-3">
+
+                                                <!-- Header -->
+                                                <div class="d-flex align-items-center gap-3 mb-2">
+                                                    <img src="{{ $activities->student->foto
+                                                        ? asset('storage/' . $activities->student->foto)
+                                                        : asset('own_assets/images/avatar.png') }}"
+                                                        class="rounded-circle" width="45" height="45" alt="User">
+
+                                                    <div class="flex-grow-1">
+                                                        <div class="fw-semibold">{{ $activities->student->name }}
+                                                        </div>
+                                                        <small class="text-primary">{{ $activities->setSoal->name }} |
+                                                            {{ ucfirst($activities->kategori) }}</small>
+                                                    </div>
+
+                                                    @if ($activities->tipe_test == 'practice')
+                                                        <span class="badge bg-primary">Practice</span>
+                                                    @else
+                                                        <span class="badge bg-warning text-dark">Mock</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="d-flex flex-column gap-1 small">
+                                                    <div>
+                                                        <span class="text-muted">Test Type:</span>
+                                                        <strong>{{ $activities->nama_tipe }}</strong>
+                                                    </div>
+
+                                                    @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                        <div>
+                                                            <span class="text-muted">Assessor:</span>
+                                                            @if ($activities->teacher_id)
+                                                                <strong>{{ $activities->teacher->name }}</strong>
+                                                            @else
+                                                                <span class="text-warning">Not Yet Assessed</span>
+                                                            @endif
+                                                        </div>
+                                                    @else
+                                                        <div>
+                                                            <span class="text-muted">Score:</span>
+                                                            <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+                                                        </div>
+                                                    @endif
+                                                </div>
+
+                                                @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                    <div class="mt-3">
+                                                        <button class="btn btn-outline-primary btn-sm w-100">
+                                                            View Details
+                                                        </button>
+                                                    </div>
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="text-center text-muted py-3">
+                                            No recent activity
+                                        </div>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-12">
+                    <div class="card p-4">
+                        <div class="card-header">
+                            <h4>Student Activity (Last 12 Months)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-calendar">
+                                <div class="calendar-wrapper">
 
-            <div class="row">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Student Test History</h4>
-                        <p class="mt-1 f-m-light">
-                            View a student's complete test history, including both practice sessions and mock tests. 
-                            Use the <code>.nav-link</code> with the <code>.active</code> class to navigate between categories.
-                        </p>
-                    </div>
-                    <div class="card-body">
-                        <ul class="nav nav-tabs border-tab border-0 mb-0 nav-danger" id="topline-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active nav-border pt-0 txt-danger nav-danger" id="topline-top-user-tab" data-bs-toggle="tab" href="#topline-top-user" role="tab" aria-controls="topline-top-user" aria-selected="true">
-                                    <i class="icofont icofont-file-document"></i>Practice
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link nav-border txt-danger nav-danger" id="topline-top-review-tab" data-bs-toggle="tab" href="#topline-top-review" role="tab" aria-controls="topline-top-review" aria-selected="false" tabindex="-1">
-                                    <i class="icofont icofont-star"></i>Mock Test
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="topline-tabContent">
-                            <div class="tab-pane fade show active" id="topline-top-user" role="tabpanel"
-                                aria-labelledby="topline-top-user-tab">
-                                <div class="card-body px-0 pb-0">
-                                    <div class="user-content">
-                                        <div class="table-responsive custom-scrollbar">
-                                            <table class="table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Country</th>
-                                                        <th scope="col">Contact No</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Neha</td>
-                                                        <td>India </td>
-                                                        <td>5698741236</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacklin</td>
-                                                        <td>Thailand</td>
-                                                        <td>7800030320</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <div class="calendar-body">
+                                        {{-- Months --}}
+                                        <div class="months" id="months-container">
+                                            @php
+                                                $currentMonth = '';
+                                                $monthCursor = $start->copy()->startOfWeek();
+                                            @endphp
+
+                                            @for ($i = 0; $i < 53; $i++)
+                                                @php
+                                                    $weekStart = $monthCursor->copy();
+                                                    $monthName = $weekStart->format('M');
+                                                @endphp
+
+                                                @if ($monthName !== $currentMonth)
+                                                    <div class="month-label" style="grid-column: {{ $i + 1 }}">
+                                                        {{ $monthName }}
+                                                    </div>
+                                                    @php $currentMonth = $monthName; @endphp
+                                                @endif
+
+                                                @php $monthCursor->addWeek(); @endphp
+                                            @endfor
+                                        </div>
+
+                                        {{-- Calendar Grid --}}
+                                        <div class="calendar-grid">
+                                            @php
+                                                $date = $start->copy()->startOfWeek();
+                                            @endphp
+
+                                            @while ($date <= $end)
+                                                @php
+                                                    $count = $activities[$date->toDateString()] ?? 0;
+
+                                                    if ($count == 0) {
+                                                        $level = 0;
+                                                    } elseif ($count <= 10) {
+                                                        $level = 1;
+                                                    } elseif ($count <= 30) {
+                                                        $level = 2;
+                                                    } elseif ($count <= 60) {
+                                                        $level = 3;
+                                                    } else {
+                                                        $level = 4;
+                                                    }
+
+                                                    $tooltip =
+                                                        $date->format('d M Y') .
+                                                        ' - ' .
+                                                        $count .
+                                                        ' test' .
+                                                        ($count != 1 ? 's' : '');
+                                                @endphp
+
+                                                <div class="day-box level-{{ $level }}"
+                                                    data-tooltip="{{ $tooltip }}" title="{{ $tooltip }}">
+                                                </div>
+
+                                                @php $date->addDay(); @endphp
+                                            @endwhile
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="topline-top-review" role="tabpanel"
-                                aria-labelledby="topline-top-review-tab">
-                                <div class="card-body px-0 pb-0">
-                                    <div class="user-header pb-2">
-                                        <h6 class="fw-bold">Review:</h6>
-                                    </div>
-                                    <div class="user-content">
-                                        <div class="table-responsive custom-scrollbar">
-                                            <table class="table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Country</th>
-                                                        <th scope="col">Rating </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Neha</td>
-                                                        <td>India </td>
-                                                        <td> <i class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Irfan</td>
-                                                        <td>India</td>
-                                                        <td> <i class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+
+                                {{-- Legend --}}
+                                <div class="legend">
+                                    <span style="margin-right: 4px;">Less</span>
+                                    <div class="day-box level-0"></div>
+                                    <div class="day-box level-1"></div>
+                                    <div class="day-box level-2"></div>
+                                    <div class="day-box level-3"></div>
+                                    <div class="day-box level-4"></div>
+                                    <span style="margin-left: 4px;">More</span>
                                 </div>
                             </div>
                         </div>
@@ -348,6 +588,55 @@
                 const preview = document.getElementById('preview-foto');
                 preview.src = URL.createObjectURL(file);
                 preview.classList.remove('d-none');
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthContainer = document.getElementById('months-container');
+            const monthLabels = monthContainer.querySelectorAll('.month-label');
+
+            // Reset container months
+            monthContainer.innerHTML = '';
+            monthContainer.style.position = 'relative';
+            monthContainer.style.height = '20px';
+
+            @php
+                $date = $start->copy()->startOfWeek();
+                $currentMonth = '';
+                $monthStartCol = 1;
+                $lastMonthCol = 1;
+
+                for ($i = 0; $i < 53; $i++) {
+                    $weekStart = $date->copy();
+                    $monthName = $weekStart->format('M');
+
+                    if ($monthName !== $currentMonth) {
+                        if ($currentMonth !== '') {
+                            echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                        }
+                        $currentMonth = $monthName;
+                        $monthStartCol = $i + 1;
+                    }
+                    $lastMonthCol = $i + 1;
+                    $date->addWeek();
+                }
+
+                // Add last month
+                if ($currentMonth !== '') {
+                    echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                }
+            @endphp
+
+            function addMonthLabel(monthName, startCol, endCol) {
+                const label = document.createElement('div');
+                label.className = 'month-label';
+                label.textContent = monthName;
+                label.style.position = 'absolute';
+                label.style.left = ((startCol - 1) * 17) + 'px'; // 14px + 3px gap
+                label.style.width = ((endCol - startCol + 1) * 17) + 'px';
+                monthContainer.appendChild(label);
             }
         });
     </script>

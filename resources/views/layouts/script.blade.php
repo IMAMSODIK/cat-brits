@@ -82,8 +82,81 @@
 
         return 'Rp. ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
-
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInputs = document.querySelectorAll('.page-search');
+        let lastKeyword = '';
+
+        // Sinkron input desktop & mobile
+        searchInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const value = this.value;
+                searchInputs.forEach(i => {
+                    if (i !== this) i.value = value;
+                });
+                performSearch(value);
+            });
+        });
+
+        function performSearch(keyword) {
+            clearHighlight();
+
+            if (!keyword || keyword.length < 2) return;
+
+            const regex = new RegExp(`(${escapeRegExp(keyword)})`, 'gi');
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+
+            let firstMatch = null;
+
+            while (walker.nextNode()) {
+                const node = walker.currentNode;
+
+                if (
+                    node.parentNode.tagName === 'SCRIPT' ||
+                    node.parentNode.tagName === 'STYLE'
+                ) return;
+
+                if (regex.test(node.nodeValue)) {
+                    const span = document.createElement('span');
+                    span.innerHTML = node.nodeValue.replace(regex, '<span class="search-highlight">$1</span>');
+
+                    if (!firstMatch) {
+                        firstMatch = span.querySelector('.search-highlight');
+                    }
+
+                    node.parentNode.replaceChild(span, node);
+                }
+            }
+
+            if (firstMatch) {
+                firstMatch.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+
+        function clearHighlight() {
+            document.querySelectorAll('.search-highlight').forEach(el => {
+                el.replaceWith(document.createTextNode(el.textContent));
+            });
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                e.preventDefault();
+                searchInputs[0].focus();
+            }
+        });
+    });
+</script>
+
 <script src="{{ asset('dashboard_assets/assets/js/editors/quill.js') }}"></script>
 
 @yield('own_script')

@@ -11,13 +11,13 @@ class CambridgeIELTS20AcademicTest2 extends Seeder
     {
         // Cambridge IELTS 20 Academic Reading Test 2 - Reading
         $nc = ["Tail", "Flippers", "Hairs", "Seagrasses", "Lips", "Buoyancy"];
-        $tfng = ["true", "not given", "false", "not given", "true"];
+        $tfng = ["true", "not given", "false", "not given", "true", "not given", "true"];
         $matching_information = ["B", "F", "B"];
         $summary_completion = [
             "Laziness", "Anxious", "Threats", "Exams", "Perfectionists", "Guilt",
             "f", "d", "h", "b", "g"
         ];
-        $two_choices = ["a", "c", "a", "e"];
+        $two_choices = ["[a, c]", "[a, c]", "[a, e]", "[a, e]"];
         $ynng = ["no", "yes", "not given", "no", "not given", "yes"];
         $oc = ["b", "d", "c"];
 

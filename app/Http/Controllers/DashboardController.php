@@ -99,22 +99,48 @@ class DashboardController extends Controller
             $videoRequest = Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get();
             $writingRequest = Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get();
             
-            if($user->role == 'admin'){
-                $upcomingSessions = VideoCall::where("status", "accepted")->with('student')->get();
-                $pendingSessions = VideoCall::where("status", "pending")->with('student')->get();
-            }elseif($user->role == 'teacher'){
-                $upcomingSessions = $user->teacherSessions()->accepted()->upcoming()->with('student')->get();
-                $pendingSessions = VideoCall::where("teacher_id", $user->id)->where("status", "pending")->with('student')->get();
+            if(in_array($user->role, ['admin', 'teacher'])){
+                if($user->role == 'admin'){
+                    $upcomingSessions = VideoCall::where("status", "accepted")->with('student')->get();
+                    $pendingSessions = VideoCall::where("status", "pending")->with('student')->get();
+                }elseif($user->role == 'teacher'){
+                    $upcomingSessions = $user->teacherSessions()->accepted()->upcoming()->with('student')->get();
+                    $pendingSessions = VideoCall::where("teacher_id", $user->id)->where("status", "pending")->with('student')->get();
+                }
+
+                $data['videoRequest'] = $videoRequest;
+                $data['writingRequest'] = $writingRequest;
+                $data['pendingSessions'] = $pendingSessions;
+                $data['upcomingSessions'] = $upcomingSessions;
             }
 
-            $data['videoRequest'] = $videoRequest;
-            $data['writingRequest'] = $writingRequest;
-            $data['pendingSessions'] = $pendingSessions;
-            $data['upcomingSessions'] = $upcomingSessions;
+            $end = Carbon::today();
+            $start = $end->copy()->subYear()->startOfDay();
+            if(auth()->user()->role == 'student'){
+                                    $rawActivities = DB::table('test_histories')
+                                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                                    ->where('student_id', auth()->user()->id)
+                                    ->whereBetween('created_at', [$start, $end])
+                                    ->groupBy('date')
+                                    ->pluck('total', 'date')
+                                    ->toArray();
+            }else{
+                $rawActivities = DB::table('test_histories')
+                                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                                    ->whereBetween('created_at', [$start, $end])
+                                    ->groupBy(DB::raw('DATE(created_at)'))
+                                    ->orderBy('date')
+                                    ->pluck('total', 'date')
+                                    ->toArray();
+            }
+
+            $data['start'] = $start;
+            $data['end'] = $end;
+            $data['courseActivities'] = $rawActivities;
 
             return view('dashboard.index', $data);
         }catch(Exception $e){
-            dd($e->getMessage());
+            // dd($e->getMessage());
             return redirect('/dashboard')->with('error', $e->getMessage());
         }
     }

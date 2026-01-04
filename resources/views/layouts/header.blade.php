@@ -30,8 +30,17 @@
                         src="{{ asset('dashboard_assets/assets/images/hand.gif') }}" alt="hand-gif">
                 </div>
             </div>
-            <div class="welcome-content d-xl-block d-none"><span class="text-truncate col-12">Here’s what’s
-                    happening with your course today. </span></div>
+            <div class="welcome-content d-xl-block d-none">
+                <span class="text-truncate col-12">
+                    @if (auth()->user()?->role === 'admin')
+                        Here’s an overview of today’s system activity.
+                    @elseif (auth()->user()?->role === 'teacher')
+                        Here’s what’s happening with your classes today.
+                    @else
+                        Here’s what’s happening with your learning today.
+                    @endif
+                </span>
+            </div>
         </div>
         <div class="nav-right col-xxl-7 col-xl-6 col-md-7 col-8 pull-right right-header p-0 ms-auto">
             <ul class="nav-menus">
@@ -43,7 +52,8 @@
                                         href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#search-header') }}">
                                     </use>
                                 </svg>
-                                <input class="w-100" type="search" placeholder="Search"></span></div>
+                                <input class="w-100 page-search" type="search" placeholder="Search"></span>
+                            </div>
                     </div>
                 </li>
                 <li class="d-md-none d-block">
@@ -55,7 +65,7 @@
                                     </use>
                                 </svg>
                                 <div id="searchInput">
-                                    <input type="search" placeholder="Search">
+                                    <input type="search" class="page-search" type="search" placeholder="Search">
                                 </div>
                             </span></div>
                     </div>
@@ -72,29 +82,31 @@
                                     <ul class="bookmark-dropdown">
                                         <li>
                                             <div class="row">
-                                                <div class="col-4 text-center">
+                                                <div class="col-4 text-center" onclick="location.href='/dashboard'">
                                                     <div class="bookmark-content">
-                                                        <div class="bookmark-icon"><i data-feather="file-text"></i>
+                                                        <div class="bookmark-icon">
+                                                            <i class="fa fa-home text-secondary" aria-hidden="true"></i>
                                                         </div>
-                                                        <span>Forms</span>
+                                                        <span>Dashboard</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-4 text-center">
+                                                <div class="col-4 text-center" onclick="location.href='/students'">
                                                     <div class="bookmark-content">
-                                                        <div class="bookmark-icon"><i data-feather="user"></i>
-                                                        </div><span>Profile</span>
+                                                        <div class="bookmark-icon">
+                                                            <i class="fa fa-user-graduate text-secondary"></i>
+                                                        </div><span>Students</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-4 text-center">
+                                                <div class="col-4 text-center" onclick="location.href='/teacher'">
                                                     <div class="bookmark-content">
-                                                        <div class="bookmark-icon"><i data-feather="server"></i></div>
-                                                        <span>Tables</span>
+                                                        <div class="bookmark-icon">
+                                                            <i class="fa fa-users text-secondary"></i>
+                                                        </div>
+                                                        <span>Teachers</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="text-center"><a class="flip-btn f-w-700" id="flip-btn"
-                                                href="javascript:void(0)">Add New Bookmark</a></li>
                                     </ul>
                                 </div>
                                 <div class="back">
@@ -115,7 +127,7 @@
                 <li>
                     <div class="mode"><i class="moon" data-feather="moon"> </i></div>
                 </li>
-                <li class="onhover-dropdown notification-down">
+                {{-- <li class="onhover-dropdown notification-down">
                     <div class="notification-box">
                         <svg>
                             <use href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#notification-header') }}">
@@ -408,10 +420,14 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
                 <li class="profile-nav onhover-dropdown">
-                    <div class="media profile-media"><img class="b-r-10"
-                            src="{{ asset('dashboard_assets/assets/images/dashboard/profile.png') }}" alt="">
+                    <div class="media profile-media">
+                        @if (auth()->user()->foto)
+                            <img class="img-70 rounded-circle" src="{{ asset('storage') . '/' . auth()->user()->foto }}" style="width: 100% !important" alt="Profile Picture">
+                        @else
+                            <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" style="width: 100% !important" alt="Profile Picture">
+                        @endif
                         <div class="media-body d-xxl-block d-none box-col-none">
                             <div class="d-flex align-items-center gap-2"> <span>{{auth()->user()->name}}</span><i
                                     class="middle fa fa-angle-down"> </i></div>
@@ -419,11 +435,9 @@
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
-                        <li><a href="/profile"><i data-feather="user"></i><span>My Profile</span></a>
-                        </li>
-                        <li><a href="letter-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                        <li> <a href="edit-profile.html"> <i data-feather="settings"></i><span>Settings</span></a>
-                        </li>
+                        <li><a href="/profile"><i data-feather="user"></i><span>My Profile</span></a></li>
+                        {{-- <li><a href="letter-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
+                        <li> <a href="edit-profile.html"> <i data-feather="settings"></i><span>Settings</span></a></li> --}}
                         <li>
                             <a class="btn btn-pill btn-outline-primary btn-sm" id="logout">Log Out</a>
                         </li>

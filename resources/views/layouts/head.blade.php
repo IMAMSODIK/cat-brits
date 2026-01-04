@@ -55,6 +55,16 @@
     body, p, h1, h2, h3, h4, h5, h6, a, button, input, textarea, span, div {
         font-family: "Quicksand", sans-serif;
     }
+
+    .customizer-links{
+        display: none;
+    }
+
+    .search-highlight {
+        background-color: yellow;
+        color: black;
+    }
+
 </style>
 
 
