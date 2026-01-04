@@ -14,11 +14,60 @@ class PT01 extends Seeder
             "id" => "2uSKN2WwOj6EYc1X",
             "kategori" => "reading",
             "questions" => [
-                "matching_information" => ["B", "F", "B", "C", "D", "B", "E", "A"],
-                "summary_completion" => ["laziness", "anxious", "threats", "exams", "perfectionists", "guilt", "past", "[judgement call , judgment call]", "strike zone", "countless arguments", "[no shouted disagreemen, no disagreement]", "privatisation policy", "incentives", "permit", "regulatory agency"],
-                "two_choices" => ["[a,c]", "[a,e]"],
-                "ynng" => ["NO", "YES", "NOT GIVEN", "NO", "NOT GIVEN", "YES", "YES", "NOT GIVEN", "NOT GIVEN", "NO"],
-                'oc' => ["B", "D", "C"],
+                "mh" => [
+                    "ii",
+                    "vii",
+                    "v",
+                    "i",
+                    "iii",
+                    "ix"
+                ],
+                "picture_completion" => [
+                    "[New Zealand, NZ carrageen(s)]",
+                    "agar",
+                    "seameal",
+                    "cough mixtures",
+                    "crochet hook",
+                    "[leaflets, leaves]",
+                    "thorn",
+                    "steps"
+                ],
+                "matching_information" => [
+                    "B",
+                    "C",
+                    "A",
+
+                    "A",
+                    "D",
+                    "C",
+                    "B",
+
+                    "C",
+                    "B",
+                    "D",
+                    "B",
+                    "A",
+                    "C"
+                ],
+                "tfng" => [
+                    "TRUE",
+                    "TRUE",
+                    "FALSE",
+                    "TRUE",
+                    "NOT GIVEN",
+                    "FALSE"
+                ],
+                "oc" => [
+                    "C",
+                    "D",
+                    "F"
+                ],
+                "summary_completion" => [
+                    "H",
+                    "L",
+                    "A",
+                    "I"
+                ]
 
             ]
         ];

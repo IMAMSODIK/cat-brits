@@ -107,38 +107,44 @@
                 <form class="qa-body" id="form-{{ $tab['id'] }}">
 
                     <fieldset class="q-item">
-                        <p class="lead"><b>Questions 1–4</b></p>
+                        <p class="lead"><b>Questions 1-6</b></p>
                         <p class="lead">
-                            Write the correct letter, <b>A, B, C, </b>or <b>D</b>, on your answer sheet.
+                            Look at the following statements (Questions 31–36) and the list of people below.
+                            Match each statement with the correct person, <b>A, B, C, D</b>, or <b>E</b>.
+                            NB You may use any letter more than once
                         </p>
                     </fieldset>
+
                     <fieldset class="q-item" data-q="1">
                         <legend class="q-text">
                             <span class="q-number">1</span>
-                            The researchers at the symposium regarded the story of the King of Uruk as
-                            ridiculous because
+                            There is no proof that early writing is connected to decorated household objects.
                         </legend>
                         <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="A" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-8" value="A" />
                                 <span class="opt-code">A</span>
-                                <span class="opt-label">writing probably developed independently of speech</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="B" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-8" value="B" />
                                 <span class="opt-code">B</span>
-                                <span class="opt-label">clay tablets had not been invented at that time</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="C" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-8" value="C" />
                                 <span class="opt-code">C</span>
-                                <span class="opt-label">the distant ruler would have spoken another language</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="D" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-8" value="D" />
                                 <span class="opt-code">D</span>
-                                <span class="opt-label">evidence of writing has been discovered from an earlier
-                                    period</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-8" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
                             </label>
                         </div>
                     </fieldset>
@@ -146,30 +152,33 @@
                     <fieldset class="q-item" data-q="2">
                         <legend class="q-text">
                             <span class="q-number">2</span>
-                            According to the writer, the story of the King of Uruk
+                            As writing developed, it came to represent speech.
                         </legend>
                         <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="A" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-9" value="A" />
                                 <span class="opt-code">A</span>
-                                <span class="opt-label">is a probable explanation of the origins of writing</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="B" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-9" value="B" />
                                 <span class="opt-code">B</span>
-                                <span class="opt-label">proves that early writing had a different function to writing
-                                    today</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="C" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-9" value="C" />
                                 <span class="opt-code">C</span>
-                                <span class="opt-label">provides an example of symbolic writing</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="D" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-9" value="D" />
                                 <span class="opt-code">D</span>
-                                <span class="opt-label">shows some awareness amongst Sumerians of the purpose of
-                                    writing</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-9" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
                             </label>
                         </div>
                     </fieldset>
@@ -177,28 +186,33 @@
                     <fieldset class="q-item" data-q="3">
                         <legend class="q-text">
                             <span class="q-number">3</span>
-                            There was disagreement among the researchers at the symposium about
+                            Sumerian writing developed into a means of political control.
                         </legend>
                         <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="A" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-10" value="A" />
                                 <span class="opt-code">A</span>
-                                <span class="opt-label">the area where writing began</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="B" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-10" value="B" />
                                 <span class="opt-code">B</span>
-                                <span class="opt-label">the nature of early writing materials</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="C" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-10" value="C" />
                                 <span class="opt-code">C</span>
-                                <span class="opt-label">the way writing began</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="D" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-10" value="D" />
                                 <span class="opt-code">D</span>
-                                <span class="opt-label">the meaning of certain abstract images</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-10" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
                             </label>
                         </div>
                     </fieldset>
@@ -206,28 +220,101 @@
                     <fieldset class="q-item" data-q="4">
                         <legend class="q-text">
                             <span class="q-number">4</span>
-                            The opponents of the theory that writing developed from tokens believe that it
+                            Early writing did not represent the grammatical features of speech.
                         </legend>
                         <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-7" value="A" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-11" value="A" />
                                 <span class="opt-code">A</span>
-                                <span class="opt-label">grew out of accountancy</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-7" value="B" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-11" value="B" />
                                 <span class="opt-code">B</span>
-                                <span class="opt-label">evolved from pictures</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-7" value="C" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-11" value="C" />
                                 <span class="opt-code">C</span>
-                                <span class="opt-label">was initially intended as decoration</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
                             </label>
                             <label class="q-option">
-                                <input type="radio" name="2uSKN2WwOj6EYc1X-7" value="D" />
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-11" value="D" />
                                 <span class="opt-code">D</span>
-                                <span class="opt-label">was unlikely to have been connected with commerce</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-11" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="q-item" data-q="5">
+                        <legend class="q-text">
+                            <span class="q-number">5</span>
+                            There is no convincing proof that tokens and signs are connected.
+                        </legend>
+                        <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-12" value="A" />
+                                <span class="opt-code">A</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-12" value="B" />
+                                <span class="opt-code">B</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-12" value="C" />
+                                <span class="opt-code">C</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-12" value="D" />
+                                <span class="opt-code">D</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-12" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="q-item" data-q="6">
+                        <legend class="q-text">
+                            <span class="q-number">6</span>
+                            The uses of cuneiform writing were narrow at first, and later widened.
+                        </legend>
+                        <div class="q-options" role="radiogroup" aria-label="Question 3 options">
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-13" value="A" />
+                                <span class="opt-code">A</span>
+                                <span class="opt-label">Dr Holly Pittman</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-13" value="B" />
+                                <span class="opt-code">B</span>
+                                <span class="opt-label">Dr Peter Damerow</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-13" value="C" />
+                                <span class="opt-code">C</span>
+                                <span class="opt-label">Dr Denise Schmandt-Besserat</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-13" value="D" />
+                                <span class="opt-code">D</span>
+                                <span class="opt-label">Dr Piotr Michalowski</span>
+                            </label>
+                            <label class="q-option">
+                                <input type="radio" name="2uSKN2WwOj6EYc1X-13" value="E" />
+                                <span class="opt-code">E</span>
+                                <span class="opt-label">Dr Pascal Vernus</span>
                             </label>
                         </div>
                     </fieldset>
@@ -241,7 +328,6 @@
                             Try Again
                         </button>
                     </div>
-
                 </form>
             </aside>
         </div>

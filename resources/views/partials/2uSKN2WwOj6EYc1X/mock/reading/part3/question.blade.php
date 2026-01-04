@@ -1,87 +1,92 @@
-                <div class="passage-title">
-                    <h3>HELIUM'S FUTURE UP IN THE AIR</h3>
-                </div>
-                <div class="passage-body">
-                    <h3>A</h3>
-                    <p>
-                        In recent years we have all been exposed to dire media reports concerning the impending demise
-                        of global coal and oil reserves, but the depletion of another key non-renewable resource
-                        continues without receiving much press at all. Helium - an inert, odourless, monatomic element
-                        known to lay people as the substance that makes balloons float and voices squeak when inhaled -
-                        could be gone from this planet within a generation.
-                    </p>
-
-                    <h3>B</h3>
-                    <p>
-                        Helium itself is not rare; there is actually a plentiful supply of it in the cosmos. In fact, 24
-                        per cent of our galaxy's elemental mass consists of helium, which makes it the second most
-                        abundant element in our universe. Because of its lightness, however, most helium vanished from
-                        our own planet many years ago. Consequently, only a minuscule proportion – 0.00052%, to be exact
-                        – remains in earth's atmosphere. Helium is the by-product of millennia of radioactive decay from
-                        the elements thorium and uranium. The helium is mostly trapped in subterranean natural gas
-                        bunkers and commercially extracted through a method known as fractional distillation.
-                    </p>
-
-                    <h3>C</h3>
-                    <p>
-                        The loss of helium on Earth would affect society greatly. Defying the perception of it as a
-                        novelty substance for parties and gimmicks, the element actually has many vital applications in
-                        society. Probably the most well known commercial usage is in airships and blimps (non-flammable
-                        helium replaced hydrogen as the lifting gas du jour after the Hindenburg catastrophe in 1932,
-                        during which an airship burst into flames and crashed to the ground killing some passengers and
-                        crew). But helium is also instrumental in deep-sea diving, where it is blended with nitrogen to
-                        mitigate the dangers of inhaling ordinary air under high pressure; as a cleaning agent for
-                        rocket engines; and, in its most prevalent use, as a coolant for superconducting magnets in
-                        hospital MRI (magnetic resonance imaging) scanners.
-                    </p>
-
-                    <h3>D</h3>
-                    <p>
-                        The possibility of losing helium forever poses the threat of a real crisis because its
-                        unique qualities are extraordinarily difficult, if not impossible to duplicate (certainly, no
-                        biosynthetic ersatz product is close to approaching the point of feasibility for helium, even
-                        as similar developments continue apace for oil and coal). Helium is even cheerfully
-                        derided as a "loner" element since it does not adhere to other molecules like its cousin,
-                        hydrogen. According to Dr. Lee Sobotka, helium is the "most noble of gases, meaning it's
-                        very stable and non-reactive for the most part (...) it has a closed electronic configuration,
-                        a very tightly bound atom. It is this coveting of its own electrons that prevents
-                        combination with other elements". Another important attribute is helium's unique boiling
-                        point, which is lower than that for any other element. The worsening global shortage
-                        could render millions of dollars of high-value, life-saving equipment totally useless. The
-                        dwindling supplies have already resulted in the postponement of research and
-                        development projects in physics laboratories and manufacturing plants around the world.
-                        There is an enormous supply and demand imbalance partly brought about by the
-                        expansion of high-tech manufacturing in Asia.
-                    </p>
-
-                    <h3>E</h3>
-                    <p>
-                        The source of the problem is the Helium Privatisation Act (HPA), an American law
-                        passed in 1996 that requires the U.S. National Helium Reserve to liquidate its helium
-                        assets by 2015 regardless of the market price. Although intended to settle the original
-                        cost of the reserve by a U.S. Congress ignorant of its ramifications, the result of this fire
-                        sale is that global helium prices are so artificially deflated that few can be bothered
-                        recycling the substance or using it judiciously. Deflated values also mean that natural
-                        gas extractors see no reason to capture helium. Much is lost in the process of extraction.
-                        As Sobotka notes: "[t]he government had the good vision to store helium, and the
-                        question now is: Will the corporations have the vision to capture it when extracting
-                        natural gas, and consumers the wisdom to recycle? This takes long-term vision because
-                        present market forces are not sufficient to compel prudent practice". For Nobel-prize
-                        laureate Robert Richardson, the U.S. government must be prevailed upon to repeal its
-                        privatisation policy as the country supplies over 80 per cent of global helium, mostly from
-                        the National Helium Reserve. For Richardson, a twenty- to fifty-fold increase in prices
-                        would provide incentives to recycle.
-                    </p>
-
-                    <h3>F</h3>
-                    <p>
-                        A number of steps need to be taken in order to avert a costly predicament in the coming
-                        decades. Firstly, all existing supplies of helium ought to be conserved and released only
-                        by permit, with medical uses receiving precedence over other commercial or recreational
-                        demands. Secondly, conservation should be obligatory and enforced by a regulatory
-                        agency. At the moment some users, such as hospitals, tend to recycle diligently while
-                        others, such as NASA, squander massive amounts of helium. Lastly, research into
-                        alternatives to helium must begin in earnest.
-                    </p>
-
-                </div>
+<div class="passage-title">How did writing begin?</div>
+<div class="passage-body">
+    <b>Many theories, few answers</b>
+    <p>
+        The Sumerians, an ancient people of the Middle East, had a story explaining the
+        invention of writing more than 5,000 years ago. It seems a messenger of the King of
+        Uruk arrived at the court of a distant ruler so exhausted that he was unable to deliver
+        the oral message. So the king set down the words of his next messages on a clay
+        tablet. A charming story, whose retelling at a recent symposium at the University of
+        Pennsylvania amused scholars. They smiled at the absurdity of a letter which the
+        recipient would not have been able to read. They also doubted that the earliest writing
+        was a direct rendering of speech. Writing more likely began as a separate, symbolic
+        system of communication and only later merged with spoken language.
+    </p>
+    <p>
+        Yet in the story the Sumerians, who lived in Mesopotamia, in what is now southern Iraq,
+        seemed to understand writing’s transforming function. As Dr Holly Pittman, director of
+        the University’s Center for Ancient Studies, observed, writing ‘arose out of the need to
+        store and transmit information ... over time and space’.
+    </p>
+    <p>
+        In exchanging interpretations and information, the scholars acknowledged that they still
+        had no fully satisfying answers to the questions of how and why writing developed.
+        Many favoured an explanation of writing’s origins in the visual arts, pictures becoming
+        increasingly abstract and eventually representing spoken words. Their views clashed
+        with a widely held theory among archaeologists that writing developed from the pieces
+        of clay that Sumerian accountants used as tokens to keep track of goods.
+    </p>
+    <p>
+        Archaeologists generally concede that they have no definitive answer to the question of
+        whether writing was invented only once, or arose independently in several places, such
+        as Egypt, the Indus Valley, China, Mexico and Central America. The preponderance of
+        archaeological data shows that the urbanizing Sumerians were the first to develop
+        writing, in 3,200 or 3,300 BC. These are the dates for many clay tablets in an early form
+        of cuneiform, a script written by pressing the end of a sharpened stick into wet clay,
+        found at the site of the ancient city of Uruk. The baked clay tablets bore such images as
+        pictorial symbols of the names of people, places and things connected with government
+        and commerce. The Sumerian script gradually evolved from the pictorial to the abstract,
+        but did not at first represent recorded spoken language.
+    </p>
+    <p>
+        Dr Peter Damerow, a specialist in Sumerian cuneiform at the Max Planck Institute for the History
+        of Science in Berlin, said, ‘It is likely that there were mutual influences of writing systems
+        around
+        the world. However, their great variety now shows that the development of writing, once
+        initiated, attains a considerable degree of independence and flexibility to adapt to specific
+        characteristics of the sounds of the language to be represented.’ Not that he accepts the
+        conventional view that writing started as a representation of words by pictures. New studies of
+        early Sumerian writing, he said, challenge this interpretation. The structures of this earliest
+        writing did not, for example, match the structure of spoken language, dealing mainly in lists
+        and
+        categories rather than in sentences and narrative.
+    </p>
+    <p>
+        For at least two decades, Dr Denise Schmandt-Besserat, a University of Texas archaeologist,
+        has argued that the first writing grew directly out of a system practised by Sumerian
+        accountants. They used clay tokens, each one shaped to represent a jar of oil, a container of
+        grain or a particular kind of livestock. These tokens were sealed inside clay spheres, and then
+        the number and type of tokens inside was recorded on the outside using impressions
+        resembling the tokens. Eventually, the token impressions were replaced with inscribed signs,
+        and writing had been invented.
+    </p>
+    <p>
+        Though Dr Schmandt-Besserat has won much support, some linguists question her thesis, and
+        others, like Dr Pittman, think it too narrow. They emphasise that pictorial representation and
+        writing evolved together. ‘There’s no question that the token system is a forerunner of
+        writing,’
+        Dr Pittman said, ‘but I have an argument with her evidence for a link between tokens and signs,
+        and she doesn’t open up the process to include picture making.’
+    </p>
+    <p>
+        Dr Schmandt-Besserat vigorously defended her ideas. ‘My colleagues say that pictures were
+        the beginning of writing/ she said, ‘but show me a single picture that becomes a sign in
+        writing.
+        They say that designs on pottery were the beginning of writing, but show me a single sign of
+        writing you can trace back to a pot – it doesn’t exist.’ In its first 500 years, she asserted,
+        cuneiform writing was used almost solely for recording economic information, and after that its
+        uses multiplied and broadened.
+    </p>
+    <p>
+        Yet other scholars have advanced different ideas. Dr Piotr Michalowski, Professor of Near East
+        Civilizations at the University of Michigan, said that the proto-writing of Sumerian Uruk was
+        ‘so
+        radically different as to be a complete break with the past’. It no doubt served, he said, to
+        store
+        and communicate information, but also became a new instrument of power. Some scholars
+        noted that the origins of writing may not always have been in economics. In Egypt, most early
+        writing is high on monuments or deep in tombs. In this case, said Dr Pascal Vernus from a
+        university in Paris, early writing was less administrative than sacred. It seems that the only
+        certainty in this field is that many questions remain to be answered.
+    </p>
+</div>

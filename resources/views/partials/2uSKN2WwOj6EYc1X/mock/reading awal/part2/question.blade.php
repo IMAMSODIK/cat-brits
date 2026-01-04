@@ -1,8 +1,3 @@
-@props(['tab'])
-<div class="x-panel-inner">Content: Summary Completion</div>
-<div class="reading-section" aria-label="Reading and Questions">
-    <div class="reading-grid resizable-grid highlighted-content">
-        <article class="passage" aria-label="Reading Passage" tabindex="0">
             <div class="passage-title">Invasion of the Robot Umpires</div>
             <div class="passage-body">
                 <p>A few years ago, Fred DeJesus from Brooklyn, New York became the first umpire in a minor league
@@ -77,70 +72,3 @@
 
 
             </div>
-        </article>
-
-        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-
-        <aside class="qa" aria-label="Questions">
-            <form class="qa-body" id="form-{{ $tab['id'] }}">
-                <fieldset class="q-item">
-                    <h3>Questions 1-5</h3>
-                    <p class="lead">Complete the summary below.</p>
-                    <p><i>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</i></p>
-                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
-
-                    <b>Calls by the umpire</b>
-                    <p>
-                    <div>
-                        Even after ABS was developed, MLB still wanted human umpires to shout out decisions as they had
-                        in their
-                        <span class="q-number-box">1</span>
-                        <span style="flex: 1;">
-                            <span class="q-question">
-                                <input type="text" name="2uSKN2WwOj6EYc1X-7" class="q-text" placeholder="">
-                            </span>
-                        </span>. The umpire’s job had, at one time, required a
-                        <span class="q-number-box">2</span>
-                        <span style="flex: 1;">
-                            <span class="q-question">
-                                <input type="text" name="2uSKN2WwOj6EYc1X-8" class="q-text" placeholder="">
-                            </span>
-                        </span> about whether a ball was a strike. A ball is considered a strike when the batter does
-                        not hit it and it crosses through a
-                        <span class="q-number-box">3</span>
-                        <span style="flex: 1;">
-                            <span class="q-question">
-                                <input type="text" name="2uSKN2WwOj6EYc1X-9" class="q-text" placeholder="">
-                            </span>
-                        </span> extending approximately from the batter’s knee to his chest. In the past,
-                        <span class="q-number-box">4</span>
-                        <span style="flex: 1;">
-                            <span class="q-question">
-                                <input type="text" name="2uSKN2WwOj6EYc1X-10" class="q-text" placeholder="">
-                            </span>
-                        </span> over strike calls were not uncommon, but today everyone accepts the complete ban on
-                        pushing or shoving the umpire. One difference, however, is that during the first game DeJesus
-                        used ABS, strike calls were met with
-                        <span class="q-number-box">5</span>
-                        <span style="flex: 1;">
-                            <span class="q-question">
-                                <input type="text" name="2uSKN2WwOj6EYc1X-11" class="q-text" placeholder="">
-                            </span>
-                        </span>.
-                    </div>
-                    </p>
-                </fieldset>
-
-
-
-                <div style="text-align: center;">
-                    <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">
-                        Submit
-                    </button>
-                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display: none">Try
-                        Again</button>
-                </div>
-            </form>
-        </aside>
-    </div>
-</div>
