@@ -1,5 +1,134 @@
 @extends('layouts.template')
 
+@section('own_style')
+    <style>
+        .activity-calendar {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .calendar-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .weekdays {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 28px;
+            min-width: 30px;
+        }
+
+        .weekday {
+            height: 14px;
+            line-height: 14px;
+            color: #666;
+            font-size: 11px;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .calendar-body {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .months {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: -2px;
+            height: 20px;
+            align-items: flex-end;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .month-label {
+            min-width: 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(53, 14px);
+            grid-auto-rows: 14px;
+            gap: 3px;
+        }
+
+        .day-box {
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            background: #ebedf0;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.1s ease;
+        }
+
+        .day-box:hover {
+            transform: scale(1.1);
+            z-index: 1;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .day-box:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .level-0 {
+            background: #ebedf0;
+        }
+
+        .level-1 {
+            background: #9be9a8;
+        }
+
+        .level-2 {
+            background: #40c463;
+        }
+
+        .level-3 {
+            background: #30a14e;
+        }
+
+        .level-4 {
+            background: #216e39;
+        }
+
+        .legend {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        h4 {
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="page-title">
@@ -32,9 +161,11 @@
                                     <div class="profile-title">
                                         <div class="media">
                                             @if ($user->foto)
-                                                <img class="img-70 rounded-circle" src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
                                             @else
-                                                <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
                                             @endif
 
                                             <div class="media-body">
@@ -61,10 +192,12 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="card o-hidden small-widget">
-                                        <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Reading</span>
-                                            <div class="project-details"> 
-                                                <div class="project-counter"> 
-                                                    <h2 class="f-w-600">{{ number_format($summary->reading_avg, 2) }}</h2><small> / {{ $summary->reading_attempt }} Attempts</small>
+                                        <div class="card-body total-project border-b-primary border-2"><span
+                                                class="f-light f-w-500 f-14">Reading</span>
+                                            <div class="project-details">
+                                                <div class="project-counter">
+                                                    <h2 class="f-w-600">{{ number_format($summary->reading_avg, 2) }}</h2>
+                                                    <small> / {{ $summary->reading_attempt }} Attempts</small>
                                                 </div>
                                             </div>
                                             <ul class="bubbles">
@@ -84,10 +217,12 @@
 
                                 <div class="col-6">
                                     <div class="card o-hidden small-widget">
-                                        <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Listening</span>
-                                            <div class="project-details"> 
-                                                <div class="project-counter"> 
-                                                    <h2 class="f-w-600">{{ number_format($summary->listening_avg, 2) }}</h2><small> / {{ $summary->listening_attempt }} Attempts</small>
+                                        <div class="card-body total-project border-b-primary border-2"><span
+                                                class="f-light f-w-500 f-14">Listening</span>
+                                            <div class="project-details">
+                                                <div class="project-counter">
+                                                    <h2 class="f-w-600">{{ number_format($summary->listening_avg, 2) }}</h2>
+                                                    <small> / {{ $summary->listening_attempt }} Attempts</small>
                                                 </div>
                                             </div>
                                             <ul class="bubbles">
@@ -109,98 +244,167 @@
                     </form>
                 </div>
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card p-2">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Add projects And Upload</h4>
-                            <div class="card-options"><a class="card-options-collapse" href="#"
-                                    data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a
-                                    class="card-options-remove" href="#" data-bs-toggle="card-remove"><i
-                                        class="fe fe-x"></i></a></div>
+                            <h4 class="card-title mb-0">{{$user->name}}'s Activities</h4>
                         </div>
-                        <div class="table-responsive add-project custom-scrollbar">
-                            <table class="table card-table table-vcenter text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Project Name</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                        <th>Price</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a class="text-inherit" href="#">Untrammelled prevents </a></td>
-                                        <td>28 May 2018</td>
-                                        <td><span class="status-icon bg-success"></span> Completed</td>
-                                        <td>$56,908</td>
-                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
-                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
-                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
-                                                class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-trash"></i> Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
-                                        <td>12 June 2018</td>
-                                        <td><span class="status-icon bg-danger"></span> On going</td>
-                                        <td>$45,087</td>
-                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
-                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
-                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
-                                                class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-trash"></i> Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
-                                        <td>12 July 2018</td>
-                                        <td><span class="status-icon bg-warning"></span> Pending</td>
-                                        <td>$60,123</td>
-                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
-                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
-                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
-                                                class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-trash"></i> Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
-                                        <td>14 June 2018</td>
-                                        <td><span class="status-icon bg-warning"></span> Pending</td>
-                                        <td>$70,435</td>
-                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
-                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
-                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
-                                                class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-trash"></i> Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
-                                        <td>25 June 2018</td>
-                                        <td><span class="status-icon bg-success"></span> Completed</td>
-                                        <td>$15,987</td>
-                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
-                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
-                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
-                                                class="icon" href="javascript:void(0)"></a><a
-                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
-                                                    class="fa fa-trash"></i> Delete</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="card-body">
+                            <div class="vertical-scroll scroll-demo scroll-b-none">
+                                <div class="activity-list d-flex flex-column gap-3">
+
+                                    @forelse ($studentActivities as $activities)
+                                        <div class="card shadow-sm border-0 w-100 mb-0">
+                                            <div class="card-body p-3">
+
+                                                <!-- Header -->
+                                                <div class="d-flex align-items-center gap-3 mb-2">
+                                                    <img src="{{ $activities->student->foto
+                                                        ? asset('storage/' . $activities->student->foto)
+                                                        : asset('own_assets/images/avatar.png') }}"
+                                                        class="rounded-circle" width="45" height="45" alt="User">
+
+                                                    <div class="flex-grow-1">
+                                                        <div class="fw-semibold">{{ $activities->student->name }}
+                                                        </div>
+                                                        <small class="text-primary">{{ $activities->setSoal->name }} |
+                                                            {{ ucfirst($activities->kategori) }}</small>
+                                                    </div>
+
+                                                    @if ($activities->tipe_test == 'practice')
+                                                        <span class="badge bg-primary">Practice</span>
+                                                    @else
+                                                        <span class="badge bg-warning text-dark">Mock</span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="d-flex flex-column gap-1 small">
+                                                    <div>
+                                                        <span class="text-muted">Test Type:</span>
+                                                        <strong>{{ $activities->nama_tipe }}</strong>
+                                                    </div>
+
+                                                    @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                        <div>
+                                                            <span class="text-muted">Assessor:</span>
+                                                            @if ($activities->teacher_id)
+                                                                <strong>{{ $activities->teacher->name }}</strong>
+                                                            @else
+                                                                <span class="text-warning">Not Yet Assessed</span>
+                                                            @endif
+                                                        </div>
+                                                    @else
+                                                        <div>
+                                                            <span class="text-muted">Score:</span>
+                                                            <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+                                                        </div>
+                                                    @endif
+                                                </div>
+
+                                                @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                    <div class="mt-3">
+                                                        <button class="btn btn-outline-primary btn-sm w-100">
+                                                            View Details
+                                                        </button>
+                                                    </div>
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="text-center text-muted py-3">
+                                            No recent activity
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card p-4">
+                        <div class="card-header">
+                            <h4>Student Activity (Last 12 Months)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-calendar">
+                                <div class="calendar-wrapper">
+
+                                    <div class="calendar-body">
+                                        {{-- Months --}}
+                                        <div class="months" id="months-container">
+                                            @php
+                                                $currentMonth = '';
+                                                $monthCursor = $start->copy()->startOfWeek();
+                                            @endphp
+
+                                            @for ($i = 0; $i < 53; $i++)
+                                                @php
+                                                    $weekStart = $monthCursor->copy();
+                                                    $monthName = $weekStart->format('M');
+                                                @endphp
+
+                                                @if ($monthName !== $currentMonth)
+                                                    <div class="month-label" style="grid-column: {{ $i + 1 }}">
+                                                        {{ $monthName }}
+                                                    </div>
+                                                    @php $currentMonth = $monthName; @endphp
+                                                @endif
+
+                                                @php $monthCursor->addWeek(); @endphp
+                                            @endfor
+                                        </div>
+
+                                        {{-- Calendar Grid --}}
+                                        <div class="calendar-grid">
+                                            @php
+                                                $date = $start->copy()->startOfWeek();
+                                            @endphp
+
+                                            @while ($date <= $end)
+                                                @php
+                                                    $count = $activities[$date->toDateString()] ?? 0;
+
+                                                    if ($count == 0) {
+                                                        $level = 0;
+                                                    } elseif ($count <= 10) {
+                                                        $level = 1;
+                                                    } elseif ($count <= 30) {
+                                                        $level = 2;
+                                                    } elseif ($count <= 60) {
+                                                        $level = 3;
+                                                    } else {
+                                                        $level = 4;
+                                                    }
+
+                                                    $tooltip =
+                                                        $date->format('d M Y') .
+                                                        ' - ' .
+                                                        $count .
+                                                        ' test' .
+                                                        ($count != 1 ? 's' : '');
+                                                @endphp
+
+                                                <div class="day-box level-{{ $level }}"
+                                                    data-tooltip="{{ $tooltip }}" title="{{ $tooltip }}">
+                                                </div>
+
+                                                @php $date->addDay(); @endphp
+                                            @endwhile
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Legend --}}
+                                <div class="legend">
+                                    <span style="margin-right: 4px;">Less</span>
+                                    <div class="day-box level-0"></div>
+                                    <div class="day-box level-1"></div>
+                                    <div class="day-box level-2"></div>
+                                    <div class="day-box level-3"></div>
+                                    <div class="day-box level-4"></div>
+                                    <span style="margin-left: 4px;">More</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,6 +588,55 @@
                 const preview = document.getElementById('preview-foto');
                 preview.src = URL.createObjectURL(file);
                 preview.classList.remove('d-none');
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthContainer = document.getElementById('months-container');
+            const monthLabels = monthContainer.querySelectorAll('.month-label');
+
+            // Reset container months
+            monthContainer.innerHTML = '';
+            monthContainer.style.position = 'relative';
+            monthContainer.style.height = '20px';
+
+            @php
+                $date = $start->copy()->startOfWeek();
+                $currentMonth = '';
+                $monthStartCol = 1;
+                $lastMonthCol = 1;
+
+                for ($i = 0; $i < 53; $i++) {
+                    $weekStart = $date->copy();
+                    $monthName = $weekStart->format('M');
+
+                    if ($monthName !== $currentMonth) {
+                        if ($currentMonth !== '') {
+                            echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                        }
+                        $currentMonth = $monthName;
+                        $monthStartCol = $i + 1;
+                    }
+                    $lastMonthCol = $i + 1;
+                    $date->addWeek();
+                }
+
+                // Add last month
+                if ($currentMonth !== '') {
+                    echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                }
+            @endphp
+
+            function addMonthLabel(monthName, startCol, endCol) {
+                const label = document.createElement('div');
+                label.className = 'month-label';
+                label.textContent = monthName;
+                label.style.position = 'absolute';
+                label.style.left = ((startCol - 1) * 17) + 'px'; // 14px + 3px gap
+                label.style.width = ((endCol - startCol + 1) * 17) + 'px';
+                monthContainer.appendChild(label);
             }
         });
     </script>

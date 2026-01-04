@@ -400,6 +400,13 @@
                                                 when hunting
                                             </div>
                                         </li>
+                                        <li>
+                                            <div class="q-list" data-q="3">
+                                                young spent first months of life inside its mother’s
+                                                <span class="q-number-box">3</span>
+                                                <input type="text" name="wq6xHskL3uTj5VSU-3" class="q-text" placeholder="">
+                                            </div>
+                                        </li>
                                     </ul>
 
                                     <p><b>Decline and extinction</b></p>

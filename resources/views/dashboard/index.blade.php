@@ -3,6 +3,132 @@
 @section('own_style')
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/echart.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/date-picker.css') }}">
+    <style>
+        .activity-calendar {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .calendar-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .weekdays {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 28px;
+            min-width: 30px;
+        }
+
+        .weekday {
+            height: 14px;
+            line-height: 14px;
+            color: #666;
+            font-size: 11px;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .calendar-body {
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .months {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: -2px;
+            height: 20px;
+            align-items: flex-end;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .month-label {
+            min-width: 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(53, 14px);
+            grid-auto-rows: 14px;
+            gap: 3px;
+        }
+
+        .day-box {
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            background: #ebedf0;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.1s ease;
+        }
+
+        .day-box:hover {
+            transform: scale(1.1);
+            z-index: 1;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .day-box:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .level-0 {
+            background: #ebedf0;
+        }
+
+        .level-1 {
+            background: #9be9a8;
+        }
+
+        .level-2 {
+            background: #40c463;
+        }
+
+        .level-3 {
+            background: #30a14e;
+        }
+
+        .level-4 {
+            background: #216e39;
+        }
+
+        .legend {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        h4 {
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -150,7 +276,6 @@
             </div>
         </div>    
     @endif
-    
 
     {{-- sets information --}}
     @if (auth()->user()->role == 'admin')
@@ -861,43 +986,51 @@
                             </div>
                         </div>
                     </div>
+                @endif
 
-                    <div class="row">
-                        <div class="col-6 col-lg-3">
-                            <div class="card">
-                                <div class="card-header card-no-border total-revenue pb-0">
-                                    <h5 class="mb-2">Top Reading</h5>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive d-none d-md-block">
-                                        <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                            <thead class="table-light">
+                <div class="row">
+                    @php
+                        $colClass = in_array(auth()->user()->role, ['admin', 'teacher'])
+                            ? 'col-6 col-lg-3'
+                            : 'col-6 col-lg-6';
+                    @endphp
+
+                    <div class="{{$colClass}}">
+                        <div class="card">
+                            <div class="card-header card-no-border total-revenue pb-0">
+                                <h5 class="mb-2">Top Reading</h5>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($score[0][0] as $item)
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Score</th>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($score[0][0] as $item)
-                                                    <tr>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-6 col-lg-3">
+                    @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+                        <div class="{{$colClass}}">
                             <div class="card">
                                 <div class="card-header card-no-border total-revenue pb-0">
                                     <h5 class="mb-2">Bottom Reading</h5>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <div class="table-responsive d-none d-md-block">
+                                    <div class="table-responsive">
                                         <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
                                             <thead class="table-light">
                                                 <tr>
@@ -918,42 +1051,44 @@
                                 </div>
                             </div>
                         </div>
+                    @endif
 
-                        <div class="col-6 col-lg-3">
-                            <div class="card">
-                                <div class="card-header card-no-border total-revenue pb-0">
-                                    <h5 class="mb-2">Top Listening</h5>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive d-none d-md-block">
-                                        <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                            <thead class="table-light">
+                    <div class="{{$colClass}}">
+                        <div class="card">
+                            <div class="card-header card-no-border total-revenue pb-0">
+                                <h5 class="mb-2">Top Listening</h5>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Score</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($score[1][0] as $item)
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Score</th>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($score[1][0] as $item)
-                                                    <tr>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-6 col-lg-3">
+                    @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+                        <div class="{{$colClass}}">
                             <div class="card">
-                                <div class="card-header card-no-border total-revenue pb-0">
+                                <div class="card-header card-no-border pb-0">
                                     <h5 class="mb-2">Bottom Listening</h5>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <div class="table-responsive d-none d-md-block">
+                                    <div class="table-responsive">
                                         <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
                                             <thead class="table-light">
                                                 <tr>
@@ -974,9 +1109,101 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card p-4">
+            <div class="card-header">
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+                    <h4>Student Activities (Last 12 Months)</h4>
+                @else
+                    <h4>Your Activities (Last 12 Months)</h4>
                 @endif
-                {{-- end teacher and admin --}}
+            </div>
+            <div class="card-body">
+                <div class="activity-calendar">
+                    <div class="calendar-wrapper">
+
+                        <div class="calendar-body">
+                            {{-- Months --}}
+                            <div class="months" id="months-container">
+                                @php
+                                    $currentMonth = '';
+                                    $monthCursor = $start->copy()->startOfWeek();
+                                @endphp
+
+                                @for ($i = 0; $i < 53; $i++)
+                                    @php
+                                        $weekStart = $monthCursor->copy();
+                                        $monthName = $weekStart->format('M');
+                                    @endphp
+
+                                    @if ($monthName !== $currentMonth)
+                                        <div class="month-label" style="grid-column: {{ $i + 1 }}">
+                                            {{ $monthName }}
+                                        </div>
+                                        @php $currentMonth = $monthName; @endphp
+                                    @endif
+
+                                    @php $monthCursor->addWeek(); @endphp
+                                @endfor
+                            </div>
+
+                            {{-- Calendar Grid --}}
+                            <div class="calendar-grid">
+                                @php
+                                    $date = $start->copy()->startOfWeek();
+                                @endphp
+
+                                @while ($date <= $end)
+                                    @php
+                                        $count = $courseActivities[$date->toDateString()] ?? 0;
+
+                                        if ($count == 0) {
+                                            $level = 0;
+                                        } elseif ($count <= 10) {
+                                            $level = 1;
+                                        } elseif ($count <= 30) {
+                                            $level = 2;
+                                        } elseif ($count <= 60) {
+                                            $level = 3;
+                                        } else {
+                                            $level = 4;
+                                        }
+
+                                        $tooltip =
+                                            $date->format('d M Y') .
+                                            ' - ' .
+                                            $count .
+                                            ' test' .
+                                            ($count != 1 ? 's' : '');
+                                    @endphp
+
+                                    <div class="day-box level-{{ $level }}"
+                                        data-tooltip="{{ $tooltip }}" title="{{ $tooltip }}">
+                                    </div>
+
+                                    @php $date->addDay(); @endphp
+                                @endwhile
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Legend --}}
+                    <div class="legend">
+                        <span style="margin-right: 4px;">Less</span>
+                        <div class="day-box level-0"></div>
+                        <div class="day-box level-1"></div>
+                        <div class="day-box level-2"></div>
+                        <div class="day-box level-3"></div>
+                        <div class="day-box level-4"></div>
+                        <span style="margin-left: 4px;">More</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1740,6 +1967,55 @@
                     `);
                 }
             });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthContainer = document.getElementById('months-container');
+            const monthLabels = monthContainer.querySelectorAll('.month-label');
+            
+            // Reset container months
+            monthContainer.innerHTML = '';
+            monthContainer.style.position = 'relative';
+            monthContainer.style.height = '20px';
+            
+            @php
+                $date = $start->copy()->startOfWeek();
+                $currentMonth = '';
+                $monthStartCol = 1;
+                $lastMonthCol = 1;
+                
+                for ($i = 0; $i < 53; $i++) {
+                    $weekStart = $date->copy();
+                    $monthName = $weekStart->format('M');
+                    
+                    if ($monthName !== $currentMonth) {
+                        if ($currentMonth !== '') {
+                            echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                        }
+                        $currentMonth = $monthName;
+                        $monthStartCol = $i + 1;
+                    }
+                    $lastMonthCol = $i + 1;
+                    $date->addWeek();
+                }
+                
+                // Add last month
+                if ($currentMonth !== '') {
+                    echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
+                }
+            @endphp
+            
+            function addMonthLabel(monthName, startCol, endCol) {
+                const label = document.createElement('div');
+                label.className = 'month-label';
+                label.textContent = monthName;
+                label.style.position = 'absolute';
+                label.style.left = ((startCol - 1) * 17) + 'px'; // 14px + 3px gap
+                label.style.width = ((endCol - startCol + 1) * 17) + 'px';
+                monthContainer.appendChild(label);
+            }
         });
     </script>
 @endsection

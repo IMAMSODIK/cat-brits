@@ -22,448 +22,121 @@
     </div>
     <!-- Container-fluid starts-->
     <div class="container-fluid">
-        <div class="user-profile">
+        <div class="edit-profile">
             <div class="row">
-                <!-- user profile first-style start-->
-                <div class="col-sm-12">
-                    <div class="card hovercard text-center">
-                        <div class="cardheader"></div>
-                        <div class="user-image">
-                            <div class="avatar"><img alt="" src="../assets/images/user/7.jpg"></div>
-                            <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5"></i></div>
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">My Profile</h4>
                         </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4 order-sm-1 order-xl-0">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-envelope"></i>   Email</h6>
-                                                <span>Marekjecno@yahoo.com</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-calendar"></i>   BOD</h6><span>02 January 1988</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
-                                    <div class="user-designation">
-                                        <div class="title"><a target="_blank" href="">Mark jecno</a></div>
-                                        <div class="desc">designer</div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4 order-sm-2 order-xl-2">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-phone"></i>   Contact Us</h6><span>India +91
-                                                    123-456-7890</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-location-arrow"></i>   Location</h6><span>B69 Near
-                                                    Schoool Demo Home</span>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-2">
+                                    <div class="profile-title">
+                                        <div class="media">
+                                            @if ($data->foto)
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('storage') . '/' . $data->foto }}" alt="Profile Picture">
+                                            @else
+                                                <img class="img-70 rounded-circle"
+                                                    src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                            @endif
+                                            <div class="media-body">
+                                                <h5 class="mb-1">{{ $data->name }}</h5>
+                                                <p>{{ ucfirst($data->role) }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="social-media">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><a href="https://www.facebook.com/" target="_blank"><i
-                                                class="fa fa-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://accounts.google.com/" target="_blank"><i
-                                                class="fa fa-google-plus"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i
-                                                class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i
-                                                class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://rss.app/" target="_blank"><i
-                                                class="fa fa-rss"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="follow">
-                                <div class="row">
-                                    <div class="col-6 text-md-end border-right">
-                                        <div class="follow-num counter">25869</div><span>Follower</span>
-                                    </div>
-                                    <div class="col-6 text-md-start">
-                                        <div class="follow-num counter">659887</div><span>Following</span>
-                                    </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email-Address</label>
+                                    <input class="form-control" readonly value="{{ $data->email }}">
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-                <!-- user profile first-style end-->
-                <!-- user profile second-style start-->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="profile-img-style">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="media"><img class="img-thumbnail rounded-circle me-3"
-                                            src="../assets/images/user/7.jpg" alt="Generic placeholder image">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="mt-0 user-name">JOHAN DIO</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 align-self-center">
-                                    <div class="float-sm-end"><small>10 Hours ago</small></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <p>Dressing is a way of life. My customers are successful working women. I want people to be
-                                afraid of the women I dress. Age is something only in your head or a stereotype. </p>
-                            <div class="img-container">
-                                <div class="my-gallery" id="aniimated-thumbnials" itemscope="">
-                                    <figure itemprop="associatedMedia" itemscope=""><a
-                                            href="../assets/images/other-images/profile-style-img3.png"
-                                            itemprop="contentUrl" data-size="1600x950"><img class="img-fluid rounded"
-                                                src="../assets/images/other-images/profile-style-img3.png"
-                                                itemprop="thumbnail" alt="gallery"></a>
-                                        <figcaption itemprop="caption description">Image caption 1</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="like-comment">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item border-right pe-3">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-heart"></i></a>  Like</label><span
-                                            class="ms-2 counter">2659</span>
-                                    </li>
-                                    <li class="list-inline-item ms-2">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-comment"></i></a>  Comment</label><span
-                                            class="ms-2 counter">569</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- user profile second-style end-->
-                <!-- user profile third-style start-->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="profile-img-style">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="media"><img class="img-thumbnail rounded-circle me-3"
-                                            src="../assets/images/user/7.jpg" alt="Generic placeholder image">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="mt-0 user-name">JOHAN DIO</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 align-self-center">
-                                    <div class="float-sm-end"><small>10 Hours ago</small></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <p>you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                                embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
-                                tend to repeat predefined chunks as necessary, making this the first true generator on the
-                                Internet.</p>
-                            <div class="row mt-4 pictures my-gallery" id="aniimated-thumbnials-2" itemscope="">
-                                <figure class="col-sm-6" itemprop="associatedMedia" itemscope=""><a
-                                        href="../assets/images/other-images/profile-style-img3.png" itemprop="contentUrl"
-                                        data-size="1600x950"><img class="img-fluid rounded"
-                                            src="../assets/images/other-images/profile-style-img.png" itemprop="thumbnail"
-                                            alt="gallery"></a>
-                                    <figcaption itemprop="caption description">Image caption 1</figcaption>
-                                </figure>
-                                <figure class="col-sm-6" itemprop="associatedMedia" itemscope=""><a
-                                        href="../assets/images/other-images/profile-style-img3.png" itemprop="contentUrl"
-                                        data-size="1600x950"><img class="img-fluid rounded"
-                                            src="../assets/images/other-images/profile-style-img.png" itemprop="thumbnail"
-                                            alt="gallery"></a>
-                                    <figcaption itemprop="caption description">Image caption 2</figcaption>
-                                </figure>
-                            </div>
-                            <div class="like-comment">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item border-right pe-3">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-heart"></i></a>  Like</label><span
-                                            class="ms-2 counter">2659</span>
-                                    </li>
-                                    <li class="list-inline-item ms-2">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-comment"></i></a>  Comment</label><span
-                                            class="ms-2 counter">569</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- user profile third-style end-->
-                <!-- user profile fourth-style start-->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="profile-img-style">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="media"><img class="img-thumbnail rounded-circle me-3"
-                                            src="../assets/images/user/7.jpg" alt="Generic placeholder image">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="mt-0 user-name">JOHAN DIO</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 align-self-center">
-                                    <div class="float-sm-end"><small>10 Hours ago</small></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <p>Contrary to popular belief, is not simply random text. It has roots in a piece of classical
-                                Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                                professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
-                                words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
-                                classical literature, discovered the undoubtable source .Contrary to popular belief, Lorem
-                                Ipsum is not simply random text. It has roots in a piece of classical Latin literature from
-                                45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                                Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                                consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
-                                classical literature, discovered the undoubtable source</p>
-                            <div class="like-comment mt-4">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item border-right pe-3">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-heart"></i></a>  Like</label><span
-                                            class="ms-2 counter">2659</span>
-                                    </li>
-                                    <li class="list-inline-item ms-2">
-                                        <label class="m-0"><a href="#"><i
-                                                    class="fa fa-comment"></i></a>  Comment</label><span
-                                            class="ms-2 counter">569</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- user profile fourth-style end-->
-                <!-- user profile fifth-style start-->
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="profile-img-style">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="media"><img class="img-thumbnail rounded-circle me-3"
-                                            src="../assets/images/user/7.jpg" alt="Generic placeholder image">
-                                        <div class="media-body align-self-center">
-                                            <h5 class="mt-0 user-name">JOHAN DIO</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 align-self-center">
-                                    <div class="float-sm-end"><small>10 Hours ago</small></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-lg-12 col-xl-4">
-                                    <div class="my-gallery" id="aniimated-thumbnials-3" itemscope="">
-                                        <figure itemprop="associatedMedia" itemscope=""><a
-                                                href="../assets/images/blog/img.png" itemprop="contentUrl"
-                                                data-size="1600x950"><img class="img-fluid rounded"
-                                                    src="../assets/images/blog/img.png" itemprop="thumbnail"
-                                                    alt="gallery"></a>
-                                            <figcaption itemprop="caption description">Image caption 1</figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="like-comment mt-4 like-comment-sm-mb">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item border-right pe-3">
-                                                <label class="m-0"><a href="#"><i
-                                                            class="fa fa-heart"></i></a>  Like</label><span
-                                                    class="ms-2 counter">2659</span>
-                                            </li>
-                                            <li class="list-inline-item ms-2">
-                                                <label class="m-0"><a href="#"><i
-                                                            class="fa fa-comment"></i></a>  Comment</label><span
-                                                    class="ms-2 counter">569</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-8">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                        piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked
-                                        up one of the more obscure Latin words, consecteturContrary to popular belief, Lorem
-                                        Ipsum is not simply random text. It has roots in a piece of classical Latin
-                                        literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                                        professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
-                                        Latin words, consectetur</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- user profile fifth-style end-->
-                <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="pswp__bg"></div>
-                    <div class="pswp__scroll-wrap">
-                        <div class="pswp__container">
-                            <div class="pswp__item"></div>
-                            <div class="pswp__item"></div>
-                            <div class="pswp__item"></div>
-                        </div>
-                        <div class="pswp__ui pswp__ui--hidden">
-                            <div class="pswp__top-bar">
-                                <div class="pswp__counter"></div>
-                                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                                <button class="pswp__button pswp__button--share" title="Share"></button>
-                                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                                <div class="pswp__preloader">
-                                    <div class="pswp__preloader__icn">
-                                        <div class="pswp__preloader__cut">
-                                            <div class="pswp__preloader__donut"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                                <div class="pswp__share-tooltip"></div>
-                            </div>
-                            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                            <div class="pswp__caption">
-                                <div class="pswp__caption__center"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade bd-example-modal-lg" id="tambah-data-modal" tabindex="-1" role="dialog"
-        aria-labelledby="myExtraLargeModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myExtraLargeModal">Add Teacher</h4>
-                    <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body dark-modal">
                     <div class="card">
-                        <form class="form theme-form dark-inputs">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto">Upload Teacher Photo</label>
-                                            <input type="file" class="form-control input-air-primary" id="foto"
-                                                accept="image/*">
-                                            <div class="mt-3">
-                                                <img id="preview-foto" src="#" alt="Photo Preview"
-                                                    class="img-thumbnail d-none" style="max-width: 150px;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama">Enter Teacher Name</label>
-                                            <input type="text" class="form-control input-air-primary" id="nama"
-                                                placeholder="Enter Teacher Name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">Enter Teacher Email</label>
-                                            <input type="text" class="form-control input-air-primary" id="email"
-                                                placeholder="Enter Teacher Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="username">Enter Teacher Username</label>
-                                            <input type="text" class="form-control input-air-primary" id="username"
-                                                placeholder="Enter Teacher Username">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-2">
-                                    <label class="form-label" for="token">Generate Teacher's Token</label>
-                                </div>
-                                <div class="row mb-3 align-items-center">
-                                    <div class="col-8">
-                                        <input type="text" class="form-control input-air-primary" id="token"
-                                            placeholder="Teacher's Token">
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-success w-100" id="generate-token">Generate Token</button>
-                                    </div>
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Change Password</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="change-password-form">
+                                <div class="mb-3">
+                                    <label class="form-label">Current Password</label>
+                                    <input class="form-control" type="password" id="current_password"
+                                        name="current_password" placeholder="Enter your current password">
                                 </div>
 
-                            </div>
-                            <div class="card-footer text-end">
-                                <input class="btn btn-light" type="button" id="cancel-add" value="Cancel">
-                                <button class="btn btn-primary me-3" type="button" id="store">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                                <div class="mb-3">
+                                    <label class="form-label">New Password</label>
+                                    <input class="form-control" type="password" id="new_password" name="new_password"
+                                        placeholder="Enter your new password">
+                                </div>
 
-    <div class="modal fade bd-example-modal-lg" id="edit-data-modal" tabindex="-1" role="dialog"
-        aria-labelledby="myExtraLargeModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myExtraLargeModal">Edit Data</h4>
-                    <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input class="form-control" type="password" id="new_password_confirmation"
+                                        name="new_password_confirmation" placeholder="Confirm your new password">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-block" id="save-password">Save</button>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="modal-body dark-modal">
-                    <div class="card">
-                        <form class="form theme-form dark-inputs">
-                            <input type="hidden" name="" id="id">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="edit_judul">Nama</label>
-                                            <input type="text" class="form-control input-air-primary" id="edit_judul"
-                                                placeholder="Nama">
-                                        </div>
+                <div class="col-xl-8">
+                    <form class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Edit Profile</h4>
+                            <div class="card-options"><a class="card-options-collapse" href="#"
+                                    data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a
+                                    class="card-options-remove" href="#" data-bs-toggle="card-remove"><i
+                                        class="fe fe-x"></i></a></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Name</label>
+                                        <input class="form-control" name="name" id="nama" type="text"
+                                            value="{{ $data->name }}" placeholder="Enter yout name">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="edit_deskripsi">Deskripsi</label>
-                                            <div class="toolbar-box form-control input-air-primary">
-                                                <div id="toolbar-desc"><span class="ql-formats"></span></div>
-                                                <div class="quill-paragraph" id="edit_deskripsi"></div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Foto</label>
+                                        <input class="form-control" name="foto" id="foto" type="file"
+                                            accept="image/*">
+                                        <div class="form-text">Format: JPG, PNG, GIF. Maksimal 2MB.</div>
+                                    </div>
+
+                                    <div id="foto-preview-container" class="mt-3">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <p class="text-muted mb-0">Preview:</p>
+                                            <button type="button" id="hapus-preview"
+                                                class="btn btn-sm btn-outline-danger">
+                                                <i class="fas fa-times"></i> Hapus
+                                            </button>
+                                        </div>
+                                        <div class="border rounded p-2 d-inline-block position-relative">
+                                            <img id="preview-foto" class="img-fluid rounded"
+                                                src="{{ $data->foto ? asset('storage') . '/' . $data->foto : asset('own_assets/images/avatar.png') }}"
+                                                style="max-height: 200px;">
+                                            <div class="mt-2 text-center">
+                                                <small class="text-muted" id="file-info"></small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer text-end">
-                                <input class="btn btn-light" type="button" id="cancel-edit" value="Cancel">
-                                <button class="btn btn-primary me-3" type="button" id="update">Update</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="card-footer text-end">
+                            <button class="btn btn-primary" type="button" id="change-profile">Update Profile</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -517,7 +190,7 @@
 @endsection
 
 @section('own_script')
-    <script src="{{ asset('own_assets/scripts/teacher.js') }}"></script>
+    <script src="{{ asset('own_assets/scripts/student.js') }}"></script>
     <script>
         document.getElementById('foto').addEventListener('change', function(event) {
             const [file] = event.target.files;
@@ -526,6 +199,131 @@
                 preview.src = URL.createObjectURL(file);
                 preview.classList.remove('d-none');
             }
+        });
+    </script>
+
+    <script>
+        document.getElementById('foto').addEventListener('change', function(event) {
+            const [file] = event.target.files;
+            const previewContainer = document.getElementById('foto-preview-container');
+            const preview = document.getElementById('preview-foto');
+            const fileInfo = document.getElementById('file-info');
+            const hapusBtn = document.getElementById('hapus-preview');
+
+            if (file) {
+                if (!file.type.match('image/(jpeg|png|gif|jpg)')) {
+                    alert('Format file tidak didukung. Harap pilih file JPG, PNG, atau GIF.');
+                    this.value = '';
+                    previewContainer.classList.add('d-none');
+                    return;
+                }
+
+                const maxSize = 2 * 1024 * 1024;
+                if (file.size > maxSize) {
+                    alert('Ukuran file maksimal 2MB. File Anda: ' + formatBytes(file.size));
+                    this.value = '';
+                    previewContainer.classList.add('d-none');
+                    return;
+                }
+
+                preview.src = URL.createObjectURL(file);
+                fileInfo.textContent = `${file.name} (${formatBytes(file.size)})`;
+                previewContainer.classList.remove('d-none');
+
+                preview.onload = function() {
+                    URL.revokeObjectURL(preview.src);
+                }
+            } else {
+                previewContainer.classList.add('d-none');
+            }
+        });
+
+        document.getElementById('hapus-preview').addEventListener('click', function() {
+            const inputFile = document.getElementById('foto');
+            const previewContainer = document.getElementById('foto-preview-container');
+
+            inputFile.value = '';
+            previewContainer.classList.add('d-none');
+        });
+
+        function formatBytes(bytes, decimals = 2) {
+            if (bytes === 0) return '0 Bytes';
+
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        }
+    </script>
+
+    <script>
+        $('#change-profile').on('click', function() {
+
+            const btn = $(this);
+            const formData = new FormData();
+
+            formData.append('name', $('#nama').val());
+            formData.append('foto', $('#foto')[0].files[0] ?? '');
+
+            btn.prop('disabled', true).text('Updating...');
+
+            $.ajax({
+                url: "/profile",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(res) {
+                    alertModal(true, res.message ?? 'Profile updated successfully');
+                    setTimeout(() => {
+                        location.reload() 
+                    }, 1000);
+                },
+                error: function(xhr) {
+                    let msg = 'Something went wrong';
+                    if (xhr.responseJSON?.message) {
+                        msg = xhr.responseJSON.message;
+                    }
+                    alertModal(false, msg);
+                },
+                complete: function() {
+                    btn.prop('disabled', false).text('Update Profile');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $('#save-password').on('click', function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: "{{ route('password.update') }}",
+                method: "POST",
+                data: {
+                    current_password: $('#current_password').val(),
+                    new_password: $('#new_password').val(),
+                    new_password_confirmation: $('#new_password_confirmation').val(),
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(res) {
+                    alertModal(true, res.message ?? 'Password updated successfully');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                },
+                error: function(xhr) {
+                    alertModal(false, xhr.responseJSON?.message ?? 'Failed to update password');
+                }
+            });
         });
     </script>
 @endsection

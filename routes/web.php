@@ -122,14 +122,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
 
     Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('/profile', [ProfileController::class, 'update']);
+    Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('password.update');
     // Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 
     Route::redirect('/toefl', '/coming-soon');
     Route::redirect('/ge', '/coming-soon');
     Route::redirect('/sat', '/coming-soon');
 
-    // profile
-    Route::get('/profile/{id}', [ProfileController::class, 'profilePublic']);
+    Route::redirect('/test-correction', '/coming-soon');
+    Route::redirect('/history', '/coming-soon');
 
     Route::get('/coming-soon', function(){
         return view('pages.coming_soon');
@@ -142,12 +144,15 @@ Route::get('/test', function () {
     $start = $end->copy()->subYear()->startOfDay();
 
     $rawActivities = DB::table('test_histories')
-        ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
-        ->where('student_id', $studentId)
-        ->whereBetween('created_at', [$start, $end])
-        ->groupBy('date')
-        ->pluck('total', 'date')
-        ->toArray();
+    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+    ->whereBetween('created_at', [$start, $end])
+    ->groupBy(DB::raw('DATE(created_at)'))
+    ->orderBy('date')
+    ->pluck('total', 'date')
+    ->toArray();
+
+    dd($rawActivities);
+
 
     return view('test', [
         'start' => $start,

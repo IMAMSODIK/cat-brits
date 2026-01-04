@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-layout="stroke-svg">
     <div class="logo-wrapper">
         <a href="index.html">
-            <img class="img-fluid" style="width: 85px; margin-top: -20px"
+            <img class="img-fluid" style="width: 85px; margin-top: -10px"
                 src="{{ asset('dashboard_assets/assets/images/logo/logo.png') }}" alt="">
         </a>
         <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
@@ -43,11 +43,13 @@
                     </a>
                 </li>
                 
-                <li class="sidebar-main-title">
-                    <div>
-                        <h6 class="">Data</h6>
-                    </div>
-                </li>
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6 class="">Data</h6>
+                        </div>
+                    </li>
+                @endif
 
                 @if (auth()->user()->role == 'admin')
                     <li class="sidebar-list">

@@ -64,10 +64,15 @@ STATITISTIK REQUEST correction
 
 
 dashboard admin
-- detail user untuk admin dan teacher
-- view all new user
-- view all student activity
-- hilangkan tombol cta di Speaking Test Requests
-- hilangkan tombol cta di Writing Test Requests
-- atur tampilan top bottom nilai untuk admin dan user
-- grafik github (teacher dan admin)
+- detail user untuk admin dan teacher (done)
+- view all new user (done)
+- view all student activity (done)
+- hilangkan tombol cta di Speaking Test Requests (done)
+- hilangkan tombol cta di Writing Test Requests (done)
+- grafik github (teacher dan admin) (done)
+- atur tampilan top bottom nilai untuk admin dan user (done)
+
+
+- change profile
+- design penilain speaking
+- design penilain writing 

@@ -7,6 +7,7 @@ use App\Models\TestHistory;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class TestHistoryController extends Controller
@@ -105,10 +106,28 @@ class TestHistoryController extends Controller
                 ")
                 ->first();
 
+            $end = Carbon::today();
+            $start = $end->copy()->subYear()->startOfDay();
+            $rawActivities = DB::table('test_histories')
+                ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                ->where('student_id', $r->id)
+                ->whereBetween('created_at', [$start, $end])
+                ->groupBy('date')
+                ->pluck('total', 'date')
+                ->toArray();
+            $studentActivities = TestHistory::with(['student', 'setSoal'])
+                                    ->latest()
+                                    ->where('student_id', $r->id)
+                                    ->get();
+
             $data = [
                 'pageTitle' => 'Detail Student',
                 'user' => $user,
-                'summary' => $summary
+                'summary' => $summary,
+                'start' => $start,
+                'end' => $end,
+                'activities' => $rawActivities,
+                'studentActivities' => $studentActivities
             ];
 
             return view('history.detail', $data);
