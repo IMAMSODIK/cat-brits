@@ -94,7 +94,7 @@ class CambridgeIELTS19AcademicTest4 extends Seeder
         $tc = [
             "yellow", "plastic", "ice", "gloves"
         ];
-        $two_choices = ["c", "e", "a", "d"];
+        $two_choices = ["[C, E]", "[C, E]", "[A, D]", "[A, D]"];
         $matching_information = [
             "A", "B", "C", "A",
             "D", "F", "A", "C", "G"

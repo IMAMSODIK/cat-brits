@@ -15,7 +15,7 @@ class CambridgeIELTS17AcademicTest3 extends Seeder
             "true", "false", "not given", "false", "not given", "false", "true", "not given"
         ];
         $matching_information = ["F", "G", "A", "H", "B", "E", "C"];
-        $two_choices = ["b", "c"];
+        $two_choices = ["[B, C]", "[B, C]"];
         $sentence_completion = ["solid", "[orangutan, Sumatran orangutan, orang-utan, Sumatran orang-utan]", "carbon stocks", "biodiversity"];
         $oc = ['d', 'b', 'c', 'd', 'c'];
         $ynng = [
@@ -108,7 +108,7 @@ class CambridgeIELTS17AcademicTest3 extends Seeder
             "c", "c", "a",
             "b", "a", "a", "b"
         ];
-        $two_choices = ["b", "e"];
+        $two_choices = ["[B, E]", "[B, E]"];
         $matching_information = [
             "e", "d", "g", "f", "c",
             "c", "a", "d", "b", "f", "h"

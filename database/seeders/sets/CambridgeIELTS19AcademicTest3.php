@@ -100,7 +100,7 @@ class CambridgeIELTS19AcademicTest3 extends Seeder
         ];
         $tc = ["samphire", "melon", "coconut", "strawberry"];
         $matching_information = ["C", "D", "F", "G", "B", "H"];
-        $two_choices = ["D", "E", "B", "C"];
+        $two_choices = ["[D, E]", "[D, E]", "[B, C]", "[B, C]"];
         $oc = ["c", "b", "a", "a", "c"];
         $fc_completion = ['C', 'H', 'E', 'B', 'F'];
         

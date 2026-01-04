@@ -940,7 +940,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="3" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">1</span>
                                     <span class="q-number">2</span>
@@ -1476,7 +1476,7 @@
 
         $("#submit-two_choices2").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-two_choices2", "11qYaGWPJUTxUVdq", "two_choices2", $(this), "again-two_choices2", "Two Choices");
+            submitHelper("form-two_choices2", "11qYaGWPJUTxUVdq", "two_choices", $(this), "again-two_choices2", "Two Choices");
         });
 
         $("#submit-matching_information").on("click", function(e) {

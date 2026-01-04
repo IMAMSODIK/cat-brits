@@ -109,7 +109,7 @@ class CambridgeIELTS20AcademicTest1 extends Seeder
             "a", "b", "c", "a", "b", "c",
             "a", "b", "a", "c"
         ];
-        $two_choices = ["a", "e", "c", "e", "c", "e", "a", "c", "a", "b"];
+        $two_choices = ["[A, E]", "[A, E]", "[C, E]", "[C, E]", "[C, E]", "[C, E]", "[A, C]", "[A, C]", "[A, B]", "[A, B]"];
         
         for($i = 1; $i <= count($nc); $i++){
             Soal::create([

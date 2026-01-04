@@ -467,20 +467,76 @@
                                     <p>
                                         Yong’s book argues that we should be more tolerant of microbes. Many have a beneficial effect, and only a relatively small number lead to
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-6" data-type="summary_completion" data-q="6" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-6" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         . And although it is misleading to think of microbes as ‘friendly’, we should also stop thinking of them as the enemy. In fact, we should accept that our relationship with microbes is one based on
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-7" data-type="summary_completion" data-q="7" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-7" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         .
                                     </p>
 
                                     <p>
                                         New research shows that microbes have numerous benefits for humans. Amongst other things, they aid digestion, remove poisons, produce vitamins and may even help reduce obesity. However, there is a growing problem. Our poor
                                         <span class="q-number-box">19</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-8" data-type="summary_completion" data-q="8" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-8" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         , our overuse of antibiotics, and our excessive focus on
                                         <span class="q-number-box">20</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-9" data-type="summary_completion" data-q="9" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-9" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         are upsetting the bacterial balance and may be contributing to the huge increase in allergies and immune system problems.
                                     </p>
 
@@ -827,23 +883,103 @@
                                     <p>
                                         Igor Grossmann and colleagues have established four characteristics which enable us to make wise decisions. It is important to have a certain degree of
                                         <span class="q-number-box">31</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-10" data-type="summary_completion" data-q="10" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-10" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         regarding the extent of our knowledge, and to take into account
                                         <span class="q-number-box">32</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-11" data-type="summary_completion" data-q="11" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-11" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         which may not be the same as our own. We should also be able to take a broad
                                         <span class="q-number-box">33</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-12" data-type="summary_completion" data-q="12" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-12" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         of any situation. Another key characteristic is being aware of the likelihood of alterations in the way that people relate to each other.
                                     </p>
 
                                     <p>
                                         Grossmann also believes that it is better to regard scenarios with
                                         <span class="q-number-box">34</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-13" data-type="summary_completion" data-q="13" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-13" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         . By avoiding the first-person perspective, we focus more on
                                         <span class="q-number-box">35</span>
-                                        <input type="text" name="summary_completion-XW16JROLKCFE4BMH-14" data-type="summary_completion" data-q="14" class="q-text" placeholder="">
+                                        <span style="flex: 1;">
+                                            <span class="q-question">
+                                                <select name="summary_completion-XW16JROLKCFE4BMH-14" data-q="1" class="q-dropdown" data-type="summary_completion">
+                                                        <option value=""></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                </select>
+                                            </span>
+                                        </span>
                                         and on other moral ideals, which in turn leads to wiser decision-making.
                                     </p>
                                 </fieldset>
