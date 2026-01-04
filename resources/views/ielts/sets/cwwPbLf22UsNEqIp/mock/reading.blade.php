@@ -1549,7 +1549,7 @@
                 'data' => [
                     'part1' => [
                         'label' => 'Part 1',
-                        'tipe' => ['mh', 'picture_completion', 'matching_information'],
+                        'tipe' => ['matching_information', 'summary_completion', 'two_choices', 'two_choices'],
                         'contents' => [
                             'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.answer',
                             'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.question',
@@ -1557,7 +1557,7 @@
                     ],
                     'part2' => [
                         'label' => 'Part 2',
-                        'tipe' => ['picture_completion', 'tfng', 'oc'],
+                        'tipe' => ['ynng', 'summary_completion', 'oc'],
                         'contents' => [
                             'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.answer',
                             'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.question',
@@ -1565,7 +1565,7 @@
                     ],
                     'part3' => [
                         'label' => 'Part 3',
-                        'tipe' => ['matching_information', 'matching_information', 'summary_completion'],
+                        'tipe' => ['matching_information', 'ynng', 'summary_completion'],
                         'contents' => [
                             'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.answer',
                             'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.question',

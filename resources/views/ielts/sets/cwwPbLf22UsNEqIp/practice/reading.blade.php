@@ -1615,54 +1615,10 @@
             $tabs = [
                 //part 1
                 [
-                    'id' => 'mh',
-                    'tipe' => 'mh',
-                    'title' => 'Matching Headings',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.mh',
-                ],
-                [
-                    'id' => 'picture_completion',
-                    'tipe' => 'picture_completion',
-                    'title' => 'Picture Completion',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.picture_completion',
-                ],
-                [
                     'id' => 'matching_information',
                     'tipe' => 'matching_information',
                     'title' => 'Matching Information',
                     'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.matching_information',
-                ],
-                // part 2
-                [
-                    'id' => 'picture_completion2',
-                    'tipe' => 'picture_completion',
-                    'title' => 'Picture Completion 2',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.picture_completion2',
-                ],
-                [
-                    'id' => 'tfng',
-                    'tipe' => 'tfng',
-                    'title' => 'True/False/Not Given',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.tfng',
-                ],
-                [
-                    'id' => 'oc',
-                    'tipe' => 'oc',
-                    'title' => 'One Choice',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.oc',
-                ],
-                // part 3
-                [
-                    'id' => 'matching_information2',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching Information 2',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.matching_information2',
-                ],
-                [
-                    'id' => 'matching_information3',
-                    'tipe' => 'matching_information',
-                    'title' => 'Matching Information 3',
-                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.matching_information3',
                 ],
                 [
                     'id' => 'summary_completion',
@@ -1670,8 +1626,59 @@
                     'title' => 'Summary Completion',
                     'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.summary_completion',
                 ],
+                [
+                    'id' => 'two_choices',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choices',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.two_choices',
+                ],
+                [
+                    'id' => 'two_choices2',
+                    'tipe' => 'two_choices',
+                    'title' => 'Two Choices 2',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.two_choices2',
+                ],
+                // part 2
+                [
+                    'id' => 'ynng',
+                    'tipe' => 'ynng',
+                    'title' => 'Yes No Not Given',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.ynng',
+                ],
+                [
+                    'id' => 'summary_completion2',
+                    'tipe' => 'summary_completion',
+                    'title' => 'Summary Completion 2',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.summary_completion2',
+                ],
+                [
+                    'id' => 'oc',
+                    'tipe' => 'oc',
+                    'title' => 'One Choice',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.oc',
+                ],
+                [
+                    'id' => 'matching_information2',
+                    'tipe' => 'matching_information',
+                    'title' => 'Matching Information 2',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.matching_information2',
+                ],
+                // part 3
+                [
+                    'id' => 'ynng2',
+                    'tipe' => 'ynng',
+                    'title' => 'Yes No Not Given 2',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.ynng2',
+                ],
+                [
+                    'id' => 'summary_completion3',
+                    'tipe' => 'summary_completion',
+                    'title' => 'Summary Completion 3',
+                    'content' => 'partials.cwwPbLf22UsNEqIp.practice.reading.summary_completion3',
+                ],
             ];
         @endphp
+
         <x-tabs.reading :tabs="$tabs" label="Jenis Soal" active="matching_information" />
     </section>
 

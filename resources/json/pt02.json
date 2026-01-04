@@ -1,58 +1,52 @@
 {
   "reading": {
-    "mh": [
-      "ii",
-      "vii",
-      "v",
-      "i",
-      "iii",
-      "ix"
-    ],
-    "picture_completion": [
-      "[New Zealand, NZ carrageen(s)]",
-      "agar",
-      "seameal",
-      "cough mixtures",
-      "crochet hook",
-      "[leaflets, leaves]",
-      "thorn",
-      "steps"
-    ],
     "matching_information": [
       "B",
-      "C",
-      "A",
-      
-      "A",
-      "D",
-      "C",
+      "F",
       "B",
-      
       "C",
-      "B",
       "D",
       "B",
-      "A",
-      "C"
-    ],
-    "tfng": [
-      "TRUE",
-      "TRUE",
-      "FALSE",
-      "TRUE",
-      "NOT GIVEN",
-      "FALSE"
-    ],
-    "oc": [
-      "C",
-      "D",
-      "F"
+      "E",
+      "A"
     ],
     "summary_completion": [
-      "H",
-      "L",
-      "A",
-      "I"
+      "laziness",
+      "anxious",
+      "threats",
+      "exams",
+      "perfectionists",
+      "guilt",
+      "past",
+      "[judgement call , judgment call]",
+      "strike zone",
+      "countless arguments",
+      "[no shouted disagreemen, no disagreement]",
+      "privatisation policy",
+      "incentives",
+      "permit",
+      "regulatory agency"
+    ],
+    "two_choices": [
+      "[a,c]",
+      "[a,e]"
+    ],
+    "ynng": [
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "YES",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "NO"
+    ],
+    "oc": [
+      "B",
+      "D",
+      "C"
     ]
   },
   "listening": {

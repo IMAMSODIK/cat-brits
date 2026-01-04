@@ -1,6 +1,5 @@
 @props(['tab'])
-
-<div class="x-panel-inner">Content: One Choice</div>
+<div class="x-panel-inner">Content: Yes/No/Not Given</div>
 <div class="reading-section" aria-label="Reading and Questions">
     <div class="reading-grid resizable-grid highlighted-content">
         <article class="passage" aria-label="Reading Passage" tabindex="0">
@@ -85,39 +84,38 @@
         <aside class="qa" aria-label="Questions">
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
-                    <p class="lead"><b>Questions 1-3</b></p>
-                    <p class="lead">
-                        Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.
+                    <h3>Questions 1-6</h3>
+                    <p class="lead">Do the following statements agree with the information given in Reading Passage 1?
+                        In boxes <b>1 - 6</b> on your answer sheet, write
                     </p>
-                    <p><i>Write the correct letter in box on your answer sheet.</i></p>
+                    <ul class="legend">
+                        <li><strong>YES</strong> if the statement agrees with the information
+                        </li>
+                        <li><strong>NO</strong> if the statement contradicts the information
+                        </li>
+                        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
+                    </ul>
                 </fieldset>
-
                 <fieldset class="q-item" data-q="1">
                     <legend class="q-text">
                         <span class="q-number">1</span>
-                        What does the writer suggest about ABS in the fifth paragraph?
+                        When DeJesus first used ABS, he shared decision-making about strikes with it.
                     </legend>
                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="A" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="YES" />
                             <span class="opt-code">A</span>
-                            <span class="opt-label">It is bound to make key decisions that are wrong.</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="B" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="NO" />
                             <span class="opt-code">B</span>
-                            <span class="opt-label">It may reduce some of the appeal of the game.</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="C" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="NOT GIVEN" />
                             <span class="opt-code">C</span>
-                            <span class="opt-label">It will lead to the disappearance of human umpires.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">It may increase calls for the rules of baseball to be
-                                changed.</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>
@@ -125,28 +123,24 @@
                 <fieldset class="q-item" data-q="2">
                     <legend class="q-text">
                         <span class="q-number">2</span>
-                        Morgan Sword says that the introduction of ABS
+                        MLB considered it necessary to amend the size of the strike zone when criticisms were received
+                        from players.
                     </legend>
                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="A" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="YES" />
                             <span class="opt-code">A</span>
-                            <span class="opt-label">was regarded as an experiment without a guaranteed outcome.</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="B" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="NO" />
                             <span class="opt-code">B</span>
-                            <span class="opt-label">was intended to keep up with developments in other sports.</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="C" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="NOT GIVEN" />
                             <span class="opt-code">C</span>
-                            <span class="opt-label">was a response to changing attitudes about the role of sport.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">was an attempt to ensure baseball retained a young audience.</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>
@@ -154,32 +148,100 @@
                 <fieldset class="q-item" data-q="3">
                     <legend class="q-text">
                         <span class="q-number">3</span>
-                        Why does the writer include the views of Noë and Russo?
+                        MLB is keen to justify the money spent on improving the accuracy of ABS’s calculations.
                     </legend>
                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="A" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="YES" />
                             <span class="opt-code">A</span>
-                            <span class="opt-label">to show that attitudes to technology vary widely</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="B" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="NO" />
                             <span class="opt-code">B</span>
-                            <span class="opt-label">to argue that people have unrealistic expectations of sport</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="C" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="NOT GIVEN" />
                             <span class="opt-code">C</span>
-                            <span class="opt-label">to indicate that accuracy is not the same thing as enjoyment</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">to suggest that the number of baseball fans needs to
-                                increase</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>
+
+                <fieldset class="q-item" data-q="4">
+                    <legend class="q-text">
+                        <span class="q-number">4</span>
+                        The hundred-mile-an-hour fastball led to a more exciting style of play.
+                    </legend>
+                    <div class="q-options" role="radiogroup" aria-label="Question 4 options">
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="YES" />
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="NO" />
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="NOT GIVEN" />
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="q-item" data-q="5">
+                    <legend class="q-text">
+                        <span class="q-number">5</span>
+                        The differing proposals for alterations to the baseball bat led to fierce debate on Sword’s
+                        team.
+                    </legend>
+                    <div class="q-options" role="radiogroup" aria-label="Question 5 options">
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="YES" />
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="NO" />
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="NOT GIVEN" />
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="q-item" data-q="6">
+                    <legend class="q-text">
+                        <span class="q-number">6</span>
+                        ABS makes changes to the shape of the strike zone feasible.
+                    </legend>
+                    <div class="q-options" role="radiogroup" aria-label="Question 6 options">
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-6" value="YES" />
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-6" value="NO" />
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="cwwPbLf22UsNEqIp-6" value="NOT GIVEN" />
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
 
                 <div style="text-align: center;">
                     <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">
