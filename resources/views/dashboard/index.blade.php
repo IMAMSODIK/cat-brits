@@ -294,7 +294,7 @@
                                         class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
                                         <h4 class="mb-0">New User</h4>
                                         <span class="text-primary cursor-pointer">
-                                            <button class="btn btn-primary">View All</button>
+                                            <button onclick="location.href='/students-verification'" class="btn btn-primary">View All</button>
                                         </span>
                                     </div>
                                     <div class="card-body pt-0">
@@ -319,17 +319,6 @@
                                                                         <div id="dropdownMenuButtonicon31"
                                                                             data-bs-toggle="dropdown" aria-expanded="false"
                                                                             role="menu">
-                                                                            <svg class="invoice-icon">
-                                                                                <use
-                                                                                    href="{{ asset('dashboard_assets/assets/svg/icon-sprite.svg#more-vertical') }}">
-                                                                                </use>
-                                                                            </svg>
-                                                                        </div>
-                                                                        <div class="dropdown-menu dropdown-menu-end"
-                                                                            aria-labelledby="dropdownMenuButtonicon31">
-                                                                            <a href="/students-verification"><span
-                                                                                    class="dropdown-item"
-                                                                                    style="color: black">Details </span></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -349,7 +338,6 @@
                                 <div class="card height-equal">
                                     <div class="card-header card-no-border d-flex justify-content-between align-items-center">
                                         <h4 class="mb-0">Student Activity</h4>
-                                        <a href="#" class="btn btn-primary btn-sm">View All</a>
                                     </div>
 
                                     <div class="card-body pt-0">
@@ -542,10 +530,6 @@
                                                                         &nbsp; • &nbsp;
                                                                         Number {{ $v->no_soal }}</small>
                                                                 </p>
-
-                                                                <button class="btn btn-sm btn-primary mt-2">
-                                                                    <i class="fas fa-play-circle"></i> Review and Correct
-                                                                </button>
                                                             </div>
                                                         </div>
 
@@ -613,12 +597,6 @@
                                                                         &nbsp; Number
                                                                         {{ $w->no_soal }}</small>
                                                                 </p>
-
-                                                                <!-- BUTTON -->
-                                                                <button class="btn btn-sm btn-primary mt-2">
-                                                                    <i class="fas fa-edit"></i>
-                                                                    Review & Correct Writing
-                                                                </button>
 
                                                             </div>
                                                         </div>

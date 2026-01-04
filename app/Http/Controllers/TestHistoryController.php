@@ -95,9 +95,20 @@ class TestHistoryController extends Controller
                 return back()->with('error', 'User not found');
             }
 
+            $summary = TestHistory::where('student_id', $r->id)
+                ->where('tipe_test', 'mock')
+                ->selectRaw("
+                    COALESCE(COUNT(CASE WHEN kategori = 'reading' THEN 1 END), 0) AS reading_attempt,
+                    COALESCE(COUNT(CASE WHEN kategori = 'listening' THEN 1 END), 0) AS listening_attempt,
+                    COALESCE(AVG(CASE WHEN kategori = 'reading' THEN score_conversion END), 0) AS reading_avg,
+                    COALESCE(AVG(CASE WHEN kategori = 'listening' THEN score_conversion END), 0) AS listening_avg
+                ")
+                ->first();
+
             $data = [
                 'pageTitle' => 'Detail Student',
-                'user' => $user
+                'user' => $user,
+                'summary' => $summary
             ];
 
             return view('history.detail', $data);

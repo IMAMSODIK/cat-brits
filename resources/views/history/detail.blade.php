@@ -22,149 +22,185 @@
     </div>
     <!-- Container-fluid starts-->
     <div class="container-fluid">
-        <div class="user-profile">
+        <div class="edit-profile">
             <div class="row">
-                <!-- user profile first-style start-->
-                <div class="col-sm-12">
-                    <div class="card hovercard text-center">
-                        <div class="cardheader"></div>
-                        <div class="user-image">
-                            @if ($user->foto)
-                                <div class="avatar">
-                                    <img src="{{ asset('storage') . '/' . $user->foto }}" alt="Profile Picture">
-                                </div>
-                            @else
-                                <div class="avatar">
-                                    <img src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
-                                </div>
-                            @endif
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4 order-sm-1 order-xl-0">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-envelope"></i>   Email</h6>
-                                                <span>{{ $user->email }}</span>
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-2">
+                                    <div class="profile-title">
+                                        <div class="media">
+                                            @if ($user->foto)
+                                                <img class="img-70 rounded-circle" src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
+                                            @else
+                                                <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                            @endif
+
+                                            <div class="media-body">
+                                                <h5 class="mb-1">{{ $user->name }}</h5>
+                                                <p>{{ ucfirst($user->role) }}</p>
                                             </div>
                                         </div>
-                                        {{-- <div class="col-md-6">
-                                            <div class="ttl-info text-start">
-                                                <h6><i class="fa fa-calendar"></i>   BOD</h6><span>02 January 1988</span>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
-                                    <div class="user-designation">
-                                        <div class="title"><a target="_blank" href="">{{ $user->name }}</a></div>
-                                        <div class="desc">{{ $user->role }}</div>
-                                    </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email-Address</label>
+                                    <input class="form-control" readonly value="{{ $user->email }}">
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-xl-8">
+                    <form class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Mock Test Statistics</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card o-hidden small-widget">
+                                        <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Reading</span>
+                                            <div class="project-details"> 
+                                                <div class="project-counter"> 
+                                                    <h2 class="f-w-600">{{ number_format($summary->reading_avg, 2) }}</h2><small> / {{ $summary->reading_attempt }} Attempts</small>
+                                                </div>
+                                            </div>
+                                            <ul class="bubbles">
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div class="row">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Student Test History</h4>
-                        <p class="mt-1 f-m-light">
-                            View a student's complete test history, including both practice sessions and mock tests. 
-                            Use the <code>.nav-link</code> with the <code>.active</code> class to navigate between categories.
-                        </p>
-                    </div>
-                    <div class="card-body">
-                        <ul class="nav nav-tabs border-tab border-0 mb-0 nav-danger" id="topline-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active nav-border pt-0 txt-danger nav-danger" id="topline-top-user-tab" data-bs-toggle="tab" href="#topline-top-user" role="tab" aria-controls="topline-top-user" aria-selected="true">
-                                    <i class="icofont icofont-file-document"></i>Practice
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link nav-border txt-danger nav-danger" id="topline-top-review-tab" data-bs-toggle="tab" href="#topline-top-review" role="tab" aria-controls="topline-top-review" aria-selected="false" tabindex="-1">
-                                    <i class="icofont icofont-star"></i>Mock Test
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="topline-tabContent">
-                            <div class="tab-pane fade show active" id="topline-top-user" role="tabpanel"
-                                aria-labelledby="topline-top-user-tab">
-                                <div class="card-body px-0 pb-0">
-                                    <div class="user-content">
-                                        <div class="table-responsive custom-scrollbar">
-                                            <table class="table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Country</th>
-                                                        <th scope="col">Contact No</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Neha</td>
-                                                        <td>India </td>
-                                                        <td>5698741236</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacklin</td>
-                                                        <td>Thailand</td>
-                                                        <td>7800030320</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                <div class="col-6">
+                                    <div class="card o-hidden small-widget">
+                                        <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Listening</span>
+                                            <div class="project-details"> 
+                                                <div class="project-counter"> 
+                                                    <h2 class="f-w-600">{{ number_format($summary->listening_avg, 2) }}</h2><small> / {{ $summary->listening_attempt }} Attempts</small>
+                                                </div>
+                                            </div>
+                                            <ul class="bubbles">
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                                <li class="bubble"></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="topline-top-review" role="tabpanel"
-                                aria-labelledby="topline-top-review-tab">
-                                <div class="card-body px-0 pb-0">
-                                    <div class="user-header pb-2">
-                                        <h6 class="fw-bold">Review:</h6>
-                                    </div>
-                                    <div class="user-content">
-                                        <div class="table-responsive custom-scrollbar">
-                                            <table class="table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Country</th>
-                                                        <th scope="col">Rating </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Neha</td>
-                                                        <td>India </td>
-                                                        <td> <i class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Irfan</td>
-                                                        <td>India</td>
-                                                        <td> <i class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i><i
-                                                                class="ico-color icofont icofont-star"></i></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Add projects And Upload</h4>
+                            <div class="card-options"><a class="card-options-collapse" href="#"
+                                    data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a
+                                    class="card-options-remove" href="#" data-bs-toggle="card-remove"><i
+                                        class="fe fe-x"></i></a></div>
+                        </div>
+                        <div class="table-responsive add-project custom-scrollbar">
+                            <table class="table card-table table-vcenter text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a class="text-inherit" href="#">Untrammelled prevents </a></td>
+                                        <td>28 May 2018</td>
+                                        <td><span class="status-icon bg-success"></span> Completed</td>
+                                        <td>$56,908</td>
+                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
+                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
+                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
+                                                class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
+                                        <td>12 June 2018</td>
+                                        <td><span class="status-icon bg-danger"></span> On going</td>
+                                        <td>$45,087</td>
+                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
+                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
+                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
+                                                class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
+                                        <td>12 July 2018</td>
+                                        <td><span class="status-icon bg-warning"></span> Pending</td>
+                                        <td>$60,123</td>
+                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
+                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
+                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
+                                                class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
+                                        <td>14 June 2018</td>
+                                        <td><span class="status-icon bg-warning"></span> Pending</td>
+                                        <td>$70,435</td>
+                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
+                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
+                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
+                                                class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="text-inherit" href="#">Untrammelled prevents</a></td>
+                                        <td>25 June 2018</td>
+                                        <td><span class="status-icon bg-success"></span> Completed</td>
+                                        <td>$15,987</td>
+                                        <td class="text-end"><a class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-primary btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-pencil"></i> Edit</a><a class="icon"
+                                                href="javascript:void(0)"></a><a class="btn btn-transparent btn-sm"
+                                                href="javascript:void(0)"><i class="fa fa-link"></i> Update</a><a
+                                                class="icon" href="javascript:void(0)"></a><a
+                                                class="btn btn-danger btn-sm" href="javascript:void(0)"><i
+                                                    class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

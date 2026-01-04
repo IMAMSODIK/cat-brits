@@ -21,4 +21,17 @@ class ProfileController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
         }
     }
+
+    public function profilePublic($id){
+        try {
+            $data = [
+                'pageTitle' => "Profile",
+                'data' => User::find($id)
+            ];
+
+            return view('profile.index_public', $data);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat memuat data.');
+        }
+    }
 }

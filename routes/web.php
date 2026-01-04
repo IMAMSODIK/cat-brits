@@ -128,6 +128,9 @@ Route::middleware(['auth'])->group(function () {
     Route::redirect('/ge', '/coming-soon');
     Route::redirect('/sat', '/coming-soon');
 
+    // profile
+    Route::get('/profile/{id}', [ProfileController::class, 'profilePublic']);
+
     Route::get('/coming-soon', function(){
         return view('pages.coming_soon');
     });
