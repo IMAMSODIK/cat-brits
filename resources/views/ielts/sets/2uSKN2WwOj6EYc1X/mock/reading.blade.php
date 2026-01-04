@@ -1545,30 +1545,30 @@
         @php
             $tabs = [
                 'kategori' => 'reading',
-                'id' => 'cwwPbLf22UsNEqIp',
+                'id' => '2uSKN2WwOj6EYc1X',
                 'data' => [
                     'part1' => [
                         'label' => 'Part 1',
                         'tipe' => ['mh', 'picture_completion', 'matching_information'],
                         'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.question',
+                            'answer' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part1.answer',
+                            'question' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part1.question',
                         ],
                     ],
                     'part2' => [
                         'label' => 'Part 2',
                         'tipe' => ['picture_completion', 'tfng', 'oc'],
                         'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.question',
+                            'answer' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part2.answer',
+                            'question' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part2.question',
                         ],
                     ],
                     'part3' => [
                         'label' => 'Part 3',
                         'tipe' => ['matching_information', 'matching_information', 'summary_completion'],
                         'contents' => [
-                            'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.answer',
-                            'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part3.question',
+                            'answer' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part3.answer',
+                            'question' => 'partials.2uSKN2WwOj6EYc1X.mock.reading.part3.question',
                         ],
                     ],
                 ],
@@ -2179,7 +2179,7 @@
             //             type: 'POST',
             //             data: {
             //                 _token: $('meta[name="csrf-token"]').attr('content'),
-            //                 set_id: 'cwwPbLf22UsNEqIp',
+            //                 set_id: '2uSKN2WwOj6EYc1X',
             //                 kategori: 'reading',
             //                 answers: results,
             //                 tipe_test: 'practice'

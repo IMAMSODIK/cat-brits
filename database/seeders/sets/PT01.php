@@ -63,10 +63,10 @@ class PT01 extends Seeder
                     "F"
                 ],
                 "summary_completion" => [
-                    "H",
-                    "L",
-                    "A",
-                    "I"
+                    "Mesopotamia",
+                    "Clay tablets",
+                    "Cuneiform",
+                    "abstract"
                 ]
 
             ]
