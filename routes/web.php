@@ -131,11 +131,8 @@ Route::middleware(['auth'])->group(function () {
     Route::redirect('/ge', '/coming-soon');
     Route::redirect('/sat', '/coming-soon');
 
-    Route::redirect('/test-correction', '/coming-soon');
-    Route::redirect('/history', '/coming-soon');
-
-    Route::redirect('/test-correction', '/coming-soon');
-    Route::redirect('/history', '/coming-soon');
+    // Route::redirect('/test-correction', '/coming-soon');
+    // Route::redirect('/history', '/coming-soon');
 
 
     Route::get('/coming-soon', function () {
