@@ -102,7 +102,7 @@
                     <p>According to the information in the passage, which <b>THREE</b> of the following features are
                         probably common to both New Caledonian crows and human beings?</i>
                     </p>
-                    <ol>
+                    <ol type="A">
                         <li>keeping the same mate for life</li>
                         <li>having few natural predators</li>
                         <li>having a bias to the right when working</li>
@@ -122,6 +122,10 @@
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
                         </select>
                     </legend>
                 </fieldset>
@@ -134,6 +138,10 @@
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
                         </select>
                     </legend>
                 </fieldset>
@@ -146,6 +154,10 @@
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
                         </select>
                     </legend>
                 </fieldset>

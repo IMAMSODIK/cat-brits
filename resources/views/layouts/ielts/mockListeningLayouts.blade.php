@@ -2842,7 +2842,7 @@
                             let correctAnswer = data.correct || '';
                             let userAnswer = data.user || '';
                             if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                            if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                            if (!correctAnswer) correctAnswer = '';
 
                             tableRows += `
                                 <tr>
@@ -3012,7 +3012,7 @@
                             let correctAnswer = data.correct || '';
                             let userAnswer = data.user || '';
                             if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                            if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+                            if (!correctAnswer) correctAnswer = '';
 
                             tableRows += `
                                 <tr>
