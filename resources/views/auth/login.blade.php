@@ -71,7 +71,7 @@
 
         <div class="form-section">
             <h2 class="title">
-                <img src="{{ asset('own_assets/logo/logo.png') }}" alt="" width="20%">
+                <img src="{{ asset('own_assets/logo/logo.png') }}" alt="" width="40%">
             </h2>
             <div class="tabs">
                 <div class="tab active" onclick="switchTab('login')">Student Login</div>
