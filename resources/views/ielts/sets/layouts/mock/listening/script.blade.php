@@ -1106,7 +1106,6 @@
         let results = [];
 
         $('.q-item, .q-text, .q-list').each(function() {
-            // Skip jika elemen ini berada di dalam .q-list lain (menghindari duplikasi)
             if ($(this).closest('.q-list').length && !$(this).is('.q-list')) return;
 
             const type = $(this).data('type');
@@ -1118,8 +1117,6 @@
             let answer = null;
 
             switch (type) {
-
-                // ========================== RADIO ==========================
                 case 'tfng':
                 case 'oc':
                 case 'ynng': {
@@ -1138,18 +1135,16 @@
                     break;
                 }
 
-                // ========================== TEXT INPUT ==========================
                 case 'sa':
                 case 'tc':
                 case 'fc_completion':
+                case 'form_completion':
                 case 'nc': {
 
                     if ($(this).is('input[type="text"]')) {
-                        // ✅ q-text langsung
                         name = $(this).attr('name');
                         answer = $(this).val();
                     } else {
-                        // ✅ container
                         const inp = $(this).find('input[type="text"]');
                         if (inp.length > 0) {
                             name = inp.attr('name');
@@ -1159,8 +1154,6 @@
 
                     break;
                 }
-
-                // ========================== TWO CHECKBOX ==========================
                 case 'two_choices': {
 
                     const first = $(this).find('input[type="checkbox"]').first();
@@ -1172,11 +1165,8 @@
                         return $(this).val();
                     }).get();
 
-                    // jika jawaban kosong → answer = []
                     break;
                 }
-
-                // ========================== SELECT ==========================
                 case 'mh':
                 case 'mse':
                 case 'map_labeling':
@@ -1364,6 +1354,7 @@
                 case 'sa':
                 case 'tc':
                 case 'fc_completion':
+                case 'form_completion':
                 case 'nc': {
 
                     if ($(this).is('input[type="text"]')) {
