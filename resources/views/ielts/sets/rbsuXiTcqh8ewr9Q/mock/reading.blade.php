@@ -1545,33 +1545,33 @@
         @php
             $tabs = [
                 'kategori' => 'reading',
-                "id" => "rbsuXiTcqh8ewr9Q",
-                "data" => [
-                    "part1" => [
-                        "label" => "Part 1",
-                        "tipe" => ["tfng", "nc"],
-                        "contents" => [
-                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.answer",
-                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.question"
+                'id' => 'rbsuXiTcqh8ewr9Q',
+                'data' => [
+                    'part1' => [
+                        'label' => 'Part 1',
+                        'tipe' => ['tfng', 'nc'],
+                        'contents' => [
+                            'answer' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.answer',
+                            'question' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part1.question',
                         ],
                     ],
-                    "part2" => [
-                        "label" => "Part 2",
-                        "tipe" => ["matching_information", "two_choices", "two_choices", "summary_completion"],
-                        "contents" => [
-                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.answer",
-                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.question"
-                        ]
+                    'part2' => [
+                        'label' => 'Part 2',
+                        'tipe' => ['matching_information', 'two_choices', 'two_choices', 'summary_completion'],
+                        'contents' => [
+                            'answer' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.answer',
+                            'question' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part2.question',
+                        ],
                     ],
-                    "part3" => [
-                        "label" => "Part 3",
-                        "tipe" => ["oc", "summary_completion", "ynng"],
-                        "contents" => [
-                            "answer" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.answer",
-                            "question" => "partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.question",
-                        ]
-                    ]
-                ]
+                    'part3' => [
+                        'label' => 'Part 3',
+                        'tipe' => ['oc', 'summary_completion', 'ynng'],
+                        'contents' => [
+                            'answer' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.answer',
+                            'question' => 'partials.rbsuXiTcqh8ewr9Q.mock.reading.part3.question',
+                        ],
+                    ],
+                ],
             ];
         @endphp
         <x-tabs.mock :tabs="$tabs" />
@@ -1657,8 +1657,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
     <script>
         function confirmExit() {
@@ -1667,21 +1667,76 @@
             }
         }
 
-        let scoreMap = [
-            { min: 39, max: 40, score: 9.0 },
-            { min: 37, max: 38, score: 8.5 },
-            { min: 35, max: 36, score: 8.0 },
-            { min: 33, max: 34, score: 7.5 },
-            { min: 30, max: 32, score: 7.0 },
-            { min: 27, max: 29, score: 6.5 },
-            { min: 23, max: 26, score: 6.0 },
-            { min: 19, max: 22, score: 5.5 },
-            { min: 15, max: 18, score: 5.0 },
-            { min: 13, max: 14, score: 4.5 },
-            { min: 10, max: 12, score: 4.0 },
-            { min: 8, max: 9, score: 3.5 },
-            { min: 6, max: 7, score: 3.0 },
-            { min: 4, max: 5, score: 2.5 }
+        let scoreMap = [{
+                min: 39,
+                max: 40,
+                score: 9.0
+            },
+            {
+                min: 37,
+                max: 38,
+                score: 8.5
+            },
+            {
+                min: 35,
+                max: 36,
+                score: 8.0
+            },
+            {
+                min: 33,
+                max: 34,
+                score: 7.5
+            },
+            {
+                min: 30,
+                max: 32,
+                score: 7.0
+            },
+            {
+                min: 27,
+                max: 29,
+                score: 6.5
+            },
+            {
+                min: 23,
+                max: 26,
+                score: 6.0
+            },
+            {
+                min: 19,
+                max: 22,
+                score: 5.5
+            },
+            {
+                min: 15,
+                max: 18,
+                score: 5.0
+            },
+            {
+                min: 13,
+                max: 14,
+                score: 4.5
+            },
+            {
+                min: 10,
+                max: 12,
+                score: 4.0
+            },
+            {
+                min: 8,
+                max: 9,
+                score: 3.5
+            },
+            {
+                min: 6,
+                max: 7,
+                score: 3.0
+            },
+            {
+                min: 4,
+                max: 5,
+                score: 2.5
+            }
         ];
 
         function convertScore(correctCount) {
@@ -1695,7 +1750,6 @@
     </script>
 
     <script>
-
         function showModal(title = "Hasil Jawaban Anda") {
             $("#modalScoreTitle").text(title);
             $("#resultModal").addClass("show");
@@ -1707,7 +1761,7 @@
             $("body").css("overflow", "auto");
 
             // Pastikan modal benar-benar tersembunyi setelah animasi
-            setTimeout(function () {
+            setTimeout(function() {
                 $("#resultModal").hide();
             }, 300);
         }
@@ -1718,40 +1772,44 @@
             location.reload()
         }
 
-        $(document).on("click", ".modal-close, .btn-secondary", function () {
+        $(document).on("click", ".modal-close, .btn-secondary", function() {
             closeModal();
         });
 
-        $(document).on("click", function (e) {
+        $(document).on("click", function(e) {
             if (e.target.id === "resultModal") {
                 closeModal();
             }
         });
 
-        $(document).on("keydown", function (e) {
+        $(document).on("keydown", function(e) {
             if (e.key === "Escape") {
                 closeModal();
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#resultModal").removeClass("show").hide();
         });
     </script>
 
     <script>
-        $(document).ready(function () {
-            $(document).on('click', '#doneBtn', function (e) {
+        $(document).ready(function() {
+            $(document).on('click', '#doneBtn', function(e) {
                 e.preventDefault();
 
                 const data = [];
-                let prevData = { name: null, index: 0, answer: null };
+                let prevData = {
+                    name: null,
+                    index: 0,
+                    answer: null
+                };
                 const element = $('.qa-body');
 
                 element
                     .find('input, textarea, select, checkbox, radio')
                     .not(':disabled')
-                    .each(function (index, elem) {
+                    .each(function(index, elem) {
                         const name = $(this).attr('name');
                         const type = $(this).attr('type');
                         let value = null;
@@ -1783,7 +1841,11 @@
                                 name: name,
                                 answer: type === 'checkbox' ? `[${value}]` : value
                             });
-                            prevData = { name: name, index: prevData.index + 1, answer: value }
+                            prevData = {
+                                name: name,
+                                index: prevData.index + 1,
+                                answer: value
+                            }
                         }
                     });
 
@@ -1797,7 +1859,7 @@
                         data: data,
                         kategori: @json($tabs['kategori']),
                     },
-                    success: function (response) {
+                    success: function(response) {
                         $("#try-again").css('display', '');
                         $("#doneBtn").css('display', 'none');
                         if (response.status === "ok") {
@@ -1805,10 +1867,10 @@
                             let total = Object.keys(response.results).length;
                             let tableRows = '';
 
-                            $.each(response.results, function (key, data) {
+                            $.each(response.results, function(key, data) {
                                 const index = key.split('-')[1];
                                 const status = data.status || '';
-                                const user = data.user || 'NOT GIVEN';
+                                const user = data.user || '';
                                 const correct = data.correct || '';
 
                                 let isCorrect = status === 'correct';
@@ -1836,11 +1898,14 @@
                             let percentage = (correctCount / total) * 100;
                             let scoreCircle = $(".score-circle");
                             if (percentage >= 80) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #27ae60, #2ecc71)");
                             } else if (percentage >= 60) {
-                                scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #f39c12, #e67e22)");
                             } else {
-                                scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+                                scoreCircle.css("background",
+                                    "linear-gradient(135deg, #e74c3c, #c0392b)");
                             }
 
                             $("#resultsTableBody").html(tableRows);
@@ -1852,8 +1917,10 @@
                         }
 
                     },
-                    error: function (xhr) {
-                        const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
+                    error: function(xhr) {
+                        const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr
+                            .responseJSON.message :
+                            'An error occurred while submitting answers.';
                         alert(errorMsg);
                         console.error(xhr.responseText);
                     }
@@ -1864,98 +1931,105 @@
     </script>
 
     <script>
+        (function() {
+            let remaining = 0;
+            let t = null;
+            const el = document.getElementById('timeText');
+            const wrap = document.getElementById('timer');
 
-            (function () {
-                let remaining = 0;
-                let t = null;
-                const el = document.getElementById('timeText');
-                const wrap = document.getElementById('timer');
+            function format(mmss) {
+                const m = Math.floor(mmss / 60);
+                const s = mmss % 60;
+                return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+            }
 
-                function format(mmss) {
-                    const m = Math.floor(mmss / 60);
-                    const s = mmss % 60;
-                    return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-                }
+            function tick() {
+                if (remaining <= 0) {
+                    clearInterval(t);
+                    t = null;
+                    el.textContent = '00:00';
+                    wrap.classList.add('danger');
+                    document.getElementById('doneBtn').disabled = true;
+                    document.getElementById('doneBtn').style.opacity = 0.7;
+                    document.getElementById('doneBtn').style.cursor = 'not-allowed';
 
-                function tick() {
-                    if (remaining <= 0) {
-                        clearInterval(t);
-                        t = null;
-                        el.textContent = '00:00';
-                        wrap.classList.add('danger');
-                        document.getElementById('doneBtn').disabled = true;
-                        document.getElementById('doneBtn').style.opacity = 0.7;
-                        document.getElementById('doneBtn').style.cursor = 'not-allowed';
+                    const data = [];
+                    let prevData = {
+                        name: null,
+                        index: 0,
+                        answer: null
+                    };
+                    const element = $('.qa-body');
 
-                        const data = [];
-                        let prevData = { name: null, index: 0, answer: null };
-                        const element = $('.qa-body');
+                    element
+                        .find('input, textarea, select, checkbox, radio')
+                        .not(':disabled')
+                        .each(function(index, elem) {
+                            const name = $(this).attr('name');
+                            const type = $(this).attr('type');
+                            let value = null;
 
-                        element
-                            .find('input, textarea, select, checkbox, radio')
-                            .not(':disabled')
-                            .each(function (index, elem) {
-                                const name = $(this).attr('name');
-                                const type = $(this).attr('type');
-                                let value = null;
-
-                                if (type === 'radio') {
-                                    if ($(this).is(':checked')) {
-                                        value = $(this).val();
-                                    }
-                                } else if (type === 'checkbox') {
-                                    if ($(this).is(':checked')) {
-                                        value = $(this).val();
-                                    }
-                                } else {
+                            if (type === 'radio') {
+                                if ($(this).is(':checked')) {
                                     value = $(this).val();
                                 }
-
-
-                                if (prevData.name === name) {
-                                    if (value != null) {
-                                        if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
-                                            data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
-                                        } else {
-                                            data[prevData.index - 1].answer = value;
-                                        }
-                                        prevData.answer = value;
-                                    }
-                                } else {
-                                    data.push({
-                                        name: name,
-                                        answer: type === 'checkbox' ? `[${value}]` : value
-                                    });
-                                    prevData = { name: name, index: prevData.index + 1, answer: value }
+                            } else if (type === 'checkbox') {
+                                if ($(this).is(':checked')) {
+                                    value = $(this).val();
                                 }
-                            });
+                            } else {
+                                value = $(this).val();
+                            }
 
-                        $.ajax({
-                            url: "/ielts/mock-test/check-v2",
-                            type: "POST",
-                            data: {
-                                _token: $('meta[name="csrf-token"]').attr('content'),
-                                data: data,
-                                kategori: @json($tabs['kategori']),
-                            },
-                            success: function (response) {
-                                $("#try-again").css('display', '');
-                                $("#doneBtn").css('display', 'none');
-                                if (response.status === "ok") {
-                                    let correctCount = 0;
-                                    let total = Object.keys(response.results).length;
-                                    let tableRows = '';
 
-                                    $.each(response.results, function (key, data) {
-                                        const index = key.split('-')[1];
-                                        const status = data.status || '';
-                                        const user = data.user || 'NOT GIVEN';
-                                        const correct = data.correct || '';
+                            if (prevData.name === name) {
+                                if (value != null) {
+                                    if (data[prevData.index - 1].answer != "" && type === 'checkbox') {
+                                        data[prevData.index - 1].answer = `['${prevData.answer}', '${value}']`;
+                                    } else {
+                                        data[prevData.index - 1].answer = value;
+                                    }
+                                    prevData.answer = value;
+                                }
+                            } else {
+                                data.push({
+                                    name: name,
+                                    answer: type === 'checkbox' ? `[${value}]` : value
+                                });
+                                prevData = {
+                                    name: name,
+                                    index: prevData.index + 1,
+                                    answer: value
+                                }
+                            }
+                        });
 
-                                        let isCorrect = status === 'correct';
-                                        if (isCorrect) correctCount++;
+                    $.ajax({
+                        url: "/ielts/mock-test/check-v2",
+                        type: "POST",
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            data: data,
+                            kategori: @json($tabs['kategori']),
+                        },
+                        success: function(response) {
+                            $("#try-again").css('display', '');
+                            $("#doneBtn").css('display', 'none');
+                            if (response.status === "ok") {
+                                let correctCount = 0;
+                                let total = Object.keys(response.results).length;
+                                let tableRows = '';
 
-                                        tableRows += `
+                                $.each(response.results, function(key, data) {
+                                    const index = key.split('-')[1];
+                                    const status = data.status || '';
+                                    const user = data.user || '';
+                                    const correct = data.correct || '';
+
+                                    let isCorrect = status === 'correct';
+                                    if (isCorrect) correctCount++;
+
+                                    tableRows += `
                                         <tr>
                                             <td><strong>${index}</strong></td>
                                             <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${user}</span></td>
@@ -1969,215 +2043,219 @@
                                         </tr>
                                     `;
 
-                                    })
-                                    // Update skor di UI
-                                    $("#scoreDisplay").text(`${correctCount}/${total}`);
-                                    $("#scorePercentage").text(`${convertScore(correctCount)}`);
+                                })
+                                // Update skor di UI
+                                $("#scoreDisplay").text(`${correctCount}/${total}`);
+                                $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
-                                    let percentage = (correctCount / total) * 100;
-                                    let scoreCircle = $(".score-circle");
-                                    if (percentage >= 80) {
-                                        scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                                    } else if (percentage >= 60) {
-                                        scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                                    } else {
-                                        scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                                    }
-
-                                    $("#resultsTableBody").html(tableRows);
-
-                                    // tampilkan modal hasil
-                                    showModal(`Score: ${correctCount} / ${total}`);
+                                let percentage = (correctCount / total) * 100;
+                                let scoreCircle = $(".score-circle");
+                                if (percentage >= 80) {
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #27ae60, #2ecc71)");
+                                } else if (percentage >= 60) {
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #f39c12, #e67e22)");
                                 } else {
-                                    alert('Terjadi kesalahan: ' + response.message);
+                                    scoreCircle.css("background",
+                                        "linear-gradient(135deg, #e74c3c, #c0392b)");
                                 }
-                            },
-                            error: function (xhr) {
-                                const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON.message : 'An error occurred while submitting answers.';
-                                alert(errorMsg);
-                                console.error(xhr.responseText);
+
+                                $("#resultsTableBody").html(tableRows);
+
+                                // tampilkan modal hasil
+                                showModal(`Score: ${correctCount} / ${total}`);
+                            } else {
+                                alert('Terjadi kesalahan: ' + response.message);
                             }
+                        },
+                        error: function(xhr) {
+                            const errorMsg = xhr.responseJSON && xhr.responseJSON.message ? xhr.responseJSON
+                                .message : 'An error occurred while submitting answers.';
+                            alert(errorMsg);
+                            console.error(xhr.responseText);
+                        }
 
-                        });
-                        return;
-                    }
-                    remaining -= 1;
-                    el.textContent = format(remaining);
-                    // Kedipkan danger saat < 60 detik
-                    if (remaining <= 60) {
-                        wrap.classList.add('danger');
-                    }
+                    });
+                    return;
                 }
-
-                function startCountdown(seconds) {
-                    if (t) clearInterval(t);
-                    remaining = Math.max(0, Math.floor(seconds));
-                    el.textContent = format(remaining);
-                    wrap.classList.toggle('danger', remaining <= 60);
-                    document.getElementById('doneBtn').disabled = false;
-                    document.getElementById('doneBtn').style.opacity = 1;
-                    document.getElementById('doneBtn').style.cursor = 'pointer';
-                    t = setInterval(tick, 1000);
+                remaining -= 1;
+                el.textContent = format(remaining);
+                // Kedipkan danger saat < 60 detik
+                if (remaining <= 60) {
+                    wrap.classList.add('danger');
                 }
+            }
 
-                // Public API (opsional)
-                window.CATHeader = {
-                    startCountdown
-                };
+            function startCountdown(seconds) {
+                if (t) clearInterval(t);
+                remaining = Math.max(0, Math.floor(seconds));
+                el.textContent = format(remaining);
+                wrap.classList.toggle('danger', remaining <= 60);
+                document.getElementById('doneBtn').disabled = false;
+                document.getElementById('doneBtn').style.opacity = 1;
+                document.getElementById('doneBtn').style.cursor = 'pointer';
+                t = setInterval(tick, 1000);
+            }
 
-                // Events
-                document.getElementById('infoBtn').addEventListener('click', function () {
-                    // Ganti dengan modal/informasi instruksi Anda
-                    alert(
-                        'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
-                    );
+            // Public API (opsional)
+            window.CATHeader = {
+                startCountdown
+            };
 
-                });
+            // Events
+            document.getElementById('infoBtn').addEventListener('click', function() {
+                // Ganti dengan modal/informasi instruksi Anda
+                alert(
+                    'Instructions:\n- Read the questions carefully\n- The timer runs automatically\n- Click "Finish" to submit'
+                );
+
+            });
 
 
 
 
-                // document.getElementById('doneBtn').addEventListener('click', function () {
-                //     const confirmFinish = confirm('Do you want to end the test now?');
-                //     const form = $('.qa-body')
-                //     if (confirmFinish) {
-                //         let results = [];
+            // document.getElementById('doneBtn').addEventListener('click', function () {
+            //     const confirmFinish = confirm('Do you want to end the test now?');
+            //     const form = $('.qa-body')
+            //     if (confirmFinish) {
+            //         let results = [];
 
-                //         $('.q-item').each(function () {
-                //             const type = $(this).data('type');
-                //             const qnum = $(this).data('q');
+            //         $('.q-item').each(function () {
+            //             const type = $(this).data('type');
+            //             const qnum = $(this).data('q');
 
-                //             if (typeof type === 'undefined') return;
+            //             if (typeof type === 'undefined') return;
 
-                //             let name = null;
-                //             let answer = null;
+            //             let name = null;
+            //             let answer = null;
 
-                //             switch (type) {
-                //                 case 'tfng':
-                //                 case 'oc':
-                //                 case 'ynng':
-                //                     const checked = $(this).find('input[type="radio"]:checked');
-                //                     if (checked.length > 0) {
-                //                         name = checked.attr('name');
-                //                         answer = checked.val();
-                //                     } else {
-                //                         // fallback jika belum dipilih
-                //                         const anyRadio = $(this).find('input[type="radio"]').first();
-                //                         if (anyRadio.length > 0) {
-                //                             name = anyRadio.attr('name');
-                //                         }
-                //                     }
-                //                     break;
+            //             switch (type) {
+            //                 case 'tfng':
+            //                 case 'oc':
+            //                 case 'ynng':
+            //                     const checked = $(this).find('input[type="radio"]:checked');
+            //                     if (checked.length > 0) {
+            //                         name = checked.attr('name');
+            //                         answer = checked.val();
+            //                     } else {
+            //                         // fallback jika belum dipilih
+            //                         const anyRadio = $(this).find('input[type="radio"]').first();
+            //                         if (anyRadio.length > 0) {
+            //                             name = anyRadio.attr('name');
+            //                         }
+            //                     }
+            //                     break;
 
-                //                 case 'sa':
-                //                 case 'tc':
-                //                     const input = $(this).find('input[type="text"]');
-                //                     if (input.length > 0) {
-                //                         name = input.attr('name');
-                //                         answer = input.val();
-                //                     }
-                //                     break;
+            //                 case 'sa':
+            //                 case 'tc':
+            //                     const input = $(this).find('input[type="text"]');
+            //                     if (input.length > 0) {
+            //                         name = input.attr('name');
+            //                         answer = input.val();
+            //                     }
+            //                     break;
 
-                //                 case 'mh':
-                //                 case 'mse':
-                //                     const select = $(this).find('select');
-                //                     if (select.length > 0) {
-                //                         name = select.attr('name');
-                //                         answer = select.val();
-                //                     }
-                //                     break;
-                //             }
+            //                 case 'mh':
+            //                 case 'mse':
+            //                     const select = $(this).find('select');
+            //                     if (select.length > 0) {
+            //                         name = select.attr('name');
+            //                         answer = select.val();
+            //                     }
+            //                     break;
+            //             }
 
-                //             results.push({
-                //                 type: type,
-                //                 name: name,
-                //                 answer: answer || null,
-                //                 question: qnum || null
-                //             });
-                //         });
+            //             results.push({
+            //                 type: type,
+            //                 name: name,
+            //                 answer: answer || null,
+            //                 question: qnum || null
+            //             });
+            //         });
 
-                //         $.ajax({
-                //             url: '/ielts/mock-test/check',
-                //             type: 'POST',
-                //             data: {
-                //                 _token: $('meta[name="csrf-token"]').attr('content'),
-                //                 set_id: 'rbsuXiTcqh8ewr9Q',
-                //                 kategori: 'reading',
-                //                 answers: results,
-                //                 tipe_test: 'practice'
-                //             },
-                //             success: function (response) {
-                //                 $("#try-again").css('display', '');
-                //                 $("#doneBtn").css('display', 'none');
+            //         $.ajax({
+            //             url: '/ielts/mock-test/check',
+            //             type: 'POST',
+            //             data: {
+            //                 _token: $('meta[name="csrf-token"]').attr('content'),
+            //                 set_id: 'rbsuXiTcqh8ewr9Q',
+            //                 kategori: 'reading',
+            //                 answers: results,
+            //                 tipe_test: 'practice'
+            //             },
+            //             success: function (response) {
+            //                 $("#try-again").css('display', '');
+            //                 $("#doneBtn").css('display', 'none');
 
-                //                 if (response.status === 'ok') {
-                //                     let correctCount = 0;
-                //                     let total = Object.keys(response.results).length;
-                //                     let tableRows = '';
-                //                     let questionNumber = 1;
+            //                 if (response.status === 'ok') {
+            //                     let correctCount = 0;
+            //                     let total = Object.keys(response.results).length;
+            //                     let tableRows = '';
+            //                     let questionNumber = 1;
 
-                //                     $.each(response.results, function (key, data) {
-                //                         let isCorrect = data.status === 'correct';
-                //                         if (isCorrect) correctCount++;
+            //                     $.each(response.results, function (key, data) {
+            //                         let isCorrect = data.status === 'correct';
+            //                         if (isCorrect) correctCount++;
 
-                //                         let correctAnswer = data.correct || '';
-                //                         let userAnswer = data.user || '';
-                //                         if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
-                //                         if (!correctAnswer) correctAnswer = 'NOT GIVEN';
+            //                         let correctAnswer = data.correct || '';
+            //                         let userAnswer = data.user || '';
+            //                         if (!correctAnswer && isCorrect) correctAnswer = userAnswer;
+            //                         if (!correctAnswer) correctAnswer = 'NOT GIVEN';
 
-                //                         tableRows += `
-                //                             <tr>
-                //                                 <td><strong>${questionNumber++}</strong></td>
-                //                                 <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
-                //                                 <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
-                //                                 <td>
-                //                                     <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
-                //                                         <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
-                //                                         ${isCorrect ? 'Correct' : 'Wrong'}
-                //                                     </span>
-                //                                 </td>
-                //                             </tr>
-                //                         `;
-                //                     });
+            //                         tableRows += `
+        //                             <tr>
+        //                                 <td><strong>${questionNumber++}</strong></td>
+        //                                 <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
+        //                                 <td><span class="answer-display answer-correct-option">${correctAnswer}</span></td>
+        //                                 <td>
+        //                                     <span class="status-badge ${isCorrect ? 'correct' : 'wrong'}">
+        //                                         <span class="status-icon">${isCorrect ? '✅' : '❌'}</span>
+        //                                         ${isCorrect ? 'Correct' : 'Wrong'}
+        //                                     </span>
+        //                                 </td>
+        //                             </tr>
+        //                         `;
+            //                     });
 
-                //                     // Update skor di UI
-                //                     $("#scoreDisplay").text(`${correctCount}/${total}`);
-                //                     $("#scorePercentage").text(`${convertScore(correctCount)}`);
+            //                     // Update skor di UI
+            //                     $("#scoreDisplay").text(`${correctCount}/${total}`);
+            //                     $("#scorePercentage").text(`${convertScore(correctCount)}`);
 
-                //                     let percentage = (correctCount / total) * 100;
-                //                     let scoreCircle = $(".score-circle");
-                //                     if (percentage >= 80) {
-                //                         scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
-                //                     } else if (percentage >= 60) {
-                //                         scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
-                //                     } else {
-                //                         scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
-                //                     }
+            //                     let percentage = (correctCount / total) * 100;
+            //                     let scoreCircle = $(".score-circle");
+            //                     if (percentage >= 80) {
+            //                         scoreCircle.css("background", "linear-gradient(135deg, #27ae60, #2ecc71)");
+            //                     } else if (percentage >= 60) {
+            //                         scoreCircle.css("background", "linear-gradient(135deg, #f39c12, #e67e22)");
+            //                     } else {
+            //                         scoreCircle.css("background", "linear-gradient(135deg, #e74c3c, #c0392b)");
+            //                     }
 
-                //                     $("#resultsTableBody").html(tableRows);
+            //                     $("#resultsTableBody").html(tableRows);
 
-                //                     // tampilkan modal hasil
-                //                     showModal(`Score: ${correctCount} / ${total}`);
-                //                 } else {
-                //                     alert('Terjadi kesalahan: ' + response.message);
-                //                 }
-                //             },
-                //             error: function (xhr) {
-                //                 console.error(xhr.responseText);
-                //                 alert('Terjadi kesalahan: ' + xhr.status);
-                //             }
-                //         });
-                //     }
-                // });
+            //                     // tampilkan modal hasil
+            //                     showModal(`Score: ${correctCount} / ${total}`);
+            //                 } else {
+            //                     alert('Terjadi kesalahan: ' + response.message);
+            //                 }
+            //             },
+            //             error: function (xhr) {
+            //                 console.error(xhr.responseText);
+            //                 alert('Terjadi kesalahan: ' + xhr.status);
+            //             }
+            //         });
+            //     }
+            // });
 
-                // Mulai countdown (contoh: 15 menit)
-                startCountdown(13 * 60);
-            })();
+            // Mulai countdown (contoh: 15 menit)
+            startCountdown(13 * 60);
+        })();
     </script>
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -2256,7 +2334,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -2303,7 +2381,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -2312,7 +2390,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function (e) {
+                section.addEventListener('click', function(e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -2328,7 +2406,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function (e) {
+                section.addEventListener('change', function(e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -2376,7 +2454,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function (panelEl) {
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -2484,7 +2562,8 @@
             document.addEventListener('click', e => {
                 if (!toolbar.contains(e.target) &&
                     !notePopup.contains(e.target) &&
-                    (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                    (!e.target.classList.contains('highlight') || !e.target.closest(
+                    '.highlighted-content')) &&
                     !window.getSelection().toString()) {
                     hideToolbar();
                     hideNotePopup();
@@ -2543,7 +2622,7 @@
             location.reload();
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');
             const fqList = document.getElementById('fqList');
