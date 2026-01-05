@@ -21,7 +21,7 @@ body {
 /* Untuk mobile - gunakan gambar yang lebih kecil/alternatif */
 @media (max-width: 768px) {
     body {
-        background-image: url(../images/bg-mobile.png); /* File khusus mobile */
+        background-image: url(../images/bg.png); /* File khusus mobile */
         background-size: cover;
     }
     
