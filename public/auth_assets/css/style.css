@@ -9,12 +9,26 @@
 body {
     background-image: url(../images/bg.png);
     background-size: cover;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     background-repeat: no-repeat;
+}
+
+/* Untuk mobile - gunakan gambar yang lebih kecil/alternatif */
+@media (max-width: 768px) {
+    body {
+        background-image: url(../images/bg-mobile.png); /* File khusus mobile */
+        background-size: cover;
+    }
+    
+    /* Atau jika ingin menggunakan gambar yang sama */
+    body {
+        background-size: auto 100%; /* Sesuaikan tinggi dengan viewport */
+    }
 }
 
 /* Container utama dengan efek glassmorphism */
