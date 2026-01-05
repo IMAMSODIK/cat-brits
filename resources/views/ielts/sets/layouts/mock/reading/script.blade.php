@@ -203,7 +203,14 @@
                         case 'nc':
                         case 'sentence_completion':
                         case 'diagram_labeling': {
-                            const input = $(this).find('input[type="text"]');
+                            let input;
+
+                            if ($(this).is('input[type="text"]')) {
+                                input = $(this);
+                            } else {
+                                input = $(this).find('input[type="text"]').first();
+                            }
+
                             if (input.length) {
                                 name = input.attr('name');
                                 answer = input.val() || null;
@@ -408,7 +415,14 @@
                         case 'nc':
                         case 'sentence_completion':
                         case 'diagram_labeling': {
-                            const input = $(this).find('input[type="text"]');
+                            let input;
+
+                            if ($(this).is('input[type="text"]')) {
+                                input = $(this);
+                            } else {
+                                input = $(this).find('input[type="text"]').first();
+                            }
+
                             if (input.length) {
                                 name = input.attr('name');
                                 answer = input.val() || null;
