@@ -76,3 +76,10 @@ dashboard admin
 - change profile
 - design penilain speaking
 - design penilain writing 
+
+
+
+
+
+
+- buat kan saja data-type di practice agar di mocktest tidak repot menambahkannya

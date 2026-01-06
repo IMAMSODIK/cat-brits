@@ -164,8 +164,7 @@
                                                 <img class="img-70 rounded-circle"
                                                     src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
                                             @else
-                                                <img class="img-70 rounded-circle"
-                                                    src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                                                <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
                                             @endif
 
                                             <div class="media-body">

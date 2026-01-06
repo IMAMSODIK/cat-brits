@@ -865,7 +865,7 @@
                                         Yong’s book argues that we should be more tolerant of microbes. Many have a beneficial effect, and only a relatively small number lead to
                                         <span class="q-number-box">1</span>
                                         <span style="flex: 1;">
-                                                <span class="q-question">
+                                            <span class="q-question">
                                                 <select name="XW16JROLKCFE4BMH-6" data-q="1" class="q-dropdown">
                                                         <option value=""></option>
                                                         <option value="A">A</option>
@@ -877,7 +877,7 @@
                                                         <option value="G">G</option>
                                                         <option value="H">H</option>
                                                 </select>
-                                                </span>
+                                            </span>
                                         </span>
                                         . And although it is misleading to think of microbes as ‘friendly’, we should also stop thinking of them as the enemy. In fact, we should accept that our relationship with microbes is one based on
                                         <span class="q-number-box">2</span>

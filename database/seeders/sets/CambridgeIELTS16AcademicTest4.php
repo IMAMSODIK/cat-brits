@@ -104,7 +104,7 @@ class CambridgeIELTS16AcademicTest4 extends Seeder
             "c", "a", "b", "b"
         ];
         $map_labeling = ["C", "F", "A", "I", "E", "H"];
-        $two_choices = ["b", "c", "b", "c"];
+        $two_choices = ["[B, C]", "[B, C]", "[B, C]", "[B, C]"];
         $matching_information = ["c", "f", "d", "e", "b", "a"];
 
         for($i = 1; $i <= count($nc); $i++){

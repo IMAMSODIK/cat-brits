@@ -380,7 +380,7 @@
                             </fieldset>
 
                             <fieldset class="q-item">
-                                <p>Questions 1-10</p>
+                                <p>Questions 1-5</p>
                                 <p><i>Complete the notes below.</i></p>
                                 <p>Write <b>ONE WORD ONLY</b> for each answer.</p>
                             </fieldset>

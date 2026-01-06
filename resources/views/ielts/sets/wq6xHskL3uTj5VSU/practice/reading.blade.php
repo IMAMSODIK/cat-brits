@@ -1747,7 +1747,7 @@
     </script>
 
 
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const floatingQ = document.getElementById('floatingQuestions');
             const fqBody = document.getElementById('fqBody');

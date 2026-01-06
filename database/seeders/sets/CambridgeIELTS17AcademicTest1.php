@@ -99,7 +99,7 @@ class CambridgeIELTS17AcademicTest1 extends Seeder
             "a", "c", "b", "b",
             "a", "b", "b", "a", "c", "c"
         ];
-        $two_choices = ["a", "d", "b", "c", "d", "e"];
+        $two_choices = ["[A, D]", "[A, D]", "[B, C]", "[B, C]", "[D, E]", "[D, E]"];
         $matching_information = ["a", "e", "f", "c"];
 
         for($i = 1; $i <= count($nc); $i++){
