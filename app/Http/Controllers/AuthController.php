@@ -34,7 +34,8 @@ class AuthController extends Controller
         }
 
         $user = User::where('email', $r->email)
-            ->where('status', 1) 
+            ->where('status', 1)
+            ->where('verification_status', 1)
             ->first();
 
         if (!$user) {
@@ -109,13 +110,11 @@ class AuthController extends Controller
             'role' => 'student'
         ]);
 
-        Auth::login($user);
-
         session()->forget(['otp', 'otp_email', 'otp_data']);
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Registration successful!',
+            'message' => 'Registration successful! Please wait for admin verification before you can access your account.',
             'redirect' => '/dashboard'
         ]);
     }

@@ -176,198 +176,195 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            function showLoginError(message) {
-                $('#login-error').removeClass('d-none');
-                $('#login-error-message').text(message);
+        function showLoginError(message) {
+            $('#login-error').removeClass('d-none');
+            $('#login-error-message').text(message);
+        }
+
+        function hideLoginError() {
+            $('#login-error').addClass('d-none');
+            $('#login-error-message').text('');
+        }
+
+        function showRegisterSuccess(message) {
+            hideRegisterError();
+
+            let $successAlert = $('#register-success');
+            if ($successAlert.length === 0) {
+                $successAlert = $(`
+                    <div class="alert alert-success" id="register-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>${message}</span>
+                    </div>
+                `);
+                $('#register-form').prepend($successAlert);
+            } else {
+                $successAlert.find('span').text(message);
+                $successAlert.removeClass('d-none');
             }
 
-            function hideLoginError() {
-                $('#login-error').addClass('d-none');
-                $('#login-error-message').text('');
-            }
+            setTimeout(() => {
+                $successAlert.addClass('d-none');
+            }, 5000);
+        }
 
-            function showRegisterSuccess(message) {
-                hideRegisterError();
+        function showRegisterError(message, errors = {}) {
+            $('#register-error').removeClass('d-none');
+            $('#register-error-message').text(message);
+            const $errorList = $('#register-error-list');
+            $errorList.empty();
 
-                let $successAlert = $('#register-success');
-                if ($successAlert.length === 0) {
-                    $successAlert = $(`
-            <div class="alert alert-success" id="register-success">
-                <i class="fas fa-check-circle me-2"></i>
-                <span>${message}</span>
-            </div>
-        `);
-                    $('#register-form').prepend($successAlert);
-                } else {
-                    $successAlert.find('span').text(message);
-                    $successAlert.removeClass('d-none');
-                }
+            $('.input-error').removeClass('input-error');
+            $('.error-message').remove();
 
-                setTimeout(() => {
-                    $successAlert.addClass('d-none');
-                }, 5000);
-            }
-
-            function showRegisterError(message, errors = {}) {
-                $('#register-error').removeClass('d-none');
-                $('#register-error-message').text(message);
-                const $errorList = $('#register-error-list');
-                $errorList.empty();
-
-                $('.input-error').removeClass('input-error');
-                $('.error-message').remove();
-
-                if (Object.keys(errors).length > 0) {
-                    for (const [field, messages] of Object.entries(errors)) {
-                        messages.forEach(msg => {
-                            $errorList.append(`<li>${msg}</li>`);
-                        });
-
-                        const $input = $(`#register-${field.replace(/_/g, '-')}`);
-                        if ($input.length) {
-                            $input.addClass('input-error');
-
-                            $input.after(
-                                `<div class="error-message">${messages.join(', ')}</div>`
-                            );
-                        }
-                    }
-                }
-            }
-
-            function hideRegisterError() {
-                $('#register-error').addClass('d-none');
-                $('#register-error-message').text('');
-                $('#register-error-list').empty();
-                $('.input-error').removeClass('input-error');
-                $('.error-message').remove();
-            }
-
-            $('#login-submit').click(function(e) {
-                e.preventDefault();
-                hideLoginError();
-
-                const email = $('#login-email').val();
-                const password = $('#login-password').val();
-
-                $.ajax({
-                    url: '/login',
-                    type: 'POST',
-                    data: {
-                        email: email,
-                        password: password,
-                        _token: $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.status === 'success') {
-                            window.location.href = response.redirect;
-                        } else {
-                            showLoginError(response.message);
-                        }
-                    },
-                    error: function(xhr) {
-                        const response = xhr.responseJSON;
-                        if (xhr.status === 422) {
-                            let errorMessages = [];
-                            $.each(response.errors, function(key, value) {
-                                errorMessages = errorMessages.concat(value);
-                            });
-                            showLoginError(errorMessages.join('\n'));
-                        } else if (xhr.status === 401) {
-                            showLoginError(response.message || 'Invalid credentials');
-                        } else {
-                            showLoginError('An error occurred. Please try again.');
-                        }
-                    }
-                });
-            });
-
-            $('#register-form button.btn').click(function(e) {
-                $("#register").prop('disabled', true);
-                $('body').css('cursor', 'wait');
-
-                e.preventDefault();
-                hideRegisterError();
-
-                const name = $('#register-name').val();
-                const email = $('#register-email').val();
-                const password = $('#register-password').val();
-                const confirmPassword = $('#confirm-register-password').val();
-
-                if (password !== confirmPassword) {
-                    showRegisterError('Passwords do not match', {
-                        password: ['Passwords do not match'],
-                        password_confirmation: ['Confirmation passwords do not match']
+            if (Object.keys(errors).length > 0) {
+                for (const [field, messages] of Object.entries(errors)) {
+                    messages.forEach(msg => {
+                        $errorList.append(`<li>${msg}</li>`);
                     });
-                    return;
-                }
 
-                $.ajax({
-                    url: '/register/send-otp',
-                    type: 'POST',
-                    data: {
-                        name: name,
-                        email: email,
-                        password: password,
-                        password_confirmation: confirmPassword,
-                        _token: $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        $("#register").prop('disabled', false);
-                        $('body').css('cursor', 'default');
-                        if (response.status === 'otp_sent') {
-                            $('#otpModal').fadeIn();
-                        } else {
-                            showRegisterError(response.message);
-                        }
-                    },
-                    error: function(xhr) {
-                        $("#register").prop('disabled', false);
-                        $('body').css('cursor', 'default');
-                        const response = xhr.responseJSON;
-                        if (xhr.status === 422) {
-                            showRegisterError(
-                                'Please fix the following errors:',
-                                response.errors
-                            );
-                        } else {
-                            showRegisterError('An error occurred. Please try again.'
-                            );
-                        }
+                    const $input = $(`#register-${field.replace(/_/g, '-')}`);
+                    if ($input.length) {
+                        $input.addClass('input-error');
+
+                        $input.after(
+                            `<div class="error-message">${messages.join(', ')}</div>`
+                        );
                     }
-                });
-            });
-
-            $('input').on('input', function() {
-                const formId = $(this).closest('.form').attr('id');
-                if (formId === 'login-form') {
-                    hideLoginError();
-                } else if (formId === 'register-form') {
-                    hideRegisterError();
                 }
-            });
-
-            function switchTab(tabName) {
-                $('.tab').removeClass('active');
-                $('.form').removeClass('active');
-
-                $(`.tab[onclick="switchTab('${tabName}')"]`).addClass('active');
-                $(`#${tabName}-form`).addClass('active');
-
-                hideLoginError();
-                hideRegisterError();
             }
+        }
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        function hideRegisterError() {
+            $('#register-error').addClass('d-none');
+            $('#register-error-message').text('');
+            $('#register-error-list').empty();
+            $('.input-error').removeClass('input-error');
+            $('.error-message').remove();
+        }
+
+        $('#login-submit').click(function(e) {
+            e.preventDefault();
+            hideLoginError();
+
+            const email = $('#login-email').val();
+            const password = $('#login-password').val();
+
+            $.ajax({
+                url: '/login',
+                type: 'POST',
+                data: {
+                    email: email,
+                    password: password,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        window.location.href = response.redirect;
+                    } else {
+                        showLoginError(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    const response = xhr.responseJSON;
+                    if (xhr.status === 422) {
+                        let errorMessages = [];
+                        $.each(response.errors, function(key, value) {
+                            errorMessages = errorMessages.concat(value);
+                        });
+                        showLoginError(errorMessages.join('\n'));
+                    } else if (xhr.status === 401) {
+                        showLoginError(response.message || 'Invalid credentials');
+                    } else {
+                        showLoginError('An error occurred. Please try again.');
+                    }
                 }
             });
         });
-    </script>
 
-    <script>
+        $('#register-form button.btn').click(function(e) {
+            $("#register").prop('disabled', true);
+            $('body').css('cursor', 'wait');
+
+            e.preventDefault();
+            hideRegisterError();
+
+            const name = $('#register-name').val();
+            const email = $('#register-email').val();
+            const password = $('#register-password').val();
+            const confirmPassword = $('#confirm-register-password').val();
+
+            if (password !== confirmPassword) {
+                showRegisterError('Passwords do not match', {
+                    password: ['Passwords do not match'],
+                    password_confirmation: ['Confirmation passwords do not match']
+                });
+                return;
+            }
+
+            $.ajax({
+                url: '/register/send-otp',
+                type: 'POST',
+                data: {
+                    name: name,
+                    email: email,
+                    password: password,
+                    password_confirmation: confirmPassword,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    $("#register").prop('disabled', false);
+                    $('body').css('cursor', 'default');
+                    if (response.status === 'otp_sent') {
+                        $('#otpModal').fadeIn();
+                        showRegisterSuccess(response.message);
+                    } else {
+                        showRegisterError(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    $("#register").prop('disabled', false);
+                    $('body').css('cursor', 'default');
+                    const response = xhr.responseJSON;
+                    if (xhr.status === 422) {
+                        showRegisterError(
+                            'Please fix the following errors:',
+                            response.errors
+                        );
+                    } else {
+                        showRegisterError('An error occurred. Please try again.'
+                        );
+                    }
+                }
+            });
+        });
+
+        $('input').on('input', function() {
+            const formId = $(this).closest('.form').attr('id');
+            if (formId === 'login-form') {
+                hideLoginError();
+            } else if (formId === 'register-form') {
+                hideRegisterError();
+            }
+        });
+
+        function switchTab(tabName) {
+            $('.tab').removeClass('active');
+            $('.form').removeClass('active');
+
+            $(`.tab[onclick="switchTab('${tabName}')"]`).addClass('active');
+            $(`#${tabName}-form`).addClass('active');
+
+            hideLoginError();
+            hideRegisterError();
+        }
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
         function showOtpModal() {
             $('#otpModal').fadeIn();
 
@@ -425,9 +422,11 @@
                     $('body').css('cursor', 'default');
                     if (response.status === 'success') {
                         hideOtpModal();
-                        setTimeout(() => {
-                            window.location.href = response.redirect;
-                        }, 1500);
+                        $("#register-name").val("");
+                        $("#register-email").val("");
+                        $("#register-password").val("");
+                        $("#confirm-register-password").val("");
+                        showRegisterSuccess(response.message);
                     } else {
                         $('#otp-error').text(response.message).show();
                     }
