@@ -159,3 +159,7 @@ Route::get('/test', function () {
         'activities' => $rawActivities
     ]);
 });
+
+Route::get('/manual-book', function(){
+    return view('pages.manual_book');
+});

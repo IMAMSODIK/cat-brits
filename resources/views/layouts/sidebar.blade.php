@@ -182,6 +182,20 @@
                     </li>
                 @endif
 
+                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+
+                    <li class="sidebar-main-title">
+                    </li>
+
+                    <li class="sidebar-list" style="margin-top: -20px">
+                        <a class="sidebar-link sidebar-title link-nav" href="/manual-book">
+                            <i class="fa fa-book text-white"></i>
+                            <span>Manual Book</span>
+                        </a>
+                    </li>
+
+                @endif
+
             </ul>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
         </div>

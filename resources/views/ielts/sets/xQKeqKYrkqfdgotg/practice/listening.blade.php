@@ -1138,17 +1138,17 @@
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-1" value="A" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-7" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">Doubt that there will ever be a medical cure for loneliness.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-1" value="B" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-7" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">Claim that the link between loneliness and mental health is overstated.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-1" value="C" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-7" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">Express frustration that loneliness is not taken more seriously.</span>
                                     </label>
@@ -1162,17 +1162,17 @@
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-2" value="A" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-8" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">To explain how difficult loneliness can be</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-2" value="B" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-8" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">To highlight a situation that most students will recognise</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-2" value="C" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-8" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">To emphasise that feeling lonely is more common for men than women</span>
                                     </label>
@@ -1186,17 +1186,17 @@
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-3" value="A" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-9" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">It creates a sense of belonging.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-3" value="B" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-9" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">It builds self-confidence.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-3" value="C" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-9" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">It makes people feel more positive.</span>
                                     </label>
@@ -1210,17 +1210,17 @@
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-4" value="A" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-10" value="A" />
                                         <span class="opt-code">A</span>
                                         <span class="opt-label">Similar to loneliness.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-4" value="B" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-10" value="B" />
                                         <span class="opt-code">B</span>
                                         <span class="opt-label">Necessary for mental health.</span>
                                     </label>
                                     <label class="q-option">
-                                        <input type="radio" name="xQKeqKYrkqfdgotg-4" value="C" />
+                                        <input type="radio" name="xQKeqKYrkqfdgotg-10" value="C" />
                                         <span class="opt-code">C</span>
                                         <span class="opt-label">An enjoyable experience.</span>
                                     </label>
