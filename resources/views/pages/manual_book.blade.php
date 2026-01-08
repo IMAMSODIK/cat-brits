@@ -32,7 +32,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            background: #4274B9;
             color: white;
             padding: 25px 20px;
             text-align: center;
@@ -103,7 +103,7 @@
         }
         
         h2 {
-            color: #3a0ca3;
+            color: #4274B9;
             margin: 25px 0 15px;
             padding-bottom: 8px;
             border-bottom: 2px solid #e2e8f0;
@@ -125,11 +125,11 @@
             background-color: #f8fafc;
             padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #4361ee;
+            border-left: 4px solid #4274B9;
         }
         
         .step-number {
-            background-color: #4361ee;
+            background-color: #4274B9;
             color: white;
             width: 32px;
             height: 32px;
@@ -162,7 +162,7 @@
         
         .nav-list a {
             text-decoration: none;
-            color: #4361ee;
+            color: #4274B9;
             display: flex;
             align-items: center;
             padding: 12px 15px;
@@ -358,7 +358,7 @@
     <div class="manual-container">
         <header>
             <div class="logo">
-                <i class="fas fa-rocket"></i>
+                <img src="{{asset('dashboard_assets/assets/images/logo/logo.png')}}" width="15%" alt="">
             </div>
             <h1>Manual Book Aplikasi</h1>
             <p class="subtitle">Panduan lengkap penggunaan aplikasi untuk pengguna</p>
