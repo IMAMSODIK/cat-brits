@@ -11,8 +11,8 @@
 
     <script>
 const qrCode = new QRCodeStyling({
-    width: 300,
-    height: 300,
+    width: 100,
+    height: 100,
     data: "https://pixelionsolution.com",
     image: "https://cat-dev.pixelionsolution.com/own_assets/logo/logo.png", // PATH LOGO
     dotsOptions: {
