@@ -141,23 +141,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/test', function () {
-    $studentId = auth()->user()->id;
-    $end = Carbon::today();
-    $start = $end->copy()->subYear()->startOfDay();
-
-    $rawActivities = DB::table('test_histories')
-        ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
-        ->whereBetween('created_at', [$start, $end])
-        ->groupBy(DB::raw('DATE(created_at)'))
-        ->orderBy('date')
-        ->pluck('total', 'date')
-        ->toArray();
-    dd($rawActivities);
-    return view('test', [
-        'start' => $start,
-        'end' => $end,
-        'activities' => $rawActivities
-    ]);
+    return view('test');
 });
 
 Route::get('/manual-book', function(){
