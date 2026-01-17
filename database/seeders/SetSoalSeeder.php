@@ -13,320 +13,315 @@ class SetSoalSeeder extends Seeder
      */
     public function run(): void
     {
-        //10
-        SetSoal::create([
-            'name' => 'Cambridge 10 Test 1',
-            'thumbnail' => 'Self-drive tours in the USA',
-            'kode' => 'XJ3XOcvqPbgdZwyl',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-1/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-1/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-1/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-1/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 10 Test 2',
-            'thumbnail' => 'Transport survey',
-            'kode' => 'QmN0FYAE2DCXRPdC',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-2/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-2/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-2/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-2/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 10 Test 3',
-            'thumbnail' => 'Early Learning Childcare Centre Enrolment Form',
-            'kode' => 's4gzzYRpwLnhLRFf',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-3/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-3/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-3/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-3/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 10 Test 4',
-            'thumbnail' => 'THORNDYKE’S BUILDERS',
-            'kode' => '11qYaGWPJUTxUVdq',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-4/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-4/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-4/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-4/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+        $data = [
 
-        //14
-        SetSoal::create([
-            'name' => 'Cambridge 14 Test 1',
-            'thumbnail' => 'Crime Report Form',
-            'kode' => '1kxpl5g3zFLGtmEY',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-5/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-5/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-5/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-5/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 14 Test 2',
-            'thumbnail' => 'Total Health Clinic Patients’ Details',
-            'kode' => 'nHmZBcocwalVytdH',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-6/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-6/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-6/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-6/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 14 Test 3',
-            'thumbnail' => 'Flanders Conference Hotel',
-            'kode' => 'YuuZXlhsVNh26gHr',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-7/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-7/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-7/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-7/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 14 Test 4',
-            'thumbnail' => 'Enquiry about booking hotel for an event',
-            'kode' => '5k29sSZyLQgQjLWX',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-8/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-8/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-8/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-8/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 10 =====================
+            [
+                'name' => 'Cambridge 10 Test 1',
+                'kode' => 'XJ3XOcvqPbgdZwyl',
+                'set' => 1,
+                'listening' => 'Self-drive tours in the USA',
+                'reading' => 'Stepwells',
+                'speaking' => 'Weekends',
+                'writing' => 'Children'
+            ],
+            [
+                'name' => 'Cambridge 10 Test 2',
+                'kode' => 'QmN0FYAE2DCXRPdC',
+                'set' => 2,
+                'listening' => 'Transport survey',
+                'reading' => 'Tea and the industrial revolution',
+                'speaking' => 'Music',
+                'writing' => 'University Students'
+            ],
+            [
+                'name' => 'Cambridge 10 Test 3',
+                'kode' => 's4gzzYRpwLnhLRFf',
+                'set' => 3,
+                'listening' => 'Early Learning Childcare Centre Enrolment Form',
+                'reading' => 'The context, meaning and scope of tourism',
+                'speaking' => 'Travelling',
+                'writing' => 'Countries’ Products'
+            ],
+            [
+                'name' => 'Cambridge 10 Test 4',
+                'kode' => '11qYaGWPJUTxUVdq',
+                'set' => 4,
+                'listening' => 'THORNDYKE’S BUILDERS',
+                'reading' => 'The megafires of California',
+                'speaking' => 'Secondary High School',
+                'writing' => 'Museums'
+            ],
 
-        //16
-        SetSoal::create([
-            'name' => 'Cambridge 16 Test 1',
-            'thumbnail' => 'Children’s Engineering Workshops',
-            'kode' => 'blsodB9LLhUn0zcg',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-9/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-9/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-9/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-9/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 16 Test 2',
-            'thumbnail' => 'Copying photos to digital format',
-            'kode' => 'XW16JROLKCFE4BMH',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-10/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-10/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-10/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-10/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 16 Test 3',
-            'thumbnail' => 'Junior Cycle Camp',
-            'kode' => 'NmeBcwURSR2ZPfdX',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-11/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-11/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-11/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-11/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 16 Test 4',
-            'thumbnail' => 'Holiday Rental',
-            'kode' => 'TqMfMy8BLvZp0JDm',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-12/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-12/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-12/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-12/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 14 =====================
+            [
+                'name' => 'Cambridge 14 Test 1',
+                'kode' => '1kxpl5g3zFLGtmEY',
+                'set' => 5,
+                'listening' => 'Crime Report Form',
+                'reading' => 'The Importance of Children’s Play',
+                'speaking' => 'Job',
+                'writing' => 'Give up'
+            ],
+            [
+                'name' => 'Cambridge 14 Test 2',
+                'kode' => 'nHmZBcocwalVytdH',
+                'set' => 6,
+                'listening' => 'Total Health Clinic Patients’ Details',
+                'reading' => 'Alexander Henderson',
+                'speaking' => 'Social media',
+                'writing' => 'Environmental problems'
+            ],
+            [
+                'name' => 'Cambridge 14 Test 3',
+                'kode' => 'YuuZXlhsVNh26gHr',
+                'set' => 7,
+                'listening' => 'Flanders Conference Hotel',
+                'reading' => 'The concept of intelligence',
+                'speaking' => 'Neighbours',
+                'writing' => 'Music'
+            ],
+            [
+                'name' => 'Cambridge 14 Test 4',
+                'kode' => '5k29sSZyLQgQjLWX',
+                'set' => 8,
+                'listening' => 'Enquiry about booking hotel for an event',
+                'reading' => 'The secret of staying young',
+                'speaking' => 'Neighbourhood',
+                'writing' => 'Job'
+            ],
 
-        //17
-        SetSoal::create([
-            'name' => 'Cambridge 17 Test 1',
-            'thumbnail' => 'Buckworth Conservation Group',
-            'kode' => 'QUApDKzp0Wn1GCiA',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-13/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-13/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-13/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-13/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 17 Test 2',
-            'thumbnail' => 'Opportunities for voluntary work in Southoe village',
-            'kode' => 'DPCLyNHpDTqSciXd',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-14/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-14/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-14/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-14/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 17 Test 3',
-            'thumbnail' => 'Advice on surfing holidays',
-            'kode' => 'wq6xHskL3uTj5VSU',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-15/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-15/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-15/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-15/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 17 Test 4',
-            'thumbnail' => 'Easy Life Cleaning Services',
-            'kode' => '15gOXcE7omDCL1uE',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-16/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-16/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-16/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-16/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 16 =====================
+            [
+                'name' => 'Cambridge 16 Test 1',
+                'kode' => 'blsodB9LLhUn0zcg',
+                'set' => 9,
+                'listening' => 'Children’s Engineering Workshops',
+                'reading' => 'Helping pupils to choose optional subjects when they are aged 14-15',
+                'speaking' => 'Study with other people',
+                'writing' => 'House'
+            ],
+            [
+                'name' => 'Cambridge 16 Test 2',
+                'kode' => 'XW16JROLKCFE4BMH',
+                'set' => 10,
+                'listening' => 'Copying photos to digital format',
+                'reading' => 'How to choose your builder',
+                'speaking' => 'Flower',
+                'writing' => 'Businesses'
+            ],
+            [
+                'name' => 'Cambridge 16 Test 3',
+                'kode' => 'NmeBcwURSR2ZPfdX',
+                'set' => 11,
+                'listening' => 'Junior Cycle Camp',
+                'reading' => 'Maps showing walks starting from Bingham Town Hall',
+                'speaking' => 'Summer',
+                'writing' => 'Food'
+            ],
+            [
+                'name' => 'Cambridge 16 Test 4',
+                'kode' => 'TqMfMy8BLvZp0JDm',
+                'set' => 12,
+                'listening' => 'Holiday Rental',
+                'reading' => 'The best hiking boots',
+                'speaking' => 'Fast Food',
+                'writing' => 'Driverless vehicles'
+            ],
 
-        //18
-        SetSoal::create([
-            'name' => 'Cambridge 18 Test 1',
-            'thumbnail' => 'Transport survey',
-            'kode' => 'KeCD0au8jSaBuT3A',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-17/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-17/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-17/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-17/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 18 Test 2',
-            'thumbnail' => 'Working at Milo’s Restaurants',
-            'kode' => 'JSRJ0oDlxC0yFMgt',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-18/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-18/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-18/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-18/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 18 Test 3',
-            'thumbnail' => 'Wayside Camera Club',
-            'kode' => '8uQvKzYbHuROu9RJ',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-19/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-19/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-19/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-19/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 18 Test 4',
-            'thumbnail' => 'Job details from employment agency',
-            'kode' => 'yPLnQeqINAxbrnva',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-20/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-20/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-20/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-20/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 17 =====================
+            [
+                'name' => 'Cambridge 17 Test 1',
+                'kode' => 'QUApDKzp0Wn1GCiA',
+                'set' => 13,
+                'listening' => 'Buckworth Conservation Group',
+                'reading' => 'The development of the London underground railway',
+                'speaking' => 'History Lesson',
+                'writing' => 'Taking a risk'
+            ],
+            [
+                'name' => 'Cambridge 17 Test 2',
+                'kode' => 'DPCLyNHpDTqSciXd',
+                'set' => 14,
+                'listening' => 'Opportunities for voluntary work in Southoe village',
+                'reading' => 'The Dead Sea Scrolls',
+                'speaking' => 'Book',
+                'writing' => 'Smartphones'
+            ],
+            [
+                'name' => 'Cambridge 17 Test 3',
+                'kode' => 'wq6xHskL3uTj5VSU',
+                'set' => 15,
+                'listening' => 'Advice on surfing holidays',
+                'reading' => 'The thylacine',
+                'speaking' => 'Drinking',
+                'writing' => 'Doctors'
+            ],
+            [
+                'name' => 'Cambridge 17 Test 4',
+                'kode' => '15gOXcE7omDCL1uE',
+                'set' => 16,
+                'listening' => 'Easy Life Cleaning Services',
+                'reading' => 'Bats to the rescue',
+                'speaking' => 'Map',
+                'writing' => 'Medicines'
+            ],
 
-        //19
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 1',
-            'thumbnail' => 'Hinchingbrooke Country Park',
-            'kode' => 'rbsuXiTcqh8ewr9Q',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-21/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-21/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-21/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-21/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 2',
-            'thumbnail' => 'Guitar Group',
-            'kode' => '0XIGAcSMlticROES',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-22/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-22/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-22/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-22/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 3',
-            'thumbnail' => 'Local food shops',
-            'kode' => 'GEf4EtQ1AZxTFhTw',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-23/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-23/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-23/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-23/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 19 Test 4',
-            'thumbnail' => 'First day at work',
-            'kode' => 'IgWhHunhjhOYd3hb',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-24/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-24/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-24/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-24/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 18 =====================
+            [
+                'name' => 'Cambridge 18 Test 1',
+                'kode' => 'KeCD0au8jSaBuT3A',
+                'set' => 17,
+                'listening' => 'Transport survey',
+                'reading' => 'What to do if your clothes have been lost or damaged by a dry cleaner',
+                'speaking' => 'Paying bills',
+                'writing' => 'Science'
+            ],
+            [
+                'name' => 'Cambridge 18 Test 2',
+                'kode' => 'JSRJ0oDlxC0yFMgt',
+                'set' => 18,
+                'listening' => 'Working at Milo’s Restaurants',
+                'reading' => 'Choosing the best sleeping bag',
+                'speaking' => 'Science',
+                'writing' => 'University'
+            ],
+            [
+                'name' => 'Cambridge 18 Test 3',
+                'kode' => '8uQvKzYbHuROu9RJ',
+                'set' => 19,
+                'listening' => 'Wayside Camera Club',
+                'reading' => 'Manly Beaches',
+                'speaking' => 'Online shopping',
+                'writing' => 'Villages'
+            ],
+            [
+                'name' => 'Cambridge 18 Test 4',
+                'kode' => 'yPLnQeqINAxbrnva',
+                'set' => 20,
+                'listening' => 'Job details from employment agency',
+                'reading' => 'The best ice cream makers',
+                'speaking' => 'Sleep',
+                'writing' => 'Old People'
+            ],
 
-        //20
-        SetSoal::create([
-            'name' => 'Cambridge 20 Test 1',
-            'thumbnail' => 'Restaurant Recommendations',
-            'kode' => 'xQKeqKYrkqfdgotg',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-25/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-25/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-25/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-25/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 20 Test 2',
-            'thumbnail' => 'Local Councils',
-            'kode' => 'EKX6hyJgeV3x0pxB',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-26/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-26/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-26/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-26/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 20 Test 3',
-            'thumbnail' => 'Furniture Rental Companies',
-            'kode' => 'bBhJMdwYSokWGAc9',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-27/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-27/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-27/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-27/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'Cambridge 20 Test 4',
-            'thumbnail' => 'Advice on Family Visit',
-            'kode' => '4JIjUOPpLAJ2FYdl',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-28/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-28/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-28/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-28/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 19 =====================
+            [
+                'name' => 'Cambridge 19 Test 1',
+                'kode' => 'rbsuXiTcqh8ewr9Q',
+                'set' => 21,
+                'listening' => 'Hinchingbrooke Country Park',
+                'reading' => 'How tennis rackets have changed',
+                'speaking' => 'Food from other countries',
+                'writing' => 'Competition'
+            ],
+            [
+                'name' => 'Cambridge 19 Test 2',
+                'kode' => '0XIGAcSMlticROES',
+                'set' => 22,
+                'listening' => 'Guitar Group',
+                'reading' => 'The industrial revolution in Britain',
+                'speaking' => 'Travel by plane',
+                'writing' => 'Office workers'
+            ],
+            [
+                'name' => 'Cambridge 19 Test 3',
+                'kode' => 'GEf4EtQ1AZxTFhTw',
+                'set' => 23,
+                'listening' => 'Local food shops',
+                'reading' => 'Archaeologists discover evidence of prehistoric island settlers',
+                'speaking' => 'Holidays',
+                'writing' => 'Money'
+            ],
+            [
+                'name' => 'Cambridge 19 Test 4',
+                'kode' => 'IgWhHunhjhOYd3hb',
+                'set' => 24,
+                'listening' => 'First day at work',
+                'reading' => 'The Impact of climate change on butterflies in Britain',
+                'speaking' => 'Cafe',
+                'writing' => 'Supermarket'
+            ],
 
-        //PT-01
-        SetSoal::create([
-            'name' => 'PT-01',
-            'thumbnail' => 'Hiring Company',
-            'kode' => '2uSKN2WwOj6EYc1X',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-29/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-29/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-29/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-29/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
-        SetSoal::create([
-            'name' => 'PT-02',
-            'thumbnail' => 'Bedroom Furniture for Sale',
-            'kode' => 'cwwPbLf22UsNEqIp',
-            'thumbnail_reading' => 'own_assets/images/thumbnails/set-30/1.jpeg',
-            'thumbnail_listening' => 'own_assets/images/thumbnails/set-30/2.png',
-            'thumbnail_speaking' => 'own_assets/images/thumbnails/set-30/3.jpeg',
-            'thumbnail_writing' => 'own_assets/images/thumbnails/set-30/4.jpeg',
-            'kategori' => 'ielts'
-        ]);
+            // ===================== CAMBRIDGE 20 =====================
+            [
+                'name' => 'Cambridge 20 Test 1',
+                'kode' => 'xQKeqKYrkqfdgotg',
+                'set' => 25,
+                'listening' => 'Restaurant Recommendations',
+                'reading' => 'The kekepe',
+                'speaking' => 'Walking',
+                'writing' => 'Clean Water'
+            ],
+            [
+                'name' => 'Cambridge 20 Test 2',
+                'kode' => 'EKX6hyJgeV3x0pxB',
+                'set' => 26,
+                'listening' => 'Local Councils',
+                'reading' => 'Manatees',
+                'speaking' => 'Fruit',
+                'writing' => 'Summer holiday'
+            ],
+            [
+                'name' => 'Cambridge 20 Test 3',
+                'kode' => 'bBhJMdwYSokWGAc9',
+                'set' => 27,
+                'listening' => 'Furniture Rental Companies',
+                'reading' => 'Frozen Food',
+                'speaking' => 'Museums',
+                'writing' => 'Plane'
+            ],
+            [
+                'name' => 'Cambridge 20 Test 4',
+                'kode' => '4JIjUOPpLAJ2FYdl',
+                'set' => 28,
+                'listening' => 'Advice on Family Visit',
+                'reading' => 'Georgia O’Keeffe',
+                'speaking' => 'Personal qualities',
+                'writing' => 'Fashion'
+            ],
+
+            // ===================== PT =====================
+            [
+                'name' => 'PT-01',
+                'kode' => '2uSKN2WwOj6EYc1X',
+                'set' => 29,
+                'listening' => 'Hiring Company',
+                'reading' => 'New Zealand Seaweed',
+                'speaking' => 'Singing',
+                'writing' => 'Music'
+            ],
+            [
+                'name' => 'PT-02',
+                'kode' => 'cwwPbLf22UsNEqIp',
+                'set' => 30,
+                'listening' => 'Bedroom Furniture for Sale',
+                'reading' => 'Procrastination',
+                'speaking' => 'Clothes',
+                'writing' => 'Talent'
+            ],
+        ];
+
+        foreach ($data as $d) {
+            SetSoal::create([
+                'name' => $d['name'],
+                'thumbnail' => $d['listening'],
+                'kode' => $d['kode'],
+
+                'thumbnail_reading' => "own_assets/images/thumbnails/set-{$d['set']}/1.jpeg",
+                'thumbnail_reading_text' => $d['reading'],
+
+                'thumbnail_listening' => "own_assets/images/thumbnails/set-{$d['set']}/2.png",
+                'thumbnail_listening_text' => $d['listening'],
+
+                'thumbnail_speaking' => "own_assets/images/thumbnails/set-{$d['set']}/3.jpeg",
+                'thumbnail_speaking_text' => $d['speaking'],
+
+                'thumbnail_writing' => "own_assets/images/thumbnails/set-{$d['set']}/4.jpeg",
+                'thumbnail_writing_text' => $d['writing'],
+
+                'kategori' => 'ielts'
+            ]);
+        }
     }
 }

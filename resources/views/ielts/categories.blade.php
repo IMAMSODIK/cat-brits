@@ -84,6 +84,35 @@
             color: #000;
             transform: translateX(5px);
         }
+
+        .data-ctr {
+            display: flex;
+        }
+
+        .data-ctr>div {
+            display: flex;
+        }
+
+        .boost-up-card {
+            width: 100%;
+        }
+
+        .boost-up-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .boost-up-card .p-4 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* BAGIAN INI KUNCI */
+        .boost-up-card .card-text {
+            flex-grow: 1;
+        }
     </style>
 @endsection
 
@@ -109,18 +138,14 @@
                         <div class="col-12 col-md-3" style="cursor: pointer;"
                             onclick="location.href='/ielts/practice?set-id={{ $set->kode }}&section=reading'">
                             <div class="card boost-up-card bg-reading overflow-hidden">
-                                <div class="p-4 content">
+                                <div class="p-4">
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">
                                             IELTS READING TEST
                                         </h6>
                                     </div>
 
-                                    <div class="img-boostup">
-                                        <img class="img-boostup-img-1"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup1.png') }}"
-                                            alt="boostup">
-                                    </div>
+                                    <p class="card-text text-white">{{ $set->thumbnail_reading_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
@@ -138,9 +163,8 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-1"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup1.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_listening_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
@@ -158,9 +182,8 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-1"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup1.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_speaking_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
@@ -177,9 +200,9 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-1"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup1.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_writing_text }}</p>
+
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
                                             Take Test →
@@ -203,9 +226,8 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS READING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-2"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup2.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_reading_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
@@ -222,9 +244,8 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS LISTENING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-2"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup2.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_listening_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
@@ -241,10 +262,9 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS SPEAKING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-2"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup2.png') }}"
-                                            alt="boostup"></div>
-                                    
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_speaking_text }}</p>
+
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">
                                             Take Test →
@@ -260,9 +280,8 @@
                                     <div class="row">
                                         <h6 class="text-white f-20 f-w-700 mb-2 z-1">IELTS WRITING TEST</h6>
                                     </div>
-                                    <div class="img-boostup"><img class="img-boostup-img-2"
-                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup2.png') }}"
-                                            alt="boostup"></div>
+
+                                    <p class="card-text text-white">{{ $set->thumbnail_writing_text }}</p>
 
                                     <div class="mt-4">
                                         <button class="btn take-test-btn w-100">

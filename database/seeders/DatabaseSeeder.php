@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'email' => 'admin@gmail.com',
             'role' => 'admin',
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'role' => 'teacher',
             'email' => 'margaret@gmail.com',
-            'token' => Str::random(5)
+            'token' => Str::random(5),
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -36,7 +38,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'role' => 'teacher',
             'email' => 'gilbert@gmail.com',
-            'token' => Str::random(5)
+            'token' => Str::random(5),
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -44,7 +47,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'role' => 'teacher',
             'email' => 'dustin@gmail.com',
-            'token' => Str::random(5)
+            'token' => Str::random(5),
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -53,6 +57,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'student',
             'verification_status' => 1,
             'email' => 'mikael@gmail.com',
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -61,6 +66,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'student',
             'verification_status' => 1,
             'email' => 'fermin@gmail.com',
+            'verification_status' => 1
         ]);
 
         User::create([
@@ -69,6 +75,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'student',
             'verification_status' => 1,
             'email' => 'lamine@gmail.com',
+            'verification_status' => 1
         ]);
 
         User::create([

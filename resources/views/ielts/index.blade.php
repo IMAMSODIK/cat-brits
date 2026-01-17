@@ -5,223 +5,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/owlcarousel.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets/assets/css/vendors/range-slider.css') }}">
     <style>
+        .boostup-name {
+            height: 30px;
+        }
         .product-wrapper-grid {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 15px 0;
-        }
-
-        .custom-card {
-            height: 160px;
-            /* Diperkecil dari 320px */
-            cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-radius: 10px;
-            /* Diperkecil dari 12px */
-            border: none;
-            overflow: hidden;
-            position: relative;
-            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
-            /* Shadow lebih ringan */
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Hover effect */
-        .custom-card:hover {
-            transform: translateY(-5px);
-            /* Efek hover lebih kecil */
-            box-shadow: 0 10px 20px rgba(33, 107, 212, 0.12);
-            /* Shadow lebih ringan */
-        }
-
-        /* Card header dengan ukuran lebih kecil */
-        .custom-card .card-header {
-            background: linear-gradient(90deg, #216bd4 0%, #4a90e2 100%);
-            color: white;
-            border-radius: 10px 10px 0 0 !important;
-            /* Diperkecil */
-            padding: 15px 12px;
-            /* Padding diperkecil */
-            border-bottom: none;
-            position: relative;
-            overflow: hidden;
-            min-height: 70px;
-            /* Tinggi header dikurangi */
-            display: flex;
-            align-items: center;
-        }
-
-        .custom-card .card-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-        }
-
-        .card-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            /* Font lebih kecil */
-            margin: 0;
-            position: relative;
-            z-index: 1;
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            /* Maksimal 2 baris */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Card body yang lebih kompak */
-        .custom-card .card-body {
-            padding: 15px 12px;
-            /* Padding diperkecil */
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card-text {
-            color: #ffffff;
-            line-height: 1.5;
-            font-size: 1.0rem;
-            margin-bottom: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-weight: bold;
-        }
-
-        /* Card footer yang lebih kecil */
-        .custom-card .card-footer {
-            background-color: rgba(248, 249, 255, 0.9);
-            border-top: 1px solid rgba(74, 144, 226, 0.15);
-            padding: 12px 12px;
-            /* Padding diperkecil */
-            border-radius: 0 0 10px 10px;
-            /* Diperkecil */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 55px;
-            /* Tinggi footer dikurangi */
-        }
-
-        .set-code {
-            font-weight: 600;
-            color: #216bd4;
-            font-size: 0.85rem;
-            /* Font lebih kecil */
-            background: white;
-            padding: 4px 10px;
-            /* Padding lebih kecil */
-            border-radius: 15px;
-            /* Border radius lebih kecil */
-            border: 1px solid rgba(33, 107, 212, 0.2);
-        }
-
-        .access-btn {
-            color: #ffffff;
-            font-size: 0.8rem;
-            /* Font lebih kecil */
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            transition: all 0.2s ease;
-        }
-
-        .access-btn:hover {
-            color: #216bd4;
-        }
-
-        .access-btn i {
-            margin-left: 4px;
-            font-size: 0.8rem;
-            /* Ikon lebih kecil */
-            transition: transform 0.2s ease;
-        }
-
-        .custom-card:hover .access-btn i {
-            transform: translateX(3px);
-        }
-
-        /* Responsive adjustments untuk card kecil */
-        @media (max-width: 768px) {
-            .custom-card {
-                height: 140px;
-                /* Lebih kecil di tablet */
-            }
-
-            .card-title {
-                font-size: 1rem;
-            }
-
-            .card-text {
-                font-size: 0.9rem;
-                -webkit-line-clamp: 3;
-            }
-
-            .custom-card .card-header {
-                padding: 12px 10px;
-                min-height: 65px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .col-6 {
-                padding-left: 6px;
-                padding-right: 6px;
-            }
-
-            .custom-card {
-                height: 120px;
-                /* Lebih kecil di mobile */
-                margin-bottom: 12px;
-            }
-
-            .custom-card .card-header {
-                padding: 10px 8px;
-                min-height: 60px;
-            }
-
-            .card-title {
-                font-size: 0.95rem;
-                -webkit-line-clamp: 2;
-            }
-
-            .custom-card .card-body {
-                padding: 12px 8px;
-            }
-
-            .card-text {
-                font-size: 0.9rem;
-                -webkit-line-clamp: 2;
-                /* Lebih sedikit baris di mobile */
-            }
-
-            .custom-card .card-footer {
-                padding: 10px 8px;
-                min-height: 50px;
-            }
-
-            .set-code {
-                font-size: 0.8rem;
-                padding: 3px 8px;
-            }
-
-            .access-btn {
-                font-size: 0.75rem;
-            }
         }
 
         /* Untuk grid yang lebih padat */
@@ -237,67 +26,50 @@
     </style>
 
     <style>
-        .custom-card {
+        /* CARD UTAMA */
+        .boost-up-card {
             position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            color: #fff;
+            height: 100%;
+            border-radius: 18px;
             cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: radial-gradient(circle, #306abc 80%, #4274BA 50%)
         }
 
-        /* Background image */
-        .custom-card .card-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
+        /* HOVER EFFECT */
+        .boost-up-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
         }
 
-        /* Overlay transparan */
-        .custom-card::before {
-            color: black;
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: #4274BA;
-            z-index: 2;
-        }
-
-        /* Konten di atas overlay */
-        .custom-card .card-header,
-        .custom-card .card-body,
-        .custom-card .card-footer {
+        /* CONTENT */
+        .boost-up-card .p-4 {
             position: relative;
-            z-index: 3;
-            background: transparent;
-            border: none;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .custom-card .card-title {
-            font-weight: bold;
-            font-size: 18px;
+        /* BUTTON */
+        .btn-showcase {
+            margin-top: auto;
         }
 
-        .custom-card .card-footer {
-            text-align: right;
-        }
-
-        .access-btn {
+        .btn-showcase .btn {
+            padding: 8px 18px;
             font-size: 14px;
-            font-weight: 600;
+            border-radius: 10px;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
         }
 
-        .custom-card:hover::before {
-            background: linear-gradient(
-                rgba(0,60,120,0.7),
-                rgba(199, 199, 199, 0.5)
-            );
-        }
-
-        .custom-card:hover {
-            transform: translateY(-4px);
-            transition: 0.3s ease;
+        /* BUTTON HOVER */
+        .boost-up-card:hover .btn {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
         }
     </style>
 @endsection
@@ -322,24 +94,22 @@
             <div class="product-wrapper-grid">
                 <div class="row data-ctr">
                     @foreach ($sets as $set)
-                        <div class="col-6 col-md-4">
-                            <div class="card custom-card"
+                        <div class="col-6 col-lg-3 col-xl-3 col-md-3 mb-3">
+                            <div class="card boost-up-card overflow-hidden"
                                 onclick="location.href='/ielts/categories?set-id={{ $set->kode }}'">
-                                <div class="card-bg">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <h6 class="text-white f-20 f-w-700 mb-2">{{ $set->name }}</h6>
+                                    </div>
+                                    <div class="img-boostup"><img class="img-boostup-img-1"
+                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup1.png') }}"
+                                            alt="boostup"><img class="img-boostup-img-2"
+                                            src="{{ asset('dashboard_assets/assets/images/dashboard-3/boostup2.png') }}"
+                                            alt="boostup"></div>
+                                    <div class="btn-showcase text-start">
+                                        <button class="btn btn-pill btn-outline-light-2x b-r-8" type="button">View</button>
+                                    </div>
                                 </div>
-
-                                <div class="card-header">
-                                    <h5 class="card-title">{{ $set->name }}</h5>
-                                </div>
-
-                                {{-- <div class="card-body">
-                                    <p class="card-text">{{ $set->thumbnail }}</p>
-                                </div> --}}
-
-                                <div class="card-footer">
-                                    <span class="access-btn">View <i class="fas fa-arrow-right"></i></span>
-                                </div>
-
                             </div>
                         </div>
                     @endforeach

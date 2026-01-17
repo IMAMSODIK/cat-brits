@@ -1257,8 +1257,8 @@
             backdrop-filter: blur(10px);
         }
 
-        .score-circle span {
-            font-size: 1.2rem;
+        .score-circle small {
+            font-size: 1.5rem;
             line-height: 1;
         }
 

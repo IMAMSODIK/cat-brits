@@ -1115,98 +1115,96 @@
         </div>
     </div>
 
-    <div class="col-md-12">
-        <div class="card p-4">
-            <div class="card-header">
-                @if (in_array(auth()->user()->role, ['admin', 'teacher']))
-                    <h4>Student Activities (Last 12 Months)</h4>
-                @else
-                    <h4>Your Activities (Last 12 Months)</h4>
-                @endif
-            </div>
-            <div class="card-body">
-                <div class="activity-calendar">
-                    <div class="calendar-wrapper">
+    @if (in_array(auth()->user()->role, ['admin', 'teacher']))
+        <div class="col-md-12">
+            <div class="card p-4">
+                <div class="card-header">
+                    <h4>Student Activities (Last 12 Months)</h4>    
+                </div>
+                <div class="card-body">
+                    <div class="activity-calendar">
+                        <div class="calendar-wrapper">
 
-                        <div class="calendar-body">
-                            {{-- Months --}}
-                            <div class="months" id="months-container">
-                                @php
-                                    $currentMonth = '';
-                                    $monthCursor = $start->copy()->startOfWeek();
-                                @endphp
-
-                                @for ($i = 0; $i < 53; $i++)
+                            <div class="calendar-body">
+                                {{-- Months --}}
+                                <div class="months" id="months-container">
                                     @php
-                                        $weekStart = $monthCursor->copy();
-                                        $monthName = $weekStart->format('M');
+                                        $currentMonth = '';
+                                        $monthCursor = $start->copy()->startOfWeek();
                                     @endphp
 
-                                    @if ($monthName !== $currentMonth)
-                                        <div class="month-label" style="grid-column: {{ $i + 1 }}">
-                                            {{ $monthName }}
+                                    @for ($i = 0; $i < 53; $i++)
+                                        @php
+                                            $weekStart = $monthCursor->copy();
+                                            $monthName = $weekStart->format('M');
+                                        @endphp
+
+                                        @if ($monthName !== $currentMonth)
+                                            <div class="month-label" style="grid-column: {{ $i + 1 }}">
+                                                {{ $monthName }}
+                                            </div>
+                                            @php $currentMonth = $monthName; @endphp
+                                        @endif
+
+                                        @php $monthCursor->addWeek(); @endphp
+                                    @endfor
+                                </div>
+
+                                {{-- Calendar Grid --}}
+                                <div class="calendar-grid">
+                                    @php
+                                        $date = $start->copy()->startOfWeek();
+                                    @endphp
+
+                                    @while ($date <= $end)
+                                        @php
+                                            $count = $courseActivities[$date->toDateString()] ?? 0;
+
+                                            if ($count == 0) {
+                                                $level = 0;
+                                            } elseif ($count <= 10) {
+                                                $level = 1;
+                                            } elseif ($count <= 30) {
+                                                $level = 2;
+                                            } elseif ($count <= 60) {
+                                                $level = 3;
+                                            } else {
+                                                $level = 4;
+                                            }
+
+                                            $tooltip =
+                                                $date->format('d M Y') .
+                                                ' - ' .
+                                                $count .
+                                                ' test' .
+                                                ($count != 1 ? 's' : '');
+                                        @endphp
+
+                                        <div class="day-box level-{{ $level }}"
+                                            data-tooltip="{{ $tooltip }}" title="{{ $tooltip }}">
                                         </div>
-                                        @php $currentMonth = $monthName; @endphp
-                                    @endif
 
-                                    @php $monthCursor->addWeek(); @endphp
-                                @endfor
-                            </div>
-
-                            {{-- Calendar Grid --}}
-                            <div class="calendar-grid">
-                                @php
-                                    $date = $start->copy()->startOfWeek();
-                                @endphp
-
-                                @while ($date <= $end)
-                                    @php
-                                        $count = $courseActivities[$date->toDateString()] ?? 0;
-
-                                        if ($count == 0) {
-                                            $level = 0;
-                                        } elseif ($count <= 10) {
-                                            $level = 1;
-                                        } elseif ($count <= 30) {
-                                            $level = 2;
-                                        } elseif ($count <= 60) {
-                                            $level = 3;
-                                        } else {
-                                            $level = 4;
-                                        }
-
-                                        $tooltip =
-                                            $date->format('d M Y') .
-                                            ' - ' .
-                                            $count .
-                                            ' test' .
-                                            ($count != 1 ? 's' : '');
-                                    @endphp
-
-                                    <div class="day-box level-{{ $level }}"
-                                        data-tooltip="{{ $tooltip }}" title="{{ $tooltip }}">
-                                    </div>
-
-                                    @php $date->addDay(); @endphp
-                                @endwhile
+                                        @php $date->addDay(); @endphp
+                                    @endwhile
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {{-- Legend --}}
-                    <div class="legend">
-                        <span style="margin-right: 4px;">Less</span>
-                        <div class="day-box level-0"></div>
-                        <div class="day-box level-1"></div>
-                        <div class="day-box level-2"></div>
-                        <div class="day-box level-3"></div>
-                        <div class="day-box level-4"></div>
-                        <span style="margin-left: 4px;">More</span>
+                        {{-- Legend --}}
+                        <div class="legend">
+                            <span style="margin-right: 4px;">Less</span>
+                            <div class="day-box level-0"></div>
+                            <div class="day-box level-1"></div>
+                            <div class="day-box level-2"></div>
+                            <div class="day-box level-3"></div>
+                            <div class="day-box level-4"></div>
+                            <span style="margin-left: 4px;">More</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 
     {{-- <div class="container-fluid">
         <div class="row size-column">

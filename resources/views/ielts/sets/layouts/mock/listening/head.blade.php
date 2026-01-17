@@ -942,9 +942,10 @@
         }
 
         .floating-questions.expanded .fq-body {
-            max-height: 400px;
-            /* tampil penuh saat expanded */
-            padding: 12px;
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
 
         .fq-list {

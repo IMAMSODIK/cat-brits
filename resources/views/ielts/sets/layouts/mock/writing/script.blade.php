@@ -13,7 +13,7 @@
         document.getElementById('doneBtn').addEventListener('click', function() {
             const confirmFinish = confirm('Do you want to end the test now?');
             if (confirmFinish) {
-                window.history.back();
+                window.location.href = $(this).data('url');
             }
         });
     })();
@@ -469,7 +469,7 @@
         });
 
         // 🚀 START (contoh 15 menit)
-        startCountdown(13 * 60);
+        startCountdown(60 * 60);
 
     })();
 </script>

@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('thumbnail_listening')->nullable();
             $table->string('thumbnail_speaking')->nullable();
             $table->string('thumbnail_writing')->nullable();
+            $table->string('thumbnail_reading_text')->nullable();
+            $table->string('thumbnail_listening_text')->nullable();
+            $table->string('thumbnail_speaking_text')->nullable();
+            $table->string('thumbnail_writing_text')->nullable();
             $table->string('kode')->unique();
             $table->enum('kategori', ['ielts', 'toefl', 'ge', 'sat']);
             $table->timestamps();

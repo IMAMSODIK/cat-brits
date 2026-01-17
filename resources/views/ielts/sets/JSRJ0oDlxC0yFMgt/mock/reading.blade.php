@@ -160,7 +160,7 @@
                                         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-type="tfng" data-q="1">
+                                <fieldset class="q-item" data-type="tfng" data-q="9">
                                     <legend class="q-text">
                                         <span class="q-number">9</span>
                                         During the third phase of construction, sandstone slabs were placed in both the outer areas and the middle of the Stonehenge site.
@@ -184,7 +184,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="2">
+                                <fieldset class="q-item" data-type="tfng" data-q="10">
                                     <legend class="q-text">
                                         <span class="q-number">10</span>
                                         There is scientific proof that the bluestones stood in the same spot until approximately 1600 BCE.
@@ -208,7 +208,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="3">
+                                <fieldset class="q-item" data-type="tfng" data-q="11">
                                     <legend class="q-text">
                                         <span class="q-number">11</span>
                                         John Aubrey’s claim about Stonehenge was supported by 20th-century findings.
@@ -232,7 +232,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="4">
+                                <fieldset class="q-item" data-type="tfng" data-q="12">
                                     <legend class="q-text">
                                         <span class="q-number">12</span>
                                         Objects discovered at Stonehenge seem to indicate that it was constructed by a number of different groups of people.
@@ -256,7 +256,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="5">
+                                <fieldset class="q-item" data-type="tfng" data-q="13">
                                     <legend class="q-text">
                                         <span class="q-number">13</span>
                                         Criticism of Gerald Hawkins’ theory about Stonehenge has come mainly from other astronomers.
@@ -312,7 +312,7 @@
                                     </p>
                                     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
                                 </fieldset>
-                                <fieldset class="q-item" data-type="oc" data-q="1">
+                                <fieldset class="q-item" data-type="oc" data-q="14">
                                     <legend class="q-text">
                                         <span class="q-number">14</span>
                                         What point does the writer make about AI in the first paragraph?
@@ -341,7 +341,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="oc" data-q="2">
+                                <fieldset class="q-item" data-type="oc" data-q="15">
                                     <legend class="q-text">
                                         <span class="q-number">15</span>
                                         What is the writer doing in the second paragraph?
@@ -370,7 +370,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="oc" data-q="3">
+                                <fieldset class="q-item" data-type="oc" data-q="16">
                                     <legend class="q-text">
                                         <span class="q-number">16</span>
                                         Why does the writer mention the story of King Midas?
@@ -399,7 +399,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="oc" data-q="4">
+                                <fieldset class="q-item" data-type="oc" data-q="17">
                                     <legend class="q-text">
                                         <span class="q-number">17</span>
                                         What challenge does the writer refer to in the fourth paragraph?
@@ -428,7 +428,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="oc" data-q="5">
+                                <fieldset class="q-item" data-type="oc" data-q="18">
                                     <legend class="q-text">
                                         <span class="q-number">18</span>
                                         What does the writer suggest about the future of AI in the fifth paragraph?
@@ -457,7 +457,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="oc" data-q="6">
+                                <fieldset class="q-item" data-type="oc" data-q="19">
                                     <legend class="q-text">
                                         <span class="q-number">19</span>
                                         Which of the following best summarises the writer’s argument in the sixth paragraph?
@@ -500,7 +500,7 @@
                                             about this.</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-type="ynng" data-q="1">
+                                <fieldset class="q-item" data-type="ynng" data-q="20">
                                     <legend class="q-text">
                                         <span class="q-number">20</span>
                                         Machines with the ability to make moral decisions may prevent us from promoting the interests of our communities.
@@ -524,7 +524,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="ynng" data-q="2">
+                                <fieldset class="q-item" data-type="ynng" data-q="21">
                                     <legend class="q-text">
                                         <span class="q-number">21</span>
                                         Silicon police would need to exist in large numbers in order to be effective.
@@ -548,7 +548,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="ynng" data-q="3">
+                                <fieldset class="q-item" data-type="ynng" data-q="22">
                                     <legend class="q-text">
                                         <span class="q-number">22</span>
                                         Many people are comfortable with the prospect of their independence being restricted by machines.
@@ -572,7 +572,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="ynng" data-q="4">
+                                <fieldset class="q-item" data-type="ynng" data-q="23">
                                     <legend class="q-text">
                                         <span class="q-number">23</span>
                                         If we want to ensure that machines act in our best interests, we all need to work together.
@@ -623,7 +623,7 @@
                                         <span class="q-number-box">24</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-1" data-q="1" data-type="summary_completion" class="q-dropdown">
+                                                <select name="JSRJ0oDlxC0yFMgt-1" data-q="24" data-type="summary_completion" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -638,7 +638,7 @@
                                         <span class="q-number-box">25</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-2" data-q="2" data-type="summary_completion" class="q-dropdown">
+                                                <select name="JSRJ0oDlxC0yFMgt-2" data-q="25" data-type="summary_completion" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -653,7 +653,7 @@
                                         <span class="q-number-box">26</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="JSRJ0oDlxC0yFMgt-3" data-q="3" data-type="summary_completion" class="q-dropdown">
+                                                <select name="JSRJ0oDlxC0yFMgt-3" data-q="26" data-type="summary_completion" class="q-dropdown">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -705,7 +705,7 @@
                                         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-type="tfng" data-q="1">
+                                <fieldset class="q-item" data-type="tfng" data-q="27">
                                     <legend class="q-text">
                                         <span class="q-number">27</span>
                                         People first referred to Leonardo da Vinci as a genius 500 years ago.
@@ -729,7 +729,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="2">
+                                <fieldset class="q-item" data-type="tfng" data-q="28">
                                     <legend class="q-text">
                                         <span class="q-number">28</span>
                                         The current climate crisis is predicted to cause more deaths than the plague.
@@ -753,7 +753,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="3">
+                                <fieldset class="q-item" data-type="tfng" data-q="29">
                                     <legend class="q-text">
                                         <span class="q-number">29</span>
                                         Some of the challenges we face today can be compared to those of earlier times.
@@ -777,7 +777,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="4">
+                                <fieldset class="q-item" data-type="tfng" data-q="30">
                                     <legend class="q-text">
                                         <span class="q-number">30</span>
                                         Leonardo da Vinci’s ‘ideal city’ was constructed in the 15th century.
@@ -801,7 +801,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="5">
+                                <fieldset class="q-item" data-type="tfng" data-q="31">
                                     <legend class="q-text">
                                         <span class="q-number">31</span>
                                         Poor town planning is a major contributor to climate change.
@@ -825,7 +825,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="6">
+                                <fieldset class="q-item" data-type="tfng" data-q="32">
                                     <legend class="q-text">
                                         <span class="q-number">32</span>
                                         In Renaissance times, local people fought against the changes to Pienza and Ferrara.
@@ -849,7 +849,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="tfng" data-q="7">
+                                <fieldset class="q-item" data-type="tfng" data-q="33">
                                     <legend class="q-text">
                                         <span class="q-number">33</span>
                                         Leonardo da Vinci kept a neat, organised record of his designs.
@@ -886,7 +886,7 @@
                                         <span class="q-number-box">1</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-4" data-q="4" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-4" data-q="34" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -894,7 +894,7 @@
                                         <span class="q-number-box">2</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-5" data-q="5" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-5" data-q="35" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -906,7 +906,7 @@
                                         <span class="q-number-box">3</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-6" data-q="6" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-6" data-q="36" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -914,7 +914,7 @@
                                         <span class="q-number-box">4</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-7" data-q="7" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-7" data-q="37" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -925,7 +925,7 @@
                                         <span class="q-number-box">5</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-8" data-q="8" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-8" data-q="38" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -933,7 +933,7 @@
                                         <span class="q-number-box">6</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-9" data-q="9" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-9" data-q="39" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>
@@ -941,7 +941,7 @@
                                         <span class="q-number-box">7</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-10" data-q="10" data-type="summary_completion" class="q-text"
+                                                <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-10" data-q="40" data-type="summary_completion" class="q-text"
                                                     placeholder="">
                                             </span>
                                         </span>

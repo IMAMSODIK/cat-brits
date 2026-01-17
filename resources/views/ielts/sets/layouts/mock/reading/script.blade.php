@@ -159,7 +159,7 @@
 
                 let results = [];
 
-                $('.q-item, .q-list, .q-text, .q-dropdown').each(function () {
+                $('.q-item, .q-list, .q-text, .q-dropdown').each(function() {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
 
@@ -171,19 +171,19 @@
                     switch (type) {
 
                         case 'summary_completion': {
-                                let field;
+                            let field;
 
-                                if ($(this).is('input[type="text"], select')) {
-                                    field = $(this);
-                                } else {
-                                    field = $(this).find('input[type="text"], select').first();
-                                }
-                                if (field && field.length) {
-                                    name = field.attr('name');
-                                    answer = field.val() || null;
-                                }
-                                break;
+                            if ($(this).is('input[type="text"], select')) {
+                                field = $(this);
+                            } else {
+                                field = $(this).find('input[type="text"], select').first();
                             }
+                            if (field && field.length) {
+                                name = field.attr('name');
+                                answer = field.val() || null;
+                            }
+                            break;
+                        }
                         case 'tfng':
                         case 'oc':
                         case 'ynng': {
@@ -228,7 +228,7 @@
                             } else {
                                 field = $(this).find('input[type="text"], select').first();
                             }
-                            
+
                             if (field && field.length) {
                                 name = field.attr('name');
                                 answer = field.val() || null;
@@ -242,7 +242,7 @@
                             const selected = $(this).find('input[type="checkbox"]:checked');
 
                             name = first.attr('name') || ('q' + qnum);
-                            answer = selected.map(function () {
+                            answer = selected.map(function() {
                                 return $(this).val();
                             }).get();
                             break;
@@ -262,7 +262,7 @@
                     type: 'POST',
                     data: {
                         _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: '{{$set->kode}}',
+                        set_id: '{{ $set->kode }}',
                         kategori: 'reading',
                         answers: results,
                         tipe_test: 'practice'
@@ -371,7 +371,7 @@
             if (confirmFinish) {
                 let results = [];
 
-                $('.q-item, .q-list, .q-text, .q-dropdown').each(function () {
+                $('.q-item, .q-list, .q-text, .q-dropdown').each(function() {
                     const type = $(this).data('type');
                     const qnum = $(this).data('q');
 
@@ -383,19 +383,19 @@
                     switch (type) {
 
                         case 'summary_completion': {
-                                let field;
+                            let field;
 
-                                if ($(this).is('input[type="text"], select')) {
-                                    field = $(this);
-                                } else {
-                                    field = $(this).find('input[type="text"], select').first();
-                                }
-                                if (field && field.length) {
-                                    name = field.attr('name');
-                                    answer = field.val() || null;
-                                }
-                                break;
+                            if ($(this).is('input[type="text"], select')) {
+                                field = $(this);
+                            } else {
+                                field = $(this).find('input[type="text"], select').first();
                             }
+                            if (field && field.length) {
+                                name = field.attr('name');
+                                answer = field.val() || null;
+                            }
+                            break;
+                        }
                         case 'tfng':
                         case 'oc':
                         case 'ynng': {
@@ -454,7 +454,7 @@
                             const selected = $(this).find('input[type="checkbox"]:checked');
 
                             name = first.attr('name') || ('q' + qnum);
-                            answer = selected.map(function () {
+                            answer = selected.map(function() {
                                 return $(this).val();
                             }).get();
                             break;
@@ -476,7 +476,7 @@
                     type: 'POST',
                     data: {
                         _token: $('meta[name="csrf-token"]').attr('content'),
-                        set_id: '{{$set->kode}}',
+                        set_id: '{{ $set->kode }}',
                         kategori: 'reading',
                         answers: results,
                         tipe_test: 'practice'
@@ -550,7 +550,7 @@
         });
 
         // Mulai countdown (contoh: 15 menit)
-        startCountdown(13 * 60);
+        startCountdown(60 * 60);
     })();
 </script>
 
@@ -864,7 +864,7 @@
             if (!toolbar.contains(e.target) &&
                 !notePopup.contains(e.target) &&
                 (!e.target.classList.contains('highlight') || !e.target.closest(
-                '.highlighted-content')) &&
+                    '.highlighted-content')) &&
                 !window.getSelection().toString()) {
                 hideToolbar();
                 hideNotePopup();
@@ -922,156 +922,6 @@
     function retryQuiz() {
         location.reload();
     }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const floatingQ = document.getElementById('floatingQuestions');
-        const fqBody = document.getElementById('fqBody');
-        const fqList = document.getElementById('fqList');
-        const fqToggle = document.getElementById('fqToggle');
-
-        if (!floatingQ || !fqBody || !fqList || !fqToggle) return;
-
-        let isCollapsed = false;
-        let currentPart = 'tfng';
-        let questionCount = 0;
-
-        // Toggle collapse
-        fqToggle.addEventListener('click', () => {
-            isCollapsed = !isCollapsed;
-            floatingQ.classList.toggle('collapsed', isCollapsed);
-            floatingQ.classList.toggle('expanded', !isCollapsed);
-        });
-
-        // Generate question numbers
-        function generateQuestionList(partId, count) {
-            fqList.innerHTML = '';
-            questionCount = count;
-
-            for (let i = 1; i <= count; i++) {
-                const item = document.createElement('a');
-                item.href = '#';
-                item.className = 'fq-item';
-                item.textContent = i;
-                item.dataset.q = i;
-                item.dataset.part = partId;
-
-                // Scroll ke soal saat diklik
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    scrollToQuestion(i, partId);
-                });
-
-                fqList.appendChild(item);
-            }
-        }
-
-        // Scroll ke soal tertentu
-        function scrollToQuestion(qNum, partId) {
-            const panel = document.getElementById(`panel-${partId}`);
-            if (!panel) return;
-
-            const question = panel.querySelector(`[data-q="${qNum}"]`);
-            if (question) {
-                question.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-                question.focus();
-            }
-        }
-
-        // Update status soal (radio, dropdown, text)
-        function updateQuestionStatus(partId) {
-            const panel = document.getElementById(`panel-${partId}`);
-            if (!panel) return;
-
-            fqList.querySelectorAll('.fq-item').forEach(item => {
-                item.classList.remove('answered', 'current');
-            });
-
-            for (let i = 1; i <= questionCount; i++) {
-                const item = fqList.querySelector(`[data-q="${i}"][data-part="${partId}"]`);
-                if (!item) continue;
-
-                const question = panel.querySelector(`[data-q="${i}"]`);
-                if (!question) continue;
-
-                let answered = false;
-
-                // Radio
-                const radioChecked = question.querySelector('input[type="radio"]:checked');
-                if (radioChecked) answered = true;
-
-                // Dropdown
-                const dropdown = question.querySelector('select.q-dropdown');
-                if (dropdown && dropdown.value !== '') answered = true;
-
-                // Text input
-                const textInput = question.querySelector('input[type="text"], textarea');
-                if (textInput && textInput.value.trim() !== '') answered = true;
-
-                if (answered) item.classList.add('answered');
-            }
-        }
-
-        // Deteksi jawaban berubah
-        function watchAnswerChanges() {
-            document.addEventListener('input', (e) => {
-                const question = e.target.closest('[data-q]');
-                if (question) updateQuestionStatus(currentPart);
-            });
-
-            document.addEventListener('change', (e) => {
-                const question = e.target.closest('[data-q]');
-                if (question) updateQuestionStatus(currentPart);
-            });
-
-            document.addEventListener('click', (e) => {
-                const option = e.target.closest('.q-option');
-                if (option) setTimeout(() => updateQuestionStatus(currentPart), 50);
-            });
-        }
-
-        // Deteksi perubahan part
-        function watchPartChanges() {
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName ===
-                        'data-active') {
-                        const newPart = mutation.target.dataset.active;
-                        if (newPart && newPart !== currentPart) {
-                            currentPart = newPart;
-                            updateQuestionListForPart(newPart);
-                        }
-                    }
-                });
-            });
-
-            const tabsContainer = document.querySelector('.x-tabs');
-            if (tabsContainer) observer.observe(tabsContainer, {
-                attributes: true,
-                attributeFilter: ['data-active']
-            });
-        }
-
-        // Update question list untuk part aktif
-        function updateQuestionListForPart(partId) {
-            const questionCounts = {
-                'tfng': 13,
-                'tfng2': 13,
-                'ynng': 14,
-            };
-            const count = questionCounts[partId] || 5;
-            generateQuestionList(partId, count);
-            updateQuestionStatus(partId);
-        }
-
-        // Init
-        updateQuestionListForPart('tfng');
-        watchPartChanges();
-        watchAnswerChanges();
-        setInterval(() => updateQuestionStatus(currentPart), 2000);
-    });
 </script>
 
 <script>
@@ -1123,5 +973,128 @@
     // aktifkan drag untuk semua floating button
     document.querySelectorAll(".floating-btn").forEach(btn => {
         makeDraggable(btn);
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const fqList = document.getElementById('fqList');
+        const floatingQ = document.getElementById('floatingQuestions');
+        const fqToggle = document.getElementById('fqToggle');
+
+        if (!fqList) return;
+
+        let activeQ = null;
+        let questionNumbers = [];
+
+        function collectQuestionNumbers() {
+            const set = new Set();
+
+            document.querySelectorAll('[data-q]').forEach(el => {
+                const q = el.getAttribute('data-q');
+                if (q && !isNaN(q)) set.add(Number(q));
+            });
+
+            questionNumbers = Array.from(set).sort((a, b) => a - b);
+        }
+
+        function renderFqList() {
+            fqList.innerHTML = '';
+
+            questionNumbers.forEach(qnum => {
+                const item = document.createElement('a');
+                item.href = '#';
+                item.className = 'fq-item';
+                item.dataset.q = qnum;
+                item.textContent = qnum;
+
+                item.addEventListener('click', e => {
+                    e.preventDefault();
+                    goToQuestion(qnum);
+                });
+
+                fqList.appendChild(item);
+            });
+
+            updateStatus();
+        }
+
+        function goToQuestion(qnum) {
+            activeQ = String(qnum);
+
+            const target = document.querySelector(`[data-q="${qnum}"]`);
+            if (!target) return;
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+
+            updateStatus();
+        }
+
+        function isAnswered(qnum) {
+            const elements = document.querySelectorAll(`[data-q="${qnum}"]`);
+
+            for (const el of elements) {
+
+                // radio
+                if (el.querySelector?.('input[type="radio"]:checked')) return true;
+
+                // checkbox
+                if (el.querySelector?.('input[type="checkbox"]:checked')) return true;
+
+                // text / textarea
+                const text = el.querySelector?.('input[type="text"], textarea');
+                if (text && text.value.trim() !== '') return true;
+
+                // dropdown
+                const select = el.querySelector?.('select');
+                if (select && select.value !== '') return true;
+
+                // jika elemen itu sendiri input / select
+                if (el.matches?.('input[type="text"], textarea') && el.value.trim() !== '') return true;
+                if (el.matches?.('select') && el.value !== '') return true;
+            }
+
+            return false;
+        }
+
+        function updateStatus() {
+            fqList.querySelectorAll('.fq-item').forEach(item => {
+                const qnum = item.dataset.q;
+
+                item.classList.remove('answered', 'current');
+
+                if (isAnswered(qnum)) item.classList.add('answered');
+                if (qnum === activeQ) item.classList.add('current');
+            });
+        }
+
+        ['input', 'change', 'click'].forEach(evt => {
+            document.addEventListener(evt, e => {
+                if (e.target.closest('[data-q]')) {
+                    setTimeout(updateStatus, 50);
+                }
+            });
+        });
+
+        if (fqToggle && floatingQ) {
+            fqToggle.addEventListener('click', () => {
+                floatingQ.classList.toggle('collapsed');
+                floatingQ.classList.toggle('expanded');
+            });
+        }
+
+        function init() {
+            collectQuestionNumbers();
+            renderFqList();
+        }
+
+        init();
+
+        setInterval(init, 2000);
+
     });
 </script>

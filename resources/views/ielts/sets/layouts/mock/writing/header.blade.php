@@ -19,7 +19,7 @@
                 <span id="timeText">00:00</span>
             </div>
 
-            <button id="doneBtn" class="btn btn-danger">
+            <button id="doneBtn" data-url="/ielts/categories?set-id={{$set->kode}}" class="btn btn-danger">
                 <i class="fa-solid fa-flag-checkered"></i>
                 <span class="label">Close</span>
             </button>

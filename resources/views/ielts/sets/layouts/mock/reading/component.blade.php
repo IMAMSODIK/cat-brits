@@ -46,7 +46,7 @@
             <div class="score-summary-header">
                 <div class="score-circle" id="scoreCircle">
                     <span id="scoreDisplay">0/0</span>
-                    <small id="scorePercentage">0</small>
+                    <small id="scorePercentage" style="font-size: 20px">0</small>
                 </div>
                 <div class="modal-title">Your Results</div>
             </div>
