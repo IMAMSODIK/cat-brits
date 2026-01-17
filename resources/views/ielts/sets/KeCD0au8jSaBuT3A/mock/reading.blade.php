@@ -1870,7 +1870,7 @@
                             $.each(response.results, function(key, data) {
                                 const index = key.split('-')[1];
                                 const status = data.status || '';
-                                const user = data.user || 'NOT GIVEN';
+                                const user = data.user || '';
                                 const correct = data.correct || '';
 
                                 let isCorrect = status === 'correct';
@@ -2023,7 +2023,7 @@
                                 $.each(response.results, function(key, data) {
                                     const index = key.split('-')[1];
                                     const status = data.status || '';
-                                    const user = data.user || 'NOT GIVEN';
+                                    const user = data.user || '';
                                     const correct = data.correct || '';
 
                                     let isCorrect = status === 'correct';
