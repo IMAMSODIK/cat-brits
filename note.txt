@@ -79,7 +79,14 @@ dashboard admin
 
 
 
+Flow speaking mock test terbalik (done)
+Redirect t ke video call langsung setelah login pakai link (done)
+Indikator nomor soal si mock test langsung 40 
+Per part lalu submit di speaking
+Tampilan head tidak responsive
 
-
-
-- buat kan saja data-type di practice agar di mocktest tidak repot menambahkannya
+Reading 1 jam
+Aktifities di user hilangjan
+Nilai konversi skor di mock test di besarkan
+Thumbnail
+Tombol back writing mock test masih belum pas

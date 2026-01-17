@@ -1200,31 +1200,15 @@
         <div class="col-12 col-xxl-6 col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Live Video Call Test</h4>
-                    <p class="f-m-light mt-1">Manage student requests and accepted live test sessions.</p>
+                    <h4>Completed Video Call Sessions</h4>
+                    <p class="f-m-light mt-1">Displays the history of video call sessions that have already ended.</p>
                 </div>
 
                 <div class="card-body">
 
                     <ul class="nav nav-tabs" id="videoCallTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#requests"
-                                type="button">
-                                Requests
-                                <span class="badge bg-primary ms-1">{{ $pendingSessions->count() }}</span>
-                            </button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#acceptedSessions"
-                                type="button">
-                                Accepted
-                                <span class="badge bg-success ms-1">{{ $upcomingSessions->count() }}</span>
-                            </button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#completedSessions"
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#completedSessions"
                                 type="button">
                                 Completed
                                 <span class="badge bg-secondary ms-1">{{ $completedSessions->count() }}</span>
@@ -1233,185 +1217,8 @@
                     </ul>
 
                     <div class="tab-content mt-3">
-
-                        {{-- REQUESTS TAB --}}
-                        <div class="tab-pane fade show active" id="requests">
-
-                            @if ($pendingSessions->isEmpty())
-                                <div class="text-center py-4 text-muted">
-                                    <i class="fa fa-inbox fa-2x mb-2"></i>
-                                    <p class="mb-0">No pending requests</p>
-                                </div>
-                            @else
-                                {{-- DESKTOP TABLE --}}
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Student</th>
-                                                <th>Title</th>
-                                                <th>Proposed Time</th>
-                                                <th>Duration</th>
-                                                <th class="text-center">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($pendingSessions as $session)
-                                                <tr>
-                                                    <td>{{ $session->student->name }}</td>
-                                                    <td>{{ $session->title }}</td>
-                                                    <td><i class="fa fa-calendar text-primary me-1"></i>
-                                                        {{ $session->proposed_time->format('M d, Y H:i') }}</td>
-                                                    <td><span class="badge bg-info">{{ $session->duration_minutes }}
-                                                            min</span></td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-success btn-sm me-1" data-bs-toggle="modal"
-                                                            data-bs-target="#acceptModal{{ $session->id }}">
-                                                            <i class="fa fa-check"></i> Accept
-                                                        </button>
-                                                        <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal"
-                                                            data-bs-target="#rejectModal{{ $session->id }}">
-                                                            <i class="fa fa-times"></i> Reject
-                                                        </button>
-                                                        <button class="btn btn-info btn-sm btn-detail"
-                                                            data-id="{{ $session->id }}">
-                                                            <i class="fa fa-eye"></i> Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                {{-- MOBILE CARDS --}}
-                                <div class="d-block d-md-none">
-                                    @foreach ($pendingSessions as $session)
-                                        <div class="card mb-3 shadow-sm">
-                                            <div class="card-body">
-                                                <strong>Student:</strong> {{ $session->student->name }} <br>
-                                                <strong>Title:</strong> {{ $session->title }} <br>
-                                                <strong>Proposed:</strong>
-                                                {{ $session->proposed_time->format('M d, Y H:i') }} <br>
-                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min <br>
-
-                                                <div class="mt-3">
-                                                    <button class="btn btn-success btn-sm me-1" data-bs-toggle="modal"
-                                                        data-bs-target="#acceptModal{{ $session->id }}">
-                                                        <i class="fa fa-check"></i> Accept
-                                                    </button>
-
-                                                    <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal"
-                                                        data-bs-target="#rejectModal{{ $session->id }}">
-                                                        <i class="fa fa-times"></i> Reject
-                                                    </button>
-
-                                                    <button class="btn btn-info btn-sm btn-detail"
-                                                        data-id="{{ $session->id }}">
-                                                        <i class="fa fa-eye"></i> Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
-
-                        </div>
-
-                        {{-- ACCEPTED SESSIONS TAB --}}
-                        <div class="tab-pane fade" id="acceptedSessions">
-
-                            @if ($upcomingSessions->isEmpty())
-                                <div class="text-center py-4 text-muted">
-                                    <i class="fa fa-calendar-times fa-2x mb-2"></i>
-                                    <p class="mb-0">No upcoming accepted sessions</p>
-                                </div>
-                            @else
-                                {{-- DESKTOP TABLE --}}
-                                <div class="table-responsive d-none d-md-block">
-                                    <table class="table table-bordered align-middle">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Student</th>
-                                                <th>Title</th>
-                                                <th>Scheduled Time</th>
-                                                <th>Duration</th>
-                                                <th class="text-center">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($upcomingSessions as $session)
-                                                <tr>
-                                                    <td>{{ $session->student->name }}</td>
-                                                    <td>{{ $session->title }}</td>
-                                                    <td><i class="fa fa-clock text-success me-1"></i>
-                                                        {{ $session->scheduled_time->format('M d, Y H:i') }}</td>
-                                                    <td><span class="badge bg-success">{{ $session->duration_minutes }}
-                                                            min</span></td>
-                                                    <td class="text-center">
-                                                        @if ($session->canStart())
-                                                            <a href="{{ route('mock-test.start', $session) }}"
-                                                                class="btn btn-success btn-sm me-1">
-                                                                <i class="fa fa-video"></i> Start
-                                                            </a>
-                                                        @else
-                                                            <button class="btn btn-secondary btn-sm me-1" disabled>
-                                                                <i class="fa fa-clock"></i>
-                                                                Starts {{ $session->scheduled_time->diffForHumans() }}
-                                                            </button>
-                                                        @endif
-
-                                                        <button class="btn btn-info btn-sm btn-detail"
-                                                            data-id="{{ $session->id }}">
-                                                            <i class="fa fa-eye"></i> Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                {{-- MOBILE CARDS --}}
-                                <div class="d-block d-md-none">
-                                    @foreach ($upcomingSessions as $session)
-                                        <div class="card mb-3 shadow-sm">
-                                            <div class="card-body">
-                                                <strong>Student:</strong> {{ $session->student->name }} <br>
-                                                <strong>Title:</strong> {{ $session->title }} <br>
-                                                <strong>Scheduled:</strong>
-                                                {{ $session->scheduled_time->format('M d, Y H:i') }} <br>
-                                                <strong>Duration:</strong> {{ $session->duration_minutes }} min <br>
-
-                                                <div class="mt-3">
-                                                    @if ($session->canStart())
-                                                        <a href="{{ route('mock-test.start', $session) }}"
-                                                            class="btn btn-success btn-sm me-1">
-                                                            <i class="fa fa-video"></i> Start
-                                                        </a>
-                                                    @else
-                                                        <button class="btn btn-secondary btn-sm me-1" disabled>
-                                                            <i class="fa fa-clock"></i> Starts
-                                                            {{ $session->scheduled_time->diffForHumans() }}
-                                                        </button>
-                                                    @endif
-
-                                                    <button class="btn btn-info btn-sm btn-detail"
-                                                        data-id="{{ $session->id }}">
-                                                        <i class="fa fa-eye"></i> Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
-
-                        </div>
-
                         {{-- COMPLETED SESSIONS TAB --}}
-                        <div class="tab-pane fade" id="completedSessions">
+                        <div class="tab-pane fade show active" id="completedSessions">
 
                             @if ($completedSessions->isEmpty())
                                 <div class="text-center py-4 text-muted">

@@ -16,7 +16,7 @@ class VideoCallController extends Controller
     {
         try {
             $request->validate([
-                'teacher_id' => 'required|exists:users,id',
+                'student_id' => 'required|exists:users,id',
                 'title' => 'required|string|max:255',
                 'description' => 'nullable|string',
                 'proposed_time' => 'required|date|after:now',
@@ -25,16 +25,19 @@ class VideoCallController extends Controller
 
             $proposedTime = \Carbon\Carbon::parse($request->proposed_time)
                 ->timezone(config('app.timezone'));
+            $roomName = 'mocktest-' . $request->title . '-' . uniqid();
 
             $session = VideoCall::create([
-                'student_id' => Auth::id(),
-                'teacher_id' => $request->teacher_id,
+                'teacher_id' => Auth::id(),
+                'student_id' => $request->student_id,
                 'title' => $request->title,
                 'description' => $request->description,
                 'proposed_time' => $proposedTime,
+                'scheduled_time' => $proposedTime,
                 'duration_minutes' => 30,
                 'set_soal_id' => $request->setSoal,
-                'status' => 'pending',
+                'status' => 'accepted',
+                'jitsi_room_name' => $roomName,
             ]);
 
             return response()->json([
@@ -69,7 +72,7 @@ class VideoCallController extends Controller
             'teacher_notes' => 'nullable|string',
         ]);
 
-        $roomName = 'mocktest-' . $mockTest->id . '-' . uniqid();
+        $roomName = $mockTest->id . '-' . uniqid();
 
         $mockTest->update([
             'status' => 'accepted',
@@ -123,9 +126,9 @@ class VideoCallController extends Controller
     {
         $this->authorize('view', $mockTest);
 
-        if (!$mockTest->canStart()) {
-            return redirect()->back()->with('error', 'Session cannot be started yet. Please wait until the scheduled time.');
-        }
+        // if (!$mockTest->canStart()) {
+        //     return redirect()->back()->with('error', 'Session cannot be started yet. Please wait until the scheduled time.');
+        // }
 
         // Ensure room name exists
         if (empty($mockTest->jitsi_room_name)) {
@@ -155,7 +158,7 @@ class VideoCallController extends Controller
         if(Auth::user()->role == 'teacher'){
             return redirect('/test-correction?category=ielts')->with('success', 'Mock test session completed!');
         }else if(Auth::user()->role == 'student'){
-            return redirect('/ielts/mock-test?set-id=XJ3XOcvqPbgdZwyl&section=speaking')->with('success', 'Mock test session completed!');
+            return redirect('/dashboard')->with('success', 'Mock test session completed!');
         }
     }
 

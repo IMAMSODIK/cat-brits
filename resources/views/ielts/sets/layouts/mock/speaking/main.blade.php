@@ -28,8 +28,7 @@
                                     <thead>
                                         <tr>
                                             <th><i class="fas fa-heading me-2"></i>Title</th>
-                                            <th><i class="fas fa-chalkboard-teacher me-2"></i>Teacher</th>
-                                            <th><i class="fas fa-clock me-2"></i>Proposed Time</th>
+                                            <th><i class="fas fa-chalkboard-teacher me-2"></i>Student</th>
                                             <th><i class="fas fa-calendar-alt me-2"></i>Scheduled Time</th>
                                             <th><i class="fas fa-info-circle me-2"></i>Status</th>
                                             <th><i class="fas fa-cogs me-2"></i>Actions</th>
@@ -39,13 +38,7 @@
                                         @foreach ($sessions as $session)
                                             <tr>
                                                 <td class="fw-semibold">{{ $session->title }}</td>
-                                                <td>{{ $session->teacher->name }}</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <i class="fas fa-clock text-muted me-2"></i>
-                                                        {{ $session->proposed_time->format('M d, Y H:i') }}
-                                                    </div>
-                                                </td>
+                                                <td>{{ $session->student->name }}</td>
                                                 <td>
                                                     @if ($session->scheduled_time)
                                                         <div class="d-flex align-items-center">
@@ -84,11 +77,15 @@
                                                             data-id="{{ $session->id }}">
                                                             <i class="fa fa-eye"></i> Details
                                                         </button>
-                                                        @if ($session->status === 'accepted' && $session->canStart())
+                                                        @if ($session->status === 'accepted')
                                                             <a href="{{ route('mock-test.start', $session) }}"
                                                                 class="btn btn-sm btn-success">
                                                                 <i class="fas fa-video me-1"></i>Join Session
                                                             </a>
+                                                            <button class="btn btn-success btn-sm btn-copy"
+                                                                data-link="{{ route('mock-test.start', $session) }}">
+                                                                <i class="fa fa-copy"></i> Copy Link
+                                                            </button>
                                                         @endif
                                                     </div>
                                                 </td>

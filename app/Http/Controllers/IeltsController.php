@@ -908,9 +908,9 @@ class IeltsController extends Controller
                         /** @var \App\Models\User $user */
                         $user = Auth::user();
 
-                        if ($user->isStudent()) {
-                            $data['sessions'] = $user->studentSessions()->with('teacher')->latest()->get();
-                            $data['teachers'] = User::where('role', 'teacher')->get();
+                        if ($user->isTeacher()) {
+                            $data['sessions'] = $user->teacherSessions()->with('student')->latest()->get();
+                            $data['students'] = User::where('role', 'student')->get();
                             $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
                             return view($blade, $data);
                         }

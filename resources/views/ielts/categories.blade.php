@@ -235,7 +235,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-3" style="cursor: pointer;"
-                            onclick="location.href='/ielts/mock-test/instructuion?set-id={{ $set->kode }}&section=speaking'">
+                            onclick="location.href='/ielts/mock-test?set-id={{ $set->kode }}&section=speaking'">
                             <div class="card boost-up-card bg-speaking overflow-hidden">
                                 <div class="p-4">
                                     <div class="row">

@@ -514,6 +514,14 @@
                         <div class="action-buttons">
 
                             @if(auth()->user()->isStudent())
+                                @if($mockTest->status === 'accepted' && $mockTest->canStart())
+                                    <a href="{{ route('mock-test.start', $mockTest) }}" class="btn btn-success">
+                                        <i class="fas fa-video me-2"></i>Join Session
+                                    </a>
+                                @endif
+                            @endif
+
+                            @if(auth()->user()->isTeacher())
                                 @if($mockTest->status === 'pending')
                                     <form action="{{ route('mock-test.destroy', $mockTest) }}" method="POST" class="d-inline">
                                         @csrf
@@ -524,14 +532,16 @@
                                     </form>
                                 @endif
 
-                                @if($mockTest->status === 'accepted' && $mockTest->canStart())
-                                    <a href="{{ route('mock-test.start', $mockTest) }}" class="btn btn-success">
-                                        <i class="fas fa-video me-2"></i>Join Session
-                                    </a>
+                                @if($mockTest->status === 'completed')
+                                    <form action="{{ route('mock-test.destroy', $mockTest) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this session?')">
+                                            <i class="fas fa-trash me-2"></i>Delete History
+                                        </button>
+                                    </form>
                                 @endif
-                            @endif
 
-                            @if(auth()->user()->isTeacher())
                                 @if($mockTest->status === 'accepted' && $mockTest->canStart())
                                     <a href="{{ route('mock-test.start', $mockTest) }}" class="btn btn-success">
                                         <i class="fas fa-play me-2"></i>Start Session

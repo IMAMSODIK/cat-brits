@@ -10,23 +10,23 @@
                 <div class="info-box">
                     <i class="fas fa-info-circle"></i>
                     <p>Please fill out all the required information to request a mock test speaking session. Your
-                        teacher
+                        student
                         will review and respond to your request.</p>
                 </div>
 
                 <form id="mockTestForm">
                     <div class="form-group">
                         <label for="teacher_id" class="form-label">
-                            <i class="fas fa-chalkboard-teacher"></i> Select Teacher
+                            <i class="fas fa-chalkboard-teacher"></i> Select Student
                         </label>
                         <input type="hidden" id="set-id" value="{{ $set->id }}">
                         <select name="teacher_id" id="teacher_id" class="form-select" required>
-                            <option value="">Choose a teacher...</option>
-                            @foreach ($teachers as $teacher)
-                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                            <option value="">Choose a student...</option>
+                            @foreach ($students as $student)
+                                <option value="{{ $student->id }}">{{ $student->name }}</option>
                             @endforeach
                         </select>
-                        <div class="invalid-feedback">Please select a teacher.</div>
+                        <div class="invalid-feedback">Please select a student.</div>
                     </div>
 
                     <div class="form-group">

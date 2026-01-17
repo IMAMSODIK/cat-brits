@@ -3,6 +3,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+    $('.btn-copy').on('click', function () {
+        const btn = $(this);
+        const link = btn.data('link');
+
+        navigator.clipboard.writeText(link).then(() => {
+            btn.html('<i class="fa fa-check"></i> Copied')
+            .removeClass('btn-info')
+            .addClass('btn-success');
+
+            setTimeout(() => {
+                btn.html('<i class="fa fa-copy"></i> Copy Link')
+                .removeClass('btn-success')
+                .addClass('btn-info');
+            }, 2000);
+        });
+    });
+</script>
+
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         // Add animation to table rows
         const tableRows = document.querySelectorAll('tbody tr');
@@ -160,7 +179,7 @@
             let form = $("#mockTestForm");
 
             let formData = {
-                teacher_id: $("#teacher_id").val(),
+                student_id: $("#teacher_id").val(),
                 title: $("#title").val(),
                 description: $("#description").val(),
                 proposed_time: $("#proposed_time").val(),
