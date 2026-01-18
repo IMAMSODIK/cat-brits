@@ -2,6 +2,24 @@
     crossorigin="anonymous"></script>
 
 <script>
+    document.addEventListener('change', function (e) {
+        const checkbox = e.target;
+        if (checkbox.type !== 'checkbox') return;
+
+        const fieldset = checkbox.closest('fieldset.q-item[data-type="two_choices"]');
+        if (!fieldset) return;
+
+        const max = parseInt(fieldset.dataset.max || 2, 10);
+        const checked = fieldset.querySelectorAll('input[type="checkbox"]:checked');
+
+        if (checked.length > max) {
+            checkbox.checked = false;
+            alert('You can only select ' + max + ' answers for this question.');
+        }
+    });
+</script>
+    
+<script>
     function confirmExit() {
         if (confirm('Are you sure you want to end the test?')) {
             location.href = '/ielts/categories?set-id={{ $set->kode }}';

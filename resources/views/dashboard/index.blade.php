@@ -129,6 +129,192 @@
             color: #333;
         }
     </style>
+
+    <style>
+        .ranking-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .ranking-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        .bottom-rankers .section-title {
+            color: #e74c3c;
+        }
+
+        .top-rankers .section-title {
+            color: #3498db;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ranking-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-rankers .ranking-item {
+            background: linear-gradient(90deg, #fff5f5 0%, #ffeaea 100%);
+            border-left: 5px solid #e74c3c;
+        }
+
+        .top-rankers .ranking-item {
+            background: linear-gradient(90deg, #f5f9ff 0%, #ebf3ff 100%);
+            border-left: 5px solid #3498db;
+        }
+
+        .rank {
+            font-weight: 800;
+            min-width: 70px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .bottom-rankers .rank {
+            color: #e74c3c;
+        }
+
+        .top-rankers .rank {
+            color: #3498db;
+        }
+
+        .rank-1 {
+            background: linear-gradient(90deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #4caf50 !important;
+        }
+
+        .rank-1 .rank {
+            color: #4caf50;
+        }
+
+
+        .rank-5 {
+            opacity: 0.9;
+        }
+
+        .rank-4 {
+            opacity: 0.8;
+        }
+
+        .rank-3 {
+            opacity: 0.9;
+        }
+
+        .rank-2 {
+            opacity: 0.95;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .bottom-avatar {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .top-avatar {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .rank-1 .avatar {
+            background: linear-gradient(135deg, #4caf50 0%, #4caf50 100%);
+        }
+
+        .user-info {
+            flex-grow: 1;
+        }
+
+        .user-name {
+            font-weight: 700;
+            font-size: 1rem color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .score {
+            color: #7f8c8d;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-value {
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        .top-rankers .score-value {
+            color: #e74c3c;
+        }
+
+        .bottom-rankers .score-value {
+            color: #3498db;
+        }
+
+        .rank-1 .score-value {
+            color: #ff9800;
+        }
+
+        .medal {
+            margin-right: 10px;
+        }
+
+        .gold {
+            color: #ffd700;
+        }
+
+        .silver {
+            color: #c0c0c0;
+        }
+
+        .bronze {
+            color: #cd7f32;
+        }
+
+        @media (max-width: 768px) {
+            .ranking-container {
+                flex-direction: column;
+            }
+
+            .ranking-section {
+                min-width: 100%;
+            }
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -274,7 +460,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     @endif
 
     {{-- sets information --}}
@@ -413,13 +599,14 @@
                     <div class="row">
                         {{-- new user --}}
                         @if (auth()->user()->role == 'admin')
-                            <div class="col-xxl-3 col-sm-5 box-col-6">
+                            <div class="col-sm-5 box-col-6">
                                 <div class="card height-equal">
                                     <div
                                         class="card-header card-no-border total-revenue d-flex justify-content-between align-items-center">
                                         <h4 class="mb-0">New User</h4>
                                         <span class="text-primary cursor-pointer">
-                                            <button onclick="location.href='/students-verification'" class="btn btn-primary">View All</button>
+                                            <button onclick="location.href='/students-verification'"
+                                                class="btn btn-primary">View All</button>
                                         </span>
                                     </div>
                                     <div class="card-body pt-0">
@@ -442,8 +629,8 @@
                                                                 <div class="product-sub">
                                                                     <div class="dropdown">
                                                                         <div id="dropdownMenuButtonicon31"
-                                                                            data-bs-toggle="dropdown" aria-expanded="false"
-                                                                            role="menu">
+                                                                            data-bs-toggle="dropdown"
+                                                                            aria-expanded="false" role="menu">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -459,9 +646,10 @@
 
                         {{-- student activity --}}
                         @if (auth()->user()->role == 'admin')
-                            <div class="col-xxl-4 col-md-7 col-12">
+                            <div class="col-md-7 col-12">
                                 <div class="card height-equal">
-                                    <div class="card-header card-no-border d-flex justify-content-between align-items-center">
+                                    <div
+                                        class="card-header card-no-border d-flex justify-content-between align-items-center">
                                         <h4 class="mb-0">Student Activity</h4>
                                     </div>
 
@@ -483,7 +671,9 @@
                                                             <div class="flex-grow-1">
                                                                 <div class="fw-semibold">{{ $activities->student->name }}
                                                                 </div>
-                                                                <small class="text-primary">{{ $activities->setSoal->name }} |
+                                                                <small
+                                                                    class="text-primary">{{ $activities->setSoal->name }}
+                                                                    |
                                                                     {{ ucfirst($activities->kategori) }}</small>
                                                             </div>
 
@@ -606,7 +796,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-xxl-4 col-md-6">
+                        <div class="col-12 col-md-6">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <div>
@@ -632,7 +822,8 @@
                                                         <div class="col-5 d-flex align-items-center">
                                                             <video width="100%" controls class="preview-video"
                                                                 data-duration-target="duration-{{ $v->id }}">
-                                                                <source src="{{ asset('storage/recordings/' . $v->video) }}"
+                                                                <source
+                                                                    src="{{ asset('storage/recordings/' . $v->video) }}"
                                                                     type="video/webm">
                                                             </video>
                                                         </div>
@@ -646,7 +837,8 @@
                                                                     {{ $v->created_at->format('Y-m-d') }}
                                                                     &nbsp; • &nbsp;
                                                                     <i class="fa fa-clock"></i>
-                                                                    <span id="duration-{{ $v->id }}">Loading…</span>
+                                                                    <span
+                                                                        id="duration-{{ $v->id }}">Loading…</span>
                                                                 </p>
                                                                 <p class="text-dark" style="font-size: 13px;">
                                                                     <b>Topic: {{ $v->setSoal->name }}</b><br>
@@ -673,7 +865,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-xxl-4 col-md-6">
+                        <div class="col-12 col-md-6">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <div>
@@ -718,7 +910,8 @@
                                                                 <p class="text-dark" style="font-size: 13px;">
                                                                     <b>Topic: {{ $w->setSoal->name }}</b><br>
                                                                     {{ $w->setSoal->thumbnail }} <br>
-                                                                    <small class="text-primary">{{ $w->task }} &nbsp; •
+                                                                    <small class="text-primary">{{ $w->task }} &nbsp;
+                                                                        •
                                                                         &nbsp; Number
                                                                         {{ $w->no_soal }}</small>
                                                                 </p>
@@ -742,7 +935,8 @@
 
                     <hr>
 
-                    <div class="row">
+                    {{-- video call statistics --}}
+                    {{-- <div class="row">
                         <div class="col-12 col-xl-6">
                             <div class="card o-hidden small-widget">
                                 <div class="card-body total-project border-b-primary border-2">
@@ -802,9 +996,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="row video-call-row">
+                    {{-- <div class="row video-call-row">
                         <div class="col-12 col-xxl-6 col-md-12">
                             <div class="card">
                                 <div class="card-header">
@@ -834,7 +1028,6 @@
 
                                     <div class="tab-content mt-3">
 
-                                        {{-- REQUESTS TAB --}}
                                         <div class="tab-pane fade show active" id="requests">
 
                                             @if ($pendingSessions->isEmpty())
@@ -843,7 +1036,6 @@
                                                     <p class="mb-0">No pending requests</p>
                                                 </div>
                                             @else
-                                                {{-- DESKTOP TABLE --}}
                                                 <div class="table-responsive d-none d-md-block">
                                                     <table class="table table-bordered align-middle">
                                                         <thead class="table-light">
@@ -880,7 +1072,6 @@
                                                     </table>
                                                 </div>
 
-                                                {{-- MOBILE CARDS --}}
                                                 <div class="d-block d-md-none">
                                                     @foreach ($pendingSessions as $session)
                                                         <div class="card mb-3 shadow-sm">
@@ -907,7 +1098,6 @@
 
                                         </div>
 
-                                        {{-- ACCEPTED SESSIONS TAB --}}
                                         <div class="tab-pane fade" id="acceptedSessions">
 
                                             @if ($upcomingSessions->isEmpty())
@@ -916,7 +1106,6 @@
                                                     <p class="mb-0">No upcoming accepted sessions</p>
                                                 </div>
                                             @else
-                                                {{-- DESKTOP TABLE --}}
                                                 <div class="table-responsive d-none d-md-block">
                                                     <table class="table table-bordered align-middle">
                                                         <thead class="table-light">
@@ -953,7 +1142,6 @@
                                                     </table>
                                                 </div>
 
-                                                {{-- MOBILE CARDS --}}
                                                 <div class="d-block d-md-none">
                                                     @foreach ($upcomingSessions as $session)
                                                         <div class="card mb-3 shadow-sm">
@@ -985,128 +1173,193 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 @endif
 
                 <div class="row">
-                    @php
-                        $colClass = in_array(auth()->user()->role, ['admin', 'teacher'])
-                            ? 'col-6 col-lg-3'
-                            : 'col-6 col-lg-6';
-                    @endphp
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="ranking-section top-rankers">
+                            <h2 class="section-title">
+                                <i class="fas fa-crown"></i> 5 Top Reading
+                            </h2>
 
-                    <div class="{{$colClass}}">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Top Reading</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[0][0] as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                            @foreach ($score[0][0] as $index => $item)
+                                @php
+                                    $rank = $index + 1;
+                                    $rankClass = match ($rank) {
+                                        1 => 'rank-1',
+                                        5 => 'rank-5',
+                                        default => '',
+                                    };
+
+                                    $medal = match ($rank) {
+                                        1 => 'gold',
+                                        2 => 'silver',
+                                        3 => 'bronze',
+                                        default => null,
+                                    };
+
+                                    $avatar = strtoupper(substr($item->name, 0, 1));
+                                @endphp
+
+                                <div class="ranking-item {{ $rankClass }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                    <div class="rank">{{ $rank }}</div>
+
+                                    <div class="avatar top-avatar">
+                                        @if ($item->foto)
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                        @else
+                                            {{ $avatar }}
+                                        @endif
+                                    </div>
+
+                                    <div class="user-info">
+                                        <div class="user-name">{{ $item->name }}</div>
+
+                                        <div class="score">
+                                            @if ($medal)
+                                                <span class="medal {{ $medal }}">
+                                                    <i class="fas fa-medal"></i>
+                                                </span>
+                                            @endif
+                                            Skor:
+                                            <span class="score-value">
+                                                {{ number_format($item->avg_score, 2) }}
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     @if (in_array(auth()->user()->role, ['admin', 'teacher']))
-                        <div class="{{$colClass}}">
-                            <div class="card">
-                                <div class="card-header card-no-border total-revenue pb-0">
-                                    <h5 class="mb-2">Bottom Reading</h5>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Score</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($score[0][1] as $item)
-                                                    <tr>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+                        <div class="col-12 col-lg-6 mb-3">
+                            <div class="ranking-section bottom-rankers">
+                                <h2 class="section-title">
+                                    <i class="fas fa-sort-amount-down-alt"></i> 5 Bottom Reading
+                                </h2>
+
+                                @php
+                                    $totalParticipants = $score[0][2] ?? count($score[1][1]);
+                                    $bottomCount = count($score[0][1]);
+                                @endphp
+
+                                @foreach ($score[0][1] as $index => $item)
+                                    @php
+                                        $rank = $totalParticipants - $bottomCount + $index + 1;
+                                        $avatar = strtoupper(substr($item->name, 0, 1));
+                                    @endphp
+
+                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                        <div class="rank">{{ $rank }}</div>
+
+                                        <div class="avatar bottom-avatar">
+                                            @if ($item->foto)
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                            @else
+                                                {{ $avatar }}
+                                            @endif
+                                        </div>
+
+                                        <div class="user-info">
+                                            <div class="user-name">{{ $item->name }}</div>
+
+                                            <div class="score">
+                                                Skor:
+                                                <span class="score-value">
+                                                    {{ number_format($item->avg_score, 2) }}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     @endif
 
-                    <div class="{{$colClass}}">
-                        <div class="card">
-                            <div class="card-header card-no-border total-revenue pb-0">
-                                <h5 class="mb-2">Top Listening</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered align-middle" style="background-color: #e6f4ea;">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Score</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($score[1][0] as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="ranking-section top-rankers">
+                            <h2 class="section-title">
+                                <i class="fas fa-crown"></i> 5 Top Listening
+                            </h2>
+
+                            @foreach ($score[1][0] as $index => $item)
+                                @php
+                                    $rank = $index + 1;
+                                    $avatar = strtoupper(substr($item->name, 0, 1));
+                                @endphp
+
+                                <div class="ranking-item {{ $rank === 1 ? 'rank-1' : '' }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                    <div class="rank">{{ $rank }}</div>
+
+                                    <div class="avatar top-avatar">
+                                        @if ($item->foto)
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                        @else
+                                            {{ $avatar }}
+                                        @endif
+                                    </div>
+
+                                    <div class="user-info">
+                                        <div class="user-name">{{ $item->name }}</div>
+
+                                        <div class="score">
+                                            @if ($rank === 1)
+                                                <span class="medal gold"><i class="fas fa-medal"></i></span>
+                                            @elseif ($rank === 2)
+                                                <span class="medal silver"><i class="fas fa-medal"></i></span>
+                                            @elseif ($rank === 3)
+                                                <span class="medal bronze"><i class="fas fa-medal"></i></span>
+                                            @endif
+                                            Skor:
+                                            <span class="score-value">{{ number_format($item->avg_score, 2) }}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     @if (in_array(auth()->user()->role, ['admin', 'teacher']))
-                        <div class="{{$colClass}}">
-                            <div class="card">
-                                <div class="card-header card-no-border pb-0">
-                                    <h5 class="mb-2">Bottom Listening</h5>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered align-middle" style="background-color: #fde2e2;">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Score</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($score[1][1] as $item)
-                                                    <tr>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td class="text-end">{{ number_format($item->avg_score, 2) }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+                        <div class="col-12 col-lg-6 mb-3">
+                            <div class="ranking-section bottom-rankers">
+                                <h2 class="section-title">
+                                    <i class="fas fa-sort-amount-down-alt"></i> 5 Bottom Listening
+                                </h2>
+
+                                @php
+                                    $totalParticipants = $score[1][2] ?? count($score[1][1]);
+                                    $bottomCount = count($score[1][1]);
+                                @endphp
+
+                                @foreach ($score[1][1] as $index => $item)
+                                    @php
+                                        $rank = $totalParticipants - $bottomCount + $index + 1;
+                                        $avatar = strtoupper(substr($item->name, 0, 1));
+                                    @endphp
+
+                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                        <div class="rank">{{ $rank }}</div>
+
+                                        <div class="avatar bottom-avatar">
+                                            @if ($item->foto)
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                            @else
+                                                {{ $avatar }}
+                                            @endif
+                                        </div>
+
+                                        <div class="user-info">
+                                            <div class="user-name">{{ $item->name }}</div>
+
+                                            <div class="score">
+                                                Skor:
+                                                <span class="score-value">{{ number_format($item->avg_score, 2) }}</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     @endif
@@ -1119,7 +1372,7 @@
         <div class="col-md-12">
             <div class="card p-4">
                 <div class="card-header">
-                    <h4>Student Activities (Last 12 Months)</h4>    
+                    <h4>Student Activities (Last 12 Months)</h4>
                 </div>
                 <div class="card-body">
                     <div class="activity-calendar">
@@ -1972,22 +2225,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             const monthContainer = document.getElementById('months-container');
             const monthLabels = monthContainer.querySelectorAll('.month-label');
-            
+
             // Reset container months
             monthContainer.innerHTML = '';
             monthContainer.style.position = 'relative';
             monthContainer.style.height = '20px';
-            
+
             @php
                 $date = $start->copy()->startOfWeek();
                 $currentMonth = '';
                 $monthStartCol = 1;
                 $lastMonthCol = 1;
-                
+
                 for ($i = 0; $i < 53; $i++) {
                     $weekStart = $date->copy();
                     $monthName = $weekStart->format('M');
-                    
+
                     if ($monthName !== $currentMonth) {
                         if ($currentMonth !== '') {
                             echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
@@ -1998,13 +2251,13 @@
                     $lastMonthCol = $i + 1;
                     $date->addWeek();
                 }
-                
+
                 // Add last month
                 if ($currentMonth !== '') {
                     echo "addMonthLabel('{$currentMonth}', {$monthStartCol}, {$lastMonthCol});";
                 }
             @endphp
-            
+
             function addMonthLabel(monthName, startCol, endCol) {
                 const label = document.createElement('div');
                 label.className = 'month-label';

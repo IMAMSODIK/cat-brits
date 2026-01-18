@@ -1,20 +1,422 @@
-<li class="profile-nav onhover-dropdown">
-                    <div class="media profile-media">
-                        @if (auth()->user()->foto)
-                            <img class="img-70 rounded-circle" src="{{ asset('storage') . '/' . auth()->user()->foto }}" style="width: 100% !important" alt="Profile Picture">
-                        @else
-                            <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
-                        @endif
-                        <div class="media-body d-xxl-block d-none box-col-none">
-                            <div class="d-flex align-items-center gap-2"> <span>{{auth()->user()->name}}</span><i
-                                    class="middle fa fa-angle-down"> </i></div>
-                            <p class="mb-0 font-roboto">{{auth()->user()->role}}</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Perankingan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .ranking-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .ranking-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            color: #2c3e50;
+            font-size: 1.8rem;
+        }
+        
+        .top-rankers .section-title {
+            color: #e74c3c;
+        }
+        
+        .bottom-rankers .section-title {
+            color: #3498db;
+        }
+        
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ranking-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-rankers .ranking-item {
+            background: linear-gradient(90deg, #fff5f5 0%, #ffeaea 100%);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .bottom-rankers .ranking-item {
+            background: linear-gradient(90deg, #f5f9ff 0%, #ebf3ff 100%);
+            border-left: 5px solid #3498db;
+        }
+        
+        .rank {
+            font-size: 2.2rem;
+            font-weight: 800;
+            min-width: 70px;
+            text-align: center;
+        }
+        
+        .top-rankers .rank {
+            color: #e74c3c;
+        }
+        
+        .bottom-rankers .rank {
+            color: #3498db;
+        }
+        
+        .rank-1 {
+            background: linear-gradient(90deg, #fff0e6 0%, #ffe0cc 100%);
+            border-left: 5px solid #ff9800 !important;
+        }
+        
+        .rank-1 .rank {
+            color: #ff9800;
+        }
+        
+        .rank-5 {
+            opacity: 0.9;
+        }
+        
+        .rank-4 {
+            opacity: 0.8;
+        }
+        
+        .rank-3 {
+            opacity: 0.9;
+        }
+        
+        .rank-2 {
+            opacity: 0.95;
+        }
+        
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        
+        .top-avatar {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .bottom-avatar {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .rank-1 .avatar {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+        
+        .user-info {
+            flex-grow: 1;
+        }
+        
+        .user-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .score {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .score-value {
+            font-weight: 700;
+            margin-left: 5px;
+        }
+        
+        .top-rankers .score-value {
+            color: #e74c3c;
+        }
+        
+        .bottom-rankers .score-value {
+            color: #3498db;
+        }
+        
+        .rank-1 .score-value {
+            color: #ff9800;
+        }
+        
+        .medal {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .gold {
+            color: #ffd700;
+        }
+        
+        .silver {
+            color: #c0c0c0;
+        }
+        
+        .bronze {
+            color: #cd7f32;
+        }
+        
+        .footer-note {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 100%;
+            color: #7f8c8d;
+        }
+        
+        .highlight {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .ranking-container {
+                flex-direction: column;
+            }
+            
+            .ranking-section {
+                min-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-trophy"></i> TAMPILAN PERANKINGAN</h1>
+            <p class="subtitle">Menampilkan 5 peringkat teratas dan 5 peringkat terbawah dari suatu penilaian atau kompetisi. Data ditampilkan secara visual untuk memudahkan analisis perbandingan.</p>
+        </header>
+        
+        <div class="ranking-container">
+            <div class="ranking-section top-rankers">
+                <h2 class="section-title"><i class="fas fa-crown"></i> 5 PERINGKAT TERATAS</h2>
+                
+                <div class="ranking-item rank-1">
+                    <div class="rank">1</div>
+                    <div class="avatar top-avatar">A</div>
+                    <div class="user-info">
+                        <div class="user-name">Andi Wijaya</div>
+                        <div class="score">
+                            <span class="medal gold"><i class="fas fa-medal"></i></span>
+                            Skor: <span class="score-value">98.7</span>
                         </div>
                     </div>
-                    <ul class="profile-dropdown onhover-show-div">
-                        <li><a href="/profile"><i data-feather="user"></i><span>My Profile</span></a></li>
-                        <li>
-                            <a class="btn btn-pill btn-outline-primary btn-sm" id="logout">Log Out</a>
-                        </li>
-                    </ul>
-                </li>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">2</div>
+                    <div class="avatar top-avatar">B</div>
+                    <div class="user-info">
+                        <div class="user-name">Budi Santoso</div>
+                        <div class="score">
+                            <span class="medal silver"><i class="fas fa-medal"></i></span>
+                            Skor: <span class="score-value">95.2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">3</div>
+                    <div class="avatar top-avatar">C</div>
+                    <div class="user-info">
+                        <div class="user-name">Citra Dewi</div>
+                        <div class="score">
+                            <span class="medal bronze"><i class="fas fa-medal"></i></span>
+                            Skor: <span class="score-value">93.8</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">4</div>
+                    <div class="avatar top-avatar">D</div>
+                    <div class="user-info">
+                        <div class="user-name">Dian Pratama</div>
+                        <div class="score">
+                            Skor: <span class="score-value">91.5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item rank-5">
+                    <div class="rank">5</div>
+                    <div class="avatar top-avatar">E</div>
+                    <div class="user-info">
+                        <div class="user-name">Eka Sari</div>
+                        <div class="score">
+                            Skor: <span class="score-value">89.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ranking-section bottom-rankers">
+                <h2 class="section-title"><i class="fas fa-chart-line-down"></i> 5 PERINGKAT TERBAWAH</h2>
+                
+                <div class="ranking-item">
+                    <div class="rank">16</div>
+                    <div class="avatar bottom-avatar">P</div>
+                    <div class="user-info">
+                        <div class="user-name">Putri Amelia</div>
+                        <div class="score">
+                            Skor: <span class="score-value">45.3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">17</div>
+                    <div class="avatar bottom-avatar">Q</div>
+                    <div class="user-info">
+                        <div class="user-name">Qory Sandioriva</div>
+                        <div class="score">
+                            Skor: <span class="score-value">42.8</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">18</div>
+                    <div class="avatar bottom-avatar">R</div>
+                    <div class="user-info">
+                        <div class="user-name">Rizky Maulana</div>
+                        <div class="score">
+                            Skor: <span class="score-value">40.1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">19</div>
+                    <div class="avatar bottom-avatar">S</div>
+                    <div class="user-info">
+                        <div class="user-name">Sari Indah</div>
+                        <div class="score">
+                            Skor: <span class="score-value">38.5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ranking-item">
+                    <div class="rank">20</div>
+                    <div class="avatar bottom-avatar">T</div>
+                    <div class="user-info">
+                        <div class="user-name">Tono Sutrisno</div>
+                        <div class="score">
+                            Skor: <span class="score-value">35.2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <p>Total peserta: <span class="highlight">20 orang</span> | Rentang skor: <span class="highlight">35.2 - 98.7</span> | <span class="highlight">Peringkat 1</span> mendapatkan medali emas, <span class="highlight">peringkat 2</span> perak, dan <span class="highlight">peringkat 3</span> perunggu.</p>
+            <p><i class="fas fa-info-circle"></i> Data perankingan ini diupdate per 1 Juni 2023 dan bersifat dinamis.</p>
+        </div>
+    </div>
+
+    <script>
+        // Menambahkan efek interaktif pada item perankingan
+        document.querySelectorAll('.ranking-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const rank = this.querySelector('.rank').textContent;
+                const name = this.querySelector('.user-name').textContent;
+                const score = this.querySelector('.score-value').textContent;
+                
+                alert(`Detail Peringkat:\nPeringkat: ${rank}\nNama: ${name}\nSkor: ${score}`);
+            });
+        });
+        
+        // Efek hover yang lebih halus
+        document.querySelectorAll('.ranking-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

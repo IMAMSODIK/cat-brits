@@ -287,217 +287,419 @@ class IeltsController extends Controller
     public function check(Request $r)
     {
         DB::beginTransaction();
-        try {
-            $setId = $r->input('set_id');
-            $tipe = $r->input('tipe');
-            $kategori = $r->input('kategori');
-            $jumlahSoal = $r->input('jumlah_soal');
-            $namaTipe = $r->input('nama_tipe');
 
-            if ($kategori == 'speaking') {
+        try {
+            $setId      = $r->input('set_id');
+            $tipe       = $r->input('tipe');
+            $kategori   = $r->input('kategori');
+            $jumlahSoal = (int) $r->input('jumlah_soal');
+            $namaTipe   = $r->input('nama_tipe');
+
+            if ($kategori === 'speaking') {
+
                 $r->validate([
-                    'video' => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800',
+                    'video'       => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800',
                     'question_id' => 'nullable|string',
-                    'timestamp' => 'nullable'
+                    'timestamp'   => 'nullable'
                 ]);
 
-                $questionId = $r->input('question_id', null);
-                $part = $r->input('part', null);
-                $filename = 'recording_q-' . $setId . '-' . $questionId . '_' . time() . '.webm';
+                $questionId = $r->input('question_id');
+                $part       = $r->input('part');
+
+                $setSoal = SetSoal::where('kode', $setId)->firstOrFail();
+
+                $filename = "recording_q-{$setId}-{$questionId}_" . time() . ".webm";
                 $path = $r->file('video')->storeAs('recordings', $filename, 'public');
 
-                $setSoal = SetSoal::where('kode', $setId)->first();
-
-                $saveVideos = Videos::create([
-                    'student_id' => Auth::user()->id,
+                Videos::create([
+                    'student_id' => Auth::id(),
                     'set_soal_id' => $setSoal->id,
-                    'no_soal' => (int) $questionId,
-                    'part_soal' => (int) $part,
-                    'tipe' => 'practice',
-                    'video' => $filename,
+                    'no_soal'    => (int) $questionId,
+                    'part_soal'  => (int) $part,
+                    'tipe'       => 'practice',
+                    'video'      => $filename,
                 ]);
 
-                DB::commit();
-
-                if ($saveVideos) {
-                    $history = TestHistory::create([
-                        'student_id' => Auth::id(),
-                        'teacher_id' => null,
-                        'tipe_test' => 'practice',
-                        'kategori' => $kategori,
-                        'tipe' => "Part " . $part,
-                        'set_soal_id' => $setSoal->id,
-                        'nama_tipe' => "Part " . $part,
-                    ]);
-
-                    return response()->json([
-                        'success' => true,
-                        'message' => 'Video uploaded successfully.',
-                        'file' => $filename,
-                        'path' => $path,
-                        'url' => Storage::url($path)
-                    ]);
-                }
-            } else if ($kategori == 'writing') {
-                $r->validate([
-                    'answer' => 'required',
-                    'task' => 'required',
-                    'tipe' => 'required',
-                    'no_soal' => 'required',
-                    'set_id' => 'required',
-                    'kategori' => 'required',
-                ]);
-
-                $questionId = $r->input('no_soal', null);
-                $task = $r->input('task', null);
-                $answer = $r->input('answer', null);
-                $setSoal = SetSoal::where('kode', $setId)->first();
-
-                $saveWriting = Writing::create([
-                    'student_id' => Auth::user()->id,
-                    'set_soal_id' => $setSoal->id,
-                    'no_soal' => (int) $questionId,
-                    'task' => $task,
-                    'tipe' => $tipe,
-                    'answer' => $answer
-                ]);
-
-                DB::commit();
-
-                if ($saveWriting) {
-                    $history = TestHistory::create([
-                        'student_id' => Auth::id(),
-                        'teacher_id' => null,
-                        'tipe_test' => $tipe,
-                        'kategori' => $kategori,
-                        'tipe' => $r->task,
-                        'set_soal_id' => $setSoal->id,
-                        'nama_tipe' => $r->task,
-                    ]);
-
-                    return response()->json([
-                        'status' => true,
-                        'message' => 'Task submited successfully.'
-                    ]);
-                }
-            } else {
-                $results = [];
-                $score = 0;
-                $payloadKeys = collect($r->all())
-                    ->keys()
-                    ->filter(fn($k) => str_starts_with($k, $setId . '-'))
-                    ->values();
-
-                if ($tipe === "two_choices") {
-                    $answers = (array) $r->input($payloadKeys[0], []);
-                    $soalIds = [];
-
-                    foreach ($payloadKeys as $key) {
-                        [$prefix, $number] = explode('-', $key);
-                        $number = (int) $number;
-
-                        $soal1 = "{$prefix}-{$number}";
-                        $soal2 = "{$prefix}-" . ($number + 1);
-
-                        $soalIds[$soal1] = $answers[0] ?? "";
-                        $soalIds[$soal2] = $answers[1] ?? "";
-                    }
-
-                    $soals = Soal::where('set_id', $setId)
-                        ->where('kategori', $kategori)
-                        ->where('tipe_soal', $tipe)
-                        ->whereIn('id_soal', array_keys($soalIds))
-                        ->get();
-                } else {
-                    $soalIds = $payloadKeys->toArray();
-                    $soals = Soal::where('set_id', $setId)
-                        ->where('kategori', $kategori)
-                        ->where('tipe_soal', $tipe)
-                        ->whereIn('id_soal', $soalIds)
-                        ->get();
-                }
-
-                $results = [];
-                $score = 0;
-
-                foreach ($soalIds as $qid) {
-                    if ($tipe == "two_choices") {
-                        $key = array_search($qid, $soalIds, true);
-                        $rawUser = $qid;
-                        $soal = $soals->firstWhere('id_soal', $key);
-                    } else {
-                        $rawUser = $r->input($qid, '');
-                        $soal = $soals->firstWhere('id_soal', $qid);
-                    }
-                    $userNorm = mb_strtoupper(trim($rawUser));
-
-                    $correctRaw = (string) optional($soal)->jawaban_benar;
-                    $correctNorm = mb_strtoupper(trim($correctRaw));
-                    $userNorm = mb_strtoupper(trim($rawUser));
-
-                    $matched = false;
-
-                    if (preg_match('/\[\s*(.*?)\s*\]/', $correctRaw, $matches)) {
-                        $list = explode(',', $matches[1]);
-                        $list = array_map(fn($v) => mb_strtoupper(trim($v)), $list);
-
-                        if (in_array($userNorm, $list)) {
-                            $matched = true;
-                        }
-                    } else {
-                        $matched = ($userNorm === $correctNorm);
-                    }
-
-                    if ($matched)
-                        $score++;
-
-                    $results[$qid] = [
-                        'status' => $matched ? 'correct' : 'wrong',
-                        'user' => $rawUser ?: null,
-                        'correct' => $correctRaw ?: null,
-                    ];
-                }
-
-                $setSoal = SetSoal::where('kode', $setId)->first();
                 $history = TestHistory::create([
                     'student_id' => Auth::id(),
                     'teacher_id' => null,
                     'tipe_test' => 'practice',
-                    'kategori' => $kategori,
-                    'tipe' => $tipe,
+                    'kategori'  => $kategori,
+                    'tipe'      => "Part {$part}",
                     'set_soal_id' => $setSoal->id,
-                    'score' => $score,
-                    'jumlah_soal' => $jumlahSoal,
-                    'nama_tipe' => $namaTipe,
+                    'nama_tipe' => "Part {$part}",
                 ]);
-
-                foreach ($results as $qid => $res) {
-                    TestDetailHistory::create([
-                        'test_history_id' => $history->id,
-                        'soal_id' => $qid,
-                        'jawaban_user' => $res['user'] ?? '',
-                        'jawaban_benar' => $res['correct'] ?? '',
-                        'status' => $res['status'] === 'correct',
-                    ]);
-                }
 
                 DB::commit();
 
                 return response()->json([
-                    'status' => 'ok',
-                    'score' => $score,
-                    'results' => $results,
-                    'history_id' => $history->id
+                    'success' => true,
+                    'file'    => $filename,
+                    'path'    => $path,
+                    'url'     => Storage::url($path)
                 ]);
             }
-        } catch (\Exception $e) {
-            DB::rollBack();
+
+            if ($kategori === 'writing') {
+
+                $r->validate([
+                    'answer' => 'required',
+                    'task'   => 'required',
+                ]);
+
+                $setSoal = SetSoal::where('kode', $setId)->firstOrFail();
+
+                Writing::create([
+                    'student_id' => Auth::id(),
+                    'set_soal_id' => $setSoal->id,
+                    'no_soal'   => (int) $r->input('no_soal'),
+                    'task'      => $r->input('task'),
+                    'tipe'      => $tipe,
+                    'answer'    => $r->input('answer')
+                ]);
+
+                TestHistory::create([
+                    'student_id' => Auth::id(),
+                    'teacher_id' => null,
+                    'tipe_test' => $tipe,
+                    'kategori'  => $kategori,
+                    'tipe'      => $r->task,
+                    'set_soal_id' => $setSoal->id,
+                    'nama_tipe' => $r->task,
+                ]);
+
+                DB::commit();
+
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Task submitted successfully'
+                ]);
+            }
+
+            $payloadKeys = collect($r->all())
+                ->keys()
+                ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+                ->values();
+
+            $soalUserMap = [];
+
+            if ($tipe === 'two_choices') {
+
+                foreach ($payloadKeys as $key) {
+
+                    [$prefix, $number] = explode('-', $key);
+                    $number = (int) $number;
+
+                    $answers = (array) $r->input($key, []);
+
+                    $soalUserMap["{$prefix}-{$number}"]       = $answers[0] ?? '';
+                    $soalUserMap["{$prefix}-" . ($number + 1)] = $answers[1] ?? '';
+                }
+            } else {
+
+                foreach ($payloadKeys as $qid) {
+                    $soalUserMap[$qid] = $r->input($qid, '');
+                }
+            }
+
+            $soals = Soal::where('set_id', $setId)
+                ->where('kategori', $kategori)
+                ->where('tipe_soal', $tipe)
+                ->whereIn('id_soal', array_keys($soalUserMap))
+                ->get()
+                ->keyBy('id_soal');
+
+            $results = [];
+            $score   = 0;
+
+            foreach ($soalUserMap as $qid => $rawUser) {
+
+                if (!isset($soals[$qid])) continue;
+
+                $soal = $soals[$qid];
+
+                $userNorm    = mb_strtoupper(trim($rawUser));
+                $correctRaw  = (string) $soal->jawaban_benar;
+                $correctNorm = mb_strtoupper(trim($correctRaw));
+
+                $matched = false;
+                if (preg_match('/\[(.*?)\]/', $correctRaw, $m)) {
+
+                    $correctList = array_map(
+                        fn($v) => mb_strtoupper(trim($v)),
+                        explode(',', $m[1])
+                    );
+
+                    $matched = in_array($userNorm, $correctList);
+                } else {
+                    $matched = ($userNorm === $correctNorm);
+                }
+
+                if ($matched) $score++;
+
+                $results[$qid] = [
+                    'status'  => $matched ? 'correct' : 'wrong',
+                    'user'    => $rawUser ?: null,
+                    'correct' => $correctRaw ?: null,
+                ];
+            }
+
+            $setSoal = SetSoal::where('kode', $setId)->firstOrFail();
+            $history = TestHistory::create([
+                'student_id' => Auth::id(),
+                'teacher_id' => null,
+                'tipe_test' => 'practice',
+                'kategori'  => $kategori,
+                'tipe'      => $tipe,
+                'set_soal_id' => $setSoal->id,
+                'score'     => $score,
+                'jumlah_soal' => $jumlahSoal,
+                'nama_tipe' => $namaTipe,
+            ]);
+
+            foreach ($results as $qid => $res) {
+                TestDetailHistory::create([
+                    'test_history_id' => $history->id,
+                    'soal_id'        => $qid,
+                    'jawaban_user'   => $res['user'] ?? '',
+                    'jawaban_benar'  => $res['correct'] ?? '',
+                    'status'         => $res['status'] === 'correct',
+                ]);
+            }
+
+            DB::commit();
+
             return response()->json([
-                'status' => 'error',
+                'status'     => 'ok',
+                'score'      => $score,
+                'results'    => $results,
+                'history_id' => $history->id
+            ]);
+        } catch (\Throwable $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'status'  => 'error',
                 'message' => $e->getMessage()
             ], 500);
         }
     }
+
+
+    // public function check(Request $r)
+    // {
+    //     DB::beginTransaction();
+    //     try {
+    //         $setId = $r->input('set_id');
+    //         $tipe = $r->input('tipe');
+    //         $kategori = $r->input('kategori');
+    //         $jumlahSoal = $r->input('jumlah_soal');
+    //         $namaTipe = $r->input('nama_tipe');
+
+    //         if ($kategori == 'speaking') {
+    //             $r->validate([
+    //                 'video' => 'required|file|mimetypes:video/webm,video/mp4,video/ogg|max:204800',
+    //                 'question_id' => 'nullable|string',
+    //                 'timestamp' => 'nullable'
+    //             ]);
+
+    //             $questionId = $r->input('question_id', null);
+    //             $part = $r->input('part', null);
+    //             $filename = 'recording_q-' . $setId . '-' . $questionId . '_' . time() . '.webm';
+    //             $path = $r->file('video')->storeAs('recordings', $filename, 'public');
+
+    //             $setSoal = SetSoal::where('kode', $setId)->first();
+
+    //             $saveVideos = Videos::create([
+    //                 'student_id' => Auth::user()->id,
+    //                 'set_soal_id' => $setSoal->id,
+    //                 'no_soal' => (int) $questionId,
+    //                 'part_soal' => (int) $part,
+    //                 'tipe' => 'practice',
+    //                 'video' => $filename,
+    //             ]);
+
+    //             DB::commit();
+
+    //             if ($saveVideos) {
+    //                 $history = TestHistory::create([
+    //                     'student_id' => Auth::id(),
+    //                     'teacher_id' => null,
+    //                     'tipe_test' => 'practice',
+    //                     'kategori' => $kategori,
+    //                     'tipe' => "Part " . $part,
+    //                     'set_soal_id' => $setSoal->id,
+    //                     'nama_tipe' => "Part " . $part,
+    //                 ]);
+
+    //                 return response()->json([
+    //                     'success' => true,
+    //                     'message' => 'Video uploaded successfully.',
+    //                     'file' => $filename,
+    //                     'path' => $path,
+    //                     'url' => Storage::url($path)
+    //                 ]);
+    //             }
+    //         } else if ($kategori == 'writing') {
+    //             $r->validate([
+    //                 'answer' => 'required',
+    //                 'task' => 'required',
+    //                 'tipe' => 'required',
+    //                 'no_soal' => 'required',
+    //                 'set_id' => 'required',
+    //                 'kategori' => 'required',
+    //             ]);
+
+    //             $questionId = $r->input('no_soal', null);
+    //             $task = $r->input('task', null);
+    //             $answer = $r->input('answer', null);
+    //             $setSoal = SetSoal::where('kode', $setId)->first();
+
+    //             $saveWriting = Writing::create([
+    //                 'student_id' => Auth::user()->id,
+    //                 'set_soal_id' => $setSoal->id,
+    //                 'no_soal' => (int) $questionId,
+    //                 'task' => $task,
+    //                 'tipe' => $tipe,
+    //                 'answer' => $answer
+    //             ]);
+
+    //             DB::commit();
+
+    //             if ($saveWriting) {
+    //                 $history = TestHistory::create([
+    //                     'student_id' => Auth::id(),
+    //                     'teacher_id' => null,
+    //                     'tipe_test' => $tipe,
+    //                     'kategori' => $kategori,
+    //                     'tipe' => $r->task,
+    //                     'set_soal_id' => $setSoal->id,
+    //                     'nama_tipe' => $r->task,
+    //                 ]);
+
+    //                 return response()->json([
+    //                     'status' => true,
+    //                     'message' => 'Task submited successfully.'
+    //                 ]);
+    //             }
+    //         } else {
+    //             $results = [];
+    //             $score = 0;
+    //             $payloadKeys = collect($r->all())
+    //                 ->keys()
+    //                 ->filter(fn($k) => str_starts_with($k, $setId . '-'))
+    //                 ->values();
+
+    //             if ($tipe === "two_choices") {
+    //                 $answers = (array) $r->input($payloadKeys[0], []);
+    //                 $soalIds = [];
+
+    //                 foreach ($payloadKeys as $key) {
+    //                     [$prefix, $number] = explode('-', $key);
+    //                     $number = (int) $number;
+
+    //                     $soal1 = "{$prefix}-{$number}";
+    //                     $soal2 = "{$prefix}-" . ($number + 1);
+
+    //                     $soalIds[$soal1] = $answers[0] ?? "";
+    //                     $soalIds[$soal2] = $answers[1] ?? "";
+    //                 }
+
+    //                 $soals = Soal::where('set_id', $setId)
+    //                     ->where('kategori', $kategori)
+    //                     ->where('tipe_soal', $tipe)
+    //                     ->whereIn('id_soal', array_keys($soalIds))
+    //                     ->get();
+    //             } else {
+    //                 $soalIds = $payloadKeys->toArray();
+    //                 $soals = Soal::where('set_id', $setId)
+    //                     ->where('kategori', $kategori)
+    //                     ->where('tipe_soal', $tipe)
+    //                     ->whereIn('id_soal', $soalIds)
+    //                     ->get();
+    //             }
+
+    //             $results = [];
+    //             $score = 0;
+
+    //             foreach ($soalIds as $qid) {
+    //                 if ($tipe == "two_choices") {
+    //                     $key = array_search($qid, $soalIds, true);
+    //                     $rawUser = $qid;
+    //                     $soal = $soals->firstWhere('id_soal', $key);
+    //                 } else {
+    //                     $rawUser = $r->input($qid, '');
+    //                     $soal = $soals->firstWhere('id_soal', $qid);
+    //                 }
+    //                 $userNorm = mb_strtoupper(trim($rawUser));
+
+    //                 $correctRaw = (string) optional($soal)->jawaban_benar;
+    //                 $correctNorm = mb_strtoupper(trim($correctRaw));
+    //                 $userNorm = mb_strtoupper(trim($rawUser));
+
+    //                 $matched = false;
+
+    //                 if (preg_match('/\[\s*(.*?)\s*\]/', $correctRaw, $matches)) {
+    //                     $list = explode(',', $matches[1]);
+    //                     $list = array_map(fn($v) => mb_strtoupper(trim($v)), $list);
+
+    //                     if (in_array($userNorm, $list)) {
+    //                         $matched = true;
+    //                     }
+    //                 } else {
+    //                     $matched = ($userNorm === $correctNorm);
+    //                 }
+
+    //                 if ($matched)
+    //                     $score++;
+
+    //                 $results[$qid] = [
+    //                     'status' => $matched ? 'correct' : 'wrong',
+    //                     'user' => $rawUser ?: null,
+    //                     'correct' => $correctRaw ?: null,
+    //                 ];
+    //             }
+
+    //             $setSoal = SetSoal::where('kode', $setId)->first();
+    //             $history = TestHistory::create([
+    //                 'student_id' => Auth::id(),
+    //                 'teacher_id' => null,
+    //                 'tipe_test' => 'practice',
+    //                 'kategori' => $kategori,
+    //                 'tipe' => $tipe,
+    //                 'set_soal_id' => $setSoal->id,
+    //                 'score' => $score,
+    //                 'jumlah_soal' => $jumlahSoal,
+    //                 'nama_tipe' => $namaTipe,
+    //             ]);
+
+    //             foreach ($results as $qid => $res) {
+    //                 TestDetailHistory::create([
+    //                     'test_history_id' => $history->id,
+    //                     'soal_id' => $qid,
+    //                     'jawaban_user' => $res['user'] ?? '',
+    //                     'jawaban_benar' => $res['correct'] ?? '',
+    //                     'status' => $res['status'] === 'correct',
+    //                 ]);
+    //             }
+
+    //             DB::commit();
+
+    //             return response()->json([
+    //                 'status' => 'ok',
+    //                 'score' => $score,
+    //                 'results' => $results,
+    //                 'history_id' => $history->id
+    //             ]);
+    //         }
+    //     } catch (\Exception $e) {
+    //         DB::rollBack();
+    //         return response()->json([
+    //             'status' => 'error',
+    //             'message' => $e->getMessage()
+    //         ], 500);
+    //     }
+    // }
 
     public function mockTestCheck(Request $r)
     {

@@ -17,16 +17,22 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    private function getTopBottomScores($kategori, $limit = 5) {
+    private function getTopBottomScores($kategori, $limit = 5)
+    {
         // Top 5
         $top = DB::table('test_histories as th')
             ->join('users as u', 'th.student_id', '=', 'u.id')
-            ->select('th.student_id', 'u.name', DB::raw('AVG(th.score_conversion) as avg_score'))
+            ->select(
+                'th.student_id',
+                'u.name',
+                'u.foto',
+                DB::raw('AVG(th.score_conversion) as avg_score')
+            )
             ->where('th.kategori', $kategori)
             ->where('th.tipe_test', 'mock')
             ->whereMonth('th.created_at', Carbon::now()->month)
             ->whereYear('th.created_at', Carbon::now()->year)
-            ->groupBy('th.student_id', 'u.name')
+            ->groupBy('th.student_id', 'u.name', 'u.foto')
             ->orderByDesc('avg_score')
             ->limit($limit)
             ->get();
@@ -34,12 +40,17 @@ class DashboardController extends Controller
         // Bottom 5
         $bottom = DB::table('test_histories as th')
             ->join('users as u', 'th.student_id', '=', 'u.id')
-            ->select('th.student_id', 'u.name', DB::raw('AVG(th.score_conversion) as avg_score'))
+            ->select(
+                'th.student_id',
+                'u.name',
+                'u.foto',
+                DB::raw('AVG(th.score_conversion) as avg_score')
+            )
             ->where('th.kategori', $kategori)
             ->where('th.tipe_test', 'mock')
             ->whereMonth('th.created_at', Carbon::now()->month)
             ->whereYear('th.created_at', Carbon::now()->year)
-            ->groupBy('th.student_id', 'u.name')
+            ->groupBy('th.student_id', 'u.name', 'u.foto')
             ->orderBy('avg_score')
             ->limit($limit)
             ->get();
@@ -59,7 +70,7 @@ class DashboardController extends Controller
         $data['score'] = $score;
         $data['pageTitle'] = 'Dashboard';
 
-        try{
+        try {
             $user = auth()->user();
 
             $countUsers = User::count();
@@ -83,27 +94,27 @@ class DashboardController extends Controller
             $data['countSat'] = $countSat;
 
             $unverifStudent = User::where('role', 'student')
-                                ->where('verification_status', 0)
-                                ->latest()
-                                ->take(5)
-                                ->get();
+                ->where('verification_status', 0)
+                ->latest()
+                ->take(5)
+                ->get();
 
             $studentActivities = TestHistory::with(['student', 'setSoal'])
-                                    ->latest()
-                                    ->take(5)
-                                    ->get();
+                ->latest()
+                ->take(5)
+                ->get();
 
             $data['unverifStudent'] = $unverifStudent;
             $data['studentActivities'] = $studentActivities;
 
             $videoRequest = Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get();
             $writingRequest = Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get();
-            
-            if(in_array($user->role, ['admin', 'teacher'])){
-                if($user->role == 'admin'){
+
+            if (in_array($user->role, ['admin', 'teacher'])) {
+                if ($user->role == 'admin') {
                     $upcomingSessions = VideoCall::where("status", "accepted")->with('student')->get();
                     $pendingSessions = VideoCall::where("status", "pending")->with('student')->get();
-                }elseif($user->role == 'teacher'){
+                } elseif ($user->role == 'teacher') {
                     $upcomingSessions = $user->teacherSessions()->accepted()->upcoming()->with('student')->get();
                     $pendingSessions = VideoCall::where("teacher_id", $user->id)->where("status", "pending")->with('student')->get();
                 }
@@ -116,22 +127,22 @@ class DashboardController extends Controller
 
             $end = Carbon::today();
             $start = $end->copy()->subYear()->startOfDay();
-            if(auth()->user()->role == 'student'){
-                                    $rawActivities = DB::table('test_histories')
-                                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
-                                    ->where('student_id', auth()->user()->id)
-                                    ->whereBetween('created_at', [$start, $end])
-                                    ->groupBy('date')
-                                    ->pluck('total', 'date')
-                                    ->toArray();
-            }else{
+            if (auth()->user()->role == 'student') {
                 $rawActivities = DB::table('test_histories')
-                                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
-                                    ->whereBetween('created_at', [$start, $end])
-                                    ->groupBy(DB::raw('DATE(created_at)'))
-                                    ->orderBy('date')
-                                    ->pluck('total', 'date')
-                                    ->toArray();
+                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                    ->where('student_id', auth()->user()->id)
+                    ->whereBetween('created_at', [$start, $end])
+                    ->groupBy('date')
+                    ->pluck('total', 'date')
+                    ->toArray();
+            } else {
+                $rawActivities = DB::table('test_histories')
+                    ->selectRaw('DATE(created_at) as date, COUNT(*) as total')
+                    ->whereBetween('created_at', [$start, $end])
+                    ->groupBy(DB::raw('DATE(created_at)'))
+                    ->orderBy('date')
+                    ->pluck('total', 'date')
+                    ->toArray();
             }
 
             $data['start'] = $start;
@@ -139,7 +150,7 @@ class DashboardController extends Controller
             $data['courseActivities'] = $rawActivities;
 
             return view('dashboard.index', $data);
-        }catch(Exception $e){
+        } catch (Exception $e) {
             // dd($e->getMessage());
             return redirect('/dashboard')->with('error', $e->getMessage());
         }

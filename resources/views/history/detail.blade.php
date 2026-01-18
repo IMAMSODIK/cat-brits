@@ -162,7 +162,7 @@
                                         <div class="media">
                                             @if ($user->foto)
                                                 <img class="img-70 rounded-circle"
-                                                    src="{{ asset('storage') . '/' . $d->foto }}" alt="Profile Picture">
+                                                    src="{{ asset('storage') . '/' . $user->foto }}" alt="Profile Picture">
                                             @else
                                                 <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
                                             @endif
