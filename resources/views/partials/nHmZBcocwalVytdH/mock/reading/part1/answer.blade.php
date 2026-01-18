@@ -219,7 +219,7 @@
     <p><b>Early life</b></p>
     <ul>
         <li>
-            <div class="q-list" data-q="1">
+            <div class="q-list" data-q="9">
                 lwas born in Scotland in 1831 – father was a
                 <span class="q-number-box">9</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
@@ -233,7 +233,7 @@
         <li>opened up a photographic studio in 1866</li>
         <li>took photos of city life, but preferred landscape photography</li>
         <li>
-            <div class="q-list" data-q="2">
+            <div class="q-list" data-q="10">
                 people bought Henderson’s photos because photography took up considerable time and the
                 <span class="q-number-box">10</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
@@ -242,7 +242,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="3">
+            <div class="q-list" data-q="11">
                 the photographs Henderson sold were
                 <span class="q-number-box">11</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
@@ -256,7 +256,7 @@
     <ul>
         <li>travelled widely in Quebec and Ontario in 1870s and 1880s</li>
         <li>
-            <div class="q-list" data-q="4">
+            <div class="q-list" data-q="12">
                 took many trips along eastern rivers in a
                 <span class="q-number-box">12</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
@@ -265,7 +265,7 @@
         </li>
         <li>worked for Canadian railways between 1875 and 1897</li>
         <li>
-            <div class="q-list" data-q="5">
+            <div class="q-list" data-q="13">
                 worked for CPR in 1885 and photographed the
                 <span class="q-number-box">13</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-text"

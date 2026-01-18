@@ -342,19 +342,19 @@
                                     <p>
                                         Psychologists have traditionally believed that a personality 
                                         <span class="q-number-box">14</span>
-                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-1" class="q-text" data-q="1" data-type="summary_completion" placeholder="">
+                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-1" class="q-text" data-q="14" data-type="summary_completion" placeholder="">
                                         was impossible and that by a
                                         <span class="q-number-box">15</span>
-                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-2" class="q-text" data-q="2" data-type="summary_completion" placeholder="">
+                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-2" class="q-text" data-q="15" data-type="summary_completion" placeholder="">
                                         a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is
                                         <span class="q-number-box">16</span>
-                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-3" class="q-text" data-q="3" data-type="summary_completion" placeholder="">
+                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-3" class="q-text" data-q="16" data-type="summary_completion" placeholder="">
                                         However, regardless of the quality, it is necessary to learn a wide variety of different
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-4" class="q-text" data-q="4" data-type="summary_completion" placeholder="">
+                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-4" class="q-text" data-q="17" data-type="summary_completion" placeholder="">
                                         in order for a new quality to develop; for example, a person must understand and feel some
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-5" class="q-text" data-q="5" data-type="summary_completion" placeholder="">
+                                        <input type="text" name="summary_completion-11qYaGWPJUTxUVdq-5" class="q-text" data-q="18" data-type="summary_completion" placeholder="">
                                         in order to increase their happiness.
                                     </p>
                                 </fieldset>
@@ -374,7 +374,7 @@
                                     <strong>G</strong>&nbsp;&nbsp; Cynthia Pury <br>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_features" data-q="1">
+                                <fieldset class="q-item" data-type="matching_features" data-q="19">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">19</span>
                                         <span style="flex: 1;">
@@ -395,7 +395,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_features" data-q="2">
+                                <fieldset class="q-item" data-type="matching_features" data-q="20">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">20</span>
                                         <span style="flex: 1;">
@@ -416,7 +416,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_features" data-q="3">
+                                <fieldset class="q-item" data-type="matching_features" data-q="21">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">21</span>
                                         <span style="flex: 1;">
@@ -437,7 +437,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_features" data-q="4">
+                                <fieldset class="q-item" data-type="matching_features" data-q="22">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">22</span>
                                         <span style="flex: 1;">
@@ -465,7 +465,7 @@
                                     <p class="lead">Write the correct letter, <b>A-H</b>, in boxes on your answer sheet</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_information" data-q="1">
+                                <fieldset class="q-item" data-type="matching_information" data-q="23">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">23</span>
                                         <span style="flex: 1;">
@@ -487,7 +487,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_information" data-q="2">
+                                <fieldset class="q-item" data-type="matching_information" data-q="24">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">24</span>
                                         <span style="flex: 1;">
@@ -509,7 +509,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_information" data-q="3">
+                                <fieldset class="q-item" data-type="matching_information" data-q="25">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">25</span>
                                         <span style="flex: 1;">
@@ -531,7 +531,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="matching_information" data-q="4">
+                                <fieldset class="q-item" data-type="matching_information" data-q="26">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">26</span>
                                         <span style="flex: 1;">

@@ -186,7 +186,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="8">
+<fieldset class="q-item">
     <h3>Questions 8-13</h3>
     <p class="lead">
         Complete the notes below.
@@ -204,7 +204,7 @@
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-text" placeholder="" data-q="11"/>
                     </span>
                 </span>
                 used on their racket frames.
@@ -216,7 +216,7 @@
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-text" placeholder="" data-q="11"/>
                     </span>
                 </span>
                 it created.
@@ -228,7 +228,7 @@
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-text" placeholder="" data-q="11"/>
                     </span>
                 </span>
                 they do.
@@ -239,7 +239,7 @@
                 <span class="q-number">11</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-text" placeholder="" data-q="11"/>
                     </span>
                 </span>
                 of animals.
@@ -251,7 +251,7 @@
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-5" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-5" class="q-text" placeholder="" data-q="12"/>
                     </span>
                 </span>
                 put into the frames of his rackets.
@@ -262,7 +262,7 @@
                 <span class="q-number">13</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-6" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-6" class="q-text" placeholder="" data-q="13"/>
                     </span>
                 </span>
                 on his racket handles.

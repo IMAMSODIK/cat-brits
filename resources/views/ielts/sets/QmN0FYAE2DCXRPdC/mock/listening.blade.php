@@ -7,21 +7,21 @@
     @include('ielts.sets.layouts.mock.listening.header')
 
 
-    <section class="parts-section" aria-label="Pilihan Part Soal">
+    <section class="parts-section" aria-label="Pilihan Section Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
             <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Part 1</button>
+                aria-selected="true" data-id="tfng">Section 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="true"
-                data-id="tfng2">Part 2</button>
+                data-id="tfng2">Section 2</button>
             <button class="x-tab" role="tab" id="tab-ynng" aria-controls="panel-ynng" aria-selected="false"
-                data-id="ynng">Part 3</button>
+                data-id="ynng">Section 3</button>
             <button class="x-tab" role="tab" id="tab-mse" aria-controls="panel-mse" aria-selected="false"
-                data-id="mse">Part 4</button>
+                data-id="mse">Section 4</button>
         </div>
 
         <div class="x-panels">
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">Content: Part 1</div>
+                <div class="x-panel-inner">Content: Section 1</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="qa highlighted-content">
                         <form class="qa-body">
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">Content: Part 2</div>
+                <div class="x-panel-inner">Content: Section 2</div>
                 <div class="qa highlighted-content">
                     <form class="qa-body">
                         <fieldset class="q-item">
@@ -478,7 +478,7 @@
                 </div>
             </div>
             <div id="panel-ynng" class="x-panel" role="tabpanel" aria-labelledby="tab-ynng" hidden>
-                <div class="x-panel-inner">Content: Part 3</div>
+                <div class="x-panel-inner">Content: Section 3</div>
                 <div class="reading-section">
                     <div class="qa highlighted-content">
                         <form class="qa-body">
@@ -724,7 +724,7 @@
                 </div>
             </div>
             <div id="panel-mse" class="x-panel" role="tabpanel" aria-labelledby="tab-mse" hidden>
-                <div class="x-panel-inner">Content: Part 4</div>
+                <div class="x-panel-inner">Content: Section 4</div>
                 <div class="qa highlighted-content">
                     <form class="qa-body">
                         <fieldset class="q-item">

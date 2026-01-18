@@ -682,6 +682,20 @@
 
 <!-- script bagian reading + questions  -->
 <script>
+    $(document).on('change', '.q-option input', function() {
+        let parent = $(this).closest('.q-item');
+        let option = $(this).closest('.q-option');
+
+        if (this.type === "radio") {
+            parent.find('.q-option').removeClass('is-selected');
+            option.addClass('is-selected');
+        }
+
+        if (this.type === "checkbox") {
+            option.toggleClass('is-selected', this.checked);
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         // Semua panel
         const panels = document.querySelectorAll('.x-panel');
@@ -985,93 +999,153 @@
 
         if (!fqList) return;
 
-        let activeQ = null;
-        let questionNumbers = [];
+        let activeNumber = null;
+        let questionMap = [];
 
-        function collectQuestionNumbers() {
-            const set = new Set();
+        /* ======================================
+        1. KUMPULKAN SEMUA SOAL
+        ====================================== */
+        function collectQuestions() {
+            questionMap = [];
+            const used = new Set();
 
+            // ambil semua elemen dengan data-q di seluruh dokumen
             document.querySelectorAll('[data-q]').forEach(el => {
-                const q = el.getAttribute('data-q');
-                if (q && !isNaN(q)) set.add(Number(q));
+                const baseQ = parseInt(el.dataset.q, 10);
+                if (isNaN(baseQ)) return;
+
+                // TWO_CHOICES
+                if (el.dataset.type === 'two_choices') {
+                    const count = 2; // default 2 nomor
+                    for (let i = 0; i < count; i++) {
+                        const qNum = baseQ + i;
+                        if (!used.has(qNum)) {
+                            questionMap.push({ number: qNum, el });
+                            used.add(qNum);
+                        }
+                    }
+                } else if (el.dataset.qMulti) {
+                    const count = el.dataset.qMulti.split(',').length;
+                    for (let i = 0; i < count; i++) {
+                        const qNum = baseQ + i;
+                        if (!used.has(qNum)) {
+                            questionMap.push({ number: qNum, el });
+                            used.add(qNum);
+                        }
+                    }
+                } else {
+                    if (!used.has(baseQ)) {
+                        questionMap.push({ number: baseQ, el });
+                        used.add(baseQ);
+                    }
+                }
             });
 
-            questionNumbers = Array.from(set).sort((a, b) => a - b);
+            // urutkan nomor
+            questionMap.sort((a, b) => a.number - b.number);
         }
 
-        function renderFqList() {
+        /* ======================================
+        2. RENDER FLOATING LIST
+        ====================================== */
+        function renderList() {
             fqList.innerHTML = '';
 
-            questionNumbers.forEach(qnum => {
-                const item = document.createElement('a');
-                item.href = '#';
-                item.className = 'fq-item';
-                item.dataset.q = qnum;
-                item.textContent = qnum;
+            questionMap.forEach(q => {
+                const a = document.createElement('a');
+                a.href = '#';
+                a.className = 'fq-item';
+                a.textContent = q.number;
+                a.dataset.q = q.number;
 
-                item.addEventListener('click', e => {
+                a.addEventListener('click', e => {
                     e.preventDefault();
-                    goToQuestion(qnum);
+                    activeNumber = q.number;
+                    q.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    updateStatus();
                 });
 
-                fqList.appendChild(item);
+                fqList.appendChild(a);
             });
 
             updateStatus();
         }
 
-        function goToQuestion(qnum) {
-            activeQ = String(qnum);
+        /* ======================================
+        3. CEK TERJAWAB (SMART)
+        ====================================== */
+        function isAnswered(el, subNumber = null) {
+            if (!el) return false;
 
-            const target = document.querySelector(`[data-q="${qnum}"]`);
-            if (!target) return;
+            // RADIO
+            if (el.querySelector('input[type="radio"]:checked')) return true;
 
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
+            // CHECKBOX (two_choices)
+            if (el.dataset.type === 'two_choices') {
+                const checkedBox = el.querySelectorAll('input[type="checkbox"]:checked');
+                if (!checkedBox.length) return false;
 
-            updateStatus();
-        }
+                const count = checkedBox.length;
+                const baseQ = parseInt(el.dataset.q, 10);
 
-        function isAnswered(qnum) {
-            const elements = document.querySelectorAll(`[data-q="${qnum}"]`);
+                if (subNumber !== null) {
+                    const numberIndex = subNumber - baseQ + 1;
+                    return numberIndex <= count;
+                }
 
-            for (const el of elements) {
-
-                // radio
-                if (el.querySelector?.('input[type="radio"]:checked')) return true;
-
-                // checkbox
-                if (el.querySelector?.('input[type="checkbox"]:checked')) return true;
-
-                // text / textarea
-                const text = el.querySelector?.('input[type="text"], textarea');
-                if (text && text.value.trim() !== '') return true;
-
-                // dropdown
-                const select = el.querySelector?.('select');
-                if (select && select.value !== '') return true;
-
-                // jika elemen itu sendiri input / select
-                if (el.matches?.('input[type="text"], textarea') && el.value.trim() !== '') return true;
-                if (el.matches?.('select') && el.value !== '') return true;
+                return count >= 1;
             }
+
+            // CHECKBOX biasa
+            const checkedBox = el.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBox.length > 0) return true;
+
+            // TEXT / TEXTAREA
+            const t = el.querySelector('input[type="text"], textarea');
+            if (t && t.value.trim() !== '') return true;
+
+            // SELECT
+            const s = el.querySelector('select');
+            if (s && s.value !== '') return true;
+
+            // jika elemen itu sendiri input / select
+            if (el.matches('input[type="text"], textarea') && el.value.trim() !== '') return true;
+            if (el.matches('select') && el.value !== '') return true;
 
             return false;
         }
 
+        /* ======================================
+        4. UPDATE STATUS FLOATING
+        ====================================== */
         function updateStatus() {
             fqList.querySelectorAll('.fq-item').forEach(item => {
-                const qnum = item.dataset.q;
-
                 item.classList.remove('answered', 'current');
 
-                if (isAnswered(qnum)) item.classList.add('answered');
-                if (qnum === activeQ) item.classList.add('current');
+                const qNum = parseInt(item.dataset.q, 10);
+                const qObj = questionMap.find(q => {
+                    if (q.number === qNum) return true;
+                    if (q.el.dataset.type === 'two_choices') {
+                        const base = parseInt(q.el.dataset.q, 10);
+                        return qNum >= base && qNum < base + 2;
+                    }
+                    return false;
+                });
+                if (!qObj) return;
+
+                if (qObj.el.dataset.type === 'two_choices') {
+                    if (isAnswered(qObj.el, qNum)) item.classList.add('answered');
+                } else {
+                    if (isAnswered(qObj.el)) item.classList.add('answered');
+                }
+
+                if (activeNumber === qNum) item.classList.add('current');
             });
         }
 
+        /* ======================================
+        5. WATCH INPUT
+        ====================================== */
         ['input', 'change', 'click'].forEach(evt => {
             document.addEventListener(evt, e => {
                 if (e.target.closest('[data-q]')) {
@@ -1080,6 +1154,9 @@
             });
         });
 
+        /* ======================================
+        6. TOGGLE FLOATING
+        ====================================== */
         if (fqToggle && floatingQ) {
             fqToggle.addEventListener('click', () => {
                 floatingQ.classList.toggle('collapsed');
@@ -1087,14 +1164,17 @@
             });
         }
 
+        /* ======================================
+        7. INIT + REFRESH
+        ====================================== */
         function init() {
-            collectQuestionNumbers();
-            renderFqList();
+            collectQuestions();
+            renderList();
         }
 
         init();
-
         setInterval(init, 2000);
 
     });
 </script>
+

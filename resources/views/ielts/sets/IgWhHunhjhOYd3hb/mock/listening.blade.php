@@ -197,7 +197,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="11" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
                                 <span class="q-number">12</span>
@@ -237,7 +237,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="3" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="13" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">13</span>
                                 <span class="q-number">14</span>
@@ -703,37 +703,37 @@
                             <p>
                                 – not include invasive species because of possible
                                 <span class="q-number-box">31</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-7" data-q="7" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-7" data-q="31" data-type="nc" class="q-text" placeholder="">
                                 with native species
                             </p>
                             <p>
                                 – aim to capture carbon, protect the environment and provide sustainable sources of
                                 <span class="q-number-box">32</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-8" data-q="8" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-8" data-q="32" data-type="nc" class="q-text" placeholder="">
                                 for local people
                             </p>
                             <p>
                                 – use tree seeds with a high genetic diversity to increase resistance to
                                 <span class="q-number-box">33</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-9" data-q="9" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-9" data-q="33" data-type="nc" class="q-text" placeholder="">
                                 and climate change
                             </p>
                             <p>
                                 – plant trees on previously forested land which is in a bad condition, not select land which is being used for
                                 <span class="q-number-box">34</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-10" data-q="10" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-10" data-q="34" data-type="nc" class="q-text" placeholder="">
                             </p>
 
                             <p><b>Large-scale reforestation projects</b></p>
                             <p>
                                 – Base planning decisions on information from accurate
                                 <span class="q-number-box">35</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-11" data-q="11" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-11" data-q="35" data-type="nc" class="q-text" placeholder="">
                             </p>
                             <p>
                                 – Drones are useful for identifying areas in Brazil which are endangered by keeping
                                 <span class="q-number-box">36</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-12" data-q="12" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-12" data-q="36" data-type="nc" class="q-text" placeholder="">
                                 and illegal logging.
                             </p>
 
@@ -744,10 +744,10 @@
                             <p>
                                 + increasing the 
                                 <span class="q-number-box">37</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-13" data-q="13" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-13" data-q="37" data-type="nc" class="q-text" placeholder="">
                                 of recovery by attracting animals and birds, e.g.,
                                 <span class="q-number-box">38</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-14" data-q="14" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-14" data-q="38" data-type="nc" class="q-text" placeholder="">
                                 were soon attracted to the area.
                             </p>
 
@@ -755,7 +755,7 @@
                             <p>
                                 – Destruction of mangrove forests in Madagascar made it difficult for people to make a living from
                                 <span class="q-number-box">39</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-15" data-q="15" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-15" data-q="39" data-type="nc" class="q-text" placeholder="">
                             </p>
                             <p>– The mangrove reforestation project:</p>
                             <p>+ provided employment for local people</p>
@@ -763,7 +763,7 @@
                             <p>
                                 + protects against the higher risk of
                                 <span class="q-number-box">40</span>
-                                <input type="text" name="nc-IgWhHunhjhOYd3hb-16" data-q="16" data-type="nc" class="q-text" placeholder="">
+                                <input type="text" name="nc-IgWhHunhjhOYd3hb-16" data-q="40" data-type="nc" class="q-text" placeholder="">
                             </p>
                         </fieldset>
                     </form>

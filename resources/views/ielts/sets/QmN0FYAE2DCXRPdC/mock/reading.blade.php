@@ -309,7 +309,7 @@
                                         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="1" data-type="tfng">
+                                <fieldset class="q-item" data-q="8" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">8</span>
                                         China’s transport system was not suitable for industry in the 18th century.
@@ -333,7 +333,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="tfng">
+                                <fieldset class="q-item" data-q="9" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">9</span>
                                         Tea and beer both helped to prevent dysentery in Britain.
@@ -357,7 +357,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="tfng">
+                                <fieldset class="q-item" data-q="10" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">10</span>
                                         Roy Porter disagrees with Professor Macfarlane’s findings.
@@ -381,7 +381,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="tfng">
+                                <fieldset class="q-item" data-q="11" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">11</span>
                                         After 1740，there was a reduction in population in Britain.
@@ -405,7 +405,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5" data-type="tfng">
+                                <fieldset class="q-item" data-q="12" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">12</span>
                                         People in Britain used to make beer at home.
@@ -429,7 +429,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="6" data-type="tfng">
+                                <fieldset class="q-item" data-q="13" data-type="tfng">
                                     <legend class="q-text">
                                         <span class="q-number">13</span>
                                         The tax on malt indirectly caused a rise in the death rate.
@@ -553,7 +553,7 @@
                                         sheet <b>NB</b> You may use any letter more than once.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1" data-type="matching_information">
+                                <fieldset class="q-item" data-q="14" data-type="matching_information">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">14</span>
                                         <span style="flex: 1;">
@@ -574,7 +574,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="matching_information">
+                                <fieldset class="q-item" data-q="15" data-type="matching_information">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">15</span>
                                         <span style="flex: 1;">
@@ -595,7 +595,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="matching_information">
+                                <fieldset class="q-item" data-q="16" data-type="matching_information">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">16</span>
                                         <span style="flex: 1;">
@@ -616,7 +616,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="matching_information">
+                                <fieldset class="q-item" data-q="17" data-type="matching_information">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">17</span>
                                         <span style="flex: 1;">
@@ -654,7 +654,7 @@
                                     </ul>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1" data-type="matching_features">
+                                <fieldset class="q-item" data-q="18" data-type="matching_features">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">18</span>
                                         <span style="flex: 1;">
@@ -675,7 +675,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="matching_features">
+                                <fieldset class="q-item" data-q="19" data-type="matching_features">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">19</span>
                                         <span style="flex: 1;">
@@ -696,7 +696,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="matching_features">
+                                <fieldset class="q-item" data-q="20" data-type="matching_features">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">20</span>
                                         <span style="flex: 1;">
@@ -716,7 +716,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="matching_features">
+                                <fieldset class="q-item" data-q="21" data-type="matching_features">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">21</span>
                                         <span style="flex: 1;">
@@ -737,7 +737,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5" data-type="matching_features">
+                                <fieldset class="q-item" data-q="22" data-type="matching_features">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">22</span>
                                         <span style="flex: 1;">
@@ -765,7 +765,7 @@
                                     <p><i>Write your answers in boxes on your answer sheet</i></p>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="1"
+                                <fieldset class="q-item questions-item" data-q="23"
                                     data-type="sentence_completion">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">23</span>
@@ -781,7 +781,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="2"
+                                <fieldset class="q-item questions-item" data-q="24"
                                     data-type="sentence_completion">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">24</span>
@@ -796,7 +796,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="3"
+                                <fieldset class="q-item questions-item" data-q="25"
                                     data-type="sentence_completion">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">25</span>
@@ -811,7 +811,7 @@
                                     </legend>
                                 </fieldset>
 
-                                <fieldset class="q-item questions-item" data-q="4"
+                                <fieldset class="q-item questions-item" data-q="26"
                                     data-type="sentence_completion">
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">26</span>
@@ -960,7 +960,7 @@
                                         <span class="q-number-box">27</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-1" data-q="2"
+                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-1" data-q="27"
                                                     data-type="summary_completion" class="q-dropdown q-item">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
@@ -982,7 +982,7 @@
                                         <span class="q-number-box">28</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-2" data-q="2"
+                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-2" data-q="28"
                                                     class="q-dropdown q-item" data-type="summary_completion">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
@@ -1010,7 +1010,7 @@
                                         <span class="q-number-box">29</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-3" data-q="3"
+                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-3" data-q="29"
                                                     class="q-dropdown q-item" data-type="summary_completion">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
@@ -1033,7 +1033,7 @@
                                         <span class="q-number-box">30</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-4" data-q="4"
+                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-4" data-q="30"
                                                     class="q-dropdown q-item" data-type="summary_completion">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
@@ -1062,7 +1062,7 @@
                                         <span class="q-number-box">31</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-5" data-q="5"
+                                                <select name="summary_completion-QmN0FYAE2DCXRPdC-5" data-q="31"
                                                     class="q-dropdown q-item" data-type="summary_completion">
                                                     <option value=""></option>
                                                     <option value="A">A</option>
@@ -1091,7 +1091,7 @@
                                     </p>
                                     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="1" data-type="oc">
+                                <fieldset class="q-item" data-q="32" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">32</span>
                                         The writer mentions London’s National Gallery to illustrate
@@ -1124,7 +1124,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="oc">
+                                <fieldset class="q-item" data-q="33" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">33</span>
                                         The writer says that today, viewers may be unwilling to criticise a because
@@ -1157,7 +1157,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="oc">
+                                <fieldset class="q-item" data-q="34" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">34</span>
                                         According to the writer, the ‘displacement effect’ on the visitor is caused by
@@ -1190,7 +1190,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="oc">
+                                <fieldset class="q-item" data-q="35" data-type="oc">
                                     <legend class="q-text">
                                         <span class="q-number">35</span>
                                         The writer says that unlike other forms of art, a painting does not
@@ -1234,7 +1234,7 @@
                                             about this.</li>
                                     </ul>
                                 </fieldset>
-                                <fieldset class="q-item" data-q="1" data-type="ynng">
+                                <fieldset class="q-item" data-q="36" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">36</span>
                                         Art history should focus on discovering the meaning of art using a range of
@@ -1259,7 +1259,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="2" data-type="ynng">
+                                <fieldset class="q-item" data-q="37" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">37</span>
                                         The approach of art historians conflicts with that of art museums.
@@ -1283,7 +1283,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="ynng">
+                                <fieldset class="q-item" data-q="38" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">38</span>
                                         People should be encouraged to give their opinions openly on works of art.
@@ -1307,7 +1307,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="4" data-type="ynng">
+                                <fieldset class="q-item" data-q="39" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">39</span>
                                         Reproductions of fine art should only be sold to the public if they are of high
@@ -1332,7 +1332,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="5" data-type="ynng">
+                                <fieldset class="q-item" data-q="40" data-type="ynng">
                                     <legend class="q-text">
                                         <span class="q-number">40</span>
                                         In the future, those with power are likely to encourage more people to enjoy

@@ -402,7 +402,7 @@
                                             The stormwater-management programme in Miami Beach has involved the installation of efficient 
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-4JIjUOPpLAJ2FYdl-1" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="18">
                                             </span>
                                         </span>
                                     </legend>
@@ -415,7 +415,7 @@
                                             The construction of
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-4JIjUOPpLAJ2FYdl-2" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="19">
                                             </span>
                                             was the first stage of a project to ensure the success of mangroves in Indonesia.
                                         </span>
@@ -429,7 +429,7 @@
                                             As a response to rising floodwaters in the Mekong Delta, a not-for-profit organisation has been building houses that can
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-4JIjUOPpLAJ2FYdl-3" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="20">
                                             </span>
                                         </span>
                                     </legend>
@@ -442,7 +442,7 @@
                                             Rising sea levels in Bangladesh have made it necessary to introduce various
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-4JIjUOPpLAJ2FYdl-4" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="21">
                                             </span>
                                             that are suitable for areas of high salt content.
                                         </span>
@@ -456,7 +456,7 @@
                                             A project in LA has increased the number of
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-4JIjUOPpLAJ2FYdl-5" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="22">
                                             </span>
                                             on the city’s streets.
                                         </span>
@@ -836,19 +836,19 @@
                                     <p>
                                         This has led to a rise in the deaths of other predators, particularly
                                         <span class="q-number-box">37</span>
-                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-1" data-q="1" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-1" data-q="37" data-type="summary_completion" class="q-text" placeholder="">
                                         . In addition, it has been suggested that the dogs could have
                                         <span class="q-number-box">38</span>
-                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-2" data-q="2" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-2" data-q="38" data-type="summary_completion" class="q-text" placeholder="">
                                         which may affect other species, and that they may reduce the amount of
                                         <span class="q-number-box">39</span>
-                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-3" data-q="3" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-3" data-q="39" data-type="summary_completion" class="q-text" placeholder="">
                                         available to certain wild animals.
                                     </p>
                                     <p>
                                         On the other hand, these dogs may help birds by protecting their nests. These might otherwise be threatened by predators such as
                                         <span class="q-number-box">40</span>
-                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-4" data-q="4" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-4JIjUOPpLAJ2FYdl-4" data-q="40" data-type="summary_completion" class="q-text" placeholder="">
                                     </p>
                                 </fieldset>
                             </form>

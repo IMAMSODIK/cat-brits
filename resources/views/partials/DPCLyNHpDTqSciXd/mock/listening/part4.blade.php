@@ -11,7 +11,7 @@
         <ul>
             <li>
                 The Icelandic language has approximately
-                <div class="q-item" data-q="1" style="display:inline-block;">
+                <div class="q-item" data-q="31" style="display:inline-block;">
                     <span class="q-number-box">31</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text"
                         placeholder="">
@@ -20,7 +20,7 @@
             </li>
             <li>
                 has a
-                <div class="q-item" data-q="2" style="display:inline-block;">
+                <div class="q-item" data-q="32" style="display:inline-block;">
                     <span class="q-number-box">32</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text"
                         placeholder="">
@@ -30,7 +30,7 @@
             <li>has not changed a lot over the last thousand years</li>
             <li>
                 has its own words for computer-based concepts, such as web browser and
-                <div class="q-item" data-q="3" style="display:inline-block;">
+                <div class="q-item" data-q="33" style="display:inline-block;">
                     <span class="q-number-box">33</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text"
                         placeholder="">
@@ -44,7 +44,7 @@
         <ul>
             <li>
                 are big users of digital technology, such as
-                <div class="q-item" data-q="4" style="display:inline-block;">
+                <div class="q-item" data-q="34" style="display:inline-block;">
                     <span class="q-number-box">34</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text"
                         placeholder="">
@@ -52,7 +52,7 @@
             </li>
             <li>
                 are becoming
-                <div class="q-item" data-q="5" style="display:inline-block;">
+                <div class="q-item" data-q="35" style="display:inline-block;">
                     <span class="q-number-box">35</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text"
                         placeholder="">
@@ -61,7 +61,7 @@
             </li>
             <li>
                 are having discussions using only English while they are in the
-                <div class="q-item" data-q="6" style="display:inline-block;">
+                <div class="q-item" data-q="36" style="display:inline-block;">
                     <span class="q-number-box">36</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text"
                         placeholder="">
@@ -70,7 +70,7 @@
             </li>
             <li>
                 are better able to identify the content of a
-                <div class="q-item" data-q="7" style="display:inline-block;">
+                <div class="q-item" data-q="37" style="display:inline-block;">
                     <span class="q-number-box">37</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text"
                         placeholder="">
@@ -86,7 +86,7 @@
             <li>
                 write very little in Icelandic because of the small number of speakers and because of how
                 complicated its
-                <div class="q-item" data-q="8" style="display:inline-block;">
+                <div class="q-item" data-q="38" style="display:inline-block;">
                     <span class="q-number-box">38</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text"
                         placeholder="">
@@ -103,7 +103,7 @@
             <li>believes that Icelandic has a secure future</li>
             <li>
                 is worried that young Icelanders may lose their
-                <div class="q-item" data-q="9" style="display:inline-block;">
+                <div class="q-item" data-q="39" style="display:inline-block;">
                     <span class="q-number-box">39</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text"
                         placeholder="">
@@ -112,7 +112,7 @@
             </li>
             <li>
                 is worried about the consequences of children not being
-                <div class="q-item" data-q="10" style="display:inline-block;">
+                <div class="q-item" data-q="40" style="display:inline-block;">
                     <span class="q-number-box">40</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text"
                         placeholder="">

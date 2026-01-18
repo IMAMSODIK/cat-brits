@@ -6,7 +6,7 @@
     <p>Write the correct letter, <b>A–F</b>, in boxes on your answer sheet.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         A use for helium which makes an activity safer
@@ -24,7 +24,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         The possibility of creating an alternative to helium
@@ -42,7 +42,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         A term which describes the process of how helium is taken out of the ground
@@ -60,7 +60,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         A reason why users of helium do not make efforts to conserve it
@@ -78,7 +78,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         A contrast between helium's chemical properties and how non-scientists think about it
@@ -103,7 +103,7 @@
         contradicts, or NOT GIVEN if there is no information.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         Helium chooses to be on its own.
@@ -127,7 +127,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         Helium is a very cold substance.
@@ -151,7 +151,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         High-tech industries in Asia use more helium than laboratories and manufacturers in other parts
@@ -176,7 +176,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         The US Congress understood the possible consequences of the HPA.
@@ -218,7 +218,7 @@
             <span style="flex: 1;">
                 <span class="q-question">
                     <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-12" class="q-text"
-                        placeholder="">
+                        placeholder="" data-q="37">
                 </span>
             </span> needs to be withdrawn, as the U.S. provides most of the world's helium. He
             argues
@@ -227,21 +227,21 @@
             <span style="flex: 1;">
                 <span class="q-question">
                     <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-13" class="q-text"
-                        placeholder="">
+                        placeholder="" data-q="38">
                 </span>
             </span> to use the resource many times over. People should need a
             <span class="q-number-box">39</span>
             <span style="flex: 1;">
                 <span class="q-question">
                     <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-14" class="q-text"
-                        placeholder="">
+                        placeholder="" data-q="39">
                 </span>
             </span> to access helium that we still have. Furthermore, a
             <span class="q-number-box">40</span>
             <span style="flex: 1;">
                 <span class="q-question">
                     <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-15" class="q-text"
-                        placeholder="">
+                        placeholder="" data-q="40">
                 </span>
             </span> should ensure that helium is used carefully.
         </p>

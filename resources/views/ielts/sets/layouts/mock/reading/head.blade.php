@@ -695,7 +695,11 @@
 
         #panel-tc .q-number-box,
         #panel-ynng .q-number-box,
-        #panel-tfng2 .q-number-box{
+        #panel-tfng2 .q-number-box,
+        #panel-tfng .q-number-box,
+        #panel-part1 .q-number-box,
+        #panel-part2 .q-number-box,
+        #panel-part3 .q-number-box{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -709,7 +713,7 @@
 
         #panel-tc .q-text,
         #panel-tfng2 .q-text,
-        #panel-tfng .q-text {
+        #panel-tfng .q-text{
             flex: 1;
             padding: 6px 10px;
             border: 1px solid #ccc;
@@ -719,6 +723,10 @@
         }
 
         #panel-tc input,
+        #panel-ynng input,
+        #panel-part1 input,
+        #panel-part2 input,
+        #panel-part3 input
         {
             padding: 6px 10px;
             border: 1px solid #ccc;

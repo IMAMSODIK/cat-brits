@@ -5,7 +5,7 @@
         Write the correct letter, <b>A, B, C, </b>or <b>D</b>, on your answer sheet.
     </p>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         The researchers at the symposium regarded the story of the King of Uruk as
@@ -36,7 +36,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         According to the writer, the story of the King of Uruk
@@ -67,7 +67,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         There was disagreement among the researchers at the symposium about
@@ -96,7 +96,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         The opponents of the theory that writing developed from tokens believe that it
@@ -134,7 +134,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         There is no proof that early writing is connected to decorated household objects.
@@ -168,7 +168,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         As writing developed, it came to represent speech.
@@ -202,7 +202,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         Sumerian writing developed into a means of political control.
@@ -236,7 +236,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         Early writing did not represent the grammatical features of speech.
@@ -270,7 +270,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         There is no convincing proof that tokens and signs are connected.
@@ -304,7 +304,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         The uses of cuneiform writing were narrow at first, and later widened.
@@ -375,7 +375,7 @@
         <span class="q-number-box">37</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text" data-q="37">
             </span>
         </span>
         invented writing in
@@ -383,7 +383,7 @@
         <span class="q-number-box">38</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text" data-q="38">
             </span>
         </span>.
     </div>
@@ -392,7 +392,7 @@
         <span class="q-number-box">39</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text" data-q="39">
             </span>
         </span>.
         Their script originally showed images related to political power and business, and later
@@ -400,7 +400,7 @@
         <span class="q-number-box">40</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text" data-q="40">
             </span>
         </span>
     </div>

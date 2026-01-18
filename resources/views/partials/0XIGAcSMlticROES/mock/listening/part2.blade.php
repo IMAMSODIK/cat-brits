@@ -5,7 +5,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         What made David leave London and move to Northsea?
@@ -30,7 +30,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text">
         <span class="q-number">12</span>
         The Lifeboat Institution in Northsea was built with money provided by
@@ -55,7 +55,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         In his health assessment, the doctor was concerned about the fact that David
@@ -80,7 +80,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text">
         <span class="q-number">14</span>
         After arriving at the lifeboat station, they aim to launch the boat within
@@ -105,7 +105,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text">
         <span class="q-number">15</span>
         As a ‘helmsman’, David has the responsibility of deciding
@@ -130,7 +130,7 @@
 </fieldset>
 
 <!-- Question 6 -->
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text">
         <span class="q-number">16</span>
         As well as going out on the lifeboat, David
@@ -159,7 +159,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="17" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">17</span>
         <span class="q-number">18</span>
@@ -201,7 +201,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="2" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="19" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">19</span>
         <span class="q-number">20</span>

@@ -370,10 +370,9 @@
                         </fieldset>
 
                         <fieldset class="q-item" data-type="matching_information" data-q="20">
-                            <legend class="q-text" style="display: flex; align-items: center; gap: 206px;">
+                            <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">20</span>
-                                <span style="flex: 1;">
-                                    The Amesbury
+                                <span style="flex: 1;">The Amesbury
                                     <span class="q-question">
                                         <select name="matching_information-15gOXcE7omDCL1uE-6" class="q-dropdown">
                                             <option value=""></option>
@@ -408,7 +407,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="21" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">21</span>
                                     <span class="q-number">22</span>
@@ -448,7 +447,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">23</span>
                                     <span class="q-number">24</span>

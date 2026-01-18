@@ -205,7 +205,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="11" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
                                 <span class="q-number">12</span>
@@ -245,7 +245,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="13" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">13</span>
                                 <span class="q-number">14</span>
@@ -699,10 +699,9 @@
                         <p>
                             More energy required because of growth in population and
                             <span class="q-number-box">31</span>
-                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-11" data-type="nc" class="q-text"
+                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-11" data-q="31" data-type="nc" class="q-text"
                                 placeholder="">
                         </p>
-
                         <p>What’s needed:</p>
                         <ul>
                             <li>renewable energy sources</li>
@@ -713,7 +712,7 @@
                         <p>
                             Advantage: waves provide a 
                             <span class="q-number-box">32</span>
-                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-12" data-type="nc" class="q-text"
+                            <input type="text" name="nc-1kxpl5g3zFLGtmEY-12" data-q="32" data-type="nc" class="q-text"
                                 placeholder="">
                             source of renewable energy
                         </p>

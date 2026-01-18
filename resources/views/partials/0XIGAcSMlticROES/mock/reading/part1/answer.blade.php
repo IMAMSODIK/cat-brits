@@ -12,10 +12,10 @@
         <ul class="completion-list">
             <li>
                 In Watt and Boulton’s steam engine, the movement of the
-                <span class="q-number">1</span>
+                <span class="q-number-box">1</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-1" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-1" class="q-text" data-q="1" placeholder="" />
                     </span>
                 </span>
                 was linked to a gear system.
@@ -23,10 +23,10 @@
 
             <li>
                 A greater supply of
-                <span class="q-number">2</span>
+                <span class="q-number-box">2</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-2" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-2" class="q-text" data-q="2" placeholder="" />
                     </span>
                 </span>
                 was required to power steam engines.
@@ -34,20 +34,20 @@
 
             <li>
                 Before the Industrial Revolution, spinners and weavers worked at home and in
-                <span class="q-number">3</span>
+                <span class="q-number-box">3</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-3" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-3" class="q-text" data-q="3" placeholder="" />
                     </span>
                 </span>.
             </li>
 
             <li>
                 Not as much
-                <span class="q-number">4</span>
+                <span class="q-number-box">4</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-4" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-4" class="q-text" data-q="4" placeholder="" />
                     </span>
                 </span>
                 was needed to produce cloth once the spinning jenny and power loom were invented.
@@ -55,30 +55,30 @@
 
             <li>
                 Smelting of iron ore with coke resulted in material that was better
-                <span class="q-number">5</span>
+                <span class="q-number-box">5</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-5" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-5" class="q-text" data-q="5" placeholder="" />
                     </span>
                 </span>.
             </li>
 
             <li>
                 Demand for iron increased with the growth of the
-                <span class="q-number">6</span>
+                <span class="q-number-box">6</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-6" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-6" class="q-text" data-q="6" placeholder="" />
                     </span>
                 </span>.
             </li>
 
             <li>
                 The new cities were dirty, crowded and lacked sufficient
-                <span class="q-number">7</span>
+                <span class="q-number-box">7</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-7" class="q-text" placeholder="" />
+                        <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-7" class="q-text" data-q="7" placeholder="" />
                     </span>
                 </span>.
             </li>
@@ -99,7 +99,7 @@
         <li><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks about this</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="8">
     <legend class="q-text">
         <span class="q-number">8</span>
         Britain’s canal network grew rapidly so that more goods could be transported around the country.
@@ -123,7 +123,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="9">
     <legend class="q-text">
         <span class="q-number">9</span>
         Costs in the iron industry rose when the technique of smelting iron ore with coke was
@@ -148,7 +148,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="10">
     <legend class="q-text">
         <span class="q-number">10</span>
         Samuel Morse's communication system was more reliable than that developed by William Cooke and
@@ -173,7 +173,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         The economic benefits of industrialisation were limited to certain sectors of society.
@@ -197,7 +197,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text">
         <span class="q-number">12</span>
         Some skilled weavers believed that the introduction of the new textile machines would lead to
@@ -222,7 +222,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         There was some sympathy among local people for the Luddites who were arrested near Huddersfield.

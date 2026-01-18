@@ -32,7 +32,7 @@
         <span class="q-number-box">27</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-1" data-q="1" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-1" data-q="27" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -53,7 +53,7 @@
         <span class="q-number-box">28</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-2" data-q="2" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-2" data-q="28" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -73,7 +73,7 @@
         <span class="q-number-box">29</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-3" data-q="3" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-3" data-q="29" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -99,7 +99,7 @@
         <span class="q-number-box">30</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-4" data-q="4" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-4" data-q="30" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -119,7 +119,7 @@
         <span class="q-number-box">31</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-5" data-q="5" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-5" data-q="31" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -139,7 +139,7 @@
         <span class="q-number-box">32</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][0]}}-{{ $id }}-6" data-q="6" class="q-dropdown">
+                <select name="{{ $part['tipe'][0]}}-{{ $id }}-6" data-q="32" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -172,7 +172,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         Many people who ended up winning prestigious intellectual prizes only reached an average
@@ -197,7 +197,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         Einstein's failures as a young man were due to his lack of confidence.
@@ -221,7 +221,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         It is difficult to reach agreement on whether some children are actually born gifted.
@@ -245,7 +245,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         Einstein was upset by the public's view of his life's work.
@@ -269,7 +269,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         Einstein put his success down to the speed at which he dealt with scientific questions.
@@ -299,7 +299,7 @@
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         What does Eyre believe is needed for children to equal ’gifted’ standards?
@@ -328,7 +328,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         What is the result of Ericsson’s research?
@@ -361,7 +361,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         In the penultimate paragraph, it is stated the key to some deprived children's success is

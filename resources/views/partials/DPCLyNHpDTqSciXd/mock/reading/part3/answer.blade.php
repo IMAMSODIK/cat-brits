@@ -6,7 +6,7 @@
     </p>
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         The purpose of the first paragraph is to
@@ -35,7 +35,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         What are the writers doing in the second paragraph?
@@ -64,7 +64,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         In the third paragraph, what do the writers suggest about Darwin and Einstein?
@@ -93,7 +93,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         John Nicholson is an example of a person whose idea
@@ -122,7 +122,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         What is the key point of interest about the ‘acey-deucy’ stirrup placement?
@@ -164,7 +164,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         Acknowledging people such as Plato or da Vinci as geniuses will help us understand the process
@@ -189,7 +189,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         The Law of Effect was discovered at a time when psychologists were seeking a scientific reason
@@ -214,7 +214,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         The Law of Effect states that no planning is involved in the behaviour of organisms.
@@ -238,7 +238,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         The Law of Effect sets out clear explanations about the sources of new ideas and behaviours.
@@ -262,7 +262,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         Many scientists are now turning away from the notion of intelligent design and genius.
@@ -316,7 +316,7 @@
         <span class="q-number-box">37</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text" data-q="37">
             </span>
         </span>
         . Although this can occur, it is not often the case. Advances are more likely to be the result
@@ -324,7 +324,7 @@
         <span class="q-number-box">38</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text" data-q="38">
             </span>
         </span>.
     </div>
@@ -337,7 +337,7 @@
         <span class="q-number-box">39</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text" data-q="39">
             </span>
         </span>.
         , for example, the coincidence of ideas that led to the invention of the Post-It note. With both
@@ -345,7 +345,7 @@
         <span class="q-number-box">40</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text" data-q="40">
             </span>
         </span>involved, but merely a process of variation and selection.
     </div>

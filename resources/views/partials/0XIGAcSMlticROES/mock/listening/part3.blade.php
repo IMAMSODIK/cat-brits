@@ -6,7 +6,7 @@
 </fieldset>
 
 <!-- Question 7 -->
-<fieldset class="q-item" data-q="7">
+<fieldset class="q-item" data-q="21">
     <legend class="q-text">
         <span class="q-number">21</span>
         At first, Don thought the topic of recycling footwear might be too
@@ -31,7 +31,7 @@
 </fieldset>
 
 <!-- Question 8 -->
-<fieldset class="q-item" data-q="8">
+<fieldset class="q-item" data-q="22">
     <legend class="q-text">
         <span class="q-number">22</span>
         When discussing trainers, Bella and Don disagree about
@@ -56,7 +56,7 @@
 </fieldset>
 
 <!-- Question 9 -->
-<fieldset class="q-item" data-q="9">
+<fieldset class="q-item" data-q="23">
     <legend class="q-text">
         <span class="q-number">23</span>
         Bella says that she sometimes recycles shoes because
@@ -81,7 +81,7 @@
 </fieldset>
 
 <!-- Question 10 -->
-<fieldset class="q-item" data-q="10">
+<fieldset class="q-item" data-q="24">
     <legend class="q-text">
         <span class="q-number">24</span>
         What did the article say that confused Don?
@@ -125,7 +125,7 @@
     <h3><b>Footwear</b></h3>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="25">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">25</span>
         <span style="flex: 1;">
@@ -145,7 +145,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="26">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">26</span>
         <span style="flex: 1;">
@@ -165,7 +165,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">27</span>
         <span style="flex: 1;">
@@ -185,7 +185,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">28</span>
         <span style="flex: 1;">
@@ -211,7 +211,7 @@
 </fieldset>
 
 <!-- Question 11 -->
-<fieldset class="q-item" data-q="11">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         Why did the project to make ‘new’ shoes out of old shoes fail?
@@ -236,7 +236,7 @@
 </fieldset>
 
 <!-- Question 12 -->
-<fieldset class="q-item" data-q="12">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         Bella and Don agree that they can present their topic

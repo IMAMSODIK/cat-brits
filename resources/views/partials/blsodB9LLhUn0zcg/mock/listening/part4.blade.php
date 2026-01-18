@@ -17,7 +17,7 @@
     <tr>
         <td colspan="2">
             Stoicism is still relevant today because of its
-            <div class="q-item" data-q="1" style="display:inline-block;">
+            <div class="q-item" data-q="31" style="display:inline-block;">
                 <span class="q-number-box">31</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text">
             </div>
@@ -35,7 +35,7 @@
                 <li>Stoicism was founded over 2,000 years ago in Greece.</li>
                 <li>
                     The Stoics’ ideas are surprisingly well known, despite not being intended for
-                    <div class="q-item" data-q="2" style="display:inline-block;">
+                    <div class="q-item" data-q="32" style="display:inline-block;">
                         <span class="q-number-box">32</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text">
                     </div>.
@@ -55,7 +55,7 @@
                 <li>Controlling emotions was essential.</li>
                 <li>
                     Epictetus said that external events cannot be controlled but the
-                    <div class="q-item" data-q="3" style="display:inline-block;">
+                    <div class="q-item" data-q="33" style="display:inline-block;">
                         <span class="q-number-box">33</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text">
                     </div>
@@ -64,7 +64,7 @@
                 <li>
                     A Stoic is someone who has a different view on experiences which others would consider
                     as
-                    <div class="q-item" data-q="4" style="display:inline-block;">
+                    <div class="q-item" data-q="34" style="display:inline-block;">
                         <span class="q-number-box">34</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text">
                     </div>.
@@ -82,7 +82,7 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     George Washington organised a
-                    <div class="q-item" data-q="5" style="display:inline-block;">
+                    <div class="q-item" data-q="35" style="display:inline-block;">
                         <span class="q-number-box">35</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text">
                     </div>
@@ -91,7 +91,7 @@
                 <li>The French artist Delacroix was a Stoic.</li>
                 <li>
                     Adam Smith’s ideas on
-                    <div class="q-item" data-q="6" style="display:inline-block;">
+                    <div class="q-item" data-q="36" style="display:inline-block;">
                         <span class="q-number-box">36</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text">
                     </div>
@@ -110,7 +110,7 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     the treatment for
-                    <div class="q-item" data-q="7" style="display:inline-block;">
+                    <div class="q-item" data-q="37" style="display:inline-block;">
                         <span class="q-number-box">37</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text">
                     </div>
@@ -118,7 +118,7 @@
                 </li>
                 <li>
                     people learn to base their thinking on
-                    <div class="q-item" data-q="8" style="display:inline-block;">
+                    <div class="q-item" data-q="38" style="display:inline-block;">
                         <span class="q-number-box">38</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text">
                     </div>.
@@ -131,7 +131,7 @@
     <tr>
         <td colspan="2">
             In business, people benefit from Stoicism by identifying obstacles as
-            <div class="q-item" data-q="9" style="display:inline-block;">
+            <div class="q-item" data-q="39" style="display:inline-block;">
                 <span class="q-number-box">39</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text">
             </div>.
@@ -144,7 +144,7 @@
     <tr>
         <td colspan="2">
             It requires a lot of
-            <div class="q-item" data-q="10" style="display:inline-block;">
+            <div class="q-item" data-q="40" style="display:inline-block;">
                 <span class="q-number-box">40</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text">
             </div>

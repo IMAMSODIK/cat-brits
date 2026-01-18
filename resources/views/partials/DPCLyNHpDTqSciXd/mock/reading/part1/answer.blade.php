@@ -72,7 +72,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="6">
     <legend class="q-text">
         <span class="q-number">6</span>
         The Bedouin teenagers who found the scrolls were disappointed by how little money they received
@@ -89,7 +89,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="7">
     <legend class="q-text">
         <span class="q-number">7</span>
         There is agreement among academics about the origin of the Dead Sea Scrolls.
@@ -105,7 +105,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="8">
     <legend class="q-text">
         <span class="q-number">8</span>
         Most of the books of the Bible written on the scrolls are incomplete.
@@ -121,7 +121,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="9">
     <legend class="q-text">
         <span class="q-number">9</span>
         The information on the Copper Scroll is written in an unusual way.
@@ -137,7 +137,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="10">
     <legend class="q-text">
         <span class="q-number">10</span>
         Mar Samuel was given some of the scrolls as a gift.
@@ -153,7 +153,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         In the early 1950s, a number of educational establishments in the US were keen to buy scrolls
@@ -172,7 +172,7 @@
 
 <fieldset class="q-item" data-q="12">
     <legend class="q-text">
-        <span class="q-number">7</span>
+        <span class="q-number">12</span>
         The scroll that was pieced together in 2017 contains information about annual occasions in the
         Qumran area 2,000 years ago.
     </legend>
@@ -187,7 +187,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="8">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         Academics at the University of Haifa are currently researching how to decipher the final scroll.

@@ -8,26 +8,26 @@
 </fieldset>
 <div>
     If soil is healthy, it is a
-    <span class="q-number-box">341</span>
+    <span class="q-number-box">31</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" data-q="31" class="q-text" placeholder="">
         </span>
     </span>
     teeming with life such as
     worms, fungi and bacteria. If plants are grown in poor soil, they will lack
-    <span class="q-number-box">342</span>
+    <span class="q-number-box">32</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" data-q="32" class="q-text" placeholder="">
         </span>
     </span>
     and human health will suffer. Plants are nourished by
     organic matter,
-    <span class="q-number-box">343</span>
+    <span class="q-number-box">33</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" data-q="33" class="q-text" placeholder="">
         </span>
     </span>
     and other essential elements which
@@ -47,30 +47,30 @@
     </div>
 
 </fieldset>
-<fieldset class="q-item" data-q="1">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="1">
+
+<ul>
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="34">
             <span class="q-number-box">34</span>
             <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-13" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="2">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="2">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="35">
             <span class="q-number-box">35</span>
             <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-14" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="3">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="3">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="36">
             <span class="q-number-box">36</span>
             <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-15" class="q-text" />
         </span>
-    </legend>
-</fieldset>
+    </li>
+</ul>
+
 <fieldset class="q-item">
     <h3>Questions 37-40</h3>
     <p class="lead"><i>Complete the notes below.</i></p>
@@ -82,10 +82,8 @@
         Erosion
     </li>
     <li>
-        <span class="q-item" data-q="1">
-            <span class="q-number-box">37</span>
-            <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-6" class="q-text" />
-        </span>
+        <span class="q-number-box">37</span>
+        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-6" class="q-text" data-q="37"/>
         from various sources, including chemical fertilisers
     </li>
     <h3><b>Conventional farming methods:</b></h3>
@@ -93,10 +91,9 @@
         monoculture
     </li>
     <li>
-        synthetic fertiliser & chemicals used for<span class="q-item" data-q="2">
-            <span class="q-number-box">38</span>
-            <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-7" class="q-text" />
-        </span>
+        synthetic fertiliser & chemicals used for
+        <span class="q-number-box">38</span>
+        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-7" class="q-text" data-q="38"/>
     </li>
     <li>
         genetically modified seeds
@@ -105,9 +102,9 @@
         pesticide fungicide sprayed on crops after picking
     </li>
     <li>
-        no need for documentation of<span class="q-number-box">39</span>
-        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-8" class="q-text" />
-        </span>
+        no need for documentation of
+        <span class="q-number-box">39</span>
+        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-8" data-q="39" class="q-text" />
     </li>
     <h3><b>Organic farming methods:</b></h3>
     <li>
@@ -117,9 +114,9 @@
         covering crops
     </li>
     <li>
-        use of insects as natural<span class="q-number-box">40</span>
-        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-9" class="q-text" />
-        </span>
+        use of insects as natural
+        <span class="q-number-box">40</span>
+        <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-9" data-q="40" class="q-text" />
     </li>
     <li>
         addition of manure & green waste

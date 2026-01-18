@@ -143,7 +143,7 @@
     <tr>
         <td colspan="2">
             People think of bears as unintelligent and
-            <div class="q-item" data-q="1" style="display:inline-block;">
+            <div class="q-item" data-q="8" style="display:inline-block;">
                 <span class="q-number-box">8</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
                     placeholder="">
@@ -158,13 +158,13 @@
     <tr>
         <td colspan="2">
             In Tennoji Zoo, a bear has been seen using a branch as a
-            <div class="q-item" data-q="2" style="display:inline-block;">
+            <div class="q-item" data-q="9" style="display:inline-block;">
                 <span class="q-number-box">9</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
                     placeholder="">
             </div>.
             This allowed him to knock down some
-            <div class="q-item" data-q="3" style="display:inline-block;">
+            <div class="q-item" data-q="10" style="display:inline-block;">
                 <span class="q-number-box">10</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
                     placeholder="">
@@ -175,7 +175,7 @@
     <tr>
         <td colspan="2">
             A wild polar bear worked out a method of reaching a platform where a
-            <div class="q-item" data-q="4" style="display:inline-block;">
+            <div class="q-item" data-q="11" style="display:inline-block;">
                 <span class="q-number-box">11</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
                     placeholder="">
@@ -188,7 +188,7 @@
         <td colspan="2">
             Polar bears have displayed behaviour such as conscious manipulation of objects and
             activity similar to a
-            <div class="q-item" data-q="5" style="display:inline-block;">
+            <div class="q-item" data-q="12" style="display:inline-block;">
                 <span class="q-number-box">12</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-text"
                     placeholder="">
@@ -203,7 +203,7 @@
     <tr>
         <td colspan="2">
             They may make movements suggesting
-            <div class="q-item" data-q="6" style="display:inline-block;">
+            <div class="q-item" data-q="13" style="display:inline-block;">
                 <span class="q-number-box">13</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" class="q-text"
                     placeholder="">

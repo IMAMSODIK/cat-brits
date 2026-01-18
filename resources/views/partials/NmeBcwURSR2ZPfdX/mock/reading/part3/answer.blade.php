@@ -13,7 +13,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         The Cambridge scientists’ discovery of the ‘thermometer molecule’ caused surprise among other
@@ -39,7 +39,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         The target for agricultural production by 2050 could be missed.
@@ -64,7 +64,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         Wheat and rice suffer from a rise in temperatures.
@@ -89,7 +89,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         It may be possible to develop crops that require less water.
@@ -114,7 +114,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         Plants grow faster in sunlight than in shade.
@@ -139,7 +139,7 @@
 </fieldset>
 
 <!-- Question 6 -->
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         Phytochromes change their state at the same speed day and night.
@@ -170,7 +170,7 @@
     <p>Write the correct letter, <b>A–H</b>, in boxes on your answer sheet.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         mention of specialists who can make use of the research findings
@@ -190,7 +190,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         a reference to a potential benefit of the research findings
@@ -210,7 +210,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         scientific support for a traditional saying
@@ -230,7 +230,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         a reference to people traditionally making plans based on plant behaviour
@@ -250,7 +250,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         a reference to where the research has been reported
@@ -277,7 +277,7 @@
     <p><i>Write your answers in boxes on your answer sheet</i></p>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="1">
+<fieldset class="q-item questions-item" data-q="38">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">38</span>
         <span style="flex: 1;">
@@ -291,7 +291,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="2">
+<fieldset class="q-item questions-item" data-q="39">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">39</span>
         <span style="flex: 1;">
@@ -305,7 +305,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="3">
+<fieldset class="q-item questions-item" data-q="40">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">40</span>
         <span style="flex: 1;">

@@ -13,64 +13,57 @@
 
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="1">
+<ul>
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="11">
             <span class="q-number-box">11</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" />
         </span>
-    </legend>
-</fieldset>
+    </li>
 
-
-<fieldset class="q-item" data-q="2">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="2">
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="12">
             <span class="q-number-box">12</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="3">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="3">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="13">
             <span class="q-number-box">13</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="4">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="4">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="14">
             <span class="q-number-box">14</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="5">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="5">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="15">
             <span class="q-number-box">15</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="6">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="6">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="16">
             <span class="q-number-box">16</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="7">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="7">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="17">
             <span class="q-number-box">17</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text" />
         </span>
-    </legend>
-</fieldset>
+    </li>
+</ul>
+
 <fieldset class="q-item">
     <h3>Questions 18-20</h3>
     <p class="lead"><i>Complete the notes below.</i></p>
@@ -78,7 +71,7 @@
 </fieldset>
 
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -90,7 +83,7 @@
         </span>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">19</span>
         <span style="flex: 1;">
@@ -101,7 +94,7 @@
         </span>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="20">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">20</span>
         <span style="flex: 1;">

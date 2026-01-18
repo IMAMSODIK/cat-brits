@@ -1,40 +1,20 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="qr-code"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
-
-    <script>
-const qrCode = new QRCodeStyling({
-    width: 300,
-    height: 300,
-    data: "https://pixelionsolution.com",
-    image: "https://cat-dev.pixelionsolution.com/own_assets/logo/logo.png", // PATH LOGO
-    dotsOptions: {
-        color: "#000000",
-        type: "rounded"
-    },
-    backgroundOptions: {
-        color: "#ffffff"
-    },
-    imageOptions: {
-        crossOrigin: "anonymous",
-        margin: 8,
-        imageSize: 0.3 // ukuran logo (30%)
-    },
-    qrOptions: {
-        errorCorrectionLevel: "H" // WAJIB agar logo tidak rusak
-    }
-});
-
-qrCode.append(document.getElementById("qr-code"));
-</script>
-
-    
-</body>
-</html>
+<li class="profile-nav onhover-dropdown">
+                    <div class="media profile-media">
+                        @if (auth()->user()->foto)
+                            <img class="img-70 rounded-circle" src="{{ asset('storage') . '/' . auth()->user()->foto }}" style="width: 100% !important" alt="Profile Picture">
+                        @else
+                            <img class="img-70 rounded-circle" src="{{ asset('own_assets/images/avatar.png') }}" alt="Profile Picture">
+                        @endif
+                        <div class="media-body d-xxl-block d-none box-col-none">
+                            <div class="d-flex align-items-center gap-2"> <span>{{auth()->user()->name}}</span><i
+                                    class="middle fa fa-angle-down"> </i></div>
+                            <p class="mb-0 font-roboto">{{auth()->user()->role}}</p>
+                        </div>
+                    </div>
+                    <ul class="profile-dropdown onhover-show-div">
+                        <li><a href="/profile"><i data-feather="user"></i><span>My Profile</span></a></li>
+                        <li>
+                            <a class="btn btn-pill btn-outline-primary btn-sm" id="logout">Log Out</a>
+                        </li>
+                    </ul>
+                </li>

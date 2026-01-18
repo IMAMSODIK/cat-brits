@@ -14,7 +14,7 @@
             about this</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="1">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         Wegener’s ideas about continental drift were widely disputed while he was alive.
@@ -38,7 +38,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="2">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         The idea that the continents remained fixed in place was defended in a number of
@@ -63,7 +63,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="3">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         Wegener relied on a limited range of scientific fields to support his theory of
@@ -88,7 +88,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="4">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         The similarities between Wegener’s theory of continental drift and modern-day
@@ -117,7 +117,7 @@
     <p class="lead">Complete the summary using the list of phrases,
         <strong>A-J</strong>, below.
     </p>
-    <p><i>Write the correct letter, <strong>A-J</strong>, in boxes on your answer sheet.
+    <p><i>Write the correct letter, <strong>A-J</strong>, in boxes on your answer sheet.</i>
     </p>
     <table cellpadding="10">
         <tr>
@@ -147,7 +147,7 @@
         <span class="q-number-box">31</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-5" data-q="1" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-5" data-q="31" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -167,7 +167,7 @@
         <span class="q-number-box">32</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-6" data-q="2" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-6" data-q="32" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -187,7 +187,7 @@
         <span class="q-number-box">33</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-7" data-q="3" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-7" data-q="33" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -206,7 +206,7 @@
         <span class="q-number-box">34</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-8" data-q="4" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-8" data-q="34" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -225,7 +225,7 @@
         <span class="q-number-box">35</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-9" data-q="5" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-9" data-q="35" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -245,7 +245,7 @@
         <span class="q-number-box">36</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-10" data-q="6" class="q-dropdown">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-10" data-q="36" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -271,7 +271,7 @@
     </p>
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="1">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         What is Mott T Greene doing in the fifth paragraph?
@@ -306,7 +306,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="2">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         What is said about Wegener in the sixth paragraph?
@@ -338,7 +338,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="3">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         What does Greene say about some other famous scientists?
@@ -371,7 +371,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="4">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         What is Greene’s main point in the final paragraph?

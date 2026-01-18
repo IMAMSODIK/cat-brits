@@ -8,7 +8,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text">
         <span class="q-number">14</span>
         mention of factors driving a renewed interest in natural medicinal compounds
@@ -29,7 +29,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text">
         <span class="q-number">15</span>
         how recent technological advances have made insect research easier
@@ -50,7 +50,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text">
         <span class="q-number">16</span>
         examples of animals which use medicinal substances from nature
@@ -71,7 +71,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text">
         <span class="q-number">17</span>
         reasons why it is challenging to use insects in drug research
@@ -92,7 +92,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text">
         <span class="q-number">18</span>
         reference to how interest in drug research may benefit wildlife
@@ -113,7 +113,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text">
         <span class="q-number">19</span>
         a reason why nature-based medicines fell out of favour for a period
@@ -134,7 +134,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="7">
+<fieldset class="q-item" data-q="20">
     <legend class="q-text">
         <span class="q-number">20</span>
         an example of an insect-derived medicine in use at the moment
@@ -167,7 +167,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="21" data-q-multi="1,2" data-max="2">
     <div class="q-options" role="group" aria-label="Question options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][1] }}-{{ $id }}-1[]" value="A" />
@@ -214,7 +214,7 @@
         <span class="q-number-box">23</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text" data-q="23">
             </span>
         </span>
         when undertaking bioprospecting with insects. They are especially interested in
@@ -222,7 +222,7 @@
         <span class="q-number-box">24</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text" data-q="24">
             </span>
         </span>.
     </div>
@@ -235,7 +235,7 @@
         <span class="q-number-box">25</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text" data-q="25">
             </span>
         </span>.
         Piper hopes that these substances will be useful in the development of drugs such
@@ -243,7 +243,7 @@
         <span class="q-number-box">26</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text" data-q="26">
             </span>
         </span>.
     </div>

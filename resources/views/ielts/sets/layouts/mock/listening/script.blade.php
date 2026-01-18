@@ -720,45 +720,50 @@ document.addEventListener('DOMContentLoaded', () => {
     let questionMap = [];
 
     /* ======================================
-       1. KUMPULKAN SEMUA SOAL (REAL NUMBER)
+    1. KUMPULKAN SEMUA SOAL
     ====================================== */
     function collectQuestions() {
         questionMap = [];
         const used = new Set();
 
-        document
-            .querySelectorAll('.x-panel [data-q]')
-            .forEach(el => {
+        // ambil semua elemen dengan data-q di seluruh dokumen
+        document.querySelectorAll('[data-q]').forEach(el => {
+            const baseQ = parseInt(el.dataset.q, 10);
+            if (isNaN(baseQ)) return;
 
-                // hindari nested duplicate
-                if (el.closest('.q-list') && !el.classList.contains('q-list')) return;
-
-                const baseQ = parseInt(el.dataset.q, 10);
-                if (!baseQ) return;
-
-                // TWO_CHOICES / MULTI NUMBER
-                if (el.dataset.type === 'two_choices' && el.dataset.qMulti) {
-                    const count = el.dataset.qMulti.split(',').length;
-                    for (let i = 0; i < count; i++) {
-                        const qNum = baseQ + i;
-                        if (!used.has(qNum)) {
-                            questionMap.push({ number: qNum, el });
-                            used.add(qNum);
-                        }
-                    }
-                } else {
-                    if (!used.has(baseQ)) {
-                        questionMap.push({ number: baseQ, el });
-                        used.add(baseQ);
+            // TWO_CHOICES
+            if (el.dataset.type === 'two_choices') {
+                const count = 2; // default 2 nomor
+                for (let i = 0; i < count; i++) {
+                    const qNum = baseQ + i;
+                    if (!used.has(qNum)) {
+                        questionMap.push({ number: qNum, el });
+                        used.add(qNum);
                     }
                 }
-            });
+            } else if (el.dataset.qMulti) {
+                const count = el.dataset.qMulti.split(',').length;
+                for (let i = 0; i < count; i++) {
+                    const qNum = baseQ + i;
+                    if (!used.has(qNum)) {
+                        questionMap.push({ number: qNum, el });
+                        used.add(qNum);
+                    }
+                }
+            } else {
+                if (!used.has(baseQ)) {
+                    questionMap.push({ number: baseQ, el });
+                    used.add(baseQ);
+                }
+            }
+        });
 
+        // urutkan nomor
         questionMap.sort((a, b) => a.number - b.number);
     }
 
     /* ======================================
-       2. RENDER FLOATING LIST
+    2. RENDER FLOATING LIST
     ====================================== */
     function renderList() {
         fqList.innerHTML = '';
@@ -784,22 +789,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ======================================
-       3. CEK TERJAWAB (SMART)
+    3. CEK TERJAWAB (SMART)
     ====================================== */
-    function isAnswered(el) {
+    function isAnswered(el, subNumber = null) {
         if (!el) return false;
 
         // RADIO
         if (el.querySelector('input[type="radio"]:checked')) return true;
 
         // CHECKBOX (two_choices)
-        const checkedBox = el.querySelectorAll('input[type="checkbox"]:checked');
-        if (checkedBox.length > 0) {
-            const max = parseInt(el.dataset.max || '0', 10);
-            return max ? checkedBox.length >= max : true;
+        if (el.dataset.type === 'two_choices') {
+            const checkedBox = el.querySelectorAll('input[type="checkbox"]:checked');
+            if (!checkedBox.length) return false;
+
+            const count = checkedBox.length;
+            const baseQ = parseInt(el.dataset.q, 10);
+
+            if (subNumber !== null) {
+                const numberIndex = subNumber - baseQ + 1;
+                return numberIndex <= count;
+            }
+
+            return count >= 1;
         }
 
-        // TEXT
+        // CHECKBOX biasa
+        const checkedBox = el.querySelectorAll('input[type="checkbox"]:checked');
+        if (checkedBox.length > 0) return true;
+
+        // TEXT / TEXTAREA
         const t = el.querySelector('input[type="text"], textarea');
         if (t && t.value.trim() !== '') return true;
 
@@ -807,27 +825,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const s = el.querySelector('select');
         if (s && s.value !== '') return true;
 
+        // jika elemen itu sendiri input / select
+        if (el.matches('input[type="text"], textarea') && el.value.trim() !== '') return true;
+        if (el.matches('select') && el.value !== '') return true;
+
         return false;
     }
 
     /* ======================================
-       4. UPDATE STATUS FLOATING
+    4. UPDATE STATUS FLOATING
     ====================================== */
     function updateStatus() {
         fqList.querySelectorAll('.fq-item').forEach(item => {
             item.classList.remove('answered', 'current');
 
             const qNum = parseInt(item.dataset.q, 10);
-            const qObj = questionMap.find(q => q.number === qNum);
+            const qObj = questionMap.find(q => {
+                if (q.number === qNum) return true;
+                if (q.el.dataset.type === 'two_choices') {
+                    const base = parseInt(q.el.dataset.q, 10);
+                    return qNum >= base && qNum < base + 2;
+                }
+                return false;
+            });
             if (!qObj) return;
 
-            if (isAnswered(qObj.el)) item.classList.add('answered');
+            if (qObj.el.dataset.type === 'two_choices') {
+                if (isAnswered(qObj.el, qNum)) item.classList.add('answered');
+            } else {
+                if (isAnswered(qObj.el)) item.classList.add('answered');
+            }
+
             if (activeNumber === qNum) item.classList.add('current');
         });
     }
 
     /* ======================================
-       5. WATCH INPUT
+    5. WATCH INPUT
     ====================================== */
     ['input', 'change', 'click'].forEach(evt => {
         document.addEventListener(evt, e => {
@@ -838,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ======================================
-       6. TOGGLE FLOATING
+    6. TOGGLE FLOATING
     ====================================== */
     if (fqToggle && floatingQ) {
         fqToggle.addEventListener('click', () => {
@@ -848,20 +882,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ======================================
-       7. INIT + SAFETY
+    7. INIT + REFRESH
     ====================================== */
-    collectQuestions();
-    renderList();
-
-    setInterval(() => {
-        const prev = questionMap.length;
+    function init() {
         collectQuestions();
-        if (questionMap.length !== prev) renderList();
-        else updateStatus();
-    }, 2000);
+        renderList();
+    }
+
+    init();
+    setInterval(init, 2000);
+
 });
 </script>
-
 
 
 

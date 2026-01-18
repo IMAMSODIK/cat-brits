@@ -430,7 +430,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="21" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">21</span>
                                     <span class="q-number">22</span>
@@ -471,7 +471,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">23</span>
                                     <span class="q-number">24</span>

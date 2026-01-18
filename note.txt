@@ -83,10 +83,15 @@ Flow speaking mock test terbalik (done)
 Redirect t ke video call langsung setelah login pakai link (done)
 Indikator nomor soal si mock test langsung 40 
 Per part lalu submit di speaking
-Tampilan head tidak responsive
+Tampilan head tidak responsive (done)
 
 Reading 1 jam (done)
 Aktifities di user hilangjan (done)
 Nilai konversi skor di mock test di besarkan (done)
 Thumbnail (done)
 Tombol back writing mock test masih belum pas (d0ne)
+
+
+
+
+mock test listening untuk two_choices masih bisa pilih lebih dari 2 jawaban

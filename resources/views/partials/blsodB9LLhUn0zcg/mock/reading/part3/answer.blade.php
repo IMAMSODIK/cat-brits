@@ -5,7 +5,7 @@
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         The first paragraph tells us about
@@ -38,7 +38,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         According to the second paragraph, what is Stella Pachidi’s view of the ‘knowledge economy’?
@@ -68,7 +68,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         What did Pachidi observe at the telecommunications company?
@@ -100,7 +100,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         In his recently published research, Ewan McGaughey
@@ -160,7 +160,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="31">
             </span>
         </span>
         .
@@ -173,7 +173,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="32">
             </span>
         </span>
         on the recommendations made by AI, as workers begin to learn through the ‘algorithm’s eyes’.
@@ -186,7 +186,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="33">
             </span>
         </span>
         , and are therefore prevented from achieving innovation.
@@ -200,7 +200,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="34">
             </span>
         </span>
         with regard to the technology.
@@ -222,7 +222,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         Greater levels of automation will not result in lower employment.
@@ -237,7 +237,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         There are several reasons why AI is appealing to businesses.
@@ -252,7 +252,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         AI’s potential to transform people’s lives has parallels with major cultural
@@ -268,7 +268,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         It is important to be aware of the range of problems that AI causes.
@@ -283,7 +283,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         People are going to follow a less conventional career path than in the past.
@@ -298,7 +298,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         Authorities should take measures to ensure that there will be adequately paid

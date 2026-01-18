@@ -18,14 +18,14 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     In the 1930s, a local teacher realised that stones beneath the bog surface were once
-                    <div class="q-item" data-q="1" style="display:inline-block;">
+                    <div class="q-item" data-q="31" style="display:inline-block;">
                         <span class="q-number-box">31</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-11" class="q-text" placeholder="">
                     </div>.
                 </li>
                 <li>
                     His
-                    <div class="q-item" data-q="2" style="display:inline-block;">
+                    <div class="q-item" data-q="32" style="display:inline-block;">
                         <span class="q-number-box">32</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-12" class="q-text" placeholder="">
                     </div>
@@ -33,7 +33,7 @@
                 </li>
                 <li>
                     – a traditional method used by local people to dig for
-                    <div class="q-item" data-q="3" style="display:inline-block;">
+                    <div class="q-item" data-q="33" style="display:inline-block;">
                         <span class="q-number-box">33</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-13" class="q-text" placeholder="">
                     </div>
@@ -42,7 +42,7 @@
                 <li>– carbon dating later proved the site was Neolithic.</li>
                 <li>
                     Items are well preserved in the bog because of a lack of
-                    <div class="q-item" data-q="4" style="display:inline-block;">
+                    <div class="q-item" data-q="34" style="display:inline-block;">
                         <span class="q-number-box">34</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-14" class="q-text" placeholder="">
                     </div>.
@@ -60,7 +60,7 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     Houses were
-                    <div class="q-item" data-q="5" style="display:inline-block;">
+                    <div class="q-item" data-q="35" style="display:inline-block;">
                         <span class="q-number-box">35</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-15" class="q-text" placeholder="">
                     </div>
@@ -70,14 +70,14 @@
                 <li>– cooking indoors</li>
                 <li>
                     – pots used for storage and to make
-                    <div class="q-item" data-q="6" style="display:inline-block;">
+                    <div class="q-item" data-q="36" style="display:inline-block;">
                         <span class="q-number-box">36</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-16" class="q-text" placeholder="">
                     </div>.
                 </li>
                 <li>
                     Each field at Céide was large enough to support a big
-                    <div class="q-item" data-q="7" style="display:inline-block;">
+                    <div class="q-item" data-q="37" style="display:inline-block;">
                         <span class="q-number-box">37</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-17" class="q-text" placeholder="">
                     </div>.
@@ -85,7 +85,7 @@
                 <li>
                     The fields were probably used to restrict the grazing of animals – no evidence of
                     structures to house them during
-                    <div class="q-item" data-q="8" style="display:inline-block;">
+                    <div class="q-item" data-q="38" style="display:inline-block;">
                         <span class="q-number-box">38</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-18" class="q-text" placeholder="">
                     </div>.
@@ -103,7 +103,7 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     a decline in
-                    <div class="q-item" data-q="9" style="display:inline-block;">
+                    <div class="q-item" data-q="39" style="display:inline-block;">
                         <span class="q-number-box">39</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-19" class="q-text" placeholder="">
                     </div>
@@ -111,7 +111,7 @@
                 </li>
                 <li>
                     an increase in
-                    <div class="q-item" data-q="10" style="display:inline-block;">
+                    <div class="q-item" data-q="40" style="display:inline-block;">
                         <span class="q-number-box">40</span>
                         <input type="text" name="{{ $part['tipe'][0]}}-{{ $id }}-20" class="q-text" placeholder="">
                     </div>

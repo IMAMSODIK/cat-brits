@@ -6,7 +6,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="21" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">21</span>
         <span class="q-number">22</span>
@@ -52,7 +52,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">23</span>
         <span class="q-number">24</span>
@@ -97,7 +97,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="25">
     <legend class="q-text">
         <span class="q-number">25</span>
         Adam suggests that restaurants could reduce obesity if their menus
@@ -122,7 +122,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="26">
     <legend class="q-text">
         <span class="q-number">26</span>
         The students agree that food manufacturers deliberately
@@ -147,7 +147,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         What does Rosie say about levels of exercise in England?
@@ -172,7 +172,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         Adam refers to the location and width of stairs in a train station to illustrate
@@ -197,7 +197,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         What do the students agree about including reference to exercise in their presentation?
@@ -222,7 +222,7 @@
 </fieldset>
 
 <!-- Question 6 -->
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         What are the students going to do next for their presentation?

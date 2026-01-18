@@ -211,7 +211,7 @@
                                         <span class="q-number-box">7</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-1" data-q="1" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-1" data-q="7" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </p>
@@ -220,7 +220,7 @@
                                         <span class="q-number-box">8</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-2" data-q="2" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-2" data-q="8" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </p>
@@ -233,7 +233,7 @@
                                         <span class="q-number-box">9</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-3" data-q="3" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-3" data-q="9" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         than other species
@@ -243,7 +243,7 @@
                                         <span class="q-number-box">10</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-4" data-q="4" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-4" data-q="10" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </p>
@@ -254,7 +254,7 @@
                                         <span class="q-number-box">11</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-5" data-q="5" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-5" data-q="11" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                     </p>
@@ -265,7 +265,7 @@
                                         <span class="q-number-box">12</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-6" data-q="6" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-6" data-q="12" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         areas of England
@@ -275,7 +275,7 @@
                                         <span class="q-number-box">13</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-7" data-q="7" class="q-text" placeholder="">
+                                                <input type="text" data-type="nc" name="nc-IgWhHunhjhOYd3hb-7" data-q="13" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         of the caterpillar are possible reasons for decline
@@ -542,7 +542,7 @@
                                         <span class="q-number-box">24</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-1" data-q="1" data-type="summary_completion" class="q-text" placeholder="">
+                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-1" data-q="24" data-type="summary_completion" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         .
@@ -553,14 +553,14 @@
                                         <span class="q-number-box">25</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-2" data-q="2" data-type="summary_completion" class="q-text" placeholder="">
+                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-2" data-q="25" data-type="summary_completion" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that
                                         <span class="q-number-box">26</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-3" data-q="3" data-type="summary_completion" class="q-text" placeholder="">
+                                                <input type="text" name="summary_completion-IgWhHunhjhOYd3hb-3" data-q="26" data-type="summary_completion" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         is necessary due to the possible number of unidentified consequences.
@@ -734,35 +734,35 @@
                                         <span class="q-number-box">31</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="summary_completion" data-q="4" name="summary_completion-IgWhHunhjhOYd3hb-4" class="q-text" placeholder="">
+                                                <input type="text" data-type="summary_completion" data-q="31" name="summary_completion-IgWhHunhjhOYd3hb-4" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         in all areas of life. In these cultures, distributing resources fairly among all members is a moral obligation. These societies also employ strategies to prevent differences in
                                         <span class="q-number-box">32</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="summary_completion" data-q="5" name="summary_completion-IgWhHunhjhOYd3hb-5" class="q-text" placeholder="">
+                                                <input type="text" data-type="summary_completion" data-q="32" name="summary_completion-IgWhHunhjhOYd3hb-5" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         occurring: for example, the !Kung follow a custom whereby the credit for one person’s success at
                                         <span class="q-number-box">33</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="summary_completion" data-q="6" name="summary_completion-IgWhHunhjhOYd3hb-6" class="q-text" placeholder="">
+                                                <input type="text" data-type="summary_completion" data-q="33" name="summary_completion-IgWhHunhjhOYd3hb-6" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         is given to another member of the group. Individuals who behave in a
                                         <span class="q-number-box">34</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="summary_completion" data-q="7" name="summary_completion-IgWhHunhjhOYd3hb-7" class="q-text" placeholder="">
+                                                <input type="text" data-type="summary_completion" data-q="34" name="summary_completion-IgWhHunhjhOYd3hb-7" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         manner are punished by being excluded from the group, and women have a considerable amount of
                                         <span class="q-number-box">35</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
-                                                <input type="text" data-type="summary_completion" data-q="8" name="summary_completion-IgWhHunhjhOYd3hb-8" class="q-text" placeholder="">
+                                                <input type="text" data-type="summary_completion" data-q="35" name="summary_completion-IgWhHunhjhOYd3hb-8" class="q-text" placeholder="">
                                             </span>
                                         </span>
                                         in choices regarding work and marriage.

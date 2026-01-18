@@ -105,7 +105,7 @@
                                 <tr>
                                     <td>
                                         <div class="q-item" data-type="tc" data-q="6">
-                                            <span class="q-number-box">1</span>
+                                            <span class="q-number-box">6</span>
                                             <input type="text" name="tc-JSRJ0oDlxC0yFMgt-1" class="q-text"
                                                 placeholder="">
                                             Street
@@ -115,7 +115,7 @@
                                     <td>
                                         <div class="q-item" data-type="tc" data-q="7">
                                             Checking portions, etc. are correct <br>Making sure 
-                                            <span class="q-number-box">2</span>
+                                            <span class="q-number-box">7</span>
                                             <input type="text" name="tc-JSRJ0oDlxC0yFMgt-2" class="q-text"
                                                 placeholder="">
                                             is clean
@@ -124,7 +124,7 @@
                                     <td>
                                         <div class="q-item" data-type="tc" data-q="8">
                                             Starting salary £
-                                            <span class="q-number-box">3</span>
+                                            <span class="q-number-box">8</span>
                                             <input type="text" name="tc-JSRJ0oDlxC0yFMgt-3" class="q-text"
                                                 placeholder="">
                                             per hour Start work at 5.30 a.m.
@@ -137,7 +137,7 @@
                                     <td>
                                         <div class="q-item" data-type="tc" data-q="9">
                                             Maintaining stock and organising
-                                            <span class="q-number-box">4</span>
+                                            <span class="q-number-box">9</span>
                                             <input type="text" name="tc-JSRJ0oDlxC0yFMgt-4" class="q-text"
                                                 placeholder="">
                                         </div>
@@ -145,7 +145,7 @@
                                     <td>
                                         <div class="q-item" data-type="tc" data-q="10">
                                             Annual salary £23,000 <br>No work on a
-                                            <span class="q-number-box">5</span>
+                                            <span class="q-number-box">10</span>
                                             <input type="text" name="tc-JSRJ0oDlxC0yFMgt-5" class="q-text"
                                                 placeholder="">
                                             once a month
@@ -420,7 +420,7 @@
 
                             <fieldset class="q-item" data-type="oc" data-q="21">
                                 <legend class="q-text">
-                                    <span class="q-number">1</span>
+                                    <span class="q-number">21</span>
                                     Why do the students think the Laki eruption of 1783 is so important?
                                 </legend>
                                 <div class="q-options" role="radiogroup" aria-label="Question 1 options">

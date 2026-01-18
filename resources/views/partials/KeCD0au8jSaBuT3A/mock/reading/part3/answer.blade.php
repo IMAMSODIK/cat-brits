@@ -6,7 +6,7 @@
     <p>Write the correct letter,<b>A-F</b>, in boxes on your answer sheet.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         a reference to the cooperation that takes place to try and minimise risk
@@ -25,7 +25,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         an explanation of a person’s aims
@@ -44,7 +44,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         a description of a major collision that occurred in space
@@ -63,7 +63,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         a comparison between tracking objects in space and the efficiency of a transportation system
@@ -82,7 +82,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         a reference to efforts to classify space junk
@@ -116,7 +116,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="32">
             </span>
         </span>
         of space can be achieved.
@@ -130,7 +130,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="33">
             </span>
         </span>
         or pressurised material that could cause
@@ -138,7 +138,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="34">
             </span>
         </span>
         should be removed.
@@ -153,7 +153,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="35">
             </span>
         </span>
         are unlikely to prioritise removing their satellites from space.
@@ -177,7 +177,7 @@
     <p><b>D</b>&nbsp;&nbsp;Moriba Jah</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         Knowing the exact location of space junk would help prevent any possible danger.
@@ -193,7 +193,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         Space should be available to everyone and should be preserved for the future.
@@ -209,7 +209,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         A recommendation regarding satellites is widely ignored.
@@ -225,7 +225,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         There is conflicting information about where some satellites are in space.
@@ -241,7 +241,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         There is a risk we will not be able to undo the damage that occurs in space.

@@ -12,40 +12,36 @@
 
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="1">
+<ul>
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="31">
             <span class="q-number-box">31</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text" />
         </span>
-    </legend>
-</fieldset>
+    </li>
 
-
-<fieldset class="q-item" data-q="2">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="2">
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="32">
             <span class="q-number-box">32</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="3">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="3">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="33">
             <span class="q-number-box">33</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text" />
         </span>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="4">
-    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-        <span class="q-item" data-q="4">
+    </li>
+
+    <li style="margin-bottom: 10px">
+        <span class="q-item" data-q="34">
             <span class="q-number-box">34</span>
             <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text" />
         </span>
-    </legend>
-</fieldset>
+    </li>
+</ul>
+
 <fieldset class="q-item">
     <p>
     <h3>Questions 35–40</h3>
@@ -60,7 +56,7 @@
     <span class="q-number-box">35</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" data-q="35" class="q-text" placeholder="">
         </span>
     </span>
     normal sounds, so they are good for mild hearing loss but
@@ -69,7 +65,7 @@
     <span class="q-number-box">36</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" data-q="36" class="q-text" placeholder="">
         </span>
     </span>
     from an implant, so users must relearn
@@ -77,7 +73,7 @@
     <span class="q-number-box">37</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" data-q="37" class="q-text" placeholder="">
         </span>
     </span>
     lip-reading and sign language. The surgery can damage nerves. It may
@@ -85,7 +81,7 @@
     <span class="q-number-box">38</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" data-q="38" class="q-text" placeholder="">
         </span>
     </span>
     ; in such cases, those users cannot go back to using a
@@ -93,7 +89,7 @@
     <span class="q-number-box">39</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" data-q="39" class="q-text" placeholder="">
         </span>
     </span>
     of their
@@ -102,7 +98,7 @@
     <span class="q-number-box">40</span>
     <span style="flex: 1;">
         <span class="q-question">
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" class="q-text" placeholder="">
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" data-q="40" class="q-text" placeholder="">
         </span>
     </span>
     can damage these cells.

@@ -404,33 +404,33 @@
                                     <p>
                                         Many people think that procrastination is the result of
                                         <span class="q-number-box">17</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-1" data-q="1" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-1" data-q="17" data-type="summary_completion" class="q-text" placeholder="">
                                         Others believe it to be the result of an inability to organise time efficiently.
                                     </p>
                                     <p>
                                         But scientific studies suggest that procrastination is actually due to poor mood management. The tasks we are most likely to put off are those that could damage our self-esteem or cause us to feel
                                         <span class="q-number-box">18</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-2" data-q="2" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-2" data-q="18" data-type="summary_completion" class="q-text" placeholder="">
                                         when we think about them. Research comparing chronic procrastinators with other people even found differences in the brain regions associated with regulating emotions and identifying 
                                         <span class="q-number-box">19</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-3" data-q="3" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-3" data-q="19" data-type="summary_completion" class="q-text" placeholder="">
                                     </p>
                                     <p>
                                         Emotionally loaded and difficult tasks often cause us to procrastinate. Getting ready to take
                                         <span class="q-number-box">20</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-4" data-q="4" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-4" data-q="20" data-type="summary_completion" class="q-text" placeholder="">
                                         might be a typical example of one such task.
                                     </p>
                                     <p>
                                         People who are likely to procrastinate tend to be either
                                         <span class="q-number-box">21</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-5" data-q="5" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-5" data-q="21" data-type="summary_completion" class="q-text" placeholder="">
                                         or those with low self-esteem.
                                     </p>
                                     <p>
                                         Procrastination is only a short-term measure for managing emotions. It’s often followed by a feeling of
                                         <span class="q-number-box">22</span>
-                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-6" data-q="6" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-EKX6hyJgeV3x0pxB-6" data-q="22" data-type="summary_completion" class="q-text" placeholder="">
                                         , which worsens our mood and leads to more procrastination.
                                     </p>
                                 </fieldset>
@@ -442,7 +442,7 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="two_choices" data-q="1" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-type="two_choices" data-q="23" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">23</span>
                                         <span class="q-number">24</span>
@@ -484,7 +484,7 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="two_choices" data-q="3" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-type="two_choices" data-q="25" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">25</span>
                                         <span class="q-number">26</span>

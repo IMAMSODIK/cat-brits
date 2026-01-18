@@ -23,7 +23,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">27</span>
         <span style="flex:1;">
@@ -44,7 +44,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">28</span>
         <span style="flex:1;">
@@ -65,7 +65,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">29</span>
         <span style="flex:1;">
@@ -86,7 +86,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">30</span>
         <span style="flex:1;">
@@ -107,7 +107,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">31</span>
         <span style="flex:1;">
@@ -142,7 +142,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         Children need toys in order to play.
@@ -166,7 +166,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         It is a mistake to treat play and learning as separate types of activities.
@@ -190,7 +190,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
         <span class="q-number">34</span>
         Play helps children to develop their artistic talents.
@@ -214,7 +214,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
         <span class="q-number">35</span>
         Researchers have agreed on a definition of play.
@@ -238,7 +238,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
         <span class="q-number">36</span>
         Work and play differ in terms of whether or not they have a target.
@@ -277,7 +277,7 @@
         <span class="q-number-box">37</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-5" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-5" class="q-text" data-q="37">
             </span>
         </span>
         the child to investigate different aspects of their game. Adults can help children to learn
@@ -286,7 +286,7 @@
         <span class="q-number-box">38</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-6" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-6" class="q-text" data-q="38">
             </span>
         </span>to play.
     </div>
@@ -295,14 +295,14 @@
         <span class="q-number-box">39</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-7" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-7" class="q-text" data-q="39">
             </span>
         </span>.
         with adults, play can be
         <span class="q-number-box">40</span>
         <span style="flex:1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-8" class="q-text">
+                <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-8" class="q-text" data-q="40">
             </span>
         </span>at particular goals. However, all forms of play should be an opportunity for children to
         have fun.

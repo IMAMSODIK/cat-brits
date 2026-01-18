@@ -9,7 +9,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">14</span>
         <span style="flex: 1;">
@@ -30,7 +30,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">15</span>
         <span style="flex: 1;">
@@ -51,7 +51,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -73,7 +73,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -94,7 +94,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -115,7 +115,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">19</span>
         <span style="flex: 1;">
@@ -140,12 +140,14 @@
     <p class="lead"><b>Questions 20-21</b></p>
     <p class="lead"><i>Choose Two Letters<b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">20</span><span class="q-number-box">21</span> Which
-        <b>TWO</b> of the following statements does the writer make about inhabitants of the
-        Mediterranean region in the ancient world?
-    </p>
 </fieldset>
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="20" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p><span class="q-number-box">20</span><span class="q-number-box">21</span> Which
+            <b>TWO</b> of the following statements does the writer make about inhabitants of the
+            Mediterranean region in the ancient world?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][1]}}-{{ $id }}-1[]" value="A" />
@@ -184,12 +186,14 @@
     <p class="lead"><b>Questions 22-23</b></p>
     <p class="lead"><i>Choose Two Letters<b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">22</span><span class="q-number-box">23</span> Which
-        <b>TWO</b> Which TWO of the following statements does the writer make about piracy and ancient
-        Greece?
-    </p>
 </fieldset>
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="22" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p><span class="q-number-box">22</span><span class="q-number-box">23</span> Which
+            <b>TWO</b> Which TWO of the following statements does the writer make about piracy and ancient
+            Greece?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2]}}-{{ $id }}-2[]" value="A" />
@@ -223,7 +227,7 @@
         </label>
     </div>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item">
     <h3>Questions 24-26</h3>
     <p class="lead">Complete the summary below.</p>
     <p><i>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</i></p>
@@ -237,21 +241,21 @@
         <span class="q-number-box">24</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-1" class="q-text" placeholder="">
+                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-1" class="q-text" placeholder="" data-q="24" >
             </span>
         </span>
         resulted in calls for
         <span class="q-number-box">25</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-2" class="q-text" placeholder="">
+                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-2" class="q-text" placeholder="" data-q="25" >
             </span>
         </span>
         for the pirates responsible. Nevertheless, piracy continued, with some pirates demanding a
         <span class="q-number-box">26</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-3" class="q-text" placeholder="">
+                <input type="text" name="{{ $part['tipe'][3]}}-{{ $id }}-3" class="q-text" placeholder="" data-q="26" >
             </span>
         </span>
         for the return of the Roman officials they captured.

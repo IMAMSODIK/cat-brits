@@ -206,7 +206,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="11" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">11</span>
                                 <span class="q-number">12</span>
@@ -246,7 +246,7 @@
                             <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                         </fieldset>
 
-                        <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                        <fieldset class="q-item" data-q="13" data-type="two_choices" data-q-multi="1,2" data-max="2">
                             <legend class="q-text">
                                 <span class="q-number">13</span>
                                 <span class="q-number">14</span>
@@ -453,7 +453,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="21" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">21</span>
                                     <span class="q-number">22</span>
@@ -493,7 +493,7 @@
                                 <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
                             </fieldset>
 
-                            <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                            <fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                 <legend class="q-text">
                                     <span class="q-number">23</span>
                                     <span class="q-number">24</span>
@@ -723,14 +723,14 @@
                                     <span class="q-number-box">32</span>
                                     <span style="flex: 1;">
                                         <span class="q-question">
-                                            <input type="text" name="nc-8uQvKzYbHuROu9RJ-2" data-type="nc" data-q="2" class="q-text" placeholder="">
+                                            <input type="text" name="nc-8uQvKzYbHuROu9RJ-2" data-type="nc" data-q="32" class="q-text" placeholder="">
                                         </span>
                                     </span>
                                     and therefore more widespread (e.g. there are constellations made up of
                                     <span class="q-number-box">33</span>
                                     <span style="flex: 1;">
                                         <span class="q-question">
-                                            <input type="text" name="nc-8uQvKzYbHuROu9RJ-3" data-type="nc" data-q="3" class="q-text" placeholder="">
+                                            <input type="text" name="nc-8uQvKzYbHuROu9RJ-3" data-type="nc" data-q="33" class="q-text" placeholder="">
                                         </span>
                                     </span>
                                     of satellites).

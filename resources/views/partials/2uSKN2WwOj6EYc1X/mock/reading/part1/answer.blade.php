@@ -146,39 +146,37 @@
         <img src="{{ asset('own_assets/images/P02-4.png') }}" alt="Sports Super Centre"
             style="max-width: 100%; height: auto;" />
     </div>
-    <fieldset class="q-item" data-q="1">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="1">
+</fieldset>
+
+    <ul>
+        <li style="margin-bottom: 10px">
+            <span class="q-item" data-q="7">
                 <span class="q-number-box">7</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" />
             </span>
-        </legend>
-    </fieldset>
+        </li>
 
-    <fieldset class="q-item" data-q="2">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="2">
+        <li style="margin-bottom: 10px">
+            <span class="q-item" data-q="8">
                 <span class="q-number-box">8</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" />
             </span>
-        </legend>
-    </fieldset>
-    <fieldset class="q-item" data-q="3">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="3">
+        </li>
+
+        <li style="margin-bottom: 10px">
+            <span class="q-item" data-q="9">
                 <span class="q-number-box">9</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text" />
             </span>
-        </legend>
-    </fieldset>
-    <fieldset class="q-item" data-q="4">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="4">
+        </li>
+
+        <li style="margin-bottom: 10px">
+            <span class="q-item" data-q="10">
                 <span class="q-number-box">10</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text" />
             </span>
-        </legend>
-    </fieldset>
+        </li>
+    </ul>
 </fieldset>
 
 <fieldset class="q-item">
@@ -193,7 +191,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         Can resist exposure to sunlight at high-water mark
@@ -208,7 +206,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text">
         <span class="q-number">12</span>
         Grow in far open sea water
@@ -223,7 +221,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         Share their habitat with karengo

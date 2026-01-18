@@ -6,7 +6,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="11" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">11</span>
         <span class="q-number">12</span>
@@ -53,7 +53,7 @@
     <p>Choose <b>TWO</b> letters <b>A–E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="2" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="13" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">13</span>
         <span class="q-number">14</span>
@@ -111,7 +111,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">15</span>
         <span style="flex: 1;">
@@ -133,7 +133,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -155,7 +155,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -177,7 +177,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -199,7 +199,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">19</span>
         <span style="flex: 1;">
@@ -221,7 +221,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="20">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">20</span>
         <span style="flex: 1;">

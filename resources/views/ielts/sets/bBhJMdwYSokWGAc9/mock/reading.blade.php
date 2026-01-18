@@ -471,7 +471,7 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="two_choices" data-q="1" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-type="two_choices" data-q="20" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">20</span>
                                         <span class="q-number">21</span>
@@ -512,7 +512,7 @@
                                     <p>Choose <b>TWO</b> letters, <b>A–E</b>.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="two_choices" data-q="1" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-type="two_choices" data-q="22" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">22</span>
                                         <span class="q-number">23</span>
@@ -561,7 +561,7 @@
                                             Corals have a number of
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-bBhJMdwYSokWGAc9-1" class="q-text"
-                                                    placeholder=""> which they use to collect their food.
+                                                    placeholder="" data-q="24"> which they use to collect their food.
                                             </span>
                                         </span>
                                     </legend>
@@ -574,7 +574,7 @@
                                             Algae gain
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-bBhJMdwYSokWGAc9-2" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="25">
                                                 from being inside the coral.
                                             </span>
                                         </span>
@@ -588,7 +588,7 @@
                                             Increases in the warmth of the sea water can remove the
                                             <span class="q-question">
                                                 <input type="text" name="sentence_completion-bBhJMdwYSokWGAc9-3" class="q-text"
-                                                    placeholder="">
+                                                    placeholder="" data-q="26">
                                                 from coral.
                                             </span>
                                         </span>

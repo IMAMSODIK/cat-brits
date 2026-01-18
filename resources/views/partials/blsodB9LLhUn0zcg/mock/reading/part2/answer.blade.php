@@ -17,7 +17,7 @@
         <li><strong>ix</strong> The answers to some unexpected questions</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text">
         <span class="q-number">14</span>
         Paragraph <b>A</b>
@@ -35,7 +35,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text">
         <span class="q-number">15</span>
         Paragraph <b>B</b>
@@ -53,7 +53,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text">
         <span class="q-number">16</span>
         Paragraph <b>C</b>
@@ -71,7 +71,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text">
         <span class="q-number">17</span>
         Paragraph <b>D</b>
@@ -89,7 +89,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text">
         <span class="q-number">18</span>
         Paragraph <b>E</b>
@@ -107,7 +107,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text">
         <span class="q-number">19</span>
         Paragraph <b>F</b>
@@ -125,7 +125,7 @@
         </select>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-q="7">
+<fieldset class="q-item" data-q="20">
     <legend class="q-text">
         <span class="q-number">20</span>
         Paragraph <b>G</b>
@@ -154,7 +154,7 @@
     <p><b>The Step Pyramid of Djoser</b></p>
     <ul>
         <li>
-            <div class="q-list" data-q="1">
+            <div class="q-list" data-q="21">
                 The complex that includes the Step Pyramid and its surroundings is considered to be as
                 big as an Egyptian
                 <span class="q-number-box">21</span>
@@ -163,7 +163,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="2">
+            <div class="q-list" data-q="22">
                 of the past. The area outside the pyramid included accommodation that was occupied by
                 <span class="q-number-box">22</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
@@ -172,7 +172,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="3">
+            <div class="q-list" data-q="23">
                 A wall ran around the outside of the complex and a number of false entrances were built
                 into this. In addition, a long
                 <span class="q-number-box">23</span>
@@ -181,7 +181,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="4">
+            <div class="q-list" data-q="24">
                 encircled the wall. As a result, any visitors who had not been invited were cleverly
                 prevented from entering the pyramid grounds unless they knew the
                 <span class="q-number-box">24</span>
@@ -196,13 +196,15 @@
     <p class="lead"><b>Questions 25-26</b></p>
     <p class="lead"><i>Choose TWO letters, <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">25</span>
-        <span class="q-number-box">26</span>
-        Which <b>TWO</b> of the following points does the writer make about King Djoser?
-    </p>
 </fieldset>
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="25" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text no-border">
+        <p>
+            <span class="q-number-box">25</span>
+            <span class="q-number-box">26</span>
+            Which <b>TWO</b> of the following points does the writer make about King Djoser?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />

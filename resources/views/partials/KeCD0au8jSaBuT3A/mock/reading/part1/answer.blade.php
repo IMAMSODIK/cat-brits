@@ -67,7 +67,7 @@
         <td><b>Intensive farming</b></td>
         <td>
             wide range of
-            <div class="q-item" data-q="1" style="display:inline-block;">
+            <div class="q-item" data-q="4" style="display:inline-block;">
                 <span class="q-number-box">4</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
             </div>
@@ -81,7 +81,7 @@
         <td></td>
         <td>
             varieties of fruit and vegetables chosen that can survive long
-            <div class="q-item" data-q="2" style="display:inline-block;">
+            <div class="q-item" data-q="5" style="display:inline-block;">
                 <span class="q-number-box">5</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
             </div>
@@ -91,7 +91,7 @@
     <tr>
         <td></td>
         <td>
-            <div class="q-item" data-q="3" style="display:inline-block;">
+            <div class="q-item" data-q="6" style="display:inline-block;">
                 <span class="q-number-box">6</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
                     placeholder="">
@@ -106,7 +106,7 @@
             no soil used<br>
             nutrients added to water, which is recycled<br>
             produce chosen because of its
-            <div class="q-item" data-q="4" style="display:inline-block;">
+            <div class="q-item" data-q="7" style="display:inline-block;">
                 <span class="q-number-box">7</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
                     placeholder="">
@@ -126,7 +126,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="8">
     <legend class="q-text">
         <span class="q-number">8</span>
         Urban farming can take place above or below ground.
@@ -150,7 +150,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="9">
     <legend class="q-text">
         <span class="q-number">9</span>
         Some of the equipment used in aeroponic farming can be made by hand.
@@ -174,7 +174,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="10">
     <legend class="q-text">
         <span class="q-number">10</span>
         Urban farming relies more on electricity than some other types of farming.
@@ -198,7 +198,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         Fruit and vegetables grown on an aeroponic urban farm are cheaper than traditionally grown
@@ -223,7 +223,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text">
         <span class="q-number">12</span>
         Most produce can be grown on an aeroponic urban farm at any time of the year.
@@ -247,7 +247,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         Beans take longer to grow on an urban farm than other vegetables.

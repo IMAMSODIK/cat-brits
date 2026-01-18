@@ -425,7 +425,7 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-type="two_choices" data-q="1" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-type="two_choices" data-q="19" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">19</span>
                                         <span class="q-number">20</span>
@@ -466,10 +466,10 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-q="21" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
-                                        <span class="q-number">1</span>
-                                        <span class="q-number">2</span>
+                                        <span class="q-number">21</span>
+                                        <span class="q-number">22</span>
                                         Which <b>TWO</b> of the following statements are made in the text about Amsterdam today?
                                     </legend>
                                     <div class="q-options" role="group" aria-label="Question 1 options">
@@ -514,19 +514,19 @@
                                     <p>
                                         The first bike-sharing scheme was the idea of the Dutch group Provo. The people who belonged to this group were
                                         <span class="q-number-box">23</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-1" data-q="1" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-1" data-q="23" data-type="summary_completion" class="q-text" placeholder="">
                                         . They were concerned about damage to the environment and about
                                         <span class="q-number-box">24</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-2" data-q="2" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-2" data-q="24" data-type="summary_completion" class="q-text" placeholder="">
                                         , and believed that the bike-sharing scheme would draw attention to these issues. As well as painting some bikes white, they handed out
                                         <span class="q-number-box">25</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-3" data-q="3" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-3" data-q="25" data-type="summary_completion" class="q-text" placeholder="">
                                         that condemned the use of cars.
                                     </p>
                                     <p>
                                         However, the scheme was not a great success: almost as quickly as Provo left the bikes around the city, the
                                         <span class="q-number-box">26</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-4" data-q="4" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-4" data-q="26" data-type="summary_completion" class="q-text" placeholder="">
                                         Took them away. According to Schimmelpennink, the scheme was intended to be symbolic. The idea was to get people thinking about the issues.
                                     </p>
                                 </fieldset>
@@ -801,19 +801,19 @@
                                     <p>
                                         Tews, Michel and Stafford carried out research on staff in an American chain of
                                         <span class="q-number-box">36</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-5" data-q="5" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-5" data-q="36" data-type="summary_completion" class="q-text" placeholder="">
                                         . They discovered that activities designed for staff to have fun improved their
                                         <span class="q-number-box">37</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-6" data-q="6" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-6" data-q="37" data-type="summary_completion" class="q-text" placeholder="">
                                         , and that management involvement led to lower staff
                                         <span class="q-number-box">38</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-7" data-q="7" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-7" data-q="38" data-type="summary_completion" class="q-text" placeholder="">
                                         . They also found that the activities needed to fit with both the company’s
                                         <span class="q-number-box">39</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-8" data-q="8" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-8" data-q="39" data-type="summary_completion" class="q-text" placeholder="">
                                         and the
                                         <span class="q-number-box">40</span>
-                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-9" data-q="9" data-type="summary_completion" class="q-text" placeholder="">
+                                        <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-9" data-q="40" data-type="summary_completion" class="q-text" placeholder="">
                                         Of the staff. A balance was required between a degree of freedom and maintaining work standards.
                                     </p>
                                 </fieldset>

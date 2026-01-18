@@ -8,7 +8,7 @@
 
 <h2><b>Talk on jobs in fashion design</b></h2>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="21">
     <legend class="q-text">
         <span class="q-number">21</span>
         What problem did Chantal have at the start of the talk?
@@ -32,7 +32,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="22">
     <legend class="q-text">
         <span class="q-number">22</span>
         What were Hugo and Chantal surprised to hear about the job market?
@@ -56,7 +56,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="23">
     <legend class="q-text">
         <span class="q-number">23</span>
         Hugo and Chantal agree that the speaker’s message was
@@ -80,7 +80,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="24">
     <legend class="q-text">
         <span class="q-number">24</span>
         What do Hugo and Chantal criticise about their school careers advice?
@@ -104,7 +104,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="25">
     <legend class="q-text">
         <span class="q-number">25</span>
         When discussing their future, Hugo and Chantal disagree on
@@ -128,7 +128,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="26">
     <legend class="q-text">
         <span class="q-number">26</span>
         How does Hugo feel about being an unpaid assistant?
@@ -158,7 +158,7 @@
     <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="27" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">27</span>
         <span class="q-number">28</span>
@@ -198,7 +198,7 @@
     <p>Choose <b>TWO</b> letters <b>A-E</b>.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="29" data-type="two_choices" data-q-multi="1,2" data-max="2">
     <legend class="q-text">
         <span class="q-number">29</span>
         <span class="q-number">30</span>

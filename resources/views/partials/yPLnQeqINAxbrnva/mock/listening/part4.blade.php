@@ -20,7 +20,7 @@
                 <li>It has been adapted for theatre and cinema.</li>
                 <li>
                     We know more about its overall
-                    <div class="q-item" data-q="1" style="display:inline-block;">
+                    <div class="q-item" data-q="31" style="display:inline-block;">
                         <span class="q-number-box">31</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text" placeholder="">
                     </div>
@@ -40,7 +40,7 @@
                 <li>In Paris, his career was successful and he led the Romantic movement.</li>
                 <li>
                     He spoke publicly about social issues, such as
-                    <div class="q-item" data-q="2" style="display:inline-block;">
+                    <div class="q-item" data-q="32" style="display:inline-block;">
                         <span class="q-number-box">32</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text" placeholder="">
                     </div>
@@ -60,14 +60,14 @@
             <ul style="margin:0; padding-left:18px;">
                 <li>
                     Victor Hugo had to live elsewhere in
-                    <div class="q-item" data-q="3" style="display:inline-block;">
+                    <div class="q-item" data-q="33" style="display:inline-block;">
                         <span class="q-number-box">33</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text" placeholder="">
                     </div>.
                 </li>
                 <li>
                     He used his income from the sale of some
-                    <div class="q-item" data-q="4" style="display:inline-block;">
+                    <div class="q-item" data-q="34" style="display:inline-block;">
                         <span class="q-number-box">34</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text" placeholder="">
                     </div>
@@ -87,7 +87,7 @@
                 <li>Victor Hugo lived in this house until the end of the Empire in France.</li>
                 <li>
                     The ground floor contains portraits,
-                    <div class="q-item" data-q="5" style="display:inline-block;">
+                    <div class="q-item" data-q="35" style="display:inline-block;">
                         <span class="q-number-box">35</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text" placeholder="">
                     </div>
@@ -95,7 +95,7 @@
                 </li>
                 <li>
                     He bought cheap
-                    <div class="q-item" data-q="6" style="display:inline-block;">
+                    <div class="q-item" data-q="36" style="display:inline-block;">
                         <span class="q-number-box">36</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text" placeholder="">
                     </div>
@@ -103,7 +103,7 @@
                 </li>
                 <li>
                     The first floor consists of furnished areas with wallpaper and
-                    <div class="q-item" data-q="7" style="display:inline-block;">
+                    <div class="q-item" data-q="37" style="display:inline-block;">
                         <span class="q-number-box">37</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text" placeholder="">
                     </div>
@@ -112,14 +112,14 @@
                 <li>The library still contains many of his favourite books.</li>
                 <li>
                     He wrote in a room at the top of the house that had a view of the
-                    <div class="q-item" data-q="8" style="display:inline-block;">
+                    <div class="q-item" data-q="38" style="display:inline-block;">
                         <span class="q-number-box">38</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text" placeholder="">
                     </div>.
                 </li>
                 <li>
                     He entertained other writers as well as poor
-                    <div class="q-item" data-q="9" style="display:inline-block;">
+                    <div class="q-item" data-q="39" style="display:inline-block;">
                         <span class="q-number-box">39</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text" placeholder="">
                     </div>
@@ -127,7 +127,7 @@
                 </li>
                 <li>
                     Victor Hugo’s
-                    <div class="q-item" data-q="10" style="display:inline-block;">
+                    <div class="q-item" data-q="40" style="display:inline-block;">
                         <span class="q-number-box">40</span>
                         <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text" placeholder="">
                     </div>

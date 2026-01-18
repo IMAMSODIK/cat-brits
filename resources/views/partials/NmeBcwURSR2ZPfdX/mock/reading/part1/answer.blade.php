@@ -151,7 +151,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="6">
             </span>
         </span>
         and moved quickly. They often remained afloat after battles and were able to sail close to land
@@ -160,7 +160,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="7">
             </span>
         </span>
         was included in the design for attacking and damaging the timber and oars of enemy ships.
@@ -169,7 +169,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="8">
             </span>
         </span>
         .
@@ -183,7 +183,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="9">
             </span>
         </span>
         that lay far below the surface of the sea. Merchant ships were steered through the water with
@@ -192,7 +192,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="10">
             </span>
         </span>
         sails. On merchant ships and warships,
@@ -200,7 +200,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="11">
             </span>
         </span>
         was used to ensure rowers moved their oars in and out of the water at the same time.
@@ -214,7 +214,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-7" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="12">
             </span>
         </span>
         were transported by merchant ships to two main ports in Italy. The ships were pulled to the
@@ -223,7 +223,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-8" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="13">
             </span>
         </span>
         . When the weather was clear and they could see islands or land, sailors used landmarks that

@@ -7,7 +7,7 @@
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         What point does the writer make about misinformation in the first paragraph?
@@ -38,7 +38,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         What does the writer say about the role of technology?
@@ -71,7 +71,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         What is the writer doing in the fourth paragraph?
@@ -104,7 +104,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         What point does the writer make about regulation in the USA?
@@ -170,7 +170,7 @@
         <span class="q-number-box">31</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-4" data-q="1" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-4" data-q="31" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -191,7 +191,7 @@
         <span class="q-number-box">32</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-5" data-q="2" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-5" data-q="32" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -213,7 +213,7 @@
         <span class="q-number-box">33</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-6" data-q="3" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-6" data-q="33" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -232,7 +232,7 @@
         <span class="q-number-box">34</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-7" data-q="4" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-7" data-q="34" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -252,7 +252,7 @@
         <span class="q-number-box">35</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-8" data-q="5" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-8" data-q="35" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -273,7 +273,7 @@
         <span class="q-number-box">36</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <select name="{{ $part['tipe'][1]}}-{{ $id }}-9" data-q="6" class="q-dropdown">
+                <select name="{{ $part['tipe'][1]}}-{{ $id }}-9" data-q="36" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -306,7 +306,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="37">
     <legend class="q-text">
         <span class="q-number">37</span>
         Campaigns designed to correct misinformation will fail to achieve their purpose if people
@@ -331,7 +331,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         Attempts to teach elementary school students about misinformation have been opposed.
@@ -355,7 +355,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         It may be possible to overcome the problem of misinformation in a relatively short period.
@@ -379,7 +379,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         The need to keep up with new information is hugely exaggerated in today’s world.

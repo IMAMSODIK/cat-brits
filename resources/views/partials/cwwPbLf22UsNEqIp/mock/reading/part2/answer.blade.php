@@ -12,7 +12,7 @@
         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text">
         <span class="q-number">14</span>
         When DeJesus first used ABS, he shared decision-making about strikes with it.
@@ -36,7 +36,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text">
         <span class="q-number">15</span>
         MLB considered it necessary to amend the size of the strike zone when criticisms were received
@@ -61,7 +61,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text">
         <span class="q-number">16</span>
         MLB is keen to justify the money spent on improving the accuracy of ABS’s calculations.
@@ -85,7 +85,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text">
         <span class="q-number">17</span>
         The hundred-mile-an-hour fastball led to a more exciting style of play.
@@ -109,7 +109,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text">
         <span class="q-number">18</span>
         The differing proposals for alterations to the baseball bat led to fierce debate on Sword’s
@@ -134,7 +134,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text">
         <span class="q-number">19</span>
         ABS makes changes to the shape of the strike zone feasible.
@@ -173,14 +173,14 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-7" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="20">
             </span>
         </span>. The umpire’s job had, at one time, required a
         <span class="q-number-box">21</span>
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-8" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="21">
             </span>
         </span> about whether a ball was a strike. A ball is considered a strike when the batter does
         not hit it and it crosses through a
@@ -188,14 +188,14 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="22">
             </span>
         </span> extending approximately from the batter’s knee to his chest. In the past,
         <span class="q-number-box">23</span>
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="23">
             </span>
         </span> over strike calls were not uncommon, but today everyone accepts the complete ban on
         pushing or shoving the umpire. One difference, however, is that during the first game DeJesus
@@ -204,7 +204,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="24">
             </span>
         </span>.
     </div>
@@ -219,7 +219,7 @@
     <p><i>Write the correct letter in box on your answer sheet.</i></p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="25">
     <legend class="q-text">
         <span class="q-number">25</span>
         What does the writer suggest about ABS in the fifth paragraph?
@@ -249,7 +249,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="26">
     <legend class="q-text">
         <span class="q-number">26</span>
         Morgan Sword says that the introduction of ABS
@@ -278,7 +278,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         Why does the writer include the views of Noë and Russo?

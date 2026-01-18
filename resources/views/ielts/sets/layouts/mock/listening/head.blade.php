@@ -700,7 +700,12 @@
         #panel-tfng2 .q-number-box,
         #panel-mse .q-number-box,
         #panel-tc .q-number-box,
-        #panel-sa .q-number-box {
+        #panel-sa .q-number-box,
+        #panel-part1 .q-number-box,
+        #panel-part2 .q-number-box,
+        #panel-part3 .q-number-box,
+        #panel-part4 .q-number-box,
+        #panel-ynng .q-number-box{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -736,7 +741,12 @@
             width: 120px;
         } */
 
-        #panel-sa input {
+        #panel-sa input,
+        #panel-ynng input,
+        #panel-part1 input,
+        #panel-part2 input,
+        #panel-part3 input,
+        #panel-part4 input {
             padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;

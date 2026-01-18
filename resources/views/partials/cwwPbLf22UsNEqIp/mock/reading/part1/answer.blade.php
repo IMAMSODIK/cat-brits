@@ -81,7 +81,7 @@
         <span class="q-number-box">4</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" data-q="4" class="q-text" placeholder="">
             </span>
         </span>
         Others believe it to
@@ -91,7 +91,7 @@
         <span class="q-number-box">5</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" data-q="5" class="q-text" placeholder="">
             </span>
         </span>
         when we think about them. Research comparing chronic procrastinators with other
@@ -100,7 +100,7 @@
         <span class="q-number-box">6</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" data-q="6" class="q-text"
                     placeholder="">
             </span>
         </span>
@@ -109,7 +109,7 @@
         <span class="q-number-box">7</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" data-q="7" class="q-text"
                     placeholder="">
             </span>
         </span>
@@ -118,7 +118,7 @@
         <span class="q-number-box">8</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-text"
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-5" data-q="8" class="q-text"
                     placeholder="">
             </span>
         </span>
@@ -127,7 +127,7 @@
         <span class="q-number-box">9</span>
         <span style="flex: 1;">
             <span class="q-question">
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" class="q-text"
+                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-6" data-q="9" class="q-text"
                     placeholder="">
             </span>
         </span>
@@ -140,15 +140,17 @@
     <p class="lead"><b>Questions 10-11</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">10</span>
-        <span class="q-number-box">11</span>
-        Which <b>TWO</b> comparisons between employees who often procrastinate and those who
-        do not are mentioned in the text?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="10" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p>
+            <span class="q-number-box">10</span>
+            <span class="q-number-box">11</span>
+            Which <b>TWO</b> comparisons between employees who often procrastinate and those who
+            do not are mentioned in the text?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />
@@ -182,15 +184,17 @@
     <p class="lead"><b>Questions 12-13</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">12</span>
-        <span class="q-number-box">13</span>
-        Which <b>TWO</b> recommendations for getting out of a cycle of procrastination does the
-        writer give?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="2" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="12" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p>
+            <span class="q-number-box">12</span>
+            <span class="q-number-box">13</span>
+            Which <b>TWO</b> recommendations for getting out of a cycle of procrastination does the
+            writer give?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 2 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][3] }}-{{ $id }}-2[]" value="A" />

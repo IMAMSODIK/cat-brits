@@ -462,7 +462,7 @@
                                     <p>Write the correct letters in boxes on your answer sheet.</p>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="1" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">23</span>
                                         <span class="q-number">24</span>
@@ -497,7 +497,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="q-item" data-q="3" data-type="two_choices" data-q-multi="1,2" data-max="2">
+                                <fieldset class="q-item" data-q="25" data-type="two_choices" data-q-multi="1,2" data-max="2">
                                     <legend class="q-text">
                                         <span class="q-number">25</span>
                                         <span class="q-number">26</span>

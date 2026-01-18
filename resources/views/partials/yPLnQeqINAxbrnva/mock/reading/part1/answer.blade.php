@@ -122,7 +122,7 @@
         <span style="flex: 1;">
             <span class="q-question" data-q="6">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="6">
             </span>
         </span>
         and creating environments that are suitable for wildlife. In many cases, they
@@ -131,7 +131,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="7">
             </span>
         </span>
     </div>
@@ -145,7 +145,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="8">
             </span>
         </span>
         as an activity to help people cope with mental health issues. Studies have also
@@ -155,7 +155,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="9">
             </span>
         </span>
     </div>
@@ -166,12 +166,16 @@
     <p class="lead"><b>Questions 10-11</b></p>
     <p class="lead"><i>Choose Two Letters<b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">10</span><span class="q-number-box">11</span> Which
-        <b>TWO</b> advantages of using newer buildings for green roofs are mentioned in
-        Paragraph C of the passage?
-    </p>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-type="two_choices" data-q="10" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p>
+            <span class="q-number-box">10</span>
+            <span class="q-number-box">11</span> Which
+        <b>TWO</b> advantages of using newer buildings for green roofs are mentioned in
+            Paragraph C of the passage?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />
@@ -205,12 +209,14 @@
     <p class="lead"><b>Questions 12-13</b></p>
     <p class="lead"><i>Choose Two Letters<b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">12</span><span class="q-number-box">13</span> Which
+</fieldset>
+<fieldset class="q-item" data-q="12" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p><span class="q-number-box">12</span><span class="q-number-box">13</span> Which
         <b>TWO</b> aims of new variations on the concept of green roofs are mentioned in
         Paragraph E of the passage?
-    </p>
-</fieldset>
-<fieldset class="q-item" data-q="1" data-type="{{ $part['tipe'][3] }}" data-q-multi="1,2" data-max="2">
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][3] }}-{{ $id }}-2[]" value="A" />

@@ -69,7 +69,7 @@
         <td>tuning guitars</td>
         <td>
             using an app or by
-            <div class="q-item" data-q="1" style="display:inline-block;">
+            <div class="q-item" data-q="7" style="display:inline-block;">
                 <span class="q-number-box">7</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
             </div>
@@ -81,7 +81,7 @@
         <td>strumming chords using our thumbs</td>
         <td>
             keeping time while the teacher is
-            <div class="q-item" data-q="2" style="display:inline-block;">
+            <div class="q-item" data-q="8" style="display:inline-block;">
                 <span class="q-number-box">8</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
             </div>
@@ -93,7 +93,7 @@
         <td>playing songs</td>
         <td>
             often listening to a
-            <div class="q-item" data-q="3" style="display:inline-block;">
+            <div class="q-item" data-q="9" style="display:inline-block;">
                 <span class="q-number-box">9</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text" placeholder="">
             </div>
@@ -106,7 +106,7 @@
         <td>playing single notes and simple tunes</td>
         <td>
             playing together, then
-            <div class="q-item" data-q="4" style="display:inline-block;">
+            <div class="q-item" data-q="10" style="display:inline-block;">
                 <span class="q-number-box">10</span>
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text" placeholder="">
             </div>

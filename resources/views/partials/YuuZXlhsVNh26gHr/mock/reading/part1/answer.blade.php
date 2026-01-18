@@ -95,7 +95,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="4">
     <legend class="q-text">
         <span class="q-number">4</span>
         Slow language development in children is likely to prove disappointing to their parents.
@@ -119,7 +119,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="5">
     <legend class="q-text">
         <span class="q-number">5</span>
         People’s expectations of what children should gain from education are universal.
@@ -143,7 +143,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="6">
     <legend class="q-text">
         <span class="q-number">6</span>
         Scholars may discuss theories without fully understanding each other.
@@ -188,7 +188,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="7">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">7</span>
         <span style="flex:1;">
@@ -205,7 +205,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="8">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">8</span>
         <span style="flex:1;">
@@ -222,7 +222,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="9">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">9</span>
         <span style="flex:1;">
@@ -239,7 +239,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="10">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">10</span>
         <span style="flex:1;">
@@ -256,7 +256,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">11</span>
         <span style="flex:1;">
@@ -273,7 +273,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">12</span>
         <span style="flex:1;">
@@ -290,7 +290,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="7">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text" style="display:flex; gap:6px;">
         <span class="q-number">13</span>
         <span style="flex:1;">

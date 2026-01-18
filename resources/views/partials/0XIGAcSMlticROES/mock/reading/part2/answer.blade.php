@@ -7,7 +7,7 @@
         sheet <b>NB</b> You may use any letter more than once.</p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">14</span>
         <span style="flex: 1;">
@@ -27,7 +27,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">15</span>
         <span style="flex: 1;">
@@ -47,7 +47,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -67,7 +67,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -87,7 +87,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -121,7 +121,7 @@
             <span class="q-number">19</span>
             <span style="flex: 1;">
                 <span class="q-question">
-                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-text" placeholder="">
+                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-1" class="q-text" data-q="19" placeholder="">
                 </span>
             </span>
         </li>
@@ -130,7 +130,7 @@
             <span class="q-number">20</span>
             <span style="flex: 1;">
                 <span class="q-question">
-                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-text" placeholder="">
+                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-2" class="q-text" data-q="20" placeholder="">
                 </span>
             </span>
         </li>
@@ -140,7 +140,7 @@
             <span class="q-number">21</span>
             <span style="flex: 1;">
                 <span class="q-question">
-                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-text" placeholder="">
+                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-3" class="q-text" data-q="21" placeholder="">
                 </span>
             </span>
         </li>
@@ -148,7 +148,7 @@
             <span class="q-number">22</span>
             <span style="flex: 1;">
                 <span class="q-question">
-                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-text" placeholder="">
+                    <input type="text" name="{{ $part['tipe'][1]}}-{{ $id }}-4" class="q-text" data-q="22" placeholder="">
                 </span>
             </span>
             is an example of a psychological technique which can reduce an athlete’s stress responses.
@@ -160,13 +160,16 @@
     <p class="lead"><b>Questions 23-24</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">23</span><span class="q-number-box">24</span> Which
-        <b>TWO</b> facts about Emma Raducanu’s withdrawal from the Wimbledon tournament are mentioned in
-        the text?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p><span class="q-number-box">23</span><span class="q-number-box">24</span> Which
+            <b>TWO</b> facts about Emma Raducanu’s withdrawal from the Wimbledon tournament are mentioned in
+            the text?
+        </p>
+    </legend>
+
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2]}}-{{ $id }}-1[]" value="A" />
@@ -202,12 +205,14 @@
     <p class="lead"><b>Questions 25-26</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p><span class="q-number-box">25</span><span class="q-number-box">26</span> Which
-        <b>TWO</b> facts about anxiety are mentioned in Paragraph E of the text?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="25" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p><span class="q-number-box">25</span><span class="q-number-box">26</span> Which
+            <b>TWO</b> facts about anxiety are mentioned in Paragraph E of the text?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][3]}}-{{ $id }}-2[]" value="A" />

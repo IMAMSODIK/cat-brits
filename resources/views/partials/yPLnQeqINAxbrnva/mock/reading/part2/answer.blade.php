@@ -6,7 +6,7 @@
     </p>
     <p><i>Write the correct letter in boxes on your answer sheet.</i></p>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="1">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="14">
     <legend class="q-text">
         <span class="q-number">14</span>
         What can we learn from the first paragraph?
@@ -39,7 +39,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="2">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="15">
     <legend class="q-text">
         <span class="q-number">15</span>
         The second paragraph describes how schools encourage students to
@@ -70,7 +70,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="3">
+<fieldset class="q-item" data-type="{{ $part['tipe'][0] }}" data-q="16">
     <legend class="q-text">
         <span class="q-number">16</span>
         In the third paragraph, the writer suggests that students with a fixed mindset
@@ -117,7 +117,7 @@
     </ul>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="1">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -136,7 +136,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="2">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -155,7 +155,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="3">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="19">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">19</span>
         <span style="flex: 1;">
@@ -174,7 +174,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="4">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="20">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">20</span>
         <span style="flex: 1;">
@@ -193,7 +193,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="5">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="21">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">21</span>
         <span style="flex: 1;">
@@ -211,7 +211,7 @@
         </span>
     </legend>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="6">
+<fieldset class="q-item" data-type="{{ $part['tipe'][1] }}" data-q="22">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">22</span>
         <span style="flex: 1;">
@@ -246,7 +246,7 @@
             about this</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="1">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="23">
     <legend class="q-text">
         <span class="q-number">23</span>
         Dweck has handled criticisms of her work in an admirable way.
@@ -270,7 +270,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="2">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="24">
     <legend class="q-text">
         <span class="q-number">24</span>
         Students’ self-perception is a more effective driver of self-confidence than
@@ -295,7 +295,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="3">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="25">
     <legend class="q-text">
         <span class="q-number">25</span>
         Recent evidence about growth mindset interventions has attracted unfair coverage
@@ -320,7 +320,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="4">
+<fieldset class="q-item" data-type="{{ $part['tipe'][2] }}" data-q="26">
     <legend class="q-text">
         <span class="q-number">26</span>
         Deliberate attempts to encourage students to strive for high achievement may

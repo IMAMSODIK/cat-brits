@@ -6,7 +6,7 @@
     <p><i>Write your answers in boxes on your answer sheet</i></p>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="1">
+<fieldset class="q-item questions-item" data-q="35">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">35</span>
         <span style="flex: 1;">
@@ -19,7 +19,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="2">
+<fieldset class="q-item questions-item" data-q="36">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">36</span>
         <span style="flex: 1;">
@@ -32,7 +32,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item questions-item" data-q="3">
+<fieldset class="q-item questions-item" data-q="37">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">37</span>
         <span style="flex: 1;">
@@ -58,7 +58,7 @@
         <li><strong>NOT GIVEN</strong> if there is no information on this</li>
     </ul>
 </fieldset>
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="38">
     <legend class="q-text">
         <span class="q-number">38</span>
         Both businesses and people aim at order without really considering its value.
@@ -81,7 +81,7 @@
         </label>
     </div>
 </fieldset>
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="39">
     <legend class="q-text">
         <span class="q-number">39</span>
         Innovation is most successful if the people involved have distinct roles.
@@ -104,7 +104,7 @@
         </label>
     </div>
 </fieldset>
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         Google was inspired to adopt flexibility by the success of General Electric.

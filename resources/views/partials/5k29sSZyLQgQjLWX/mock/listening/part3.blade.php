@@ -5,7 +5,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="21">
     <legend class="q-text">
         <span class="q-number">21</span>
         What does Trevor find interesting about the purpose of children’s literature?
@@ -33,7 +33,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="22">
     <legend class="q-text">
         <span class="q-number">22</span>
         Trevor says the module about the purpose of children’s literature made him
@@ -58,7 +58,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="23">
     <legend class="q-text">
         <span class="q-number">23</span>
         Stephanie is interested in the Pictures module because
@@ -83,7 +83,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="24">
     <legend class="q-text">
         <span class="q-number">24</span>
         Trevor and Stephanie agree that comics
@@ -108,7 +108,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="25">
     <legend class="q-text">
         <span class="q-number">25</span>
         With regard to books aimed at only boys or only girls, Trevor was surprised
@@ -150,7 +150,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="26">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">26</span>
         <span style="flex: 1;">
@@ -172,7 +172,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">27</span>
         <span style="flex: 1;">
@@ -194,7 +194,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">28</span>
         <span style="flex: 1;">
@@ -216,7 +216,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">29</span>
         <span style="flex: 1;">
@@ -238,7 +238,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">30</span>
         <span style="flex: 1;">

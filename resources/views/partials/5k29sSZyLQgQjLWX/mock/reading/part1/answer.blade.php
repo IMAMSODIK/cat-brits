@@ -1,5 +1,5 @@
 @props(['part', 'id'])
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item">
     <h3>Questions 1-8</h3>
     <p class="lead">
         Complete the notes below.
@@ -12,11 +12,10 @@
         <ul class="completion-list">
             <li>
                 Focused on a total of
-                <span class="q-number">1</span>
-
+                <span class="q-number-box">1</span>
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" data-q="1"/>
                     </span>
                 </span>
                 different age groups of ants
@@ -26,22 +25,22 @@
         <ul class="completion-list">
             <li>
                 how well ants looked after their
-                <span class="q-number">2</span>
+                <span class="q-number-box">2</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" data-q="2"/>
                     </span>
                 </span>
             </li>
 
             <li>
                 their ability to locate
-                <span class="q-number">3</span>
+                <span class="q-number-box">3</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" data-q="3"/>
                     </span>
                 </span>
                 using a scent trail
@@ -49,11 +48,11 @@
 
             <li>
                 the effect that
-                <span class="q-number">4</span>
+                <span class="q-number-box">4</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" data-q="4"/>
                     </span>
                 </span>
                 had on them
@@ -61,11 +60,11 @@
 
             <li>
                 how
-                <span class="q-number">5</span>
+                <span class="q-number-box">5</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" data-q="5"/>
                     </span>
                 </span>
                 they attacked prey
@@ -75,11 +74,11 @@
         <ul>
             <li>
                 comparison between age and the
-                <span class="q-number">6</span>
+                <span class="q-number-box">6</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text" data-q="6"/>
                     </span>
                 </span>
                 of dying cells in the brains of ants
@@ -87,11 +86,11 @@
 
             <li>
                 condition of synaptic complexes (areas in which
-                <span class="q-number">7</span>
+                <span class="q-number-box">7</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text" data-q="7"/>
                     </span>
                 </span>
                 meet) in the brain’s ‘mushroom bodies’
@@ -99,11 +98,11 @@
 
             <li>
                 level of two
-                <span class="q-number">8</span>
+                <span class="q-number-box">8</span>
 
                 <span style="flex: 1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text" data-q="8"/>
                     </span>
                 </span>
                 in the brain associated with ageing
@@ -128,7 +127,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="9">
     <legend class="q-text">
         <span class="q-number">9</span>
         Pheidole dentata ants are the only known animals which remain active for almost their whole
@@ -154,7 +153,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="10">
     <legend class="q-text">
         <span class="q-number">10</span>
         Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the
@@ -180,7 +179,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="11">
     <legend class="q-text">
         <span class="q-number">11</span>
         The ants in Giraldo’s experiments behaved as she had predicted that they would.
@@ -205,7 +204,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="12">
     <legend class="q-text">
         <span class="q-number">12</span>
         The recent studies of bees used different methods of measuring age-related decline.
@@ -230,7 +229,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="13">
     <legend class="q-text">
         <span class="q-number">13</span>
         Pheidole dentata ants kept in laboratory conditions tend to live longer lives.

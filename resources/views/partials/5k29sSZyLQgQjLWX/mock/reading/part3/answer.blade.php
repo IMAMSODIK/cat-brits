@@ -14,7 +14,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="27">
     <legend class="q-text">
         <span class="q-number">27</span>
         Rochman and her colleagues were the first people to research the problem of marine debris.
@@ -39,7 +39,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
         <span class="q-number">28</span>
         The creatures most in danger from ocean trash are certain seabirds.
@@ -64,7 +64,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
         <span class="q-number">29</span>
         The studies Rochman has reviewed have already proved that populations of some birds will soon
@@ -90,7 +90,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
         <span class="q-number">30</span>
         Rochman analysed papers on the different kinds of danger caused by ocean trash.
@@ -115,7 +115,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
         <span class="q-number">31</span>
         Most of the research analysed by Rochman and her colleagues was badly designed.
@@ -140,7 +140,7 @@
 </fieldset>
 
 <!-- Question 6 -->
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
         <span class="q-number">32</span>
         One study examined by Rochman was expecting to find that mussels were harmed by eating plastic.
@@ -165,7 +165,7 @@
 </fieldset>
 
 <!-- Question 7 -->
-<fieldset class="q-item" data-q="7">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
         <span class="q-number">33</span>
         Some mussels choose to eat plastic in preference to their natural diet.
@@ -189,7 +189,7 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item">
     <h3>Questions 34–39</h3>
     <p class="lead">Complete the notes below.</p>
     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
@@ -203,10 +203,10 @@
                 plastic (not metal or wood) and
                 bits of debris
                 that were
-                <span class="q-number">34</span>
+                <span class="q-number-box">34</span>
                 <span style="flex:1;">
                     <span class="q-question">
-                        <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text" />
+                        <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text" data-q="34"/>
                     </span>
                 </span>
                 (harmful to animals)
@@ -214,11 +214,11 @@
 
             <li>
                 There was little research into
-                <span class="q-number">35</span>
+                <span class="q-number-box">35</span>
                 <span style="flex:1;">
                     <span class="q-question">
                         <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-10"
-                            class="q-text" />
+                            class="q-text" data-q="35"/>
                     </span>
                 </span>
                 e.g. from synthetic fibres
@@ -229,22 +229,22 @@
         <ul class="completion-list">
             <li>
                 most of them focused on individual animals, not entire
-                <span class="q-number">36</span>
+                <span class="q-number-box">36</span>
                 <span style="flex:1;">
                     <span class="q-question">
                         <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-11"
-                            class="q-text" />
+                            class="q-text" data-q="36"/>
                     </span>
                 </span>
             </li>
 
             <li>
                 the
-                <span class="q-number">37</span>
+                <span class="q-number-box">37</span>
                 <span style="flex:1;">
                     <span class="q-question">
                         <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-12"
-                            class="q-text" />
+                            class="q-text" data-q="37"/>
                     </span>
                 </span>
                 of plastic used in the lab did not always reflect those in the ocean
@@ -257,11 +257,11 @@
                     <li>the
                         impact of a
                         reduction in numbers on the
-                        <span class="q-number">38</span>
+                        <span class="q-number-box">38</span>
                         <span style="flex:1;">
                             <span class="q-question">
                                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-13"
-                                    class="q-text" />
+                                    class="q-text" data-q="38"/>
                             </span>
                         </span>
                         of that species
@@ -274,10 +274,10 @@
         </ul>
         <p>
             Rochman says more information is needed on the possible impact of future
-            <span class="q-number">39</span>
+            <span class="q-number-box">39</span>
             <span style="flex:1;">
                 <span class="q-question">
-                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-14" class="q-text" />
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-14" class="q-text" data-q="39"/>
                 </span>
             </span>
             (e.g. involving oil)
@@ -293,7 +293,7 @@
     <p><i>Write the correct letter in box on your answer sheet.</i></p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="40">
     <legend class="q-text">
         <span class="q-number">40</span>
         What would be the best title for this passage?

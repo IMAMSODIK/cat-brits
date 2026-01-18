@@ -8,7 +8,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">14</span>
         <span style="flex: 1;">
@@ -28,7 +28,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">15</span>
         <span style="flex: 1;">
@@ -48,7 +48,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -68,7 +68,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -103,7 +103,7 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text">
         <span class="q-number">18</span>
         An animal is likely to live longer in a zoo than in the wild.
@@ -128,7 +128,7 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text">
         <span class="q-number">19</span>
         There are some species in zoos which can no longer be found in the wild.
@@ -153,7 +153,7 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="20">
     <legend class="q-text">
         <span class="q-number">20</span>
         Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of
@@ -179,7 +179,7 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="21">
     <legend class="q-text">
         <span class="q-number">21</span>
         Zoos have always excelled at transmitting information about animals to the public.
@@ -204,7 +204,7 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="22">
     <legend class="q-text">
         <span class="q-number">22</span>
         Studying animals in zoos is less stressful for the animals than studying them in the wild.
@@ -231,14 +231,16 @@
     <p class="lead"><b>Questions 23-24</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">23</span>
-        <span class="q-number-box">24</span>
-        Which <b>TWO</b> of the following are stated about zoo staff in the text?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="23" data-q-multi="1,2" data-max="2" data-type="two_choices">
+    <legend class="q-text no-border">
+        <p>
+            <span class="q-number-box">23</span>
+            <span class="q-number-box">24</span>
+            Which <b>TWO</b> of the following are stated about zoo staff in the text?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />
@@ -274,14 +276,17 @@
     <p class="lead"><b>Questions 25-26</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">25</span>
-        <span class="q-number-box">26</span>
-        Which <b>TWO</b> of these beliefs about zoos does the writer mention in the text?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="25" data-q-multi="1,2" data-max="2" data-type="two_choices">
+    <legend class="q-text no-border">
+        <p>
+            <span class="q-number-box">25</span>
+            <span class="q-number-box">26</span>
+            Which <b>TWO</b> of these beliefs about zoos does the writer mention in the text?
+        </p>
+    </legend>
+
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][3] }}-{{ $id }}-2[]" value="A" />

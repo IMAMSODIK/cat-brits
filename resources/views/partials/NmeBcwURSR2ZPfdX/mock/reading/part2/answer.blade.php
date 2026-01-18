@@ -8,7 +8,7 @@
     </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1">
+<fieldset class="q-item" data-q="14">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">14</span>
         <span style="flex: 1;">
@@ -30,7 +30,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="2">
+<fieldset class="q-item" data-q="15">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">15</span>
         <span style="flex: 1;">
@@ -52,7 +52,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="3">
+<fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -74,7 +74,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="4">
+<fieldset class="q-item" data-q="17">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">17</span>
         <span style="flex: 1;">
@@ -96,7 +96,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="5">
+<fieldset class="q-item" data-q="18">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">18</span>
         <span style="flex: 1;">
@@ -118,7 +118,7 @@
     </legend>
 </fieldset>
 
-<fieldset class="q-item" data-q="6">
+<fieldset class="q-item" data-q="19">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">19</span>
         <span style="flex: 1;">
@@ -153,7 +153,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="20">
             </span>
         </span>
         , which means that they decay relatively quickly. But this is not always the case. If
@@ -170,7 +170,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="21">
             </span>
         </span>
         gathered there in the summer months to avoid being attacked by
@@ -178,7 +178,7 @@
         <span style="flex: 1;">
             <span class="q-question">
                 <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-text"
-                    placeholder="">
+                    placeholder="" data-q="22">
             </span>
         </span>
         on lower ground. The people who used these mountains left things behind and it is those objects
@@ -192,15 +192,17 @@
     <p class="lead"><b>Questions 23-24</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">23</span>
-        <span class="q-number-box">24</span>
-        Which <b>TWO</b> of the following statements does the writer make about the discoveries of
-        Barrett’s team?
-    </p>
 </fieldset>
 
-<fieldset class="q-item" data-q="1" data-q-multi="1,2" data-max="2">
+<fieldset class="q-item" data-q="23" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p>
+            <span class="q-number-box">23</span>
+            <span class="q-number-box">24</span>
+            Which <b>TWO</b> of the following statements does the writer make about the discoveries of
+            Barrett’s team?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 1 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][2] }}-{{ $id }}-1[]" value="A" />
@@ -238,14 +240,16 @@
     <p class="lead"><b>Questions 25-26</b></p>
     <p class="lead"><i>Choose TWO letters <b>A-E</b>.</i></p>
     <p><i>Write the correct letters in boxes on your answer sheet.</i></p>
-    <p>
-        <span class="q-number-box">25</span>
-        <span class="q-number-box">26</span>
-        Which <b>TWO</b> of the following statements does the writer make about the Viking Age?
-    </p>
 </fieldset>
-
-<fieldset class="q-item" data-q="2" data-q-multi="1,2" data-max="2">
+ 
+<fieldset class="q-item" data-q="25" data-type="two_choices" data-q-multi="1,2" data-max="2">
+    <legend class="q-text">
+        <p>
+            <span class="q-number-box">25</span>
+            <span class="q-number-box">26</span>
+            Which <b>TWO</b> of the following statements does the writer make about the Viking Age?
+        </p>
+    </legend>
     <div class="q-options" role="group" aria-label="Question 2 options">
         <label class="q-option">
             <input type="checkbox" name="{{ $part['tipe'][3] }}-{{ $id }}-2[]" value="A" />

@@ -11,7 +11,7 @@
     <ul>
         <li>Knitting has a long history around the world.</li>
         <li>
-            <div class="q-list" data-q="1">
+            <div class="q-list" data-q="31">
                 We imagine someone like a
                 <span class="q-number-box">31</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text" placeholder="">
@@ -19,7 +19,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="2">
+            <div class="q-list" data-q="32">
                 A
                 <span class="q-number-box">32</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text" placeholder="">
@@ -27,7 +27,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="3">
+            <div class="q-list" data-q="33">
                 People are buying more
                 <span class="q-number-box">33</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text" placeholder="">
@@ -39,7 +39,7 @@
     <b>Benefits of knitting</b>
     <ul>
         <li>
-            <div class="q-list" data-q="4">
+            <div class="q-list" data-q="34">
                 gives support in times of
                 <span class="q-number-box">34</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text" placeholder="">
@@ -47,7 +47,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="5">
+            <div class="q-list" data-q="35">
                 requires only
                 <span class="q-number-box">35</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" placeholder="">
@@ -61,7 +61,7 @@
     <ul>
         <li>The origins are not known.</li>
         <li>
-            <div class="q-list" data-q="6">
+            <div class="q-list" data-q="36">
                 Findings show early knitted items to be
                 <span class="q-number-box">36</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text"
@@ -70,7 +70,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="7">
+            <div class="q-list" data-q="37">
                 The first needles were made of natural materials such as wood and
                 <span class="q-number-box">37</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text"
@@ -79,7 +79,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="8">
+            <div class="q-list" data-q="38">
                 Early yarns felt
                 <span class="q-number-box">38</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text"
@@ -88,7 +88,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="9">
+            <div class="q-list" data-q="39">
                 Geographical areas had their own
                 <span class="q-number-box">39</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text"
@@ -97,7 +97,7 @@
             </div>
         </li>
         <li>
-            <div class="q-list" data-q="10">
+            <div class="q-list" data-q="40">
                 Everyday tasks like looking after
                 <span class="q-number-box">40</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text"
