@@ -73,7 +73,7 @@
                 <div class="product-wrapper-grid" style="opacity: 1;">
                     <div class="row data-ctr">
                         @foreach ($data as $d)
-                            <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer"
+                            <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer"
                                 data-id="{{ $d->id }}" data-status="{{ $d->status }}">
                                 <div class="card">
                                     <div class="product-box">
