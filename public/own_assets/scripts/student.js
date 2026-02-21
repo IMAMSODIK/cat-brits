@@ -190,7 +190,7 @@ $("#store").on("click", function () {
                 let foto = (response.data.foto) ? `../../storage/${response.data.foto}` : '/own_assets/images/avatar.png';
 
                 let row = `
-                    <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer" data-id="${response.data.id}" data-status="${response.data.status}">
+                    <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer" data-id="${response.data.id}" data-status="${response.data.status}">
                         <div class="card">
                             <div class="product-box">
                                 <div class="product-img">
@@ -575,7 +575,7 @@ $("#search").on('input', function () {
                         : `<div class="ribbon ribbon-danger">Nonactive</div>`;
 
                     let row = `
-                        <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer" data-id="${user.id}">
+                        <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer" data-id="${user.id}">
                             <div class="card">
                                 <div class="product-box">
                                     <div class="product-img">
@@ -647,7 +647,7 @@ $("#load-more").on("click", function() {
                         : `<div class="ribbon ribbon-danger">Nonactive</div>`;
 
                     let row = `
-                        <div class="col-6 col-xl-3 col-sm-3 detail-user" style="cursor: pointer"
+                        <div class="col-6 col-xl-3 col-md-3 detail-user" style="cursor: pointer"
                              data-id="${user.id}" data-status="${user.status}">
                             <div class="card">
                                 <div class="product-box">

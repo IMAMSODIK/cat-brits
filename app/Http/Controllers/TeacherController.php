@@ -56,7 +56,9 @@ class TeacherController extends Controller
                 'email'    => $request->email,
                 'password' => bcrypt($request->email),
                 'foto'  => $path,
-                'role'     => 'teacher'
+                'role'     => 'teacher',
+                'status' => 1,
+                'verification_status' => 1
             ]);
 
             return response()->json([
