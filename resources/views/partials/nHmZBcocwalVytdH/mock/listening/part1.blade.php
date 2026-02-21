@@ -111,7 +111,7 @@
         <td>
             no regular medication apart from
             <span class="q-number-box">10</span>
-            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text" data-q="1">
+            <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text" data-q="10">
         </td>
     </tr>
 </table>
