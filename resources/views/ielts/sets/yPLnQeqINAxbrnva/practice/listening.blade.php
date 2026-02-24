@@ -9,6 +9,7 @@
                     'id' => 'note_completion',
                     'tipe' => 'nc',
                     'title' => 'Note Completion',
+                    'namaTipe' => 'Note Completion',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-1.mp3',
                     'content' => 'partials.yPLnQeqINAxbrnva.practice.listening.note_completion',
@@ -40,6 +41,7 @@
                 [
                     'id' => 'matching_information2',
                     'tipe' => 'matching_information',
+                    'namaTipe' => 'Matching Information',
                     'title' => 'Matching 2',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-4-audio-3.mp3',

@@ -2671,7 +2671,7 @@
         tabs.contents.forEach(tab => {
             const id = tab.id;
             const tipe = tab.tipe; // fallback ke id kalau tidak ada tipe
-            const title = tab.title;
+            const title = tab.namaTipe;
             $(`#submit-${id}`).on("click", function(e) {
                 e.preventDefault();
                 submitHelper(

@@ -2490,6 +2490,7 @@
         });
 
         function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
+            console.log(namaTipe)
             let allAnswered = true;
 
             $(`#${form} [data-q]`).each(function() {
@@ -2669,7 +2670,8 @@
                     tabs.id, // folder
                     tipe, // tipe
                     $(this),
-                    `again-${id}` // again
+                    `again-${id}`,
+                    tab.namaTipe
                 );
             });
         });
