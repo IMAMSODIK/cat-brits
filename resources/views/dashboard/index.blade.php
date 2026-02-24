@@ -655,18 +655,17 @@
 
                                     <div class="card-body pt-0">
                                         <div class="activity-list d-flex flex-column gap-3">
-
+                                            
                                             @foreach ($studentActivities as $activities)
+                                            {{dd($activities)}}
                                                 <div class="card shadow-sm border-0 w-100 mb-0">
                                                     <div class="card-body p-3">
 
                                                         <!-- Header -->
                                                         <div class="d-flex align-items-center gap-3 mb-2">
-                                                            @php
-                                                                $foto = $activities->student?->foto;
-                                                            @endphp
-
-                                                            <img src="{{ $foto ? asset('storage/' . $foto) : asset('own_assets/images/avatar.png') }}"
+                                                            <img src="{{ $activities->student->foto
+                                                                ? asset('storage/' . $activities->student->foto)
+                                                                : asset('own_assets/images/avatar.png') }}"
                                                                 class="rounded-circle" width="45" height="45"
                                                                 alt="User">
 
@@ -1204,14 +1203,12 @@
                                     $avatar = strtoupper(substr($item->name, 0, 1));
                                 @endphp
 
-                                <div class="ranking-item {{ $rankClass }}" style="cursor: pointer"
-                                    onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
+                                <div class="ranking-item {{ $rankClass }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
                                     <div class="rank">{{ $rank }}</div>
 
                                     <div class="avatar top-avatar">
                                         @if ($item->foto)
-                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
-                                                width="100%" alt="Profile Picture">
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
                                         @else
                                             {{ $avatar }}
                                         @endif
@@ -1255,14 +1252,12 @@
                                         $avatar = strtoupper(substr($item->name, 0, 1));
                                     @endphp
 
-                                    <div class="ranking-item" style="cursor: pointer"
-                                        onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
+                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
                                         <div class="rank">{{ $rank }}</div>
 
                                         <div class="avatar bottom-avatar">
                                             @if ($item->foto)
-                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
-                                                    width="100%" alt="Profile Picture">
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
                                             @else
                                                 {{ $avatar }}
                                             @endif
@@ -1296,14 +1291,12 @@
                                     $avatar = strtoupper(substr($item->name, 0, 1));
                                 @endphp
 
-                                <div class="ranking-item {{ $rank === 1 ? 'rank-1' : '' }}" style="cursor: pointer"
-                                    onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
+                                <div class="ranking-item {{ $rank === 1 ? 'rank-1' : '' }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
                                     <div class="rank">{{ $rank }}</div>
 
                                     <div class="avatar top-avatar">
                                         @if ($item->foto)
-                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
-                                                width="100%" alt="Profile Picture">
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
                                         @else
                                             {{ $avatar }}
                                         @endif
@@ -1347,14 +1340,12 @@
                                         $avatar = strtoupper(substr($item->name, 0, 1));
                                     @endphp
 
-                                    <div class="ranking-item" style="cursor: pointer"
-                                        onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
+                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
                                         <div class="rank">{{ $rank }}</div>
 
                                         <div class="avatar bottom-avatar">
                                             @if ($item->foto)
-                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
-                                                    width="100%" alt="Profile Picture">
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
                                             @else
                                                 {{ $avatar }}
                                             @endif
