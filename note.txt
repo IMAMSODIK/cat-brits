@@ -97,3 +97,8 @@ Tombol back writing mock test masih belum pas (d0ne)
 mock test listening untuk two_choices masih bisa pilih lebih dari 2 jawaban
 
 
+Sama yg kemarin masih error2 ya kak:
+- Dashboard
+- Add teacher
+- Save assessment (speaking)
+- Timer yg masih 13 menit (reading mock test)
