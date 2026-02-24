@@ -655,68 +655,71 @@
 
                                     <div class="card-body pt-0">
                                         <div class="activity-list d-flex flex-column gap-3">
-                                            {{dd($studentActivities)}}
                                             @foreach ($studentActivities as $activities)
-                                                <div class="card shadow-sm border-0 w-100 mb-0">
-                                                    <div class="card-body p-3">
+                                                @if ($activities->student)
+                                                    <div class="card shadow-sm border-0 w-100 mb-0">
+                                                        <div class="card-body p-3">
 
-                                                        <!-- Header -->
-                                                        <div class="d-flex align-items-center gap-3 mb-2">
-                                                            <img src="{{ $activities->student->foto
-                                                                ? asset('storage/' . $activities->student->foto)
-                                                                : asset('own_assets/images/avatar.png') }}"
-                                                                class="rounded-circle" width="45" height="45"
-                                                                alt="User">
+                                                            <!-- Header -->
+                                                            <div class="d-flex align-items-center gap-3 mb-2">
+                                                                <img src="{{ $activities->student->foto
+                                                                    ? asset('storage/' . $activities->student->foto)
+                                                                    : asset('own_assets/images/avatar.png') }}"
+                                                                    class="rounded-circle" width="45" height="45"
+                                                                    alt="User">
 
-                                                            <div class="flex-grow-1">
-                                                                <div class="fw-semibold">{{ $activities->student->name }}
+                                                                <div class="flex-grow-1">
+                                                                    <div class="fw-semibold">
+                                                                        {{ $activities->student->name }}
+                                                                    </div>
+                                                                    <small
+                                                                        class="text-primary">{{ $activities->setSoal->name }}
+                                                                        |
+                                                                        {{ ucfirst($activities->kategori) }}</small>
                                                                 </div>
-                                                                <small
-                                                                    class="text-primary">{{ $activities->setSoal->name }}
-                                                                    |
-                                                                    {{ ucfirst($activities->kategori) }}</small>
+
+                                                                @if ($activities->tipe_test == 'practice')
+                                                                    <span class="badge bg-primary">Practice</span>
+                                                                @else
+                                                                    <span class="badge bg-warning text-dark">Mock</span>
+                                                                @endif
                                                             </div>
 
-                                                            @if ($activities->tipe_test == 'practice')
-                                                                <span class="badge bg-primary">Practice</span>
-                                                            @else
-                                                                <span class="badge bg-warning text-dark">Mock</span>
-                                                            @endif
-                                                        </div>
-
-                                                        <div class="d-flex flex-column gap-1 small">
-                                                            <div>
-                                                                <span class="text-muted">Test Type:</span>
-                                                                <strong>{{ $activities->nama_tipe }}</strong>
-                                                            </div>
-
-                                                            @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                            <div class="d-flex flex-column gap-1 small">
                                                                 <div>
-                                                                    <span class="text-muted">Assessor:</span>
-                                                                    @if ($activities->teacher_id)
-                                                                        <strong>{{ $activities->teacher->name }}</strong>
-                                                                    @else
-                                                                        <span class="text-warning">Not Yet Assessed</span>
-                                                                    @endif
+                                                                    <span class="text-muted">Test Type:</span>
+                                                                    <strong>{{ $activities->nama_tipe }}</strong>
                                                                 </div>
-                                                            @else
-                                                                <div>
-                                                                    <span class="text-muted">Score:</span>
-                                                                    <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+
+                                                                @if (in_array($activities->kategori, ['speaking', 'writing']))
+                                                                    <div>
+                                                                        <span class="text-muted">Assessor:</span>
+                                                                        @if ($activities->teacher_id)
+                                                                            <strong>{{ $activities->teacher->name }}</strong>
+                                                                        @else
+                                                                            <span class="text-warning">Not Yet
+                                                                                Assessed</span>
+                                                                        @endif
+                                                                    </div>
+                                                                @else
+                                                                    <div>
+                                                                        <span class="text-muted">Score:</span>
+                                                                        <strong>{{ $activities->score }}/{{ $activities->jumlah_soal }}</strong>
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+
+                                                            @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                                <div class="mt-3">
+                                                                    <button class="btn btn-outline-primary btn-sm w-100">
+                                                                        View Details
+                                                                    </button>
                                                                 </div>
                                                             @endif
+
                                                         </div>
-
-                                                        @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
-                                                            <div class="mt-3">
-                                                                <button class="btn btn-outline-primary btn-sm w-100">
-                                                                    View Details
-                                                                </button>
-                                                            </div>
-                                                        @endif
-
                                                     </div>
-                                                </div>
+                                                @endif
                                             @endforeach
 
                                         </div>
@@ -1202,12 +1205,14 @@
                                     $avatar = strtoupper(substr($item->name, 0, 1));
                                 @endphp
 
-                                <div class="ranking-item {{ $rankClass }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                <div class="ranking-item {{ $rankClass }}" style="cursor: pointer"
+                                    onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
                                     <div class="rank">{{ $rank }}</div>
 
                                     <div class="avatar top-avatar">
                                         @if ($item->foto)
-                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
+                                                width="100%" alt="Profile Picture">
                                         @else
                                             {{ $avatar }}
                                         @endif
@@ -1251,12 +1256,14 @@
                                         $avatar = strtoupper(substr($item->name, 0, 1));
                                     @endphp
 
-                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                    <div class="ranking-item" style="cursor: pointer"
+                                        onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
                                         <div class="rank">{{ $rank }}</div>
 
                                         <div class="avatar bottom-avatar">
                                             @if ($item->foto)
-                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
+                                                    width="100%" alt="Profile Picture">
                                             @else
                                                 {{ $avatar }}
                                             @endif
@@ -1290,12 +1297,14 @@
                                     $avatar = strtoupper(substr($item->name, 0, 1));
                                 @endphp
 
-                                <div class="ranking-item {{ $rank === 1 ? 'rank-1' : '' }}" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                <div class="ranking-item {{ $rank === 1 ? 'rank-1' : '' }}" style="cursor: pointer"
+                                    onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
                                     <div class="rank">{{ $rank }}</div>
 
                                     <div class="avatar top-avatar">
                                         @if ($item->foto)
-                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                            <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
+                                                width="100%" alt="Profile Picture">
                                         @else
                                             {{ $avatar }}
                                         @endif
@@ -1339,12 +1348,14 @@
                                         $avatar = strtoupper(substr($item->name, 0, 1));
                                     @endphp
 
-                                    <div class="ranking-item" style="cursor: pointer" onclick="window.location.href='/history/detail?id={{$item->student_id}}'">
+                                    <div class="ranking-item" style="cursor: pointer"
+                                        onclick="window.location.href='/history/detail?id={{ $item->student_id }}'">
                                         <div class="rank">{{ $rank }}</div>
 
                                         <div class="avatar bottom-avatar">
                                             @if ($item->foto)
-                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}" width="100%" alt="Profile Picture">
+                                                <img class="b-r-10" src="{{ asset('storage') . '/' . $item->foto }}"
+                                                    width="100%" alt="Profile Picture">
                                             @else
                                                 {{ $avatar }}
                                             @endif
