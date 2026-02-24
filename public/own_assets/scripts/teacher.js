@@ -198,7 +198,7 @@ $("#store").on("click", function () {
                                     <div class="ribbon ribbon-${(response.data.status) ? 'success' : 'danger'}">${(response.data.status) ? 'Active' : 'Nonactive'}</div>
                                 </div>
                                 <div class="product-details">
-                                    <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
+                                    <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
                                     <h5>${response.data.name}</h5>
                                     <p>${response.data.email}</p>
                                 </div>
@@ -424,7 +424,7 @@ $("#delete").on("click", function () {
             $(button).prop('disabled', false);
 
             if (response.status) {
-                alertModal(true, response.message);
+                alertModal(true, "The teacher has been Deactivated.");
                 userDetail.attr("data-status", response.data.status);
                 if (response.data.status == 1) {
                     userDetail.find(".ribbon")
@@ -440,7 +440,7 @@ $("#delete").on("click", function () {
 
                 $("#is-error").removeClass('error-response');
             } else {
-                let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">${response.message || "An error occurred."}</div>`;
+                let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">Failed to update teacher information.</div>`;
 
                 if (response.errors) {
                     const detailMessages = Object.values(response.errors)
@@ -502,7 +502,7 @@ $("#activate").on("click", function () {
             $(button).prop('disabled', false);
 
             if (response.status) {
-                alertModal(true, response.message);
+                alertModal(true, "The teacher has been Activated.");
                 userDetail.attr("data-status", response.data.status);
                 if (response.data.status == 1) {
                     userDetail.find(".ribbon")
@@ -518,7 +518,7 @@ $("#activate").on("click", function () {
 
                 $("#is-error").removeClass('error-response');
             } else {
-                let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">${response.message || "An error occurred."}</div>`;
+                let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">Failed to update teacher information.</div>`;
 
                 if (response.errors) {
                     const detailMessages = Object.values(response.errors)
@@ -583,7 +583,7 @@ $("#search").on('input', function () {
                                         ${statusRibbon}
                                     </div>
                                     <div class="product-details">
-                                        <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
+                                        <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
                                         <h5>${user.name}</h5>
                                         <p>${user.email}</p>
                                     </div>
@@ -656,7 +656,7 @@ $("#load-more").on("click", function() {
                                         ${statusRibbon}
                                     </div>
                                     <div class="product-details">
-                                        <span class="badge rounded-pill badge-primary text-white mb-2">Student</span>
+                                        <span class="badge rounded-pill badge-primary text-white mb-2">Teacher</span>
                                         <h5>${user.name}</h5>
                                         <p>${user.email}</p>
                                     </div>

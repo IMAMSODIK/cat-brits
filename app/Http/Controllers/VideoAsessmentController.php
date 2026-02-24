@@ -28,7 +28,7 @@ class VideoAsessmentController extends Controller
             DB::beginTransaction();
 
             $video = Videos::lockForUpdate()->findOrFail($request->video_id);
-            $assessment = VideoAsessment::pdateOrCreate(
+            $assessment = VideoAsessment::updateOrCreate(
                 ['video_id' => $video->id],
                 [
                     'fc_repetition'         => $this->bool($request->fc_repetition),

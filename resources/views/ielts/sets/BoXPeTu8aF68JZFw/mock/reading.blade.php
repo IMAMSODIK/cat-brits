@@ -3319,7 +3319,7 @@
             });
 
             // Mulai countdown (contoh: 15 menit)
-            startCountdown(13 * 60);
+            startCountdown(60 * 60);
         })();
     </script>
 

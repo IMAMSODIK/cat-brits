@@ -98,7 +98,12 @@ mock test listening untuk two_choices masih bisa pilih lebih dari 2 jawaban
 
 
 Sama yg kemarin masih error2 ya kak:
-- Dashboard
-- Add teacher
-- Save assessment (speaking)
+- Dashboard (done)
+- Add teacher (done)
+- Save assessment (speaking) (done)
 - Timer yg masih 13 menit (reading mock test)
+YuuZXlhsVNh26gHr
+
+
+- assesment video hilang
+- assesment speaking mock test belum ada

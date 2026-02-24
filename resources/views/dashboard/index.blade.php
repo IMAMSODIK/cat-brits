@@ -654,6 +654,7 @@
                                     </div>
 
                                     <div class="card-body pt-0">
+                                        
                                         <div class="activity-list d-flex flex-column gap-3">
                                             @foreach ($studentActivities as $activities)
                                                 @if ($activities->student)

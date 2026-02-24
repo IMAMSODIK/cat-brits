@@ -250,7 +250,6 @@
                         <div class="card-body">
                             <div class="vertical-scroll scroll-demo scroll-b-none">
                                 <div class="activity-list d-flex flex-column gap-3">
-
                                     @forelse ($studentActivities as $activities)
                                         <div class="card shadow-sm border-0 w-100 mb-0">
                                             <div class="card-body p-3">
