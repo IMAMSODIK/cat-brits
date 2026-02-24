@@ -655,7 +655,7 @@
 
                                     <div class="card-body pt-0">
                                         <div class="activity-list d-flex flex-column gap-3">
-                                            {{dd($studentActivities)}}
+                                            
                                             @foreach ($studentActivities as $activities)
                                                 <div class="card shadow-sm border-0 w-100 mb-0">
                                                     <div class="card-body p-3">
