@@ -9,6 +9,7 @@
                     'id' => 'note_completion',
                     'tipe' => 'nc',
                     'title' => 'Note Completion',
+                    'namaTipe' => 'Note Completion',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-1.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.note_completion',
@@ -17,6 +18,7 @@
                     'id' => 'one_choice',
                     'tipe' => 'oc',
                     'title' => 'One Choice',
+                    'namaTipe' => 'One Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-2.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.one_choice',
@@ -25,6 +27,7 @@
                     'id' => 'two_choice',
                     'tipe' => 'two_choices',
                     'title' => 'Two Choice',
+                    'namaTipe' => 'Two Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-2.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.two_choice',
@@ -33,6 +36,7 @@
                     'id' => 'matching_information',
                     'tipe' => 'matching_information',
                     'title' => 'Matching',
+                    'namaTipe' => 'Matching',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-2.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.matching_information',
@@ -41,6 +45,7 @@
                     'id' => 'one_choice2',
                     'tipe' => 'oc',
                     'title' => 'One Choice 2',
+                    'namaTipe' => 'One Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-3.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.one_choice2',
@@ -49,6 +54,7 @@
                     'id' => 'two_choice2',
                     'tipe' => 'two_choices',
                     'title' => 'Two Choice 2',
+                    'namaTipe' => 'Two Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-3.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.two_choice2',
@@ -57,6 +63,7 @@
                     'id' => 'two_choice3',
                     'tipe' => 'two_choices',
                     'title' => 'Two Choice 3',
+                    'namaTipe' => 'Two Choice',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-3.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.two_choice3',
@@ -65,6 +72,7 @@
                     'id' => 'note_completion2',
                     'tipe' => 'nc',
                     'title' => 'Note Completion 2',
+                    'namaTipe' => 'Note Completion',
                     'audioUri' =>
                         'https://engnovate.com/wp-content/uploads/2023/08/cambridge-ielts-18-academic-listening-1-audio-4.mp3',
                     'content' => 'partials.KeCD0au8jSaBuT3A.practice.listening.note_completion2',
