@@ -105,17 +105,16 @@
                         <p>Write the correct number, <b>i-x</b>, in boxes on your answer sheet.</p>
                         <p><b>List of Headings</b></p>
                         <ul class="legend">
-                            <li><strong>i</strong> The areas and artefacts within the pyramid itself</li>
-                            <li><strong>i</strong> Locations and features of different seaweeds</li>
-                            <li><strong>ii</strong> Various products of seaweeds</li>
-                            <li><strong>iii</strong> Use of seaweeds in Japan</li>
-                            <li><strong>iv</strong> Seaweed species around the globe</li>
-                            <li><strong>v</strong> Nutritious value of seaweeds</li>
-                            <li><strong>vi</strong> Why it doesn’t dry or sink</li>
-                            <li><strong>vii</strong> Where to find red seaweeds</li>
-                            <li><strong>viii</strong> Underuse of native species</li>
-                            <li><strong>ix</strong> Mystery solved</li>
-                            <li><strong>x</strong> How seaweeds reproduce and grow</li>
+                            <li><strong>i</strong>&nbsp;&nbsp;Locations and features of different seaweeds</li>
+                            <li><strong>ii</strong>&nbsp;&nbsp; Various products of seaweeds</li>
+                            <li><strong>iii</strong>&nbsp;&nbsp; Use of seaweeds in Japan</li>
+                            <li><strong>iv</strong>&nbsp;&nbsp; Seaweed species around the globe</li>
+                            <li><strong>v</strong>&nbsp;&nbsp; Nutritious value of seaweeds</li>
+                            <li><strong>vi</strong>&nbsp;&nbsp; Why it doesn’t dry or sink</li>
+                            <li><strong>vii</strong>&nbsp;&nbsp; Where to find red seaweeds</li>
+                            <li><strong>viii</strong>&nbsp;&nbsp; Underuse of native species</li>
+                            <li><strong>ix</strong>&nbsp;&nbsp; Mystery solved</li>
+                            <li><strong>x</strong>&nbsp;&nbsp; How seaweeds reproduce and grow</li>
                         </ul>
                     </fieldset>
                     <fieldset class="q-item" data-q="1">

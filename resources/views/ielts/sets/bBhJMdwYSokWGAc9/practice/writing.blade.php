@@ -19,7 +19,7 @@
             <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
                 <div class="x-panel-inner">
                     Content: <strong>Task 1</strong> <br><br>
-                    You should write at least 150 words on this task.
+                    You should write at least 250 words on this task.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
@@ -70,13 +70,13 @@
             <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
                 <div class="x-panel-inner">
                     Content: <strong>Task 2</strong> <br><br>
-                    You should write at least 150 words on this task.
+                    You should write at least 250 words on this task.
                 </div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="reading-grid resizable-grid">
                         <article class="passage" aria-label="Reading Passage" tabindex="0">
                             <div class="passage-body">
-                                <p><b>Write about the following topic</b>: Some people have decided to reduce the number of times they fly every year or to stop flying altogether. Do you think the environmental benefits of this development outweigh the disadvantages for individuals and businesses? Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>
+                                <p>Some people have decided to reduce the number of times they fly every year or to stop flying altogether. Do you think the environmental benefits of this development outweigh the disadvantages for individuals and businesses?</p>
                             </div>
                         </article>
 

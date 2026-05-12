@@ -94,7 +94,6 @@
                                         Which meal/s are required each day?
                                         <span class="q-number-box">6</span>
                                         <input type="text" name="form_completion-s4gzzYRpwLnhLRFf-6" class="q-text" placeholder="">
-                                        group
                                     </div>
                                 </p>
                                 <p>
@@ -102,7 +101,6 @@
                                         Medical conditions: needs
                                         <span class="q-number-box">7</span>
                                         <input type="text" name="form_completion-s4gzzYRpwLnhLRFf-7" class="q-text" placeholder="">
-                                        group
                                     </div>
                                 </p>
                                 <p>
@@ -119,9 +117,6 @@
                                         <span class="q-number-box">9</span>
                                         <input type="text" name="form_completion-s4gzzYRpwLnhLRFf-9" class="q-text" placeholder="">
                                     </div>
-                                </p>
-                                <p>
-                                    <b>Phone: 3345 9865</b>
                                 </p>
                                 <p>
                                     <div class="q-list" data-type="nc" data-q="10">
@@ -475,7 +470,7 @@
                                     <label class="q-option">
                                         <input type="radio" name="oc-s4gzzYRpwLnhLRFf-6" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">He thinks he is a good leader.</span>
+                                        <span class="opt-label">He thinks she is a good leader.</span>
                                     </label>
                                 </div>
                             </fieldset>

@@ -15,15 +15,15 @@ class PT01 extends Seeder
             "kategori" => "reading",
             "questions" => [
                 "mh" => [
-                    "ii",
-                    "vii",
                     "v",
+                    "ii",
+                    "viii",
                     "i",
-                    "iii",
-                    "ix"
+                    "x",
+                    "vi"
                 ],
                 "picture_completion" => [
-                    "[New Zealand, NZ carrageen(s)]",
+                    "[New Zealand, NZ carrageen(s), New Zealand carrageen]",
                     "agar",
                     "seameal",
                     "cough mixtures",
