@@ -28,7 +28,7 @@
             <fieldset class="q-item">
                 <p><b>Questions 1–3</b></p>
                 <p>What is said about using each of the following hotel facilities?</p>
-                <p><i>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A–C</b>, next to the
+                <p><i>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A</b>, <b>B</b> or <b>C</b>, next to the
                         questions.</i></p>
 
                 <p><b>Availability</b></p>

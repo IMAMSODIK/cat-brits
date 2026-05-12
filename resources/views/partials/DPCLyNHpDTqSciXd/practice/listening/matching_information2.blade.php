@@ -41,25 +41,25 @@
                 </p>
                 <p><b>Opinions</b></p>
                 <ul style="list-style: none; padding-left: 0; margin-left: 0;">
-                    <li><b>A</b> They both expected this to be more traditional.</li>
-                    <li><b>B</b> They both thought this was original.</li>
-                    <li><b>C</b> They agree this created the right atmosphere.</li>
-                    <li><b>D</b> They agree this was a major strength.</li>
-                    <li><b>E</b> They were both disappointed by this.</li>
-                    <li><b>F</b> They disagree about why this was an issue.</li>
-                    <li><b>G</b> They disagree about how this could be improved.</li>
+                    <li style="margin-bottom: 10px"><b>A</b>&nbsp;&nbsp;&nbsp;&nbsp; They both expected this to be more traditional.</li>
+                    <li style="margin-bottom: 10px"><b>B</b>&nbsp;&nbsp;&nbsp;&nbsp; They both thought this was original.</li>
+                    <li style="margin-bottom: 10px"><b>C</b>&nbsp;&nbsp;&nbsp;&nbsp; They agree this created the right atmosphere.</li>
+                    <li style="margin-bottom: 10px"><b>D</b>&nbsp;&nbsp;&nbsp;&nbsp; They agree this was a major strength.</li>
+                    <li style="margin-bottom: 10px"><b>E</b>&nbsp;&nbsp;&nbsp;&nbsp; They were both disappointed by this.</li>
+                    <li style="margin-bottom: 10px"><b>F</b>&nbsp;&nbsp;&nbsp;&nbsp; They disagree about why this was an issue.</li>
+                    <li style="margin-bottom: 10px"><b>G</b>&nbsp;&nbsp;&nbsp;&nbsp; They disagree about how this could be improved.</li>
                 </ul>
             </fieldset>
 
             <fieldset class="q-item">
-                <h3><b>Band members</b></h3>
+                <h3><b>Aspects of the production</b></h3>
             </fieldset>
 
             <fieldset class="q-item" data-q="1">
                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                     <span class="q-number">1</span>
                     <span style="flex: 1;">
-                        flautist
+                        the set
                         <span class="q-question">
                             <select name="DPCLyNHpDTqSciXd-7" class="q-dropdown">
                                 <option value=""></option>
@@ -80,7 +80,7 @@
                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                     <span class="q-number">2</span>
                     <span style="flex: 1;">
-                        trumpeter
+                        the lighting
                         <span class="q-question">
                             <select name="DPCLyNHpDTqSciXd-8" class="q-dropdown">
                                 <option value=""></option>
@@ -101,7 +101,7 @@
                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                     <span class="q-number">3</span>
                     <span style="flex: 1;">
-                        trombonist
+                        the costume design
                         <span class="q-question">
                             <select name="DPCLyNHpDTqSciXd-9" class="q-dropdown">
                                 <option value=""></option>
@@ -122,7 +122,7 @@
                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                     <span class="q-number">4</span>
                     <span style="flex: 1;">
-                        percussionist
+                        the music
                         <span class="q-question">
                             <select name="DPCLyNHpDTqSciXd-10" class="q-dropdown">
                                 <option value=""></option>
@@ -142,7 +142,7 @@
                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                     <span class="q-number">5</span>
                     <span style="flex: 1;">
-                        percussionist
+                        the actors’ delivery
                         <span class="q-question">
                             <select name="DPCLyNHpDTqSciXd-11" class="q-dropdown">
                                 <option value=""></option>

@@ -1339,7 +1339,7 @@
                             <ul>
                                 <li>
                                     <div class="q-list" data-q="10">
-                                        may ham fish and birds, e.g. by affecting
+                                        may harm fish and birds, e.g. by affecting
                                         <span class="q-number-box">10</span>
                                         <input type="text" name="1kxpl5g3zFLGtmEY-20" class="q-text"
                                             placeholder="">

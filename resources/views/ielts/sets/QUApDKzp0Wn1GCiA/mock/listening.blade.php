@@ -137,7 +137,6 @@
                                             cost of session (no camping): £
                                             <span class="q-number-box">10</span>
                                             <input type="text" name="nc-QUApDKzp0Wn1GCiA-10" class="q-text" placeholder="">
-                                            out of wood
                                         </div>
                                     </li>
                                 </ul>
@@ -702,31 +701,26 @@
                                 </li>
                             </ul>
 
-                            <p>–
-                                <div class="q-list" data-type="nc" data-q="32">
-                                    <span class="q-number-box">32</span>
+                                <div class="q-list" data-type="nc" data-q="32" style="margin-left: 40px">
+                                    - <span class="q-number-box">32</span>
                                     <input type="text" name="nc-QUApDKzp0Wn1GCiA-12" class="q-text" placeholder="">
                                     is needed to navigate through a maze
                                 </div>
-                            </p>
-                            <p>–
-                                <div class="q-list" data-type="nc" data-q="33">
-                                    the word ‘maze’ is derived from a word meaning a feeling of
+
+                                <div class="q-list" data-type="nc" data-q="33" style="margin-left: 40px">
+                                    - the word ‘maze’ is derived from a word meaning a feeling of
                                     <span class="q-number-box">33</span>
                                     <input type="text" name="nc-QUApDKzp0Wn1GCiA-13" class="q-text" placeholder="">
                                 </div>
-                            </p>
                             <ul>
                                 <li>Labyrinths represent a journey through life</li>
                             </ul>
-                            <p>–
-                                <div class="q-list" data-type="nc" data-q="34">
-                                    they have frequently been used in
-                                    <span class="q-number-box">34</span>
-                                    <input type="text" name="nc-QUApDKzp0Wn1GCiA-14" class="q-text" placeholder="">
-                                    and prayer
-                                </div>
-                            </p>
+                            <div class="q-list" data-type="nc" data-q="34" style="margin-left: 40px">
+                                - they have frequently been used in
+                                <span class="q-number-box">34</span>
+                                <input type="text" name="nc-QUApDKzp0Wn1GCiA-14" class="q-text" placeholder="">
+                                and prayer
+                            </div>
 
                             <p><b>Early examples of the labyrinth spiral</b></p>
                             <ul>
@@ -774,21 +768,17 @@
                                 <li>Popular with patients, visitors and staff in hospitals</li>
                             </ul>
 
-                            <p>–
-                                <div class="q-list" data-type="nc" data-q="39">
-                                    patients who can’t walk can use ‘finger labyrinths’ made from
+                                <div class="q-list" data-type="nc" data-q="39" style="margin-left: 40px">
+                                    - patients who can’t walk can use ‘finger labyrinths’ made from
                                     <span class="q-number-box">39</span>
                                     <input type="text" name="nc-QUApDKzp0Wn1GCiA-19" class="q-text" placeholder="">
                                 </div>
-                            </p>
 
-                            <p>–
-                                <div class="q-list" data-type="nc" data-q="40">
-                                    research has shown that Alzheimer’s sufferers experience less
+                                <div class="q-list" data-type="nc" data-q="40" style="margin-left: 40px">
+                                    - research has shown that Alzheimer’s sufferers experience less
                                     <span class="q-number-box">40</span>
                                     <input type="text" name="nc-QUApDKzp0Wn1GCiA-20" class="q-text" placeholder="">
                                 </div>
-                            </p>
                         </fieldset>
                     </form>
                 </div>

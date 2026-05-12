@@ -309,7 +309,7 @@
                                 <td>copper mine</td>
                                 <td>
                                     <div class="q-item" data-type="tc" data-q="16">
-                                        specially adapted miners
+                                        specially adapted miners'
                                         <span class="q-number-box">16</span>
                                         <input type="text" name="tc-11qYaGWPJUTxUVdq-5" class="q-text">
                                         take visitors into the mountain
@@ -460,7 +460,7 @@
                                 <p>What source of information should Tim use at each of the following stages of the work placement?</p>
                                 <p><i>Choose <b>SIX</b> answers from the box and write the correct letter, <b>A-G</b>, next to questions.</i></p>
                                 <p><b>Sources of information</b></p>
-                                <strong>A</strong>&nbsp;&nbsp; company manager
+                                <strong>A</strong>&nbsp;&nbsp; company manager <br>
                                 <strong>B</strong>&nbsp;&nbsp; company’s personnel department<br>
                                 <strong>C</strong>&nbsp;&nbsp; personal tutor<br>
                                 <strong>D</strong>&nbsp;&nbsp; psychology department<br>

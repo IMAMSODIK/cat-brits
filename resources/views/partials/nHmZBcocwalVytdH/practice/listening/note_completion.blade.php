@@ -26,7 +26,7 @@
             <fieldset class="q-item">
                 <p>Questions 1-10</p>
                 <p>Complete the notes below.</p>
-                <p><i>Write <b>ONE WORD</b> for each answer.</i></p>
+                <p><i>Write <b>ONE WORD/OR A NUMBER</b> for each answer.</i></p>
             </fieldset>
             <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px;">
                 <tr>

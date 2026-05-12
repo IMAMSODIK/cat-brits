@@ -490,7 +490,6 @@
                                             <span class="q-number-box">10</span>
                                             <input type="text" name="QUApDKzp0Wn1GCiA-10" class="q-text"
                                                 placeholder="">
-                                            out of wood
                                         </div>
                                     </li>
                                 </ul>
@@ -1330,31 +1329,25 @@
                                     </li>
                                 </ul>
 
-                                <p>–
-                                <div class="q-list" data-q="2">
-                                    <span class="q-number-box">2</span>
+                                <div class="q-list" data-q="2" style="margin-left: 40px">
+                                    - <span class="q-number-box">2</span>
                                     <input type="text" name="QUApDKzp0Wn1GCiA-2" class="q-text" placeholder="">
                                     is needed to navigate through a maze
                                 </div>
-                                </p>
-                                <p>–
-                                <div class="q-list" data-q="3">
-                                    the word ‘maze’ is derived from a word meaning a feeling of
+                                <div class="q-list" data-q="3" style="margin-left: 40px">
+                                    - the word ‘maze’ is derived from a word meaning a feeling of
                                     <span class="q-number-box">3</span>
                                     <input type="text" name="QUApDKzp0Wn1GCiA-3" class="q-text" placeholder="">
                                 </div>
-                                </p>
                                 <ul>
                                     <li>Labyrinths represent a journey through life</li>
                                 </ul>
-                                <p>–
-                                <div class="q-list" data-q="4">
-                                    they have frequently been used in
+                                <div class="q-list" data-q="4" style="margin-left: 40px">
+                                    - they have frequently been used in
                                     <span class="q-number-box">4</span>
                                     <input type="text" name="QUApDKzp0Wn1GCiA-4" class="q-text" placeholder="">
                                     and prayer
                                 </div>
-                                </p>
 
                                 <p><b>Early examples of the labyrinth spiral</b></p>
                                 <ul>
@@ -1407,21 +1400,17 @@
                                     <li>Popular with patients, visitors and staff in hospitals</li>
                                 </ul>
 
-                                <p>–
-                                <div class="q-list" data-q="9">
-                                    patients who can’t walk can use ‘finger labyrinths’ made from
+                                <div class="q-list" data-q="9" style="margin-left: 40px">
+                                    - patients who can’t walk can use ‘finger labyrinths’ made from
                                     <span class="q-number-box">9</span>
                                     <input type="text" name="QUApDKzp0Wn1GCiA-9" class="q-text" placeholder="">
                                 </div>
-                                </p>
 
-                                <p>–
-                                <div class="q-list" data-q="10">
-                                    research has shown that Alzheimer’s sufferers experience less
+                                <div class="q-list" data-q="10" style="margin-left: 40px">
+                                    - research has shown that Alzheimer’s sufferers experience less
                                     <span class="q-number-box">10</span>
                                     <input type="text" name="QUApDKzp0Wn1GCiA-10" class="q-text" placeholder="">
                                 </div>
-                                </p>
                             </fieldset>
 
                             <div style="text-align: center;">

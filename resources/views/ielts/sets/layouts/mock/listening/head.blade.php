@@ -1521,5 +1521,10 @@
         .audio-player {
             display: none;
         }
+
+        .center-cell {
+            text-align: center;
+            vertical-align: middle;
+        }
     </style>
 </head>

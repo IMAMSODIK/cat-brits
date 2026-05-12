@@ -91,9 +91,9 @@
                             a
                             <span class="q-number-box">6</span>
                             <input type="text" name="NmeBcwURSR2ZPfdX-6" class="q-text" placeholder="">
-                            shoes (not sandals)
                         </div>
                     </li>
+                    <li>shoes (not sandals)</li>
                     <li>
                         <div class="q-list" data-q="7">
                             Charlie’s

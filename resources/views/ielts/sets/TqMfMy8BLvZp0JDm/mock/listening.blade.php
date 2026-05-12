@@ -67,7 +67,7 @@
                                     <div class="q-list" data-type="nc" data-q="3">
                                         <span class="q-number-box">3</span>
                                         <input type="text" name="nc-TqMfMy8BLvZp0JDm-3" class="q-text" placeholder="">
-                                        <p>Cottage</p>
+                                        Cottage
                                     </div>
                                 </p>
 
@@ -759,9 +759,9 @@
                                 <li>Sailors brought dogs and monkeys.</li>
                                 <li>
                                     <div class="q-list" data-type="nc" data-q="39">
-                                        also escaped onto the island and ate the birds’ eggs.
                                         <span class="q-number-box">39</span>
                                         <input type="text" name="nc-TqMfMy8BLvZp0JDm-19" class="q-text" placeholder="">
+                                        also escaped onto the island and ate the birds’ eggs.
                                     </div>
                                 </li>
                                 <li>

@@ -65,9 +65,9 @@
                 <span class="q-number-box">6</span>
                 <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" data-q="6" class="q-text"
                     placeholder="">
-                shoes (not sandals)
             </div>
         </li>
+        <li>shoes (not sandals)</li>
         <li>
             <div class="q-list" data-q="7">
                 Charlie’s

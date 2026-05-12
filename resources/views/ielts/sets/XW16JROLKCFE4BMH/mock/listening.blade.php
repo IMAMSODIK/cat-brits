@@ -294,7 +294,7 @@
                             <p>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A-D</b>, next to Questions.</p>
                             <p><b>Comments</b></p>
 
-                            <strong>A</strong>&nbsp;&nbsp; pupils help to plan menus
+                            <strong>A</strong>&nbsp;&nbsp; pupils help to plan menus <br>
                             <strong>B</strong>&nbsp;&nbsp; only vegetarian food<br>
                             <strong>C</strong>&nbsp;&nbsp; different food every week<br>
                             <strong>D</strong>&nbsp;&nbsp; daily change in menu<br>
@@ -533,8 +533,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on research question:</p>
                                                 <p>Is there a relationship between hours of sleep and number of dreams?</p>
                                             </td>
@@ -547,8 +547,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on sample:</p>
                                                 <p>
                                                     <div class="q-list" data-type="fc_completion" data-q="25">
@@ -568,8 +568,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on methodology:</p>
                                                 <p>Self-reporting</p>
                                             </td>
@@ -582,8 +582,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on procedure:</p>
                                                 <p>
                                                     <div class="q-list" data-type="fc_completion" data-q="26">
@@ -602,8 +602,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>
                                                     <div class="q-list" data-type="fc_completion" data-q="27">
                                                         Check ethical guidelines for working with
@@ -627,8 +627,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>
                                                     <div class="q-list" data-type="fc_completion" data-q="29">
                                                         Analyse the results Calculate the correlation and make a 
@@ -645,7 +645,7 @@
 
                             <fieldset class="q-item">
                                 <p>
-                                    <div class="q-list" data-type="fc_completion" data-q="30">
+                                    <div class="q-list center-cell" data-type="fc_completion" data-q="30" width="100%">
                                         Analyse the results Calculate the correlation and make a 
                                         <span class="q-number-box">30</span>
                                         <input type="text" name="fc_completion-XW16JROLKCFE4BMH-6" class="q-text" placeholder="">

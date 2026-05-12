@@ -89,7 +89,7 @@ class CambridgeIELTS14AcademicTest1 extends Seeder
 
         // Cambridge IELTS 20 Academic Listening Test 3 - Listening
         $nc = [
-            "Canadian", "furniture", "Park", "[250, 250 sterling]", "phone", "[10 September, 10th September]", "museum", "time", "[blond, blonde]", "[87954 82361, 8795482361]",
+            "Canadian", "furniture", "Park", "[250, 250 sterling]", "phone", "[10 September, 10th September, September 10]", "museum", "time", "[blond, blonde]", "[87954 82361, 8795482361]",
             "industry", "constant", "direction", "floor", "predictable", "bay", "gates", "fuel", "jobs", "migration"
         ];
         $two_choices = ["[A, C]", "[A, C]", "[B, E]", "[B, E]"];

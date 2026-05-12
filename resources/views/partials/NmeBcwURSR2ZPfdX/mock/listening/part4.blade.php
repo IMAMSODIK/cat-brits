@@ -26,6 +26,7 @@
                 ago, knitting was expected to disappear.
             </div>
         </li>
+        <li>The number of knitting classes is now increasing</li>
         <li>
             <div class="q-list" data-q="33">
                 People are buying more
@@ -87,6 +88,7 @@
                 to touch.
             </div>
         </li>
+        <li>Wool became the most popular yarn for spinning.</li>
         <li>
             <div class="q-list" data-q="39">
                 Geographical areas had their own

@@ -76,7 +76,7 @@
                                     </div>
                                 </p>
 
-                                <p>There are famous cliffs nearby</p>
+                                <p>- There are famous cliffs nearby</p>
                                 <ul>
                                     <li>County Mayo</li>
                                 </ul>

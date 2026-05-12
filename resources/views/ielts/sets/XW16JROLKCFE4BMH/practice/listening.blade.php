@@ -321,6 +321,13 @@
             width: 120px;
         }
     </style>
+
+    <style>
+        .center-cell {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 
 <body>
@@ -328,8 +335,8 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
-                aria-selected="true" data-id="tfng">Note Completion</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
+                data-id="tfng">Note Completion</button>
             <button class="x-tab" role="tab" id="tab-one" aria-controls="panel-one" aria-selected="false"
                 data-id="one">One Choice</button>
             <button class="x-tab" role="tab" id="tab-matching" aria-controls="panel-matching" aria-selected="false"
@@ -338,10 +345,10 @@
                 data-id="mh">Two Choices</button>
             <button class="x-tab" role="tab" id="tab-one2" aria-controls="panel-one2" aria-selected="false"
                 data-id="one2">One Choice 2</button>
-            <button class="x-tab" role="tab" id="tab-fc_completion" aria-controls="panel-fc_completion" aria-selected="false"
-                data-id="fc_completion">Flow Chart Completion</button>
-            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2"
-                aria-selected="false" data-id="tfng2">Note Completion 2</button>
+            <button class="x-tab" role="tab" id="tab-fc_completion" aria-controls="panel-fc_completion"
+                aria-selected="false" data-id="fc_completion">Flow Chart Completion</button>
+            <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
+                data-id="tfng2">Note Completion 2</button>
         </div>
 
         <div class="x-panels">
@@ -394,7 +401,8 @@
                                         <div class="q-list" data-q="1">
                                             Photos must not be in a
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text"
+                                                placeholder="">
                                             or an album.
                                         </div>
                                     </li>
@@ -406,7 +414,8 @@
                                         <div class="q-list" data-q="2">
                                             The cost for 360 photos is £
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text"
+                                                placeholder="">
                                             (including one disk).
                                         </div>
                                     </li>
@@ -414,7 +423,8 @@
                                         <div class="q-list" data-q="3">
                                             Before the complete order is sent,
                                             <span class="q-number-box">3</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text"
+                                                placeholder="">
                                             is required.
                                         </div>
                                     </li>
@@ -426,14 +436,16 @@
                                         <div class="q-list" data-q="4">
                                             Photos can be placed in a folder, e.g. with the name
                                             <span class="q-number-box">4</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="5">
-                                            The 
+                                            The
                                             <span class="q-number-box">5</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text"
+                                                placeholder="">
                                             and contrast can be improved if necessary.
                                         </div>
                                     </li>
@@ -441,7 +453,8 @@
                                         <div class="q-list" data-q="6">
                                             Photos which are very fragile will be scanned by
                                             <span class="q-number-box">6</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                 </ul>
@@ -452,14 +465,16 @@
                                         <div class="q-list" data-q="7">
                                             It may be possible to remove an object from a photo, or change the
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-7" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-7" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="8">
                                             A photo which is not correctly in
                                             <span class="q-number-box">8</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-8" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-8" class="q-text"
+                                                placeholder="">
                                             cannot be fixed.
                                         </div>
                                     </li>
@@ -471,14 +486,16 @@
                                         <div class="q-list" data-q="9">
                                             Orders are completed within
                                             <span class="q-number-box">9</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-9" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-9" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="10">
                                             Send the photos in a box (not
                                             <span class="q-number-box">10</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-10" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-10" class="q-text"
+                                                placeholder="">
                                             ).
                                         </div>
                                     </li>
@@ -486,10 +503,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-nc" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-nc"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="10" id="submit-nc">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="10" id="submit-nc">
                                     Submit
                                 </button>
                             </div>
@@ -570,12 +589,14 @@
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-2" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">The lower school site will be used for new homes.</span>
+                                        <span class="opt-label">The lower school site will be used for new
+                                            homes.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-2" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">Additional school buildings will be constructed on the lower school site.</span>
+                                        <span class="opt-label">Additional school buildings will be constructed on the
+                                            lower school site.</span>
                                     </label>
                                 </div>
                             </fieldset>
@@ -613,12 +634,14 @@
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-4" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">help their children to decide in advance which serving point to use.</span>
+                                        <span class="opt-label">help their children to decide in advance which serving
+                                            point to use.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-4" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">make sure their children have enough money for food.</span>
+                                        <span class="opt-label">make sure their children have enough money for
+                                            food.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-4" value="C" />
@@ -653,10 +676,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-oc"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="5" id="submit-oc">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="5" id="submit-oc">
                                     Submit
                                 </button>
                             </div>
@@ -664,7 +689,8 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-matching" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information" hidden>
+            <div id="panel-matching" class="x-panel" role="tabpanel" aria-labelledby="tab-matching_information"
+                hidden>
                 <div class="x-panel-inner">Content: Matching</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="qa highlighted-content" aria-label="Questions">
@@ -696,8 +722,10 @@
 
                             <fieldset class="q-item">
                                 <p>Questions 1-3</p>
-                                <p>What comment does the speaker make about each of the following serving points in the Food Hall?</p>
-                                <p>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A-D</b>, next to Questions.</p>
+                                <p>What comment does the speaker make about each of the following serving points in the
+                                    Food Hall?</p>
+                                <p>Choose <b>THREE</b> answers from the box and write the correct letter, <b>A-D</b>,
+                                    next to Questions.</p>
                                 <p><b>Comments</b></p>
 
                                 <strong>A</strong>&nbsp;&nbsp; pupils help to plan menus <br>
@@ -765,10 +793,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-matching_information" style="display: none">
+                                <button type="button" class="btn btn-primary try-again"
+                                    id="again-matching_information" style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="3" id="submit-matching_information">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="3" id="submit-matching_information">
                                     Submit
                                 </button>
                             </div>
@@ -847,10 +877,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-two_choices" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-two_choices"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="2" id="submit-two_choices">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="2" id="submit-two_choices">
                                     Submit
                                 </button>
                             </div>
@@ -906,12 +938,14 @@
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-6" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">our memories cannot cope with too much information.</span>
+                                        <span class="opt-label">our memories cannot cope with too much
+                                            information.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-6" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">we might other wise be confused about what is real.</span>
+                                        <span class="opt-label">we might other wise be confused about what is
+                                            real.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="radio" name="XW16JROLKCFE4BMH-6" value="C" />
@@ -994,10 +1028,12 @@
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-oc" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-oc"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="4" id="submit-oc">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="4" id="submit-oc">
                                     Submit
                                 </button>
                             </div>
@@ -1005,7 +1041,8 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-fc_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-fc_completion" hidden>
+            <div id="panel-fc_completion" class="x-panel" role="tabpanel" aria-labelledby="tab-fc_completion"
+                hidden>
                 <div class="x-panel-inner">Content: Flow Chart Completion</div>
                 <div class="reading-section" aria-label="Reading and Questions">
                     <div class="qa highlighted-content" aria-label="Questions">
@@ -1043,13 +1080,13 @@
 
                             <p style="text-align: center"><b>Assignment plan</b></p>
                             <fieldset class="q-item">
-                                <table class=" aligncenter">
+                                <table class="aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
-                                                <p>Decide on research question:</p>
-                                                <p>Is there a relationship between hours of sleep and number of dreams?</p>
-                                            </td>
+                                        <td>
+                                        <td width="100%" class="center-cell">
+                                            <p>Decide on research question:</p>
+                                            <p>Is there a relationship between hours of sleep and number of dreams?</p>
+                                        </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1057,18 +1094,19 @@
                             <p style="text-align: center">↓</p>
 
                             <fieldset class="q-item">
-                                <table class=" aligncenter">
+                                <table class="aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on sample:</p>
                                                 <p>
-                                                    <div class="q-list" data-q="1">
-                                                        Twelve students from the
-                                                        <span class="q-number-box">1</span>
-                                                        <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text" placeholder="">
-                                                        department
-                                                    </div>
+                                                <div class="q-list" data-q="1">
+                                                    Twelve students from the
+                                                    <span class="q-number-box">1</span>
+                                                    <input type="text" name="XW16JROLKCFE4BMH-1" class="q-text"
+                                                        placeholder="">
+                                                    department
+                                                </div>
                                                 </p>
                                             </td>
                                         </tr>
@@ -1080,8 +1118,8 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on methodology:</p>
                                                 <p>Self-reporting</p>
                                             </td>
@@ -1094,15 +1132,16 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>Decide on procedure:</p>
                                                 <p>
-                                                    <div class="q-list" data-q="2">
-                                                        Answers on 
-                                                        <span class="q-number-box">2</span>
-                                                        <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text" placeholder="">
-                                                    </div>
+                                                <div class="q-list" data-q="2">
+                                                    Answers on
+                                                    <span class="q-number-box">2</span>
+                                                    <input type="text" name="XW16JROLKCFE4BMH-2" class="q-text"
+                                                        placeholder="">
+                                                </div>
                                                 </p>
                                             </td>
                                         </tr>
@@ -1114,20 +1153,22 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>
-                                                    <div class="q-list" data-q="3">
-                                                        Check ethical guidelines for working with
-                                                        <span class="q-number-box">3</span>
-                                                        <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text" placeholder="">
-                                                    </div>
-                                                    <div class="q-list" data-q="4">
-                                                        Ensure that risk is assessed and
-                                                        <span class="q-number-box">4</span>
-                                                        <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text" placeholder="">
-                                                        is kept to a minimum
-                                                    </div>
+                                                <div class="q-list" data-q="3">
+                                                    Check ethical guidelines for working with
+                                                    <span class="q-number-box">3</span>
+                                                    <input type="text" name="XW16JROLKCFE4BMH-3" class="q-text"
+                                                        placeholder="">
+                                                </div>
+                                                <div class="q-list" data-q="4">
+                                                    Ensure that risk is assessed and
+                                                    <span class="q-number-box">4</span>
+                                                    <input type="text" name="XW16JROLKCFE4BMH-4" class="q-text"
+                                                        placeholder="">
+                                                    is kept to a minimum
+                                                </div>
                                                 </p>
                                             </td>
                                         </tr>
@@ -1139,14 +1180,15 @@
                             <fieldset class="q-item">
                                 <table class=" aligncenter">
                                     <tbody>
-                                        <tr>
-                                            <td width="528">
+                                        <td>
+                                            <td width="100%" class="center-cell">
                                                 <p>
-                                                    <div class="q-list" data-q="5">
-                                                        Analyse the results Calculate the correlation and make a 
-                                                        <span class="q-number-box">5</span>
-                                                        <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text" placeholder="">
-                                                    </div>
+                                                <div class="q-list" data-q="5">
+                                                    Analyse the results Calculate the correlation and make a
+                                                    <span class="q-number-box">5</span>
+                                                    <input type="text" name="XW16JROLKCFE4BMH-5" class="q-text"
+                                                        placeholder="">
+                                                </div>
                                                 </p>
                                             </td>
                                         </tr>
@@ -1157,19 +1199,21 @@
 
                             <fieldset class="q-item">
                                 <p>
-                                    <div class="q-list" data-q="6">
-                                        Analyse the results Calculate the correlation and make a 
-                                        <span class="q-number-box">6</span>
-                                        <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
-                                    </div>
+                                <div class="q-list center-cell" data-q="6">
+                                    Analyse the results Calculate the correlation and make a
+                                    <span class="q-number-box">6</span>
+                                    <input type="text" name="XW16JROLKCFE4BMH-6" class="q-text" placeholder="">
+                                </div>
                                 </p>
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-fc_completion" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-fc_completion"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="6" id="submit-fc_completion">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="6" id="submit-fc_completion">
                                     Submit
                                 </button>
                             </div>
@@ -1217,20 +1261,23 @@
                                 <p><b>Health benefits of dance</b></p>
                                 <p><b>Recent findings:</b></p>
                                 <ul>
-                                    <li>All forms of dance produce various hormones associated with feelings of happiness.</li>
+                                    <li>All forms of dance produce various hormones associated with feelings of
+                                        happiness.</li>
                                     <li>Dancing with others has a more positive impact than dancing alone.</li>
                                     <li>
                                         <div class="q-list" data-q="1">
                                             An experiment on university students suggested that dance increases
                                             <span class="q-number-box">1</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-11" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-11" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="2">
                                             For those with mental illness, dance could be used as a form of
                                             <span class="q-number-box">2</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-12" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-12" class="q-text"
+                                                placeholder="">
                                         </div>
                                     </li>
                                 </ul>
@@ -1241,24 +1288,27 @@
                                         <div class="q-list" data-q="3">
                                             accessible for people with low levels of
                                             <span class="q-number-box">3</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-13" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-13" class="q-text"
+                                                placeholder="">
                                             when hunting or sleeping.
                                         </div>
                                     </li>
                                     <li>reduces the risk of heart disease</li>
                                     <li>
                                         <div class="q-list" data-q="4">
-                                            better 
+                                            better
                                             <span class="q-number-box">4</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-14" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-14" class="q-text"
+                                                placeholder="">
                                             reduces the risk of accidents
                                         </div>
                                     </li>
                                     <li>
                                         <div class="q-list" data-q="5">
-                                            improves  
+                                            improves
                                             <span class="q-number-box">5</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-15" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-15" class="q-text"
+                                                placeholder="">
                                             function by making it work faster
                                         </div>
                                     </li>
@@ -1267,7 +1317,8 @@
                                         <div class="q-list" data-q="6">
                                             gives people more
                                             <span class="q-number-box">6</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-16" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-16" class="q-text"
+                                                placeholder="">
                                             to take exercise
                                         </div>
                                     </li>
@@ -1275,7 +1326,8 @@
                                         <div class="q-list" data-q="7">
                                             can lessen the feeling of
                                             <span class="q-number-box">7</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-17" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-17" class="q-text"
+                                                placeholder="">
                                             , very common in older people
                                         </div>
                                     </li>
@@ -1285,9 +1337,11 @@
                                 <ul>
                                     <li>
                                         <div class="q-list" data-q="8">
-                                            A study at The University of Wisconsin showed that doing Zumba for 40 minutes uses up as many
+                                            A study at The University of Wisconsin showed that doing Zumba for 40
+                                            minutes uses up as many
                                             <span class="q-number-box">8</span>
-                                            <input type="text" name="XW16JROLKCFE4BMH-18" class="q-text" placeholder="">
+                                            <input type="text" name="XW16JROLKCFE4BMH-18" class="q-text"
+                                                placeholder="">
                                             as other quite intense forms of exercise.
                                         </div>
                                     </li>
@@ -1297,28 +1351,30 @@
                                 <br>
 
                                 <p>
-                                    <div class="q-list" data-q="9">
-                                        – women suffering from
-                                        <span class="q-number-box">9</span>
-                                        <input type="text" name="XW16JROLKCFE4BMH-19" class="q-text" placeholder="">
-                                        benefited from doing Zumba.
-                                    </div>
+                                <div class="q-list" data-q="9">
+                                    – women suffering from
+                                    <span class="q-number-box">9</span>
+                                    <input type="text" name="XW16JROLKCFE4BMH-19" class="q-text" placeholder="">
+                                    benefited from doing Zumba.
+                                </div>
                                 </p>
                                 <p>
-                                    <div class="q-list" data-q="10">
-                                        – Zumba became a
-                                        <span class="q-number-box">10</span>
-                                        <input type="text" name="XW16JROLKCFE4BMH-20" class="q-text" placeholder="">
-                                        for the participants.
-                                    </div>
+                                <div class="q-list" data-q="10">
+                                    – Zumba became a
+                                    <span class="q-number-box">10</span>
+                                    <input type="text" name="XW16JROLKCFE4BMH-20" class="q-text" placeholder="">
+                                    for the participants.
+                                </div>
                                 </p>
                             </fieldset>
 
                             <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary try-again" id="again-nc2" style="display: none">
+                                <button type="button" class="btn btn-primary try-again" id="again-nc2"
+                                    style="display: none">
                                     Try Again
                                 </button>
-                                <button type="button" class="btn btn-primary" data-kategori="listening" data-count="10" id="submit-nc2">
+                                <button type="button" class="btn btn-primary" data-kategori="listening"
+                                    data-count="10" id="submit-nc2">
                                     Submit
                                 </button>
                             </div>
@@ -1346,12 +1402,14 @@
 
         $("#submit-matching_information").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-matching_information", "XW16JROLKCFE4BMH", "matching_information", $(this), "again-matching_information", "Matching Information");
+            submitHelper("form-matching_information", "XW16JROLKCFE4BMH", "matching_information", $(this),
+                "again-matching_information", "Matching Information");
         });
 
         $("#submit-two_choices").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-two_choices", "XW16JROLKCFE4BMH", "two_choices", $(this), "again-two_choices", "Two Choices");
+            submitHelper("form-two_choices", "XW16JROLKCFE4BMH", "two_choices", $(this), "again-two_choices",
+                "Two Choices");
         });
 
         $("#submit-oc2").on("click", function(e) {
@@ -1361,7 +1419,8 @@
 
         $("#submit-fc_completion").on("click", function(e) {
             e.preventDefault();
-            submitHelper("form-fc_completion", "XW16JROLKCFE4BMH", "fc_completion", $(this), "again-fc_completion", "Flow Chart Completion");
+            submitHelper("form-fc_completion", "XW16JROLKCFE4BMH", "fc_completion", $(this), "again-fc_completion",
+                "Flow Chart Completion");
         });
 
         $("#submit-nc2").on("click", function(e) {
@@ -1498,7 +1557,7 @@
                         const maxAllowed = parseInt(question.dataset.max || '0', 10);
                         if (maxAllowed > 0) {
                             const checkedBoxes = question.querySelectorAll(
-                            'input[type="checkbox"]:checked');
+                                'input[type="checkbox"]:checked');
                             if (checkedBoxes.length > maxAllowed) {
                                 input.checked = false;
                                 alert(`You can only select ${maxAllowed} answers for this question.`);

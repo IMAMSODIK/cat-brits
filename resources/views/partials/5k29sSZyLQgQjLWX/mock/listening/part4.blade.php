@@ -14,7 +14,7 @@
             <li>stone homes had a courtyard</li>
             <li>
                 had a semicircle of large stones round a
-                <span class="q-item" data-q="31">
+                <span class="" data-q="31">
                     <span class="q-number-box">31</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text">
                 </span>
@@ -23,7 +23,7 @@
             <li>biggest settlement from the prehistoric period found on the seabed</li>
             <li>
                 research carried out into structures,
-                <span class="q-item" data-q="32">
+                <span class="" data-q="32">
                     <span class="q-number-box">32</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-text">
                 </span>
@@ -37,14 +37,14 @@
         <ul>
             <li>
                 used in the oil industry, e.g. to make
-                <span class="q-item" data-q="33">
+                <span class="" data-q="33">
                     <span class="q-number-box">33</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-10" class="q-text">
                 </span>
             </li>
             <li>
                 problems: they were expensive and
-                <span class="q-item" data-q="34">
+                <span class="" data-q="34">
                     <span class="q-number-box">34</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-11" class="q-text">
                 </span>
@@ -58,7 +58,7 @@
             <li>much easier to use, relatively cheap, sophisticated</li>
             <li>
                 Marzamemi, Sicily: found ancient Roman ships carrying architectural elements made of
-                <span class="q-item" data-q="35">
+                <span class="" data-q="35">
                     <span class="q-number-box">35</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-12" class="q-text">
                 </span>
@@ -70,7 +70,7 @@
         <b>Underwater internet</b>
         <ul>
             <li>
-                <span class="q-item" data-q="36">
+                <span class="" data-q="36">
                     <span class="q-number-box">36</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-13" class="q-text">
                 </span>
@@ -79,7 +79,7 @@
             <li>plans for communication with researchers by satellite</li>
             <li>
                 AUV can send data to another AUV that has better
-                <span class="q-item" data-q="37">
+                <span class="" data-q="37">
                     <span class="q-number-box">37</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-14" class="q-text">
                 </span>,
@@ -93,19 +93,19 @@
         <ul>
             <li>
                 one ship carrying
-                <span class="q-item" data-q="38">
+                <span class="" data-q="38">
                     <span class="q-number-box">38</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-15" class="q-text">
                 </span>
                 supplies; tablets may have been used for cleaning the
-                <span class="q-item" data-q="39">
+                <span class="" data-q="39">
                     <span class="q-number-box">39</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-16" class="q-text">
                 </span>
             </li>
             <li>
                 others carrying containers of olive oil or
-                <span class="q-item" data-q="40">
+                <span class="" data-q="40">
                     <span class="q-number-box">40</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text">
                 </span>

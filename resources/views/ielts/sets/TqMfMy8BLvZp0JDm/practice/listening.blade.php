@@ -408,7 +408,7 @@
                                     <div class="q-list" data-q="3">
                                         <span class="q-number-box">3</span>
                                         <input type="text" name="TqMfMy8BLvZp0JDm-3" class="q-text" placeholder="">
-                                        <p>Cottage</p>
+                                        Cottage
                                     </div>
                                 </p>
 
@@ -1295,9 +1295,9 @@
                                     <li>Sailors brought dogs and monkeys.</li>
                                     <li>
                                         <div class="q-list" data-q="9">
-                                            also escaped onto the island and ate the birds’ eggs.
                                             <span class="q-number-box">9</span>
                                             <input type="text" name="TqMfMy8BLvZp0JDm-18" class="q-text" placeholder="">
+                                            also escaped onto the island and ate the birds’ eggs.
                                         </div>
                                     </li>
                                     <li>

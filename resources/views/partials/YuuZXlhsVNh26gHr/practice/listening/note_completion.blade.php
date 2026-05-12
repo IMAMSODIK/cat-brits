@@ -32,7 +32,7 @@
                 <p>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</p>
             </fieldset>
 
-            <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px;">
+            <table cellpadding="5" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px;">
                 <tr>
                     <th colspan="2">Flanders Conference Hotel</th>
                 </tr>
@@ -58,50 +58,66 @@
                 </tr>
                 <tr>
                     <td>
-                        the
-                        <div class="q-item" data-q="1" style="display:inline-block;">
-                            <span class="q-number-box">1</span>
-                            <input type="text" name="YuuZXlhsVNh26gHr-1" class="q-text" placeholder="">
-                        </div>
-                        room for talks
-                        (projector and
-                        <div class="q-item" data-q="2" style="display:inline-block;">
-                            <span class="q-number-box">2</span>
-                            <input type="text" name="YuuZXlhsVNh26gHr-2" class="q-text" placeholder="">
-                        </div>
-                        available)
+                        <ul>
+                            <li>
+                                the
+                                <div class="q-item" data-q="1" style="display:inline-block;">
+                                    <span class="q-number-box">1</span>
+                                    <input type="text" name="YuuZXlhsVNh26gHr-1" class="q-text" placeholder="">
+                                </div>
+                                room for talks
+                                (projector and
+                                <div class="q-item" data-q="2" style="display:inline-block;">
+                                    <span class="q-number-box">2</span>
+                                    <input type="text" name="YuuZXlhsVNh26gHr-2" class="q-text" placeholder="">
+                                </div>
+                                available)
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        area for coffee and an
-                        <div class="q-item" data-q="3" style="display:inline-block;">
-                            <span class="q-number-box">3</span>
-                            <input type="text" name="YuuZXlhsVNh26gHr-3" class="q-text" placeholder="">
-                        </div>
+                        <ul>
+                            <li>
+                                area for coffee and an
+                                <div class="q-item" data-q="3" style="display:inline-block;">
+                                    <span class="q-number-box">3</span>
+                                    <input type="text" name="YuuZXlhsVNh26gHr-3" class="q-text" placeholder="">
+                                </div>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        free
-                        <div class="q-item" data-q="4" style="display:inline-block;">
-                            <span class="q-number-box">4</span>
-                            <input type="text" name="YuuZXlhsVNh26gHr-4" class="q-text" placeholder="">
-                        </div>
-                        throughout
+                        <ul>
+                            <li>
+                                free
+                                <div class="q-item" data-q="4" style="display:inline-block;">
+                                    <span class="q-number-box">4</span>
+                                    <input type="text" name="YuuZXlhsVNh26gHr-4" class="q-text" placeholder="">
+                                </div>
+                                throughout
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        a standard buffet lunch costs $
-                        <div class="q-item" data-q="5" style="display:inline-block;">
-                            <span class="q-number-box">5</span>
-                            <input type="text" name="YuuZXlhsVNh26gHr-5" class="q-text" placeholder="">
-                        </div>
-                        per head
+                        <ul>
+                            <li>
+                                a standard buffet lunch costs $
+                                <div class="q-item" data-q="5" style="display:inline-block;">
+                                    <span class="q-number-box">5</span>
+                                    <input type="text" name="YuuZXlhsVNh26gHr-5" class="q-text" placeholder="">
+                                </div>
+                                per head
+                            </li>
+                        </ul>
                     </td>
                 </tr>
 

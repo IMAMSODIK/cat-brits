@@ -12,7 +12,7 @@
             <b>Library</b>
             <li>
                 Help with
-                <div class="q-item" data-q="1" style="display:inline-block;">
+                <div data-q="1" style="display:inline-block;">
                     <span class="q-number-box">1</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-1" class="q-text"
                         placeholder="">
@@ -21,7 +21,7 @@
             </li>
             <li>
                 Help needed to keep
-                <div class="q-item" data-q="2" style="display:inline-block;">
+                <div data-q="2" style="display:inline-block;">
                     <span class="q-number-box">2</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-2" class="q-text"
                         placeholder="">
@@ -30,7 +30,7 @@
             </li>
             <li>
                 Library is in the
-                <div class="q-item" data-q="3" style="display:inline-block;">
+                <div data-q="3" style="display:inline-block;">
                     <span class="q-number-box">3</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-3" class="q-text"
                         placeholder="">
@@ -40,7 +40,7 @@
             <b>Lunch club</b>
             <li>
                 Help by providing
-                <div class="q-item" data-q="4" style="display:inline-block;">
+                <div data-q="4" style="display:inline-block;">
                     <span class="q-number-box">4</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-text"
                         placeholder="">
@@ -48,7 +48,7 @@
             </li>
             <li>
                 Help with hobbies such as
-                <div class="q-item" data-q="5" style="display:inline-block;">
+                <div data-q="5" style="display:inline-block;">
                     <span class="q-number-box">5</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text"
                         placeholder="">
@@ -57,7 +57,7 @@
             <b>Help for individuals needed next week</b>
             <li>
                 Taking Mrs Carroll to
-                <div class="q-item" data-q="6" style="display:inline-block;">
+                <div data-q="6" style="display:inline-block;">
                     <span class="q-number-box">6</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text"
                         placeholder="">
@@ -65,7 +65,7 @@
             </li>
             <li>
                 Work in the
-                <div class="q-item" data-q="7" style="display:inline-block;">
+                <div data-q="7" style="display:inline-block;">
                     <span class="q-number-box">7</span>
                     <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text"
                         placeholder="">
@@ -76,7 +76,7 @@
     </li>
 </ul>
 
-<fieldset class="q-item">
+<fieldset>
     <p class="lead"><i>Complete the notes below.</i></p>
     <p>Write <strong>ONE WORD ONLY</strong> for each answer.</p>
 </fieldset>
@@ -95,7 +95,7 @@
         <tr>
             <td>19 Oct</td>
             <td>
-                <div class="q-item" data-q="8" style="display:inline-block;">
+                <div data-q="8" style="display:inline-block;">
                     <span class="q-number-box">8</span>
                     <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
                         placeholder="">
@@ -110,7 +110,7 @@
             <td>Village hall</td>
             <td>
                 checking
-                <div class="q-item" data-q="9" style="display:inline-block;">
+                <div data-q="9" style="display:inline-block;">
                     <span class="q-number-box">9</span>
                     <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
                         placeholder="">
@@ -123,7 +123,7 @@
             <td>Mountfort Hotel</td>
             <td>
                 designing the
-                <div class="q-item" data-q="10" style="display:inline-block;">
+                <div data-q="10" style="display:inline-block;">
                     <span class="q-number-box">10</span>
                     <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
                         placeholder="">

@@ -62,14 +62,14 @@
 </fieldset>
 
 <fieldset class="q-item">
-    <h3><b>Band members</b></h3>
+    <h3><b>Aspects of the production</b></h3>
 </fieldset>
 
 <fieldset class="q-item" data-q="23">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">23</span>
         <span style="flex: 1;">
-            flautist
+            the set
             <span class="q-question">
                 <select name="{{ $part['tipe'][1] }}-{{ $id }}-7" class="q-dropdown">
                     <option value=""></option>
@@ -90,7 +90,7 @@
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">24</span>
         <span style="flex: 1;">
-            trumpeter
+            the lighting
             <span class="q-question">
                 <select name="{{ $part['tipe'][1] }}-{{ $id }}-8" class="q-dropdown">
                     <option value=""></option>
@@ -111,7 +111,7 @@
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">25</span>
         <span style="flex: 1;">
-            trombonist
+            the costume design
             <span class="q-question">
                 <select name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-dropdown">
                     <option value=""></option>
@@ -132,7 +132,7 @@
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">26</span>
         <span style="flex: 1;">
-            percussionist
+            the music
             <span class="q-question">
                 <select name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-dropdown">
                     <option value=""></option>
@@ -152,7 +152,7 @@
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">27</span>
         <span style="flex: 1;">
-            percussionist
+            the actors’ delivery
             <span class="q-question">
                 <select name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-dropdown">
                     <option value=""></option>

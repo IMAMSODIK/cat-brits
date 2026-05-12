@@ -813,27 +813,27 @@
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-3[]" value="A" />
                                         <span class="opt-code">A</span>
-                                        <span class="opt-label">Mushrooms should always be peeled before eating.</span>
+                                        <span class="opt-label">Some are hard to hold.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-3[]" value="B" />
                                         <span class="opt-code">B</span>
-                                        <span class="opt-label">Mushrooms eaten by animals may be unsafe.</span>
+                                        <span class="opt-label">Some are worth buying.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-3[]" value="C" />
                                         <span class="opt-code">C</span>
-                                        <span class="opt-label">Cooking destroys toxins in mushrooms.</span>
+                                        <span class="opt-label">Some are essential items.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-3[]" value="D" />
                                         <span class="opt-code">D</span>
-                                        <span class="opt-label">Brightly coloured mushrooms can be edible.</span>
+                                        <span class="opt-label">Some have memorable names.</span>
                                     </label>
                                     <label class="q-option">
                                         <input type="checkbox" name="xQKeqKYrkqfdgotg-3[]" value="E" />
                                         <span class="opt-code">E</span>
-                                        <span class="opt-label">All poisonous mushrooms have a bad smell.</span>
+                                        <span class="opt-label">Some are available for use by participants.</span>
                                     </label>
                                 </div>
                             </fieldset>

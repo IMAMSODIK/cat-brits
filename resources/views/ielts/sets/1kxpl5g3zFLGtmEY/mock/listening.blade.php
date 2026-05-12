@@ -802,7 +802,7 @@
                         <ul>
                             <li>
                                 <div class="q-list" data-q="40" data-type="nc">
-                                    may ham fish and birds, e.g. by affecting
+                                    may harm fish and birds, e.g. by affecting
                                     <span class="q-number-box">40</span>
                                     <input type="text" name="nc-1kxpl5g3zFLGtmEY-20" data-type="nc" class="q-text"
                                         placeholder="">

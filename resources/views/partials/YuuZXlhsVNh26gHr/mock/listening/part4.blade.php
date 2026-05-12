@@ -15,65 +15,91 @@
     </tr>
     <tr>
         <td colspan="2">
-            Australian composer: Liza Lim
+            <ul>
+                <li>Australian composer: Liza Lim</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            studied piano and
-            <div class="q-item" data-q="31" style="display:inline-block;">
-                <span class="q-number-box">31</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text">
-            </div>
-            before turning to composition
+            <ul>
+                <li>
+                    studied piano and
+                    <div class="q-item" data-q="31" style="display:inline-block;">
+                        <span class="q-number-box">31</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-17" class="q-text">
+                    </div>
+                    before turning to composition
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            performers and festivals around the world have given her a lot of commissions
+            <ul>
+                <li>performers and festivals around the world have given her a lot of commissions</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            compositions show a great deal of
-            <div class="q-item" data-q="32" style="display:inline-block;">
-                <span class="q-number-box">32</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text">
-            </div>
-            and are drawn from various cultural sources
+            <ul>
+                <li>
+                    compositions show a great deal of
+                    <div class="q-item" data-q="32" style="display:inline-block;">
+                        <span class="q-number-box">32</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-18" class="q-text">
+                    </div>
+                    and are drawn from various cultural sources
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            her music is very expressive and also
-            <div class="q-item" data-q="33" style="display:inline-block;">
-                <span class="q-number-box">33</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    her music is very expressive and also
+                    <div class="q-item" data-q="33" style="display:inline-block;">
+                        <span class="q-number-box">33</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-19" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            festival will include her
-            <div class="q-item" data-q="34" style="display:inline-block;">
-                <span class="q-number-box">34</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text">
-            </div>
-            called The Oresteia
+            <ul>
+                <li>
+                    festival will include her
+                    <div class="q-item" data-q="34" style="display:inline-block;">
+                        <span class="q-number-box">34</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-20" class="q-text">
+                    </div>
+                    called The Oresteia
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            Lim described the sounds in The Oresteia as
-            <div class="q-item" data-q="35" style="display:inline-block;">
-                <span class="q-number-box">35</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-21" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    Lim described the sounds in The Oresteia as
+                    <div class="q-item" data-q="35" style="display:inline-block;">
+                        <span class="q-number-box">35</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-21" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            British composers: Ralph Vaughan Williams, Frederick Delius
+            <ul>
+                <li>British composers: Ralph Vaughan Williams, Frederick Delius</li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -81,40 +107,56 @@
     </tr>
     <tr>
         <td colspan="2">
-            British composers: Benjamin Britten, Judith Weir
+            <ul>
+                <li>British composers: Benjamin Britten, Judith Weir</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            Australian composer: Ross Edwards
+            <ul>
+                <li>Australian composer: Ross Edwards</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            festival will include The Tower of Remoteness, inspired by nature
+            <ul>
+                <li>festival will include The Tower of Remoteness, inspired by nature</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            The Tower of Remoteness is performed by piano and
-            <div class="q-item" data-q="36" style="display:inline-block;">
-                <span class="q-number-box">36</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-22" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    The Tower of Remoteness is performed by piano and
+                    <div class="q-item" data-q="36" style="display:inline-block;">
+                        <span class="q-number-box">36</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-22" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            compositions include music for children
+            <ul>
+                <li>compositions include music for children</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            celebrates Australia’s cultural
-            <div class="q-item" data-q="37" style="display:inline-block;">
-                <span class="q-number-box">37</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-23" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    celebrates Australia’s cultural
+                    <div class="q-item" data-q="37" style="display:inline-block;">
+                        <span class="q-number-box">37</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-23" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -122,50 +164,70 @@
     </tr>
     <tr>
         <td colspan="2">
-            Australian composer: Carl Vine
+            <ul>
+                <li>Australian composer: Carl Vine</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            played cornet then piano
+            <ul>
+                <li>played cornet then piano</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            studied
-            <div class="q-item" data-q="38" style="display:inline-block;">
-                <span class="q-number-box">38</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-24" class="q-text">
-            </div>
-            before studying music
+            <ul>
+                <li>
+                    studied
+                    <div class="q-item" data-q="38" style="display:inline-block;">
+                        <span class="q-number-box">38</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-24" class="q-text">
+                    </div>
+                    before studying music
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            worked in Sydney as a pianist and composer
+            <ul>
+                <li>worked in Sydney as a pianist and composer</li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            became well known as composer of music for
-            <div class="q-item" data-q="39" style="display:inline-block;">
-                <span class="q-number-box">39</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-25" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    became well known as composer of music for
+                    <div class="q-item" data-q="39" style="display:inline-block;">
+                        <span class="q-number-box">39</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-25" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            festival will include his music for the 1996
-            <div class="q-item" data-q="40" style="display:inline-block;">
-                <span class="q-number-box">40</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-26" class="q-text">
-            </div>
+            <ul>
+                <li>
+                    festival will include his music for the 1996
+                    <div class="q-item" data-q="40" style="display:inline-block;">
+                        <span class="q-number-box">40</span>
+                        <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-26" class="q-text">
+                    </div>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            British composers: Edward Elgar, Thomas Adès
+            <ul>
+                <li>British composers: Edward Elgar, Thomas Adès</li>
+            </ul>
         </td>
     </tr>
 </table>
