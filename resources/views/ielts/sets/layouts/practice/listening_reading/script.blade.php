@@ -1,20 +1,75 @@
 {{-- konversi nilai --}}
 <script>
-    let scoreMap = [
-        {min: 39, max: 40, score: 9.0},
-        {min: 37, max: 38, score: 8.5},
-        {min: 35, max: 36, score: 8.0},
-        {min: 33, max: 34, score: 7.5},
-        {min: 30, max: 32, score: 7.0},
-        {min: 27, max: 29, score: 6.5},
-        {min: 23, max: 26, score: 6.0},
-        {min: 19, max: 22, score: 5.5},
-        {min: 15, max: 18, score: 5.0},
-        {min: 13, max: 14, score: 4.5},
-        {min: 10, max: 12, score: 4.0},
-        {min: 8,  max: 9,  score: 3.5},
-        {min: 6,  max: 7,  score: 3.0},
-        {min: 4,  max: 5,  score: 2.5}
+    let scoreMap = [{
+            min: 39,
+            max: 40,
+            score: 9.0
+        },
+        {
+            min: 37,
+            max: 38,
+            score: 8.5
+        },
+        {
+            min: 35,
+            max: 36,
+            score: 8.0
+        },
+        {
+            min: 33,
+            max: 34,
+            score: 7.5
+        },
+        {
+            min: 30,
+            max: 32,
+            score: 7.0
+        },
+        {
+            min: 27,
+            max: 29,
+            score: 6.5
+        },
+        {
+            min: 23,
+            max: 26,
+            score: 6.0
+        },
+        {
+            min: 19,
+            max: 22,
+            score: 5.5
+        },
+        {
+            min: 15,
+            max: 18,
+            score: 5.0
+        },
+        {
+            min: 13,
+            max: 14,
+            score: 4.5
+        },
+        {
+            min: 10,
+            max: 12,
+            score: 4.0
+        },
+        {
+            min: 8,
+            max: 9,
+            score: 3.5
+        },
+        {
+            min: 6,
+            max: 7,
+            score: 3.0
+        },
+        {
+            min: 4,
+            max: 5,
+            score: 2.5
+        }
     ];
 
     function convertScore(correctCount) {
@@ -404,7 +459,8 @@
         document.addEventListener('click', e => {
             if (!toolbar.contains(e.target) &&
                 !notePopup.contains(e.target) &&
-                (!e.target.classList.contains('highlight') || !e.target.closest('.highlighted-content')) &&
+                (!e.target.classList.contains('highlight') || !e.target.closest(
+                    '.highlighted-content')) &&
                 !window.getSelection().toString()) {
                 hideToolbar();
                 hideNotePopup();
@@ -656,7 +712,7 @@
 {{-- script berfungsi untuk menampilkan modal, retry quiz dan proses submit --}}
 <script>
     $("#resultModal").removeClass("show").hide();
-    
+
     function showModal(title = "Hasil Jawaban Anda") {
         $("#modalScoreTitle").text(title);
         $("#resultModal").addClass("show");
@@ -666,7 +722,7 @@
     function closeModal() {
         $("#resultModal").removeClass("show");
         $("body").css("overflow", "auto");
-        
+
         setTimeout(function() {
             $("#resultModal").hide();
         }, 300);
@@ -706,14 +762,14 @@
     function submitHelper(form, setId, tipe, button, againBtn, namaTipe) {
         let allAnswered = true;
 
-        $(`#${form} select[data-q]`).each(function () {
+        $(`#${form} select[data-q]`).each(function() {
             if (!$(this).closest("fieldset").length) {
                 const q = $(this).data("q");
                 $(this).wrap(`<fieldset data-q="${q}" class="temp-fieldset"></fieldset>`);
             }
         });
 
-        $(`#${form} input[type="text"]`).each(function () {
+        $(`#${form} input[type="text"]`).each(function() {
             if (!$(this).closest("fieldset[data-q]").length) {
                 const q = $(this).prevAll(".q-number-box").first().text();
                 if (q) {
@@ -722,11 +778,11 @@
             }
         });
 
-        $(`#${form} fieldset[data-q]`).each(function () {
+        $(`#${form} fieldset[data-q]`).each(function() {
             let isAnswered = false;
             const inputs = $(this).find("input, select, textarea");
 
-            inputs.each(function () {
+            inputs.each(function() {
                 if ($(this).is("input[type=radio], input[type=checkbox]") && $(this).is(":checked")) {
                     isAnswered = true;
                 } else if ($(this).is("input[type=text], textarea") && $(this).val().trim() !== "") {
@@ -778,41 +834,42 @@
                     let questionNumber = 1;
 
                     $.each(response.results, function(qid, data) {
-                    let isCorrect = data.status === "correct";
+                        let isCorrect = data.status === "correct";
 
-                    // 2. Ambil CORRECT ANSWER dengan fallback
-                    let correctAnswer = data.correct || '';
-                    let userAnswer = data.user || '';
-                    if (!correctAnswer && isCorrect) {
-                        correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
-                    }
-                    if (!correctAnswer) {
-                        correctAnswer = "NOT GIVEN";
-                    }
+                        // 2. Ambil CORRECT ANSWER dengan fallback
+                        let correctAnswer = data.correct || '';
+                        let userAnswer = data.user || '';
+                        if (!correctAnswer && isCorrect) {
+                            correctAnswer = userAnswer; // kalau benar tapi backend gak kirim kunci
+                        }
+                        if (!correctAnswer) {
+                            correctAnswer = "NOT GIVEN";
+                        }
 
-                    // 3. Highlight input aslinya
-                    let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
-                    questionElement.find("input, select, textarea").each(function () {
-                        if ($(this).is("input[type=radio], input[type=checkbox]")) {
-                            if ($(this).is(":checked")) {
+                        // 3. Highlight input aslinya
+                        let questionElement = $(`fieldset[data-q="${qid.replace(/[^0-9]/g, '')}"]`);
+                        questionElement.find("input, select, textarea").each(function() {
+                            if ($(this).is("input[type=radio], input[type=checkbox]")) {
+                                if ($(this).is(":checked")) {
+                                    if (isCorrect) {
+                                        $(this).parent().addClass("correct");
+                                    } else {
+                                        $(this).parent().addClass("wrong");
+                                        $(`input[name="${qid}"][value="${correctAnswer}"]`)
+                                            .parent().addClass("correct");
+                                    }
+                                }
+                            } else {
                                 if (isCorrect) {
-                                    $(this).parent().addClass("correct");
+                                    $(this).addClass("correct");
                                 } else {
-                                    $(this).parent().addClass("wrong");
-                                    $(`input[name="${qid}"][value="${correctAnswer}"]`).parent().addClass("correct");
+                                    $(this).addClass("wrong");
                                 }
                             }
-                        } else {
-                            if (isCorrect) {
-                                $(this).addClass("correct");
-                            } else {
-                                $(this).addClass("wrong");
-                            }
-                        }
-                    });
+                        });
 
-                    // 4. Buat tabel baris
-                    tableRows += `
+                        // 4. Buat tabel baris
+                        tableRows += `
                         <tr>
                             <td><strong>${questionNumber++}</strong></td>
                             <td><span class="answer-display ${isCorrect ? 'answer-correct' : 'answer-wrong'}">${userAnswer}</span></td>
@@ -825,7 +882,7 @@
                             </td>
                         </tr>
                     `;
-                });
+                    });
 
 
                     $("#scoreDisplay").text(`${correctCount}/${total}`);
@@ -852,7 +909,7 @@
         });
     }
 
-    $(".try-again").on("click", function(){
+    $(".try-again").on("click", function() {
         location.reload();
     })
 </script>
