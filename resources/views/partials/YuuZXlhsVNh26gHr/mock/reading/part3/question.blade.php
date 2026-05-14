@@ -45,18 +45,17 @@
         (e.g. Rubin et al. 1983).
     </p>
 
-    <ul class="play-criteria">
-        <li><strong>Play is pleasurable:</strong> Children must enjoy the activity or it is not play.</li>
-        <li><strong>It is intrinsically motivated:</strong> Children engage in play simply for the satisfaction the
-            behavior itself brings. It has no extrinsically motivated function or goal.</li>
-        <li><strong>Play is process oriented:</strong> When children play, the means are more important than the ends.
-        </li>
-        <li><strong>It is freely chosen, spontaneous and voluntary:</strong> If a child is pressured, they will likely
-            not think of the activity as play.</li>
-        <li><strong>Play is actively engaged:</strong> Players must be physically and/or mentally involved in the
-            activity.</li>
-        <li><strong>Play is non-literal:</strong> It involves make-believe.</li>
-    </ul>
+    <p class="play-criteria">
+        Play is pleasurable: Children must enjoy the activity or it is not play.
+        It is intrinsically motivated: Children engage in play simply for the satisfaction the
+            behavior itself brings. It has no extrinsically motivated function or goal.
+        Play is process oriented: When children play, the means are more important than the ends.
+        It is freely chosen, spontaneous and voluntary: If a child is pressured, they will likely
+            not think of the activity as play.
+        Play is actively engaged: Players must be physically and/or mentally involved in the
+            activity.
+        Play is non-literal: It involves make-believe.
+    </p>
 
     <p>
         According to this view, children’s playful behaviors can range in degree from 0% to 100% playful. Rubin and

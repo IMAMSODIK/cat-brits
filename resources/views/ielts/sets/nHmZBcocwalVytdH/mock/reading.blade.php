@@ -22,7 +22,7 @@
                     ],
                     'part2' => [
                         'label' => 'Part 2',
-                        'tipe' => ['matching_information', 'summary_completion', 'mh'],
+                        'tipe' => ['matching_information', 'summary_completion'],
                         'contents' => [
                             'answer' => 'partials.nHmZBcocwalVytdH.mock.reading.part2.answer',
                             'question' => 'partials.nHmZBcocwalVytdH.mock.reading.part2.question',
@@ -30,7 +30,7 @@
                     ],
                     'part3' => [
                         'label' => 'Part 3',
-                        'tipe' => ['sentence_completion', 'tfng'],
+                        'tipe' => ['mh', 'sentence_completion', 'tfng'],
                         'contents' => [
                             'answer' => 'partials.nHmZBcocwalVytdH.mock.reading.part3.answer',
                             'question' => 'partials.nHmZBcocwalVytdH.mock.reading.part3.question',

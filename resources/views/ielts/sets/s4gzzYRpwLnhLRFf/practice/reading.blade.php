@@ -721,7 +721,7 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">1</span>
                                         <span style="flex: 1;">
-                                            In Greece, tourism the most important
+                                            In Greece, tourism is the most important
                                             <span class="q-question">
                                                 <input type="text" name="s4gzzYRpwLnhLRFf-1" class="q-text"
                                                     placeholder="">
@@ -1512,7 +1512,7 @@
                                         <label class="q-option">
                                             <input type="radio" name="s4gzzYRpwLnhLRFf-5" value="D" />
                                             <span class="opt-code">D</span>
-                                            <span class="opt-label">It made a large number of islands habitabl</span>
+                                            <span class="opt-label">It made a large number of islands habitable</span>
                                         </label>
                                     </div>
                                 </fieldset>

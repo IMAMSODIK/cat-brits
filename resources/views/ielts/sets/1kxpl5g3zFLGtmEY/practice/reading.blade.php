@@ -1345,7 +1345,7 @@
                                         and the
                                         <span class="q-number-box">5</span>
                                         <input type="text" name="1kxpl5g3zFLGtmEY-9" class="q-text" placeholder="">
-                                        Of the staff. A balance was required between a degree of freedom and maintaining work standards.
+                                        of the staff. A balance was required between a degree of freedom and maintaining work standards.
                                     </p>
                                 </fieldset>
 

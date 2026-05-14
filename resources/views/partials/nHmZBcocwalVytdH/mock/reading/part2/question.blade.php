@@ -5,6 +5,7 @@
         ingenious but forgotten architectural designs of the 19th and early-20th centuries
     </p>
 
+    <h3 class="passage-title">A</h3>
     <p>
         The Recovery of Natural Environments in Architecture by Professor Alan Short is the culmination of 30 years of
         research and award-winning green building design by Short and colleagues in Architecture, Engineering, Applied
@@ -17,6 +18,7 @@
         squander more and more energy on keeping our buildings mechanically cool until we have run out of capacity.’
     </p>
 
+    <h3 class="passage-title">B</h3>
     <p>
         Short is calling for a sweeping reinvention of how skyscrapers and major public buildings are designed – to end
         the reliance on sealed buildings which exist solely via the ‘life support’ system of vast air conditioning
@@ -29,6 +31,7 @@
         and aggressively marketed’ by their inventors.
     </p>
 
+    <h3 class="passage-title">C</h3>
     <p>
         Short points out that to make most contemporary buildings habitable, they have to be sealed and air conditioned.
         The energy use and carbon emissions this generates is spectacular and largely unnecessary. Buildings in the West
@@ -37,6 +40,7 @@
         status, rather than practical ways of meeting our requirements.
     </p>
 
+    <h3 class="passage-title">D</h3>
     <p>
         Short’s book highlights a developing and sophisticated art and science of ventilating buildings through the
         19th and earlier-20th centuries, including the design of ingeniously ventilated hospitals. Of particular
@@ -51,10 +55,13 @@
         systems in the room would have kept other patients safe from harm.
     </p>
 
+    <p>—————</p>
+
     <p>
         * pathogens: microorganisms that can cause disease
     </p>
 
+    <h3 class="passage-title">E</h3>
     <p>
         ‘We discovered that 19th-century hospital wards could generate up to 24 air changes an hour – that’s similar to
         the performance of a modern-day, computer-controlled operating theatre. We believe you could build wards based
@@ -73,6 +80,7 @@
         of the building was given over to ensuring everyone got fresh air.
     </p>
 
+    <h3 class="passage-title">F</h3>
     <p>
         Much of the ingenuity present in 19th-century hospital and building design was driven by a panicked public
         clamouring for buildings that could protect against what was thought to be the lethal threat of miasmas – toxic
@@ -87,6 +95,7 @@
         the building design principles produced in its wake.
     </p>
 
+    <h3 class="passage-title">G</h3>
     <p>
         Today, huge amounts of a building’s space and construction cost are given over to air conditioning. ‘But I have
         designed and built a series of buildings over the past three decades which have tried to reinvent some of these
@@ -99,6 +108,7 @@
         abandoned.’
     </p>
 
+    <h3 class="passage-title">H</h3>
     <p>
         Successful examples of Short’s approach include the Queen’s Building at De Montfort University in Leicester.
         Containing as many as 2,000 staff and students, the entire building is naturally ventilated, passively cooled
@@ -112,6 +122,7 @@
         30 years if climate modelling predictions and energy price rises come to pass as expected.
     </p>
 
+    <h3 class="passage-title">I</h3>
     <p>
         He is convinced that sufficiently cooled skyscrapers using the natural environment can be produced in almost
         any climate. He and his team have worked on hybrid buildings in the harsh climates of Beijing and Chicago –

@@ -348,8 +348,8 @@
                                         <td>Steps take you down 11 storeys to the bottom</td>
                                         <td>
                                             <div class="q-item" data-q="12" data-type="tc">
-                                                Old, deep and very dramatic Has
-                                                <span class="q-number-box">12</span>
+                                                Old, deep and very dramatic <br><br>
+                                                Has <span class="q-number-box">12</span>
                                                 <input type="text" name="tc-XJ3XOcvqPbgdZwyl-4" class="q-text" placeholder="">
                                                 which provide a view to the steps.
                                             </div>
@@ -1069,8 +1069,7 @@
                                     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                         <span class="q-number">31</span>
                                         <span style="flex: 1;">
-                                            The physical surroundings in which a person works play a key role in
-                                            determining their creativity.
+                                            Employees whose values match those of their employers are more likely to
                                             <span class="q-question">
                                                 <select name="mse-XJ3XOcvqPbgdZwyl-1" class="q-dropdown">
                                                     <option value=""></option>

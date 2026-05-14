@@ -36,12 +36,12 @@ reading
 - parts dipindahkan ke bagian bawah
 
 - CAMBRIDGE 10 TEST 1 (konten)
-- CAMBRIDGE 10 TEST 2 (konten)
-- CAMBRIDGE 10 TEST 3 (konten)
-- CAMBRIDGE 14 TEST 1 (konten)
-- CAMBRIDGE 14 TEST 2 (timer masih 13 menit dan konten)
-- CAMBRIDGE 14 TEST 3 (konten)
-- CAMBRIDGE 14 TEST 4 (timer masih 13 menit dan konten)
+- CAMBRIDGE 10 TEST 2 (konten) (done)
+- CAMBRIDGE 10 TEST 3 (konten) (done)
+- CAMBRIDGE 14 TEST 1 (konten) (done)
+- CAMBRIDGE 14 TEST 2 (timer masih 13 menit dan konten) (done)
+- CAMBRIDGE 14 TEST 3 (konten) (done)
+- CAMBRIDGE 14 TEST 4 (timer masih 13 menit dan konten) (done)
 - CAMBRIDGE 16 TEST 1 (timer masih 13 menit dan konten)
 - CAMBRIDGE 16 TEST 2 (konten)
 - CAMBRIDGE 16 TEST 3 (konten)

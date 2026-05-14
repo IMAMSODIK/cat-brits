@@ -33,8 +33,8 @@
                 <fieldset class="q-item">
                     <h3>Questions 1-3</h3>
                     <p class="lead">Complete the sentences below.</p>
-                    <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
-                    <p><i>Write your answers in boxes on your answer sheet</i></p>
+                    <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+                    <p><i>Write your answers in boxes <b>35-37</b> on your answer sheet</i></p>
                 </fieldset>
 
                 <fieldset class="q-item questions-item" data-q="1">

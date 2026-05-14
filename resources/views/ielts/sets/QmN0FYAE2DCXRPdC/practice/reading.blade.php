@@ -387,7 +387,7 @@
                                     <ul class="legend">
                                         <li><strong>i</strong> The search for the reasons for an increase in population</li>
                                         <li><strong>ii</strong> Industrialisation and the fear of unemployment</li>
-                                        <li><strong>iii</strong> The development of cities in Japan 4 The time and place of the Industrial Revolution</li>
+                                        <li><strong>iii</strong> The development of cities in Japan 4</li>
                                         <li><strong>iv</strong> The time and place of the Industrial Revolution</li>
                                         <li><strong>v</strong> The cases of Holland, France and China</li>
                                         <li><strong>vi</strong> Changes in drinking habits in Britain</li>

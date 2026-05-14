@@ -310,7 +310,6 @@
                                     <p class="lead">The Reading Passage has seven paragraphs,  <b>A-G</b>.</p>
                                     <p>Which paragraph contains the following information?</p>
                                     <p class="lead">Write the correct letter, <b>A-G</b>, in boxes on your answer sheet <br> <b>NB</b> You may use any letter more than once.</p>
-                                    <p><b>NB</b>  You may use any letter more than once.</p>
                                 </fieldset>
 
                                 <fieldset class="q-item" data-type="matching_information" data-q="14">
@@ -814,7 +813,7 @@
                                         and the
                                         <span class="q-number-box">40</span>
                                         <input type="text" name="summary_completion-1kxpl5g3zFLGtmEY-9" data-q="40" data-type="summary_completion" class="q-text" placeholder="">
-                                        Of the staff. A balance was required between a degree of freedom and maintaining work standards.
+                                        of the staff. A balance was required between a degree of freedom and maintaining work standards.
                                     </p>
                                 </fieldset>
                             </form>
