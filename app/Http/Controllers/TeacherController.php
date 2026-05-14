@@ -15,11 +15,7 @@ class TeacherController extends Controller
         try {
             $data = [
                 'pageTitle' => "Teachers",
-                'data'      => User::where('role', 'teacher')
-                    ->orderBy('status', 'desc')
-                    ->orderBy('id', 'desc')
-                    ->take(20)
-                    ->get()
+                'data'      => User::where('role', 'teacher')->orderBy('status', 'desc')->orderBy('id', 'desc')->take(20)->get()
             ];
 
             return view('teacher.index', $data);

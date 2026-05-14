@@ -562,7 +562,7 @@ $("#search").on('input', function () {
     let text = $(this).val();
 
     $.ajax({
-        url: "/students/search",
+        url: "/teacher/search",
         method: "GET",
         data: { q: text },
         success: function (response) {
@@ -633,7 +633,7 @@ $("#load-more").on("click", function() {
     button.prop("disabled", true).text("Loading...");
 
     $.ajax({
-        url: "/students/load-more",
+        url: "/teacher/load-more",
         method: "GET",
         data: { offset: offset },
         success: function(response) {

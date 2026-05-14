@@ -57,7 +57,9 @@ class StudentController extends Controller
                 'email'    => $request->email,
                 'password' => bcrypt($request->email),
                 'foto'  => $path,
-                'role'     => 'student'
+                'role'     => 'student',
+                'status' => 1,
+                'verification_status' => 1
             ]);
 
             return response()->json([
