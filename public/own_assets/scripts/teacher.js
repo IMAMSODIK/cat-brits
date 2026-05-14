@@ -154,6 +154,7 @@ $("#edit_foto").on("change", function () {
 });
 
 $("#store").on("click", function () {
+    console.log("Store button clicked");
     let formData = new FormData();
     let button = $(this);
 
