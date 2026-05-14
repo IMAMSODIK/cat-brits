@@ -58,7 +58,7 @@ class TeacherController extends Controller
                 'foto'  => $path,
                 'role'     => 'teacher',
                 'status' => 1,
-                'verification_status' => 1
+                'verification_status' => 0
             ]);
 
             return response()->json([
