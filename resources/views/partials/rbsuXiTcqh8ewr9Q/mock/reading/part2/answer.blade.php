@@ -5,8 +5,8 @@
     <p>Which paragraph contains the following information?</p>
     <p class="lead">
         Write the correct letter, <b>A–G</b>, in boxes on your answer sheet.
-        <b>NB</b> You may use any letter more than once.
     </p>
+    <p><b>NB</b> You may use any letter more than once.</p>
 </fieldset>
 
 <fieldset class="q-item" data-q="14">

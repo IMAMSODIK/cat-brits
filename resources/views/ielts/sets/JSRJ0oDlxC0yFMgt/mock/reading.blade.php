@@ -685,6 +685,10 @@
                                 <p>Around 1486 – after a pestilence that killed half the population in Milan, Italy – Leonardo turned his thoughts to urban planning problems. Following a typical Renaissance trend, he began to work on an ‘ideal city’ project, which – due to its excessive costs – would remain unfulfilled. Yet given that unsustainable urban models are a key cause of global climate change today, it’s only natural to wonder how Leonardo might have changed the shape of modem cities.</p>
                                 <p>Although the Renaissance is renowned as an era of incredible progress in art and architecture, it is rarely noted that the 15th century also marked the birth of urbanism as a true academic discipline. The rigour and method behind the conscious conception of a city had been largely missing in Western thought until the moment when prominent Renaissance men pushed forward large-scale urban projects in Italy, such as the reconfiguration of the town of Pienza and the expansion of the city of Ferrara. These works surely inspired Leonardo’s decision to rethink the design of medieval cities, with their winding and overcrowded streets and with houses piled against one another.</p>
                                 <p>It is not easy to identify a coordinated vision of Leonardo’s ideal city because of his disordered way of working with notes and sketches. But from the largest collection of Leonardo’s papers ever assembled, a series of innovative thoughts can be reconstructed regarding the foundation of a new city along the Ticino River, which runs from Switzerland into Italy and is 248 kilometres long. He designed the city for the easy transport of goods and clean urban spaces, and he wanted a comfortable and spacious city, with well-ordered streets and architecture. He recommended ‘high, strong walls’, with ‘towers and battlements of all necessary and pleasant beauty’.</p>
+                                <p>His plans for a modem and ‘rational’ city were consistent with Renaissance ideals. But, in keeping with his personality, Leonardo included several innovations in his urban design. Leonardo wanted the city to be built on several levels, linked with vertical outdoor staircases. This design can be seen in some of today’s high-rise buildings but was unconventional at the time. Indeed, this idea of taking full advantage of the interior spaces wasn’t implemented until the 1920s and 1930s, with the birth of the Modernist movement.</p>
+                                <p>While in the upper layers of the city, people could walk undisturbed between elegant palaces and streets, the lower layer was the place for services, trade, transport and industry. But the true originality of Leonardo’s vision was its fusion of architecture and engineering. Leonardo designed extensive hydraulic plants to create artificial canals throughout the city. The canals, regulated by clocks and basins, were supposed to make it easier for boats to navigate inland. Leonardo also thought that the width of the streets ought to match the average height of the adjacent houses: a rule still followed in many contemporary cities across Italy, to allow access to sun and reduce the risk of damage from earthquakes.</p>
+                                <p>Although some of these features existed in Roman cities, before Leonardo’s drawings there had never been a multi-level, compact modem city which was thoroughly technically conceived. Indeed, it wasn’t until the 19th century that some of his ideas were applied. For example, the subdivision of the city by function- with services and infrastructures located in the lower levels and wide and well-ventilated boulevards and walkways above for residents – is an idea that can be found in Georges-Eugene Haussmann’s renovation of Paris under Emperor Napoleon III between 1853 and 1870.</p>
+                                <p>Today, Leonardo’s ideas are not simply valid, they actually suggest a way forward for urban planning. Many scholars think that the compact city, built upwards instead of outwards, integrated with nature (especially water systems), with efficient transport infrastructure, could help modem cities become more efficient and sustainable. This is yet another reason why Leonardo was aligned so closely with modem urban planning and centuries ahead of his time.</p>
                             </div>
                         </article>
 
@@ -883,7 +887,7 @@
 
                                     <p>
                                         A collection of Leonardo da Vinci’s paperwork reveals his design of a new city beside the Ticino River. This was to provide better
-                                        <span class="q-number-box">1</span>
+                                        <span class="q-number-box">34</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-4" data-q="34" data-type="summary_completion" class="q-text"
@@ -891,7 +895,7 @@
                                             </span>
                                         </span>
                                         for trade and a less polluted environment. Although Leonardo da Vinci’s city shared many of the ideals of his time, some of his innovations were considered unconventional in their design. They included features that can be seen in some tower blocks today, such as
-                                        <span class="q-number-box">2</span>
+                                        <span class="q-number-box">35</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-5" data-q="35" data-type="summary_completion" class="q-text"
@@ -903,7 +907,7 @@
 
                                     <p>
                                         Leonardo da Vinci wasn’t only an architect. His expertise in
-                                        <span class="q-number-box">3</span>
+                                        <span class="q-number-box">36</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-6" data-q="36" data-type="summary_completion" class="q-text"
@@ -911,7 +915,7 @@
                                             </span>
                                         </span>
                                         was evident in his plans for artificial canals within his ideal city. He also believed that the height of houses should relate to the width of streets in case earthquakes occurred. The design of many cities in Italy today follows this
-                                        <span class="q-number-box">4</span>
+                                        <span class="q-number-box">37</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-7" data-q="37" data-type="summary_completion" class="q-text"
@@ -922,7 +926,7 @@
 
                                     <p>
                                         While some cities from
-                                        <span class="q-number-box">5</span>
+                                        <span class="q-number-box">38</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-8" data-q="38" data-type="summary_completion" class="q-text"
@@ -930,7 +934,7 @@
                                             </span>
                                         </span>
                                         times have aspects that can also be found in Leonardo’s designs, his ideas weren’t put into practice until long after his  death.
-                                        <span class="q-number-box">6</span>
+                                        <span class="q-number-box">39</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-9" data-q="39" data-type="summary_completion" class="q-text"
@@ -938,7 +942,7 @@
                                             </span>
                                         </span>
                                         is one example of a city that was redesigned in the 19th century in the way that Leonardo had envisaged. His ideas are also relevant to today’s world, where building
-                                        <span class="q-number-box">7</span>
+                                        <span class="q-number-box">40</span>
                                         <span style="flex: 1;">
                                             <span class="q-question">
                                                 <input type="text" name="summary_completion-JSRJ0oDlxC0yFMgt-10" data-q="40" data-type="summary_completion" class="q-text"

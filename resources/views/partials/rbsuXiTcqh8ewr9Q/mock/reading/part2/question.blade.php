@@ -5,6 +5,7 @@
         pursuers
     </p>
 
+    <h3>A</h3>
     <p>
         When one mentions pirates, an image springs to most people’s minds of a crew of misfits, daredevils and
         adventurers in command of a tall sailing ship in the Caribbean Sea. Yet from the first to the third millennium
@@ -16,6 +17,7 @@
         piracy, transforming the Mediterranean into ‘Mare Nostrum’ (Our Sea).
     </p>
 
+    <h3>B</h3>
     <p>
         Although piracy in the Mediterranean is first recorded in ancient Egypt during the reign of Pharaoh Amenhotep
         III (c 1390-1353 BCE), it is reasonable to assume it predated this powerful civilisation. This is partly due to
@@ -32,6 +34,7 @@
         retaliation once a state fleet arrived.
     </p>
 
+    <h3>C</h3>
     <p>
         One should also add that it was not unknown in the first and second millennia BCE for governments to resort to
         pirates’ services, especially during wartime, employing their skills and numbers against their opponents. A
@@ -39,6 +42,7 @@
         known for providing safe harbours to pirates, who, in return, boosted the local economy.
     </p>
 
+    <h3>D</h3>
     <p>
         The first known record of a named group of Mediterranean pirates, made during the rule of ancient Egyptian
         Pharaoh Akhenaten (c 1353-1336 BCE), was in the Amarna Letters. These were extracts of diplomatic correspondence
@@ -49,6 +53,7 @@
         Turkey). The king assured Akhenaten he was prepared to punish any of his subjects involved in piracy.
     </p>
 
+    <h3>E</h3>
     <p>
         The ancient Greek world’s experience of piracy was different from that of Egyptian rulers. While Egypt’s power
         was land-based, the ancient Greeks relied on the Mediterranean in almost all aspects of life, from trade to
@@ -62,6 +67,7 @@
         to curtail piracy were hampered by the large number of pirates operating in the Mediterranean.
     </p>
 
+    <h3>F</h3>
     <p>
         The rising power of ancient Rome required the Roman Republic to deal with piracy in the Mediterranean. While
         piracy was a serious issue for the Republic, Rome profited greatly from its existence. Pirate raids provided a
@@ -73,6 +79,7 @@
         captured in 75 BCE.
     </p>
 
+    <h3>G</h3>
     <p>
         By now, Rome was well aware that pirates had outlived their usefulness. The time had come for concerted action.
         In 67 BCE, a new law granted Pompey vast funds to combat the Mediterranean menace. Taking personal command,

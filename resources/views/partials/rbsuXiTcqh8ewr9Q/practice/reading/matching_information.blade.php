@@ -8,11 +8,13 @@
             <article class="passage" aria-label="Reading Passage" tabindex="0">
                 <h3 class="passage-title">The pirates of the ancient Mediterranean</h3>
                 <div class="passage-body">
+                    <p>In the first and second millennia BCE, pirates sailed around the Mediterranean, attacking ships and avoiding pursuers</p>
+                    <h3>A</h3>
                     <p>
                         In the first and second millennia BCE, pirates sailed around the Mediterranean,
                         attacking ships and avoiding pursuers. When one mentions pirates, an image springs
                         to most people’s minds of a crew of misfits, daredevils and adventurers in command
-                        of a tall sailing ship in the Caribbean Sea.<span class="q-number">4</span> Yet from the
+                        of a tall sailing ship in the Caribbean Sea. Yet from the
                         first to the third millennium BCE, thousands of years before these swashbucklers
                         began spreading fear across the Caribbean, pirates prowled the Mediterranean,
                         raiding merchant ships and threatening vital trade routes. However, despite all
@@ -23,6 +25,7 @@
                         Rome eradicated piracy, transforming the Mediterranean into ‘Mare Nostrum’ (Our Sea).
                     </p>
 
+                    <h3>B</h3>
                     <p>
                         Although piracy in the Mediterranean is first recorded in ancient Egypt during
                         the reign of Pharaoh Amenhotep III (c 1390–1353 BCE), it is reasonable to assume
@@ -43,6 +46,7 @@
                         helped the pirates to avoid retaliation once a state fleet arrived.
                     </p>
 
+                    <h3>C</h3>
                     <p>
                         One should also add that it was not unknown in the first and second millennia BCE
                         for governments to resort to pirates’ services, especially during wartime,
@@ -52,6 +56,7 @@
                         in return, boosted the local economy.
                     </p>
 
+                    <h3>D</h3>
                     <p>
                         The first known record of a named group of Mediterranean pirates, made during the
                         rule of ancient Egyptian Pharaoh Akhenaten (c 1353–1336 BCE), was in the Amarna
@@ -65,6 +70,7 @@
                         his subjects involved in piracy.<span class="q-number">1</span>
                     </p>
 
+                    <h3>E</h3>
                     <p>
                         The ancient Greek world’s experience of piracy was different from that of Egyptian
                         rulers. While Egypt’s power was land-based, the ancient Greeks relied on the
@@ -80,6 +86,7 @@
                         themselves.
                     </p>
 
+                    <h3>F</h3>
                     <p>
                         The rising power of ancient Rome required the Roman Republic to deal with piracy in
                         the Mediterranean. While piracy was a serious issue for the Republic, Rome profited
@@ -93,6 +100,7 @@
                         was none other than Julius Caesar, captured in 75 BCE.
                     </p>
 
+                    <h3>G</h3>
                     <p>
                         By now, Rome was well aware that pirates had outlived their usefulness. The time
                         had come for concerted action. In 67 BCE, a new law granted Pompey vast funds to
@@ -120,8 +128,8 @@
                         <p>Which paragraph contains the following information?</p>
                         <p class="lead">
                             Write the correct letter, <b>A–G</b>, in boxes on your answer sheet.
-                            <b>NB</b> You may use any letter more than once.
                         </p>
+                        <p><b>NB</b> You may use any letter more than once.</p>
                     </fieldset>
 
                     <fieldset class="q-item" data-q="1">
