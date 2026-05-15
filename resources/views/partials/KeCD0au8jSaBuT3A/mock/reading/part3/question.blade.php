@@ -4,10 +4,11 @@
 
 <div class="passage-body">
     <p>
-        Satellites, rocket shards and collision debris are creating major traffic risks in orbit around the planet.
-        Researchers are working to reduce these threats
+        <i>Satellites, rocket shards and collision debris are creating major traffic risks in orbit around the planet.
+        Researchers are working to reduce these threats</i>
     </p>
 
+    <h3>A</h3>
     <p>
         Last year, commercial companies, military and civil departments and amateurs sent more than 400 satellites into
         orbit, over four times the yearly average in the previous decade. Numbers could rise even more sharply if
@@ -24,6 +25,7 @@
         fuel that could otherwise be used for the spacecraft’s main job.
     </p>
 
+    <h3>B</h3>
     <p>
         Concern about space junk goes back to the beginning of the satellite era, but the number of objects in orbit is
         rising so rapidly that researchers are investigating new ways of attacking the problem. Several teams are trying
@@ -41,6 +43,7 @@
         Lafayette, Indiana.
     </p>
 
+    <h3>C</h3>
     <p>
         Even as our ability to monitor space objects increases, so too does the total number of items in orbit. That
         means companies, governments and other players in space are collaborating in new ways to avoid a shared threat.
@@ -55,6 +58,7 @@
         are probably not going to spend money to remove their satellites from space.’
     </p>
 
+    <h3>D</h3>
     <p>
         In theory, given the vastness of space, satellite operators should have plenty of room for all these missions to
         fly safely without ever nearing another object. So some scientists are tackling the problem of space junk by
@@ -64,6 +68,7 @@
         Aerospace Corporation in El Segundo, California.
     </p>
 
+    <h3>E</h3>
     <p>
         The field is called space traffic management, because it’s similar to managing traffic on the roads or in the
         air. Think about a busy day at an airport, says Moriba Jah, an astrodynamicist at the University of Texas at
@@ -73,6 +78,7 @@
         tracked consistently.
     </p>
 
+    <h3>F</h3>
     <p>
         An additional problem is that there is no authoritative catalogue that accurately lists the orbits of all known
         space debris. Jah illustrates this with a web-based database that he has developed. It draws on several sources,

@@ -3,13 +3,11 @@
 </div>
 
 <div class="passage-body">
-    <p><strong>A</strong></p>
     <p>
         In Paris, urban farmers are trying a soil-free approach to agriculture that uses less space and fewer resources.
         Could it help cities face the threats to our food supplies?
     </p>
 
-    <p><strong>B</strong></p>
     <p>
         On top of a striking new exhibition hall in southern Paris, the world’s largest urban rooftop farm has started
         to bear fruit. Strawberries that are small, intensely flavoured and resplendently red sprout abundantly from
@@ -19,7 +17,6 @@
         with soil but with coconut fibre, grow cherry tomatoes, shiny aubergines and brightly coloured chards.
     </p>
 
-    <p><strong>C</strong></p>
     <p>
         Pascal Hardy, an engineer and sustainable development consultant, began experimenting with vertical farming and
         aeroponic growing towers- as the soil-free plastic tubes are known – on his Paris apartment block roof five
@@ -32,7 +29,6 @@
         vegetables, every day.
     </p>
 
-    <p><strong>D</strong></p>
     <p>
         ‘We’re not ever, obviously, going to feed the whole city this way,’ cautions Hardy. ‘In the urban environment
         you’re working with very significant practical constraints, clearly, on what you can do and where. But if
@@ -40,14 +36,12 @@
         between 5% and 10% of consumption.’
     </p>
 
-    <p><strong>E</strong></p>
     <p>
         Perhaps most significantly, however, this is a real-life showcase for the work of Hardy’s flourishing urban
         agriculture consultancy, Agripolis, which is currently fielding enquiries from around the world to design, build
         and equip a new breed of soil-free inner-city farm.
     </p>
 
-    <p><strong>F</strong></p>
     <p>
         ‘The method’s advantages are many,’ he says. ‘First, I don’t much like the fact that most of the fruit and
         vegetables we eat have been treated with something like 17 different pesticides, or that the intensive farming
@@ -57,14 +51,12 @@
         the price I pay goes to wholesalers and transport companies, not the producers.’
     </p>
 
-    <p><strong>G</strong></p>
     <p>
         Produce grown using this soil-free method, on the other hand- which relies solely on a small quantity of water,
         enriched with organic nutrients, pumped around a closed circuit of pipes, towers and trays- is ‘produced up
         here, and sold locally, just down there. It barely travels at all,’ Hardy says.
     </p>
 
-    <p><strong>H</strong></p>
     <p>
         ‘You can select crop varieties for their flavour, not their resistance to the transport and storage chain, and
         you can pick them when they’re really at their best, and not before.’ No soil is exhausted, and the water that
@@ -72,14 +64,12 @@
         intensive farm for the same yield.
     </p>
 
-    <p><strong>I</strong></p>
     <p>
         Urban farming is not, of course, a new phenomenon. Inner-city agriculture is booming from Shanghai to Detroit
         and Tokyo to Bangkok. Strawberries are being grown in disused shipping containers, mushrooms in underground
         carparks.
     </p>
 
-    <p><strong>J</strong></p>
     <p>
         Aeroponic farming, he says, is ‘virtuous’. The equipment weighs little, can be installed on almost any flat
         surface and is cheap to buy: roughly €100 to €150 per square metre. It is cheap to run, too, consuming a tiny

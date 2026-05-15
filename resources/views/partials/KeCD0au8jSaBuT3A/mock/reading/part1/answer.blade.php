@@ -51,60 +51,67 @@
     <p><i>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</i></p>
 </fieldset>
 
+<p style="text-align: center"><b>Intensive farming versus aeroponic urban farming</b></p>
+
 <table border="1" cellpadding="8" cellspacing="0"
     style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
 
     <tr style="text-align: center">
-        <th colspan="2"><b>Intensive farming versus aeroponic urban farming</b></th>
-    </tr>
-
-    <tr style="text-align: center">
-        <td><b>Growth / Selection / Sale</b></td>
-        <td><b>Details</b></td>
-    </tr>
-
-    <tr>
-        <td><b>Intensive farming</b></td>
-        <td>
-            wide range of
-            <div class="q-item" data-q="4" style="display:inline-block;">
-                <span class="q-number-box">4</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
-            </div>
-            used<br>
-            techniques pollute air<br>
-            quality not good
-        </td>
-    </tr>
-
-    <tr>
         <td></td>
+        <td><b>Growth</b></td>
+        <td><b>Selection</b></td>
+        <td><b>Sale</b></td>
+    </tr>
+
+    <tr>
+        <td>Intensive farming</td>
         <td>
-            varieties of fruit and vegetables chosen that can survive long
-            <div class="q-item" data-q="5" style="display:inline-block;">
-                <span class="q-number-box">5</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
-            </div>
+            <ul>
+                <li>
+                    wide range of
+                    <div class="q-item" data-q="4" style="display:inline-block;">
+                        <span class="q-number-box">4</span>
+                        <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text" placeholder="">
+                    </div> used
+                </li>
+                <li>techniques pollute air</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Quality not good</li>
+                <li>
+                    varieties of fruit and vegetables chosen that can survive long
+                    <div class="q-item" data-q="5" style="display:inline-block;">
+                        <span class="q-number-box">5</span>
+                        <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text" placeholder="">
+                    </div>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>
+                    <div class="q-item" data-q="6" style="display:inline-block;">
+                        <span class="q-number-box">6</span>
+                        <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
+                            placeholder="">
+                    </div>
+                    receive very little of overall income
+                </li>
+            </ul>
         </td>
     </tr>
 
     <tr>
-        <td></td>
+        <td>Aeroponic urban farming</td>
         <td>
-            <div class="q-item" data-q="6" style="display:inline-block;">
-                <span class="q-number-box">6</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
-            </div>
-            receive very little of overall income
+            <ul>
+                <li>no soil used</li>
+                <li>nutrients added to water, which is recycled</li>
+            </ul>
         </td>
-    </tr>
-
-    <tr>
-        <td style="text-align: center"><b>Aeroponic urban farming</b></td>
         <td>
-            no soil used<br>
-            nutrients added to water, which is recycled<br>
             produce chosen because of its
             <div class="q-item" data-q="7" style="display:inline-block;">
                 <span class="q-number-box">7</span>
@@ -112,6 +119,7 @@
                     placeholder="">
             </div>
         </td>
+        <td></td>
     </tr>
 </table>
 <fieldset class="q-item">

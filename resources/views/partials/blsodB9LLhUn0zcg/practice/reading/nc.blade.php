@@ -29,42 +29,34 @@
                     <p><i>Write your answers in boxes on your answer sheet</i></p>
                 </fieldset>
                 <fieldset class="q-item">
-                    <p><b>The Step Pyramid of Djoser</b></p>
-                    <ul>
-                        <li>
-                            <div class="q-list" data-q="1">
-                                The complex that includes the Step Pyramid and its surroundings is considered to be as
-                                big as an Egyptian
-                                <span class="q-number-box">1</span>
-                                <input type="text" name="blsodB9LLhUn0zcg-1" class="q-text" placeholder="">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="q-list" data-q="2">
-                                of the past. The area outside the pyramid included accommodation that was occupied by
-                                <span class="q-number-box">2</span>
-                                <input type="text" name="blsodB9LLhUn0zcg-2" class="q-text" placeholder="">
-                                along with many other buildings and features.
-                            </div>
-                        </li>
-                        <li>
-                            <div class="q-list" data-q="3">
-                                A wall ran around the outside of the complex and a number of false entrances were built
-                                into this. In addition, a long
-                                <span class="q-number-box">3</span>
-                                <input type="text" name="blsodB9LLhUn0zcg-3" class="q-text" placeholder="">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="q-list" data-q="4">
-                                encircled the wall. As a result, any visitors who had not been invited were cleverly
-                                prevented from entering the pyramid grounds unless they knew the
-                                <span class="q-number-box">4</span>
-                                <input type="text" name="blsodB9LLhUn0zcg-4" class="q-text" placeholder="">
-                                of the real entrance.
-                            </div>
-                        </li>
-                    </ul>
+                    <p style="text-align: center"><b>The Step Pyramid of Djoser</b></p>
+                    <p>
+                        <div class="q-list" data-q="1">
+                            The complex that includes the Step Pyramid and its surroundings is considered to be as
+                            big as an Egyptian
+                            <span class="q-number-box">1</span>
+                            <input type="text" name="blsodB9LLhUn0zcg-1" class="q-text" placeholder="">
+                        </div>
+                        <div class="q-list" data-q="2">
+                            of the past. The area outside the pyramid included accommodation that was occupied by
+                            <span class="q-number-box">2</span>
+                            <input type="text" name="blsodB9LLhUn0zcg-2" class="q-text" placeholder="">
+                            along with many other buildings and features.
+                        </div>
+                        <div class="q-list" data-q="3">
+                            A wall ran around the outside of the complex and a number of false entrances were built
+                            into this. In addition, a long
+                            <span class="q-number-box">3</span>
+                            <input type="text" name="blsodB9LLhUn0zcg-3" class="q-text" placeholder="">
+                        </div>
+                        <div class="q-list" data-q="4">
+                            encircled the wall. As a result, any visitors who had not been invited were cleverly
+                            prevented from entering the pyramid grounds unless they knew the
+                            <span class="q-number-box">4</span>
+                            <input type="text" name="blsodB9LLhUn0zcg-4" class="q-text" placeholder="">
+                            of the real entrance.
+                        </div>
+                    </p>
                 </fieldset>
                 <div style="text-align: center;">
                     <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">

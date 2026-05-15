@@ -375,7 +375,6 @@
                                     <h3>Questions 1-5</h3>
                                     <p class="lead">Complete the notes below.</p>
                                     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
-                                    <p><b>The London underground railway</b></p>
                                 </fieldset>
 
                                 <fieldset class="q-item">

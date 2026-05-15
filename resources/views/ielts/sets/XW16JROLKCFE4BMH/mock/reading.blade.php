@@ -105,7 +105,7 @@
                                 <fieldset class="q-item" data-type="tfng" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        A recent dating of the Uffington White Horse indicates that people were mistaken about its
+                                        A recent dating of the Uffington White Horse indicates that people were mistaken about its age.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
@@ -259,7 +259,7 @@
                                     <ul>
                                         <li>a distance of 2.5 km from Uffington village</li>
                                         <li>
-                                            <div class="q-list"
+                                            <div class="q-list">
                                                 near an ancient road known as the
                                                 <span class="q-number-box">9</span>
                                                 <input type="text"  name="summary_completion-XW16JROLKCFE4BMH-1" class="q-text" placeholder="" data-type="summary_completion" data-q="9">
@@ -608,7 +608,7 @@
                                 <fieldset class="q-item" data-type="ynng" data-q="23">
                                     <legend class="q-text">
                                         <span class="q-number">23</span>
-                                        Yong’s book contains more cause studies than are necessary.
+                                        Yong’s book contains more case studies than are necessary.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 23 options">
                                         <label class="q-option">

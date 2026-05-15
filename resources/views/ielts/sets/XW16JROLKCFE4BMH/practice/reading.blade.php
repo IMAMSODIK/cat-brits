@@ -434,7 +434,7 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        A recent dating of the Uffington White Horse indicates that people were mistaken about its
+                                        A recent dating of the Uffington White Horse indicates that people were mistaken about its age.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">
@@ -1035,7 +1035,7 @@
                                 <fieldset class="q-item" data-q="3">
                                     <legend class="q-text">
                                         <span class="q-number">3</span>
-                                        Yong’s book contains more cause studies than are necessary.
+                                        Yong’s book contains more case studies than are necessary.
                                     </legend>
                                     <div class="q-options" role="radiogroup" aria-label="Question 3 options">
                                         <label class="q-option">

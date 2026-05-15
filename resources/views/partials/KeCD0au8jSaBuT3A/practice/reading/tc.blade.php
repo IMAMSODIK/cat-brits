@@ -46,45 +46,47 @@
                     <p><i>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</i></p>
                 </fieldset>
 
+                <p style="text-align: center"><b>Intensive farming versus aeroponic urban farming</b></p>
+
                 <table border="1" cellpadding="8" cellspacing="0"
                     style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
 
                     <tr style="text-align: center">
-                        <th colspan="2"><b>Intensive farming versus aeroponic urban farming</b></th>
-                    </tr>
-
-                    <tr style="text-align: center">
-                        <td><b>Growth / Selection / Sale</b></td>
-                        <td><b>Details</b></td>
+                        <td></td>
+                        <td><b>Growth</b></td>
+                        <td><b>Selection</b></td>
+                        <td><b>Sale</b></td>
                     </tr>
 
                     <tr>
                         <td><b>Intensive farming</b></td>
                         <td>
-                            wide range of
-                            <div class="q-item" data-q="1" style="display:inline-block;">
-                                <span class="q-number-box">1</span>
-                                <input type="text" name="KeCD0au8jSaBuT3A-1" class="q-text" placeholder="">
-                            </div>
-                            used<br>
-                            techniques pollute air<br>
-                            quality not good
+                            <ul>
+                                <li>
+                                    wide range of
+                                    <div class="q-item" data-q="1" style="display:inline-block;">
+                                        <span class="q-number-box">1</span>
+                                        <input type="text" name="KeCD0au8jSaBuT3A-1" class="q-text" placeholder="">
+                                    </div>
+                                    used
+                                </li>
+                                <li>
+                                    techniques pollute air
+                                </li>
+                            </ul>
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
                         <td>
-                            varieties of fruit and vegetables chosen that can survive long
-                            <div class="q-item" data-q="2" style="display:inline-block;">
-                                <span class="q-number-box">2</span>
-                                <input type="text" name="KeCD0au8jSaBuT3A-2" class="q-text" placeholder="">
-                            </div>
+                            <ul>
+                                <li>quality not good</li>
+                                <li>
+                                    varieties of fruit and vegetables chosen that can survive long
+                                    <div class="q-item" data-q="2" style="display:inline-block;">
+                                        <span class="q-number-box">2</span>
+                                        <input type="text" name="KeCD0au8jSaBuT3A-2" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
                         <td>
                             <div class="q-item" data-q="3" style="display:inline-block;">
                                 <span class="q-number-box">3</span>
@@ -97,13 +99,21 @@
                     <tr>
                         <td style="text-align: center"><b>Aeroponic urban farming</b></td>
                         <td>
-                            no soil used<br>
-                            nutrients added to water, which is recycled<br>
-                            produce chosen because of its
-                            <div class="q-item" data-q="4" style="display:inline-block;">
-                                <span class="q-number-box">4</span>
-                                <input type="text" name="KeCD0au8jSaBuT3A-4" class="q-text" placeholder="">
-                            </div>
+                            <ul>
+                                <li>no soil used</li>
+                                <li>nutrients added to water, which is recycled</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>
+                                    produce chosen because of its
+                                    <div class="q-item" data-q="4" style="display:inline-block;">
+                                        <span class="q-number-box">4</span>
+                                        <input type="text" name="KeCD0au8jSaBuT3A-4" class="q-text" placeholder="">
+                                    </div>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                 </table>

@@ -151,46 +151,38 @@
     <p><i>Write your answers in boxes on your answer sheet</i></p>
 </fieldset>
 <fieldset class="q-item">
-    <p><b>The Step Pyramid of Djoser</b></p>
-    <ul>
-        <li>
-            <div class="q-list" data-q="21">
-                The complex that includes the Step Pyramid and its surroundings is considered to be as
-                big as an Egyptian
-                <span class="q-number-box">21</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
-                    placeholder="">
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="22">
-                of the past. The area outside the pyramid included accommodation that was occupied by
-                <span class="q-number-box">22</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
-                    placeholder="">
-                along with many other buildings and features.
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="23">
-                A wall ran around the outside of the complex and a number of false entrances were built
-                into this. In addition, a long
-                <span class="q-number-box">23</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
-                    placeholder="">
-            </div>
-        </li>
-        <li>
-            <div class="q-list" data-q="24">
-                encircled the wall. As a result, any visitors who had not been invited were cleverly
-                prevented from entering the pyramid grounds unless they knew the
-                <span class="q-number-box">24</span>
-                <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
-                    placeholder="">
-                of the real entrance.
-            </div>
-        </li>
-    </ul>
+    <p style="text-align: center"><b>The Step Pyramid of Djoser</b></p>
+    <p>
+        <div class="q-list" data-q="21">
+            The complex that includes the Step Pyramid and its surroundings is considered to be as
+            big as an Egyptian
+            <span class="q-number-box">21</span>
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-text"
+                placeholder="">
+        </div>
+        <div class="q-list" data-q="22">
+            of the past. The area outside the pyramid included accommodation that was occupied by
+            <span class="q-number-box">22</span>
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-text"
+                placeholder="">
+            along with many other buildings and features.
+        </div>
+        <div class="q-list" data-q="23">
+            A wall ran around the outside of the complex and a number of false entrances were built
+            into this. In addition, a long
+            <span class="q-number-box">23</span>
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-text"
+                placeholder="">
+        </div>
+        <div class="q-list" data-q="24">
+            encircled the wall. As a result, any visitors who had not been invited were cleverly
+            prevented from entering the pyramid grounds unless they knew the
+            <span class="q-number-box">24</span>
+            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-text"
+                placeholder="">
+            of the real entrance.
+        </div>
+    </p>
 </fieldset>
 <fieldset class="q-item">
     <p class="lead"><b>Questions 25-26</b></p>

@@ -44,10 +44,11 @@
                                     <h3>Questions 1-6</h3>
                                     <p class="lead">Complete the notes below.</p>
                                     <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
-                                    <p><b>The London underground railway</b></p>
+                                    <p>Write your answer in your boxes 1-6 on your answer sheet.</p>
                                 </fieldset>
 
                                 <fieldset class="q-item">
+                                    <p style="text-align: center"><b>The London underground railway</b></p>
                                     <p><b>The problem</b></p>
                                     <ul>
                                         <li>
@@ -92,7 +93,6 @@
                                                 Negative articles about the project appeared in the
                                                 <span class="q-number-box">5</span>
                                                 <input type="text" name="nc-QUApDKzp0Wn1GCiA-5" class="q-text" placeholder="">
-                                                needed for the project
                                             </div>
                                         </li>
                                     </ul>

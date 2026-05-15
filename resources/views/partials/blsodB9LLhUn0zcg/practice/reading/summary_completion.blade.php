@@ -57,9 +57,8 @@
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
                     <h3>Questions 1-4</h3>
-                    <p class="lead">Complete the summary below.</p>
-                    <p><i>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</i></p>
-                    <p><i>Write your answers in boxes on your answer sheet.</i></p>
+                    <p class="lead">Complete the summary using the list of words, <b>A-G</b> below.</p>
+                    <p><i>Write the correct letter, <b>A-G</b>, in boxes 1-4 on your answer sheet</i></p>
                     <table style="width: 100%; border-collapse: collapse; text-align: left;">
                         <tr>
                             <td style="width: 33.33%;"><b>A</b>&nbsp;&nbsp;pressure</td>
