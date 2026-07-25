@@ -1,85 +1,78 @@
-<div class="passage-title">TWO WINGS AND A TOOLKIT</div>
-<div class="passage-body">
-    <b>A research team at Oxford University discover the remarkable tool making skills of New
-        Caledonian crows</b>
-    <p>
-        Betty and her mate Able are captive crows in the care of Alex Kacelnik, an expert in
-        animal behaviour at Oxford University. They belong to a forest-dwelling species of bird
-        (Corvus moneduloides) confined to two islands in the South Pacific. New Caledonian
-        crows are tenacious predators, and the only birds that habitually use a wide selection of
-        self-made tools to find food.
-    </p>
-    <p>
-        One of the wild crows’ cleverest tools is the crochet hook, made by detaching a side
-        twig from a larger one, leaving enough of the larger twig to shape into a hook. Equally
-        cunning is a tool crafted from the barbed vine-leaf, which consists of a central rib with
-        paired leaflets each with a rose-like thorn at its base. They strip out a piece of this rib,
-        removing the leaflets and all but one thorn at the top, which remains as a ready-made
-        hook to prise out insects from awkward cracks.
-    </p>
-    <p>
-        The crows also make an ingenious tool called a padanus probe from padanus tree
-        leaves. The tool has a broad base, sharp tip, a row of tiny hooks along one edge, and a
-        tapered shape created by the crow nipping and tearing to form a progression of three or
-        four steps along the other edge of the leaf. What makes this tool special is that they
-        manufacture it to a standard design, as if following a set of instructions. Although it is
-        rare to catch a crow in the act of clipping out a padanus probe, we do have ample proof
-        of their workmanship: the discarded leaves from which the tools are cut. The
-        remarkable thing that these ‘counterpart’ leaves tell us is that crows consistently
-        produce the same design every time, with no in-between or trial versions. It’s left the
-        researchers wondering whether, like people, they envisage the tool before they start
-        and perform the actions they know are needed to make it. Research has revealed that
-        genetics plays a part in the less sophisticated toolmaking skills of finches in the
-        Galapagos islands. No one knows if that’s also the case for New Caledonian crows, but
-        it’s highly unlikely that their toolmaking skills are hardwired into the brain. ‘The picture
-        so far points to a combination of cultural transmission - from parent birds to their young -
-        and individual resourcefulness,’ says Kacelnik.
-    </p>
-    <p>
-        In a test at Oxford, Kacelnik’s team offered Betty and Abel an original challenge - food in
-        a bucket at the bottom of a ‘well’. The only way to get the food was to hook the bucks
-        out by its handle. Given a choice of tools - a straight length wire and one with a hooked
-        end - the birds immediately picked the hook, showing that they did indeed understand
-        the functional properties of the tool.
-    </p>
-    <p>
-        But do they also have the foresight and creativity to plan the construction of their tools?
-        It appears they do. In one bucket-in-well test, Abel carried off the hook, leaving Betty
-        with nothing but the straight wire. ‘What happened next was absolutely amazing,’ says
-        Kacelnik. She wedged the tip of the wire into a crack in a plastic dish and pulled the
-        other end to fashion her own hook. Wild crows don’t have access to pliable, bendable
-        material that retains its shape, and Betty’s one similar experience was a brief encounter
-        with some pipe cleaners a year earlier. In nine out of ten further tests, she again made
-        hooks and retrieved the bucket.
-    </p>
-    <p>
-        The question of what’s going on in a crow’s mind will take time and a lot more
-        experiments to answer, but there could be a lesson in it for understanding our own
-        evolution. Maybe our ancestors, who suddenly began to create symmetrical tools with
-        carefully worked edges some 1.5 million years ago, didn’t actually have the
-        sophisticated mental abilities with which we credit them. Closer scrutiny of the brains of
-        New Caledonian crows might provide a few pointers to the special attributes they would
-        have needed. ‘If we’re lucky, we may find specific developments in the brain that set
-        these animals apart,’’ says Kacelnik.
-    </p>
-    <p>
-        One of these might be a very strong degree of laterality - the specialisation of one side
-        of the brain to perform specific tasks. In people, the left side of the brain controls the
-        processing of complex sequential tasks, and also language and speech. One of the
-        consequences of this is thought to be right-handedness. Interestingly, biologists have
-        noticed that most padanus probes are cut from the left side of the leaf, meaning that the
-        birds clip them with the right side of their beaks - the crow equivalent of
-        right-handedness. The team thinks this reflects the fact that the left side of the crown’s
-        brain is specialised to handle sequential processing required to make complex tools.
-    </p>
-    <p>
-        Under what conditions might this extraordinary talent have emerged in these two
-        species? They are both social creatures, and wide-ranging in their feeding habits.
-        These factors were probably important but, ironically, it may have been their
-        shortcomings that triggered the evolution of toolmaking. Maybe the ancestors of crows
-        and humans found themselves in a position where they couldn’t make the physical
-        adaptations required for survival - so they had to change their behaviour instead. The
-        stage was then set for the evolution of those rare cognitive skills that produce
-        sophisticated tools. New Caledonian crows may tell us what those crucial skills are.
-    </p>
-</div>
+
+    <div class="passage-title">Why some women cross the finish line ahead of men</div>
+    <div class="passage-body">
+        <h3>A</h3>
+        <p>
+            Seaweed is a particularly nutritious food, which absorbs and concentrates traces of a wide
+            variety of minerals necessary to the body’s health. Many elements may occur in seaweed –
+            aluminium, barium, calcium, chlorine, copper, iodine and iron, to name but a few – traces
+            normally produced by erosion and carried to the seaweed beds by river and sea currents. Seaweeds
+            are also rich in vitamins: indeed, Eskimos obtain a high proportion of their bodily requirements
+            of vitamin C from the seaweeds they eat.
+        </p>
+        <p>
+            The nutritive value of seaweed has long been recognised. For instance, there is a
+            remarkably low incidence of goitre amongst the Japanese, and for that matter, amongst
+            our own Maori people, who have always eaten seaweeds, and this may well be
+            attributed to the high iodine content of this food. Research into old Maori eating customs
+            shows that jellies were made using seaweeds, fresh fruit and nuts, fuchsia and tutu
+            berries, cape gooseberries, and many other fruits which either grew here naturally or
+            were sown from seeds brought by settlers and explorers.
+        </p>
+        <h3>B</h3>
+        <p>
+            The study concentrated on applications for management positions in the $45,000 to $110,000
+            salary range and found that women are more successful than men in both the private and public
+            sectors.Dr Elisabeth Marx from London-based NB Selection described the findings as encouraging
+            for women, in that they send a positive message to them to apply for interesting management
+            positions.But she added, "We should not lose sight of the fact that significantly fewer women
+            apply for senior positions in comparison with men."
+        </p>
+        <h3>C</h3>
+        <p>
+            Reasons for higher success rates among women are difficult to isolate.One explanation suggested
+            is that if a woman candidate manages to get on a shortlist, then she has probably already proved
+            herself to be an exceptional candidate.Dr Marx said that when women apply for positions they
+            tend to be better qualified than their male counterparts but are more selective and conservative
+            in their job search.Women tend to research thoroughly before applying for positions or attending
+            interviews.Men, on the other hand, seem to rely on their ability to sell themselves and to
+            convince employers that any shortcomings they have will not prevent them from doing a good job.
+        </p>
+        <h3>D</h3>
+        <p>
+            Managerial and executive progress made by women is confirmed by the annual survey of boards of
+            directors carried out by Korn / Ferry / Carre / Orban International.This year the survey shows a
+            doubling of the number of women serving as non-executive directors compared with the previous
+            year.However, progress remains painfully slow and there were still only 18 posts filled by women
+            out of a total of 354 non-executive positions surveyed.Hilary Sears, a partner with Korn /
+            Ferry, said, "Women have raised the level of grades we are employed in but we have still not
+            broken through barriers to the top."
+        </p>
+        <h3>E</h3>
+        <p>
+            In Europe a recent feature of corporate life in the recession has been the delayering of
+            management structures.Sears said that this has halted progress for women in as much as
+            delayering has taken place either where women are working or in layers they aspire to.Sears also
+            noted a positive trend from the recession, which has been the growing number of women who have
+            started up on their own.
+        </p>
+        <h3>F</h3>
+        <p>
+            In business as a whole, there are a number of factors encouraging the prospect of greater
+            equality in the workforce.Demographic trends suggest that the number of women going into
+            employment is steadily increasing.In addition a far greater number of women are now passing
+            through higher education, making them better qualified to move into management positions.
+        </p>
+        <h3>G</h3>
+        <p>
+            Organisations such as the European Women's Management Development Network provide a range of
+            opportunities for women to enhance their skills and contacts.Through a series of both
+            pan-European and national workshops and conferences the barriers to women in employment are
+            being broken down.However, Ariane Berthoin Antal, director of the International Institute for
+            Organisational Change of Archamps in France, said that there is only anecdotal evidence of
+            changes in recruitment patterns.And she said, "It's still so hard for women to even get on to
+            shortlists - there are so many hurdles and barriers."Antal agreed that there have been some
+            positive signs but said "Until there is a belief among employers, until they value the
+            difference, nothing will change."
+        </p>
+    </div>

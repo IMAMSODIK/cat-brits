@@ -1293,7 +1293,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 });
-
             console.log(data);
             $.ajax({
                 url: '/ielts/mock-test/check-v2',
@@ -1464,7 +1463,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(data)
 
-            // ========================== AJAX ==========================
             $.ajax({
                 url: '/ielts/mock-test/check-v2',
                 type: 'POST',

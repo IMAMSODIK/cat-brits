@@ -71,96 +71,163 @@
         <aside class="qa" aria-label="Questions">
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
-                    <h3>Questions 1-3</h3>
+                    <h3>Questions 1-6</h3>
                     <p class="lead">
-                        Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>
+                        Do the following statements agree with the claims of the writer in Reading Passage 3?
                     </p>
+                    <p>In boxes <b>1-6</b> on your answer sheet, choose</p>
+                    <ul class="legend">
+                        <li><strong>YES</strong> if the statement agrees with the claims of the writer</li>
+                        <li><strong>NO</strong> if the statement contradicts the claims of the writer</li>
+                        <li><strong>NOT GIVEN</strong> if it is impossible to say what the writer thinks about this</li>
+                    </ul>
                 </fieldset>
 
                 <!-- Question 1 -->
                 <fieldset class="q-item" data-q="1">
                     <legend class="q-text">
                         <span class="q-number">1</span>
-                        Politicians may have 'misjudged the public mood' because ...
+                        The research findings report commercial rather than political trends.
                     </legend>
                     <div class="q-options">
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="A">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="YES">
                             <span class="opt-code">A</span>
-                            <span class="opt-label">they are pre-occupied with the recession and financial problems.</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="B">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="NO">
                             <span class="opt-code">B</span>
-                            <span class="opt-label">there is more widespread interest in the environment agenda than they anticipated.</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="C">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="NOT GIVEN">
                             <span class="opt-code">C</span>
-                            <span class="opt-label">consumer spending has increased significantly as a result of 'green' pressure.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-1" value="D">
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">shoppers are displeased with government policies on a range of issues.</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>
 
+                <!-- Question 2 -->
                 <fieldset class="q-item" data-q="2">
                     <legend class="q-text">
                         <span class="q-number">2</span>
-                        What is Mintel?
+                        Being financially better off has made shoppers more sensitive to buying 'green'.
                     </legend>
                     <div class="q-options">
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="A">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="YES">
                             <span class="opt-code">A</span>
-                            <span class="opt-label">an environmentalist group</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="B">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="NO">
                             <span class="opt-code">B</span>
-                            <span class="opt-label">a business survey organisation</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="C">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="NOT GIVEN">
                             <span class="opt-code">C</span>
-                            <span class="opt-label">an academic research team</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-2" value="D">
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">a political organisation</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>
 
+                <!-- Question 3 -->
                 <fieldset class="q-item" data-q="3">
                     <legend class="q-text">
                         <span class="q-number">3</span>
-                        A consumer expressing concern for environmental issues without actively supporting such principles is...
+                        The majority of shoppers are prepared to pay more for the benefit of the environment according to the research findings.
                     </legend>
                     <div class="q-options">
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="A">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="YES">
                             <span class="opt-code">A</span>
-                            <span class="opt-label">an 'ethical spender'.</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="B">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="NO">
                             <span class="opt-code">B</span>
-                            <span class="opt-label">a 'very dark green' spender.</span>
+                            <span class="opt-label">NO</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="C">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="NOT GIVEN">
                             <span class="opt-code">C</span>
-                            <span class="opt-label">an 'armchair green'.</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Question 4 -->
+                <fieldset class="q-item" data-q="4">
+                    <legend class="q-text">
+                        <span class="q-number">4</span>
+                        Consumers' green shopping habits are influenced by Mintel's findings.
+                    </legend>
+                    <div class="q-options">
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="YES">
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="2uSKN2WwOj6EYc1X-3" value="D">
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">a 'pale green' spender.</span>
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="NO">
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-4" value="NOT GIVEN">
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Question 5 -->
+                <fieldset class="q-item" data-q="5">
+                    <legend class="q-text">
+                        <span class="q-number">5</span>
+                        Mintel have limited their investigation to professional and managerial groups.
+                    </legend>
+                    <div class="q-options">
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="YES">
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="NO">
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-5" value="NOT GIVEN">
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="q-item" data-q="6">
+                    <legend class="q-text">
+                        <span class="q-number">6</span>
+                        Mintel undertakes market surveys on an annual basis.
+                    </legend>
+                    <div class="q-options">
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="YES">
+                            <span class="opt-code">A</span>
+                            <span class="opt-label">YES</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="NO">
+                            <span class="opt-code">B</span>
+                            <span class="opt-label">NO</span>
+                        </label>
+                        <label class="q-option">
+                            <input type="radio" name="2uSKN2WwOj6EYc1X-6" value="NOT GIVEN">
+                            <span class="opt-code">C</span>
+                            <span class="opt-label">NOT GIVEN</span>
                         </label>
                     </div>
                 </fieldset>

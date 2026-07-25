@@ -26,7 +26,7 @@ class PT01 extends Seeder
                     "[New Zealand, NZ carrageen(s), New Zealand carrageen]",
                     "agar",
                     "seameal",
-                    "cough mixtures",
+                    "[cough mixtures, cough mixtures]",
                     "crochet hook",
                     "[leaflets, leaves]",
                     "thorn",
@@ -37,36 +37,43 @@ class PT01 extends Seeder
                     "C",
                     "A",
 
+                    "E",
+                    "G",
                     "A",
-                    "D",
                     "C",
-                    "B",
+                    "F",
+                    "D",
 
-                    "C",
-                    "B",
-                    "D",
-                    "B",
                     "A",
+                    "S",
+                    "M",
+                    "S",
+                ],
+                "sentence_completion" => [
+                    "[double, doubled, doubling]",
+                    "de-layering",
+                    "demographic trends",
+                ],
+
+                "ynng" => [
+                    "YES",
+                    "NO",
+                    "YES",
+                    "NOT GIVEN",
+                    "NO",
+                    "NOT GIVEN",
+                ],
+
+                "oc" => [
+                    "B",
+                    "B",
                     "C"
                 ],
-                "tfng" => [
-                    "TRUE",
-                    "TRUE",
-                    "FALSE",
-                    "TRUE",
-                    "NOT GIVEN",
-                    "FALSE"
-                ],
-                "oc" => [
-                    "C",
-                    "D",
-                    "F"
-                ],
                 "summary_completion" => [
-                    "Mesopotamia",
-                    "Clay tablets",
-                    "Cuneiform",
-                    "abstract"
+                    "C",
+                    "F",
+                    "B",
+                    "K"
                 ]
 
             ]
@@ -107,7 +114,7 @@ class PT01 extends Seeder
                     "leave",
                     "[three months , 3 months]",
                     "The Secret Garden",
-                    "[(the) 20th century , (the) twentieth century]",
+                    "[the 20th century, 20th century, the twentieth century, twentieth century]",
                     "walk",
                     "[motivations , motivation]",
                     "abstract ideas",
@@ -118,13 +125,13 @@ class PT01 extends Seeder
                     "Human Companionship"
                 ],
                 "map_labeling" => [
-                    "SHOE RACK",
-                    "[CARPET,CIRCULAR CARPET,BIG CIRCULAR CARPET]",
-                    "BOOKCASE",
-                    "DRESS UP CUPBOARD",
-                    "[CUBBYHOLE , LITTLE CUBBYHOLES]",
-                    "[CLIMBING WALLS , THREE CLIMBING WALLS]",
-                    "CHICKENS",
+                    "Shoe Rack",
+                    "[Carpet, Circular Carpet, Big Circular Carpet]",
+                    "Bookcase",
+                    "Dress Up Cupboard",
+                    "[Cubbyholes, Little Cubbyholes]",
+                    "[Climbing Walls, Three Climbing Walls]",
+                    "Chickens",
                     "[ear drum , eardrum]",
                     "auditory nerve",
                     "speech processor",

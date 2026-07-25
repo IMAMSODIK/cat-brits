@@ -6,7 +6,6 @@
     <p>Write the correct number, <b>i-x</b>, in boxes on your answer sheet.</p>
     <p><b>List of Headings</b></p>
     <ul class="legend">
-        <li><strong>i</strong> The areas and artefacts within the pyramid itself</li>
         <li><strong>i</strong> Locations and features of different seaweeds</li>
         <li><strong>ii</strong> Various products of seaweeds</li>
         <li><strong>iii</strong> Use of seaweeds in Japan</li>
@@ -185,11 +184,11 @@
     <p><b>A.</b> Green seaweeds</p>
     <p><b>B.</b> Brown seaweeds</p>
     <p><b>C.</b> Red seaweed</p>
-    <p>Which section contains the following information?</p>
     <p class="lead">
         Write the correct letter, <b>A, B, </b>or <b>C</b>, on your answer sheet.
     </p>
 </fieldset>
+
 
 <fieldset class="q-item" data-q="11">
     <legend class="q-text">

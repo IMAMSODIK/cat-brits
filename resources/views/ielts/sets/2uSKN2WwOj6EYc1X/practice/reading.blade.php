@@ -27,31 +27,6 @@
                     'title' => 'Matching Information',
                     'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.matching_information',
                 ],
-
-                // part 2
-                [
-                    'id' => 'picture_completion2',
-                    'tipe' => 'picture_completion',
-                    'namaTipe' => 'Picture Completion',
-                    'title' => 'Picture Completion 2',
-                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.picture_completion2',
-                ],
-                [
-                    'id' => 'tfng',
-                    'tipe' => 'tfng',
-                    'namaTipe' => 'True/False/Not Given',
-                    'title' => 'True/False/Not Given',
-                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.tfng',
-                ],
-                [
-                    'id' => 'oc',
-                    'tipe' => 'oc',
-                    'namaTipe' => 'One Choice',
-                    'title' => 'One Choice',
-                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.oc',
-                ],
-
-                // part 3
                 [
                     'id' => 'matching_information2',
                     'tipe' => 'matching_information',
@@ -65,6 +40,27 @@
                     'namaTipe' => 'Matching Information',
                     'title' => 'Matching Information 3',
                     'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.matching_information3',
+                ],
+                [
+                    'id' => 'sentence_completion',
+                    'tipe' => 'sentence_completion',
+                    'title' => 'Sentence Completion',
+                    'namaTipe' => 'Sentence Completion',
+                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.sentence_completion',
+                ],
+                [
+                    'id' => 'ynng',
+                    'tipe' => 'ynng',
+                    'namaTipe' => 'Yes/No/Not Given',
+                    'title' => 'Yes/No/Not Given',
+                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.ynng',
+                ],
+                [
+                    'id' => 'oc',
+                    'tipe' => 'oc',
+                    'namaTipe' => 'One Choice',
+                    'title' => 'One Choice',
+                    'content' => 'partials.2uSKN2WwOj6EYc1X.practice.reading.oc',
                 ],
                 [
                     'id' => 'summary_completion',

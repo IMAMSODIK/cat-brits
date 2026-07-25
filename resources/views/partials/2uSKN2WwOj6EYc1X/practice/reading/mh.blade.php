@@ -26,6 +26,7 @@
                         shows that jellies were made using seaweeds, fresh fruit and nuts, fuchsia and tutu
                         berries, cape gooseberries, and many other fruits which either grew here naturally or
                         were sown from seeds brought by settlers and explorers.
+
                     </p>
                     <h3>B</h3>
                     <p>
@@ -100,9 +101,9 @@
                 <form class="qa-body" id="form-{{ $tab['id'] }}">
                     <fieldset class="q-item">
                         <h3 class="lead"><b>Question 1-6</b></h3>
-                        <p class="lead">The Reading Passage has seven paragraphs, <b>A-F</b>.</p>
-                        <p>Choose the correct heading for paragraphs from the list of headings below.</p>
-                        <p>Write the correct number, <b>i-x</b>, in boxes on your answer sheet.</p>
+                        <p class="lead">Reading Passage 1 has six paragraphs, <b>A-F</b>.</p>
+                        <p><i>Choose the correct heading for each section from the list of headings below.</i></p>
+                        <p><i>Write the correct number i-x in boxes 1-6 on your answer sheet.</i></p>
                         <p><b>List of Headings</b></p>
                         <ul class="legend">
                             <li><strong>i</strong>&nbsp;&nbsp;Locations and features of different seaweeds</li>

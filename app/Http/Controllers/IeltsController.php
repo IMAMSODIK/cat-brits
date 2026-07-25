@@ -960,25 +960,6 @@ class IeltsController extends Controller
             $results = [];
             $q = 1;
 
-
-            // $filledAnswers = collect($data)
-            //     ->pluck('answer')
-            //     ->filter(function ($answer) {
-            //         return !(
-            //             is_null($answer) ||
-            //             $answer === '' ||
-            //             (is_string($answer) && json_decode($answer, true) === [null])
-            //         );
-            //     });
-
-
-
-            // if ($filledAnswers->isEmpty()) {
-            //     throw new \Exception('Tidak ada jawaban yang dikirim.', 400);
-            // }
-
-
-
             foreach ($data as $item) {
                 $parts = explode('-', $item['name']);
                 $type = $parts[0] ?? null;

@@ -1,276 +1,251 @@
 @props(['part', 'id'])
 <fieldset class="q-item">
-    <p>
-    <h3>Questions 14-17</h3>
-    </p>
-    <p>Label the diagram below.</p>
-    <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
-    <p><b>Three Tools Made By Crows</b></p>
-    <p><i>Write your answers in boxes <b>14-17</b> on your answer sheet.</i></p>
-    <div class="d-flex">
-        <img src="{{ asset('own_assets/images/P02-4.png') }}" alt="Sports Super Centre"
-            style="max-width: 100%; height: auto;" />
-    </div>
+    <fieldset class="q-item">
+        <p class="lead"><b>Questions 14–19</b></p>
+        <p>
+            <i>Reading Passage 2 has 7 paragraphs (<b>A</b>-<b>G</b>). State which paragraph
+                discusses each of the points below. Write the appropriate letter (<b>A</b>-<b>G</b>) in
+                boxes 14-19 on your answer sheet.</i>
+        </p>
+        <div
+            style="background-color: #dcdcdc; padding: 15px 20px; max-width: 800px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div style="font-style: italic; margin-bottom: 8px;">Example</div>
+                <div style="font-weight: bold;">The salary range studied in the NB
+                    Selection survey.</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-style: italic; margin-bottom: 8px;">Answer</div>
+                <div style="font-weight: bold; padding-right: 20px;">B</div>
+            </div>
+        </div>
+    </fieldset>
+
     <fieldset class="q-item" data-q="14">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="1">
-                <span class="q-number-box">14</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-text" />
+        <legend class="q-text">
+            <span class="q-number">14</span>
+            The drawbacks of current company restructuring patterns.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-4" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
             </span>
         </legend>
     </fieldset>
+
     <fieldset class="q-item" data-q="15">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="2">
-                <span class="q-number-box">15</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-text" />
+        <legend class="q-text">
+            <span class="q-number">15</span>
+            Associations that provide support for professional women.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-5" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
             </span>
         </legend>
     </fieldset>
+
     <fieldset class="q-item" data-q="16">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="3">
-                <span class="q-number-box">16</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-text" />
+        <legend class="q-text">
+            <span class="q-number">16</span>
+            The success rate of female job applicants for management positions.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-6" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
             </span>
         </legend>
     </fieldset>
+
     <fieldset class="q-item" data-q="17">
-        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-            <span class="q-item" data-q="4">
-                <span class="q-number-box">17</span>
-                <input type="text" name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-text" />
+        <legend class="q-text">
+            <span class="q-number">17</span>
+            Male and female approaches to job applications.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-7" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
             </span>
         </legend>
     </fieldset>
-</fieldset>
-<fieldset class="q-item">
-    <h3>Questions 18-23</h3>
-    <p class="lead">
-        Do the following statements agree with the information given in Reading Passage 1?
-    </p>
-    <p>In boxes <b>18-23</b> on your answer sheet, write</p>
-    <ul class="legend">
-        <li><strong>TRUE</strong> if the statement agrees with the information</li>
-        <li><strong>FALSE</strong> if the statement contradicts the information</li>
-        <li><strong>NOT GIVEN</strong> if there is no information on this</li>
-    </ul>
-</fieldset>
-<!-- Question 1 -->
-<fieldset class="q-item" data-q="18">
-    <legend class="q-text">
-        <span class="q-number">18</span>
-        There appears to be a fixed pattern for the padanus probe’s construction.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-1" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-1" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-1" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
 
-<!-- Question 2 -->
-<fieldset class="q-item" data-q="19">
-    <legend class="q-text">
-        <span class="q-number">19</span>
-        There is plenty of evidence to indicate how the crows manufacture the padanus
-        probe.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-2" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-2" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-2" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
+    <fieldset class="q-item" data-q="18">
+        <legend class="q-text">
+            <span class="q-number">18</span>
+            Reasons why more women are being employed in the business sector.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-8" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
 
-<!-- Question 3 -->
-<fieldset class="q-item" data-q="20">
-    <legend class="q-text">
-        <span class="q-number">20</span>
-        Crows seem to practice a number of times before making a usable padanus probe.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-3" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-3" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-3" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
+    <fieldset class="q-item" data-q="19">
+        <legend class="q-text">
+            <span class="q-number">19</span>
+            The improvement in female numbers on company management structures.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][0] }}-{{ $id }}-9" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</Cption>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
 
-<!-- Question 4 -->
-<fieldset class="q-item" data-q="21">
-    <legend class="q-text">
-        <span class="q-number">21</span>
-        The researchers suspect the crows have a mental image of the padanus probe
-        before they create it.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-4" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-4" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-4" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
+    <fieldset class="q-item">
+        <p class="lead"><b>Questions 20–23</b></p>
+        <p class="lead"><i>The author makes reference to three consultants in the Reading Passage. Which of the list
+                of points below do these consultants make? In boxes 20-23 write</i></p>
+        <p style="tab-size: 4;"><b>M</b>&#9;if the point is made by Dr Marx</p>
+        <p style="tab-size: 4;"><b>S</b>&#9;if the point is made by Hilary Sears</p>
+        <p style="tab-size: 4;"><b>A</b>&#9;if the point is made by Ariane Berthoin Antal</p>
+    </fieldset>
 
-<!-- Question 5 -->
-<fieldset class="q-item" data-q="22">
-    <legend class="q-text">
-        <span class="q-number">22</span>
-        Research into how the padanus probe is made has helped to explain the
-        toolmaking skills of many other bird species.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-5" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-5" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-5" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
+    <fieldset class="q-item" data-q="20">
+        <legend class="q-text">
+            <span class="q-number">20</span>
+            Selection procedures do not favour women.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="M">M</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
 
-<fieldset class="q-item" data-q="23">
-    <legend class="q-text">
-        <span class="q-number">23</span>
-        The researchers believe the ability to make the padanus probe is passed down to
-        the crows in their genes.
-    </legend>
-    <div class="q-options">
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-6" value="TRUE">
-            <span class="opt-code">A</span>
-            <span class="opt-label">TRUE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-6" value="FALSE">
-            <span class="opt-code">B</span>
-            <span class="opt-label">FALSE</span>
-        </label>
-        <label class="q-option">
-            <input type="radio" name="{{ $part['tipe'][1] }}-{{ $id }}-6" value="NOT GIVEN">
-            <span class="opt-code">C</span>
-            <span class="opt-label">NOT GIVEN</span>
-        </label>
-    </div>
-</fieldset>
-<fieldset class="q-item">
-    <p class="lead"><b>Questions 24-26</b></p>
-    <p>Choose <b>THREE</b> letters, <b>A-G</b>.</p>
-    <p class="lead">Write the correct letters in boxes 24-26 on your answer sheet.
-    <p>According to the information in the passage, which <b>THREE</b> of the following features are
-        probably common to both New Caledonian crows and human beings?</i>
-    </p>
-    <ol type="A">
-        <li>keeping the same mate for life</li>
-        <li>having few natural predators</li>
-        <li>having a bias to the right when working</li>
-        <li>being able to process sequential tasks</li>
-        <li>living in extended family groups</li>
-        <li>eating a variety of foodstuffs</li>
-        <li>being able to diverse habitats</li>
-    </ol>
-</fieldset>
+    <fieldset class="q-item" data-q="21">
+        <legend class="q-text">
+            <span class="q-number">21</span>
+            The number of female-run businesses is increasing.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="M">M</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
 
-<fieldset class="q-item" data-q="24">
-    <legend class="q-text">
-        <span class="q-number">24</span>
-        Question <b>1</b>
-        <select name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-dropdown">
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
-            <option value="G">G</option>
-        </select>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="25">
-    <legend class="q-text">
-        <span class="q-number">25</span>
-        Question <b>2</b>
-        <select name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-dropdown">
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
-            <option value="G">G</option>
-        </select>
-    </legend>
-</fieldset>
-<fieldset class="q-item" data-q="26">
-    <legend class="q-text">
-        <span class="q-number">26</span>
-        Question <b>3</b>
-        <select name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-dropdown">
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
-            <option value="G">G</option>
-        </select>
-    </legend>
+    <fieldset class="q-item" data-q="22">
+        <legend class="q-text">
+            <span class="q-number">22</span>
+            Male applicants exceed female applicants for top posts.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-12" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="M">M</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
+
+    <fieldset class="q-item" data-q="23">
+        <legend class="q-text">
+            <span class="q-number">23</span>
+            Women hold higher positions now than they used to.
+            <span class="q-question">
+                <select name="{{ $part['tipe'][1] }}-{{ $id }}-13" class="q-dropdown">
+                    <option value=""></option>
+                    <option value="M">M</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                </select>
+            </span>
+        </legend>
+    </fieldset>
+
+    <fieldset class="q-item">
+        <h3>Questions 24-26</h3>
+        <p class="lead">
+            <i>Using <b>NO MORE THAN THREE WORDS</b> answer the following questions. Write your answers in boxes 24-26
+                on your answer sheet.</i>
+        </p>
+    </fieldset>
+
+    <fieldset class="q-item questions-item" data-q="24">
+        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+            <span class="q-number">24</span>
+            <span style="flex: 1;">
+                What change has there been in the number of women in top management positions detailed in the annual
+                survey?
+                <span class="q-question">
+                    <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-text" placeholder="">
+                </span>
+            </span>
+        </legend>
+    </fieldset>
+
+    <fieldset class="q-item questions-item" data-q="25">
+        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+            <span class="q-number">25</span>
+            <span style="flex: 1;">
+                What aspect of company structuring has disadvantaged women?
+                <span class="q-question">
+                    <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-text" placeholder="">.
+                </span>
+            </span>
+        </legend>
+    </fieldset>
+
+    <fieldset class="q-item questions-item" data-q="26">
+        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+            <span class="q-number">26</span>
+            <span style="flex: 1;">
+                What information tells us that more women are working nowadays?
+                <span class="q-question">
+                    <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text" placeholder="">
+                </span>
+            </span>
+        </legend>
+    </fieldset>
 </fieldset>

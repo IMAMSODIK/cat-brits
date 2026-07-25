@@ -100,8 +100,7 @@
                         </p>
                         <p>Complete the flow chart below.</p>
                         <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
-                        <p><b>Sports Super Centre</b></p>
-                        <p><i>Write your answers in boxes <b>4-10</b> on your answer sheet.</i></p>
+                        <p><i>Write your answers in boxes <b>7-10</b> on your answer sheet.</i></p>
                         <div class="d-flex">
                             <img src="{{ asset('own_assets/images/P02-4.png') }}" alt="Sports Super Centre"
                                 style="max-width: 100%; height: auto;" />
@@ -109,7 +108,7 @@
                         <fieldset class="q-item" data-q="1">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-item" data-q="1">
-                                    <span class="q-number-box">1</span>
+                                    <span class="q-number-box">7</span>
                                     <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text" />
                                 </span>
                             </legend>
@@ -118,7 +117,7 @@
                         <fieldset class="q-item" data-q="2">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-item" data-q="2">
-                                    <span class="q-number-box">2</span>
+                                    <span class="q-number-box">8</span>
                                     <input type="text" name="2uSKN2WwOj6EYc1X-2" class="q-text" />
                                 </span>
                             </legend>
@@ -126,7 +125,7 @@
                         <fieldset class="q-item" data-q="3">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-item" data-q="3">
-                                    <span class="q-number-box">3</span>
+                                    <span class="q-number-box">9</span>
                                     <input type="text" name="2uSKN2WwOj6EYc1X-3" class="q-text" />
                                 </span>
                             </legend>
@@ -134,7 +133,7 @@
                         <fieldset class="q-item" data-q="4">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-item" data-q="4">
-                                    <span class="q-number-box">4</span>
+                                    <span class="q-number-box">10</span>
                                     <input type="text" name="2uSKN2WwOj6EYc1X-4" class="q-text" />
                                 </span>
                             </legend>

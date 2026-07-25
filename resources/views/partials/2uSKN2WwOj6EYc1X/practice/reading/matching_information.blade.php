@@ -108,9 +108,8 @@
                         <p><b>A.</b> Green seaweeds</p>
                         <p><b>B.</b> Brown seaweeds</p>
                         <p><b>C.</b> Red seaweed</p>
-                        <p>Which section contains the following information?</p>
                         <p class="lead">
-                            Write the correct letter, <b>A, B, </b>or <b>C</b>, on your answer sheet.
+                            Write the correct letter <b>A, B, </b>or <b>C</b> in boxes <b>1</b>-<b>3</b>  on your answer sheet.
                         </p>
                     </fieldset>
 

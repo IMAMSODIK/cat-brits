@@ -1359,7 +1359,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('doneBtn').addEventListener('click', function() {
-
         const confirmFinish = confirm('Do you want to end the test now?');
         if (!confirmFinish) return;
 

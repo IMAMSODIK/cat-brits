@@ -30,7 +30,7 @@
                 <h3>Questions 1-4</h3>
                 </p>
                 <p>Label the diagrams below</p>
-                <p>Write <b>NO MORE THAN THREE WORDS</b> for each answer.</p>
+                <p>Write <b>NO MORE THAN TWO WORDS</b> for each answer.</p>
                 <div class="d-flex">
                     <img src="{{ asset('own_assets/images/p01-2.jpeg') }}" alt="Farley House Map"
                         style="max-width: 100%; height: auto;" />
