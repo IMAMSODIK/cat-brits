@@ -84,7 +84,7 @@
         <aside class="qa" aria-label="Questions">
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
-                    <p class="lead"><b>Questions 1-3</b></p>
+                    <p class="lead"><b>Questions 1-2</b></p>
                     <p class="lead">
                         Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.
                     </p>
@@ -93,28 +93,28 @@
                 <fieldset class="q-item" data-q="1">
                     <legend class="q-text">
                         <span class="q-number">1</span>
-                        According to the passage, 'They don't talk the same language' (paragraph 1), can refer to problems in ...
+                        According to the writer, English-speaking people need to be aware that...
                     </legend>
                     <div class="q-options" role="radiogroup" aria-label="Question 1 options">
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="A" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="A" />
                             <span class="opt-code">A</span>
-                            <span class="opt-label">understanding metaphor.</span>
+                            <span class="opt-label">some foreigners have never met an English-speaking person.</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="B" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="B" />
                             <span class="opt-code">B</span>
-                            <span class="opt-label">learning foreign languages.</span>
+                            <span class="opt-label">many foreigners have no desire to learn English.</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="C" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="C" />
                             <span class="opt-code">C</span>
-                            <span class="opt-label">understanding dialect or style.</span>
+                            <span class="opt-label">foreign languages may pose a greater problem in the future.</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="D" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-4" value="D" />
                             <span class="opt-code">D</span>
-                            <span class="opt-label">dealing with technological change.</span>
+                            <span class="opt-label">English-speaking foreigners may have difficulty understanding English.</span>
                         </label>
                     </div>
                 </fieldset>
@@ -122,57 +122,28 @@
                 <fieldset class="q-item" data-q="2">
                     <legend class="q-text">
                         <span class="q-number">2</span>
-                        The case of the poisonous mushrooms (paragraph 2) suggests that American doctors .
+                        suitable title for this passage would be ...
                     </legend>
                     <div class="q-options" role="radiogroup" aria-label="Question 2 options">
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="A" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="A" />
                             <span class="opt-code">A</span>
-                            <span class="opt-label">should pay more attention to radio reports.</span>
+                            <span class="opt-label">Overcoming the language barrier</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="B" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="B" />
                             <span class="opt-code">B</span>
-                            <span class="opt-label">only read medical articles if they are in English.</span>
+                            <span class="opt-label">How to survive an English-speaking world</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="C" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="C" />
                             <span class="opt-code">C</span>
-                            <span class="opt-label">are sometimes unwilling to try foreign treatments.</span>
+                            <span class="opt-label">Global understanding - the key to personal progress</span>
                         </label>
                         <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="D" />
+                            <input type="radio" name="cwwPbLf22UsNEqIp-5" value="D" />
                             <span class="opt-code">D</span>
-                            <span class="opt-label">do not always communicate effectively with their patients.</span>
-                        </label>
-                    </div>
-                </fieldset>
-
-                <fieldset class="q-item" data-q="3">
-                    <legend class="q-text">
-                        <span class="q-number">3</span>
-                        According to the writer, the linguistic insularity of British businesses ...
-                    </legend>
-                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="A" />
-                            <span class="opt-code">A</span>
-                            <span class="opt-label">later spread to other countries.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="B" />
-                            <span class="opt-code">B</span>
-                            <span class="opt-label">had a negative effect on their business.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="C" />
-                            <span class="opt-code">C</span>
-                            <span class="opt-label">is not as bad now as it used to be in the past.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">made non-English-speaking companies turn to other markets.</span>
+                            <span class="opt-label">The need for a common language</span>
                         </label>
                     </div>
                 </fieldset>

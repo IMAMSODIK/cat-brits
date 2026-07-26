@@ -14,7 +14,7 @@
                 'data' => [
                     'part1' => [
                         'label' => 'Part 1',
-                        'tipe' => ['matching_information', 'summary_completion', 'two_choices', 'two_choices'],
+                        'tipe' => ['summary_completion', 'matching_features'],
                         'contents' => [
                             'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.answer',
                             'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part1.question',
@@ -22,7 +22,7 @@
                     ],
                     'part2' => [
                         'label' => 'Part 2',
-                        'tipe' => ['ynng', 'summary_completion', 'oc'],
+                        'tipe' => ['sentence_completion', 'oc', 'sa', 'oc'],
                         'contents' => [
                             'answer' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.answer',
                             'question' => 'partials.cwwPbLf22UsNEqIp.mock.reading.part2.question',

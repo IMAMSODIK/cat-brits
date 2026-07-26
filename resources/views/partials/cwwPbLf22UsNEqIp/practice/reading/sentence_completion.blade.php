@@ -1,5 +1,4 @@
 @props(['tab'])
-
 <div class="x-panel-inner">Content: Reading Passage 2</div>
 <div class="reading-section" aria-label="Reading and Questions">
     <div class="reading-grid resizable-grid highlighted-content">
@@ -84,106 +83,71 @@
         <aside class="qa" aria-label="Questions">
             <form class="qa-body" id="form-{{ $tab['id'] }}">
                 <fieldset class="q-item">
-                    <p class="lead"><b>Questions 1-3</b></p>
+                    <h3>Questions 1-4</h3>
+                    <p>Complete the sentences below</p>
                     <p class="lead">
-                        Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.
+                        <i>Choose <b>NO MORE THAN THREE WORDS</b>  from the passage for each answer.</i>
+                        <i>Write your answers in boxes 1-4 on your answer sheet.</i>
                     </p>
                 </fieldset>
 
-                <fieldset class="q-item" data-q="1">
-                    <legend class="q-text">
+                <fieldset class="q-item questions-item" data-q="1">
+                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                         <span class="q-number">1</span>
-                        According to the passage, 'They don't talk the same language' (paragraph 1), can refer to problems in ...
+                        <span style="flex: 1;">
+                            Language problems may come to the attention of the public when they have
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-1" class="q-text" placeholder="">
+                            </span>
+                            , such as fatal accidents or social problems.
+                        </span>
                     </legend>
-                    <div class="q-options" role="radiogroup" aria-label="Question 1 options">
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="A" />
-                            <span class="opt-code">A</span>
-                            <span class="opt-label">understanding metaphor.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="B" />
-                            <span class="opt-code">B</span>
-                            <span class="opt-label">learning foreign languages.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="C" />
-                            <span class="opt-code">C</span>
-                            <span class="opt-label">understanding dialect or style.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-1" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">dealing with technological change.</span>
-                        </label>
-                    </div>
                 </fieldset>
 
-                <fieldset class="q-item" data-q="2">
-                    <legend class="q-text">
+                <fieldset class="q-item questions-item" data-q="2">
+                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                         <span class="q-number">2</span>
-                        The case of the poisonous mushrooms (paragraph 2) suggests that American doctors .
+                        <span style="flex: 1;">
+                            Evidence of the extent of the language barrier has been gained from
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-2" class="q-text" placeholder="">.
+                            </span>
+                            of materials used by scientists such as books and periodicals.
+                        </span>
                     </legend>
-                    <div class="q-options" role="radiogroup" aria-label="Question 2 options">
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="A" />
-                            <span class="opt-code">A</span>
-                            <span class="opt-label">should pay more attention to radio reports.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="B" />
-                            <span class="opt-code">B</span>
-                            <span class="opt-label">only read medical articles if they are in English.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="C" />
-                            <span class="opt-code">C</span>
-                            <span class="opt-label">are sometimes unwilling to try foreign treatments.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-2" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">do not always communicate effectively with their patients.</span>
-                        </label>
-                    </div>
                 </fieldset>
 
-                <fieldset class="q-item" data-q="3">
-                    <legend class="q-text">
+                <fieldset class="q-item questions-item" data-q="3">
+                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                         <span class="q-number">3</span>
-                        According to the writer, the linguistic insularity of British businesses ...
+                        <span style="flex: 1;">
+                            An example of British linguistic insularity is the use of English for materials such as
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-3" class="q-text" placeholder="">
+                            </span>
+                        </span>
                     </legend>
-                    <div class="q-options" role="radiogroup" aria-label="Question 3 options">
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="A" />
-                            <span class="opt-code">A</span>
-                            <span class="opt-label">later spread to other countries.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="B" />
-                            <span class="opt-code">B</span>
-                            <span class="opt-label">had a negative effect on their business.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="C" />
-                            <span class="opt-code">C</span>
-                            <span class="opt-label">is not as bad now as it used to be in the past.</span>
-                        </label>
-                        <label class="q-option">
-                            <input type="radio" name="cwwPbLf22UsNEqIp-3" value="D" />
-                            <span class="opt-code">D</span>
-                            <span class="opt-label">made non-English-speaking companies turn to other markets.</span>
-                        </label>
-                    </div>
+                </fieldset>
+
+                <fieldset class="q-item questions-item" data-q="4">
+                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        <span class="q-number">4</span>
+                        <span style="flex: 1;">
+                            An example of a part of the world where people may have difficulty in negotiating English is
+                            <span class="q-question">
+                                <input type="text" name="cwwPbLf22UsNEqIp-4" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                    </legend>
                 </fieldset>
 
                 <div style="text-align: center;">
                     <button type="button" class="btn btn-primary" id="submit-{{ $tab['id'] }}">
                         Submit
                     </button>
-                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}"
-                        style="display: none">Try
-                        Again</button>
+                    <button class="btn btn-info" type="button" id="again-{{ $tab['id'] }}" style="display:none">
+                        Try Again
+                    </button>
                 </div>
             </form>
         </aside>

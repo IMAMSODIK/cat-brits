@@ -1,74 +1,73 @@
-            <div class="passage-title">Invasion of the Robot Umpires</div>
-            <div class="passage-body">
-                <p>A few years ago, Fred DeJesus from Brooklyn, New York became the first umpire in a minor league
-                    baseball game to use something called the Automated Ball-Strike System (ABS), often referred to as
-                    the 'robo-umpire'. Instead of making any judgments himself about a strike*, DeJesus had decisions
-                    fed to him through an earpiece, connected to a modified missile-tracking system. The contraption
-                    looked like a large black pizza box with one glowing green eye; it was mounted above the press
-                    stand.</p>
-
-                <p>Major League Baseball (MLB), who had commissioned the system, wanted human umpires to announce the
-                    calls, just as they would have done in the past. When the first pitch came in, a recorded voice told
-                    DeJesus it was a strike. Previously, calling a strike was a judgment call on the part of the umpire.
-                    Even if the batter does not hit the ball, a pitch that passes through the 'strike zone' (an
-                    imaginary zone about seventeen inches wide, stretching from the batter's knees to the middle of his
-                    chest) is considered a strike. During that first game, when DeJesus announced calls, there was no
-                    heckling and no shouted disagreement. Nobody said a word.</p>
-
-                <p>For a hundred and fifty years or so, the strike zone has been the game's animating force - countless
-                    arguments between a team's manager and the umpire have taken place over its boundaries and whether a
-                    ball had crossed through it. The rules of play have evolved in various stages. Today, everyone knows
-                    that you may scream your disagreement in an umpire's face, but you must never shout personal abuse
-                    at them or touch them. That's a no-no. When the robo-umpires came, however, the arguments stopped.
-                </p>
-
-                <p>During the first robo-umpire season, players complained about some strange calls. In response, MLB
-                    decided to tweak the dimensions of the zone, and the following year the consensus was that ABS is
-                    profoundly consistent. MLB says the device is near-perfect, precise to within fractions of an inch.
-                    "It'll reduce controversy in the game, and be good for the game," says Rob Manfred, who is
-                    Commissioner for MLB. But the question is whether controversy is worth reducing, or whether it is
-                    the sign of a human hand.</p>
-                <p>A human, at least, yells back. When I spoke with Frank Viola, a coach for a North Carolina team, he
-                    said that ABS works as designed, but that it was also unforgiving and pedantic, almost legalistic.
-                    "Manfred is a lawyer," Viola noted. Some pitchers have complained that, compared with a human's, the
-                    robot's strike zone seems too precise. Viola was once a major-league player himself. When he was
-                    pitching, he explained, umpires rewarded skill. "Throw it where you aimed, and it would be a strike,
-                    even if it was an inch or two outside. There was a dialogue between pitcher and umpire."</p>
-
-                <p>The executive tasked with running the experiment for MLB is Morgan Sword, who's in charge of baseball
-                    operations. According to Sword, ABS was part of a larger project to make baseball more exciting
-                    since executives are terrified of losing younger fans, as has been the case with horse racing and
-                    boxing. He explains how they began the process by asking fans what version of baseball they found
-                    most exciting. The results showed that everyone wanted more action: more hits, more defense, more
-                    baserunning. This type of baseball essentially hasn't existed since the 1960s, when the
-                    hundred-mile-an-hour fastball, which is difficult to hit and control, entered the game. It flattened
-                    the game into strikeouts, walks, and home runs - a type of play lacking much action.</p>
-
-                <p>Sword's team brainstormed potential fixes. Any rule that existed, they talked about changing - from
-                    changing the bats to changing the geometry of the field. But while all of these were ruled out as
-                    potential fixes, ABS was seen as a perfect vehicle for change. According to Sword, once you get the
-                    technology right, you can load any strike zone you want into the system. "It might be a triangle, or
-                    a blob, or something shaped like Texas. Over time, as baseball evolves, ABS can allow the zone to
-                    change with it."</p>
-
-                <p>"In the past twenty years, sports have moved away from judgment calls. Soccer has Video Assistant
-                    Referees (for offside decisions, for example). Tennis has Hawk-Eye (for line calls, for example).
-                    For almost a decade, baseball has used instant replay on the base paths. This is widely liked, even
-                    if the precision can sometimes cause problems. But these applications deal with something physical:
-                    bases, lines, goals. The boundaries of action are precise, delineated like the keys of a piano. This
-                    is not the case with ABS and the strike zone. Historically, a certain discretion has been
-                    appreciated."</p>
-
-                <p>I decided to email Alva Noë, a professor at Berkeley University and a baseball fan, for his opinion.
-                    "Hardly a day goes by that I don't wake up and run through the reasons that this [robo-umpires] is
-                    such a terrible idea," he replied. He later told me, "This is part of a movement to use algorithms
-                    to take the hard choices of living out of life." Perhaps he's right. We watch baseball to kill time,
-                    not to maximize it.Some players I have met take a dissenting stance toward the robots too, believing
-                    that accuracy is
-                    not the answer. According to Joe Russo, who plays for a New Jersey team, "With technology, people
-                    just want everything to be perfect. That's not reality. I think perfect would be weird. Your teams
-                    are always winning, work is always just great, there's always money in your pocket, your car never
-                    breaks down. What is there to talk about?"</p>
-
-
-            </div>
+<div class="passage-title" style="text-align: center">The Language Barrier in Communication</div>
+<div class="passage-body">
+    <p>
+        The discovery that language can be a barrier to communication is quickly made by all
+        who travel, study, govern or sell.Whether the activity is tourism, research, government,
+        policing, business, or data dissemination, the lack of a common language can severely
+        impede progress or can halt it altogether.'Common language' here usually means a
+        foreign language, but the same point applies in principle to any encounter with
+        unfamiliar dialects or styles within a single language."They don't talk the same
+        language" has a major metaphorical meaning alongside its literal one.
+    </p>
+    <p>
+        Although communication problems of this kind must happen thousands of times each
+        day, very few become public knowledge.Publicity comes only when a failure to
+        communicate has major consequences, such as strikes, lost orders, legal problems, or
+        fatal accidents - even, at times, war.One reported instance of communication failure
+        took place in 1970, when several Americans ate a species of poisonous mushroom.No
+        remedy was known, and two of the people died within days.A radio report of the case
+        was heard by a chemist who knew of a treatment that had been successfully used in
+        1959 and published in 1963.Why had the American doctors not heard of it seven years
+        later?Presumably because the report of the treatment had been published only in
+        journals written in European languages other than English.
+    </p>
+    <p>
+        Several comparable cases have been reported.But isolated examples do not give an
+        impression of the size of the problem - something that can come only from studies of
+        the use or avoidance of foreign-language materials and contacts in different
+        communicative situations.In the English-speaking scientific world, for example, surveys
+        of books and documents consulted in libraries and other information agencies have
+        shown that very little foreign-language material is ever consulted.Library requests in the
+        field of science and technology showed that only 13 per cent were for foreign language
+        periodicals.Studies of the sources cited in publications lead to a similar conclusion: the
+        use of foreign-language sources is often found to be as low as 10 per cent.
+    </p>
+    <p>
+        The language barrier presents itself in stark form to firms who wish to market their
+        products in other countries.British industry, in particular, has in recent decades often
+        been criticised for its linguistic insularity - for its assumption that foreign buyers will be
+        happy to communicate in English, and that awareness of other languages is not
+        therefore a priority.In the 1960s, over two-thirds of British firms dealing with
+        non-English-speaking customers were using English for outgoing correspondence;
+        many had their sales literature only in English; and as many as 40 per cent employed
+        no-one able to communicate in the customers' languages.A similar problem was
+        identified in other English-speaking countries, notably the USA, Australia and New
+        Zealand.And non-English-speaking countries were by no means exempt - although the
+        widespread use of English as an alternative language made them less open to the
+        charge of insularity.
+    </p>
+    <p>
+        The criticism and publicity given to this problem since the 1960s seems to have greatly
+        improved the situation. Industrial training schemes have promoted an increase in
+        linguistic and cultural awareness.Many firms now have their own translation services; to
+        take just one example in Britain, Rowntree Mackintosh now publish their documents in
+        six languages (English, French, German, Dutch, Italian and Xhosa).Some firms run
+        part-time language courses in the languages of the countries with which they are most
+        involved, some produce their own technical glossaries, to ensure consistency when
+        material is being translated.It is now much more readily appreciated that marketing
+        efforts can be delayed, damaged, or disrupted by a failure to take account of the
+        linguistic needs of the customer.
+    </p>
+    <p>
+        The changes in awareness have been most marked in English-speaking countries,
+        where the realisation has gradually dawned that by no means everyone in the world
+        knows English well enough to negotiate in it.This is especially a problem when English
+        is not an official language of public administration, as in most parts of the Far East,
+        Russia, Eastern Europe, the Arab world, Latin America and French-speaking
+        Africa.Even in cases where foreign customers can speak English quite well, it is often
+        forgotten that they may not be able to understand it to the required level - bearing in
+        mind the regional and social variation which permeates speech and which can cause
+        major problems of listening comprehension.In securing understanding, how 'we' speak
+        to 'them' is just as important, it appears, as how 'they' speak to 'us'.
+    </p>
+</div>

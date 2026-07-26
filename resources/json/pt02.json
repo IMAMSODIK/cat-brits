@@ -1,54 +1,61 @@
 {
   "reading": {
     "matching_information": [
-      "B",
-      "F",
-      "B",
       "C",
       "D",
       "B",
       "E",
       "A"
     ],
-    "summary_completion": [
-      "laziness",
-      "anxious",
-      "threats",
-      "exams",
-      "perfectionists",
-      "guilt",
-      "past",
-      "[judgement call , judgment call]",
-      "strike zone",
-      "countless arguments",
-      "[no shouted disagreemen, no disagreement]",
-      "privatisation policy",
-      "incentives",
-      "permit",
-      "regulatory agency"
-    ],
-    "two_choices": [
-      "[A, C]",
-      "[A, E]"
-    ],
     "ynng": [
-      "NO",
-      "YES",
-      "NOT GIVEN",
-      "NO",
-      "NOT GIVEN",
-      "YES",
       "YES",
       "NOT GIVEN",
       "NOT GIVEN",
       "NO"
     ],
+    "sa": [
+      "[Industrial training schemes, training, training schemes, Industrial training]",
+      "translation services",
+      "[part-time language courses, language courses, order]",
+      "[technical glossaries, glossaries]"
+    ],
     "oc": [
+      "C",
       "B",
+      "C",
       "D",
+      "A"
+    ],
+    "sentence_completion": [
+      "Major Consequences",
+      "Surveys",
+      "Sales Literature",
+      "[Eastern Europe, Far East, Russia, Arab World, Latin America, French-Speaking Africa]"
+    ],
+    "matching_features": [
+      "F",
+      "D",
+      "C",
+      "G",
+      "A",
       "C"
+    ],
+    "summary_completion": [
+      "E",
+      "M",
+      "K",
+      "L",
+      "C",
+      "J",
+      "Q",
+      "D",
+      "privatisation policy",
+      "incentives",
+      "permit",
+      "regulatory agency"
     ]
   },
+
   "listening": {
     "tc": [
       "cream",
@@ -83,7 +90,7 @@
       "A"
     ],
     "two_choices": [
-      "[A, E]"
+      "[D, E]"
     ],
     "nc": [
       "abstract",

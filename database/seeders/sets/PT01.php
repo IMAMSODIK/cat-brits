@@ -33,9 +33,9 @@ class PT01 extends Seeder
                     "steps"
                 ],
                 "matching_information" => [
-                    "B",
-                    "C",
                     "A",
+                    "C",
+                    "B",
 
                     "E",
                     "G",
