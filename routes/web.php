@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
     Route::post('/teacher/delete', [TeacherController::class, 'delete']);
     Route::post('/teacher/activate', [TeacherController::class, 'activate']);
+    Route::post('/students/destroy', [TeacherController::class, 'destroy']);
     Route::get('/teacher/search', [TeacherController::class, 'search']);
     Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
 

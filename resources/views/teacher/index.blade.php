@@ -219,6 +219,7 @@
                                 <button class="btn btn-warning" type="button" id="reset">Reset Pasword</button>
                                 <button class="btn btn-danger" type="button" id="delete">Deactivate</button>
                                 <button class="btn btn-info" type="button" id="activate">Activate</button>
+                                <button class="btn btn-danger" type="button" id="destroy">Delete</button>
                             </div>
                         </form>
                     </div>

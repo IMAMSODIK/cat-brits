@@ -59,9 +59,11 @@ $(document).on("click", ".detail-user", function () {
                 if (response.data.status == 1) {
                     $("#delete").show();
                     $("#activate").hide();
+                    $("#destroy").hide();
                 } else {
                     $("#delete").hide();
                     $("#activate").show();
+                    $("#destroy").show();
                 }
 
 
@@ -518,6 +520,77 @@ $("#activate").on("click", function () {
                 }
 
                 $("#is-error").removeClass('error-response');
+            } else {
+                let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">Failed to update teacher information.</div>`;
+
+                if (response.errors) {
+                    const detailMessages = Object.values(response.errors)
+                        .map(msgs => msgs[0])
+                        .join("<br>");
+                    message += `<div style="text-align: center;">${detailMessages}</div>`;
+                }
+
+                $("#is-error").addClass('error-response');
+                alertModal(false, message);
+            }
+
+        },
+        error: function (xhr) {
+            $(`#${modal}`).modal("hide");
+            $('body').css('cursor', 'default');
+            $(button).prop('disabled', false);
+
+            let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">An error occurred.</div>`;
+
+            if (xhr.responseJSON) {
+                if (xhr.responseJSON.message) {
+                    message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">${xhr.responseJSON.message}</div>`;
+                }
+                if (xhr.responseJSON.errors) {
+                    const detailMessages = Object.values(xhr.responseJSON.errors)
+                        .map(msgs => msgs[0])
+                        .join("<br>");
+                    message += `<div style="text-align: center;">${detailMessages}</div>`;
+                }
+            }
+
+            $("#is-error").addClass('error-response');
+            alertModal(false, message);
+        }
+    });
+})
+
+$("#destroy").on("click", function () {
+    let formData = new FormData();
+    let button = $(this);
+
+    $('body').css('cursor', 'wait');
+    $(button).prop('disabled', true);
+
+    formData.append("_token", $("meta[name='csrf-token']").attr("content"));
+    formData.append("id", $("#id").val());
+
+    $.ajax({
+        url: "/students/destroy",
+        method: "POST",
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function (response) {
+            $(`#${modal}`).modal("hide");
+
+            $('body').css('cursor', 'default');
+            $(button).prop('disabled', false);
+
+            if (response.status) {
+                alertModal(true, "The teacher has been Deleted!");
+
+                $("#is-error").removeClass('error-response');
+
+                let deletedId = $("#id").val();
+                $(`.detail-user[data-id="${deletedId}"]`).fadeOut(300, function() {
+                    $(this).remove();
+                });
             } else {
                 let message = `<div style="text-align: center; font-weight: bold; margin-bottom: 10px;">Failed to update teacher information.</div>`;
 
