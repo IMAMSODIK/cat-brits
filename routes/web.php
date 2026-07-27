@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
     Route::post('/teacher/delete', [TeacherController::class, 'delete']);
     Route::post('/teacher/activate', [TeacherController::class, 'activate']);
-    Route::post('/students/destroy', [TeacherController::class, 'destroy']);
+    Route::post('/teacher/destroy', [TeacherController::class, 'destroy']);
     Route::get('/teacher/search', [TeacherController::class, 'search']);
     Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
 
@@ -64,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);
     Route::post('/students/delete', [StudentController::class, 'delete']);
     Route::post('/students/activate', [StudentController::class, 'activate']);
+    Route::post('/students/destroy', [StudentController::class, 'destroy']);
     Route::get('/students/search', [StudentController::class, 'search']);
     Route::get('/students/load-more', [StudentController::class, 'loadMore']);
 

@@ -259,6 +259,38 @@ class StudentController extends Controller
         }
     }
 
+    public function destroy(Request $r)
+    {
+        $validator = Validator::make($r->all(), [
+            'id'    => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validation errors occurred.',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user = User::findOrFail($r->id);
+            $user->delete();
+
+            return response()->json([
+                'status'  => true,
+                'message' => 'The student has been Deleted.',
+                'data'    => null
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to delete student information.',
+                'errors'  => ['exception' => [$e->getMessage()]]
+            ], 500);
+        }
+    }
+
     public function search(Request $request)
     {
         $keyword = $request->get('q');

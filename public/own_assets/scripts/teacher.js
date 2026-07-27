@@ -571,7 +571,7 @@ $("#destroy").on("click", function () {
     formData.append("id", $("#id").val());
 
     $.ajax({
-        url: "/students/destroy",
+        url: "/teacher/destroy",
         method: "POST",
         processData: false,
         contentType: false,
