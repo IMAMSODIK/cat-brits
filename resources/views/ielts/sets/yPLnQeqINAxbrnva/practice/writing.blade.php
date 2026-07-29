@@ -1361,122 +1361,115 @@
 
     <section class="parts-section" aria-label="Pilihan Part Soal">
         <div class="x-tabs" role="tablist" aria-label="Jenis Soal" data-active="tfng">
-            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng" aria-selected="true"
-                data-id="tfng">Task 1</button>
+            <button class="x-tab is-active" role="tab" id="tab-tfng" aria-controls="panel-tfng"
+                aria-selected="true" data-id="tfng">Task 1</button>
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
                 data-id="tfng2">Task 2</button>
         </div>
 
-        <div class="x-panels">
-            <!-- ✅ TASK 1 -->
-            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">
-                    Content: <strong>Task 1</strong> <br><br>
-                    You should spend about 20 minutes on this task. Write at least 150 words.
-                </div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>The graph below shows the average monthly change in the prices of three metals during
-                                    2014.</p>
-                                <p>Summarise the information by selecting and reporting the main features, and make
-                                    comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-18-academic-writing-test-4-1.png') }}"
-                                    alt="" width="100%">
-                            </div>
-                        </article>
+        <form id="combined-writing-form" data-set-id="{{ $set->kode }}">
+            @csrf
+            <div class="x-panels">
 
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+                <!-- ✅ TASK 1 -->
+                <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
+                    <div class="x-panel-inner">
+                        Content: <strong>Task 1</strong> <br><br>
+                        You should write at least 150 words on this task.
+                    </div>
+                    <div class="reading-section" aria-label="Reading and Questions">
+                        <div class="reading-grid resizable-grid">
+                            <article class="passage" aria-label="Reading Passage" tabindex="0">
+                                <div class="passage-body">
+                                    <p>The graph below shows the average monthly change in the prices of three metals
+                                        during
+                                        2014.</p>
+                                    <p>Summarise the information by selecting and reporting the main features, and make
+                                        comparisons where relevant.</p>
+                                    <img src="{{ asset('own_assets/images/cambridge-ielts-18-academic-writing-test-4-1.png') }}"
+                                        alt="" width="100%">
+                                </div>
+                            </article>
 
-                        <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 1">
+                            <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                            <aside aria-label="Questions">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response"
-                                                    placeholder="Enter your Task 1 Answer" required
-                                                    spellcheck="false"></textarea>
+                                                <!-- Perhatikan atribut name="answers[Task 1]" dan data-task="Task 1" -->
+                                                <textarea name="answers[Task 1]" class="form-textarea js-response" data-task="Task 1" data-no-soal="1"
+                                                    placeholder="Enter your Task 1 Answer" spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
                                                 </div>
                                             </div>
-
-                                            <div class="form-actions">
-                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
-                                            </div>
-
-                                            <div class="success-message js-success" style="display:none;">
-                                                ✅ Your response has been submitted successfully!
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
-                        </aside>
+                            </aside>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ✅ TASK 2 -->
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">
-                    Content: <strong>Task 2</strong> <br><br>
-                    You should spend about 40 minutes on this task. Write at least 250 words.
-                </div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>In many countries, people are now living longer than ever before. Some people say an
-                                    ageing population creates problems for governments. Other people think there are
-                                    benefits if society has more elderly people.</p>
-                                <p>To what extent do you agree or disagree with this opinion?</p>
-                                <p>To what extent do the advantages of having an ageing population outweigh the
-                                    disadvantages?</p>
-                            </div>
-                        </article>
+                <!-- ✅ TASK 2 -->
+                <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                    <div class="x-panel-inner">
+                        Content: <strong>Task 2</strong> <br><br>
+                        You should write at least 150 words on this task.
+                    </div>
+                    <div class="reading-section" aria-label="Reading and Questions">
+                        <div class="reading-grid resizable-grid">
+                            <article class="passage" aria-label="Reading Passage" tabindex="0">
+                                <div class="passage-body">
+                                    <p>In many countries, people are now living longer than ever before. Some people say
+                                        an
+                                        ageing population creates problems for governments. Other people think there are
+                                        benefits if society has more elderly people.</p>
+                                    <p>To what extent do you agree or disagree with this opinion?</p>
+                                    <p>To what extent do the advantages of having an ageing population outweigh the
+                                        disadvantages?</p>
+                                </div>
+                            </article>
 
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+                            <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
 
-                        <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 2">
-                                <fieldset class="q-item" data-q="1
-                                ">
+                            <aside aria-label="Questions">
+                                <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response"
-                                                    placeholder="Enter your Task 2 Answer" required
-                                                    spellcheck="false"></textarea>
+                                                <!-- Perhatikan atribut name="answers[Task 2]" dan data-task="Task 2" -->
+                                                <textarea name="answers[Task 2]" class="form-textarea js-response" data-task="Task 2" data-no-soal="1"
+                                                    placeholder="Enter your Task 2 Answer" spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
                                                 </div>
                                             </div>
-
-                                            <div class="form-actions">
-                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
-                                            </div>
-
-                                            <div class="success-message js-success" style="display:none;">
-                                                ✅ Your response has been submitted successfully!
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
-                        </aside>
+                            </aside>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+
+            <div class="form-actions-global" style="margin-top: 25px; text-align: right;">
+                <button type="button" class="btn btn-secondary js-clear-all">Clear All</button>
+                <button type="submit" class="btn btn-primary js-submit-all">Submit All Tasks</button>
+            </div>
+
+            <div class="success-message js-success" style="display:none; margin-top: 10px;">
+                Your responses have been submitted successfully!
+            </div>
+        </form>
     </section>
 
     <div class="highlight-toolbar" id="highlightToolbar">
@@ -1498,16 +1491,16 @@
     </div>
 
     <script>
-        (function () {
+        (function() {
             // Events
-            document.getElementById('infoBtn').addEventListener('click', function () {
+            document.getElementById('infoBtn').addEventListener('click', function() {
                 // Ganti dengan modal/informasi instruksi Anda
                 alert(
                     'Instructions:\n- Read the questions carefully\n- Click "Close" to quit the test'
                 );
             });
 
-            document.getElementById('doneBtn').addEventListener('click', function () {
+            document.getElementById('doneBtn').addEventListener('click', function() {
                 const confirmFinish = confirm('Do you want to end the test now?');
                 if (confirmFinish) {
                     window.history.back();
@@ -1518,7 +1511,7 @@
 
     <!-- script bagian part soal -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const section = document.querySelector('.parts-section');
             if (!section) return;
 
@@ -1597,7 +1590,7 @@
                 if (pid) {
                     try {
                         xTabs.releasePointerCapture(pid);
-                    } catch { }
+                    } catch {}
                 }
                 pid = null;
                 down = false;
@@ -1644,7 +1637,7 @@
 
     <!-- script bagian reading + questions  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Semua panel
             const panels = document.querySelectorAll('.x-panel');
 
@@ -1653,7 +1646,7 @@
                 if (!section) return;
 
                 // --- Pilihan soal (radio) ---
-                section.addEventListener('click', function (e) {
+                section.addEventListener('click', function(e) {
                     const opt = e.target.closest('.q-option');
                     if (!opt) return;
                     const fieldset = opt.closest('.q-item');
@@ -1669,7 +1662,7 @@
                     opt.classList.add('is-selected');
                 });
 
-                section.addEventListener('change', function (e) {
+                section.addEventListener('change', function(e) {
                     const radio = e.target;
                     if (!(radio instanceof HTMLInputElement)) return;
                     if (radio.type !== 'radio') return;
@@ -1717,7 +1710,7 @@
             }); // end forEach panel
 
             // Optional: function global ambil jawaban panel tertentu
-            window.getPanelAnswers = function (panelEl) {
+            window.getPanelAnswers = function(panelEl) {
                 const out = {};
                 const section = panelEl.querySelector('.reading-section');
                 if (!section) return out;
@@ -1878,149 +1871,160 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function () {
-            $(".response-form").each(function () {
+        $(document).ready(function() {
+            const form = $("#combined-writing-form");
+            const textareas = form.find(".js-response");
+            const submitBtn = form.find(".js-submit-all");
+            const clearBtn = form.find(".js-clear-all");
+            const successMessage = form.find(".js-success");
 
-                const form = $(this);
-                const textarea = form.find(".js-response");
-                const charCount = form.find(".char-count");
-                const submitBtn = form.find(".js-submit");
-                const clearBtn = form.find(".js-clear");
-                const successMessage = form.find(".js-success");
+            textareas.each(function() {
+                const textarea = $(this);
+                const charCount = textarea.closest(".form-group").find(".char-count");
 
-                const taskType = form.data("task");
-                const noSoal = form.find(".q-item").data("q");
-
-                /* ------------------------------
-                WORD COUNTER
-                --------------------------------*/
                 function updateCharCount() {
-                    const words = textarea.val().trim() === "" ?
-                        0 :
-                        textarea.val().trim().split(/\s+/).length;
-
+                    const words = textarea.val().trim() === "" ? 0 : textarea.val().trim().split(/\s+/)
+                        .length;
                     charCount.text(words);
-                    submitBtn.prop("disabled", words === 0);
+
+                    let allFilled = true;
+                    textareas.each(function() {
+                        if ($(this).val().trim() === "") allFilled = false;
+                    });
+                    submitBtn.prop("disabled", !allFilled);
                 }
 
-                /* ------------------------------
-                AUTO RESIZE TEXTAREA
-                --------------------------------*/
                 function autoResize() {
                     textarea.css("height", "auto");
                     textarea.css("height", Math.max(200, textarea[0].scrollHeight) + "px");
                 }
 
-                /* ------------------------------
-                CLEAR BUTTON
-                --------------------------------*/
-                clearBtn.on("click", function () {
-                    if (confirm("Are you sure you want to clear all text?")) {
-                        textarea.val("");
-                        updateCharCount();
-                        autoResize();
-                        textarea.focus();
-                    }
-                });
-
-                /* ------------------------------
-                FORM SUBMISSION
-                --------------------------------*/
-                form.on("submit", function (e) {
-                    e.preventDefault();
-
-                    const text = textarea.val().trim();
-
-                    if (!text) {
-                        alert("Please enter your response before submitting.");
-                        return;
-                    }
-
-                    submitBtn.text("Submitting...");
-                    submitBtn.prop("disabled", true);
-
-                    $.ajax({
-                        url: "/ielts/practice/check",
-                        type: "POST",
-                        data: {
-                            task: taskType,
-                            answer: text,
-                            tipe: "practice",
-                            no_soal: noSoal,
-                            set_id: 'yPLnQeqINAxbrnva',
-                            kategori: "writing",
-                            _token: $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function (res) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
-
-                            if (res.status) {
-                                setTimeout(() => {
-                                    alert(res.message)
-                                }, 1000);
-
-                                textarea.val("");
-                                updateCharCount();
-                                autoResize();
-                            } else {
-                                alert((res.message || "Unexpected error."));
-                            }
-                        },
-                        error: function (xhr) {
-                            submitBtn.text("Submit");
-                            submitBtn.prop("disabled", false);
-
-                            console.log("=== AJAX ERROR DEBUG ===");
-                            console.log("STATUS:", xhr.status);
-
-                            // tampilkan response Laravel yg sebenarnya
-                            console.log("RESPONSE:", xhr.responseText);
-
-                            // kalau JSON
-                            try {
-                                console.log("PARSED JSON:", JSON.parse(xhr
-                                    .responseText));
-                            } catch (e) {
-                                console.log("NOT JSON");
-                            }
-
-                            alert("Server Error: " + xhr.status);
-                        }
-
-
-                    });
-                });
-
-                /* ------------------------------
-                INPUT EVENT
-                --------------------------------*/
-                textarea.on("input", function () {
+                textarea.on("input", function() {
                     updateCharCount();
                     autoResize();
                 });
-
-                /* ------------------------------
-                MOBILE SCROLL FIX
-                --------------------------------*/
-                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    textarea.on("focus", function () {
-                        setTimeout(() => {
-                            textarea[0].scrollIntoView({
-                                behavior: "smooth",
-                                block: "center"
-                            });
-                        }, 300);
-                    });
-                }
 
                 // INIT
                 updateCharCount();
                 autoResize();
             });
+
+            /* CLEAR ALL BUTTON */
+            clearBtn.on("click", function() {
+                if (confirm("Are you sure you want to clear all text?")) {
+                    textareas.val("");
+                    textareas.each(function() {
+                        $(this).trigger("input");
+                    });
+                    textareas.first().focus();
+                }
+            });
+
+            /* FORM SUBMISSION */
+            form.on("submit", function(e) {
+                e.preventDefault();
+
+                let answersData = [];
+                let isValid = true;
+
+                textareas.each(function() {
+                    const textarea = $(this);
+                    const val = textarea.val().trim();
+
+                    if (!val) {
+                        isValid = false;
+                    }
+
+                    answersData.push({
+                        task: textarea.data("task"),
+                        answer: val,
+                        no_soal: textarea.data("no-soal")
+                    });
+                });
+
+                if (!isValid) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Perhatian',
+                        text: 'Harap isi semua task sebelum melakukan submit.'
+                    });
+                    return;
+                }
+
+                submitBtn.text("Submitting...");
+                submitBtn.prop("disabled", true);
+
+                $.ajax({
+                    url: "/ielts/practice/check",
+                    type: "POST",
+                    data: {
+                        tipe: "practice",
+                        set_id: form.data("set-id"),
+                        kategori: "writing",
+                        tasks: answersData, // Mengirim data array berisi jawaban masing-masing task
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(res) {
+                        submitBtn.text("Submit All Tasks");
+                        submitBtn.prop("disabled", false);
+
+                        if (res.status) {
+                            successMessage.show();
+
+                            // SweetAlert dengan tombol OK untuk refresh
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil!',
+                                text: res.message || 'Task submitted successfully',
+                                confirmButtonText: 'OK',
+                                allowOutsideClick: false
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res.message || "Unexpected error."
+                            });
+                        }
+                    },
+                    error: function(xhr) {
+                        submitBtn.text("Submit All Tasks");
+                        submitBtn.prop("disabled", false);
+
+                        console.log("=== AJAX ERROR DEBUG ===");
+                        console.log("STATUS:", xhr.status);
+                        console.log("RESPONSE:", xhr.responseText);
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Server Error',
+                            text: 'Terjadi kesalahan pada server: ' + xhr.status
+                        });
+                    }
+                });
+            });
+
+            /* MOBILE SCROLL FIX */
+            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                textareas.on("focus", function() {
+                    const currentTextarea = $(this);
+                    setTimeout(() => {
+                        currentTextarea[0].scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+                    }, 300);
+                });
+            }
         });
     </script>
 

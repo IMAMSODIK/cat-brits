@@ -12,102 +12,109 @@
             <button class="x-tab" role="tab" id="tab-tfng2" aria-controls="panel-tfng2" aria-selected="false"
                 data-id="tfng2">Task 2</button>
         </div>
-        <div class="x-panels">
-            <!-- ✅ TASK 1 -->
-            <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
-                <div class="x-panel-inner">
-                    Content: <strong>Task 1</strong> <br><br>
-                    You should spend about 20 minutes on this task. Write at least 150 words.
-                </div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>The chart below shows the value of one country’s exports in various categories during
-                                    2015 and 2016. The table shows the percentage change in each category of exports in
-                                    2016 compared with 2015.</p>
-                                <p>Summarise the information by selecting and reporting the main features and make
-                                    comparisons where relevant.</p>
-                                <img src="{{ asset('own_assets/images/cambridge-ielts-14-academic-writing-test-2-1.png') }}"
-                                    alt="" width="100%">
-                            </div>
-                        </article>
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-                        <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 1">
+        <form id="combined-writing-form" data-set-id="{{ $set->kode }}">
+            @csrf
+            <div class="x-panels">
+
+                <!-- ✅ TASK 1 -->
+                <div id="panel-tfng" class="x-panel is-open" role="tabpanel" aria-labelledby="tab-tfng">
+                    <div class="x-panel-inner">
+                        Content: <strong>Task 1</strong> <br><br>
+                        You should write at least 150 words on this task.
+                    </div>
+                    <div class="reading-section" aria-label="Reading and Questions">
+                        <div class="reading-grid resizable-grid">
+                            <article class="passage" aria-label="Reading Passage" tabindex="0">
+                                <div class="passage-body">
+                                    <p>The chart below shows the value of one country’s exports in various categories
+                                        during
+                                        2015 and 2016. The table shows the percentage change in each category of exports
+                                        in
+                                        2016 compared with 2015.</p>
+                                    <p>Summarise the information by selecting and reporting the main features and make
+                                        comparisons where relevant.</p>
+                                    <img src="{{ asset('own_assets/images/cambridge-ielts-14-academic-writing-test-2-1.png') }}"
+                                        alt="" width="100%">
+                                </div>
+                            </article>
+
+                            <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                            <aside aria-label="Questions">
                                 <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 1 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 1 Answer" required spellcheck="false"></textarea>
+                                                <!-- Perhatikan atribut name="answers[Task 1]" dan data-task="Task 1" -->
+                                                <textarea name="answers[Task 1]" class="form-textarea js-response" data-task="Task 1" data-no-soal="1"
+                                                    placeholder="Enter your Task 1 Answer" spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
                                                 </div>
                                             </div>
-                                            <div class="form-actions">
-                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
-                                            </div>
-                                            <div class="success-message js-success" style="display:none;">
-                                                ✅ Your response has been submitted successfully!
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
-                        </aside>
+                            </aside>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- ✅ TASK 2 -->
-            <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
-                <div class="x-panel-inner">
-                    Content: <strong>Task 2</strong> <br><br>
-                    You should spend about 40 minutes on this task. Write at least 250 words.
-                </div>
-                <div class="reading-section" aria-label="Reading and Questions">
-                    <div class="reading-grid resizable-grid">
-                        <article class="passage" aria-label="Reading Passage" tabindex="0">
-                            <div class="passage-body">
-                                <p>Some people say that the main environmental problem of our time is the loss of
-                                    particular species of plants and animals. Others say that there are more important
-                                    environmental problems.</p>
-                                <p>Discuss both these views and give your own opinion.</p>
-                            </div>
-                        </article>
-                        <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
-                        <aside aria-label="Questions">
-                            <form class="response-form" data-task="Task 2">
-                                <fieldset class="q-item" data-q="1
-                                ">
+
+                <!-- ✅ TASK 2 -->
+                <div id="panel-tfng2" class="x-panel" role="tabpanel" aria-labelledby="tab-tfng2">
+                    <div class="x-panel-inner">
+                        Content: <strong>Task 2</strong> <br><br>
+                        You should write at least 150 words on this task.
+                    </div>
+                    <div class="reading-section" aria-label="Reading and Questions">
+                        <div class="reading-grid resizable-grid">
+                            <article class="passage" aria-label="Reading Passage" tabindex="0">
+                                <div class="passage-body">
+                                    <p>Some people say that the main environmental problem of our time is the loss of
+                                        particular species of plants and animals. Others say that there are more
+                                        important
+                                        environmental problems.</p>
+                                    <p>Discuss both these views and give your own opinion.</p>
+                                </div>
+                            </article>
+
+                            <div class="resize-handle" role="separator" aria-orientation="vertical"></div>
+
+                            <aside aria-label="Questions">
+                                <fieldset class="q-item" data-q="1">
                                     <legend class="q-text"><span class="q-number">Task 2 Answer</span></legend>
                                     <div class="form-container">
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <textarea class="form-textarea js-response" placeholder="Enter your Task 2 Answer" required spellcheck="false"></textarea>
+                                                <!-- Perhatikan atribut name="answers[Task 2]" dan data-task="Task 2" -->
+                                                <textarea name="answers[Task 2]" class="form-textarea js-response" data-task="Task 2" data-no-soal="1"
+                                                    placeholder="Enter your Task 2 Answer" spellcheck="false"></textarea>
                                                 <div class="char-counter">
                                                     <span class="char-info"><span class="char-count">0</span>
                                                         Words</span>
                                                 </div>
                                             </div>
-                                            <div class="form-actions">
-                                                <button type="button" class="btn btn-secondary js-clear">Clear</button>
-                                                <button type="submit" class="btn btn-primary js-submit">Submit</button>
-                                            </div>
-                                            <div class="success-message js-success" style="display:none;">
-                                                ✅ Your response has been submitted successfully!
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
-                        </aside>
+                            </aside>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+
+            <div class="form-actions-global" style="margin-top: 25px; text-align: right;">
+                <button type="button" class="btn btn-secondary js-clear-all">Clear All</button>
+                <button type="submit" class="btn btn-primary js-submit-all">Submit All Tasks</button>
+            </div>
+
+            <div class="success-message js-success" style="display:none; margin-top: 10px;">
+                Your responses have been submitted successfully!
+            </div>
+        </form>
     </section>
     @include('ielts.sets.layouts.mock.writing.component')
     @include('ielts.sets.layouts.mock.writing.script')
