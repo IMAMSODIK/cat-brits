@@ -66,9 +66,32 @@ writing
 - CAMBRIDGE 19 TEST 1 (gambar ditask 1 ga ada)
 
 
-gak tau
 listening
 Multiple choice -> choices nya ga bisa di highlight
+
+
+
+
+
+
+1. student submit writing, task 1 nya masuk tapi task 2 nya ga masuk. itu gimana ya bang? dan kalau student udah submit salah satu task, biasa waktunya kereset lagi untuk task selanjutnya bang. jadi durasinya 2 jam untuk all tasks.
+2. history writing test
+
+
+1. Listening Cambridge 18 Test 4 ada typo bang. seharusnya energy, tapi karena answer keynya typo, jadinya jawaban anaknya salah bang
+2. submit practice listening, uda keluar scorenya tapi di admin ga ada
+3. beberapa soal masih error 500 kalau submit
+
+
+
+
+
+
+
+
+
+
+
 
 
 

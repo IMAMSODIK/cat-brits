@@ -1,0 +1,3 @@
+untuk writing dari practice dan mock Test yang berubah adalah 
+writing.blade.php => form
+script.blade.php pada practice dan mock test script paling bawah berubah semua dan tambahkan sweet alert

@@ -343,36 +343,47 @@ class IeltsController extends Controller
             if ($kategori === 'writing') {
 
                 $r->validate([
-                    'answer' => 'required',
-                    'task'   => 'required',
+                    'tasks'           => 'required|array',
+                    'tasks.*.task'    => 'required|string',
+                    'tasks.*.answer'  => 'required|string',
+                    'tasks.*.no_soal' => 'required',
                 ]);
 
                 $setSoal = SetSoal::where('kode', $setId)->firstOrFail();
+                $tasks   = $r->input('tasks'); // Berbentuk array berindeks
 
-                Writing::create([
-                    'student_id' => Auth::id(),
-                    'set_soal_id' => $setSoal->id,
-                    'no_soal'   => (int) $r->input('no_soal'),
-                    'task'      => $r->input('task'),
-                    'tipe'      => $tipe,
-                    'answer'    => $r->input('answer')
-                ]);
+                foreach ($tasks as $item) {
+                    $taskName   = $item['task'];
+                    $answerText = $item['answer'];
+                    $noSoal     = $item['no_soal'];
 
-                TestHistory::create([
-                    'student_id' => Auth::id(),
-                    'teacher_id' => null,
-                    'tipe_test' => $tipe,
-                    'kategori'  => $kategori,
-                    'tipe'      => $r->task,
-                    'set_soal_id' => $setSoal->id,
-                    'nama_tipe' => $r->task,
-                ]);
+                    // Simpan jawaban Writing untuk masing-masing task
+                    Writing::create([
+                        'student_id'  => Auth::id(),
+                        'set_soal_id' => $setSoal->id,
+                        'no_soal'     => (int) $noSoal,
+                        'task'        => $taskName,
+                        'tipe'        => $tipe, // Berisi "mock" atau "practice"
+                        'answer'      => $answerText
+                    ]);
+
+                    // Simpan Test History untuk masing-masing task
+                    TestHistory::create([
+                        'student_id'  => Auth::id(),
+                        'teacher_id'  => null,
+                        'tipe_test'   => $tipe,
+                        'kategori'    => $kategori,
+                        'tipe'        => $taskName,
+                        'set_soal_id' => $setSoal->id,
+                        'nama_tipe'   => $taskName,
+                    ]);
+                }
 
                 DB::commit();
 
                 return response()->json([
-                    'status' => true,
-                    'message' => 'Task submitted successfully'
+                    'status'  => true,
+                    'message' => 'All tasks submitted successfully'
                 ]);
             }
 
