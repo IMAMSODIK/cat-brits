@@ -654,7 +654,7 @@
                                     </div>
 
                                     <div class="card-body pt-0">
-                                        
+
                                         <div class="activity-list d-flex flex-column gap-3">
                                             @foreach ($studentActivities as $activities)
                                                 @if ($activities->student)
@@ -912,12 +912,11 @@
 
                                                                 <!-- TOPIC -->
                                                                 <p class="text-dark" style="font-size: 13px;">
-                                                                    <b>Topic: {{ $w->setSoal->name }}</b><br>
-                                                                    {{ $w->setSoal->thumbnail }} <br>
+                                                                    <b>{{ $w->setSoal->name }}</b><br>
+                                                                    Topic: {{ $w->setSoal->thumbnail }} <br>
                                                                     <small class="text-primary">{{ $w->task }} &nbsp;
-                                                                        •
-                                                                        &nbsp; Number
-                                                                        {{ $w->no_soal }}</small>
+                                                                        • &nbsp;
+                                                                        {{ $w->tipe == 'mock' ? 'Mock Test' : 'Practice' }}</small>
                                                                 </p>
 
                                                             </div>

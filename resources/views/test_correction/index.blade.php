@@ -1105,7 +1105,7 @@
                                                 <p class="text-dark" style="font-size: 13px;">
                                                     <b>{{ $w->setSoal->name }}</b><br>
                                                     Topic: {{ $w->setSoal->thumbnail }} <br>
-                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number {{ $w->no_soal }} &nbsp; • &nbsp; {{ ($w->tipe == 'mock') ? "Mock Test" : "Practice" }}</small>
+                                                    <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; {{ ($w->tipe == 'mock') ? "Mock Test" : "Practice" }}</small>
                                                 </p>
 
                                                 <!-- BUTTON -->
