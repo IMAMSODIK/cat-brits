@@ -1033,8 +1033,8 @@
                                                     <span id="duration-{{ $v->id }}">Loading…</span>
                                                 </p>
                                                 <p class="text-dark" style="font-size: 13px;">
-                                                    <b>Topic: {{ $v->setSoal->name }}</b><br>
-                                                    {{ $v->setSoal->thumbnail }} <br>
+                                                    <b>{{ $v->setSoal->name }}</b><br>
+                                                    Topic: {{ $v->setSoal->thumbnail }} <br>
                                                     <small class="text-primary">Part {{ $v->part_soal }} &nbsp; • &nbsp;
                                                         Number {{ $v->no_soal }}</small>
                                                 </p>
@@ -1103,8 +1103,8 @@
 
                                                 <!-- TOPIC -->
                                                 <p class="text-dark" style="font-size: 13px;">
-                                                    <b>Topic: {{ $w->setSoal->name }}</b><br>
-                                                    {{ $w->setSoal->thumbnail }} <br>
+                                                    <b>{{ $w->setSoal->name }}</b><br>
+                                                    Topic: {{ $w->setSoal->thumbnail }} <br>
                                                     <small class="text-primary">{{ $w->task }} &nbsp; • &nbsp; Number {{ $w->no_soal }} &nbsp; • &nbsp; {{ ($w->tipe == 'mock') ? "Mock Test" : "Practice" }}</small>
                                                 </p>
 
