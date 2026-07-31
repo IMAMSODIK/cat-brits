@@ -1,10 +1,10 @@
 @props(['part', 'id'])
 <fieldset class="q-item">
-    <h3>Questions 27-40</h3>
+    <h3>Questions 28-33</h3>
     <p class="lead">
         Do the following statements agree with the claims of the writer in Reading Passage 3?
     </p>
-    <p>In boxes <b>27-40</b> on your answer sheet, choose</p>
+    <p>In boxes <b>28-33</b> on your answer sheet, choose</p>
     <ul class="legend">
         <li><strong>YES</strong> if the statement agrees with the claims of the writer</li>
         <li><strong>NO</strong> if the statement contradicts the claims of the writer</li>
@@ -13,9 +13,9 @@
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="27">
+<fieldset class="q-item" data-q="28">
     <legend class="q-text">
-        <span class="q-number">27</span>
+        <span class="q-number">28</span>
         The research findings report commercial rather than political trends.
     </legend>
     <div class="q-options">
@@ -38,9 +38,9 @@
 </fieldset>
 
 <!-- Question 2 -->
-<fieldset class="q-item" data-q="28">
+<fieldset class="q-item" data-q="29">
     <legend class="q-text">
-        <span class="q-number">28</span>
+        <span class="q-number">29</span>
         Being financially better off has made shoppers more sensitive to buying 'green'.
     </legend>
     <div class="q-options">
@@ -63,9 +63,9 @@
 </fieldset>
 
 <!-- Question 3 -->
-<fieldset class="q-item" data-q="29">
+<fieldset class="q-item" data-q="30">
     <legend class="q-text">
-        <span class="q-number">29</span>
+        <span class="q-number">30</span>
         The majority of shoppers are prepared to pay more for the benefit of the environment according to the research
         findings.
     </legend>
@@ -89,9 +89,9 @@
 </fieldset>
 
 <!-- Question 4 -->
-<fieldset class="q-item" data-q="30">
+<fieldset class="q-item" data-q="31">
     <legend class="q-text">
-        <span class="q-number">30</span>
+        <span class="q-number">31</span>
         Consumers' green shopping habits are influenced by Mintel's findings.
     </legend>
     <div class="q-options">
@@ -114,9 +114,9 @@
 </fieldset>
 
 <!-- Question 5 -->
-<fieldset class="q-item" data-q="31">
+<fieldset class="q-item" data-q="32">
     <legend class="q-text">
-        <span class="q-number">31</span>
+        <span class="q-number">32</span>
         Mintel have limited their investigation to professional and managerial groups.
     </legend>
     <div class="q-options">
@@ -138,9 +138,9 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="32">
+<fieldset class="q-item" data-q="33">
     <legend class="q-text">
-        <span class="q-number">32</span>
+        <span class="q-number">33</span>
         Mintel undertakes market surveys on an annual basis.
     </legend>
     <div class="q-options">
@@ -163,16 +163,16 @@
 </fieldset>
 
 <fieldset class="q-item">
-    <h3>Questions 33-35</h3>
+    <h3>Questions 34-36</h3>
     <p class="lead">
         Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>
     </p>
 </fieldset>
 
 <!-- Question 1 -->
-<fieldset class="q-item" data-q="33">
+<fieldset class="q-item" data-q="34">
     <legend class="q-text">
-        <span class="q-number">33</span>
+        <span class="q-number">34</span>
         Politicians may have 'misjudged the public mood' because ...
     </legend>
     <div class="q-options">
@@ -201,9 +201,9 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="34">
+<fieldset class="q-item" data-q="35">
     <legend class="q-text">
-        <span class="q-number">34</span>
+        <span class="q-number">35</span>
         What is Mintel?
     </legend>
     <div class="q-options">
@@ -230,9 +230,9 @@
     </div>
 </fieldset>
 
-<fieldset class="q-item" data-q="35">
+<fieldset class="q-item" data-q="36">
     <legend class="q-text">
-        <span class="q-number">35</span>
+        <span class="q-number">36</span>
         A consumer expressing concern for environmental issues without actively supporting such principles is...
     </legend>
     <div class="q-options">
@@ -260,7 +260,7 @@
 </fieldset>
 
 <fieldset class="q-item">
-    <h3>Questions 36–40</h3>
+    <h3>Questions 37–40</h3>
     <p class="lead">Complete the summary using the list of words or phrases below.</p>
     <p>Write the correct letter, <b>A-K</b>, in boxes <b>1-4</b> on your answer sheet.</i></p>
     <table cellspacing="20" class="q-table q-table-letters">
@@ -303,9 +303,9 @@
     </table>
     <p>
         The Mintel report suggests that in future companies will be forced to practise greater
-        <span class="q-number-box">36</span>
+        <span class="q-number-box">37</span>
         <span style="flex: 1;">
-            <span class="q-question" data-q="36">
+            <span class="q-question" data-q="37">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-1" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
@@ -323,9 +323,9 @@
             </span>
         </span>
         in their dealings because of the increased awareness amongst
-        <span class="q-number-box">37</span>
+        <span class="q-number-box">38</span>
         <span style="flex: 1;">
-            <span class="q-question" data-q="37">
+            <span class="q-question" data-q="38">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-2" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
@@ -343,9 +343,9 @@
             </span>
         </span>
         of ethical issues. This prediction is supported by the growth in the number of
-        <span class="q-number-box">38</span>
+        <span class="q-number-box">39</span>
         <span style="flex: 1;">
-            <span class="q-question" data-q="38">
+            <span class="q-question" data-q="39">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>
@@ -364,9 +364,9 @@
         </span>
         identified in the most recent survey published. As a consequence, it is felt that companies will
         have to think more carefully about their
-        <span class="q-number-box">39</span>
+        <span class="q-number-box">40</span>
         <span style="flex: 1;">
-            <span class="q-question" data-q="39">
+            <span class="q-question" data-q="40">
                 <select name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-dropdown">
                     <option value=""></option>
                     <option value="A">A</option>

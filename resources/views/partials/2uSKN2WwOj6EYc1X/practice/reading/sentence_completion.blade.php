@@ -7,21 +7,11 @@
             <div class="passage-body">
                 <h3>A</h3>
                 <p>
-                    Seaweed is a particularly nutritious food, which absorbs and concentrates traces of a wide
-                    variety of minerals necessary to the body’s health. Many elements may occur in seaweed –
-                    aluminium, barium, calcium, chlorine, copper, iodine and iron, to name but a few – traces
-                    normally produced by erosion and carried to the seaweed beds by river and sea currents. Seaweeds
-                    are also rich in vitamins: indeed, Eskimos obtain a high proportion of their bodily requirements
-                    of vitamin C from the seaweeds they eat.
-                </p>
-                <p>
-                    The nutritive value of seaweed has long been recognised. For instance, there is a
-                    remarkably low incidence of goitre amongst the Japanese, and for that matter, amongst
-                    our own Maori people, who have always eaten seaweeds, and this may well be
-                    attributed to the high iodine content of this food. Research into old Maori eating customs
-                    shows that jellies were made using seaweeds, fresh fruit and nuts, fuchsia and tutu
-                    berries, cape gooseberries, and many other fruits which either grew here naturally or
-                    were sown from seeds brought by settlers and explorers.
+                    Women who apply for jobs in middle or senior management have a higher success rate
+                    than men, according to an employment survey.But of course far fewer of them apply for
+                    these positions.The study, by recruitment consultants NB Selection, shows that while
+                    one in six men who appear on interview shortlists get jobs, the figure rises to one in four
+                    for women
                 </p>
                 <h3>B</h3>
                 <p>
@@ -124,6 +114,18 @@
                             What information tells us that more women are working nowadays?
                             <span class="q-question">
                                 <input type="text" name="2uSKN2WwOj6EYc1X-3" class="q-text" placeholder="">
+                            </span>
+                        </span>
+                    </legend>
+                </fieldset>
+
+                <fieldset class="q-item questions-item" data-q="4">
+                    <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                        <span class="q-number">4</span>
+                        <span style="flex: 1;">
+                            Which group of people should change their attitude to recruitment?
+                            <span class="q-question">
+                                <input type="text" name="2uSKN2WwOj6EYc1X-4" class="q-text" placeholder="">
                             </span>
                         </span>
                     </legend>

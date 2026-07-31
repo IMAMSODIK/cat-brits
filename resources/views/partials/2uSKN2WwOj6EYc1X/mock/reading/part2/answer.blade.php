@@ -205,9 +205,9 @@
     </fieldset>
 
     <fieldset class="q-item">
-        <h3>Questions 24-26</h3>
+        <h3>Questions 24-27</h3>
         <p class="lead">
-            <i>Using <b>NO MORE THAN THREE WORDS</b> answer the following questions. Write your answers in boxes 24-26
+            <i>Using <b>NO MORE THAN THREE WORDS</b> answer the following questions. Write your answers in boxes 24-27
                 on your answer sheet.</i>
         </p>
     </fieldset>
@@ -244,6 +244,18 @@
                 What information tells us that more women are working nowadays?
                 <span class="q-question">
                     <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-3" class="q-text" placeholder="">
+                </span>
+            </span>
+        </legend>
+    </fieldset>
+
+    <fieldset class="q-item questions-item" data-q="27">
+        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+            <span class="q-number">27</span>
+            <span style="flex: 1;">
+                Which group of people should change their attitude to recruitment?
+                <span class="q-question">
+                    <input type="text" name="{{ $part['tipe'][2] }}-{{ $id }}-4" class="q-text" placeholder="">
                 </span>
             </span>
         </legend>
