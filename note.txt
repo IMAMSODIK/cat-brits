@@ -33,7 +33,6 @@ listening
 reading
 - floating button nomor soal nutupin konten
 - font pada tiap card set dikecilkan (tergantung persepsi device)
-- parts dipindahkan ke bagian bawah
 
 - CAMBRIDGE 10 TEST 1 (konten)
 - CAMBRIDGE 10 TEST 2 (konten) (done)
@@ -73,14 +72,28 @@ Multiple choice -> choices nya ga bisa di highlight
 
 
 
-
-1. student submit writing, task 1 nya masuk tapi task 2 nya ga masuk. itu gimana ya bang? dan kalau student udah submit salah satu task, biasa waktunya kereset lagi untuk task selanjutnya bang. jadi durasinya 2 jam untuk all tasks.
-2. history writing test
+1. maps dibuat disebelah soal
+        1. Cambridge 14 Test 2 - Listening (plan labeling)
+        2. Cambridge 16 Test 4 - Listening (map labeling)
+        3. Cambridge 18 Test 2 - Listening (map labeling)
+        4. Cambridge 19 Test 1 - Listening (map labeling)
+        5. Cambridge 20 Test 3 - Listening (map labeling)
+        6. PT-01 - Listening (Map labeling)
+        7. PT-02 - Listening (Map labeling)
+2. Setelah score muncul, better kalo di close, bisa terlihat mana saja yang salah dari yang udah dikerjain 
+3. parts dipindahkan kebawah
+4. history writing test
+5. simpan history jawaban user
 
 
 1. Listening Cambridge 18 Test 4 ada typo bang. seharusnya energy, tapi karena answer keynya typo, jadinya jawaban anaknya salah bang
 2. submit practice listening, uda keluar scorenya tapi di admin ga ada
 3. beberapa soal masih error 500 kalau submit
+4. untuk answer keys Cambridge 10 Test 2 section 4 salah
+5. untuk soal reading cambridge 16 test 1 paragrafnya ada yang ga lengkap
+6. practice pakai web, scoring dan jumlah benarnya ga sesuai, benarnya 22 yang scorenya harusnya 5.5 tapi tadi jadi 7
+7. jawaban array masih ada yang ga bisa
+8. student submit writing, task 1 nya masuk tapi task 2 nya ga masuk. itu gimana ya bang? dan kalau student udah submit salah satu task, biasa waktunya kereset lagi untuk task selanjutnya bang. jadi durasinya 2 jam untuk all tasks.
 
 
 
@@ -96,24 +109,17 @@ Multiple choice -> choices nya ga bisa di highlight
 
 
 
-
-
-
-
-
-admin
-        teacher
-        user VERIFICATION
-
-
-
-
-
-tambahan (optional)
-halo bang @Imam @Imam mau nanya lagi, kita bisa liat history jawaban students gak ya?
 
 
 terakhir update log whatsapp 4/28/2026
 
 terakhir update log whatsapp 5/13/2026 14:55
         - jawaban dengan array masih error
+
+--------------------------------------------
+terakhir update log whatsapp 6/11/2026 14:55
+        - c18t4 type energi jadi energy
+terakhir update log whatsapp 6/19/2026 14:55
+        - kenadala c18t1 dan c19t2 mock test reading dan listening tidak bisa => bisa (kendala jaringan)
+terakhir update log whatsapp 6/26/2026 14:55
+        - c10t2 section 4 gak salah semua, hanya one choice (sudah sesuai sama web engnovate)

@@ -1,6 +1,5 @@
 <h3 class="passage-title">Why we need to protect polar bears</h3>
 <div class="passage-body">
-    <p><strong>A</strong></p>
     <p>
         Polar bears are being increasingly threatened by the effects of climate change, but their disappearance could
         have far-reaching consequences. They are uniquely adapted to the extreme conditions of the Arctic Circle, where
@@ -9,7 +8,6 @@
         from diabetes and heart disease. Yet the polar bear experiences no such consequences.
     </p>
 
-    <p><strong>B</strong></p>
     <p>
         A 2014 study by Shi Ping Liu and colleagues sheds light on this mystery. They compared the genetic structure of
         polar bears with that of their closest relatives from a warmer climate, the brown bears. This allowed them to
@@ -21,7 +19,6 @@
         humans.
     </p>
 
-    <p><strong>C</strong></p>
     <p>
         The genome of the polar bear may also provide the solution for another condition, one that particularly affects
         our older generation: osteoporosis. This is a disease where bones show reduced density, usually caused by
@@ -35,7 +32,6 @@
         remain strong and dense.
     </p>
 
-    <p><strong>D</strong></p>
     <p>
         Physiologists Alanda Lennox and Allen Goodship found an explanation for this paradox in 2008. They discovered
         that
@@ -46,7 +42,6 @@
         understood, many bedridden humans, and even astronauts, could potentially benefit.
     </p>
 
-    <p><strong>E</strong></p>
     <p>
         The medical benefits of the polar bear for humanity certainly have their importance in our conservation efforts,
         but these should not be the only factors taken into consideration. We tend to want to protect animals we think
@@ -58,4 +53,7 @@
         If climate change were to lead to their extinction, this would mean not only the loss of potential breakthroughs
         in human medicine, but more importantly, the disappearance of an intelligent, majestic animal.
     </p>
+    <p>In other studies, such as one by Alison Annes in 2008, polar bears showed deliberate and focussed manipulation. For example, Annes observed bears putting objects in piles and then knocking them over in what appeared to be a game. The study demonstrates that bears are capable of agile and thought-out behaviours. These examples suggest bears have greater creativity and problem-solving abilities than previously thought.</p>
+    <p>As for emotions while the evidence is once again anecdotal, many bears have been seen to hit out at ice and snow — seemingly out of frustration — when they have just missed out on a kill. Moreover, polar bears can form unusual relationships with other species, including playing with the dogs used to pull sleds in the Arctic. Remarkably, one hand-raised polar bear called Agee has formed a close relationship with her owner Mark Dumas to the point where they even swim together. This is even more astonishing since polar bears are known to actively hunt humans in the wild.</p>
+    <p>If climate change were to lead to their extinction, this would mean not only the loss of potential breakthroughs in human medicine, but more importantly, the disappearance of an intelligent, majestic animal.</p>
 </div>
