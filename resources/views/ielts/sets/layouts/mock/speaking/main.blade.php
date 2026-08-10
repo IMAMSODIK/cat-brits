@@ -38,7 +38,7 @@
                                         @foreach ($sessions as $session)
                                             <tr>
                                                 <td class="fw-semibold">{{ $session->title }}</td>
-                                                <td>{{ $session->student->name }}</td>
+                                                <td>{{ optional($session->student)->name ?? 'Unknown Student' }}</td>
                                                 <td>
                                                     @if ($session->scheduled_time)
                                                         <div class="d-flex align-items-center">

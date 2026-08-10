@@ -1102,8 +1102,16 @@ class IeltsController extends Controller
                         /** @var \App\Models\User $user */
                         $user = Auth::user();
 
-                        if ($user->isTeacher()) {
-                            $data['sessions'] = $user->teacherSessions()->with('student')->latest()->get();
+                        if ($user->isStudent()) {
+                            return view('pages.speaking_schedule_notice', [
+                                'redirectUrl' => url('/ielts/categories') . '?set-id=' . urlencode($set->kode),
+                            ]);
+                        }
+
+                        if ($user->isTeacher() || $user->role === 'admin') {
+                            $data['sessions'] = $user->isTeacher()
+                                ? $user->teacherSessions()->whereHas('student')->with('student')->latest()->get()
+                                : VideoCall::whereHas('student')->with(['student', 'teacher'])->latest()->get();
                             $data['students'] = User::where('role', 'student')->get();
                             $blade = 'ielts.sets.' . $r->input('set-id') . '.mock.' . $r->input('section');
                             return view($blade, $data);

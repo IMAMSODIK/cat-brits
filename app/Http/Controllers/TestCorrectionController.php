@@ -20,7 +20,10 @@ class TestCorrectionController extends Controller
         try {
             $data = [
                 'pageTitle' => "Students",
-                'video_request' => Videos::with(['student', 'setSoal'])->whereNull('teacher_id')->get(),
+                'video_request' => Videos::with(['student', 'setSoal'])
+                    ->whereNull('teacher_id')
+                    ->whereHas('student')
+                    ->get(),
                 'writing_request' => Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get(),
                 'pendingSessions' => VideoCall::pending()->with('student')->get(),
                 'upcomingSessions' => $user->teacherSessions()->accepted()->upcoming()->with('student')->get(),

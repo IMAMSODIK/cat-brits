@@ -1258,7 +1258,6 @@
         /* Mobile Responsive Design */
         @media (max-width: 768px) {
             body {
-                padding: 15px;
             }
 
             .form-container {
