@@ -107,7 +107,10 @@ class DashboardController extends Controller
             $data['unverifStudent'] = $unverifStudent;
             $data['studentActivities'] = $studentActivities;
 
-            $videoRequest = Videos::with(['student', 'setSoal'])->where('teacher_id', null)->get();
+            $videoRequest = Videos::with(['student', 'setSoal'])
+                ->whereNull('teacher_id')
+                ->whereHas('student')
+                ->get();
             $writingRequest = Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get();
 
             if (in_array($user->role, ['admin', 'teacher'])) {
