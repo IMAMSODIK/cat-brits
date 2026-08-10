@@ -15,6 +15,8 @@
         --danger: #ef4444;
         --ring: rgba(37, 99, 235, 0.35);
         --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        --app-header-height: max(80px, calc(60px + env(safe-area-inset-top)));
+        --session-info-height: 52px;
     }
 
     html,
@@ -224,6 +226,11 @@
 <!-- style informasi ujian (di bawah header) -->
 <style>
     .session-info {
+        position: sticky;
+        top: var(--app-header-height);
+        z-index: 45;
+        box-sizing: border-box;
+        height: var(--session-info-height);
         background: #f8fafc;
         border-top: 1px solid #111113;
         border-bottom: 1px solid #e5e7eb;
@@ -261,6 +268,10 @@
     }
 
     @media (max-width: 420px) {
+        :root {
+            --session-info-height: 90px;
+        }
+
         .session-grid {
             grid-template-columns: 1fr;
         }
@@ -306,7 +317,9 @@
         -ms-overflow-style: none;
         scrollbar-width: thin;
 
-        position: relative;
+        position: sticky;
+        top: calc(var(--app-header-height) + var(--session-info-height));
+        z-index: 40;
         /* untuk edge hint */
     }
 

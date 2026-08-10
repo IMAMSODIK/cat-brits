@@ -113,13 +113,22 @@ Multiple choice -> choices nya ga bisa di highlight
 
 terakhir update log whatsapp 4/28/2026
 
+------------     NOTE YET      -------------
 terakhir update log whatsapp 5/13/2026 14:55
         - jawaban dengan array masih error
+terakhir update log whatsapp 8/7/2026 14:55
+        - hasil score mock test belum sesuai (tidak tahu diset yang mana)
 
---------------------------------------------
+------------     DONE      -------------
 terakhir update log whatsapp 6/11/2026 14:55
         - c18t4 type energi jadi energy
 terakhir update log whatsapp 6/19/2026 14:55
         - kenadala c18t1 dan c19t2 mock test reading dan listening tidak bisa => bisa (kendala jaringan)
 terakhir update log whatsapp 6/26/2026 14:55
         - c10t2 section 4 gak salah semua, hanya one choice (sudah sesuai sama web engnovate)
+terakhir update log whatsapp 7/6/2026 14:55
+        - melengkapi paragraf mocktest reading c16t1
+
+
+
+buatkan page default pada role user di speaking mock test

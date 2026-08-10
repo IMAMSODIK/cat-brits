@@ -821,7 +821,7 @@
                                                 <div class="list-group-item list-group-item-action list-hover-primary btn-review-speaking"
                                                     style="cursor: pointer" data-id="{{ $v->id }}"
                                                     data-video="{{ asset('storage/recordings/' . $v->video) }}"
-                                                    data-student="{{ $v->student->name }}">
+                                                     data-student="{{ optional($v->student)->name ?? 'Unknown Student' }}">
                                                     <div class="row">
                                                         <div class="col-5 d-flex align-items-center">
                                                             <video width="100%" controls class="preview-video"
@@ -834,7 +834,9 @@
 
                                                         <div class="col-7">
                                                             <div class="list-content">
-                                                                <h6 class="mb-1">{{ $v->student->name }}</h6>
+                                                                <h6 class="mb-1">
+                                                                    {{ optional($v->student)->name ?? 'Unknown Student' }}
+                                                                </h6>
 
                                                                 <p class="mb-1 text-muted" style="font-size:13px;">
                                                                     <i class="fa fa-calendar"></i>
