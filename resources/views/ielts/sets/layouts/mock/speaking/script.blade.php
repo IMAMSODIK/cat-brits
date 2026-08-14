@@ -1,7 +1,25 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('form').forEach(function (form) {
+            form.setAttribute('autocomplete', 'off');
+        });
+        document.querySelectorAll('input').forEach(function (input) {
+            input.setAttribute('autocomplete', 'off');
+            input.setAttribute('autocorrect', 'off');
+            input.setAttribute('autocapitalize', 'off');
+            input.setAttribute('spellcheck', 'false');
+        });
+        document.querySelectorAll('textarea').forEach(function (textarea) {
+            textarea.setAttribute('autocomplete', 'off');
+            textarea.setAttribute('autocorrect', 'off');
+            textarea.setAttribute('autocapitalize', 'off');
+            textarea.setAttribute('spellcheck', 'false');
+        });
+    });
+</script>
 <script>
     $('.btn-copy').on('click', function () {
         const btn = $(this);

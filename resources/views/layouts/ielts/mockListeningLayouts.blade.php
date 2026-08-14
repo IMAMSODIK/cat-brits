@@ -1534,6 +1534,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('form').forEach(function (form) {
+                form.setAttribute('autocomplete', 'off');
+            });
+            document.querySelectorAll('input').forEach(function (input) {
+                input.setAttribute('autocomplete', 'off');
+                input.setAttribute('autocorrect', 'off');
+                input.setAttribute('autocapitalize', 'off');
+                input.setAttribute('spellcheck', 'false');
+            });
+            document.querySelectorAll('textarea').forEach(function (textarea) {
+                textarea.setAttribute('autocomplete', 'off');
+                textarea.setAttribute('autocorrect', 'off');
+                textarea.setAttribute('autocapitalize', 'off');
+                textarea.setAttribute('spellcheck', 'false');
+            });
+        });
+    </script>
+
 </body>
 
 </html>

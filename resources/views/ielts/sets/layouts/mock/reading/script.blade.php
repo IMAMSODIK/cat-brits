@@ -1,6 +1,24 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('form').forEach(function (form) {
+            form.setAttribute('autocomplete', 'off');
+        });
+        document.querySelectorAll('input').forEach(function (input) {
+            input.setAttribute('autocomplete', 'off');
+            input.setAttribute('autocorrect', 'off');
+            input.setAttribute('autocapitalize', 'off');
+            input.setAttribute('spellcheck', 'false');
+        });
+        document.querySelectorAll('textarea').forEach(function (textarea) {
+            textarea.setAttribute('autocomplete', 'off');
+            textarea.setAttribute('autocorrect', 'off');
+            textarea.setAttribute('autocapitalize', 'off');
+            textarea.setAttribute('spellcheck', 'false');
+        });
+    });
+</script>
 <script>
     document.addEventListener('change', function (e) {
         const checkbox = e.target;

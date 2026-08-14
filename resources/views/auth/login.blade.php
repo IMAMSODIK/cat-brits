@@ -99,7 +99,8 @@
                 </div>
 
                 <div class="forgot-password">
-                    <a href="{{ route('password.request') }}"><i class="fas fa-key" style="margin-right: 3px;"></i> Forgot password?</a>
+                    <a href="{{ route('password.request') }}"><i class="fas fa-key" style="margin-right: 3px;"></i>
+                        Forgot password?</a>
                 </div>
 
                 <button class="btn text-white" type="button" id="login-submit"><i class="fas fa-sign-in-alt"
@@ -332,8 +333,7 @@
                             response.errors
                         );
                     } else {
-                        showRegisterError('An error occurred. Please try again.'
-                        );
+                        showRegisterError('An error occurred. Please try again.');
                     }
                 }
             });
@@ -364,7 +364,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        
+
         function showOtpModal() {
             $('#otpModal').fadeIn();
 
@@ -439,6 +439,54 @@
                 }
             });
         }
+    </script>
+
+    <script>
+        (function() {
+            function disableAutoFeatures(element) {
+                if (
+                    element.matches &&
+                    element.matches('input, textarea, select, form')
+                ) {
+                    element.setAttribute('autocomplete', 'off');
+                    element.setAttribute('autocorrect', 'off');
+                    element.setAttribute('autocapitalize', 'off');
+                    element.setAttribute('spellcheck', 'false');
+                }
+
+                if (element.querySelectorAll) {
+                    element.querySelectorAll(
+                        'input, textarea, select, form'
+                    ).forEach(function(el) {
+                        el.setAttribute('autocomplete', 'off');
+                        el.setAttribute('autocorrect', 'off');
+                        el.setAttribute('autocapitalize', 'off');
+                        el.setAttribute('spellcheck', 'false');
+                    });
+                }
+            }
+
+            // Elemen yang sudah ada
+            document.addEventListener('DOMContentLoaded', function() {
+                disableAutoFeatures(document);
+            });
+
+            // Elemen yang ditambahkan setelah halaman dimuat
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            disableAutoFeatures(node);
+                        }
+                    });
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        })();
     </script>
 </body>
 

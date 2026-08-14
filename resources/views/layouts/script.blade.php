@@ -40,7 +40,25 @@
 <!-- Theme js-->
 <script src="{{ asset('dashboard_assets/assets/js/script.js') }}"></script>
 <script src="{{ asset('dashboard_assets/assets/js/theme-customizer/customizer.js') }}"></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('form').forEach(function (form) {
+            form.setAttribute('autocomplete', 'off');
+        });
+        document.querySelectorAll('input').forEach(function (input) {
+            input.setAttribute('autocomplete', 'off');
+            input.setAttribute('autocorrect', 'off');
+            input.setAttribute('autocapitalize', 'off');
+            input.setAttribute('spellcheck', 'false');
+        });
+        document.querySelectorAll('textarea').forEach(function (textarea) {
+            textarea.setAttribute('autocomplete', 'off');
+            textarea.setAttribute('autocorrect', 'off');
+            textarea.setAttribute('autocapitalize', 'off');
+            textarea.setAttribute('spellcheck', 'false');
+        });
+    });
+</script>
 <script>
     new WOW().init();
 
