@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\TestHistory;
 use App\Models\User;
+use App\Models\Videos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class TestHistoryController extends Controller
@@ -133,6 +135,151 @@ class TestHistoryController extends Controller
             return view('history.detail', $data);
         } catch (\Exception $e) {
             return back()->with('error', 'Failed to load data');
+        }
+    }
+
+    public function myHistory()
+    {
+        try {
+            /** @var \App\Models\User $user */
+            $user = auth()->user();
+
+            $summary = TestHistory::where('student_id', $user->id)
+                ->where('tipe_test', 'mock')
+                ->selectRaw("
+                    COALESCE(COUNT(CASE WHEN kategori = 'reading' THEN 1 END), 0) AS reading_attempt,
+                    COALESCE(COUNT(CASE WHEN kategori = 'listening' THEN 1 END), 0) AS listening_attempt,
+                    COALESCE(AVG(CASE WHEN kategori = 'reading' THEN score_conversion END), 0) AS reading_avg,
+                    COALESCE(AVG(CASE WHEN kategori = 'listening' THEN score_conversion END), 0) AS listening_avg
+                ")
+                ->first();
+
+            $studentActivities = TestHistory::with(['setSoal', 'teacher'])
+                ->where('student_id', $user->id)
+                ->latest()
+                ->get();
+
+            return view('history.my', [
+                'pageTitle' => 'My History',
+                'user'      => $user,
+                'summary'   => $summary,
+                'studentActivities' => $studentActivities,
+            ]);
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to load data');
+        }
+    }
+
+    public function answers(Request $r, $id)
+    {
+        try {
+            /** @var \App\Models\User $user */
+            $user = auth()->user();
+
+            $history = TestHistory::with(['detailHistories', 'setSoal', 'teacher'])
+                ->where('id', $id)
+                ->firstOrFail();
+
+            // Student hanya boleh melihat history miliknya sendiri
+            if ($user->role === 'student' && $history->student_id !== $user->id) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Unauthorized.'
+                ], 403);
+            }
+
+            $details = $history->detailHistories->map(function ($d) {
+                return [
+                    'soal_id'       => $d->soal_id,
+                    'jawaban_user'  => $d->jawaban_user,
+                    'jawaban_benar' => $d->jawaban_benar,
+                    'status'        => (bool) $d->status,
+                ];
+            })->values();
+
+            $videoUrls = [];
+            $assessments = [];
+            if ($history->kategori === 'speaking') {
+                $videoIds = $history->detailHistories
+                    ->pluck('soal_id')
+                    ->filter(fn($s) => str_starts_with((string) $s, 'video-'))
+                    ->map(fn($s) => (int) substr($s, 6));
+
+                if ($videoIds->isNotEmpty()) {
+                    $videos = Videos::with('assesment')->whereIn('id', $videoIds)->get();
+                    foreach ($videos as $v) {
+                        $videoUrls['video-' . $v->id] = Storage::url('recordings/' . $v->video);
+                        if ($v->assesment) {
+                            $assessments['video-' . $v->id] = [
+                                'type' => 'speaking',
+                                'fc_band' => (float) $v->assesment->fc_band,
+                                'lr_band' => (float) $v->assesment->lr_band,
+                                'gra_band' => (float) $v->assesment->gra_band,
+                                'pr_band' => (float) $v->assesment->pr_band,
+                                'overall' => round((
+                                    (float) $v->assesment->fc_band +
+                                    (float) $v->assesment->lr_band +
+                                    (float) $v->assesment->gra_band +
+                                    (float) $v->assesment->pr_band
+                                ) / 4, 1),
+                                'remark' => $v->assesment->remark,
+                            ];
+                        }
+                    }
+                }
+            }
+
+            if ($history->kategori === 'writing') {
+                $writingIds = $history->detailHistories
+                    ->pluck('soal_id')
+                    ->filter(fn($s) => str_starts_with((string) $s, 'writing-'))
+                    ->map(fn($s) => (int) substr($s, 8));
+
+                if ($writingIds->isNotEmpty()) {
+                    $writings = \App\Models\Writing::with('assessment')->whereIn('id', $writingIds)->get();
+                    foreach ($writings as $w) {
+                        if ($w->assessment) {
+                            $assessments['writing-' . $w->id] = [
+                                'type' => 'writing',
+                                'ta_band' => (float) $w->assessment->ta_band,
+                                'cc_band' => (float) $w->assessment->cc_band,
+                                'lr_band' => (float) $w->assessment->lr_band,
+                                'gra_band' => (float) $w->assessment->gra_band,
+                                'overall' => round((
+                                    (float) $w->assessment->ta_band +
+                                    (float) $w->assessment->cc_band +
+                                    (float) $w->assessment->lr_band +
+                                    (float) $w->assessment->gra_band
+                                ) / 4, 1),
+                                'feedback' => $w->assessment->feedback,
+                            ];
+                        }
+                    }
+                }
+            }
+
+            return response()->json([
+                'status' => true,
+                'data' => [
+                    'kategori'     => $history->kategori,
+                    'tipe_test'    => $history->tipe_test,
+                    'nama_tipe'    => $history->nama_tipe,
+                    'set_name'     => $history->setSoal?->name,
+                    'score'        => $history->score,
+                    'jumlah_soal'  => $history->jumlah_soal,
+                    'score_conversion' => $history->score_conversion,
+                    'assessor'     => $history->teacher?->name,
+                    'created_at'   => $history->created_at?->format('d M Y H:i'),
+                    'details'      => $details,
+                    'video_urls'   => $videoUrls,
+                    'assessments'  => $assessments,
+                ]
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Failed to load answers.'
+            ], 500);
         }
     }
 

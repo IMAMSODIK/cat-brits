@@ -936,7 +936,7 @@
 
                     <div class="project-details">
                         <div class="project-counter">
-                            <h2 class="f-w-600">{{ $video_request->count() }}</h2>
+                            <h2 class="f-w-600" id="video-pending-widget">{{ $video_pending_count }}</h2>
                         </div>
 
                         <div class="product-sub bg-primary-light">
@@ -1000,9 +1000,15 @@
                             A list of students who submitted speaking tests.
                         </p>
                     </div>
-                    <span class="badge bg-danger text-white">
-                        {{ $video_request->count() }}
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="{{ route('test-correction.submissions', ['kategori' => 'speaking']) }}"
+                            class="btn btn-sm btn-outline-primary">
+                            View All <i class="fa fa-arrow-right ms-1"></i>
+                        </a>
+                    <span class="badge bg-danger text-white" id="video-pending-badge">
+                        {{ $video_pending_count }} pending
                     </span>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="vertical-scroll scroll-demo scroll-b-none">
@@ -1024,8 +1030,16 @@
 
                                         <div class="col-7">
                                             <div class="list-content">
-                                                 <h6 class="mb-1">
+                                                 <h6 class="mb-1 d-flex align-items-center gap-2 flex-wrap">
                                                      {{ optional($v->student)->name ?? 'Unknown Student' }}
+                                                     @if ($v->teacher_id)
+                                                         <span class="badge bg-success">
+                                                             <i class="fa fa-check"></i> Reviewed
+                                                             @if ($v->teacher) — {{ $v->teacher->name }} @endif
+                                                         </span>
+                                                     @else
+                                                         <span class="badge bg-warning text-dark">Not Reviewed</span>
+                                                     @endif
                                                  </h6>
 
                                                 <p class="mb-1 text-muted" style="font-size:13px;">
@@ -1071,9 +1085,15 @@
                             A list of students who submitted writing tests.
                         </p>
                     </div>
-                    <span class="badge bg-danger text-white">
-                        {{ $writing_request->count() }}
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="{{ route('test-correction.submissions', ['kategori' => 'writing']) }}"
+                            class="btn btn-sm btn-outline-primary">
+                            View All <i class="fa fa-arrow-right ms-1"></i>
+                        </a>
+                    <span class="badge bg-danger text-white" id="writing-pending-badge">
+                        {{ $writing_pending_count }} pending
                     </span>
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -1087,10 +1107,18 @@
                                         <div class="col-12">
                                             <div class="list-content">
 
-                                                <!-- STUDENT NAME -->
-                                                <h6 class="mb-1">
-                                                    {{ $w->student->name ?? 'Unknown Student' }}
-                                                </h6>
+                                <!-- STUDENT NAME + STATUS -->
+                                <h6 class="mb-1 d-flex align-items-center gap-2">
+                                    {{ $w->student->name ?? 'Unknown Student' }}
+                                    @if ($w->teacher_id)
+                                        <span class="badge bg-success">
+                                            <i class="fa fa-check"></i> Reviewed
+                                            @if ($w->teacher) — {{ $w->teacher->name }} @endif
+                                        </span>
+                                    @else
+                                        <span class="badge bg-warning text-dark">Not Reviewed</span>
+                                    @endif
+                                </h6>
 
                                                 <!-- DATE + WORD COUNT -->
                                                 <p class="mb-1 text-muted" style="font-size: 13px;">
@@ -1629,21 +1657,60 @@
         });
 
         // ketika list item diklik
-        $(".btn-review-speaking").on("click", function() {
+        $(document).on("click", ".btn-review-speaking", function() {
 
-            let video = $(this).data("video");
             let videoId = $(this).data("id");
 
-            $("#modalVideoSource").attr("src", video);
-            $("#video_id").val(videoId);
+            $.ajax({
+                url: "/video/get/" + videoId,
+                type: "GET",
+                success: function(res) {
+                    if (!res.status) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Failed",
+                            text: res.message || "Failed to load video"
+                        });
+                        return;
+                    }
 
-            $("#modalVideoPlayer")[0].load();
+                    $("#modalVideoSource").attr("src", res.data.url);
+                    $("#video_id").val(videoId);
+                    $("#modalVideoPlayer")[0].load();
 
-            $("#assessmentModal").modal("show");
+                    // reset lalu isi nilai assessment sebelumnya
+                    const form = $("#assessmentForm");
+                    form[0].reset();
+                    form.find("input[type=checkbox]").trigger("change");
+                    if (res.data.assessment) {
+                        const a = res.data.assessment;
+                        form.find("[name=fc_band]").val(a.fc_band);
+                        form.find("[name=lr_band]").val(a.lr_band);
+                        form.find("[name=gra_band]").val(a.gra_band);
+                        form.find("[name=pr_band]").val(a.pr_band);
+                        form.find("[name=remark]").val(a.remark);
+                        $.each(a.checkboxes || {}, function(name, checked) {
+                            const cb = form.find("[name=" + name + "]");
+                            cb.prop("checked", checked);
+                            if (checked) cb.trigger("change");
+                        });
+                    }
+
+                    $("#assessmentModal").modal("show");
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Server Error",
+                        text: "Failed to load video"
+                    });
+                }
+            });
         });
 
         $("#saveAssessmentBtn").on("click", function() {
 
+            const videoId = $("#video_id").val();
             let formData = $("#assessmentForm").serialize();
 
             $.ajax({
@@ -1656,15 +1723,21 @@
                 success: function(res) {
                     if (res.status === "success") {
 
+                        $("#assessmentModal").modal("hide");
+
+                        const wasPending = markReviewed(".btn-review-speaking[data-id='" + videoId + "']", false);
+                        if (wasPending) {
+                            decCount("video-pending-widget");
+                            decCount("video-pending-badge");
+                        }
+
                         Swal.fire({
                             icon: "success",
                             title: "Saved!",
                             text: res.message,
-                            timer: 1500,
+                            timer: 1800,
                             showConfirmButton: false
                         });
-
-                        $("#assessmentModal").modal("hide");
                     } else {
 
                         Swal.fire({
@@ -1702,14 +1775,14 @@
                     $("#writingAnswerBox").text(res.answer);
 
                     // isi nilai jika sudah ada assessment sebelumnya
+                    const form = $("#writingAssessmentForm");
+                    form[0].reset();
                     if (res.assessment) {
-                        $("[name=ta_band]").val(res.assessment.ta_band);
-                        $("[name=cc_band]").val(res.assessment.cc_band);
-                        $("[name=lr_band]").val(res.assessment.lr_band);
-                        $("[name=gra_band]").val(res.assessment.gra_band);
-                        $("[name=feedback]").val(res.assessment.feedback);
-                    } else {
-                        $("#writingAssessmentForm")[0].reset();
+                        form.find("[name=ta_band]").val(res.assessment.ta_band);
+                        form.find("[name=cc_band]").val(res.assessment.cc_band);
+                        form.find("[name=lr_band]").val(res.assessment.lr_band);
+                        form.find("[name=gra_band]").val(res.assessment.gra_band);
+                        form.find("[name=feedback]").val(res.assessment.feedback);
                     }
 
                     $("#writingAssessmentModal").modal("show");
@@ -1717,8 +1790,34 @@
             });
         });
 
+        const currentUserName = "{{ auth()->user()->name }}";
+
+        function escHtml(s) {
+            const d = document.createElement("div");
+            d.textContent = s == null ? "" : String(s);
+            return d.innerHTML;
+        }
+
+        function decCount(id) {
+            const el = $("#" + id);
+            const m = el.text().match(/\d+/);
+            if (m) el.text(el.text().replace(/\d+/, Math.max(0, parseInt(m[0], 10) - 1)));
+        }
+
+        function markReviewed(selector, withName) {
+            const item = $(selector).first();
+            if (!item.length) return false;
+            const h6 = item.is("h6") ? item : item.find("h6").first();
+            const wasPending = h6.find(".badge.bg-warning").length > 0;
+            h6.find(".badge").remove();
+            h6.append('<span class="badge bg-success"><i class="fa fa-check"></i> Reviewed' +
+                (withName && currentUserName ? ' — ' + escHtml(currentUserName) : '') + '</span>');
+            return wasPending;
+        }
+
         $("#saveWritingAssessmentBtn").on("click", function() {
 
+            const writingId = $("#writing_id").val();
             let formData = $("#writingAssessmentForm").serialize();
 
             $.ajax({
@@ -1729,30 +1828,27 @@
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
                 },
 
-                beforeSend: function() {
-                    $("#saveWritingAssessmentBtn")
-                        .prop("disabled", true)
-                        .html("Saving...");
-                },
-
                 success: function(res) {
 
-                    $("#saveWritingAssessmentBtn")
-                        .prop("disabled", false)
-                        .html("Save Assessment");
-
                     if (res.status === "success") {
+
+                        $("#writingAssessmentModal").modal("hide");
+
+                        const wasPending = markReviewed(".btn-review-writing[data-id='" + writingId + "']", true);
+                        if (wasPending) {
+                            decCount("writing-pending-badge");
+                        }
 
                         Swal.fire({
                             icon: "success",
                             title: "Saved",
                             text: res.message,
-                            timer: 1500
+                            timer: 1800,
+                            showConfirmButton: false
                         });
 
-                        $("#writingAssessmentModal").modal("hide");
-
                     } else {
+
                         Swal.fire({
                             icon: "error",
                             title: "Failed",
@@ -1762,10 +1858,6 @@
                 },
 
                 error: function(xhr) {
-
-                    $("#saveWritingAssessmentBtn")
-                        .prop("disabled", false)
-                        .html("Save Assessment");
 
                     Swal.fire({
                         icon: "error",
@@ -1947,28 +2039,6 @@
             $('textarea[name="feedback"]').on('input', function() {
                 this.style.height = 'auto';
                 this.style.height = (this.scrollHeight) + 'px';
-            });
-
-            // Save button loading state
-            $('#saveWritingAssessmentBtn').on('click', function() {
-                const btn = $(this);
-                const originalText = btn.html();
-
-                btn.html('<span class="spinner-border spinner-border-sm me-2"></span> Saving...');
-                btn.prop('disabled', true);
-
-                // Simulate save process
-                setTimeout(() => {
-                    btn.html('✓ Saved Successfully!');
-                    btn.css('background', 'linear-gradient(135deg, #4274BA 0%, #40c057 100%)');
-
-                    setTimeout(() => {
-                        btn.html(originalText);
-                        btn.prop('disabled', false);
-                        btn.css('background',
-                            'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)');
-                    }, 2000);
-                }, 1500);
             });
 
             // Remove loading class when content is loaded

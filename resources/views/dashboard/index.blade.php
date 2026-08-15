@@ -710,13 +710,14 @@
                                                                 @endif
                                                             </div>
 
-                                                            @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
-                                                                <div class="mt-3">
-                                                                    <button class="btn btn-outline-primary btn-sm w-100">
-                                                                        View Details
-                                                                    </button>
-                                                                </div>
-                                                            @endif
+                                                                @if (in_array($activities->kategori, ['reading', 'listening', 'writing', 'speaking']))
+                                                                    <div class="mt-3">
+                                                                        <button class="btn btn-outline-primary btn-sm w-100 view-answers"
+                                                                            data-id="{{ $activities->id }}">
+                                                                            View Answers
+                                                                        </button>
+                                                                    </div>
+                                                                @endif
 
                                                         </div>
                                                     </div>
@@ -745,7 +746,7 @@
 
                                     <div class="project-details">
                                         <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $videoRequest->count() }}</h2>
+                                            <h2 class="f-w-600" id="video-pending-widget">{{ $videoPendingCount }}</h2>
                                         </div>
 
                                         <div class="product-sub bg-primary-light">
@@ -775,7 +776,7 @@
 
                                     <div class="project-details">
                                         <div class="project-counter">
-                                            <h2 class="f-w-600">{{ $writingRequest->count() }}</h2>
+                                            <h2 class="f-w-600" id="writing-pending-widget">{{ $writingPendingCount }}</h2>
                                         </div>
 
                                         <div class="product-sub bg-primary-light">
@@ -802,16 +803,22 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <div>
-                                        <h4>Speaking Test Requests</h4>
-                                        <p class="f-m-light mt-1">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <h4>Speaking Test Requests</h4>
+                                            <span class="badge bg-danger text-white" id="video-pending-badge">
+                                                {{ $videoPendingCount }} pending
+                                            </span>
+                                        </div>
+                                        <p class="f-m-light mt-1 mb-0">
                                             A list of students who submitted speaking tests.
                                         </p>
                                     </div>
-                                    <span class="badge bg-danger text-white">
-                                        {{ $videoRequest->count() }}
-                                    </span>
+                                    <a href="{{ route('test-correction.submissions', ['kategori' => 'speaking']) }}"
+                                        class="btn btn-sm btn-outline-primary">
+                                        View All <i class="fa fa-arrow-right ms-1"></i>
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="vertical-scroll scroll-demo scroll-b-none">
@@ -834,8 +841,15 @@
 
                                                         <div class="col-7">
                                                             <div class="list-content">
-                                                                <h6 class="mb-1">
+                                                                <h6 class="mb-1 d-flex align-items-center gap-2 flex-wrap">
                                                                     {{ optional($v->student)->name ?? 'Unknown Student' }}
+                                                                    @if ($v->teacher_id)
+                                                                        <span class="badge bg-success">
+                                                                            <i class="fa fa-check"></i> Reviewed
+                                                                        </span>
+                                                                    @else
+                                                                        <span class="badge bg-warning text-dark">Not Reviewed</span>
+                                                                    @endif
                                                                 </h6>
 
                                                                 <p class="mb-1 text-muted" style="font-size:13px;">
@@ -873,16 +887,22 @@
 
                         <div class="col-12 col-md-6">
                             <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <div>
-                                        <h4>Writing Test Requests</h4>
-                                        <p class="f-m-light mt-1">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <h4>Writing Test Requests</h4>
+                                            <span class="badge bg-danger text-white" id="writing-pending-badge">
+                                                {{ $writingPendingCount }} pending
+                                            </span>
+                                        </div>
+                                        <p class="f-m-light mt-1 mb-0">
                                             A list of students who submitted writing tests.
                                         </p>
                                     </div>
-                                    <span class="badge bg-danger text-white">
-                                        {{ $writingRequest->count() }}
-                                    </span>
+                                    <a href="{{ route('test-correction.submissions', ['kategori' => 'writing']) }}"
+                                        class="btn btn-sm btn-outline-primary">
+                                        View All <i class="fa fa-arrow-right ms-1"></i>
+                                    </a>
                                 </div>
 
                                 <div class="card-body">
@@ -896,9 +916,17 @@
                                                         <div class="col-12">
                                                             <div class="list-content">
 
-                                                                <!-- STUDENT NAME -->
-                                                                <h6 class="mb-1">
+                                                                <!-- STUDENT NAME + STATUS -->
+                                                                <h6 class="mb-1 d-flex align-items-center gap-2 flex-wrap">
                                                                     {{ $w->student->name ?? 'Unknown Student' }}
+                                                                    @if ($w->teacher_id)
+                                                                        <span class="badge bg-success">
+                                                                            <i class="fa fa-check"></i> Reviewed
+                                                                            @if ($w->teacher) — {{ $w->teacher->name }} @endif
+                                                                        </span>
+                                                                    @else
+                                                                        <span class="badge bg-warning text-dark">Not Reviewed</span>
+                                                                    @endif
                                                                 </h6>
 
                                                                 <!-- DATE + WORD COUNT -->
@@ -2190,6 +2218,143 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="answer-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="answer-modal-title">Student Answers</h4>
+                    <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="answer-modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="writingAssessmentModal" tabindex="-1">
+        <div class="modal-dialog modal-md modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Writing Assessment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6><b>Student Answer</b></h6>
+                    <div id="writingAnswerBox" class="border rounded p-2 mb-3"
+                        style="background:#f9f9f9; white-space:pre-wrap; max-height:300px; overflow:auto;">
+                        Loading...
+                    </div>
+
+                    <form id="writingAssessmentForm">
+                        <input type="hidden" name="writing_id" id="writing_id">
+
+                        <div class="mb-3">
+                            <label><b>Task Achievement (Band)</b></label>
+                            <input type="number" step="0.1" max="9" min="0" name="ta_band" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label><b>Coherence & Cohesion (Band)</b></label>
+                            <input type="number" step="0.1" max="9" min="0" name="cc_band" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label><b>Lexical Resource (Band)</b></label>
+                            <input type="number" step="0.1" max="9" min="0" name="lr_band" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label><b>Grammatical Range & Accuracy (Band)</b></label>
+                            <input type="number" step="0.1" max="9" min="0" name="gra_band" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label><b>Feedback</b></label>
+                            <textarea name="feedback" rows="4" class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="saveWritingAssessmentBtn">Save Assessment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="assessmentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video Assessment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="modalVideoPlayer" width="100%" controls class="mb-3">
+                        <source id="modalVideoSource" src="" type="video/webm">
+                    </video>
+
+                    <form id="assessmentForm">
+                        <input type="hidden" name="video_id" id="video_id">
+
+                        <h5>Fluency & Coherence</h5>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="fc_repetition"> Repetition</div>
+                            <div class="col-3"><input type="checkbox" name="fc_hesitation"> Hesitation</div>
+                            <div class="col-3"><input type="checkbox" name="fc_speech_rate"> Speech Rate</div>
+                            <div class="col-3"><input type="checkbox" name="fc_connectives"> Connectives</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="fc_discourse_markers"> Discourse Markers</div>
+                            <div class="col-3"><input type="checkbox" name="fc_relevant_answers"> Relevant Answers</div>
+                            <div class="col-3">Band: <input type="number" step="0.1" max="9" min="0" name="fc_band"
+                                    class="form-control"></div>
+                        </div>
+
+                        <hr>
+
+                        <h5>Lexical Resource</h5>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="lr_range_vocab"> Range of vocab</div>
+                            <div class="col-3"><input type="checkbox" name="lr_idiomatic"> Idiomatic</div>
+                            <div class="col-3"><input type="checkbox" name="lr_less_common"> Less common</div>
+                            <div class="col-3"><input type="checkbox" name="lr_collocation"> Collocation</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="lr_paraphrase"> Paraphrase</div>
+                            <div class="col-3">Band: <input type="number" step="0.1" max="9" min="0" name="lr_band"
+                                    class="form-control"></div>
+                        </div>
+
+                        <hr>
+
+                        <h5>Grammatical Range & Accuracy</h5>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="gra_range_structure"> Range of structure</div>
+                            <div class="col-3"><input type="checkbox" name="gra_error_free"> Error free sentences</div>
+                            <div class="col-3"><input type="checkbox" name="gra_grammar_features"> Grammar features</div>
+                            <div class="col-3">Band: <input type="number" step="0.1" max="9" min="0" name="gra_band"
+                                    class="form-control"></div>
+                        </div>
+
+                        <hr>
+
+                        <h5>Pronunciation</h5>
+                        <div class="row mb-3">
+                            <div class="col-3"><input type="checkbox" name="pr_features"> Pronunciation features</div>
+                            <div class="col-3"><input type="checkbox" name="pr_understood"> Easily understood</div>
+                            <div class="col-3">Band: <input type="number" step="0.1" max="9" min="0" name="pr_band"
+                                    class="form-control"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label><b>Remark</b></label>
+                            <textarea name="remark" rows="3" class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="saveAssessmentBtn">Save Assessment</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('own_script')
@@ -2203,6 +2368,301 @@
     <script src="{{ asset('dashboard_assets/assets/js/datepicker/date-picker/datepicker.en.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/datepicker/date-picker/datepicker.custom.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/js/dashboard/dashboard_3.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function() {
+            // ==== VIEW ANSWERS (Student Activity) ====
+            const answerModal = new bootstrap.Modal(document.getElementById('answer-modal'));
+
+            function esc(s) {
+                const d = document.createElement('div');
+                d.textContent = s == null ? '' : String(s);
+                return d.innerHTML;
+            }
+
+            function bandCard(label, value) {
+                return '<div class="col-6 col-md-2"><div class="border rounded p-2 text-center mb-2">' +
+                    '<small class="text-muted d-block">' + esc(label) + '</small>' +
+                    '<strong style="font-size:1.2rem">' + esc(value) + '</strong>' +
+                    '</div></div>';
+            }
+
+            function renderAssessment(a) {
+                let html = '<div class="card border-success mb-3">' +
+                    '<div class="card-header bg-success text-white"><strong>Assessment Result</strong></div>' +
+                    '<div class="card-body">';
+                if (a.type === 'writing') {
+                    html += '<div class="row">' +
+                        bandCard('Task Achievement', a.ta_band) +
+                        bandCard('Coherence & Cohesion', a.cc_band) +
+                        bandCard('Lexical Resource', a.lr_band) +
+                        bandCard('Grammar', a.gra_band) +
+                        bandCard('Overall Band', a.overall) +
+                        '</div>';
+                    if (a.feedback) {
+                        html += '<div class="mt-2"><strong>Feedback:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.feedback) + '</div></div>';
+                    }
+                } else {
+                    html += '<div class="row">' +
+                        bandCard('Fluency & Coherence', a.fc_band) +
+                        bandCard('Lexical Resource', a.lr_band) +
+                        bandCard('Grammar', a.gra_band) +
+                        bandCard('Pronunciation', a.pr_band) +
+                        bandCard('Overall Band', a.overall) +
+                        '</div>';
+                    if (a.remark) {
+                        html += '<div class="mt-2"><strong>Remark:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.remark) + '</div></div>';
+                    }
+                }
+                html += '</div></div>';
+                return html;
+            }
+
+            function renderAnswers(d) {
+                const title = document.getElementById('answer-modal-title');
+                title.textContent = (d.set_name ? d.set_name + ' - ' : '') + d.nama_tipe +
+                    ' (' + (d.tipe_test === 'mock' ? 'Mock Test' : 'Practice') + ')';
+
+                let html = '<div class="mb-3 small text-muted">' + esc(d.created_at);
+
+                if (d.kategori === 'reading' || d.kategori === 'listening') {
+                    html += ' &bull; Score: <strong>' + esc(d.score) + '/' + esc(d.jumlah_soal) + '</strong>';
+                    if (d.score_conversion) {
+                        html += ' &bull; Band: <strong>' + esc(d.score_conversion) + '</strong>';
+                    }
+                } else if (d.assessor) {
+                    html += ' &bull; Assessor: <strong>' + esc(d.assessor) + '</strong>';
+                }
+                html += '</div>';
+
+                if (!d.details || !d.details.length) {
+                    html += '<div class="alert alert-warning mb-0">No answers recorded for this attempt.</div>';
+                } else if (d.kategori === 'writing') {
+                    d.details.forEach(function(t) {
+                        html += '<div class="card mb-3">' +
+                            '<div class="card-header"><strong>' + esc(t.soal_id) + '</strong></div>' +
+                            '<div class="card-body" style="white-space:pre-wrap; max-height:400px; overflow:auto">' +
+                            esc(t.jawaban_user) +
+                            '</div></div>';
+                        const a = d.assessments && d.assessments[t.soal_id];
+                        if (a) html += renderAssessment(a);
+                    });
+                } else if (d.kategori === 'speaking') {
+                    d.details.forEach(function(t) {
+                        const url = d.video_urls[t.soal_id];
+                        html += '<div class="card mb-3">' +
+                            '<div class="card-header"><strong>' + esc(t.soal_id) + '</strong></div>' +
+                            '<div class="card-body">' +
+                            (url ?
+                                '<video controls preload="metadata" style="max-width:100%" src="' + url + '"></video>' :
+                                '<span class="text-muted">Recording file: ' + esc(t.jawaban_user) + '</span>') +
+                            '</div></div>';
+                        const a = d.assessments && d.assessments[t.soal_id];
+                        if (a) html += renderAssessment(a);
+                    });
+                } else {
+                    html += '<div class="table-responsive"><table class="table table-sm table-bordered align-middle">' +
+                        '<thead><tr><th style="width:60px">#</th><th>Student\'s Answer</th><th>Correct Answer</th><th class="text-center" style="width:100px">Status</th></tr></thead><tbody>';
+                    d.details.forEach(function(t, i) {
+                        html += '<tr><td>' + (i + 1) + '</td>' +
+                            '<td>' + (t.jawaban_user ? esc(t.jawaban_user) : '<span class="text-muted">-</span>') + '</td>' +
+                            '<td>' + esc(t.jawaban_benar) + '</td>' +
+                            '<td class="text-center">' + (t.status ?
+                                '<span class="badge bg-success">Correct</span>' :
+                                '<span class="badge bg-danger">Wrong</span>') + '</td></tr>';
+                    });
+                    html += '</tbody></table></div>';
+                }
+
+                document.getElementById('answer-modal-body').innerHTML = html;
+            }
+
+            $(document).on("click", ".view-answers", function() {
+                const id = $(this).data("id");
+                const body = $("#answer-modal-body");
+                body.html('<div class="text-center py-5"><div class="spinner-border text-primary"></div></div>');
+                answerModal.show();
+
+                $.getJSON("/history/answers/" + id)
+                    .done(function(res) {
+                        if (!res.status) throw new Error(res.message || 'Failed to load answers.');
+                        renderAnswers(res.data);
+                    })
+                    .fail(function() {
+                        body.html('<div class="alert alert-danger mb-0">Failed to load answers.</div>');
+                    });
+            });
+
+            const currentUserName = "{{ auth()->user()->name }}";
+
+            function decCount(id) {
+                const el = $("#" + id);
+                const m = el.text().match(/\d+/);
+                if (m) el.text(el.text().replace(/\d+/, Math.max(0, parseInt(m[0], 10) - 1)));
+            }
+
+            function markReviewed(selector, withName) {
+                const item = $(selector).first();
+                if (!item.length) return;
+                const h6 = item.is("h6") ? item : item.find("h6").first();
+                const wasPending = h6.find(".badge.bg-warning").length > 0;
+                h6.find(".badge").remove();
+                h6.append('<span class="badge bg-success"><i class="fa fa-check"></i> Reviewed' +
+                    (withName && currentUserName ? ' — ' + esc(currentUserName) : '') + '</span>');
+                return wasPending;
+            }
+
+            // ==== WRITING ASSESSMENT ====
+            $(document).on("click", ".btn-review-writing", function() {
+                let writingId = $(this).data("id");
+                $("#writing_id").val(writingId);
+                $("#writingAnswerBox").text("Loading...");
+
+                $.ajax({
+                    url: "/writing/get/" + writingId,
+                    type: "GET",
+                    success: function(res) {
+                        $("#writingAnswerBox").text(res.answer);
+
+                        const form = $("#writingAssessmentForm");
+                        form[0].reset();
+                        if (res.assessment) {
+                            form.find("[name=ta_band]").val(res.assessment.ta_band);
+                            form.find("[name=cc_band]").val(res.assessment.cc_band);
+                            form.find("[name=lr_band]").val(res.assessment.lr_band);
+                            form.find("[name=gra_band]").val(res.assessment.gra_band);
+                            form.find("[name=feedback]").val(res.assessment.feedback);
+                        }
+
+                        $("#writingAssessmentModal").modal("show");
+                    }
+                });
+            });
+
+            $("#saveWritingAssessmentBtn").on("click", function() {
+                const writingId = $("#writing_id").val();
+                let formData = $("#writingAssessmentForm").serialize();
+
+                $.ajax({
+                    url: "{{ route('writing.assessment.store') }}",
+                    type: "POST",
+                    data: formData,
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                    },
+                    success: function(res) {
+                        if (res.status === "success") {
+                            $("#writingAssessmentModal").modal("hide");
+                            const wasPending = markReviewed(".btn-review-writing[data-id='" + writingId + "']", true);
+                            if (wasPending) {
+                                decCount("writing-pending-widget");
+                                decCount("writing-pending-badge");
+                            }
+                            Swal.fire({
+                                icon: "success",
+                                title: "Saved",
+                                text: res.message,
+                                timer: 1800,
+                                showConfirmButton: false
+                            });
+                        } else {
+                            Swal.fire({ icon: "error", title: "Failed", text: res.message });
+                        }
+                    },
+                    error: function(xhr) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Server Error",
+                            text: xhr.responseJSON?.message ?? "Unknown error"
+                        });
+                    }
+                });
+            });
+
+            // ==== SPEAKING ASSESSMENT ====
+            $(document).on("click", ".btn-review-speaking", function() {
+                let videoId = $(this).data("id");
+
+                $.ajax({
+                    url: "/video/get/" + videoId,
+                    type: "GET",
+                    success: function(res) {
+                        if (!res.status) {
+                            Swal.fire({ icon: "error", title: "Failed", text: res.message || "Failed to load video" });
+                            return;
+                        }
+
+                        $("#modalVideoSource").attr("src", res.data.url);
+                        $("#video_id").val(videoId);
+                        $("#modalVideoPlayer")[0].load();
+
+                        const form = $("#assessmentForm");
+                        form[0].reset();
+                        form.find("input[type=checkbox]").trigger("change");
+                        if (res.data.assessment) {
+                            const a = res.data.assessment;
+                            form.find("[name=fc_band]").val(a.fc_band);
+                            form.find("[name=lr_band]").val(a.lr_band);
+                            form.find("[name=gra_band]").val(a.gra_band);
+                            form.find("[name=pr_band]").val(a.pr_band);
+                            form.find("[name=remark]").val(a.remark);
+                            $.each(a.checkboxes || {}, function(name, checked) {
+                                const cb = form.find("[name=" + name + "]");
+                                cb.prop("checked", checked);
+                                if (checked) cb.trigger("change");
+                            });
+                        }
+
+                        $("#assessmentModal").modal("show");
+                    },
+                    error: function() {
+                        Swal.fire({ icon: "error", title: "Server Error", text: "Failed to load video" });
+                    }
+                });
+            });
+
+            $("#saveAssessmentBtn").on("click", function() {
+                const videoId = $("#video_id").val();
+                let formData = $("#assessmentForm").serialize();
+
+                $.ajax({
+                    url: "{{ route('video.assessment.store') }}",
+                    type: "POST",
+                    data: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr("content")
+                    },
+                    success: function(res) {
+                        if (res.status === "success") {
+                            $("#assessmentModal").modal("hide");
+                            const wasPending = markReviewed(".btn-review-speaking[data-id='" + videoId + "']", false);
+                            if (wasPending) {
+                                decCount("video-pending-widget");
+                                decCount("video-pending-badge");
+                            }
+                            Swal.fire({
+                                icon: "success",
+                                title: "Saved!",
+                                text: res.message,
+                                timer: 1800,
+                                showConfirmButton: false
+                            });
+                        } else {
+                            Swal.fire({ icon: "error", title: "Failed", text: "Failed to save assessment" });
+                        }
+                    },
+                    error: function(xhr) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Server Error",
+                            text: xhr.responseJSON?.message ?? "Unknown server error"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
     <script>
         $(document).on("click", ".btn-detail", function() {

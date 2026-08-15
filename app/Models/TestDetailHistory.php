@@ -14,6 +14,6 @@ class TestDetailHistory extends Model
     protected $guarded = ['id'];
 
     public function testDetail(): BelongsTo{
-        return $this->belongsTo(TestHistory::class);
+        return $this->belongsTo(TestHistory::class, 'test_history_id');
     }
 }

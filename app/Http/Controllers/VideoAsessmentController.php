@@ -6,6 +6,7 @@ use App\Models\VideoAsessment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVideoAsessmentRequest;
 use App\Http\Requests\UpdateVideoAsessmentRequest;
+use App\Models\TestHistory;
 use App\Models\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +17,53 @@ class VideoAsessmentController extends Controller
     private function bool($value)
     {
         return $value === "on" ? 1 : 0;
+    }
+
+    public function detail($id)
+    {
+        try {
+            $video = Videos::with(['student', 'assesment'])->findOrFail($id);
+
+            $assessment = null;
+            if ($video->assesment) {
+                $a = $video->assesment;
+                $assessment = [
+                    'fc_band'  => (float) $a->fc_band,
+                    'lr_band'  => (float) $a->lr_band,
+                    'gra_band' => (float) $a->gra_band,
+                    'pr_band'  => (float) $a->pr_band,
+                    'remark'   => $a->remark,
+                    'checkboxes' => [],
+                ];
+                foreach ([
+                    'fc_repetition', 'fc_hesitation', 'fc_speech_rate', 'fc_connectives',
+                    'fc_discourse_markers', 'fc_relevant_answers',
+                    'lr_range_vocab', 'lr_idiomatic', 'lr_less_common', 'lr_collocation', 'lr_paraphrase',
+                    'gra_range_structure', 'gra_error_free', 'gra_grammar_features',
+                    'pr_features', 'pr_understood',
+                ] as $field) {
+                    $assessment['checkboxes'][$field] = (bool) $a->{$field};
+                }
+            }
+
+            return response()->json([
+                'status' => true,
+                'data' => [
+                    'id'      => $video->id,
+                    'url'     => asset('storage/recordings/' . $video->video),
+                    'student' => $video->student?->name,
+                    'part'    => $video->part_soal,
+                    'no_soal' => $video->no_soal,
+                    'tipe'    => $video->tipe,
+                    'assessment' => $assessment,
+                ]
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Video not found.'
+            ], 404);
+        }
     }
 
     public function store(Request $request)
@@ -62,6 +110,13 @@ class VideoAsessmentController extends Controller
 
             $video->update([
                 'teacher_id' => Auth::id()
+            ]);
+
+            // Tandai assessor pada exam history yang terkait rekaman speaking ini
+            TestHistory::whereHas('detailHistories', function ($q) use ($video) {
+                $q->where('soal_id', 'video-' . $video->id);
+            })->update([
+                'teacher_id' => Auth::id(),
             ]);
 
             DB::commit();

@@ -110,6 +110,21 @@
                     </a>
                 </li>
 
+                @if (auth()->user()->role === 'student')
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6 class="">My Activity</h6>
+                        </div>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="/my-history">
+                            <i class="fa fa-history text-white"></i>
+                            <span>Exam History</span>
+                        </a>
+                    </li>
+                @endif
+
                 @if (in_array(auth()->user()->role, ['admin', 'teacher']))
                     <li class="sidebar-main-title">
                         <div>

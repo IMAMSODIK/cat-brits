@@ -81,9 +81,9 @@ Multiple choice -> choices nya ga bisa di highlight
         6. PT-01 - Listening (Map labeling)
         7. PT-02 - Listening (Map labeling)
 2. Setelah score muncul, better kalo di close, bisa terlihat mana saja yang salah dari yang udah dikerjain 
-3. parts dipindahkan kebawah
-4. history writing test
-5. simpan history jawaban user
+3. parts dipindahkan kebawah (done)
+4. history writing test (done)
+5. simpan history jawaban user (done)
 
 
 1. Listening Cambridge 18 Test 4 ada typo bang. seharusnya energy, tapi karena answer keynya typo, jadinya jawaban anaknya salah bang
@@ -134,3 +134,29 @@ terakhir update log whatsapp 7/6/2026 14:55
 buatkan page default pada role user di speaking mock test
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+Kondisi:
+- 13 file migrasi di backup/migrations (kondisi hosting) identik 100% dengan 13 file di database/migrations lokal — tidak ada perbedaan skema sama sekali
+- Satu-satunya file baru adalah 2026_08_15_000001_change_answer_columns_to_text... (perubahan kita: kolom jawaban → TEXT), yang belum ada di hosting
+Saran langkah deploy ke hosting:
+1. Upload hanya 1 file migrasi baru ke database/migrations/ di hosting:
+2026_08_15_000001_change_answer_columns_to_text_on_test_detail_histories_table.php
+2. Jalankan di hosting: php artisan migrate --force (hanya migrasi ini yang akan dijalankan karena 13 lainnya sudah tercatat di tabel migrations)
+3. Ikuti dengan php artisan optimize:clear
+4. Sebelum migrate: backup database hosting dulu via phpMyAdmin/Hostinger (cadangan jika ALTER TABLE gagal di tengah jalan)
+Catatan penting:
+- Karena hosting kemungkinan tidak punya akses SSH, php artisan bisa dijalankan lewat cron job / SSH terbatas Hostinger, atau solusi sederhana: jalankan ALTER TABLE test_detail_histories MODIFY jawaban_user TEXT, MODIFY jawaban_benar TEXT; langsung di phpMyAdmin, lalu insert manual satu baris ke tabel migrations agar Laravel menganggapnya sudah berjalan (kolom: migration, batch = batch terakhir +1)
+- Jika upload semua file sesi ini sekaligus tanpa migrate, semua fitur tetap berfungsi — hanya jawaban writing yang sangat panjang (>255 karakter) yang berisiko terpotong/error di server
+- Folder backup/ sebaiknya jangan di-commit ke git (masukkan ke .gitignore) karena bisa membingungkan di masa depan
+Tidak ada konflik skema, jadi prosesnya aman dan sederhana.

@@ -298,10 +298,11 @@
                                                     @endif
                                                 </div>
 
-                                                @if (in_array($activities->kategori, ['speaking', 'writing']) && $activities->teacher_id)
+                                                @if (in_array($activities->kategori, ['reading', 'listening', 'writing', 'speaking']))
                                                     <div class="mt-3">
-                                                        <button class="btn btn-outline-primary btn-sm w-100">
-                                                            View Details
+                                                        <button class="btn btn-outline-primary btn-sm w-100 view-answers"
+                                                            data-id="{{ $activities->id }}">
+                                                            View Answers
                                                         </button>
                                                     </div>
                                                 @endif
@@ -530,8 +531,20 @@
         </div>
     </div>
 
-    <div class="modal fade modal-alert" id="alert" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenter1" aria-hidden="true">
+    <div class="modal fade" id="answer-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="answer-modal-title">Student Answers</h4>
+                    <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="answer-modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-alert" id="alert" tabindex="-1" role="dialog"        aria-labelledby="exampleModalCenter1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -587,6 +600,151 @@
                 preview.src = URL.createObjectURL(file);
                 preview.classList.remove('d-none');
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerModal = new bootstrap.Modal(document.getElementById('answer-modal'));
+
+            function esc(s) {
+                const d = document.createElement('div');
+                d.textContent = s == null ? '' : String(s);
+                return d.innerHTML;
+            }
+
+            function bandCard(label, value) {
+                return '<div class="col-6 col-md-2"><div class="border rounded p-2 text-center mb-2">' +
+                    '<small class="text-muted d-block">' + esc(label) + '</small>' +
+                    '<strong style="font-size:1.2rem">' + esc(value) + '</strong>' +
+                    '</div></div>';
+            }
+
+            function renderAssessment(a) {
+                let html = '<div class="card border-success mb-3">' +
+                    '<div class="card-header bg-success text-white"><strong>Assessment Result</strong></div>' +
+                    '<div class="card-body">';
+                if (a.type === 'writing') {
+                    html += '<div class="row">' +
+                        bandCard('Task Achievement', a.ta_band) +
+                        bandCard('Coherence & Cohesion', a.cc_band) +
+                        bandCard('Lexical Resource', a.lr_band) +
+                        bandCard('Grammar', a.gra_band) +
+                        bandCard('Overall Band', a.overall) +
+                        '</div>';
+                    if (a.feedback) {
+                        html += '<div class="mt-2"><strong>Feedback:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.feedback) + '</div></div>';
+                    }
+                } else {
+                    html += '<div class="row">' +
+                        bandCard('Fluency & Coherence', a.fc_band) +
+                        bandCard('Lexical Resource', a.lr_band) +
+                        bandCard('Grammar', a.gra_band) +
+                        bandCard('Pronunciation', a.pr_band) +
+                        bandCard('Overall Band', a.overall) +
+                        '</div>';
+                    if (a.remark) {
+                        html += '<div class="mt-2"><strong>Remark:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.remark) + '</div></div>';
+                    }
+                }
+                html += '</div></div>';
+                return html;
+            }
+
+            function renderCorrectionBtn(kategori) {
+                return '<div class="alert alert-warning d-flex justify-content-between align-items-center mb-3">' +
+                    '<span><i class="fa fa-exclamation-circle me-2"></i>This submission has not been assessed yet.</span>' +
+                    '<a href="/test-correction/submissions?kategori=' + esc(kategori) + '" class="btn btn-sm btn-primary">' +
+                    '<i class="fa fa-edit me-1"></i> Go to Test Correction</a></div>';
+            }
+
+            function renderAnswers(d) {
+                const title = document.getElementById('answer-modal-title');
+                title.textContent = (d.set_name ? d.set_name + ' - ' : '') + d.nama_tipe +
+                    ' (' + (d.tipe_test === 'mock' ? 'Mock Test' : 'Practice') + ')';
+
+                let html = '<div class="mb-3 small text-muted">' + esc(d.created_at);
+
+                if (d.kategori === 'reading' || d.kategori === 'listening') {
+                    html += ' &bull; Score: <strong>' + esc(d.score) + '/' + esc(d.jumlah_soal) + '</strong>';
+                } else if (d.assessor) {
+                    html += ' &bull; Assessor: <strong>' + esc(d.assessor) + '</strong>';
+                }
+                html += '</div>';
+
+                // writing/speaking belum dinilai -> tombol navigasi ke test correction
+                const isManual = (d.kategori === 'writing' || d.kategori === 'speaking');
+                const hasAssessment = d.assessments && Object.keys(d.assessments).length > 0;
+                if (isManual && !hasAssessment) {
+                    html += renderCorrectionBtn(d.kategori);
+                }
+
+                if (!d.details || !d.details.length) {
+                    html += '<div class="alert alert-warning mb-0">No answers recorded for this attempt.</div>';
+                } else if (d.kategori === 'writing') {
+                    d.details.forEach(function(t) {
+                        html += '<div class="card mb-3">' +
+                            '<div class="card-header"><strong>' + esc(t.soal_id) + '</strong></div>' +
+                            '<div class="card-body" style="white-space:pre-wrap; max-height:400px; overflow:auto">' +
+                            esc(t.jawaban_user) +
+                            '</div></div>';
+                        const a = d.assessments && d.assessments[t.soal_id];
+                        if (a) html += renderAssessment(a);
+                    });
+                } else if (d.kategori === 'speaking') {
+                    d.details.forEach(function(t) {
+                        const url = d.video_urls[t.soal_id];
+                        html += '<div class="card mb-3">' +
+                            '<div class="card-header"><strong>' + esc(t.soal_id) + '</strong></div>' +
+                            '<div class="card-body">' +
+                            (url ?
+                                '<video controls preload="metadata" style="max-width:100%" src="' + url + '"></video>' :
+                                '<span class="text-muted">Recording file: ' + esc(t.jawaban_user) + '</span>') +
+                            '</div></div>';
+                        const a = d.assessments && d.assessments[t.soal_id];
+                        if (a) html += renderAssessment(a);
+                    });
+                } else {
+                    html += '<div class="table-responsive"><table class="table table-sm table-bordered align-middle">' +
+                        '<thead><tr><th style="width:60px">#</th><th>Student\'s Answer</th><th>Correct Answer</th><th class="text-center" style="width:100px">Status</th></tr></thead><tbody>';
+                    d.details.forEach(function(t, i) {
+                        html += '<tr><td>' + (i + 1) + '</td>' +
+                            '<td>' + (t.jawaban_user ? esc(t.jawaban_user) : '<span class="text-muted">-</span>') + '</td>' +
+                            '<td>' + esc(t.jawaban_benar) + '</td>' +
+                            '<td class="text-center">' + (t.status ?
+                                '<span class="badge bg-success">Correct</span>' :
+                                '<span class="badge bg-danger">Wrong</span>') + '</td></tr>';
+                    });
+                    html += '</tbody></table></div>';
+                }
+
+                document.getElementById('answer-modal-body').innerHTML = html;
+            }
+
+            document.querySelectorAll('.view-answers').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const body = document.getElementById('answer-modal-body');
+                    body.innerHTML = '<div class="text-center py-5"><div class="spinner-border text-primary"></div></div>';
+                    answerModal.show();
+
+                    fetch('/history/answers/' + id, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                        .then(function(r) {
+                            return r.json();
+                        })
+                        .then(function(res) {
+                            if (!res.status) throw new Error(res.message || 'Failed to load answers.');
+                            renderAnswers(res.data);
+                        })
+                        .catch(function(err) {
+                            body.innerHTML = '<div class="alert alert-danger mb-0">' + esc(err.message) + '</div>';
+                        });
+                });
+            });
         });
     </script>
 

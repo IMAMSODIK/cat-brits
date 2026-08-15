@@ -22,7 +22,7 @@ class CheckServices
 
             $setSoal = SetSoal::where('kode', $setId)->first();
 
-            $saveVideos = Videos::create([
+            $video = Videos::create([
                 'student_id' => $studentId,
                 'set_soal_id' => $setSoal->id,
                 'no_soal' => (int) $questionId,
@@ -31,27 +31,33 @@ class CheckServices
                 'video' => $filename,
             ]);
 
+            $history = TestHistory::create([
+                'student_id' => $studentId,
+                'teacher_id' => null,
+                'tipe_test' => 'practice',
+                'kategori' => $kategori,
+                'tipe' => "Part " . $part,
+                'set_soal_id' => $setSoal->id,
+                'nama_tipe' => "Part " . $part,
+            ]);
+
+            TestDetailHistory::create([
+                'test_history_id' => $history->id,
+                'soal_id' => 'video-' . $video->id,
+                'jawaban_user' => $filename,
+                'jawaban_benar' => '',
+                'status' => false,
+            ]);
+
             DB::commit();
 
-            if ($saveVideos) {
-                TestHistory::create([
-                    'student_id' => $studentId,
-                    'teacher_id' => null,
-                    'tipe_test' => 'practice',
-                    'kategori' => $kategori,
-                    'tipe' => "Part " . $part,
-                    'set_soal_id' => $setSoal->id,
-                    'nama_tipe' => "Part " . $part,
-                ]);
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Video uploaded successfully.',
-                    'file' => $filename,
-                    'path' => $path,
-                    'url' => $url,
-                ]);
-            }
+            return response()->json([
+                'success' => true,
+                'message' => 'Video uploaded successfully.',
+                'file' => $filename,
+                'path' => $path,
+                'url' => $url,
+            ]);
         } catch (\Throwable $th) {
             DB::rollBack();
             return response()->json([
@@ -66,7 +72,7 @@ class CheckServices
         DB::beginTransaction();
         try {
             $setSoal = SetSoal::where('kode', $setId)->first();
-            $saveWriting = Writing::create([
+            $writing = Writing::create([
                 'student_id' => $studentId,
                 'set_soal_id' => $setSoal->id,
                 'no_soal' => (int) $questionId,
@@ -75,24 +81,30 @@ class CheckServices
                 'answer' => $answer
             ]);
 
+            $history = TestHistory::create([
+                'student_id' => $studentId,
+                'teacher_id' => null,
+                'tipe_test' => $tipe,
+                'kategori' => $kategori,
+                'tipe' => $tipe,
+                'set_soal_id' => $setSoal->id,
+                'nama_tipe' => $namaTipe,
+            ]);
+
+            TestDetailHistory::create([
+                'test_history_id' => $history->id,
+                'soal_id' => 'writing-' . $writing->id,
+                'jawaban_user' => $answer,
+                'jawaban_benar' => '',
+                'status' => false,
+            ]);
+
             DB::commit();
 
-            if ($saveWriting) {
-                TestHistory::create([
-                    'student_id' => $studentId,
-                    'teacher_id' => null,
-                    'tipe_test' => $tipe,
-                    'kategori' => $kategori,
-                    'tipe' => $tipe,
-                    'set_soal_id' => $setSoal->id,
-                    'nama_tipe' => $namaTipe,
-                ]);
-
-                return response()->json([
-                    'status' => true,
-                    'message' => 'Task submited successfully.'
-                ]);
-            }
+            return response()->json([
+                'status' => true,
+                'message' => 'Task submited successfully.'
+            ]);
         } catch (\Throwable $th) {
             DB::rollBack();
             return response()->json([

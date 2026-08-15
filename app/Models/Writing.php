@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Writing extends Model
 {
@@ -26,5 +27,10 @@ class Writing extends Model
     public function setSoal()
     {
         return $this->belongsTo(SetSoal::class, 'set_soal_id');
+    }
+
+    public function assessment(): HasOne
+    {
+        return $this->hasOne(WritingAssessment::class);
     }
 }

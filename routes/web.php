@@ -116,11 +116,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/history', [TestHistoryController::class, 'index']);
     Route::get('/history/detail', [TestHistoryController::class, 'detail']);
+    Route::get('/my-history', [TestHistoryController::class, 'myHistory'])->name('my-history');
+    Route::get('/history/answers/{history}', [TestHistoryController::class, 'answers'])->name('history.answers');
     Route::get('/history/search', [TestHistoryController::class, 'search']);
     Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
 
     Route::get('/test-correction', [TestCorrectionController::class, 'index']);
+    Route::get('/test-correction/submissions', [TestCorrectionController::class, 'submissions'])->name('test-correction.submissions');
     Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
+    Route::get('/video/get/{id}', [VideoAsessmentController::class, 'detail'])->name('video.get');
     Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
     Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\WritingAssessment;
 use App\Http\Controllers\Controller;
+use App\Models\TestHistory;
 use App\Models\Writing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,12 +14,19 @@ class WritingAssessmentController extends Controller
 {
     public function detail($id)
     {
-        $writing = Writing::findOrFail($id);
+        $writing = Writing::with('assessment')->findOrFail($id);
 
         return response()->json([
             'answer' => $writing->answer,
-            'topic' => $writing->setSoal->title ?? '',
-            'student' => $writing->student->name ?? ''
+            'topic' => $writing->setSoal->name ?? '',
+            'student' => $writing->student->name ?? '',
+            'assessment' => $writing->assessment ? [
+                'ta_band'   => (float) $writing->assessment->ta_band,
+                'cc_band'   => (float) $writing->assessment->cc_band,
+                'lr_band'   => (float) $writing->assessment->lr_band,
+                'gra_band'  => (float) $writing->assessment->gra_band,
+                'feedback'  => $writing->assessment->feedback,
+            ] : null,
         ]);
     }
 
@@ -45,6 +53,13 @@ class WritingAssessmentController extends Controller
             }
 
             Writing::where('id', $r->writing_id)->update([
+                'teacher_id' => Auth::id(),
+            ]);
+
+            // Tandai assessor pada exam history yang terkait jawaban writing ini
+            TestHistory::whereHas('detailHistories', function ($q) use ($r) {
+                $q->where('soal_id', 'writing-' . $r->writing_id);
+            })->update([
                 'teacher_id' => Auth::id(),
             ]);
 

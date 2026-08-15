@@ -311,7 +311,7 @@ class IeltsController extends Controller
                 $filename = "recording_q-{$setId}-{$questionId}_" . time() . ".webm";
                 $path = $r->file('video')->storeAs('recordings', $filename, 'public');
 
-                Videos::create([
+                $video = Videos::create([
                     'student_id' => Auth::id(),
                     'set_soal_id' => $setSoal->id,
                     'no_soal'    => (int) $questionId,
@@ -328,6 +328,14 @@ class IeltsController extends Controller
                     'tipe'      => "Part {$part}",
                     'set_soal_id' => $setSoal->id,
                     'nama_tipe' => "Part {$part}",
+                ]);
+
+                TestDetailHistory::create([
+                    'test_history_id' => $history->id,
+                    'soal_id'        => 'video-' . $video->id,
+                    'jawaban_user'   => $filename,
+                    'jawaban_benar'  => '',
+                    'status'         => false,
                 ]);
 
                 DB::commit();
@@ -358,7 +366,7 @@ class IeltsController extends Controller
                     $noSoal     = $item['no_soal'];
 
                     // Simpan jawaban Writing untuk masing-masing task
-                    Writing::create([
+                    $writing = Writing::create([
                         'student_id'  => Auth::id(),
                         'set_soal_id' => $setSoal->id,
                         'no_soal'     => (int) $noSoal,
@@ -368,7 +376,7 @@ class IeltsController extends Controller
                     ]);
 
                     // Simpan Test History untuk masing-masing task
-                    TestHistory::create([
+                    $history = TestHistory::create([
                         'student_id'  => Auth::id(),
                         'teacher_id'  => null,
                         'tipe_test'   => $tipe,
@@ -376,6 +384,15 @@ class IeltsController extends Controller
                         'tipe'        => $taskName,
                         'set_soal_id' => $setSoal->id,
                         'nama_tipe'   => $taskName,
+                    ]);
+
+                    // Simpan detail jawaban student (full text) ke exam history
+                    TestDetailHistory::create([
+                        'test_history_id' => $history->id,
+                        'soal_id'        => 'writing-' . $writing->id,
+                        'jawaban_user'   => $answerText,
+                        'jawaban_benar'  => '',
+                        'status'         => false,
                     ]);
                 }
 

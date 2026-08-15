@@ -25,7 +25,7 @@ class Videos extends Model
     }
 
     public function assesment(): HasOne{
-        return $this->hasOne(VideoAsessment::class);
+        return $this->hasOne(VideoAsessment::class, 'video_id');
     }
 
     public function setSoal()

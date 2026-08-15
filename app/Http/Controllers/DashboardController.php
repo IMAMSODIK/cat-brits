@@ -99,7 +99,7 @@ class DashboardController extends Controller
                 ->take(5)
                 ->get();
 
-            $studentActivities = TestHistory::with(['student', 'setSoal'])
+            $studentActivities = TestHistory::with(['student', 'setSoal', 'teacher'])
                 ->latest()
                 ->take(5)
                 ->get();
@@ -107,11 +107,16 @@ class DashboardController extends Controller
             $data['unverifStudent'] = $unverifStudent;
             $data['studentActivities'] = $studentActivities;
 
-            $videoRequest = Videos::with(['student', 'setSoal'])
-                ->whereNull('teacher_id')
+            $videoRequest = Videos::with(['student', 'setSoal', 'teacher'])
                 ->whereHas('student')
+                ->latest()
                 ->get();
-            $writingRequest = Writing::with(['student', 'setSoal'])->whereNull('teacher_id')->get();
+            $writingRequest = Writing::with(['student', 'setSoal', 'teacher'])
+                ->latest()
+                ->get();
+
+            $data['videoPendingCount'] = $videoRequest->whereNull('teacher_id')->count();
+            $data['writingPendingCount'] = $writingRequest->whereNull('teacher_id')->count();
 
             if (in_array($user->role, ['admin', 'teacher'])) {
                 if ($user->role == 'admin') {
