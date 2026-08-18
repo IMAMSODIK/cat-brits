@@ -590,6 +590,30 @@
             font-size: 1.1rem;
         }
 
+        #writingAssessmentModal #saveWritingAssessmentBtn.is-loading::after {
+            content: none;
+        }
+
+        #writingAssessmentModal #writingSaveProgress {
+            min-width: 220px;
+        }
+
+        #writingAssessmentModal #writingSaveProgress .progress {
+            height: 6px;
+            background: #e5edf7;
+        }
+
+        #writingAssessmentModal #writingSaveProgress .progress-bar {
+            width: 45%;
+            background: #4274B9;
+            animation: writingSaveProgress 1.1s ease-in-out infinite;
+        }
+
+        @keyframes writingSaveProgress {
+            0% { transform: translateX(-110%); }
+            100% { transform: translateX(240%); }
+        }
+
         /* Animation */
         @keyframes fadeInUp {
             from {
@@ -1654,6 +1678,13 @@
                 </div>
 
                 <div class="modal-footer">
+                    <div id="writingSaveProgress" class="d-none align-items-center gap-2 text-muted small"
+                        role="status" aria-live="polite">
+                        <div class="progress flex-grow-1">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span>Saving assessment...</span>
+                    </div>
                     <button class="btn btn-primary" id="saveWritingAssessmentBtn">
                         Save Assessment
                     </button>
@@ -2345,6 +2376,20 @@
             return wasPending;
         }
 
+        function setWritingSaveLoading(isLoading) {
+            const button = $("#saveWritingAssessmentBtn");
+            const progress = $("#writingSaveProgress");
+
+            button.prop("disabled", isLoading).toggleClass("is-loading", isLoading);
+            button.html(isLoading
+                ? '<i class="fas fa-spinner fa-spin me-2"></i>Saving Assessment'
+                : 'Save Assessment');
+            progress.toggleClass("d-none", !isLoading).toggleClass("d-flex", isLoading);
+            $("#writingChecklistForm, #writingAssessmentForm")
+                .find("input, textarea, button")
+                .prop("disabled", isLoading);
+        }
+
         $("#saveWritingAssessmentBtn").on("click", function() {
 
             const writingId = $("#writing_id").val();
@@ -2372,6 +2417,9 @@
                 url: "{{ route('writing.assessment.store') }}",
                 type: "POST",
                 data: formData,
+                beforeSend: function() {
+                    setWritingSaveLoading(true);
+                },
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
                 },
@@ -2412,6 +2460,9 @@
                         title: "Server Error",
                         text: xhr.responseJSON?.message ?? "Unknown error"
                     });
+                },
+                complete: function() {
+                    setWritingSaveLoading(false);
                 }
             });
 

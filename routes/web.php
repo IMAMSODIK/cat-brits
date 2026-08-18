@@ -46,34 +46,36 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/teacher', [TeacherController::class, 'index']);
-    Route::post('/teacher/store', [TeacherController::class, 'store']);
-    Route::get('/teacher/detail', [TeacherController::class, 'detail']);
-    Route::post('/teacher/update', [TeacherController::class, 'update']);
-    Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
-    Route::post('/teacher/delete', [TeacherController::class, 'delete']);
-    Route::post('/teacher/activate', [TeacherController::class, 'activate']);
-    Route::post('/teacher/destroy', [TeacherController::class, 'destroy']);
-    Route::get('/teacher/search', [TeacherController::class, 'search']);
-    Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/teacher', [TeacherController::class, 'index']);
+        Route::post('/teacher/store', [TeacherController::class, 'store']);
+        Route::get('/teacher/detail', [TeacherController::class, 'detail']);
+        Route::post('/teacher/update', [TeacherController::class, 'update']);
+        Route::post('/teacher/reset-password', [TeacherController::class, 'resetPasssword']);
+        Route::post('/teacher/delete', [TeacherController::class, 'delete']);
+        Route::post('/teacher/activate', [TeacherController::class, 'activate']);
+        Route::post('/teacher/destroy', [TeacherController::class, 'destroy']);
+        Route::get('/teacher/search', [TeacherController::class, 'search']);
+        Route::get('/teacher/load-more', [TeacherController::class, 'loadMore']);
 
-    Route::get('/students', [StudentController::class, 'index']);
-    Route::post('/students/store', [StudentController::class, 'store']);
-    Route::get('/students/detail', [StudentController::class, 'detail']);
-    Route::post('/students/update', [StudentController::class, 'update']);
-    Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);
-    Route::post('/students/delete', [StudentController::class, 'delete']);
-    Route::post('/students/activate', [StudentController::class, 'activate']);
-    Route::post('/students/destroy', [StudentController::class, 'destroy']);
-    Route::get('/students/search', [StudentController::class, 'search']);
-    Route::get('/students/load-more', [StudentController::class, 'loadMore']);
+        Route::get('/students', [StudentController::class, 'index']);
+        Route::post('/students/store', [StudentController::class, 'store']);
+        Route::get('/students/detail', [StudentController::class, 'detail']);
+        Route::post('/students/update', [StudentController::class, 'update']);
+        Route::post('/students/reset-password', [StudentController::class, 'resetPasssword']);
+        Route::post('/students/delete', [StudentController::class, 'delete']);
+        Route::post('/students/activate', [StudentController::class, 'activate']);
+        Route::post('/students/destroy', [StudentController::class, 'destroy']);
+        Route::get('/students/search', [StudentController::class, 'search']);
+        Route::get('/students/load-more', [StudentController::class, 'loadMore']);
 
-    Route::get('/students-verification', [StudentVerificationController::class, 'index']);
-    Route::get('/students-verification/detail', [StudentVerificationController::class, 'detail']);
-    Route::post('/students-verification/delete', [StudentVerificationController::class, 'delete']);
-    Route::post('/students-verification/activate', [StudentVerificationController::class, 'activate']);
-    Route::get('/students-verification/search', [StudentVerificationController::class, 'search']);
-    Route::get('/students-verification/load-more', [StudentVerificationController::class, 'loadMore']);
+        Route::get('/students-verification', [StudentVerificationController::class, 'index']);
+        Route::get('/students-verification/detail', [StudentVerificationController::class, 'detail']);
+        Route::post('/students-verification/delete', [StudentVerificationController::class, 'delete']);
+        Route::post('/students-verification/activate', [StudentVerificationController::class, 'activate']);
+        Route::get('/students-verification/search', [StudentVerificationController::class, 'search']);
+        Route::get('/students-verification/load-more', [StudentVerificationController::class, 'loadMore']);
+    });
 
     Route::get('/ielts', [IeltsController::class, 'index']);
     Route::get('/ielts/categories', [IeltsController::class, 'categories']);
@@ -114,19 +116,23 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/history', [TestHistoryController::class, 'index']);
     // Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
 
-    Route::get('/history', [TestHistoryController::class, 'index']);
-    Route::get('/history/detail', [TestHistoryController::class, 'detail']);
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/history', [TestHistoryController::class, 'index']);
+        Route::get('/history/detail', [TestHistoryController::class, 'detail']);
+        Route::get('/history/search', [TestHistoryController::class, 'search']);
+        Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
+    });
     Route::get('/my-history', [TestHistoryController::class, 'myHistory'])->name('my-history');
     Route::get('/history/answers/{history}', [TestHistoryController::class, 'answers'])->name('history.answers');
-    Route::get('/history/search', [TestHistoryController::class, 'search']);
-    Route::get('/history/load-more', [TestHistoryController::class, 'loadMore']);
 
-    Route::get('/test-correction', [TestCorrectionController::class, 'index']);
-    Route::get('/test-correction/submissions', [TestCorrectionController::class, 'submissions'])->name('test-correction.submissions');
-    Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
-    Route::get('/video/get/{id}', [VideoAsessmentController::class, 'detail'])->name('video.get');
-    Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
-    Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
+    Route::middleware('role:admin,teacher')->group(function () {
+        Route::get('/test-correction', [TestCorrectionController::class, 'index']);
+        Route::get('/test-correction/submissions', [TestCorrectionController::class, 'submissions'])->name('test-correction.submissions');
+        Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
+        Route::get('/video/get/{id}', [VideoAsessmentController::class, 'detail'])->name('video.get');
+        Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
+        Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
+    });
 
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::post('/profile', [ProfileController::class, 'update']);
