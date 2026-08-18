@@ -385,37 +385,29 @@
             max-width: 800px;
         }
 
+        /* Mode checklist (Cambridge 10 Test 1) lebih lebar */
+        #writingAssessmentModal .modal-dialog.modal-xl {
+            max-width: 1320px;
+            width: calc(100% - 40px);
+        }
+
         #writingAssessmentModal .modal-content {
             border-radius: 18px;
             border: none;
             box-shadow: 0 12px 45px rgba(0, 0, 0, 0.18);
             overflow: hidden;
-            background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+            background: linear-gradient(145deg, #ffffff 0%, #f7fafd 100%);
         }
 
         /* Header Styling */
         #writingAssessmentModal .modal-header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: #4274B9;
             color: white;
             border-bottom: none;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
         }
 
         #writingAssessmentModal .modal-title {
@@ -428,23 +420,26 @@
         }
 
         #writingAssessmentModal .modal-title::before {
-            content: '📝';
-            font-size: 1.8rem;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f14b";
+            font-size: 1.6rem;
         }
 
         /* Body Styling */
         #writingAssessmentModal .modal-body {
             padding: 30px;
-            max-height: 70vh;
+            max-height: 72vh;
             overflow-y: auto;
             background: #ffffff;
         }
 
         /* Student Answer Box */
-        #writingAssessmentModal #writingAnswerBox {
-            background: linear-gradient(145deg, #f8faff 0%, #ffffff 100%);
-            border: 2px solid #e0e8ff;
+        #writingAssessmentModal #writingAnswerBox,
+        #writingAssessmentModal #wcAnswerBox,
+        #writingAssessmentModal #wcQuestionBox {
+            background: linear-gradient(145deg, #f8fafd 0%, #ffffff 100%);
+            border: 2px solid #dde7f4;
             border-radius: 12px;
             padding: 20px;
             font-size: 15px;
@@ -452,29 +447,8 @@
             color: #2c3e50;
             box-shadow:
                 inset 0 2px 10px rgba(0, 0, 0, 0.03),
-                0 3px 15px rgba(106, 17, 203, 0.05);
+                0 3px 15px rgba(66, 116, 185, 0.06);
             position: relative;
-            min-height: 120px;
-            transition: all 0.3s ease;
-        }
-
-        #writingAssessmentModal #writingAnswerBox:hover {
-            border-color: #a1c4fd;
-            box-shadow:
-                inset 0 2px 15px rgba(0, 0, 0, 0.05),
-                0 5px 20px rgba(106, 17, 203, 0.08);
-        }
-
-        #writingAssessmentModal #writingAnswerBox::before {
-            content: '"';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-size: 80px;
-            color: #6a11cb;
-            opacity: 0.0;
-            font-family: Georgia, serif;
-            font-weight: bold;
         }
 
         /* Section Titles */
@@ -488,9 +462,20 @@
             gap: 8px;
         }
 
-        #writingAssessmentModal h6::before {
-            content: '✍️';
+        #writingAssessmentModal #writingChecklistWrap h6::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f303";
+            font-size: 1rem;
+            color: #4274B9;
+        }
+
+        #writingAssessmentModal #writingLegacyWrap h6::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f303";
             font-size: 1.2rem;
+            color: #4274B9;
         }
 
         /* Form Styling */
@@ -498,18 +483,12 @@
             margin-top: 25px;
         }
 
-        #writingAssessmentModal .mb-3 {
-            margin-bottom: 25px !important;
-            position: relative;
-        }
-
         #writingAssessmentModal label {
-            display: block;
+            display: flex;
             font-weight: 700;
             color: #4a5568;
             margin-bottom: 10px;
             font-size: 15px;
-            display: flex;
             align-items: center;
             gap: 8px;
         }
@@ -524,41 +503,16 @@
             font-weight: 600;
             color: #2c3e50;
             background: white;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         #writingAssessmentModal input[type="number"]:focus {
-            border-color: #6a11cb;
+            border-color: #4274B9;
             box-shadow:
-                0 0 0 4px rgba(106, 17, 203, 0.15),
-                0 4px 12px rgba(106, 17, 203, 0.1);
+                0 0 0 4px rgba(66, 116, 185, 0.15),
+                0 4px 12px rgba(66, 116, 185, 0.1);
             outline: none;
-            transform: translateY(-2px);
-        }
-
-        /* Score Input Indicators */
-        #writingAssessmentModal .mb-3::after {
-            content: '';
-            position: absolute;
-            right: 15px;
-            top: 45px;
-            width: 6px;
-            height: 40%;
-            background: linear-gradient(to bottom, #6a11cb, #2575fc);
-            border-radius: 3px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        #writingAssessmentModal input[type="number"]:focus+.mb-3::after {
-            opacity: 1;
-        }
-
-        /* Score Range Indicators */
-        #writingAssessmentModal input[type="number"]::-webkit-inner-spin-button {
-            height: 30px;
-            opacity: 0.7;
         }
 
         /* Feedback Textarea */
@@ -573,17 +527,20 @@
             background: white;
             resize: vertical;
             min-height: 120px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
+        #writingAssessmentModal #writingChecklistForm textarea {
+            min-height: auto;
+        }
+
         #writingAssessmentModal textarea:focus {
-            border-color: #2575fc;
+            border-color: #4274B9;
             box-shadow:
-                0 0 0 4px rgba(37, 117, 252, 0.15),
-                0 4px 15px rgba(37, 117, 252, 0.1);
+                0 0 0 4px rgba(66, 116, 185, 0.15),
+                0 4px 15px rgba(66, 116, 185, 0.1);
             outline: none;
-            transform: translateY(-2px);
         }
 
         #writingAssessmentModal textarea::placeholder {
@@ -593,9 +550,9 @@
 
         /* Modal Footer */
         #writingAssessmentModal .modal-footer {
-            background: linear-gradient(145deg, #f8fbff 0%, #ffffff 100%);
+            background: linear-gradient(145deg, #f7fafd 0%, #ffffff 100%);
             padding: 20px 30px;
-            border-top: 1px solid #e0e8ff;
+            border-top: 1px solid #dde7f4;
             display: flex;
             justify-content: flex-end;
             gap: 15px;
@@ -603,7 +560,7 @@
 
         /* Save Button */
         #writingAssessmentModal #saveWritingAssessmentBtn {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: #4274B9;
             border: none;
             border-radius: 12px;
             padding: 14px 35px;
@@ -613,61 +570,24 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
             box-shadow:
-                0 6px 20px rgba(106, 17, 203, 0.3),
+                0 6px 20px rgba(66, 116, 185, 0.3),
                 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        #writingAssessmentModal #saveWritingAssessmentBtn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s;
         }
 
         #writingAssessmentModal #saveWritingAssessmentBtn:hover {
-            transform: translateY(-3px);
+            background: #35609b;
             box-shadow:
-                0 10px 25px rgba(106, 17, 203, 0.4),
+                0 10px 25px rgba(66, 116, 185, 0.4),
                 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        #writingAssessmentModal #saveWritingAssessmentBtn:hover::before {
-            left: 100%;
-        }
-
         #writingAssessmentModal #saveWritingAssessmentBtn::after {
-            content: '💾';
-            font-size: 1.2rem;
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-        }
-
-        /* Scrollbar Styling */
-        #writingAssessmentModal .modal-body::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        #writingAssessmentModal .modal-body::-webkit-scrollbar-track {
-            background: #f1f5ff;
-            border-radius: 10px;
-            margin: 8px 0;
-        }
-
-        #writingAssessmentModal .modal-body::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            border-radius: 10px;
-            border: 2px solid #f1f5ff;
-        }
-
-        #writingAssessmentModal .modal-body::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #5a0db5 0%, #1c68e8 100%);
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f0c7";
+            font-size: 1.1rem;
         }
 
         /* Animation */
@@ -687,32 +607,171 @@
             animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Score Labels with Icons */
-        #writingAssessmentModal label[for*="ta"]::before {
-            content: '🎯';
+        /* Checklist section (criterion cards) */
+        #writingAssessmentModal #writingChecklistWrap .border.rounded {
+            border-color: #dde7f4 !important;
+            border-radius: 12px !important;
+            overflow: hidden;
         }
 
-        #writingAssessmentModal label[for*="cc"]::before {
-            content: '🔗';
+        #writingAssessmentModal #writingChecklistWrap .bg-light {
+            background: #eef4fb !important;
+            color: #2c3e50;
         }
 
-        #writingAssessmentModal label[for*="lr"]::before {
-            content: '📚';
+        #writingAssessmentModal #writingChecklistWrap .wc-check {
+            cursor: pointer;
         }
 
-        #writingAssessmentModal label[for*="gra"]::before {
-            content: '⚙️';
+        #writingAssessmentModal #writingChecklistWrap .wc-band {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-weight: 600;
         }
 
-        #writingAssessmentModal label[for*="feedback"]::before {
-            content: '💬';
+        #writingAssessmentModal #writingChecklistWrap .wc-band:focus {
+            border-color: #4274B9;
+            box-shadow: 0 0 0 4px rgba(66, 116, 185, 0.15);
+            outline: none;
+        }
+
+        /* Info cards & overall panel */
+        #writingAssessmentModal #writingChecklistWrap .text-muted.small {
+            color: #6b7a90 !important;
+        }
+
+        #writingAssessmentModal #writingChecklistWrap .badge.bg-secondary {
+            background: #4274B9 !important;
+        }
+
+        /* Score Validation */
+        #writingAssessmentModal input[type="number"]:invalid {
+            border-color: #ff6b6b;
+            background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
+        }
+
+        #writingAssessmentModal input[type="number"]:valid {
+            border-color: #4274B9;
+        }
+
+        /* Section Divider */
+        #writingAssessmentModal hr {
+            margin: 30px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4274B9, transparent);
+            opacity: 0.3;
+        }
+
+        /* Highlight Student Answer */
+        #writingAssessmentModal #wcAnswerBox,
+        #writingAssessmentModal #wcAnswerBox * {
+            cursor: default !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            user-select: text !important;
+        }
+
+        #writingAssessmentModal #wcAnswerBox {
+            color: #212529 !important;
+            caret-color: #212529 !important;
+        }
+
+        #writingAssessmentModal #wcAnswerBox .wc-hl {
+            border-radius: 2px;
+            padding: 0 1px;
+        }
+
+        #writingAssessmentModal #wcAnswerBox .wc-note {
+            background: #fff3c4;
+            border-bottom: 2px dotted #e6a817;
+            border-radius: 2px;
+            padding: 0 1px;
+            cursor: pointer !important;
+        }
+
+        #writingAssessmentModal #wcAnswerBox .wc-note::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f27a";
+            font-size: 0.7em;
+            color: #b3860a;
+            margin-left: 3px;
+            vertical-align: super;
+        }
+
+        #writingAssessmentModal #wcHlToolbar {
+            position: absolute;
+            z-index: 1060;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            border: 1px solid #dde7f4;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(66, 116, 185, 0.25);
+            padding: 6px 10px;
+        }
+
+        #writingAssessmentModal #wcHlToolbar .wc-hl-btn {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 1px #c9d6e8;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        #writingAssessmentModal #wcHlToolbar .wc-hl-btn:hover {
+            transform: scale(1.15);
+        }
+
+        #writingAssessmentModal #wcHlToolbar .wc-hl-eraser,
+        #writingAssessmentModal #wcHlToolbar .wc-hl-note {
+            border: none;
+            background: transparent;
+            color: #4274B9;
+            cursor: pointer;
+            font-size: 15px;
+            padding: 0 2px;
+        }
+
+        #writingAssessmentModal #wcHlToolbar .wc-hl-eraser:hover,
+        #writingAssessmentModal #wcHlToolbar .wc-hl-note:hover {
+            color: #35609b;
+        }
+
+        /* SweetAlert comment dialog must stay inside the writing modal */
+        #writingAssessmentModal > .swal2-container {
+            z-index: 2000;
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        #writingAssessmentModal > .swal2-container .swal2-popup {
+            width: 32em;
+            max-width: calc(100% - 2rem);
+            box-sizing: border-box;
+        }
+
+        #writingAssessmentModal > .swal2-container .swal2-textarea {
+            display: block;
+            width: 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            resize: vertical;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            #writingAssessmentModal .modal-dialog {
+            #writingAssessmentModal .modal-dialog,
+            #writingAssessmentModal .modal-dialog.modal-xl {
                 margin: 15px;
                 max-width: calc(100% - 30px);
+                width: auto;
             }
 
             #writingAssessmentModal .modal-header {
@@ -732,93 +791,6 @@
                 width: 100%;
                 justify-content: center;
             }
-        }
-
-        /* Loading State */
-        #writingAssessmentModal #writingAnswerBox.loading {
-            background: linear-gradient(90deg, #f0f5ff 25%, #e6eeff 50%, #f0f5ff 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
-            }
-
-            100% {
-                background-position: -200% 0;
-            }
-        }
-
-        /* Score Validation */
-        #writingAssessmentModal input[type="number"]:invalid {
-            border-color: #ff6b6b;
-            background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
-        }
-
-        #writingAssessmentModal input[type="number"]:valid {
-            border-color: #4274BA;
-        }
-
-        /* Tooltip for Band Scores */
-        #writingAssessmentModal .mb-3 {
-            position: relative;
-        }
-
-        #writingAssessmentModal .mb-3:hover::before {
-            content: 'Band: 0-9 (use 0.5 increments)';
-            position: absolute;
-            top: -30px;
-            left: 0;
-            background: #2c3e50;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            white-space: nowrap;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        #writingAssessmentModal .mb-3:hover::after {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: 20px;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid #2c3e50;
-            z-index: 1000;
-        }
-
-        /* Hover Effects for Form Elements */
-        #writingAssessmentModal .mb-3 {
-            transition: transform 0.3s ease;
-        }
-
-        #writingAssessmentModal .mb-3:hover {
-            transform: translateX(5px);
-        }
-
-        /* Highlight Current Focus */
-        #writingAssessmentModal .mb-3:has(input:focus),
-        #writingAssessmentModal .mb-3:has(textarea:focus) {
-            background: rgba(106, 17, 203, 0.02);
-            border-radius: 10px;
-            padding: 10px;
-            margin-left: -10px;
-            margin-right: -10px;
-        }
-
-        /* Section Divider */
-        #writingAssessmentModal hr {
-            margin: 30px 0;
-            border: none;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #a1c4fd, #6a11cb, #a1c4fd, transparent);
-            opacity: 0.3;
         }
     </style>
 
@@ -1428,55 +1400,256 @@
     </div>
 
     <div class="modal fade" id="writingAssessmentModal" tabindex="-1">
-        <div class="modal-dialog modal-md modal-dialog-scrollable">
+        <div class="modal-dialog modal-md modal-dialog-scrollable" id="writingModalDialog">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Writing Assessment</h5>
+                    <h5 class="modal-title" id="writingModalTitle">Writing Assessment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
 
-                    <h6><b>Student Answer</b></h6>
-                    <div id="writingAnswerBox" class="border rounded p-2 mb-3"
-                        style="background:#f9f9f9; white-space:pre-wrap;">
-                        Loading...
+                    <input type="hidden" name="writing_id" id="writing_id">
+
+                    {{-- ============ LEGACY FORM (set selain Cambridge 10 Test 1) ============ --}}
+                    <div id="writingLegacyWrap">
+                        <h6><b>Student Answer</b></h6>
+                        <div id="writingAnswerBox" class="border rounded p-2 mb-3"
+                            style="background:#f9f9f9; white-space:pre-wrap;">
+                            Loading...
+                        </div>
+
+                        <form id="writingAssessmentForm">
+
+                            <div class="mb-3">
+                                <label><b>Task Achievement (Band)</b></label>
+                                <input type="number" step="0.1" max="9" min="0" name="ta_band"
+                                    class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label><b>Coherence & Cohesion (Band)</b></label>
+                                <input type="number" step="0.1" max="9" min="0" name="cc_band"
+                                    class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label><b>Lexical Resource (Band)</b></label>
+                                <input type="number" step="0.1" max="9" min="0" name="lr_band"
+                                    class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label><b>Grammatical Range & Accuracy (Band)</b></label>
+                                <input type="number" step="0.1" max="9" min="0" name="gra_band"
+                                    class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label><b>Feedback</b></label>
+                                <textarea name="feedback" rows="4" class="form-control"></textarea>
+                            </div>
+                        </form>
                     </div>
 
-                    <form id="writingAssessmentForm">
+                    {{-- ============ WRITING SCORE PREDICTION CHECKLIST (all writing sets) ============ --}}
+                    <div id="writingChecklistWrap" style="display:none;">
 
-                        <input type="hidden" name="writing_id" id="writing_id">
+                        <h5 class="text-center fw-bold mb-3">Writing Score Prediction Checklist</h5>
 
-                        <div class="mb-3">
-                            <label><b>Task Achievement (Band)</b></label>
-                            <input type="number" step="0.1" max="9" min="0" name="ta_band"
-                                class="form-control">
+                        {{-- Info --}}
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small">Student</div>
+                                    <div class="fw-bold" id="wcStudent">-</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small">Test Set Code</div>
+                                    <div class="fw-bold" id="wcSetCode">-</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small">Assessment Date</div>
+                                    <div class="fw-bold" id="wcAssessDate">-</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small mb-1">Prediction Score</div>
+                                    <input type="number" step="0.5" min="0" max="9"
+                                        class="form-control form-control-sm fw-bold" name="predicted_band"
+                                        id="wc_predicted_band" placeholder="Auto">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small">Submission Date</div>
+                                    <div class="fw-bold" id="wcSubmitDate">-</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="border rounded p-2 h-100">
+                                    <div class="text-muted small">Tutor</div>
+                                    <div class="fw-bold" id="wcTutor">-</div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label><b>Coherence & Cohesion (Band)</b></label>
-                            <input type="number" step="0.1" max="9" min="0" name="cc_band"
-                                class="form-control">
+                        {{-- Soal & Jawaban --}}
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold mb-1">Soal <span class="badge bg-secondary"
+                                        id="wcTaskLabel"></span></h6>
+                                <div id="wcQuestionBox" class="border rounded p-2"
+                                    style="background:#f9f9f9; max-height:300px; overflow:auto;"></div>
+                            </div>
+                            <div class="col-md-6 position-relative">
+                                <h6 class="fw-bold mb-1 d-flex justify-content-between align-items-center">
+                                    <span>Student Answer</span>
+                                    <span class="badge text-dark fw-semibold" id="wcWordCount"
+                                        style="background:#eef4fb;"><i class="fas fa-calculator me-1"></i><span
+                                            id="wcWordCountVal">0</span> words</span>
+                                </h6>
+                                <div id="wcAnswerBox" class="border rounded p-2" contenteditable="plaintext-only"
+                                    spellcheck="false"
+                                    style="background:#f9f9f9; white-space:pre-wrap; max-height:300px; overflow:auto;"></div>
+                                <div class="form-text"><i class="fas fa-highlighter me-1"></i>Select text to highlight.
+                                </div>
+
+                                {{-- Toolbar highlight --}}
+                                <div id="wcHlToolbar" style="display:none;">
+                                    <button type="button" class="wc-hl-btn" data-color="#ffeb3b"
+                                        style="background:#ffeb3b" title="Yellow"></button>
+                                    <button type="button" class="wc-hl-btn" data-color="#a5d6a7"
+                                        style="background:#a5d6a7" title="Green"></button>
+                                    <button type="button" class="wc-hl-btn" data-color="#ef9a9a"
+                                        style="background:#ef9a9a" title="Red"></button>
+                                    <button type="button" class="wc-hl-btn" data-color="#90caf9"
+                                        style="background:#90caf9" title="Blue"></button>
+                                    <button type="button" class="wc-hl-note" title="Add comment on selected text"><i
+                                            class="far fa-comment-dots"></i></button>
+                                    <button type="button" class="wc-hl-eraser" title="Remove highlight"><i
+                                            class="fas fa-eraser"></i></button>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label><b>Lexical Resource (Band)</b></label>
-                            <input type="number" step="0.1" max="9" min="0" name="lr_band"
-                                class="form-control">
-                        </div>
+                        @php
+                            $wcCriteria = [
+                                [
+                                    'key' => 'ta',
+                                    'title' => 'Task Achievement',
+                                    'items' => [
+                                        'Did the candidate write at least 150 words?',
+                                        'Did the candidate provide an overview?',
+                                        'Did the candidate identify the key features?',
+                                        'Did the candidate provide supporting details for the key features?',
+                                        'Did the candidate use an appropriate format?',
+                                    ],
+                                ],
+                                [
+                                    'key' => 'cc',
+                                    'title' => 'Coherence and Cohesion',
+                                    'items' => [
+                                        'Did the candidate organise information and ideas logically?',
+                                        'Did the candidate use cohesive devices?',
+                                        'Did the candidate use referencing and substitution?',
+                                    ],
+                                ],
+                                [
+                                    'key' => 'lr',
+                                    'title' => 'Lexical Resource',
+                                    'items' => [
+                                        'Did the candidate use a range of vocabulary?',
+                                        'Did the candidate use academic style?',
+                                        'Did the candidate use collocation?',
+                                        'Did the candidate use correct spelling and word formation?',
+                                    ],
+                                ],
+                                [
+                                    'key' => 'gra',
+                                    'title' => 'Grammatical Range and Accuracy',
+                                    'items' => [
+                                        'Did the candidate use a range of structures?',
+                                        'Did the candidate produce correct grammar and punctuation?',
+                                    ],
+                                ],
+                            ];
+                        @endphp
 
-                        <div class="mb-3">
-                            <label><b>Grammatical Range & Accuracy (Band)</b></label>
-                            <input type="number" step="0.1" max="9" min="0" name="gra_band"
-                                class="form-control">
-                        </div>
+                        {{-- Penilaian --}}
+                        <form id="writingChecklistForm">
+                            <input type="hidden" name="answer_highlights" id="wc_answer_highlights" value="[]">
+                            @foreach ($wcCriteria as $ci => $c)
+                                <div class="border rounded mb-3">
+                                    <div class="bg-light px-3 py-2 fw-bold border-bottom rounded-top">
+                                        {{ $ci + 1 }}. {{ $c['title'] }}
+                                    </div>
+                                    <div class="p-3">
+                                        @foreach ($c['items'] as $ii => $item)
+                                            <div
+                                                class="d-flex justify-content-between align-items-center py-1 {{ $ii < count($c['items']) - 1 ? 'border-bottom' : '' }}">
+                                                <span class="pe-2">{{ $item }}</span>
+                                                <div class="d-flex align-items-center gap-3 flex-shrink-0">
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input wc-check" type="radio"
+                                                            name="checklist[{{ $c['key'] }}_{{ $ii + 1 }}]"
+                                                            id="wc_{{ $c['key'] }}_{{ $ii + 1 }}_yes" value="yes">
+                                                        <label class="form-check-label"
+                                                            for="wc_{{ $c['key'] }}_{{ $ii + 1 }}_yes">Yes</label>
+                                                    </div>
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input wc-check" type="radio"
+                                                            name="checklist[{{ $c['key'] }}_{{ $ii + 1 }}]"
+                                                            id="wc_{{ $c['key'] }}_{{ $ii + 1 }}_no" value="no">
+                                                        <label class="form-check-label"
+                                                            for="wc_{{ $c['key'] }}_{{ $ii + 1 }}_no">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
 
-                        <div class="mb-3">
-                            <label><b>Feedback</b></label>
-                            <textarea name="feedback" rows="4" class="form-control"></textarea>
-                        </div>
-                    </form>
+                                        <div class="row g-2 mt-3">
+                                            <div class="col-md-3">
+                                                <label class="form-label fw-bold mb-1">Band Score</label>
+                                                <input type="number" step="0.5" min="0" max="9"
+                                                    name="{{ $c['key'] }}_band" id="wc_{{ $c['key'] }}_band"
+                                                    class="form-control wc-band">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <label class="form-label fw-bold mb-1">Notes</label>
+                                                <textarea name="{{ $c['key'] }}_notes" rows="2"
+                                                    class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            {{-- Overall & Remark --}}
+                            <div class="border rounded p-3 mb-2" style="background:#eef4fb; border-color:#dde7f4 !important;">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-bold mb-1">Overall Band Score</label>
+                                        <input type="number" step="0.5" min="0" max="9" name="overall_band"
+                                            id="wc_overall_band" class="form-control">
+                                        <div class="form-text">Auto-calculated from the four band scores — editable.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label class="form-label fw-bold mb-1">Additional Remark</label>
+                                        <textarea name="feedback" rows="2" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
 
                 </div>
 
@@ -1772,22 +1945,379 @@
                 type: "GET",
                 success: function(res) {
 
-                    $("#writingAnswerBox").text(res.answer);
+                    // Semua writing request menggunakan checklist penilaian yang sama.
+                    const isChecklist = true;
 
-                    // isi nilai jika sudah ada assessment sebelumnya
-                    const form = $("#writingAssessmentForm");
-                    form[0].reset();
-                    if (res.assessment) {
-                        form.find("[name=ta_band]").val(res.assessment.ta_band);
-                        form.find("[name=cc_band]").val(res.assessment.cc_band);
-                        form.find("[name=lr_band]").val(res.assessment.lr_band);
-                        form.find("[name=gra_band]").val(res.assessment.gra_band);
-                        form.find("[name=feedback]").val(res.assessment.feedback);
+                    $("#writingModalTitle").text(isChecklist ? "Writing Score Prediction Checklist" : "Writing Assessment");
+                    $("#writingModalDialog").toggleClass("modal-xl", isChecklist);
+                    $("#writingLegacyWrap").toggle(!isChecklist);
+                    $("#writingChecklistWrap").toggle(isChecklist);
+
+                    if (isChecklist) {
+
+                        $("#wcStudent").text(res.student || "-");
+                        $("#wcSetCode").text(res.topic || "-");
+                        $("#wcTaskLabel").text(res.task || "");
+                        $("#wcSubmitDate").text(res.submitted_at || "-");
+                        $("#wcTutor").text(res.tutor || "-");
+                        $("#wcAssessDate").text(res.assessed_at ||
+                            new Date().toLocaleDateString("en-GB", {
+                                weekday: "long",
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric"
+                            }));
+
+                        $("#wcAnswerBox").text(res.answer || "-");
+                        $("#wcQuestionBox").html(res.question ||
+                            "<em class='text-muted'>Question not available.</em>");
+
+                        // word count jawaban student
+                        const wcAnswerText = res.answer || "";
+                        const wcWords = wcAnswerText.trim() ? wcAnswerText.trim().split(/\s+/).length : 0;
+                        $("#wcWordCountVal").text(wcWords);
+
+                        // reset highlights lalu terapkan yang tersimpan
+                        wcApplyStoredHighlights(res.assessment?.answer_highlights || []);
+
+                        const form = $("#writingChecklistForm");
+                        form[0].reset();
+                        form.find("input[type=radio]").prop("checked", false);
+                        $("#wc_predicted_band").val("");
+                        $("#wc_overall_band").val("");
+
+                        if (res.assessment) {
+                            form.find("[name=ta_band]").val(res.assessment.ta_band);
+                            form.find("[name=cc_band]").val(res.assessment.cc_band);
+                            form.find("[name=lr_band]").val(res.assessment.lr_band);
+                            form.find("[name=gra_band]").val(res.assessment.gra_band);
+                            form.find("[name=ta_notes]").val(res.assessment.ta_notes);
+                            form.find("[name=cc_notes]").val(res.assessment.cc_notes);
+                            form.find("[name=lr_notes]").val(res.assessment.lr_notes);
+                            form.find("[name=gra_notes]").val(res.assessment.gra_notes);
+                            form.find("[name=feedback]").val(res.assessment.feedback);
+                            $("#wc_overall_band").val(res.assessment.overall_band ?? "");
+                            $("#wc_predicted_band").val(res.assessment.predicted_band ?? "");
+
+                            const cl = res.assessment.checklist || {};
+                            Object.keys(cl).forEach(function(k) {
+                                form.find("[name='checklist[" + k + "]'][value='" + cl[k] + "']")
+                                    .prop("checked", true);
+                            });
+                        }
+
+                        // hidden input di-set setelah form.reset() agar tidak ter-reset
+                        wcSyncHighlights();
+
+                    } else {
+
+                        $("#writingAnswerBox").text(res.answer);
+
+                        // isi nilai jika sudah ada assessment sebelumnya
+                        const form = $("#writingAssessmentForm");
+                        form[0].reset();
+                        if (res.assessment) {
+                            form.find("[name=ta_band]").val(res.assessment.ta_band);
+                            form.find("[name=cc_band]").val(res.assessment.cc_band);
+                            form.find("[name=lr_band]").val(res.assessment.lr_band);
+                            form.find("[name=gra_band]").val(res.assessment.gra_band);
+                            form.find("[name=feedback]").val(res.assessment.feedback);
+                        }
+
                     }
 
                     $("#writingAssessmentModal").modal("show");
                 }
             });
+        });
+
+        /* ================= HIGHLIGHT STUDENT ANSWER ================= */
+
+        // Matikan focustrap modal Bootstrap agar input SweetAlert2 bisa diketik
+        // (focustrap mencuri fokus dari elemen di luar modal saat muncul)
+        (function() {
+            const modalEl = document.getElementById("writingAssessmentModal");
+            if (!modalEl) return;
+            modalEl.addEventListener("shown.bs.modal", function() {
+                try {
+                    const inst = (window.bootstrap && bootstrap.Modal) ?
+                        bootstrap.Modal.getInstance(modalEl) :
+                        ($(modalEl).data && $(modalEl).data("bs.modal"));
+                    if (inst && inst._focustrap) {
+                        inst._focustrap.deactivate();
+                    }
+                } catch (e) {}
+            });
+        })();
+
+        function wcDisableModalFocusTrap() {
+            const modalEl = document.getElementById("writingAssessmentModal");
+            try {
+                const inst = window.bootstrap && bootstrap.Modal
+                    ? bootstrap.Modal.getInstance(modalEl)
+                    : null;
+                if (inst && inst._focustrap) inst._focustrap.deactivate();
+            } catch (e) {}
+        }
+
+        function wcFitCommentDialog() {
+            const input = Swal.getInput();
+            if (!input) return;
+
+            input.style.width = "90%";
+            input.style.maxWidth = "90%";
+            input.style.marginLeft = "auto";
+            input.style.marginRight = "auto";
+            input.focus();
+        }
+
+        // Kumpulkan semua text node di dalam container
+        function wcTextNodes(container) {
+            const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+            const nodes = [];
+            while (walker.nextNode()) nodes.push(walker.currentNode);
+            return nodes;
+        }
+
+        // Hitung offset [start, end] selection terhadap teks penuh container
+        function wcSelectionOffsets(container, range) {
+            let start = null,
+                end = null,
+                pos = 0;
+            for (const node of wcTextNodes(container)) {
+                const len = node.nodeValue.length;
+                if (node === range.startContainer) start = pos + range.startOffset;
+                if (node === range.endContainer) end = pos + range.endOffset;
+                pos += len;
+            }
+            return (start !== null && end !== null) ? [start, end] : null;
+        }
+
+        // Bungkus teks pada offset [start,end) dengan span berwarna / span catatan
+        function wcWrapOffsets(container, start, end, color, note) {
+            const nodes = wcTextNodes(container);
+            let pos = 0;
+            for (const node of nodes) {
+                const len = node.nodeValue.length;
+                const s = Math.max(start, pos);
+                const e = Math.min(end, pos + len);
+                if (s < e) {
+                    const relS = s - pos;
+                    const relE = e - pos;
+                    let target = node;
+                    if (relE < len) target.splitText(relE);
+                    if (relS > 0) target = target.splitText(relS);
+                    const span = document.createElement("span");
+                    if (note) {
+                        span.className = "wc-note";
+                        span.setAttribute("data-note", note);
+                        span.title = note;
+                    } else {
+                        span.className = "wc-hl";
+                        span.style.backgroundColor = color;
+                    }
+                    target.parentNode.replaceChild(span, target);
+                    span.appendChild(target);
+                }
+                pos += len;
+                if (pos >= end) break;
+            }
+        }
+
+        // Lepaskan span .wc-hl / .wc-note yang berpotongan dengan selection
+        function wcUnwrapSelection(container, range) {
+            $(container).find("span.wc-hl, span.wc-note").each(function() {
+                const spanRange = document.createRange();
+                spanRange.selectNodeContents(this);
+                if (range.compareBoundaryPoints(Range.END_TO_START, spanRange) < 0 &&
+                    range.compareBoundaryPoints(Range.START_TO_END, spanRange) > 0) {
+                    const parent = this.parentNode;
+                    while (this.firstChild) parent.insertBefore(this.firstChild, this);
+                    parent.removeChild(this);
+                    parent.normalize();
+                }
+            });
+        }
+
+        // Terapkan highlights tersimpan [{text, color, note}] pada teks jawaban
+        function wcApplyStoredHighlights(highlights) {
+            if (!Array.isArray(highlights) || !highlights.length) return;
+            const box = document.getElementById("wcAnswerBox");
+            const full = box.textContent;
+            let from = 0;
+            highlights.forEach(function(h) {
+                if (!h || !h.text) return;
+                const idx = full.indexOf(h.text, from);
+                if (idx >= 0) {
+                    wcWrapOffsets(box, idx, idx + h.text.length, h.color, h.note || null);
+                    from = idx + h.text.length;
+                }
+            });
+        }
+
+        // Sinkronkan hidden input dari span yang ada di DOM
+        function wcSyncHighlights() {
+            const data = $("#wcAnswerBox span.wc-hl, #wcAnswerBox span.wc-note").map(function() {
+                return {
+                    text: this.textContent,
+                    color: this.className.indexOf("wc-note") >= 0 ? null : this.style.backgroundColor,
+                    note: this.getAttribute("data-note") || null
+                };
+            }).get();
+            $("#wc_answer_highlights").val(JSON.stringify(data));
+        }
+
+        // Tampilkan toolbar di dekat seleksi teks
+        function wcShowToolbar(x, y) {
+            const $tb = $("#wcHlToolbar");
+            const $col = $tb.closest(".position-relative");
+            const colRect = $col[0].getBoundingClientRect();
+            $tb.show().css({
+                left: Math.min(Math.max(x - colRect.left - 60, 0), colRect.width - 130),
+                top: y - colRect.top + 12
+            });
+        }
+
+        let wcSelRange = null;
+
+        $(document).on("mouseup keyup", "#wcAnswerBox", function(e) {
+            const sel = window.getSelection();
+            if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+            const range = sel.getRangeAt(0);
+            if (!this.contains(range.commonAncestorContainer)) return;
+            wcSelRange = range.cloneRange();
+            const rect = range.getBoundingClientRect();
+            wcShowToolbar(rect.left + rect.width / 2, rect.bottom);
+        });
+
+        $(document).on("mousedown", function(e) {
+            if (!$(e.target).closest("#wcHlToolbar").length &&
+                !$(e.target).closest("#wcAnswerBox").length) {
+                $("#wcHlToolbar").hide();
+                wcSelRange = null;
+            }
+        });
+
+        $(document).on("click", "#wcHlToolbar .wc-hl-btn", function() {
+            if (!wcSelRange) return;
+            const box = document.getElementById("wcAnswerBox");
+            const offsets = wcSelectionOffsets(box, wcSelRange);
+            if (offsets && offsets[1] > offsets[0]) {
+                wcWrapOffsets(box, offsets[0], offsets[1], $(this).data("color"));
+                wcSyncHighlights();
+            }
+            $("#wcHlToolbar").hide();
+            window.getSelection().removeAllRanges();
+            wcSelRange = null;
+        });
+
+        // Tambah catatan pada teks terpilih
+        $(document).on("click", "#wcHlToolbar .wc-hl-note", function() {
+            if (!wcSelRange) return;
+            const box = document.getElementById("wcAnswerBox");
+            const offsets = wcSelectionOffsets(box, wcSelRange);
+            $("#wcHlToolbar").hide();
+
+            if (!offsets || offsets[1] <= offsets[0]) {
+                wcSelRange = null;
+                return;
+            }
+
+            wcDisableModalFocusTrap();
+            Swal.fire({
+                title: '<span style="font-size:1.2rem;">Add Comment</span>',
+                input: "textarea",
+                inputPlaceholder: "Write a comment about the selected text...",
+                target: document.getElementById("writingAssessmentModal"),
+                showCancelButton: true,
+                confirmButtonText: '<i class="fas fa-check"></i> Save',
+                cancelButtonText: "Cancel",
+                confirmButtonColor: "#4274B9",
+                focusConfirm: false,
+                didOpen: function() {
+                    wcFitCommentDialog();
+                }
+            }).then(function(result) {
+                if (result.isConfirmed && result.value && result.value.trim()) {
+                    wcWrapOffsets(box, offsets[0], offsets[1], null, result.value.trim());
+                    wcSyncHighlights();
+                }
+                window.getSelection().removeAllRanges();
+                wcSelRange = null;
+            });
+        });
+
+        // Lihat / edit / hapus catatan saat span catatan diklik
+        $(document).on("click", "#wcAnswerBox span.wc-note", function(e) {
+            e.stopPropagation();
+            const span = this;
+            const note = span.getAttribute("data-note") || "";
+
+            wcDisableModalFocusTrap();
+            Swal.fire({
+                title: '<span style="font-size:1.2rem;"><i class="far fa-comment-dots"></i> Comment</span>',
+                input: "textarea",
+                inputValue: note,
+                target: document.getElementById("writingAssessmentModal"),
+                showCancelButton: true,
+                showDenyButton: true,
+                confirmButtonText: '<i class="fas fa-check"></i> Update',
+                denyButtonText: '<i class="fas fa-trash"></i> Delete',
+                cancelButtonText: "Close",
+                confirmButtonColor: "#4274B9",
+                denyButtonColor: "#d33",
+                didOpen: function() {
+                    wcFitCommentDialog();
+                }
+            }).then(function(result) {
+                if (result.isConfirmed && result.value && result.value.trim()) {
+                    span.setAttribute("data-note", result.value.trim());
+                    span.title = result.value.trim();
+                    wcSyncHighlights();
+                } else if (result.isDenied) {
+                    const parent = span.parentNode;
+                    while (span.firstChild) parent.insertBefore(span.firstChild, span);
+                    parent.removeChild(span);
+                    parent.normalize();
+                    wcSyncHighlights();
+                }
+            });
+        });
+
+        $(document).on("click", "#wcHlToolbar .wc-hl-eraser", function() {
+            if (!wcSelRange) return;
+            wcUnwrapSelection(document.getElementById("wcAnswerBox"), wcSelRange);
+            wcSyncHighlights();
+            $("#wcHlToolbar").hide();
+            window.getSelection().removeAllRanges();
+            wcSelRange = null;
+        });
+
+        // Prediction score otomatis dari rasio jawaban "Yes" pada checklist
+        $(document).on("change", ".wc-check", function() {
+            const names = new Set($(".wc-check").map(function() {
+                return this.name;
+            }).get());
+            const total = names.size;
+            const yes = $(".wc-check[value='yes']:checked").length;
+            if (total > 0) {
+                $("#wc_predicted_band").val(Math.round((yes / total) * 9 * 2) / 2);
+            }
+        });
+
+        // Overall band otomatis dari rata-rata 4 band score (masih bisa diedit manual)
+        $(document).on("input change", ".wc-band", function() {
+            const bands = ["ta", "cc", "lr", "gra"].map(function(k) {
+                return parseFloat($("#wc_" + k + "_band").val());
+            });
+            if (bands.every(function(v) {
+                    return !isNaN(v);
+                })) {
+                const avg = bands.reduce(function(a, b) {
+                    return a + b;
+                }, 0) / bands.length;
+                $("#wc_overall_band").val(Math.round(avg * 10) / 10);
+            }
         });
 
         const currentUserName = "{{ auth()->user()->name }}";
@@ -1818,7 +2348,25 @@
         $("#saveWritingAssessmentBtn").on("click", function() {
 
             const writingId = $("#writing_id").val();
-            let formData = $("#writingAssessmentForm").serialize();
+            const useChecklist = $("#writingChecklistWrap").is(":visible");
+            const form = useChecklist ? $("#writingChecklistForm") : $("#writingAssessmentForm");
+
+            if (useChecklist) {
+                wcSyncHighlights();
+                const missing = ["ta", "cc", "lr", "gra"].filter(function(k) {
+                    return $("#wc_" + k + "_band").val() === "";
+                });
+                if (missing.length) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Incomplete",
+                        text: "Please fill all band scores before saving."
+                    });
+                    return;
+                }
+            }
+
+            let formData = "writing_id=" + encodeURIComponent(writingId) + "&" + form.serialize();
 
             $.ajax({
                 url: "{{ route('writing.assessment.store') }}",

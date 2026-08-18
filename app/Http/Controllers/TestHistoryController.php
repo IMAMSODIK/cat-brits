@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\TestHistory;
 use App\Models\User;
 use App\Models\Videos;
+use App\Services\WritingQuestionService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -236,21 +237,36 @@ class TestHistoryController extends Controller
                     ->map(fn($s) => (int) substr($s, 8));
 
                 if ($writingIds->isNotEmpty()) {
-                    $writings = \App\Models\Writing::with('assessment')->whereIn('id', $writingIds)->get();
+                    $writings = \App\Models\Writing::with(['assessment', 'setSoal'])
+                        ->whereIn('id', $writingIds)
+                        ->get();
                     foreach ($writings as $w) {
                         if ($w->assessment) {
                             $assessments['writing-' . $w->id] = [
                                 'type' => 'writing',
+                                'task' => $w->task,
+                                'question' => app(WritingQuestionService::class)->getQuestion($w),
                                 'ta_band' => (float) $w->assessment->ta_band,
                                 'cc_band' => (float) $w->assessment->cc_band,
                                 'lr_band' => (float) $w->assessment->lr_band,
                                 'gra_band' => (float) $w->assessment->gra_band,
-                                'overall' => round((
-                                    (float) $w->assessment->ta_band +
-                                    (float) $w->assessment->cc_band +
-                                    (float) $w->assessment->lr_band +
-                                    (float) $w->assessment->gra_band
-                                ) / 4, 1),
+                                'overall' => $w->assessment->overall_band !== null
+                                    ? (float) $w->assessment->overall_band
+                                    : round((
+                                        (float) $w->assessment->ta_band +
+                                        (float) $w->assessment->cc_band +
+                                        (float) $w->assessment->lr_band +
+                                        (float) $w->assessment->gra_band
+                                    ) / 4, 1),
+                                'predicted_band' => $w->assessment->predicted_band !== null
+                                    ? (float) $w->assessment->predicted_band
+                                    : null,
+                                'checklist' => $w->assessment->checklist ?? [],
+                                'answer_highlights' => $w->assessment->answer_highlights ?? [],
+                                'ta_notes' => $w->assessment->ta_notes,
+                                'cc_notes' => $w->assessment->cc_notes,
+                                'lr_notes' => $w->assessment->lr_notes,
+                                'gra_notes' => $w->assessment->gra_notes,
                                 'feedback' => $w->assessment->feedback,
                             ];
                         }

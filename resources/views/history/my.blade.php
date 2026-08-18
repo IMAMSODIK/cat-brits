@@ -185,6 +185,57 @@
 @endsection
 
 @section('own_script')
+    <style>
+        #answer-modal .writing-question,
+        #answer-modal .writing-student-answer {
+            background: #f8fafd;
+            border: 1px solid #dbe6f3;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        #answer-modal .writing-student-answer {
+            background: #fff;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            max-height: 420px;
+            overflow: auto;
+        }
+
+        #answer-modal .student-note {
+            background: #fff3c4;
+            border-bottom: 2px dotted #e6a817;
+            border-radius: 2px;
+            padding: 0 2px;
+        }
+
+        #answer-modal .student-note::after {
+            content: "\f27a";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #b3860a;
+            font-size: .7em;
+            margin-left: 3px;
+            vertical-align: super;
+        }
+
+        #answer-modal .student-highlight {
+            border-radius: 2px;
+            padding: 0 2px;
+        }
+
+        #answer-modal .writing-criterion {
+            border: 1px solid #dbe6f3;
+            border-radius: 8px;
+            padding: .75rem;
+            height: 100%;
+        }
+
+        #answer-modal .tutor-comment {
+            border-left: 3px solid #4274B9;
+            background: #f8fafd;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const answerModal = new bootstrap.Modal(document.getElementById('answer-modal'));
@@ -202,9 +253,68 @@
                     '</div></div>';
             }
 
+            function renderHighlightedAnswer(answer, highlights) {
+                const source = String(answer || '');
+                const root = document.createElement('div');
+                let cursor = 0;
+
+                (Array.isArray(highlights) ? highlights : []).forEach(function(h) {
+                    if (!h || !h.text) return;
+                    const text = String(h.text);
+                    const index = source.indexOf(text, cursor);
+                    if (index < 0) return;
+
+                    root.appendChild(document.createTextNode(source.slice(cursor, index)));
+                    const span = document.createElement('span');
+                    span.className = h.note ? 'student-note' : 'student-highlight';
+                    span.textContent = text;
+                    span.style.backgroundColor = h.note ? '#fff3c4' : (h.color || '#e0e0e0');
+                    if (h.note) {
+                        span.title = h.note;
+                        span.setAttribute('aria-label', 'Tutor comment: ' + h.note);
+                    }
+                    root.appendChild(span);
+                    cursor = index + text.length;
+                });
+
+                root.appendChild(document.createTextNode(source.slice(cursor)));
+                return root.innerHTML;
+            }
+
+            function renderTutorComments(highlights) {
+                const comments = (Array.isArray(highlights) ? highlights : [])
+                    .filter(function(h) { return h && h.note; });
+
+                if (!comments.length) return '';
+
+                let html = '<div class="mt-3"><h6 class="fw-bold"><i class="far fa-comment-dots me-1"></i>Tutor Comments</h6>';
+                comments.forEach(function(comment) {
+                    html += '<div class="tutor-comment border rounded p-2 mb-2">' +
+                        '<div class="small text-muted mb-1"><i class="fas fa-quote-left me-1"></i>Selected text</div>' +
+                        '<div class="small mb-2">' + esc(comment.text) + '</div>' +
+                        '<div style="white-space:pre-wrap">' + esc(comment.note) + '</div>' +
+                        '</div>';
+                });
+                return html + '</div>';
+            }
+
+            function checklistItems(a, key, items) {
+                const checklist = a.checklist || {};
+                return items.map(function(item, index) {
+                    const value = checklist[key + '_' + (index + 1)];
+                    const badge = value === 'yes'
+                        ? '<span class="badge bg-success">Yes</span>'
+                        : value === 'no'
+                            ? '<span class="badge bg-danger">No</span>'
+                            : '<span class="badge bg-secondary">-</span>';
+                    return '<div class="d-flex justify-content-between gap-2 border-bottom py-2">' +
+                        '<span>' + esc(item) + '</span>' + badge + '</div>';
+                }).join('');
+            }
+
             function renderAssessment(a) {
-                let html = '<div class="card border-success mb-3">' +
-                    '<div class="card-header bg-success text-white"><strong>Assessment Result</strong></div>' +
+                let html = '<div class="card mb-3" style="border-color:#4274B9">' +
+                    '<div class="card-header text-white" style="background:#4274B9"><strong><i class="fas fa-clipboard-check me-1"></i> Writing Score Prediction Checklist</strong></div>' +
                     '<div class="card-body">';
 
                 if (a.type === 'writing') {
@@ -212,11 +322,74 @@
                         bandCard('Task Achievement', a.ta_band) +
                         bandCard('Coherence & Cohesion', a.cc_band) +
                         bandCard('Lexical Resource', a.lr_band) +
-                        bandCard('Grammar', a.gra_band) +
+                        bandCard('Grammatical Range & Accuracy', a.gra_band) +
                         bandCard('Overall Band', a.overall) +
+                        bandCard('Prediction Score', a.predicted_band ?? '-') +
                         '</div>';
+
+                    const criteria = [
+                        {
+                            key: 'ta',
+                            title: 'Task Achievement',
+                            band: a.ta_band,
+                            notes: a.ta_notes,
+                            items: [
+                                'Did the candidate write at least 150 words?',
+                                'Did the candidate provide an overview?',
+                                'Did the candidate identify the key features?',
+                                'Did the candidate provide supporting details for the key features?',
+                                'Did the candidate use an appropriate format?'
+                            ]
+                        },
+                        {
+                            key: 'cc',
+                            title: 'Coherence and Cohesion',
+                            band: a.cc_band,
+                            notes: a.cc_notes,
+                            items: [
+                                'Did the candidate organise information and ideas logically?',
+                                'Did the candidate use cohesive devices?',
+                                'Did the candidate use referencing and substitution?'
+                            ]
+                        },
+                        {
+                            key: 'lr',
+                            title: 'Lexical Resource',
+                            band: a.lr_band,
+                            notes: a.lr_notes,
+                            items: [
+                                'Did the candidate use a range of vocabulary?',
+                                'Did the candidate use academic style?',
+                                'Did the candidate use collocation?',
+                                'Did the candidate use correct spelling and word formation?'
+                            ]
+                        },
+                        {
+                            key: 'gra',
+                            title: 'Grammatical Range and Accuracy',
+                            band: a.gra_band,
+                            notes: a.gra_notes,
+                            items: [
+                                'Did the candidate use a range of structures?',
+                                'Did the candidate produce correct grammar and punctuation?'
+                            ]
+                        }
+                    ];
+
+                    html += '<div class="row g-2 mt-1">';
+                    criteria.forEach(function(c) {
+                        html += '<div class="col-md-6"><div class="writing-criterion">' +
+                            '<div class="d-flex justify-content-between align-items-center mb-2">' +
+                            '<strong>' + esc(c.title) + '</strong>' +
+                            '<span class="badge" style="background:#4274B9">Band ' + esc(c.band) + '</span></div>' +
+                            checklistItems(a, c.key, c.items) +
+                            (c.notes ? '<div class="mt-2 small"><strong>Notes:</strong><div class="text-muted" style="white-space:pre-wrap">' + esc(c.notes) + '</div></div>' : '') +
+                            '</div></div>';
+                    });
+                    html += '</div>';
+
                     if (a.feedback) {
-                        html += '<div class="mt-2"><strong>Feedback:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.feedback) + '</div></div>';
+                        html += '<div class="mt-3"><strong>Additional Remark:</strong><div class="border rounded p-2 mt-1" style="white-space:pre-wrap; background:#f8f9fa">' + esc(a.feedback) + '</div></div>';
                     }
                 } else {
                     html += '<div class="row">' +
@@ -256,12 +429,28 @@
                     html += '<div class="alert alert-warning mb-0">No answers recorded for this attempt.</div>';
                 } else if (d.kategori === 'writing') {
                     d.details.forEach(function(t) {
-                        html += '<div class="card mb-3">' +
-                            '<div class="card-header"><strong>' + esc(t.soal_id) + '</strong></div>' +
-                            '<div class="card-body" style="white-space:pre-wrap; max-height:400px; overflow:auto">' +
-                            esc(t.jawaban_user) +
-                            '</div></div>';
                         const a = d.assessments && d.assessments[t.soal_id];
+                        const answer = t.jawaban_user || '';
+                        const wordCount = answer.trim() ? answer.trim().split(/\s+/).length : 0;
+
+                        html += '<div class="card mb-3">' +
+                            '<div class="card-header d-flex justify-content-between align-items-center">' +
+                            '<strong><i class="fas fa-pen me-1"></i>' + esc(a?.task || t.soal_id) + '</strong>' +
+                            '<span class="badge text-dark" style="background:#eef4fb"><i class="fas fa-calculator me-1"></i>' + wordCount + ' words</span>' +
+                            '</div><div class="card-body">';
+
+                        if (a?.question) {
+                            html += '<div class="mb-3"><h6 class="fw-bold"><i class="fas fa-file-alt me-1"></i> Question</h6>' +
+                                '<div class="writing-question">' + a.question + '</div></div>';
+                        }
+
+                        html += '<h6 class="fw-bold"><i class="fas fa-user-edit me-1"></i> My Answer</h6>' +
+                            '<div class="writing-student-answer">' +
+                            renderHighlightedAnswer(answer, a?.answer_highlights || []) +
+                            '</div>' +
+                            renderTutorComments(a?.answer_highlights || []) +
+                            '</div></div>';
+
                         if (a) html += renderAssessment(a);
                     });
                 } else if (d.kategori === 'speaking') {

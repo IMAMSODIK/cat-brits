@@ -6,6 +6,7 @@ use App\Models\WritingAssessment;
 use App\Http\Controllers\Controller;
 use App\Models\TestHistory;
 use App\Models\Writing;
+use App\Services\WritingQuestionService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,18 +15,32 @@ class WritingAssessmentController extends Controller
 {
     public function detail($id)
     {
-        $writing = Writing::with('assessment')->findOrFail($id);
+        $writing = Writing::with(['assessment', 'teacher'])->findOrFail($id);
 
         return response()->json([
             'answer' => $writing->answer,
             'topic' => $writing->setSoal->name ?? '',
+            'set_code' => $writing->setSoal->kode ?? '',
             'student' => $writing->student->name ?? '',
+            'task' => $writing->task ?? '',
+            'question' => app(WritingQuestionService::class)->getQuestion($writing),
+            'submitted_at' => $writing->created_at?->translatedFormat('l, d F Y H:i'),
+            'assessed_at' => $writing->assessment?->updated_at?->translatedFormat('l, d F Y'),
+            'tutor' => $writing->teacher->name ?? (auth()->user()->name ?? ''),
             'assessment' => $writing->assessment ? [
-                'ta_band'   => (float) $writing->assessment->ta_band,
-                'cc_band'   => (float) $writing->assessment->cc_band,
-                'lr_band'   => (float) $writing->assessment->lr_band,
-                'gra_band'  => (float) $writing->assessment->gra_band,
-                'feedback'  => $writing->assessment->feedback,
+                'ta_band'        => (float) $writing->assessment->ta_band,
+                'cc_band'        => (float) $writing->assessment->cc_band,
+                'lr_band'        => (float) $writing->assessment->lr_band,
+                'gra_band'       => (float) $writing->assessment->gra_band,
+                'feedback'       => $writing->assessment->feedback,
+                'checklist'      => $writing->assessment->checklist,
+                'answer_highlights' => $writing->assessment->answer_highlights ?? [],
+                'overall_band'   => $writing->assessment->overall_band !== null ? (float) $writing->assessment->overall_band : null,
+                'predicted_band' => $writing->assessment->predicted_band !== null ? (float) $writing->assessment->predicted_band : null,
+                'ta_notes'       => $writing->assessment->ta_notes,
+                'cc_notes'       => $writing->assessment->cc_notes,
+                'lr_notes'       => $writing->assessment->lr_notes,
+                'gra_notes'      => $writing->assessment->gra_notes,
             ] : null,
         ]);
     }
@@ -43,6 +58,22 @@ class WritingAssessmentController extends Controller
                 'gra_band'   => $r->gra_band,
                 'feedback'   => $r->feedback,
             ];
+
+            // Field checklist (hanya dikirim dari UI Writing Score Prediction Checklist)
+            if ($r->has('checklist') || $r->has('overall_band')) {
+                $data = array_merge($data, [
+                    'checklist'      => $r->input('checklist'),
+                    'answer_highlights' => is_string($r->input('answer_highlights'))
+                        ? json_decode($r->input('answer_highlights'), true)
+                        : $r->input('answer_highlights'),
+                    'overall_band'   => $r->overall_band ?: null,
+                    'predicted_band' => $r->predicted_band ?: null,
+                    'ta_notes'       => $r->ta_notes,
+                    'cc_notes'       => $r->cc_notes,
+                    'lr_notes'       => $r->lr_notes,
+                    'gra_notes'      => $r->gra_notes,
+                ]);
+            }
 
             $existing = WritingAssessment::where('writing_id', $r->writing_id)->first();
 
@@ -79,4 +110,5 @@ class WritingAssessmentController extends Controller
             ], 500);
         }
     }
+
 }

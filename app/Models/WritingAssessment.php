@@ -13,6 +13,11 @@ class WritingAssessment extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'checklist' => 'array',
+        'answer_highlights' => 'array',
+    ];
+
     public function writing(): BelongsTo{
         return $this->belongsTo(Writing::class);
     }
