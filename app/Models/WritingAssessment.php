@@ -18,7 +18,8 @@ class WritingAssessment extends Model
         'answer_highlights' => 'array',
     ];
 
-    public function writing(): BelongsTo{
-        return $this->belongsTo(Writing::class);
+    public function writing(): BelongsTo
+    {
+        return $this->belongsTo(Writing::class, 'writing_id');
     }
 }

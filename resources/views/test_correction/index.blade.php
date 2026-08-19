@@ -1045,8 +1045,10 @@
                                                     <span id="duration-{{ $v->id }}">Loading…</span>
                                                 </p>
                                                 <p class="text-dark" style="font-size: 13px;">
-                                                    <b>{{ $v->setSoal->name }}</b><br>
-                                                    Topic: {{ $v->setSoal->thumbnail }} <br>
+                                                    @if ($v->setSoal)
+                                                        <b>{{ $v->setSoal->name }}</b><br>
+                                                        Topic: {{ $v->setSoal->thumbnail }} <br>
+                                                    @endif
                                                     <small class="text-primary">Part {{ $v->part_soal }} &nbsp; • &nbsp;
                                                         Number {{ $v->no_soal }}</small>
                                                 </p>

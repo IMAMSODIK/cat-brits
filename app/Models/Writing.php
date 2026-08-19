@@ -31,6 +31,6 @@ class Writing extends Model
 
     public function assessment(): HasOne
     {
-        return $this->hasOne(WritingAssessment::class);
+        return $this->hasOne(WritingAssessment::class, 'writing_id');
     }
 }

@@ -13,7 +13,8 @@ class VideoAsessment extends Model
 
     protected $guarded = ['id'];
 
-    public function video(): BelongsTo{
-        return $this->belongsTo(Videos::class);
+    public function video(): BelongsTo
+    {
+        return $this->belongsTo(Videos::class, 'video_id');
     }
 }
