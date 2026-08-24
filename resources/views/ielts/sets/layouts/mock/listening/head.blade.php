@@ -701,6 +701,48 @@
             }
         }
 
+        /* Map labeling: peta bersebelahan dengan soal */
+        .map-side-by-side {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .map-side-by-side .map-figure {
+            flex: 1 1 340px;
+            min-width: 280px;
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .map-side-by-side .map-figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .map-side-by-side .map-questions {
+            flex: 1 1 320px;
+            min-width: 260px;
+        }
+
+        .map-side-by-side .map-questions .q-item {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 767px) {
+            .map-side-by-side {
+                flex-direction: column;
+            }
+
+            .map-side-by-side .map-figure {
+                max-width: 100%;
+            }
+        }
+
         #panel-tfng .q-options,
         #panel-mse .q-options,
         #panel-tc .q-options {

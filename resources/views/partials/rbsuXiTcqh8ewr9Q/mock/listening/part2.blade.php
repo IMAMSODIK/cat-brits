@@ -137,15 +137,17 @@
     <p>Label the map below.</p>
     <p>Write the correct letter,<b>A–H</b>, next to
         questions.</i></p>
-    <p><b>Farley House</b></p>
-    <div class="d-flex">
+</fieldset>
+
+<div class="map-side-by-side">
+    <div class="map-figure">
+        <p><b>Farley House</b></p>
         <img src="{{ asset('own_assets/images/cambridge-ielts-19-academic-listening-test-1-16-20.png') }}"
             alt="Farley House Map" style="max-width: 100%; height: auto;" />
     </div>
 
-</fieldset>
-
-<fieldset class="q-item" data-q="16">
+    <div class="map-questions">
+        <fieldset class="q-item" data-q="16">
     <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
         <span class="q-number">16</span>
         <span style="flex: 1;">
@@ -254,3 +256,5 @@
         </span>
     </legend>
 </fieldset>
+    </div>
+</div>

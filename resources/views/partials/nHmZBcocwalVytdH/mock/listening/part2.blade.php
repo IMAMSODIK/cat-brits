@@ -135,99 +135,103 @@
     <p>Questions 16–20</p>
     <p>Label the plan below.</p>
     <p>Write the correct letter, A-H, next to Questions</p>
-
-    <div style="text-align: center;">
-        <p><b>Branley Castle</b></p>
-        <img src="{{ asset('own_assets/images/cambridge-ielts-14-academic-listening-test-2-16-20.jpg') }}"
-            alt="">
-    </div>
 </fieldset>
 
 @php
     $options = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 @endphp
 
-<fieldset class="q-item" data-q="16">
-    <legend class="q-text" style="display:flex;gap:6px;">
-        <span class="q-number">16</span>
-        <span style="flex:1;">
-            Starting point for walking the walls
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-dropdown">
-                    <option value=""></option>
-                    @foreach ($options as $opt)
-                        <option value="{{ $opt }}">{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
+<div class="map-side-by-side">
+    <div class="map-figure">
+        <p><b>Branley Castle</b></p>
+        <img src="{{ asset('own_assets/images/cambridge-ielts-14-academic-listening-test-2-16-20.jpg') }}"
+            alt="Branley Castle plan">
+    </div>
 
-<fieldset class="q-item" data-q="17">
-    <legend class="q-text" style="display:flex;gap:6px;">
-        <span class="q-number">17</span>
-        <span style="flex:1;">
-            Bow and arrow display
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-dropdown">
-                    <option value=""></option>
-                    @foreach ($options as $opt)
-                        <option value="{{ $opt }}">{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
+    <div class="map-questions">
+        <fieldset class="q-item" data-q="16">
+            <legend class="q-text" style="display:flex;gap:6px;">
+                <span class="q-number">16</span>
+                <span style="flex:1;">
+                    Starting point for walking the walls
+                    <span class="q-question">
+                        <select name="{{ $part['tipe'][1] }}-{{ $id }}-1" class="q-dropdown">
+                            <option value=""></option>
+                            @foreach ($options as $opt)
+                                <option value="{{ $opt }}">{{ $opt }}</option>
+                            @endforeach
+                        </select>
+                    </span>
+                </span>
+            </legend>
+        </fieldset>
 
-<fieldset class="q-item" data-q="18">
-    <legend class="q-text" style="display:flex;gap:6px;">
-        <span class="q-number">18</span>
-        <span style="flex:1;">
-            Hunting birds display
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-dropdown">
-                    <option value=""></option>
-                    @foreach ($options as $opt)
-                        <option value="{{ $opt }}">{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
+        <fieldset class="q-item" data-q="17">
+            <legend class="q-text" style="display:flex;gap:6px;">
+                <span class="q-number">17</span>
+                <span style="flex:1;">
+                    Bow and arrow display
+                    <span class="q-question">
+                        <select name="{{ $part['tipe'][1] }}-{{ $id }}-2" class="q-dropdown">
+                            <option value=""></option>
+                            @foreach ($options as $opt)
+                                <option value="{{ $opt }}">{{ $opt }}</option>
+                            @endforeach
+                        </select>
+                    </span>
+                </span>
+            </legend>
+        </fieldset>
 
-<fieldset class="q-item" data-q="19">
-    <legend class="q-text" style="display:flex;gap:6px;">
-        <span class="q-number">19</span>
-        <span style="flex:1;">
-            Traditional dancing
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-dropdown">
-                    <option value=""></option>
-                    @foreach ($options as $opt)
-                        <option value="{{ $opt }}">{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
+        <fieldset class="q-item" data-q="18">
+            <legend class="q-text" style="display:flex;gap:6px;">
+                <span class="q-number">18</span>
+                <span style="flex:1;">
+                    Hunting birds display
+                    <span class="q-question">
+                        <select name="{{ $part['tipe'][1] }}-{{ $id }}-3" class="q-dropdown">
+                            <option value=""></option>
+                            @foreach ($options as $opt)
+                                <option value="{{ $opt }}">{{ $opt }}</option>
+                            @endforeach
+                        </select>
+                    </span>
+                </span>
+            </legend>
+        </fieldset>
 
-<fieldset class="q-item" data-q="20">
-    <legend class="q-text" style="display:flex;gap:6px;">
-        <span class="q-number">20</span>
-        <span style="flex:1;">
-            Shop
-            <span class="q-question">
-                <select name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-dropdown">
-                    <option value=""></option>
-                    @foreach ($options as $opt)
-                        <option value="{{ $opt }}">{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </span>
-        </span>
-    </legend>
-</fieldset>
+        <fieldset class="q-item" data-q="19">
+            <legend class="q-text" style="display:flex;gap:6px;">
+                <span class="q-number">19</span>
+                <span style="flex:1;">
+                    Traditional dancing
+                    <span class="q-question">
+                        <select name="{{ $part['tipe'][1] }}-{{ $id }}-4" class="q-dropdown">
+                            <option value=""></option>
+                            @foreach ($options as $opt)
+                                <option value="{{ $opt }}">{{ $opt }}</option>
+                            @endforeach
+                        </select>
+                    </span>
+                </span>
+            </legend>
+        </fieldset>
+
+        <fieldset class="q-item" data-q="20">
+            <legend class="q-text" style="display:flex;gap:6px;">
+                <span class="q-number">20</span>
+                <span style="flex:1;">
+                    Shop
+                    <span class="q-question">
+                        <select name="{{ $part['tipe'][1] }}-{{ $id }}-5" class="q-dropdown">
+                            <option value=""></option>
+                            @foreach ($options as $opt)
+                                <option value="{{ $opt }}">{{ $opt }}</option>
+                            @endforeach
+                        </select>
+                    </span>
+                </span>
+            </legend>
+        </fieldset>
+    </div>
+</div>

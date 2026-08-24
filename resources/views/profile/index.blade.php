@@ -304,7 +304,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: "{{ route('password.update') }}",
+                url: "{{ route('password.change') }}",
                 method: "POST",
                 data: {
                     current_password: $('#current_password').val(),

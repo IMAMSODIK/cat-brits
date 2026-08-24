@@ -260,6 +260,48 @@
             }
         }
 
+        /* Map labeling: peta bersebelahan dengan soal */
+        .map-side-by-side {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .map-side-by-side .map-figure {
+            flex: 1 1 340px;
+            min-width: 280px;
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .map-side-by-side .map-figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .map-side-by-side .map-questions {
+            flex: 1 1 320px;
+            min-width: 260px;
+        }
+
+        .map-side-by-side .map-questions .q-item {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 767px) {
+            .map-side-by-side {
+                flex-direction: column;
+            }
+
+            .map-side-by-side .map-figure {
+                max-width: 100%;
+            }
+        }
+
         #panel-tfng .q-options,
         #panel-tfng2 .q-options,
         #panel-ynng .q-options,
@@ -670,12 +712,14 @@
                                 <p><i>Write the correct letter, <b>A-I</b>, next to Questions.</i></p>
                             </fieldset>
 
-                            <fieldset class="q-item">
-                                <h3>Recreation ground after proposed changes</h3>
-                                <img src="{{asset('own_assets/images/cambridge-ielts-16-academic-listening-test-4-15-20.jpg')}}" alt="" width="100%">
-                            </fieldset>
+                            <div class="map-side-by-side">
+                                <div class="map-figure">
+                                    <h3>Recreation ground after proposed changes</h3>
+                                    <img src="{{asset('own_assets/images/cambridge-ielts-16-academic-listening-test-4-15-20.jpg')}}" alt="Recreation ground map" width="100%">
+                                </div>
 
-                            <fieldset class="q-item" data-q="1">
+                                <div class="map-questions">
+                                    <fieldset class="q-item" data-q="1">
                                 <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                     <span class="q-number">1</span>
                                     <span style="flex: 1;">
@@ -812,6 +856,8 @@
                                     </span>
                                 </legend>
                             </fieldset>
+                                </div>
+                            </div>
 
                             <div style="text-align: center;">
                                 <button type="button" class="btn btn-primary try-again" id="again-map_labeling" style="display: none">

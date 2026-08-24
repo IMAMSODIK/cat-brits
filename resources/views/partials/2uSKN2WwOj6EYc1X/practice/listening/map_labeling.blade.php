@@ -31,72 +31,76 @@
                 </p>
                 <p>Label the map below.</p>
                 <p>Write <b>NO MORE THAN THREE WORDS</b> for each answer.</p>
-                <p><b>Daisy day care centre</b></p>
-                <div class="d-flex">
-                    <img src="{{ asset('own_assets/images/p01-1.png') }}" alt="Farley House Map"
+            </fieldset>
+
+            <div class="map-side-by-side">
+                <div class="map-figure">
+                    <p><b>Daisy day care centre</b></p>
+                    <img src="{{ asset('own_assets/images/p01-1.png') }}" alt="Daisy day care centre Map"
                         style="max-width: 100%; height: auto;" />
                 </div>
 
-            </fieldset>
+                <div class="map-questions">
+                    <fieldset class="q-item" data-q="1">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="1">
+                                <span class="q-number-box">1</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
 
-            <fieldset class="q-item" data-q="1">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="1">
-                        <span class="q-number-box">1</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-1" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
 
-
-            <fieldset class="q-item" data-q="2">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="2">
-                        <span class="q-number-box">2</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-2" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
-            <fieldset class="q-item" data-q="3">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="3">
-                        <span class="q-number-box">3</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-3" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
-            <fieldset class="q-item" data-q="4">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="4">
-                        <span class="q-number-box">4</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-4" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
-            <fieldset class="q-item" data-q="5">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="5">
-                        <span class="q-number-box">5</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-5" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
-            <fieldset class="q-item" data-q="6">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="6">
-                        <span class="q-number-box">6</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-6" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
-            <fieldset class="q-item" data-q="7">
-                <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
-                    <span class="q-item" data-q="7">
-                        <span class="q-number-box">7</span>
-                        <input type="text" name="2uSKN2WwOj6EYc1X-7" class="q-text" />
-                    </span>
-                </legend>
-            </fieldset>
+                    <fieldset class="q-item" data-q="2">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="2">
+                                <span class="q-number-box">2</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-2" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                    <fieldset class="q-item" data-q="3">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="3">
+                                <span class="q-number-box">3</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-3" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                    <fieldset class="q-item" data-q="4">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="4">
+                                <span class="q-number-box">4</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-4" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                    <fieldset class="q-item" data-q="5">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="5">
+                                <span class="q-number-box">5</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-5" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                    <fieldset class="q-item" data-q="6">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="6">
+                                <span class="q-number-box">6</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-6" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                    <fieldset class="q-item" data-q="7">
+                        <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span class="q-item" data-q="7">
+                                <span class="q-number-box">7</span>
+                                <input type="text" name="2uSKN2WwOj6EYc1X-7" class="q-text" />
+                            </span>
+                        </legend>
+                    </fieldset>
+                </div>
+            </div>
 
             <div style="text-align: center;">
                 <button type="button" class="btn btn-primary try-again" id="again-{{ $tab['id'] }}"

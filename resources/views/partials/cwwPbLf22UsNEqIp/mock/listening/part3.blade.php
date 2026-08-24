@@ -42,46 +42,50 @@
     </p>
     <p>Label the diagrams below</p>
     <p>Write <b>NO MORE THAN THREE WORDS</b> for each answer.</p>
-    <div class="d-flex">
+</fieldset>
+
+<div class="map-side-by-side">
+    <div class="map-figure">
         <img src="{{ asset('own_assets/images/P02-2.png') }}" alt="Part Two - Process"
             style="max-width: 100%; height: auto;" />
     </div>
 
-</fieldset>
+    <div class="map-questions">
+        <ul>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="26">
+                    <span class="q-number-box">26</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-8" class="q-text" />
+                </span>
+            </li>
 
-<ul>
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="26">
-            <span class="q-number-box">26</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-8" class="q-text" />
-        </span>
-    </li>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="27">
+                    <span class="q-number-box">27</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text" />
+                </span>
+            </li>
 
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="27">
-            <span class="q-number-box">27</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-9" class="q-text" />
-        </span>
-    </li>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="28">
+                    <span class="q-number-box">28</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-text" />
+                </span>
+            </li>
 
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="28">
-            <span class="q-number-box">28</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-10" class="q-text" />
-        </span>
-    </li>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="29">
+                    <span class="q-number-box">29</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-text" />
+                </span>
+            </li>
 
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="29">
-            <span class="q-number-box">29</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-11" class="q-text" />
-        </span>
-    </li>
-
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="30">
-            <span class="q-number-box">30</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-12" class="q-text" />
-        </span>
-    </li>
-</ul>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="30">
+                    <span class="q-number-box">30</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-12" class="q-text" />
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

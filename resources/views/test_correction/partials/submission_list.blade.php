@@ -29,7 +29,7 @@
                     <tr>
                         <td>
                             <div class="d-flex align-items-center gap-2">
-                                <img src="{{ $s->student->foto
+                                <img src="{{ $s->student?->foto
                                     ? asset('storage/' . $s->student->foto)
                                     : asset('own_assets/images/avatar.png') }}"
                                     class="rounded-circle" width="35" height="35" alt="">
@@ -39,8 +39,8 @@
                             </div>
                         </td>
                         <td>
-                            <div class="fw-semibold">{{ $s->setSoal->name ?? '-' }}</div>
-                            <small class="text-muted">{{ Str::limit($s->setSoal->thumbnail, 40) }}</small>
+                            <div class="fw-semibold">{{ $s->setSoal?->name ?? '-' }}</div>
+                            <small class="text-muted">{{ Str::limit($s->setSoal?->thumbnail ?? '', 40) }}</small>
                         </td>
                         @if ($kategori === 'speaking')
                             <td>Part {{ $s->part_soal }} <small class="text-muted">#{{ $s->no_soal }}</small></td>
@@ -63,10 +63,18 @@
                         </td>
                         <td>{{ $s->teacher->name ?? '-' }}</td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-primary {{ $kategori === 'speaking' ? 'btn-review-speaking' : 'btn-review-writing' }}"
-                                data-id="{{ $s->id }}">
-                                <i class="fa fa-edit"></i> Review
-                            </button>
+                            <div class="d-inline-flex gap-1">
+                                <button class="btn btn-sm btn-primary {{ $kategori === 'speaking' ? 'btn-review-speaking' : 'btn-review-writing' }}"
+                                    data-id="{{ $s->id }}">
+                                    <i class="fa fa-edit"></i> Review
+                                </button>
+                                @if ($kategori === 'writing')
+                                    <button class="btn btn-sm btn-danger btn-delete-writing" data-id="{{ $s->id }}"
+                                        title="Delete submission">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                @endif
+                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -100,10 +108,18 @@
                         @endif
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-sm btn-primary {{ $kategori === 'speaking' ? 'btn-review-speaking' : 'btn-review-writing' }}"
-                            data-id="{{ $s->id }}">
-                            <i class="fa fa-edit"></i> Review
-                        </button>
+                        <div class="d-flex gap-1">
+                            <button class="btn btn-sm btn-primary {{ $kategori === 'speaking' ? 'btn-review-speaking' : 'btn-review-writing' }}"
+                                data-id="{{ $s->id }}">
+                                <i class="fa fa-edit"></i> Review
+                            </button>
+                            @if ($kategori === 'writing')
+                                <button class="btn btn-sm btn-danger btn-delete-writing" data-id="{{ $s->id }}"
+                                    title="Delete submission">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

@@ -41,35 +41,39 @@
     </p>
     <p>Label the diagrams below</p>
     <p>Write <b>NO MORE THAN THREE WORDS</b> for each answer.</p>
-    <div class="d-flex">
+</fieldset>
+
+<div class="map-side-by-side">
+    <div class="map-figure">
         <img src="{{ asset('own_assets/images/P02-3.png') }}" alt="Part Two - Process"
             style="max-width: 100%; height: auto;" />
     </div>
 
-</fieldset>
+    <div class="map-questions">
+        <ul>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="34">
+                    <span class="q-number-box">34</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-13" class="q-text" />
+                </span>
+            </li>
 
-<ul>
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="34">
-            <span class="q-number-box">34</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-13" class="q-text" />
-        </span>
-    </li>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="35">
+                    <span class="q-number-box">35</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-14" class="q-text" />
+                </span>
+            </li>
 
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="35">
-            <span class="q-number-box">35</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-14" class="q-text" />
-        </span>
-    </li>
-
-    <li style="margin-bottom: 10px">
-        <span class="q-item" data-q="36">
-            <span class="q-number-box">36</span>
-            <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-15" class="q-text" />
-        </span>
-    </li>
-</ul>
+            <li style="margin-bottom: 10px">
+                <span class="q-item" data-q="36">
+                    <span class="q-number-box">36</span>
+                    <input type="text" name="{{ $part['tipe'][1] }}-{{ $id }}-15" class="q-text" />
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <fieldset class="q-item">
     <h3>Questions 37-40</h3>

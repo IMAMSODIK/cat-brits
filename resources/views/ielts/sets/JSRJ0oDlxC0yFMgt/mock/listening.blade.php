@@ -255,10 +255,15 @@
                             <p>Questions 15-20</p>
                             <p>Label the map below</p>
                             <p>Write the correct letter, <b>A-l</b>, next to Questions.</p>
-                            <img src="{{asset('own_assets/images/cambridge-ielts-18-academic-listening-test-2-15-20.jpg')}}" alt="">
                         </fieldset>
 
-                        <fieldset class="q-item" data-type="map_labeling" data-q="15">
+                        <div class="map-side-by-side">
+                            <div class="map-figure">
+                                <img src="{{asset('own_assets/images/cambridge-ielts-18-academic-listening-test-2-15-20.jpg')}}" alt="Map">
+                            </div>
+
+                            <div class="map-questions">
+                                <fieldset class="q-item" data-type="map_labeling" data-q="15">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">15</span>
                                 <span style="flex: 1;">
@@ -377,7 +382,7 @@
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">20</span>
                                 <span style="flex: 1;">
-                                    Playground  
+                                    Playground
                                     <span class="q-question">
                                         <select name="map_labeling-JSRJ0oDlxC0yFMgt-6" class="q-dropdown">
                                             <option value=""></option>
@@ -395,6 +400,8 @@
                                 </span>
                             </legend>
                         </fieldset>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

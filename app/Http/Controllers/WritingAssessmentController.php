@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\WritingAssessment;
 use App\Http\Controllers\Controller;
 use App\Models\TestHistory;
+use App\Models\TestDetailHistory;
 use App\Models\Writing;
 use App\Services\WritingQuestionService;
 use Illuminate\Http\Request;
@@ -107,6 +108,33 @@ class WritingAssessmentController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $writing = Writing::findOrFail($id);
+
+            // Keep the test history, but remove its reference to the deleted answer.
+            TestDetailHistory::where('soal_id', 'writing-' . $writing->id)->delete();
+            $writing->delete();
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Writing submission deleted successfully.',
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
             ], 500);
         }
     }

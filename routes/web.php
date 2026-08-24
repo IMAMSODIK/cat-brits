@@ -13,6 +13,7 @@ use App\Http\Controllers\TestHistoryController;
 use App\Http\Controllers\VideoAsessmentController;
 use App\Http\Controllers\VideoCallController;
 use App\Http\Controllers\WritingAssessmentController;
+use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\WritingController;
 use Carbon\Carbon;
 use Illuminate\Container\Attributes\Auth;
@@ -46,7 +47,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::middleware('role:admin')->group(function () {
+    Route::middleware(RoleMiddleware::class . ':admin')->group(function () {
         Route::get('/teacher', [TeacherController::class, 'index']);
         Route::post('/teacher/store', [TeacherController::class, 'store']);
         Route::get('/teacher/detail', [TeacherController::class, 'detail']);
@@ -102,8 +103,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mock-test/{mockTest}/reject', [VideoCallController::class, 'reject'])->name('mock-test.reject');
     Route::post('/mock-test/{mockTest}/end', [VideoCallController::class, 'endSession'])->name('mock-test.end');
 
-    Route::get('/mock-test/{mockTest}/show', [VideoCallController::class, 'show'])->name('mock-test.show');
-    Route::get('/mock-test/{mockTest}/show-dashboard', [VideoCallController::class, 'showDashboard'])->name('mock-test.show');
+    Route::get('/mock-test/{mockTest}/show', [VideoCallController::class, 'show'])->name('mock-test.show-detail');
+    Route::get('/mock-test/{mockTest}/show-dashboard', [VideoCallController::class, 'showDashboard'])->name('mock-test.show-dashboard');
     Route::get('/mock-test/{mockTest}/start', [VideoCallController::class, 'startSession'])->name('mock-test.start');
 
     Route::post('/mock-test/{mockTest}/recording', [VideoCallController::class, 'saveRecording'])->name('mock-test.save-recording');
@@ -116,7 +117,7 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/history', [TestHistoryController::class, 'index']);
     // Route::get('/history/load-data', [TestHistoryController::class, 'loadData']);
 
-    Route::middleware('role:admin')->group(function () {
+    Route::middleware(RoleMiddleware::class . ':admin')->group(function () {
         Route::get('/history', [TestHistoryController::class, 'index']);
         Route::get('/history/detail', [TestHistoryController::class, 'detail']);
         Route::get('/history/search', [TestHistoryController::class, 'search']);
@@ -125,10 +126,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/my-history', [TestHistoryController::class, 'myHistory'])->name('my-history');
     Route::get('/history/answers/{history}', [TestHistoryController::class, 'answers'])->name('history.answers');
 
-    Route::middleware('role:admin,teacher')->group(function () {
+    Route::middleware(RoleMiddleware::class . ':admin,teacher')->group(function () {
         Route::get('/test-correction', [TestCorrectionController::class, 'index']);
         Route::get('/test-correction/submissions', [TestCorrectionController::class, 'submissions'])->name('test-correction.submissions');
         Route::get('/writing/get/{id}', [WritingAssessmentController::class, 'detail']);
+        Route::delete('/writing/{id}', [WritingAssessmentController::class, 'destroy'])->name('writing.delete');
         Route::get('/video/get/{id}', [VideoAsessmentController::class, 'detail'])->name('video.get');
         Route::post('/writing/assessment/store', [WritingAssessmentController::class, 'store'])->name('writing.assessment.store');
         Route::post('/video-assessment/store', [VideoAsessmentController::class, 'store'])->name('video.assessment.store');
@@ -136,7 +138,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::post('/profile', [ProfileController::class, 'update']);
-    Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('password.update');
+    Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('password.change');
     // Route::get('/mock-test', [VideoCallController::class, 'index'])->name('mock-test.index');
 
     Route::redirect('/toefl', '/coming-soon');

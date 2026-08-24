@@ -264,12 +264,14 @@
                             <p><i>Write the correct letter, <b>A-I</b>, next to Questions.</i></p>
                         </fieldset>
 
-                        <fieldset class="q-item">
-                            <h3>Recreation ground after proposed changes</h3>
-                            <img src="{{asset('own_assets/images/cambridge-ielts-16-academic-listening-test-4-15-20.jpg')}}" alt="" width="100%">
-                        </fieldset>
+                        <div class="map-side-by-side">
+                            <div class="map-figure">
+                                <h3>Recreation ground after proposed changes</h3>
+                                <img src="{{asset('own_assets/images/cambridge-ielts-16-academic-listening-test-4-15-20.jpg')}}" alt="Recreation ground map" width="100%">
+                            </div>
 
-                        <fieldset class="q-item" data-type="map_labeling" data-q="15">
+                            <div class="map-questions">
+                                <fieldset class="q-item" data-type="map_labeling" data-q="15">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">15</span>
                                 <span style="flex: 1;">
@@ -406,6 +408,8 @@
                                 </span>
                             </legend>
                         </fieldset>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

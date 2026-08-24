@@ -305,10 +305,15 @@
                         <fieldset class="q-item">
                             <p>Questions 17-20</p>
                             <p>Label the map below. Drag the correct letter, <b>A</b>–<b>G</b>, next to Questions</p>
-                            <img src="{{asset('own_assets/images/cambridge-ielts-20-academic-reading-test-3–17-20.jpg')}}" alt="">
                         </fieldset>
 
-                        <fieldset class="q-item" data-type="map_labeling" data-q="17">
+                        <div class="map-side-by-side">
+                            <div class="map-figure">
+                                <img src="{{asset('own_assets/images/cambridge-ielts-20-academic-reading-test-3–17-20.jpg')}}" alt="Map">
+                            </div>
+
+                            <div class="map-questions">
+                                <fieldset class="q-item" data-type="map_labeling" data-q="17">
                             <legend class="q-text" style="display: flex; align-items: center; gap: 6px;">
                                 <span class="q-number">17</span>
                                 <span style="flex: 1;">
@@ -391,6 +396,8 @@
                                 </span>
                             </legend>
                         </fieldset>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
